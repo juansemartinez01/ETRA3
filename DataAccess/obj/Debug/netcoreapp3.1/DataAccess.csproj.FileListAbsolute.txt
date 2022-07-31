@@ -1,0 +1,9 @@
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\juans\Desktop\ETRA2\ETRA\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb

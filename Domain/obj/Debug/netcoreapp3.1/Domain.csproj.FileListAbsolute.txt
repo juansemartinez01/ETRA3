@@ -1,0 +1,12 @@
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.csprojAssemblyReference.cache
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfoInputs.cache
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.AssemblyInfo.cs
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\bin\Debug\netcoreapp3.1\Domain.deps.json
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\bin\Debug\netcoreapp3.1\Domain.dll
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.csproj.CopyComplete
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.dll
+C:\Users\juans\Desktop\ETRA2\ETRA\Domain\obj\Debug\netcoreapp3.1\Domain.pdb
