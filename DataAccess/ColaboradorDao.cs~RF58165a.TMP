@@ -8,10 +8,8 @@ namespace DataAccess
 {
     public class ColaboradorDao:ConnectionToSql
     {
-        public string[] BuscarColaborador(int legajo, string nombre, string apellido)
+        public object BuscarColaborador(int legajo, string nombre, string apellido)
         {
-            string[] colaboradorArray = new string[7];
-            colaboradorArray[0] = "";
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -38,26 +36,26 @@ namespace DataAccess
                         {
                             return ReadSingleRow((IDataRecord)reader);
                         }
-                        return colaboradorArray;
+                        return "";
                         
                     }
                     else
                     {
-                        return colaboradorArray;
+                        return "No hay coincidencias.";
                     }
                 }
             }
         }
-        public string[] ReadSingleRow(IDataRecord dataRecord)
+        public object ReadSingleRow(IDataRecord dataRecord)
         {
-            string[] atributosColaborador = new string[7];
-            
-            for (int i = 0; i < 7; i++)
+            string[] atributosColaborador = { };
+            int i = 0;
+
+            foreach (string atributo in atributosColaborador)
             {
-                atributosColaborador[i] = "" + dataRecord[i] + "";
+                atributosColaborador[i] = atributo;
+                i++;
             }
-
-
             return atributosColaborador;
         }
         public int CrearColaborador(string nombre,string apellido,int dni,int cuit,string calle,int numeroCalle)

@@ -314,6 +314,7 @@ namespace Presentation.Colaboradores
             this.btnConfirmar.TabIndex = 89;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // button1
             // 

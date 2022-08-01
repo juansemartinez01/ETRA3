@@ -10,9 +10,21 @@ namespace Presentation
 {
     public partial class frmDatosPersonales : frmHijo
     {
+        public frmDatosPersonales(string[] colaborador)
+        {
+            InitializeComponent();
+            
+            lblLegajo.Text = colaborador[0];
+            lblNombre.Text = colaborador[1];
+            lblApellido.Text = colaborador[2];
+                
+            
+        }
         public frmDatosPersonales()
         {
             InitializeComponent();
+
+
         }
     }
 }

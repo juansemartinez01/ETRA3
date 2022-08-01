@@ -31,11 +31,11 @@ namespace Presentation
         {
             this.pnlBuscar = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtLegajo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.datosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,11 +49,11 @@ namespace Presentation
             // pnlBuscar
             // 
             this.pnlBuscar.Controls.Add(this.btnBuscar);
-            this.pnlBuscar.Controls.Add(this.textBox3);
-            this.pnlBuscar.Controls.Add(this.textBox4);
+            this.pnlBuscar.Controls.Add(this.txtLegajo);
+            this.pnlBuscar.Controls.Add(this.txtNombre);
             this.pnlBuscar.Controls.Add(this.lblNombre);
             this.pnlBuscar.Controls.Add(this.lblLegajo);
-            this.pnlBuscar.Controls.Add(this.textBox2);
+            this.pnlBuscar.Controls.Add(this.txtApellido);
             this.pnlBuscar.Controls.Add(this.lblApellido);
             this.pnlBuscar.Controls.Add(this.menuStrip1);
             this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -75,19 +75,19 @@ namespace Presentation
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // textBox3
+            // txtLegajo
             // 
-            this.textBox3.Location = new System.Drawing.Point(95, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 12;
+            this.txtLegajo.Location = new System.Drawing.Point(95, 12);
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.Size = new System.Drawing.Size(100, 22);
+            this.txtLegajo.TabIndex = 12;
             // 
-            // textBox4
+            // txtNombre
             // 
-            this.textBox4.Location = new System.Drawing.Point(95, 51);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 8;
+            this.txtNombre.Location = new System.Drawing.Point(95, 51);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.TabIndex = 8;
             // 
             // lblNombre
             // 
@@ -107,12 +107,12 @@ namespace Presentation
             this.lblLegajo.TabIndex = 11;
             this.lblLegajo.Text = "Legajo:";
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(320, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtApellido.Location = new System.Drawing.Point(320, 51);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 22);
+            this.txtApellido.TabIndex = 9;
             // 
             // lblApellido
             // 
@@ -186,11 +186,11 @@ namespace Presentation
         #endregion
         private System.Windows.Forms.Panel pnlBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtLegajo;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblLegajo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem datosPersonalesToolStripMenuItem;
