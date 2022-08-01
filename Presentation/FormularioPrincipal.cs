@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presentation.Colaboradores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Presentation
 {
     public partial class FormularioPrincipal : Form
@@ -15,17 +17,78 @@ namespace Presentation
         public FormularioPrincipal()
         {
             InitializeComponent();
+            customizeDesign();
         }
 
-        private void FormularioPrincipal_Load(object sender, EventArgs e)
+        
+        private void customizeDesign()
         {
-
+            pnlColaboradores.Visible = false;
+        }
+        private void hideSubMenu()
+        {
+            if (pnlColaboradores.Visible == true) pnlColaboradores.Visible = false;
+        }
+        private void showSubMenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+                subMenu.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnColaboradores_Click(object sender, EventArgs e)
         {
-            FormularioColaborador mainColaborador = new FormularioColaborador();
-            mainColaborador.Show();
+            showSubMenu(pnlColaboradores);
+        }
+
+        
+
+        
+
+        private void FormularioPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        private Form activeForm = null;
+        private void openChildFormInPanel(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlChildForm.Controls.Add(childForm);
+            pnlChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+            openChildFormInPanel(new FormularioColaborador());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        { 
+        }
+
+        private void btnAgregarColab_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmCargaColab());
         }
     }
 }
