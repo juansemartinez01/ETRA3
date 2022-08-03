@@ -6,18 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Presentation
+namespace Presentation.Colaboradores
 {
-    public partial class prueba : Form
+    public partial class frmDatosGrales : frmHijo
     {
-        public prueba()
+        public frmDatosGrales()
         {
             InitializeComponent();
         }
 
-        private void datosPersonaleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Domain;
+using Presentation.Colaboradores;
 
 namespace Presentation
 {
     public partial class FormularioColaborador : frmHijo
     {
+        
         public FormularioColaborador()
         {
             InitializeComponent();
@@ -36,12 +38,33 @@ namespace Presentation
 
         }
 
+
+        private Form activeForm = null;
+        private void openChildFormInPanel(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            childForm.TopMost = true;
+            this.pnlFormulario.Controls.Add(childForm);
+            pnlFormulario.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void datosPersonalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Abrir formulario de datos Personales
-            frmDatosPersonales frm = new frmDatosPersonales(){ Dock = DockStyle.Fill, TopLevel = false,TopMost = true };
-            this.pnlFormulario.Controls.Add(frm);
-            frm.Show();
+            openChildFormInPanel(new frmDatosPersonales());
+
+        }
+
+        private void datosGeneralesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmDatosGrales());
         }
     }
 }

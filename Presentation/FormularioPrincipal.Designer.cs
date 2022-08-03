@@ -149,6 +149,7 @@ namespace Presentation
             // 
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
+            this.pnlChildForm.MinimumSize = new System.Drawing.Size(800, 500);
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(834, 761);
             this.pnlChildForm.TabIndex = 2;

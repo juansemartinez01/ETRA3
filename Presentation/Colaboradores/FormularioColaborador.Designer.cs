@@ -150,6 +150,7 @@ namespace Presentation
             this.datosGeneralesToolStripMenuItem.Name = "datosGeneralesToolStripMenuItem";
             this.datosGeneralesToolStripMenuItem.Size = new System.Drawing.Size(119, 21);
             this.datosGeneralesToolStripMenuItem.Text = "Datos Generales";
+            this.datosGeneralesToolStripMenuItem.Click += new System.EventHandler(this.datosGeneralesToolStripMenuItem_Click);
             // 
             // historialToolStripMenuItem
             // 

@@ -1,4 +1,8 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\Presentation"
+  ],
+  "SelectedNode": "\\Presentation\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
