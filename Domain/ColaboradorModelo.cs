@@ -1,13 +1,16 @@
 ﻿using System;
 using DataAccess;
 
-
 namespace Domain
 {
     public class ColaboradorModelo
     {
         ColaboradorDao colaboradorDao = new ColaboradorDao();
 
+        public string BuscarLegajoUltimoColaborador()
+        {
+            return colaboradorDao.BuscarLegajoUltimoColaborador();
+        }
         public string[] BuscarColaborador(int legajo,string nombre,string apellido)
         {
             return colaboradorDao.BuscarColaborador(legajo,  nombre,  apellido);
@@ -25,5 +28,6 @@ namespace Domain
             }
 
         }
+        
     }
 }

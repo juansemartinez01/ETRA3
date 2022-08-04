@@ -48,6 +48,37 @@ namespace DataAccess
                 }
             }
         }
+        public string BuscarLegajoUltimoColaborador()
+        {
+            
+            
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+
+                    command.Connection = connection;
+                    command.CommandText = "SELECT MAX(legajo) FROM Colaborador";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            IDataRecord legajo = (IDataRecord)reader;
+                            return "" + legajo[0] + "";
+                        }
+                        return "Error con la base de datos";
+
+                    }
+                    else
+                    {
+                        return "Error con la base de datos";
+                    }
+                }
+            }
+        }
         public string[] ReadSingleRow(IDataRecord dataRecord)
         {
             string[] atributosColaborador = new string[7];
@@ -59,6 +90,51 @@ namespace DataAccess
 
 
             return atributosColaborador;
+        }
+        public string AgregarDocumento(string Nombre, byte[] Documento, string Extension, int TipoMultimedia, int Legajo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO ColaboradorMultimedia VALUES (@nombre, @documento, @extension, @tipo, @legajoColaborador)";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@nombre", Nombre);
+                    command.Parameters.AddWithValue("@documento", Documento);
+                    command.Parameters.AddWithValue("@extension", Extension);
+                    command.Parameters.AddWithValue("@tipo", TipoMultimedia);
+                    command.Parameters.AddWithValue("@legajoColaborador", Legajo);
+                    command.ExecuteNonQuery();
+                    return "Documento agregado con exito";
+
+
+
+                }
+            }
+        }
+        public DataTable BuscarDocumento(int TipoMultimedia, int Legajo)
+        {
+            DataTable tabla = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM SELECT * FROM ColaboradorMultimedia WHERE id_tipoMultimedia = @idTipo AND legajoColaborador = @legajoColaborador";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@idTipo", TipoMultimedia);
+                    command.Parameters.AddWithValue("@legajoColaborador", Legajo);
+                    SqlDataReader lector = command.ExecuteReader();
+                    tabla.Load(lector);
+                    return tabla;
+
+
+
+                }
+            }
         }
         public int CrearColaborador(string nombre,string apellido,int dni,int cuit,string calle,int numeroCalle)
         {

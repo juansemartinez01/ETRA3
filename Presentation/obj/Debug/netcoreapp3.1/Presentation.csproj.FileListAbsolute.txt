@@ -83,7 +83,6 @@ C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.f
 C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.FormularioPrincipal.resources
 C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.frmHijo.resources
 C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.Properties.Resources.resources
-C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.prueba.resources
 C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.csproj.GenerateResource.cache
 C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.AssemblyInfoInputs.cache
 C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.AssemblyInfo.cs
@@ -125,3 +124,4 @@ C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Pr
 C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.dll
 C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.pdb
 C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.genruntimeconfig.cache
+C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.Colaboradores.frmDatosGrales.resources
