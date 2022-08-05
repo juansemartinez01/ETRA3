@@ -35,18 +35,18 @@ namespace Domain
         public List<DocumentosColaborador> filtroDocumentosColaborador(int TipoMultimedia, int LegajoColaborador)
         {
             ColaboradorDao colaboradorDocumento = new ColaboradorDao();
-            var tabla = colaboradorDocumento.BuscarDocumento(TipoMultimedia,LegajoColaborador);
+            var tabla = colaboradorDocumento.BuscarDocumento( TipoMultimedia,LegajoColaborador);
             var infoDocumento = new List<DocumentosColaborador>();
             foreach (DataRow item in tabla.Rows)
             {
                 infoDocumento.Add(new DocumentosColaborador
                 {
-                    id_colaboradorMultimedia = Convert.ToInt32(item[0]),
-                    nombre = item[1].ToString(),
-                    documento = (byte[])item[2],
-                    extension = item[3].ToString(),
-                    id_tipoMultimedia = Convert.ToInt32(item[4]),
-                    legajoColaborador = Convert.ToInt32(item[5])
+                    Id_colaboradorMultimedia = Convert.ToInt32(item[0]),
+                    Nombre = item[1].ToString(),
+                    Documento = (byte[])item[2],
+                    Extension = item[3].ToString(),
+                    Id_tipoMultimedia = Convert.ToInt32(item[4]),
+                    LegajoColaborador = Convert.ToInt32(item[5])
                 });
             }
             return infoDocumento;

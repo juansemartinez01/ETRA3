@@ -63,5 +63,13 @@ INSERT into Evento (descripcion,id_tipoEvento) VALUES ('Carlos no usa el equipo 
 
 SELECT * FROM Evento
 
+/*Inicializador de la tabla TipoMultimedia*/
+
+INSERT INTO TipoMultimedia VALUES ('Recibos de sueldo')
+INSERT INTO TipoMultimedia VALUES ('Curriculum')
+INSERT INTO TipoMultimedia VALUES ('Notas')
+INSERT INTO TipoMultimedia VALUES ('Comprobantes medicos')
+INSERT INTO TipoMultimedia VALUES ('Foto del colaborador')
+
 
 

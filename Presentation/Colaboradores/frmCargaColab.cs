@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Text;
@@ -50,7 +51,37 @@ namespace Presentation.Colaboradores
                                     nuevoDocumento.LegajoColaborador = int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador());
                                     MessageBox.Show(nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador));
 
+                                    //Parte para ver la imagen
+                                    var Lista = new List<DocumentosColaborador>();
+                                    Lista = nuevoDocumento.filtroDocumentosColaborador(nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
 
+                                    foreach(DocumentosColaborador item in Lista)
+                                    {
+                                        string direccion = AppDomain.CurrentDomain.BaseDirectory;
+                                        string carpeta = direccion + "/temp/";
+                                        string ubicacionCompleta = carpeta + item.Extension;
+                                        if (!Directory.Exists(carpeta))
+                                        {
+                                            Directory.CreateDirectory(carpeta);
+                                        }
+                                        if (File.Exists(ubicacionCompleta))
+                                        {
+                                            File.Delete(ubicacionCompleta);
+                                        }
+                                        File.WriteAllBytes(ubicacionCompleta, item.Documento);
+
+
+                                        pictureBox1.Image = Image.FromFile(ubicacionCompleta);
+                                        /*
+                                        var p = new Process();
+                                        p.StartInfo = new ProcessStartInfo(ubicacionCompleta)
+                                        {
+                                            UseShellExecute = true
+                                        };
+                                        p.Start();
+                                        */
+
+                                    }
 
 
                                     MessageBox.Show(cadenaRespuesta);

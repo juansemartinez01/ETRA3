@@ -123,7 +123,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM SELECT * FROM ColaboradorMultimedia WHERE id_tipoMultimedia = @idTipo AND legajoColaborador = @legajoColaborador";
+                    command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE id_tipoMultimedia = @idTipo AND legajoColaborador = @legajoColaborador";
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@idTipo", TipoMultimedia);
                     command.Parameters.AddWithValue("@legajoColaborador", Legajo);
