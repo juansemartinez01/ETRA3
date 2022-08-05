@@ -54,7 +54,7 @@ namespace Presentation
             this.pnlSideMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(200, 761);
+            this.pnlSideMenu.Size = new System.Drawing.Size(200, 749);
             this.pnlSideMenu.TabIndex = 1;
             // 
             // pnlColaboradores
@@ -151,14 +151,14 @@ namespace Presentation
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
             this.pnlChildForm.MinimumSize = new System.Drawing.Size(800, 500);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(834, 761);
+            this.pnlChildForm.Size = new System.Drawing.Size(834, 749);
             this.pnlChildForm.TabIndex = 2;
             // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 761);
+            this.ClientSize = new System.Drawing.Size(1034, 749);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.pnlSideMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

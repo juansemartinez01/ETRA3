@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Domain;
 
 
 namespace Presentation
@@ -16,11 +17,19 @@ namespace Presentation
     {
         public FormularioPrincipal()
         {
+            
             InitializeComponent();
             customizeDesign();
+            
+        }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Backup backup = new Backup();
+            MessageBox.Show(backup.GenerarBackup());
+
+            base.OnFormClosing(e);
         }
 
-        
         private void customizeDesign()
         {
             pnlColaboradores.Visible = false;
@@ -90,5 +99,7 @@ namespace Presentation
         {
             openChildFormInPanel(new frmCargaColab());
         }
+
+        
     }
 }
