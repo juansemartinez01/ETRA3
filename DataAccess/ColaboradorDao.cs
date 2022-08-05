@@ -20,9 +20,9 @@ namespace DataAccess
                     command.Connection = connection;
                     if(nombre != "" || apellido != "")
                     {
-                        command.CommandText = "SELECT * FROM Colaborador WHERE nombre LIKE @nombre AND apellido = @apellido";
-                        command.Parameters.AddWithValue("@nombre", nombre + '%');
-                        command.Parameters.AddWithValue("@apellido", apellido + '%');
+                        command.CommandText = "SELECT * FROM Colaborador WHERE nombre LIKE @nombre AND apellido LIKE @apellido";
+                        command.Parameters.AddWithValue("@nombre", '%' + nombre + '%');
+                        command.Parameters.AddWithValue("@apellido", '%' + apellido + '%');
                     }
                     else
                     {

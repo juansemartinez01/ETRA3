@@ -17,6 +17,7 @@ namespace Presentation.Colaboradores
         public frmCargaColab()
         {
             InitializeComponent();
+            
         }
 
         
@@ -72,6 +73,7 @@ namespace Presentation.Colaboradores
 
 
                                         pictureBox1.Image = Image.FromFile(ubicacionCompleta);
+                                        
                                         /*
                                         var p = new Process();
                                         p.StartInfo = new ProcessStartInfo(ubicacionCompleta)
@@ -128,5 +130,6 @@ namespace Presentation.Colaboradores
 
             }
         }
+        
     }
 }

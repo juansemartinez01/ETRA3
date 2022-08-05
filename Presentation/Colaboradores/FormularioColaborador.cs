@@ -23,6 +23,14 @@ namespace Presentation
         {
             
             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
+            if(txtNombre.Text != "" || txtApellido.Text != "")
+            {
+                txtLegajo.Text = "0";
+            }
+            if(txtLegajo.Text == "")
+            {
+                txtLegajo.Text = "0";
+            }
             
             string[] colaborador = colaboradorModelo.BuscarColaborador(int.Parse(txtLegajo.Text), txtNombre.Text.ToString(), txtApellido.Text.ToString());
             if(colaborador[0] == "")
