@@ -20,6 +20,10 @@ INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaI
 INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Juan Sebastian','Martinez','lanus@hotmail.edu.ar',2,'02-02-2001',GETDATE())
 INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Carlos','Gardel','riverPlate@hotmail.edu.ar',3,'04-04-2001',GETDATE())
 INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Pepe','Argento','AzulYOro@hotmail.edu.ar',1,'07-06-2001',GETDATE())
+INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Lionel','Messi','elXeneize@hotmail.edu.ar',1,'01-01-2001',GETDATE())
+INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Pipo','Martinez','lanus@hotmail.edu.ar',2,'02-02-2001',GETDATE())
+INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Tato','Gardel','riverPlate@hotmail.edu.ar',3,'04-04-2001',GETDATE())
+INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso) VALUES ('Rodolfo','Argento','AzulYOro@hotmail.edu.ar',1,'07-06-2001',GETDATE())
 
 SELECT * FROM Colaborador
 
@@ -71,5 +75,49 @@ INSERT INTO TipoMultimedia VALUES ('Notas')
 INSERT INTO TipoMultimedia VALUES ('Comprobantes medicos')
 INSERT INTO TipoMultimedia VALUES ('Foto del colaborador')
 
+/*Inicializador de la tabla Cargo*/
 
+INSERT INTO Cargo VALUES ('Repartidor')
+INSERT INTO Cargo VALUES ('Control stock')
+INSERT INTO Cargo VALUES ('Supervisor')
+
+
+
+/*Inicializador de la tabla HistorialCargo*/
+
+INSERT INTO HistorialCargo VALUES (1,GETDATE(),NULL,10000)
+INSERT INTO HistorialCargo VALUES (1,GETDATE(),NULL,10001)
+INSERT INTO HistorialCargo VALUES (1,GETDATE(),NULL,10002)
+INSERT INTO HistorialCargo VALUES (2,GETDATE(),NULL,10003)
+INSERT INTO HistorialCargo VALUES (2,GETDATE(),NULL,10004)
+INSERT INTO HistorialCargo VALUES (3,GETDATE(),NULL,10005)
+INSERT INTO HistorialCargo VALUES (3,GETDATE(),NULL,10006)
+INSERT INTO HistorialCargo VALUES (3,GETDATE(),NULL,10007)
+
+SELECT * FROM HistorialCargo
+
+/*Inicializador de la tabla Salario*/
+
+INSERT INTO Salario VALUES (145000.34)
+INSERT INTO Salario VALUES (70000.76)
+INSERT INTO Salario VALUES (80900.44)
+INSERT INTO Salario VALUES (90000.34)
+INSERT INTO Salario VALUES (50897.54)
+INSERT INTO Salario VALUES (98700.33)
+INSERT INTO Salario VALUES (140000.4)
+INSERT INTO Salario VALUES (14678.34)
+
+SELECT * FROM Salario
+
+/*Inicializador de la tabla HistorialSalario*/
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,1,10000)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,2,10001)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,3,10002)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,4,10003)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,5,10004)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,6,10005)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,7,10006)
+INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,8,10007)
+
+SELECT * FROM HistorialSalario
 
