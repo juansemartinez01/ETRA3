@@ -38,53 +38,9 @@ namespace Presentation.Colaboradores
                                 {
                                     ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                     var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), int.Parse(txtCuit.Text), txtCalle.Text, int.Parse(txtNroCalle.Text));
-                                    byte[] archivo = null;
-                                    Stream MyStream = openFileDialog1.OpenFile();
-                                    MemoryStream obj = new MemoryStream();
-                                    MyStream.CopyTo(obj);
-                                    archivo = obj.ToArray();
 
-                                    //Agregamos los atributos del objeto DocumentosColaborador
-                                    nuevoDocumento.Nombre = "FotoColaborador";
-                                    nuevoDocumento.Documento = archivo;
-                                    nuevoDocumento.Extension = openFileDialog1.SafeFileName;
-                                    nuevoDocumento.Id_tipoMultimedia = 5;
-                                    nuevoDocumento.LegajoColaborador = int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador());
-                                    MessageBox.Show(nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador));
-
-                                    //Parte para ver la imagen
-                                    var Lista = new List<DocumentosColaborador>();
-                                    Lista = nuevoDocumento.filtroDocumentosColaborador(nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
-
-                                    foreach(DocumentosColaborador item in Lista)
-                                    {
-                                        string direccion = AppDomain.CurrentDomain.BaseDirectory;
-                                        string carpeta = direccion + "/temp/";
-                                        string ubicacionCompleta = carpeta + item.Extension;
-                                        if (!Directory.Exists(carpeta))
-                                        {
-                                            Directory.CreateDirectory(carpeta);
-                                        }
-                                        if (File.Exists(ubicacionCompleta))
-                                        {
-                                            File.Delete(ubicacionCompleta);
-                                        }
-                                        File.WriteAllBytes(ubicacionCompleta, item.Documento);
-
-
-                                        pictureBox1.Image = Image.FromFile(ubicacionCompleta);
-                                        
-                                        /*
-                                        var p = new Process();
-                                        p.StartInfo = new ProcessStartInfo(ubicacionCompleta)
-                                        {
-                                            UseShellExecute = true
-                                        };
-                                        p.Start();
-                                        */
-
-                                    }
-
+                                    string mensajeArchivoAgregado = agregarArchivoColaborador(colaboradorModelo);
+                                    MessageBox.Show(mensajeArchivoAgregado);
 
                                     MessageBox.Show(cadenaRespuesta);
                                 }
@@ -117,6 +73,57 @@ namespace Presentation.Colaboradores
             {
                 MessageBox.Show("Debe completar el nombre");
             }
+        }
+
+        public string agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
+        {
+            byte[] archivo = null;
+            Stream MyStream = openFileDialog1.OpenFile();
+            MemoryStream obj = new MemoryStream();
+            MyStream.CopyTo(obj);
+            archivo = obj.ToArray();
+
+            //Agregamos los atributos del objeto DocumentosColaborador
+            nuevoDocumento.Nombre = "FotoColaborador";
+            nuevoDocumento.Documento = archivo;
+            nuevoDocumento.Extension = openFileDialog1.SafeFileName;
+            nuevoDocumento.Id_tipoMultimedia = 5;
+            nuevoDocumento.LegajoColaborador = int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador());
+            MessageBox.Show(nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador));
+
+            //Parte para ver la imagen
+            var Lista = new List<DocumentosColaborador>();
+            Lista = nuevoDocumento.filtroDocumentosColaborador(nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
+
+            foreach (DocumentosColaborador item in Lista)
+            {
+                string direccion = AppDomain.CurrentDomain.BaseDirectory;
+                string carpeta = direccion + "/temp/";
+                string ubicacionCompleta = carpeta + item.Extension;
+                if (!Directory.Exists(carpeta))
+                {
+                    Directory.CreateDirectory(carpeta);
+                }
+                if (File.Exists(ubicacionCompleta))
+                {
+                    File.Delete(ubicacionCompleta);
+                }
+                File.WriteAllBytes(ubicacionCompleta, item.Documento);
+
+
+                pictureBox1.Image = Image.FromFile(ubicacionCompleta);
+
+                /*
+                var p = new Process();
+                p.StartInfo = new ProcessStartInfo(ubicacionCompleta)
+                {
+                    UseShellExecute = true
+                };
+                p.Start();
+                */
+
+            }
+            return "Archivo agregado con exito";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
