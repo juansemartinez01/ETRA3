@@ -76,5 +76,11 @@ namespace Presentation
 
 
         }
+
+        private void bttnEliminarColaborador_Click(object sender, EventArgs e)
+        {
+            string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lblLegajo.Text));
+            MessageBox.Show(mensaje);
+        }
     }
 }

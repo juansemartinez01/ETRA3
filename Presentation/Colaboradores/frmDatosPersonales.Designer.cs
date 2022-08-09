@@ -68,6 +68,7 @@ namespace Presentation
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblLegajo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.bttnEliminarColaborador = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -422,11 +423,22 @@ namespace Presentation
             this.label19.TabIndex = 71;
             this.label19.Text = "Legajo:";
             // 
+            // bttnEliminarColaborador
+            // 
+            this.bttnEliminarColaborador.Location = new System.Drawing.Point(25, 459);
+            this.bttnEliminarColaborador.Name = "bttnEliminarColaborador";
+            this.bttnEliminarColaborador.Size = new System.Drawing.Size(165, 23);
+            this.bttnEliminarColaborador.TabIndex = 73;
+            this.bttnEliminarColaborador.Text = "Eliminar Colaborador";
+            this.bttnEliminarColaborador.UseVisualStyleBackColor = true;
+            this.bttnEliminarColaborador.Click += new System.EventHandler(this.bttnEliminarColaborador_Click);
+            // 
             // frmDatosPersonales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.bttnEliminarColaborador);
             this.Controls.Add(this.lblLegajo);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.lblSexo);
@@ -513,5 +525,6 @@ namespace Presentation
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblLegajo;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button bttnEliminarColaborador;
     }
 }

@@ -28,6 +28,18 @@ namespace Domain
             }
 
         }
-        
+        public string EliminarColaborador(int legajo)
+        {
+            int colaboradorEliminado = colaboradorDao.EliminarColaborador(legajo);
+            if(colaboradorEliminado == 1)
+            {
+                return "Colaborador eliminado correctamente";
+            }
+            else
+            {
+                return "No se pudo eliminar al colaborador";
+            }
+        }
+
     }
 }

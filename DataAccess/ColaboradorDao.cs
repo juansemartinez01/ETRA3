@@ -20,13 +20,13 @@ namespace DataAccess
                     command.Connection = connection;
                     if(nombre != "" || apellido != "")
                     {
-                        command.CommandText = "SELECT * FROM Colaborador WHERE nombre LIKE @nombre AND apellido LIKE @apellido";
+                        command.CommandText = "SELECT * FROM Colaborador WHERE nombre LIKE @nombre AND apellido LIKE @apellido AND borradoLogico = 0";
                         command.Parameters.AddWithValue("@nombre", '%' + nombre + '%');
                         command.Parameters.AddWithValue("@apellido", '%' + apellido + '%');
                     }
                     else
                     {
-                        command.CommandText = "SELECT * FROM Colaborador WHERE legajo = @legajo";
+                        command.CommandText = "SELECT * FROM Colaborador WHERE legajo = @legajo AND borradoLogico = 0";
                         command.Parameters.AddWithValue("@legajo", legajo);
                     }
                     
@@ -59,7 +59,7 @@ namespace DataAccess
                 {
 
                     command.Connection = connection;
-                    command.CommandText = "SELECT MAX(legajo) FROM Colaborador";
+                    command.CommandText = "SELECT MAX(legajo) FROM Colaborador WHERE borradoLogico = 0";
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
@@ -99,7 +99,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO ColaboradorMultimedia VALUES (@nombre, @documento, @extension, @tipo, @legajoColaborador)";
+                    command.CommandText = "INSERT INTO ColaboradorMultimedia VALUES (@nombre, @documento, @extension, @tipo, @legajoColaborador,0)";
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@nombre", Nombre);
                     command.Parameters.AddWithValue("@documento", Documento);
@@ -123,7 +123,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE id_tipoMultimedia = @idTipo AND legajoColaborador = @legajoColaborador";
+                    command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE id_tipoMultimedia = @idTipo AND legajoColaborador = @legajoColaborador AND borradoLogico = 0";
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@idTipo", TipoMultimedia);
                     command.Parameters.AddWithValue("@legajoColaborador", Legajo);
@@ -144,7 +144,7 @@ namespace DataAccess
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO DIRECCION (nombreCalle,numeroCalle,esEdificio) VALUES (@nombreCalle,@numeroCalle,0)";                                             
+                    command.CommandText = "INSERT INTO DIRECCION (nombreCalle,numeroCalle,esEdificio,borradoLogico) VALUES (@nombreCalle,@numeroCalle,0,0)";                                             
                     command.Parameters.AddWithValue("@nombreCalle", calle);
                     command.Parameters.AddWithValue("@numeroCalle", numeroCalle);
                     command.CommandType = CommandType.Text;
@@ -154,7 +154,7 @@ namespace DataAccess
                         using (var command2 = new SqlCommand())
                         {
                             command2.Connection = connection;
-                            command2.CommandText = "INSERT INTO Colaborador (nombre,apellido,idDireccion,fechaIngreso) VALUES (@nombre,@apellido,(SELECT MAX(id_direccion) FROM Direccion),GETDATE())";
+                            command2.CommandText = "INSERT INTO Colaborador (nombre,apellido,idDireccion,fechaIngreso,borradoLogico) VALUES (@nombre,@apellido,(SELECT MAX(id_direccion) FROM Direccion),GETDATE(),0)";
                             command2.Parameters.AddWithValue("@nombre", nombre);
                             command2.Parameters.AddWithValue("@apellido", apellido);
                             command2.CommandType = CommandType.Text;
@@ -181,6 +181,31 @@ namespace DataAccess
                 }
             }
         }
-    
+        public int EliminarColaborador(int legajo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Colaborador SET borradoLogico = 1 WHERE legajo = @legajo";
+                    command.Parameters.AddWithValue("@legajo", legajo);
+                    command.CommandType = CommandType.Text;
+                    var ColaboradorEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    if (ColaboradorEliminado == 1)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+
+
+                }
+            }
+        }
+
     }
 }
