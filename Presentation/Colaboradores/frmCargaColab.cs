@@ -39,8 +39,7 @@ namespace Presentation.Colaboradores
                                     ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                     var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), int.Parse(txtCuit.Text), txtCalle.Text, int.Parse(txtNroCalle.Text));
 
-                                    string mensajeArchivoAgregado = agregarArchivoColaborador(colaboradorModelo);
-                                    MessageBox.Show(mensajeArchivoAgregado);
+                                    
 
                                     MessageBox.Show(cadenaRespuesta);
                                 }
@@ -75,7 +74,7 @@ namespace Presentation.Colaboradores
             }
         }
 
-        public string agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
+        public void agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
         {
             byte[] archivo = null;
             using(Stream MyStream = openFileDialog1.OpenFile())
@@ -84,6 +83,8 @@ namespace Presentation.Colaboradores
                 {
                     MyStream.CopyTo(obj);
                     archivo = obj.ToArray();
+                    
+                    
                 }
             }
             
@@ -98,7 +99,7 @@ namespace Presentation.Colaboradores
             nuevoDocumento.Extension = openFileDialog1.SafeFileName;
             nuevoDocumento.Id_tipoMultimedia = 5;
             nuevoDocumento.LegajoColaborador = int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador());
-            MessageBox.Show(nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador));
+            string variableMuerta = nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
 
             //Parte para ver la imagen
             var Lista = new List<DocumentosColaborador>();
@@ -134,7 +135,7 @@ namespace Presentation.Colaboradores
 
 
 
-            return "Archivo agregado con exito";
+            
         }
         
 
@@ -148,6 +149,11 @@ namespace Presentation.Colaboradores
             {
 
             }
+            Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
+            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
+
+            pictureBox1.Image = fotoPerfil;
+            fotoPerfilArchivo.Close();
         }
         
     }
