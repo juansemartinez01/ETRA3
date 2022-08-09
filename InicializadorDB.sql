@@ -52,6 +52,7 @@ INSERT into EstadoColaborador (nombre,descripcion,borradoLogico) VALUES ('De vac
 SELECT * FROM EstadoColaborador
 
 /*Inicializador de la tabla TipoEvento*/
+INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Bienvenida',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Tardanza',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Salud',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Tomar el dia',0)

@@ -136,6 +136,37 @@ namespace DataAccess
                 }
             }
         }
+        public string BuscarIdUltimoEvento()
+        {
+
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+
+                    command.Connection = connection;
+                    command.CommandText = "SELECT MAX(id_evento) FROM Evento WHERE borradoLogico = 0";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            IDataRecord legajo = (IDataRecord)reader;
+                            return "" + legajo[0] + "";
+                        }
+                        return "Error con la base de datos";
+
+                    }
+                    else
+                    {
+                        return "Error con la base de datos";
+                    }
+                }
+            }
+        }
         public int CrearColaborador(string nombre,string apellido,int dni,int cuit,string calle,int numeroCalle)
         {
             using (var connection = GetConnection())
@@ -160,9 +191,104 @@ namespace DataAccess
                             command2.CommandType = CommandType.Text;
                             
                             var colaboradorCreado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
+                            int legajo = int.Parse(BuscarLegajoUltimoColaborador());
                             if (colaboradorCreado == 1)
                             {
-                                return 1;
+                                using (var command3 = new SqlCommand())
+                                {
+
+                                    command3.Connection = connection;
+                                    command3.CommandText = "INSERT INTO HistorialEstado VALUES (GETDATE(),GETDATE(),1,@legajo,0)";
+                                    command3.Parameters.AddWithValue("@legajo", legajo);
+                                    command3.CommandType = CommandType.Text;
+                                    var HistorialEstadoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
+                                    if (HistorialEstadoCreado != 0)
+                                    {
+                                        using (var command4 = new SqlCommand())
+                                        {
+
+                                            command4.Connection = connection;
+                                            command4.CommandText = "INSERT INTO HistorialSalario VALUES (GETDATE(),NULL,1,@legajo,0)";
+                                            command4.Parameters.AddWithValue("@legajo", legajo);
+                                            command4.CommandType = CommandType.Text;
+                                            var HistorialSalarioCreado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
+                                            if (HistorialSalarioCreado != 0)
+                                            {
+                                                using (var command5 = new SqlCommand())
+                                                {
+
+                                                    command5.Connection = connection;
+                                                    command5.CommandText = "INSERT INTO Evento VALUES (@descripcion,1,0)";
+                                                    command5.Parameters.AddWithValue("@descripcion", "Bienvenido " + nombre + " " + apellido + ".");
+                                                    
+                                                    command5.CommandType = CommandType.Text;
+                                                    var EventoCreado = command5.EndExecuteNonQuery(command5.BeginExecuteNonQuery());
+                                                    int idEvento = int.Parse(BuscarIdUltimoEvento());
+                                                    if (EventoCreado != 0)
+                                                    {
+                                                        using (var command6 = new SqlCommand())
+                                                        {
+
+                                                            command6.Connection = connection;
+                                                            command6.CommandText = "INSERT INTO HistorialEvento VALUES (@idEvento,GETDATE(),GETDATE(),GETDATE(),@legajo,0)";
+                                                            command6.Parameters.AddWithValue("@legajo", legajo);
+                                                            command6.Parameters.AddWithValue("@idEvento", idEvento);
+                                                            command6.CommandType = CommandType.Text;
+                                                            var HistorialEventoCreado = command6.EndExecuteNonQuery(command6.BeginExecuteNonQuery());
+                                                            if (HistorialEventoCreado != 0)
+                                                            {
+                                                                using (var command7 = new SqlCommand())
+                                                                {
+
+                                                                    command7.Connection = connection;
+                                                                    command7.CommandText = "INSERT INTO HistorialCargo VALUES (1,GETDATE(),GETDATE(),@legajo,0)";
+                                                                    command7.Parameters.AddWithValue("@legajo", legajo);
+                                                                    
+                                                                    command6.CommandType = CommandType.Text;
+                                                                    var HistorialCargoCreado = command7.EndExecuteNonQuery(command7.BeginExecuteNonQuery());
+                                                                    if (HistorialCargoCreado != 0)
+                                                                    {
+                                                                        return 1;
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        return 0;
+                                                                    }
+
+
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                return 0;
+                                                            }
+
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        return 0;
+                                                    }
+
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return 0;
+                                            }
+
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        return 0;
+                                    }
+
+
+                                }
                             }
                             else
                             {
