@@ -188,6 +188,7 @@ namespace DataAccess
                 connection.Open();
                 using (var command = new SqlCommand())
                 {
+
                     command.Connection = connection;
                     command.CommandText = "UPDATE Colaborador SET borradoLogico = 1 WHERE legajo = @legajo";
                     command.Parameters.AddWithValue("@legajo", legajo);
@@ -195,7 +196,177 @@ namespace DataAccess
                     var ColaboradorEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
                     if (ColaboradorEliminado == 1)
                     {
-                        return 1;
+                        using (var command1 = new SqlCommand())
+                        {
+
+                            command1.Connection = connection;
+                            command1.CommandText = "UPDATE HistorialCargo SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                            command1.Parameters.AddWithValue("@legajo", legajo);
+                            command1.CommandType = CommandType.Text;
+                            var HistorialCargoEliminado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                            if (HistorialCargoEliminado != 0)
+                            {
+                                using (var command2 = new SqlCommand())
+                                {
+
+                                    command2.Connection = connection;
+                                    command2.CommandText = "UPDATE HistorialEvento SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                    command2.Parameters.AddWithValue("@legajo", legajo);
+                                    command2.CommandType = CommandType.Text;
+                                    var HistorialEventoEliminado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
+                                    if (HistorialEventoEliminado != 0)
+                                    {
+                                        using (var command3 = new SqlCommand())
+                                        {
+
+                                            command3.Connection = connection;
+                                            command3.CommandText = "UPDATE HistorialEstado SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                            command3.Parameters.AddWithValue("@legajo", legajo);
+                                            command3.CommandType = CommandType.Text;
+                                            var HistorialEstadoEliminado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
+                                            if (HistorialEstadoEliminado != 0)
+                                            {
+                                                using (var command4 = new SqlCommand())
+                                                {
+
+                                                    command4.Connection = connection;
+                                                    command4.CommandText = "UPDATE HistorialSalario SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                                    command4.Parameters.AddWithValue("@legajo", legajo);
+                                                    command4.CommandType = CommandType.Text;
+                                                    var HistorialSalarioEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
+                                                    if (HistorialSalarioEliminado != 0)
+                                                    {
+                                                        return 1;
+                                                    }
+                                                    else
+                                                    {
+                                                        return 0;
+                                                    }
+
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return 0;
+                                            }
+
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        return 0;
+                                    }
+
+
+                                }
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+
+
+                        }
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+
+
+                }
+            }
+        }
+        public int EliminarColaboradorPermanentemente(int legajo)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Colaborador SET borradoLogico = 1 WHERE legajo = @legajo";
+                    command.Parameters.AddWithValue("@legajo", legajo);
+                    command.CommandType = CommandType.Text;
+                    var ColaboradorEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    if (ColaboradorEliminado == 1)
+                    {
+                        using (var command1 = new SqlCommand())
+                        {
+
+                            command1.Connection = connection;
+                            command1.CommandText = "UPDATE HistorialCargo SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                            command1.Parameters.AddWithValue("@legajo", legajo);
+                            command1.CommandType = CommandType.Text;
+                            var HistorialCargoEliminado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                            if (HistorialCargoEliminado == 1)
+                            {
+                                using (var command2 = new SqlCommand())
+                                {
+
+                                    command2.Connection = connection;
+                                    command2.CommandText = "UPDATE HistorialEvento SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                    command2.Parameters.AddWithValue("@legajo", legajo);
+                                    command2.CommandType = CommandType.Text;
+                                    var HistorialEventoEliminado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
+                                    if (HistorialEventoEliminado == 1)
+                                    {
+                                        using (var command3 = new SqlCommand())
+                                        {
+
+                                            command3.Connection = connection;
+                                            command3.CommandText = "UPDATE HistorialEstado SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                            command3.Parameters.AddWithValue("@legajo", legajo);
+                                            command3.CommandType = CommandType.Text;
+                                            var HistorialEstadoEliminado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
+                                            if (HistorialEstadoEliminado == 1)
+                                            {
+                                                using (var command4 = new SqlCommand())
+                                                {
+
+                                                    command4.Connection = connection;
+                                                    command4.CommandText = "UPDATE HistorialSalario SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                                    command4.Parameters.AddWithValue("@legajo", legajo);
+                                                    command4.CommandType = CommandType.Text;
+                                                    var HistorialSalarioEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
+                                                    if (HistorialSalarioEliminado == 1)
+                                                    {
+                                                        return 1;
+                                                    }
+                                                    else
+                                                    {
+                                                        return 0;
+                                                    }
+
+
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return 0;
+                                            }
+
+
+                                        }
+                                    }
+                                    else
+                                    {
+                                        return 0;
+                                    }
+
+
+                                }
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+
+
+                        }
                     }
                     else
                     {
