@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace DataAccess
 {
@@ -10,6 +11,10 @@ namespace DataAccess
     {
         public string GenerarBackup()
         {
+            DirectoryInfo direc = Directory.GetParent(Directory.GetCurrentDirectory());
+            DirectoryInfo direc1 = Directory.GetParent(direc.ToString());
+            DirectoryInfo direc2 = Directory.GetParent(direc1.ToString());
+            DirectoryInfo direc3 = Directory.GetParent(direc2.ToString());
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -20,7 +25,7 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "BACKUP DATABASE ETRA TO  DISK = @ubicacion";
                     command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@ubicacion", "C:\\Users\\juans\\Desktop\\ETRA2\\ETRA.bak");
+                    command.Parameters.AddWithValue("@ubicacion", direc3.ToString() + "\\ETRA.bak");
                     
                     command.ExecuteNonQuery();
                     return "Backup realizado con exito";

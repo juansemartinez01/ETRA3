@@ -39,6 +39,9 @@ namespace Presentation.Colaboradores
                                     ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                     var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), int.Parse(txtCuit.Text), txtCalle.Text, int.Parse(txtNroCalle.Text));
 
+
+
+                                    
                                     
 
                                     MessageBox.Show(cadenaRespuesta);
@@ -73,6 +76,8 @@ namespace Presentation.Colaboradores
                 MessageBox.Show("Debe completar el nombre");
             }
         }
+
+        
 
         public void agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
         {
