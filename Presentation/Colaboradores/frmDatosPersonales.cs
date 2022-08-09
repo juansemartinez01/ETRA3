@@ -36,13 +36,21 @@ namespace Presentation
             var Lista = new List<DocumentosColaborador>();
             Lista = documentoColaborador.filtroDocumentosColaborador(5, int.Parse(colaborador[0]));
 
-            foreach (DocumentosColaborador item in Lista)
+            if (Lista.Count == 0)
+            {
+                pictureBox2.Image = null;
+            }
+            else
             {
                 string direccion = AppDomain.CurrentDomain.BaseDirectory;
                 string carpeta = direccion + "/temp/";
-                string ubicacionCompleta = carpeta + item.Extension;
+                string ubicacionCompleta = carpeta + Lista[0].Extension;
+                Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
+                Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
 
-                
+                pictureBox2.Image = fotoPerfil;
+                fotoPerfilArchivo.Close();
+
                 if (!Directory.Exists(carpeta))
                 {
                     Directory.CreateDirectory(carpeta);
@@ -51,22 +59,14 @@ namespace Presentation
                 {
                     File.Delete(ubicacionCompleta);
                 }
-                File.WriteAllBytes(ubicacionCompleta, item.Documento);
+                File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
 
-
-
-                
-                pictureBox2.Image = Image.FromFile(ubicacionCompleta);
-                /*
-                var p = new Process();
-                p.StartInfo = new ProcessStartInfo(ubicacionCompleta)
-                {
-                    UseShellExecute = true
-                };
-                p.Start();
-                */
-                
             }
+
+                
+                
+                
+            
         
 
         }

@@ -78,10 +78,19 @@ namespace Presentation.Colaboradores
         public string agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
         {
             byte[] archivo = null;
-            Stream MyStream = openFileDialog1.OpenFile();
-            MemoryStream obj = new MemoryStream();
-            MyStream.CopyTo(obj);
-            archivo = obj.ToArray();
+            using(Stream MyStream = openFileDialog1.OpenFile())
+            {
+                using (MemoryStream obj = new MemoryStream())
+                {
+                    MyStream.CopyTo(obj);
+                    archivo = obj.ToArray();
+                }
+            }
+            
+            
+            
+            
+            
 
             //Agregamos los atributos del objeto DocumentosColaborador
             nuevoDocumento.Nombre = "FotoColaborador";
@@ -94,37 +103,40 @@ namespace Presentation.Colaboradores
             //Parte para ver la imagen
             var Lista = new List<DocumentosColaborador>();
             Lista = nuevoDocumento.filtroDocumentosColaborador(nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
-
-            foreach (DocumentosColaborador item in Lista)
-            {
-                string direccion = AppDomain.CurrentDomain.BaseDirectory;
+           
+            string direccion = AppDomain.CurrentDomain.BaseDirectory;
                 string carpeta = direccion + "/temp/";
-                string ubicacionCompleta = carpeta + item.Extension;
-                if (!Directory.Exists(carpeta))
+                string ubicacionCompleta = carpeta + Lista[0].Extension;
+            Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
+            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
+
+            pictureBox1.Image = fotoPerfil;
+            fotoPerfilArchivo.Close();
+            if (!Directory.Exists(carpeta))
                 {
                     Directory.CreateDirectory(carpeta);
                 }
                 if (File.Exists(ubicacionCompleta))
                 {
+                    
                     File.Delete(ubicacionCompleta);
                 }
-                File.WriteAllBytes(ubicacionCompleta, item.Documento);
+                File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
+
+            
+
+            
 
 
-                pictureBox1.Image = Image.FromFile(ubicacionCompleta);
 
-                /*
-                var p = new Process();
-                p.StartInfo = new ProcessStartInfo(ubicacionCompleta)
-                {
-                    UseShellExecute = true
-                };
-                p.Start();
-                */
 
-            }
+
+
+
+
             return "Archivo agregado con exito";
         }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
