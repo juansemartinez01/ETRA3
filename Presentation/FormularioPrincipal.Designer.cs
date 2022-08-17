@@ -51,10 +51,10 @@ namespace Presentation
             this.pnlSideMenu.Controls.Add(this.btnColaboradores);
             this.pnlSideMenu.Controls.Add(this.pictureBox1);
             this.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSideMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnlSideMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(200, 749);
+            this.pnlSideMenu.Size = new System.Drawing.Size(200, 705);
             this.pnlSideMenu.TabIndex = 1;
             // 
             // pnlColaboradores
@@ -64,9 +64,9 @@ namespace Presentation
             this.pnlColaboradores.Controls.Add(this.btnAgregarColab);
             this.pnlColaboradores.Controls.Add(this.btnConsultar);
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlColaboradores.Location = new System.Drawing.Point(0, 108);
+            this.pnlColaboradores.Location = new System.Drawing.Point(0, 102);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 142);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 134);
             this.pnlColaboradores.TabIndex = 2;
             // 
             // button4
@@ -75,12 +75,12 @@ namespace Presentation
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 90);
+            this.button4.Location = new System.Drawing.Point(0, 84);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 45);
+            this.button4.Size = new System.Drawing.Size(200, 42);
             this.button4.TabIndex = 2;
-            this.button4.Text = "button";
+            this.button4.Text = "Reportes";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -91,10 +91,10 @@ namespace Presentation
             this.btnAgregarColab.FlatAppearance.BorderSize = 0;
             this.btnAgregarColab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarColab.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarColab.Location = new System.Drawing.Point(0, 45);
+            this.btnAgregarColab.Location = new System.Drawing.Point(0, 42);
             this.btnAgregarColab.Name = "btnAgregarColab";
             this.btnAgregarColab.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAgregarColab.Size = new System.Drawing.Size(200, 45);
+            this.btnAgregarColab.Size = new System.Drawing.Size(200, 42);
             this.btnAgregarColab.TabIndex = 1;
             this.btnAgregarColab.Text = "Agregar / Modificar";
             this.btnAgregarColab.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,6 +103,7 @@ namespace Presentation
             // 
             // btnConsultar
             // 
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
             this.btnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsultar.FlatAppearance.BorderSize = 0;
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -110,11 +111,11 @@ namespace Presentation
             this.btnConsultar.Location = new System.Drawing.Point(0, 0);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnConsultar.Size = new System.Drawing.Size(200, 45);
+            this.btnConsultar.Size = new System.Drawing.Size(200, 42);
             this.btnConsultar.TabIndex = 0;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnColaboradores
@@ -122,12 +123,12 @@ namespace Presentation
             this.btnColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnColaboradores.FlatAppearance.BorderSize = 0;
             this.btnColaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnColaboradores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnColaboradores.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnColaboradores.ForeColor = System.Drawing.Color.White;
-            this.btnColaboradores.Location = new System.Drawing.Point(0, 57);
+            this.btnColaboradores.Location = new System.Drawing.Point(0, 54);
             this.btnColaboradores.Name = "btnColaboradores";
             this.btnColaboradores.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnColaboradores.Size = new System.Drawing.Size(200, 51);
+            this.btnColaboradores.Size = new System.Drawing.Size(200, 48);
             this.btnColaboradores.TabIndex = 1;
             this.btnColaboradores.Text = "Colaboradores";
             this.btnColaboradores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -140,30 +141,31 @@ namespace Presentation
             this.pictureBox1.Image = global::Presentation.Properties.Resources.logoLWS2;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pnlChildForm
             // 
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
-            this.pnlChildForm.MinimumSize = new System.Drawing.Size(800, 500);
+            this.pnlChildForm.MinimumSize = new System.Drawing.Size(800, 471);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(834, 749);
+            this.pnlChildForm.Size = new System.Drawing.Size(834, 705);
             this.pnlChildForm.TabIndex = 2;
             // 
             // FormularioPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 749);
+            this.ClientSize = new System.Drawing.Size(1034, 705);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.pnlSideMenu);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1050, 600);
+            this.MinimumSize = new System.Drawing.Size(1050, 567);
             this.Name = "FormularioPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormularioPrincipal_FormClosing);

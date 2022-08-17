@@ -66,9 +66,9 @@ namespace Presentation
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text != "")
+            if (txtUser.Text != "USUARIO")
             {
-                if (txtPass.Text != "")
+                if (txtPass.Text != "CONTRASEÑA")
                 {
                     UsuarioModelo user = new UsuarioModelo();
                     var validLogin = user.LoginUser(txtUser.Text, txtPass.Text);
@@ -80,17 +80,17 @@ namespace Presentation
                     }
                     else
                     {
-                        MessageBox.Show("Usuario o contraseña incorrectos");
+                        msgError("Error: Usuario o contraseña incorrectos");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese contraseña.");
+                   msgError("Error: Por favor, ingrese una contraseña.");
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese Usuario.");
+                msgError("Error: Por favor, ingrese un Usuario.");
             }
         }
 
@@ -106,6 +106,11 @@ namespace Presentation
         {
             txtPass_Leave(sender, e);
             txtUser_Leave(sender, e);
+        }
+        private void msgError(string msg)
+        {
+            lblError.Text = "      " + msg;
+            lblError.Visible = true;
         }
     }
 }

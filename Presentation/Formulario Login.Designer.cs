@@ -37,6 +37,7 @@ namespace Presentation
             this.lnkRecuperar = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +130,20 @@ namespace Presentation
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblError.ForeColor = System.Drawing.Color.DimGray;
+            this.lblError.Image = global::Presentation.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblError.Location = new System.Drawing.Point(307, 262);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(34, 17);
+            this.lblError.TabIndex = 4;
+            this.lblError.Text = "Error";
+            this.lblError.Visible = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -136,6 +151,7 @@ namespace Presentation
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(910, 406);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.lnkRecuperar);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
@@ -150,6 +166,7 @@ namespace Presentation
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "  ";
             this.Click += new System.EventHandler(this.frmLogin_Click);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -167,5 +184,6 @@ namespace Presentation
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel lnkRecuperar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblError;
     }
 }

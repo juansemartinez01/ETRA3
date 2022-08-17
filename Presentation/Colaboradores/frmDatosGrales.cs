@@ -10,11 +10,14 @@ namespace Presentation.Colaboradores
 {
     public partial class frmDatosGrales : frmHijo
     {
-        public frmDatosGrales()
+        public frmDatosGrales(DataTable colaborador)
         {
             InitializeComponent();
+            completarLabels(this, colaborador);
         }
 
-       
-    }
+        
+
+
+}
 }

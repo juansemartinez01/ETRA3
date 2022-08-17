@@ -20,7 +20,8 @@ namespace Presentation
             
             InitializeComponent();
             customizeDesign();
-            
+            openChildFormInPanel(new frmInicio());
+
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -100,6 +101,11 @@ namespace Presentation
             openChildFormInPanel(new frmCargaColab());
         }
 
-        
+
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmInicio());
+        }
     }
 }

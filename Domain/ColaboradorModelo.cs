@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using DataAccess;
 
 namespace Domain
@@ -11,7 +12,7 @@ namespace Domain
         {
             return colaboradorDao.BuscarLegajoUltimoColaborador();
         }
-        public string[] BuscarColaborador(int legajo,string nombre,string apellido)
+        public DataTable BuscarColaborador(int legajo,string nombre,string apellido)
         {
             return colaboradorDao.BuscarColaborador(legajo,  nombre,  apellido);
         }

@@ -159,3 +159,5 @@ C:\Users\Usuario\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation
 C:\Users\Usuario\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.dll
 C:\Users\Usuario\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.pdb
 C:\Users\Usuario\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.genruntimeconfig.cache
+C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.frmInicio.resources
+C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.Colaboradores.frmHistorial.resources

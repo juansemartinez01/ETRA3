@@ -8,10 +8,10 @@ namespace DataAccess
 {
     public class ColaboradorDao:ConnectionToSql
     {
-        public string[] BuscarColaborador(int legajo, string nombre, string apellido)
+        public DataTable BuscarColaborador(int legajo, string nombre, string apellido)
         {
-            string[] colaboradorArray = new string[7];
-            colaboradorArray[0] = "";
+            DataTable colaborador = new DataTable();
+            //colaboradorArray[0] = "";
             using (var connection = GetConnection())
             {
                 connection.Open();
@@ -20,31 +20,20 @@ namespace DataAccess
                     command.Connection = connection;
                     if(nombre != "" || apellido != "")
                     {
-                        command.CommandText = "SELECT * FROM Colaborador WHERE nombre LIKE @nombre AND apellido LIKE @apellido AND borradoLogico = 0";
+                        command.CommandText = "SELECT legajo, nombre, apellido, mail, CONVERT(varchar, fechaNacimiento, 103) as fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento, ' ') as departamento ,isnull(d.localidad, ' ') as localidad,isnull(d.provincia, ' ') as provincia from Colaborador c join Direccion d on d.id_direccion = c.idDireccion  WHERE nombre LIKE @nombre AND apellido LIKE @apellido AND c.borradoLogico = 0";
                         command.Parameters.AddWithValue("@nombre", '%' + nombre + '%');
                         command.Parameters.AddWithValue("@apellido", '%' + apellido + '%');
                     }
                     else
                     {
-                        command.CommandText = "SELECT * FROM Colaborador WHERE legajo = @legajo AND borradoLogico = 0";
+                        command.CommandText = "SELECT legajo, nombre, apellido, mail,CONVERT(varchar,fechaNacimiento, 103) as fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento,' ')as departamento ,isnull(d.localidad,' ') as localidad,isnull(d.provincia,' ') as provincia from Colaborador c join Direccion d on d.id_direccion = c.idDireccion  WHERE legajo = @legajo AND c.borradoLogico = 0";
                         command.Parameters.AddWithValue("@legajo", legajo);
                     }
                     
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            return ReadSingleRow((IDataRecord)reader);
-                        }
-                        return colaboradorArray;
-                        
-                    }
-                    else
-                    {
-                        return colaboradorArray;
-                    }
+                    colaborador.Load(reader);
+                    return colaborador;
                 }
             }
         }

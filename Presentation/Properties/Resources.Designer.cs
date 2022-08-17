@@ -73,6 +73,27 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ETRA_Isologotipo_01 {
+            get {
+                object obj = ResourceManager.GetObject("ETRA_Isologotipo_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_ {
+            get {
+                object obj = ResourceManager.GetObject("kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616" +
+                        "015590465524546__1___1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoLWS2 {
             get {
                 object obj = ResourceManager.GetObject("logoLWS2", resourceCulture);
@@ -81,12 +102,12 @@ namespace Presentation.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
-        internal static System.Drawing.Bitmap logoSoloForma {
+        internal static System.Drawing.Icon solo_logo {
             get {
-                object obj = ResourceManager.GetObject("logoSoloForma", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("solo_logo", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

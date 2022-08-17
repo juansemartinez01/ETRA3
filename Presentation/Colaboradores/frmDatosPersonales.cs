@@ -15,26 +15,19 @@ namespace Presentation
     {
         ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
         DocumentosColaborador documentoColaborador = new DocumentosColaborador();
-        public frmDatosPersonales(string[] colaborador )
+        public frmDatosPersonales(DataTable colaborador )
         {
             InitializeComponent();
             //Hay que arreglar este error de cuando busco 2 veces un colaborador
 
             //pictureBox2.Image = Image.FromFile("C: \\Users\\juans\\Pictures\\asdfasdfasdfasdf.PNG");
 
-
-
-            lblLegajo.Text = colaborador[0];
-            lblNombre.Text = colaborador[1];
-            lblApellido.Text = colaborador[2];
-            
+            completarLabels(this, colaborador);
             
 
-            
-            
-            
+
             var Lista = new List<DocumentosColaborador>();
-            Lista = documentoColaborador.filtroDocumentosColaborador(5, int.Parse(colaborador[0]));
+            Lista = documentoColaborador.filtroDocumentosColaborador(5, (int)colaborador.Rows[0]["legajo"]);
 
             if (Lista.Count == 0)
             {
@@ -64,11 +57,6 @@ namespace Presentation
             }
 
                 
-                
-                
-            
-        
-
         }
         public frmDatosPersonales()
         {
@@ -79,7 +67,7 @@ namespace Presentation
 
         private void bttnEliminarColaborador_Click(object sender, EventArgs e)
         {
-            string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lblLegajo.Text));
+            string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lbllegajo.Text));
             MessageBox.Show(mensaje);
         }
     }

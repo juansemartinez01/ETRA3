@@ -30,6 +30,7 @@ namespace Presentation
         private void InitializeComponent()
         {
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -48,6 +49,7 @@ namespace Presentation
             // 
             // pnlBuscar
             // 
+            this.pnlBuscar.Controls.Add(this.lblError);
             this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.txtLegajo);
             this.pnlBuscar.Controls.Add(this.txtNombre);
@@ -62,6 +64,20 @@ namespace Presentation
             this.pnlBuscar.Name = "pnlBuscar";
             this.pnlBuscar.Size = new System.Drawing.Size(800, 135);
             this.pnlBuscar.TabIndex = 2;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblError.ForeColor = System.Drawing.Color.DimGray;
+            this.lblError.Image = global::Presentation.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblError.Location = new System.Drawing.Point(37, 60);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(34, 17);
+            this.lblError.TabIndex = 15;
+            this.lblError.Text = "Error";
+            this.lblError.Visible = false;
             // 
             // btnBuscar
             // 
@@ -81,10 +97,11 @@ namespace Presentation
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(100, 22);
             this.txtLegajo.TabIndex = 12;
+            this.txtLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajo_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(95, 51);
+            this.txtNombre.Location = new System.Drawing.Point(299, 12);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
             this.txtNombre.TabIndex = 8;
@@ -92,7 +109,7 @@ namespace Presentation
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(37, 54);
+            this.lblNombre.Location = new System.Drawing.Point(234, 12);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(59, 17);
             this.lblNombre.TabIndex = 7;
@@ -109,7 +126,7 @@ namespace Presentation
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(320, 51);
+            this.txtApellido.Location = new System.Drawing.Point(493, 12);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 22);
             this.txtApellido.TabIndex = 9;
@@ -117,7 +134,7 @@ namespace Presentation
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(243, 54);
+            this.lblApellido.Location = new System.Drawing.Point(426, 12);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(61, 17);
             this.lblApellido.TabIndex = 10;
@@ -157,6 +174,7 @@ namespace Presentation
             this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
             this.historialToolStripMenuItem.Size = new System.Drawing.Size(67, 21);
             this.historialToolStripMenuItem.Text = "Historial";
+            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
             // 
             // pnlFormulario
             // 
@@ -198,5 +216,6 @@ namespace Presentation
         private System.Windows.Forms.ToolStripMenuItem datosGeneralesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
         private System.Windows.Forms.Panel pnlFormulario;
+        private System.Windows.Forms.Label lblError;
     }
 }

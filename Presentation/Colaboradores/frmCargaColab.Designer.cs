@@ -62,20 +62,21 @@ namespace Presentation.Colaboradores
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLocalidad
             // 
             this.txtLocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLocalidad.Location = new System.Drawing.Point(329, 326);
+            this.txtLocalidad.Location = new System.Drawing.Point(355, 395);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(100, 22);
             this.txtLocalidad.TabIndex = 81;
             // 
             // txtBarrio
             // 
-            this.txtBarrio.Location = new System.Drawing.Point(125, 326);
+            this.txtBarrio.Location = new System.Drawing.Point(151, 395);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(100, 22);
             this.txtBarrio.TabIndex = 80;
@@ -83,7 +84,7 @@ namespace Presentation.Colaboradores
             // txtPiso
             // 
             this.txtPiso.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPiso.Location = new System.Drawing.Point(329, 232);
+            this.txtPiso.Location = new System.Drawing.Point(355, 301);
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(100, 22);
             this.txtPiso.TabIndex = 79;
@@ -91,42 +92,42 @@ namespace Presentation.Colaboradores
             // txtDepto
             // 
             this.txtDepto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDepto.Location = new System.Drawing.Point(329, 274);
+            this.txtDepto.Location = new System.Drawing.Point(355, 343);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(100, 22);
             this.txtDepto.TabIndex = 78;
             // 
             // txtNroCalle
             // 
-            this.txtNroCalle.Location = new System.Drawing.Point(125, 274);
+            this.txtNroCalle.Location = new System.Drawing.Point(151, 343);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.Size = new System.Drawing.Size(100, 22);
             this.txtNroCalle.TabIndex = 77;
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(125, 232);
+            this.txtCalle.Location = new System.Drawing.Point(151, 301);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(100, 22);
             this.txtCalle.TabIndex = 76;
             // 
             // txtCuit
             // 
-            this.txtCuit.Location = new System.Drawing.Point(127, 154);
+            this.txtCuit.Location = new System.Drawing.Point(153, 223);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 22);
             this.txtCuit.TabIndex = 74;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(127, 78);
+            this.txtApellido.Location = new System.Drawing.Point(153, 147);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 22);
             this.txtApellido.TabIndex = 73;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(127, 36);
+            this.txtNombre.Location = new System.Drawing.Point(153, 105);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
             this.txtNombre.TabIndex = 72;
@@ -135,7 +136,7 @@ namespace Presentation.Colaboradores
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(252, 40);
+            this.label13.Location = new System.Drawing.Point(278, 109);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 17);
             this.label13.TabIndex = 70;
@@ -145,7 +146,7 @@ namespace Presentation.Colaboradores
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(523, 328);
+            this.label12.Location = new System.Drawing.Point(549, 397);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 17);
             this.label12.TabIndex = 69;
@@ -154,7 +155,7 @@ namespace Presentation.Colaboradores
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(29, 326);
+            this.label11.Location = new System.Drawing.Point(55, 395);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(45, 17);
             this.label11.TabIndex = 68;
@@ -164,7 +165,7 @@ namespace Presentation.Colaboradores
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(252, 329);
+            this.label10.Location = new System.Drawing.Point(278, 398);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(71, 17);
             this.label10.TabIndex = 67;
@@ -174,7 +175,7 @@ namespace Presentation.Colaboradores
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(252, 274);
+            this.label9.Location = new System.Drawing.Point(278, 343);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 17);
             this.label9.TabIndex = 66;
@@ -183,7 +184,7 @@ namespace Presentation.Colaboradores
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 158);
+            this.label7.Location = new System.Drawing.Point(55, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 17);
             this.label7.TabIndex = 64;
@@ -192,7 +193,7 @@ namespace Presentation.Colaboradores
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 82);
+            this.label6.Location = new System.Drawing.Point(55, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 17);
             this.label6.TabIndex = 63;
@@ -201,7 +202,7 @@ namespace Presentation.Colaboradores
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 197);
+            this.label5.Location = new System.Drawing.Point(55, 266);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 62;
@@ -210,7 +211,7 @@ namespace Presentation.Colaboradores
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 232);
+            this.label4.Location = new System.Drawing.Point(55, 301);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 61;
@@ -219,7 +220,7 @@ namespace Presentation.Colaboradores
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 274);
+            this.label3.Location = new System.Drawing.Point(55, 343);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 17);
             this.label3.TabIndex = 60;
@@ -229,7 +230,7 @@ namespace Presentation.Colaboradores
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(252, 230);
+            this.label2.Location = new System.Drawing.Point(278, 299);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 59;
@@ -238,7 +239,7 @@ namespace Presentation.Colaboradores
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 40);
+            this.label1.Location = new System.Drawing.Point(55, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 58;
@@ -246,7 +247,7 @@ namespace Presentation.Colaboradores
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(127, 113);
+            this.txtDni.Location = new System.Drawing.Point(153, 182);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(100, 22);
             this.txtDni.TabIndex = 84;
@@ -254,7 +255,7 @@ namespace Presentation.Colaboradores
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 113);
+            this.label8.Location = new System.Drawing.Point(55, 182);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 17);
             this.label8.TabIndex = 83;
@@ -264,7 +265,7 @@ namespace Presentation.Colaboradores
             // 
             this.cmbEstados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbEstados.FormattingEnabled = true;
-            this.cmbEstados.Location = new System.Drawing.Point(329, 36);
+            this.cmbEstados.Location = new System.Drawing.Point(355, 105);
             this.cmbEstados.Name = "cmbEstados";
             this.cmbEstados.Size = new System.Drawing.Size(121, 25);
             this.cmbEstados.TabIndex = 85;
@@ -273,7 +274,7 @@ namespace Presentation.Colaboradores
             // 
             this.cmbProvincias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbProvincias.FormattingEnabled = true;
-            this.cmbProvincias.Location = new System.Drawing.Point(606, 326);
+            this.cmbProvincias.Location = new System.Drawing.Point(632, 395);
             this.cmbProvincias.Name = "cmbProvincias";
             this.cmbProvincias.Size = new System.Drawing.Size(121, 25);
             this.cmbProvincias.TabIndex = 86;
@@ -282,7 +283,7 @@ namespace Presentation.Colaboradores
             // 
             this.lblFotoPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFotoPerfil.AutoSize = true;
-            this.lblFotoPerfil.Location = new System.Drawing.Point(523, 36);
+            this.lblFotoPerfil.Location = new System.Drawing.Point(549, 105);
             this.lblFotoPerfil.Name = "lblFotoPerfil";
             this.lblFotoPerfil.Size = new System.Drawing.Size(138, 17);
             this.lblFotoPerfil.TabIndex = 88;
@@ -331,8 +332,9 @@ namespace Presentation.Colaboradores
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Presentation.Properties.Resources._1500603_add_vector_icon_grátis_vetor;
-            this.pictureBox1.Location = new System.Drawing.Point(540, 70);
+            this.pictureBox1.Location = new System.Drawing.Point(566, 139);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 105);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -340,11 +342,22 @@ namespace Presentation.Colaboradores
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(235, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(286, 28);
+            this.label14.TabIndex = 93;
+            this.label14.Text = "NUEVO COLABORADOR";
+            // 
             // frmCargaColab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 510);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -418,5 +431,6 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label14;
     }
 }
