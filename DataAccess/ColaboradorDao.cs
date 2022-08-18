@@ -20,7 +20,7 @@ namespace DataAccess
                     command.Connection = connection;
                     if(nombre != "" || apellido != "")
                     {
-                        command.CommandText = "SELECT legajo, c.nombre, apellido, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento,' ')AS departamento ,isnull(d.localidad,' ') AS localidad,isnull(d.provincia,' ') AS provincia,EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto AS montoSalario FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario WHERE nombre LIKE @nombre AND apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL";
+                        command.CommandText = "SELECT legajo, c.nombre, apellido, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento,' ')AS departamento ,isnull(d.localidad,' ') AS localidad,isnull(d.provincia,' ') AS provincia,EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto AS montoSalario FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario WHERE c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL";
                         command.Parameters.AddWithValue("@nombre", '%' + nombre + '%');
                         command.Parameters.AddWithValue("@apellido", '%' + apellido + '%');
                     }
@@ -187,7 +187,7 @@ namespace DataAccess
                                 {
 
                                     command3.Connection = connection;
-                                    command3.CommandText = "INSERT INTO HistorialEstado VALUES (GETDATE(),GETDATE(),1,@legajo,0)";
+                                    command3.CommandText = "INSERT INTO HistorialEstado VALUES (GETDATE(),NULL,1,@legajo,0)";
                                     command3.Parameters.AddWithValue("@legajo", legajo);
                                     command3.CommandType = CommandType.Text;
                                     var HistorialEstadoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
@@ -230,7 +230,7 @@ namespace DataAccess
                                                                 {
 
                                                                     command7.Connection = connection;
-                                                                    command7.CommandText = "INSERT INTO HistorialCargo VALUES (1,GETDATE(),GETDATE(),@legajo,0)";
+                                                                    command7.CommandText = "INSERT INTO HistorialCargo VALUES (1,GETDATE(),NULL,@legajo,0)";
                                                                     command7.Parameters.AddWithValue("@legajo", legajo);
                                                                     
                                                                     command6.CommandType = CommandType.Text;
