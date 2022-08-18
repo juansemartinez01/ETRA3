@@ -18,9 +18,7 @@ namespace Presentation
         public frmDatosPersonales(DataTable colaborador )
         {
             InitializeComponent();
-            //Hay que arreglar este error de cuando busco 2 veces un colaborador
-
-            //pictureBox2.Image = Image.FromFile("C: \\Users\\juans\\Pictures\\asdfasdfasdfasdf.PNG");
+            
 
             completarLabels(this, colaborador);
             
@@ -64,7 +62,6 @@ namespace Presentation
 
 
         }
-
         private void bttnEliminarColaborador_Click(object sender, EventArgs e)
         {
             string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lbllegajo.Text));

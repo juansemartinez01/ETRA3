@@ -20,13 +20,13 @@ namespace DataAccess
                     command.Connection = connection;
                     if(nombre != "" || apellido != "")
                     {
-                        command.CommandText = "SELECT legajo, nombre, apellido, mail, CONVERT(varchar, fechaNacimiento, 103) as fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento, ' ') as departamento ,isnull(d.localidad, ' ') as localidad,isnull(d.provincia, ' ') as provincia from Colaborador c join Direccion d on d.id_direccion = c.idDireccion  WHERE nombre LIKE @nombre AND apellido LIKE @apellido AND c.borradoLogico = 0";
+                        command.CommandText = "SELECT legajo, c.nombre, apellido, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento,' ')AS departamento ,isnull(d.localidad,' ') AS localidad,isnull(d.provincia,' ') AS provincia,EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto AS montoSalario FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario WHERE nombre LIKE @nombre AND apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL";
                         command.Parameters.AddWithValue("@nombre", '%' + nombre + '%');
                         command.Parameters.AddWithValue("@apellido", '%' + apellido + '%');
                     }
                     else
                     {
-                        command.CommandText = "SELECT legajo, nombre, apellido, mail,CONVERT(varchar,fechaNacimiento, 103) as fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento,' ')as departamento ,isnull(d.localidad,' ') as localidad,isnull(d.provincia,' ') as provincia from Colaborador c join Direccion d on d.id_direccion = c.idDireccion  WHERE legajo = @legajo AND c.borradoLogico = 0";
+                        command.CommandText = "SELECT legajo, c.nombre, apellido, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, d.piso,isnull(d.departamento,' ')AS departamento ,isnull(d.localidad,' ') AS localidad,isnull(d.provincia,' ') AS provincia,EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto AS montoSalario FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario WHERE legajo = @legajo AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL";
                         command.Parameters.AddWithValue("@legajo", legajo);
                     }
                     
@@ -351,7 +351,25 @@ namespace DataAccess
                                                     var HistorialSalarioEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
                                                     if (HistorialSalarioEliminado != 0)
                                                     {
-                                                        return 1;
+                                                        using (var command5 = new SqlCommand())
+                                                        {
+
+                                                            command5.Connection = connection;
+                                                            command5.CommandText = "UPDATE ColaboradorMultimedia SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                                                            command5.Parameters.AddWithValue("@legajo", legajo);
+                                                            command5.CommandType = CommandType.Text;
+                                                            var ColaboradorMultimediaEliminado = command5.EndExecuteNonQuery(command5.BeginExecuteNonQuery());
+                                                            if (HistorialSalarioEliminado != 0)
+                                                            {
+                                                                return 1;
+                                                            }
+                                                            else
+                                                            {
+                                                                return 0;
+                                                            }
+
+
+                                                        }
                                                     }
                                                     else
                                                     {

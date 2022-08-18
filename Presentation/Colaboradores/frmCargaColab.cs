@@ -38,7 +38,7 @@ namespace Presentation.Colaboradores
                                 {
                                     ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                     var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), int.Parse(txtCuit.Text), txtCalle.Text, int.Parse(txtNroCalle.Text));
-
+                                    agregarArchivoColaborador(colaboradorModelo);
 
 
                                     

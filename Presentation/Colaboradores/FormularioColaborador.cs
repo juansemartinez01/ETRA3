@@ -37,7 +37,7 @@ namespace Presentation
                 }
                 else
                 {
-                    msgError("Error: Debe ingresar al menos un parámetro");
+                    msgError("Error: Debe ingresar al menos un parámetro", true);
                     changeMenu(false);
                     return;
                 }
@@ -45,7 +45,7 @@ namespace Presentation
             
             if (colaborador.Rows.Count == 0) 
             {
-                msgError("Error: No se encontraron colaboradores con esos parametros.");
+                msgError("Error: No se encontraron colaboradores con esos parametros.",true);
                 changeMenu(false);
 
             }
@@ -53,7 +53,7 @@ namespace Presentation
             {
 
                 //datosPersonalesToolStripMenuItem.BackColor = Color.FromArgb(250, 166, 26);
-
+                msgError("", false);
                 openChildFormInPanel(new frmDatosPersonales(colaborador));
             }
 
@@ -107,10 +107,10 @@ namespace Presentation
         {
             openChildFormInPanel(new frmHistorial(colaborador.Rows[0]["legajo"].ToString()));
         }
-        private void msgError(string msg)
+        private void msgError(string msg, bool esVisible)
         {
             lblError.Text = "      " + msg;
-            lblError.Visible = true;
+            lblError.Visible = esVisible;
         }
         private void changeMenu(bool value)
         {

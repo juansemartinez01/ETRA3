@@ -39,11 +39,11 @@ namespace Presentation.Colaboradores
             }
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
-            txttipoEvento.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
-            txtfechaInicio.Text = filaSeleccionada.Cells["fechaInicio"].Value.ToString();
-            txtfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
-            txtfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
-            txtdescripcion.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
+            txttipoEvento.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
+            txtfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
+            txtfechaFin.Text = filaSeleccionada.Cells["Fecha Fin"].Value.ToString();
+            txtfechaRegistro.Text = filaSeleccionada.Cells["Fecha de registro"].Value.ToString();
+            txtdescripcion.Text = filaSeleccionada.Cells["Descripcion"].Value.ToString();
 
         }
     }

@@ -29,7 +29,7 @@ namespace Presentation.Colaboradores
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblmontoSalario1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,16 +54,19 @@ namespace Presentation.Colaboradores
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblNomJefe = new System.Windows.Forms.Label();
             this.lblLegJefe = new System.Windows.Forms.Label();
+            this.lblmontoSalario = new System.Windows.Forms.Label();
+            this.lblnombreEstado = new System.Windows.Forms.Label();
+            this.lblnombreCargo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblmontoSalario1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Salario: $";
+            this.lblmontoSalario1.AutoSize = true;
+            this.lblmontoSalario1.Location = new System.Drawing.Point(40, 57);
+            this.lblmontoSalario1.Name = "lblmontoSalario1";
+            this.lblmontoSalario1.Size = new System.Drawing.Size(62, 17);
+            this.lblmontoSalario1.TabIndex = 0;
+            this.lblmontoSalario1.Text = "Salario: $";
             // 
             // label2
             // 
@@ -273,12 +276,42 @@ namespace Presentation.Colaboradores
             this.lblLegJefe.Size = new System.Drawing.Size(0, 17);
             this.lblLegJefe.TabIndex = 84;
             // 
+            // lblmontoSalario
+            // 
+            this.lblmontoSalario.AutoSize = true;
+            this.lblmontoSalario.Location = new System.Drawing.Point(114, 57);
+            this.lblmontoSalario.Name = "lblmontoSalario";
+            this.lblmontoSalario.Size = new System.Drawing.Size(45, 17);
+            this.lblmontoSalario.TabIndex = 85;
+            this.lblmontoSalario.Text = "label1";
+            // 
+            // lblnombreEstado
+            // 
+            this.lblnombreEstado.AutoSize = true;
+            this.lblnombreEstado.Location = new System.Drawing.Point(333, 57);
+            this.lblnombreEstado.Name = "lblnombreEstado";
+            this.lblnombreEstado.Size = new System.Drawing.Size(45, 17);
+            this.lblnombreEstado.TabIndex = 86;
+            this.lblnombreEstado.Text = "label1";
+            // 
+            // lblnombreCargo
+            // 
+            this.lblnombreCargo.AutoSize = true;
+            this.lblnombreCargo.Location = new System.Drawing.Point(99, 350);
+            this.lblnombreCargo.Name = "lblnombreCargo";
+            this.lblnombreCargo.Size = new System.Drawing.Size(45, 17);
+            this.lblnombreCargo.TabIndex = 87;
+            this.lblnombreCargo.Text = "label1";
+            // 
             // frmDatosGrales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 510);
+            this.Controls.Add(this.lblnombreCargo);
+            this.Controls.Add(this.lblnombreEstado);
+            this.Controls.Add(this.lblmontoSalario);
             this.Controls.Add(this.lblLegJefe);
             this.Controls.Add(this.lblNomJefe);
             this.Controls.Add(this.lblPuesto);
@@ -303,7 +336,7 @@ namespace Presentation.Colaboradores
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblmontoSalario1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "frmDatosGrales";
             this.Text = "frmDatosGrales";
@@ -314,7 +347,7 @@ namespace Presentation.Colaboradores
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblmontoSalario1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -339,5 +372,8 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.Label lblNomJefe;
         private System.Windows.Forms.Label lblLegJefe;
+        private System.Windows.Forms.Label lblmontoSalario;
+        private System.Windows.Forms.Label lblnombreEstado;
+        private System.Windows.Forms.Label lblnombreCargo;
     }
 }
