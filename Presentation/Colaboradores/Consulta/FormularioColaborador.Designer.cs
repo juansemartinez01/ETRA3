@@ -38,13 +38,14 @@ namespace Presentation
             this.lblLegajo = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.datosPersonalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.datosGeneralesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFormulario = new System.Windows.Forms.Panel();
+            this.pnlBotones = new System.Windows.Forms.Panel();
+            this.btnHistorial = new FontAwesome.Sharp.IconButton();
+            this.btnDatosGenerales = new FontAwesome.Sharp.IconButton();
+            this.btnDatosPersonales = new FontAwesome.Sharp.IconButton();
             this.pnlBuscar.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.pnlFormulario.SuspendLayout();
+            this.pnlBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBuscar
@@ -57,12 +58,11 @@ namespace Presentation
             this.pnlBuscar.Controls.Add(this.lblLegajo);
             this.pnlBuscar.Controls.Add(this.txtApellido);
             this.pnlBuscar.Controls.Add(this.lblApellido);
-            this.pnlBuscar.Controls.Add(this.menuStrip1);
             this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(800, 135);
+            this.pnlBuscar.Size = new System.Drawing.Size(800, 104);
             this.pnlBuscar.TabIndex = 2;
             // 
             // lblError
@@ -83,7 +83,7 @@ namespace Presentation
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(713, 54);
+            this.btnBuscar.Location = new System.Drawing.Point(713, 12);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 13;
@@ -105,6 +105,7 @@ namespace Presentation
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 22);
             this.txtNombre.TabIndex = 8;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblNombre
             // 
@@ -130,6 +131,7 @@ namespace Presentation
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 22);
             this.txtApellido.TabIndex = 9;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblApellido
             // 
@@ -140,49 +142,79 @@ namespace Presentation
             this.lblApellido.TabIndex = 10;
             this.lblApellido.Text = "Apellido:";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.datosPersonalesToolStripMenuItem,
-            this.datosGeneralesToolStripMenuItem,
-            this.historialToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 110);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // datosPersonalesToolStripMenuItem
-            // 
-            this.datosPersonalesToolStripMenuItem.Name = "datosPersonalesToolStripMenuItem";
-            this.datosPersonalesToolStripMenuItem.Size = new System.Drawing.Size(121, 21);
-            this.datosPersonalesToolStripMenuItem.Text = "Datos Personales";
-            this.datosPersonalesToolStripMenuItem.Click += new System.EventHandler(this.datosPersonalesToolStripMenuItem_Click);
-            // 
-            // datosGeneralesToolStripMenuItem
-            // 
-            this.datosGeneralesToolStripMenuItem.Name = "datosGeneralesToolStripMenuItem";
-            this.datosGeneralesToolStripMenuItem.Size = new System.Drawing.Size(119, 21);
-            this.datosGeneralesToolStripMenuItem.Text = "Datos Generales";
-            this.datosGeneralesToolStripMenuItem.Click += new System.EventHandler(this.datosGeneralesToolStripMenuItem_Click);
-            // 
-            // historialToolStripMenuItem
-            // 
-            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(67, 21);
-            this.historialToolStripMenuItem.Text = "Historial";
-            this.historialToolStripMenuItem.Click += new System.EventHandler(this.historialToolStripMenuItem_Click);
-            // 
             // pnlFormulario
             // 
+            this.pnlFormulario.Controls.Add(this.pnlBotones);
             this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormulario.Location = new System.Drawing.Point(0, 135);
+            this.pnlFormulario.Location = new System.Drawing.Point(0, 104);
             this.pnlFormulario.Name = "pnlFormulario";
-            this.pnlFormulario.Size = new System.Drawing.Size(800, 450);
+            this.pnlFormulario.Size = new System.Drawing.Size(800, 481);
             this.pnlFormulario.TabIndex = 3;
+            // 
+            // pnlBotones
+            // 
+            this.pnlBotones.Controls.Add(this.btnHistorial);
+            this.pnlBotones.Controls.Add(this.btnDatosGenerales);
+            this.pnlBotones.Controls.Add(this.btnDatosPersonales);
+            this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBotones.Location = new System.Drawing.Point(0, 0);
+            this.pnlBotones.Name = "pnlBotones";
+            this.pnlBotones.Size = new System.Drawing.Size(800, 39);
+            this.pnlBotones.TabIndex = 0;
+            // 
+            // btnHistorial
+            // 
+            this.btnHistorial.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHistorial.FlatAppearance.BorderSize = 0;
+            this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorial.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHistorial.ForeColor = System.Drawing.Color.Black;
+            this.btnHistorial.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnHistorial.IconColor = System.Drawing.Color.Black;
+            this.btnHistorial.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistorial.Location = new System.Drawing.Point(562, 3);
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.Size = new System.Drawing.Size(183, 30);
+            this.btnHistorial.TabIndex = 1;
+            this.btnHistorial.Text = "Historial";
+            this.btnHistorial.UseVisualStyleBackColor = true;
+            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
+            // 
+            // btnDatosGenerales
+            // 
+            this.btnDatosGenerales.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDatosGenerales.FlatAppearance.BorderSize = 0;
+            this.btnDatosGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatosGenerales.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDatosGenerales.ForeColor = System.Drawing.Color.Black;
+            this.btnDatosGenerales.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDatosGenerales.IconColor = System.Drawing.Color.Black;
+            this.btnDatosGenerales.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDatosGenerales.Location = new System.Drawing.Point(299, 3);
+            this.btnDatosGenerales.Name = "btnDatosGenerales";
+            this.btnDatosGenerales.Size = new System.Drawing.Size(183, 30);
+            this.btnDatosGenerales.TabIndex = 1;
+            this.btnDatosGenerales.Text = "Datos Generales";
+            this.btnDatosGenerales.UseVisualStyleBackColor = true;
+            this.btnDatosGenerales.Click += new System.EventHandler(this.btnDatosGenerales_Click);
+            // 
+            // btnDatosPersonales
+            // 
+            this.btnDatosPersonales.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDatosPersonales.FlatAppearance.BorderSize = 0;
+            this.btnDatosPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDatosPersonales.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDatosPersonales.ForeColor = System.Drawing.Color.Black;
+            this.btnDatosPersonales.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnDatosPersonales.IconColor = System.Drawing.Color.Black;
+            this.btnDatosPersonales.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDatosPersonales.Location = new System.Drawing.Point(12, 3);
+            this.btnDatosPersonales.Name = "btnDatosPersonales";
+            this.btnDatosPersonales.Size = new System.Drawing.Size(183, 30);
+            this.btnDatosPersonales.TabIndex = 0;
+            this.btnDatosPersonales.Text = "Datos Personales";
+            this.btnDatosPersonales.UseVisualStyleBackColor = true;
+            this.btnDatosPersonales.Click += new System.EventHandler(this.btnDatosPersonales_Click);
             // 
             // FormularioColaborador
             // 
@@ -191,13 +223,12 @@ namespace Presentation
             this.Controls.Add(this.pnlFormulario);
             this.Controls.Add(this.pnlBuscar);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormularioColaborador";
             this.Text = "FormularioColaborador";
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.pnlFormulario.ResumeLayout(false);
+            this.pnlBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -211,11 +242,11 @@ namespace Presentation
         private System.Windows.Forms.Label lblLegajo;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem datosPersonalesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem datosGeneralesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historialToolStripMenuItem;
         private System.Windows.Forms.Panel pnlFormulario;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Panel pnlBotones;
+        private FontAwesome.Sharp.IconButton btnDatosPersonales;
+        private FontAwesome.Sharp.IconButton btnHistorial;
+        private FontAwesome.Sharp.IconButton btnDatosGenerales;
     }
 }

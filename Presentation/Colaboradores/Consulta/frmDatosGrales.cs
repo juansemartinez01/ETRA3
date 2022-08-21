@@ -13,7 +13,7 @@ namespace Presentation.Colaboradores
         public frmDatosGrales(DataTable colaborador)
         {
             InitializeComponent();
-            completarLabels(this, colaborador);
+            completarLabels(this, colaborador, "lbl");
         }
 
         

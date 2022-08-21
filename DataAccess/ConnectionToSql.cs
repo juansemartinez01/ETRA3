@@ -8,7 +8,7 @@ namespace DataAccess
 
         public ConnectionToSql()
         {
-            connectionString = "Server = DESKTOP-GFG0RPB\\SQLEXPRESS;DataBase= ETRA;integrated security= true";
+            connectionString = "Server = DESKTOP-LDGCSE9\\SQLEXPRESS;DataBase= ETRA;integrated security= true";
         }
         protected SqlConnection GetConnection()
         {

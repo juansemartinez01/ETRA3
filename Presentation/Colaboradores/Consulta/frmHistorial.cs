@@ -12,6 +12,7 @@ namespace Presentation.Colaboradores
     public partial class frmHistorial : frmHijo
     {
         Eventos obje = new Eventos();
+        DataTable historial;
         public frmHistorial(string legajo)
         {
             InitializeComponent();
@@ -22,8 +23,9 @@ namespace Presentation.Colaboradores
         {
             try
             {
-                DataTable tabla = obje.obtenerEventos(legajo);
-                dgvEventos.DataSource = tabla;
+                historial = obje.obtenerEventos(legajo);
+                dgvEventos.DataSource = historial;
+                
             }
             catch (Exception ex)
             {
@@ -39,11 +41,12 @@ namespace Presentation.Colaboradores
             }
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
-            txttipoEvento.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
+            //completarLabels(this, historial, "txt");
+            txtnombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
             txtfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
             txtfechaFin.Text = filaSeleccionada.Cells["Fecha Fin"].Value.ToString();
             txtfechaRegistro.Text = filaSeleccionada.Cells["Fecha de registro"].Value.ToString();
-            txtdescripcion.Text = filaSeleccionada.Cells["Descripcion"].Value.ToString();
+            txtdescripcion.Text = filaSeleccionada.Cells["Descripción"].Value.ToString();
 
         }
     }

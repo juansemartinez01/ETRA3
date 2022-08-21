@@ -39,7 +39,7 @@ namespace Presentation.Colaboradores
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txttipoEvento = new System.Windows.Forms.TextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
             this.txtfechaInicio = new System.Windows.Forms.TextBox();
             this.txtfechaFin = new System.Windows.Forms.TextBox();
             this.txtfechaRegistro = new System.Windows.Forms.TextBox();
@@ -51,10 +51,10 @@ namespace Presentation.Colaboradores
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(264, 32);
+            this.label1.Size = new System.Drawing.Size(235, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Historial de Eventos";
             // 
@@ -139,12 +139,12 @@ namespace Presentation.Colaboradores
             this.label7.TabIndex = 11;
             this.label7.Text = "Descripción:";
             // 
-            // txttipoEvento
+            // txtnombre
             // 
-            this.txttipoEvento.Location = new System.Drawing.Point(146, 67);
-            this.txttipoEvento.Name = "txttipoEvento";
-            this.txttipoEvento.Size = new System.Drawing.Size(153, 22);
-            this.txttipoEvento.TabIndex = 12;
+            this.txtnombre.Location = new System.Drawing.Point(146, 67);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(153, 22);
+            this.txtnombre.TabIndex = 12;
             // 
             // txtfechaInicio
             // 
@@ -178,12 +178,15 @@ namespace Presentation.Colaboradores
             // 
             // dgvEventos
             // 
+            this.dgvEventos.AllowUserToOrderColumns = true;
             this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEventos.Location = new System.Drawing.Point(364, 67);
             this.dgvEventos.Name = "dgvEventos";
+            this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowTemplate.Height = 25;
             this.dgvEventos.Size = new System.Drawing.Size(424, 316);
             this.dgvEventos.TabIndex = 18;
@@ -199,7 +202,7 @@ namespace Presentation.Colaboradores
             this.Controls.Add(this.txtfechaRegistro);
             this.Controls.Add(this.txtfechaFin);
             this.Controls.Add(this.txtfechaInicio);
-            this.Controls.Add(this.txttipoEvento);
+            this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
@@ -231,7 +234,7 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txttipoEvento;
+        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.TextBox txtfechaInicio;
         private System.Windows.Forms.TextBox txtfechaFin;
         private System.Windows.Forms.TextBox txtfechaRegistro;

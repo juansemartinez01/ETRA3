@@ -18,11 +18,7 @@ namespace Presentation
         public frmDatosPersonales(DataTable colaborador )
         {
             InitializeComponent();
-            
-
-            completarLabels(this, colaborador);
-            
-
+            completarLabels(this, colaborador, "lbl");
 
             var Lista = new List<DocumentosColaborador>();
             Lista = documentoColaborador.filtroDocumentosColaborador(5, (int)colaborador.Rows[0]["legajo"]);
@@ -56,12 +52,7 @@ namespace Presentation
 
                 
         }
-        public frmDatosPersonales()
-        {
-            InitializeComponent();
-
-
-        }
+        
         private void bttnEliminarColaborador_Click(object sender, EventArgs e)
         {
             string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lbllegajo.Text));

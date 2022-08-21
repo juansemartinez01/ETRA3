@@ -35,6 +35,7 @@ namespace Presentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(718, 522);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

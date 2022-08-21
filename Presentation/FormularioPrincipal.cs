@@ -86,6 +86,8 @@ namespace Presentation
         }
 
 
+
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
 
@@ -106,6 +108,11 @@ namespace Presentation
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new frmInicio());
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmEventos());
         }
     }
 }

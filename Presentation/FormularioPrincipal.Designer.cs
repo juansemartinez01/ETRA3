@@ -38,6 +38,7 @@ namespace Presentation
             this.btnColaboradores = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.btnEventos = new System.Windows.Forms.Button();
             this.pnlSideMenu.SuspendLayout();
             this.pnlColaboradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,19 +55,20 @@ namespace Presentation
             this.pnlSideMenu.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(200, 705);
+            this.pnlSideMenu.Size = new System.Drawing.Size(200, 661);
             this.pnlSideMenu.TabIndex = 1;
             // 
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlColaboradores.Controls.Add(this.btnEventos);
             this.pnlColaboradores.Controls.Add(this.button4);
             this.pnlColaboradores.Controls.Add(this.btnAgregarColab);
             this.pnlColaboradores.Controls.Add(this.btnConsultar);
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 102);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 134);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 181);
             this.pnlColaboradores.TabIndex = 2;
             // 
             // button4
@@ -149,23 +151,41 @@ namespace Presentation
             // 
             // pnlChildForm
             // 
+            this.pnlChildForm.AutoScroll = true;
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
             this.pnlChildForm.MinimumSize = new System.Drawing.Size(800, 471);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(834, 705);
+            this.pnlChildForm.Size = new System.Drawing.Size(934, 661);
             this.pnlChildForm.TabIndex = 2;
+            // 
+            // btnEventos
+            // 
+            this.btnEventos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEventos.FlatAppearance.BorderSize = 0;
+            this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEventos.ForeColor = System.Drawing.Color.White;
+            this.btnEventos.Location = new System.Drawing.Point(0, 126);
+            this.btnEventos.Name = "btnEventos";
+            this.btnEventos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnEventos.Size = new System.Drawing.Size(200, 42);
+            this.btnEventos.TabIndex = 3;
+            this.btnEventos.Text = "Eventos";
+            this.btnEventos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEventos.UseVisualStyleBackColor = true;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
             // FormularioPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 705);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1134, 661);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.pnlSideMenu);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1050, 567);
+            this.MinimumSize = new System.Drawing.Size(1150, 700);
             this.Name = "FormularioPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormularioPrincipal_FormClosing);
@@ -185,6 +205,7 @@ namespace Presentation
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnColaboradores;
         private System.Windows.Forms.Panel pnlChildForm;
+        private System.Windows.Forms.Button btnEventos;
     }
 }
 

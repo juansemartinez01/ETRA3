@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Domain;
+using FontAwesome.Sharp;
 using Presentation.Colaboradores;
 
 namespace Presentation
@@ -13,11 +14,42 @@ namespace Presentation
     public partial class FormularioColaborador : frmHijo
     {
         public DataTable colaborador = new DataTable();
+        private IconButton botonSeleccionado;
+        private Panel bordeInferior;
+
         public FormularioColaborador()
         {
             InitializeComponent();
-            changeMenu(false);
+            bordeInferior = new Panel();
+            bordeInferior.Size = new Size(183, 2);
+            pnlBotones.Controls.Add(bordeInferior);
+            pnlBotones.Enabled = false;
+        }
 
+        private void ActivateButton(object button)
+        {
+            if (button != null)
+            {
+                DisableButton();
+                botonSeleccionado = (IconButton)button;
+                botonSeleccionado.ForeColor = Color.FromArgb(250, 166, 26);
+                botonSeleccionado.Font = new Font(botonSeleccionado.Font.Name, botonSeleccionado.Font.Size, FontStyle.Bold);
+                //botonSeleccionado.IconColor = Color.Red;
+
+                bordeInferior.BackColor = Color.FromArgb(250, 166, 26);
+                bordeInferior.Location = new Point(botonSeleccionado.Location.X, 28);
+                bordeInferior.Visible = true;
+                bordeInferior.BringToFront();
+            }
+        }
+        private void DisableButton()
+        {
+            if (botonSeleccionado != null)
+            {
+                botonSeleccionado.ForeColor = Color.Black;
+                botonSeleccionado.Font = new Font(botonSeleccionado.Font.Name, botonSeleccionado.Font.Size, FontStyle.Regular);
+
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -38,7 +70,7 @@ namespace Presentation
                 else
                 {
                     msgError("Error: Debe ingresar al menos un parámetro", true);
-                    changeMenu(false);
+                    //changeMenu(false);
                     return;
                 }
             }
@@ -46,7 +78,7 @@ namespace Presentation
             if (colaborador.Rows.Count == 0) 
             {
                 msgError("Error: No se encontraron colaboradores con esos parametros.",true);
-                changeMenu(false);
+                //changeMenu(false);
 
             }
             else
@@ -54,7 +86,9 @@ namespace Presentation
 
                 //datosPersonalesToolStripMenuItem.BackColor = Color.FromArgb(250, 166, 26);
                 msgError("", false);
-                openChildFormInPanel(new frmDatosPersonales(colaborador));
+                pnlBotones.Enabled = true;
+                btnDatosPersonales_Click(btnDatosPersonales, e);
+                
             }
 
         }
@@ -65,12 +99,20 @@ namespace Presentation
                 (e.KeyChar != '.'))
             {
                 e.Handled = true;
+                
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnBuscar_Click(sender, e);
             }
 
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+        }
+
+        private void enter_keyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                e.Handled = true;
+                btnBuscar_Click(sender, e);
             }
         }
         private Form activeForm = null;
@@ -88,37 +130,40 @@ namespace Presentation
             pnlFormulario.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            changeMenu(true);
+            //changeMenu(true);
         }
 
-        private void datosPersonalesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Abrir formulario de datos Personales
-            openChildFormInPanel(new frmDatosPersonales(colaborador));
-
-        }
-
-        private void datosGeneralesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildFormInPanel(new frmDatosGrales(colaborador));
-        }
-
-        private void historialToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildFormInPanel(new frmHistorial(colaborador.Rows[0]["legajo"].ToString()));
-        }
+        
         private void msgError(string msg, bool esVisible)
         {
             lblError.Text = "      " + msg;
             lblError.Visible = esVisible;
         }
-        private void changeMenu(bool value)
+
+        private void btnDatosPersonales_Click(object sender, EventArgs e)
         {
-            datosPersonalesToolStripMenuItem.Enabled = value;
-            datosGeneralesToolStripMenuItem.Enabled = value;
-            historialToolStripMenuItem.Enabled = value;
-            this.pnlFormulario.Visible = value;
+            ActivateButton(sender);
+            openChildFormInPanel(new frmDatosPersonales(colaborador));
         }
-        
+
+        private void btnDatosGenerales_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmDatosGrales(colaborador));
+        }
+
+        private void btnHistorial_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmHistorial(colaborador.Rows[0]["legajo"].ToString()));
+        }
+        //private void changeMenu(bool value)
+        //{
+        //    datosPersonalesToolStripMenuItem.Enabled = value;
+        //    datosGeneralesToolStripMenuItem.Enabled = value;
+        //    historialToolStripMenuItem.Enabled = value;
+        //    this.pnlFormulario.Visible = value;
+        //}
+
     }
 }

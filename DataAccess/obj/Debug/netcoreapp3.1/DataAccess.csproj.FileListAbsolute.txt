@@ -44,3 +44,4 @@ C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.Ass
 C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\usuario\Documents\ETRA\Programa\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig

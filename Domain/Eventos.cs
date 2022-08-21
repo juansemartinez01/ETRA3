@@ -13,5 +13,9 @@ namespace Domain
         {
             return eventosDao.obtenerEventos(legajo);
         }
+        public DataTable getAllEventos()
+        {
+            return eventosDao.getAllEventos();
+        }
     }
 }

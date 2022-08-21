@@ -31,14 +31,12 @@ namespace Presentation.Colaboradores
         {
             this.lblmontoSalario1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.lblSalario = new System.Windows.Forms.Label();
             this.lblObraSocial = new System.Windows.Forms.Label();
             this.lblHoraIngreso = new System.Windows.Forms.Label();
@@ -48,7 +46,6 @@ namespace Presentation.Colaboradores
             this.label16 = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
@@ -57,12 +54,18 @@ namespace Presentation.Colaboradores
             this.lblmontoSalario = new System.Windows.Forms.Label();
             this.lblnombreEstado = new System.Windows.Forms.Label();
             this.lblnombreCargo = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblmontoSalario1
             // 
             this.lblmontoSalario1.AutoSize = true;
-            this.lblmontoSalario1.Location = new System.Drawing.Point(40, 57);
+            this.lblmontoSalario1.Location = new System.Drawing.Point(17, 37);
             this.lblmontoSalario1.Name = "lblmontoSalario1";
             this.lblmontoSalario1.Size = new System.Drawing.Size(62, 17);
             this.lblmontoSalario1.TabIndex = 0;
@@ -71,26 +74,16 @@ namespace Presentation.Colaboradores
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(267, 97);
+            this.label2.Location = new System.Drawing.Point(244, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Obra Social:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(25, 158);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Horario";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 198);
+            this.label4.Location = new System.Drawing.Point(17, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 17);
             this.label4.TabIndex = 3;
@@ -99,7 +92,7 @@ namespace Presentation.Colaboradores
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 242);
+            this.label5.Location = new System.Drawing.Point(17, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 4;
@@ -108,7 +101,7 @@ namespace Presentation.Colaboradores
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(267, 198);
+            this.label6.Location = new System.Drawing.Point(244, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 17);
             this.label6.TabIndex = 5;
@@ -117,7 +110,7 @@ namespace Presentation.Colaboradores
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(267, 242);
+            this.label7.Location = new System.Drawing.Point(244, 79);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 6;
@@ -126,7 +119,7 @@ namespace Presentation.Colaboradores
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(384, 57);
+            this.lblEstado.Location = new System.Drawing.Point(361, 37);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(0, 17);
             this.lblEstado.TabIndex = 59;
@@ -134,26 +127,16 @@ namespace Presentation.Colaboradores
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(267, 57);
+            this.label13.Location = new System.Drawing.Point(244, 37);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(51, 17);
             this.label13.TabIndex = 57;
             this.label13.Text = "Estado:";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(25, 22);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(134, 19);
-            this.label18.TabIndex = 67;
-            this.label18.Text = "Datos Generales";
-            // 
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(141, 57);
+            this.lblSalario.Location = new System.Drawing.Point(118, 37);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(0, 17);
             this.lblSalario.TabIndex = 68;
@@ -161,7 +144,7 @@ namespace Presentation.Colaboradores
             // lblObraSocial
             // 
             this.lblObraSocial.AutoSize = true;
-            this.lblObraSocial.Location = new System.Drawing.Point(384, 97);
+            this.lblObraSocial.Location = new System.Drawing.Point(361, 77);
             this.lblObraSocial.Name = "lblObraSocial";
             this.lblObraSocial.Size = new System.Drawing.Size(0, 17);
             this.lblObraSocial.TabIndex = 69;
@@ -169,7 +152,7 @@ namespace Presentation.Colaboradores
             // lblHoraIngreso
             // 
             this.lblHoraIngreso.AutoSize = true;
-            this.lblHoraIngreso.Location = new System.Drawing.Point(141, 198);
+            this.lblHoraIngreso.Location = new System.Drawing.Point(118, 35);
             this.lblHoraIngreso.Name = "lblHoraIngreso";
             this.lblHoraIngreso.Size = new System.Drawing.Size(0, 17);
             this.lblHoraIngreso.TabIndex = 70;
@@ -177,7 +160,7 @@ namespace Presentation.Colaboradores
             // lblHoraSalida
             // 
             this.lblHoraSalida.AutoSize = true;
-            this.lblHoraSalida.Location = new System.Drawing.Point(141, 242);
+            this.lblHoraSalida.Location = new System.Drawing.Point(118, 79);
             this.lblHoraSalida.Name = "lblHoraSalida";
             this.lblHoraSalida.Size = new System.Drawing.Size(0, 17);
             this.lblHoraSalida.TabIndex = 71;
@@ -185,7 +168,7 @@ namespace Presentation.Colaboradores
             // lblDiaIngreso
             // 
             this.lblDiaIngreso.AutoSize = true;
-            this.lblDiaIngreso.Location = new System.Drawing.Point(384, 198);
+            this.lblDiaIngreso.Location = new System.Drawing.Point(361, 35);
             this.lblDiaIngreso.Name = "lblDiaIngreso";
             this.lblDiaIngreso.Size = new System.Drawing.Size(0, 17);
             this.lblDiaIngreso.TabIndex = 72;
@@ -193,7 +176,7 @@ namespace Presentation.Colaboradores
             // lblDiaSalida
             // 
             this.lblDiaSalida.AutoSize = true;
-            this.lblDiaSalida.Location = new System.Drawing.Point(384, 242);
+            this.lblDiaSalida.Location = new System.Drawing.Point(361, 79);
             this.lblDiaSalida.Name = "lblDiaSalida";
             this.lblDiaSalida.Size = new System.Drawing.Size(0, 17);
             this.lblDiaSalida.TabIndex = 73;
@@ -201,7 +184,7 @@ namespace Presentation.Colaboradores
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(40, 97);
+            this.label16.Location = new System.Drawing.Point(17, 77);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(60, 17);
             this.label16.TabIndex = 75;
@@ -210,7 +193,7 @@ namespace Presentation.Colaboradores
             // lblSucursal
             // 
             this.lblSucursal.AutoSize = true;
-            this.lblSucursal.Location = new System.Drawing.Point(141, 97);
+            this.lblSucursal.Location = new System.Drawing.Point(118, 77);
             this.lblSucursal.Name = "lblSucursal";
             this.lblSucursal.Size = new System.Drawing.Size(0, 17);
             this.lblSucursal.TabIndex = 76;
@@ -218,44 +201,34 @@ namespace Presentation.Colaboradores
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 350);
+            this.label10.Location = new System.Drawing.Point(34, 32);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 17);
             this.label10.TabIndex = 77;
             this.label10.Text = "Puesto:";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(25, 295);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 19);
-            this.label11.TabIndex = 78;
-            this.label11.Text = "Actividad Laboral";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(267, 350);
+            this.label12.Location = new System.Drawing.Point(279, 32);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 17);
+            this.label12.Size = new System.Drawing.Size(137, 17);
             this.label12.TabIndex = 79;
-            this.label12.Text = "Nombre Jefe:";
+            this.label12.Text = "Responsable a Cargo:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(267, 390);
+            this.label15.Location = new System.Drawing.Point(279, 72);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 17);
+            this.label15.Size = new System.Drawing.Size(181, 17);
             this.label15.TabIndex = 81;
-            this.label15.Text = "Legajo Jefe:";
+            this.label15.Text = "Legajo Responsable a Cargo:";
             // 
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(141, 350);
+            this.lblPuesto.Location = new System.Drawing.Point(133, 32);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(0, 17);
             this.lblPuesto.TabIndex = 82;
@@ -263,7 +236,7 @@ namespace Presentation.Colaboradores
             // lblNomJefe
             // 
             this.lblNomJefe.AutoSize = true;
-            this.lblNomJefe.Location = new System.Drawing.Point(384, 350);
+            this.lblNomJefe.Location = new System.Drawing.Point(422, 32);
             this.lblNomJefe.Name = "lblNomJefe";
             this.lblNomJefe.Size = new System.Drawing.Size(0, 17);
             this.lblNomJefe.TabIndex = 83;
@@ -271,7 +244,7 @@ namespace Presentation.Colaboradores
             // lblLegJefe
             // 
             this.lblLegJefe.AutoSize = true;
-            this.lblLegJefe.Location = new System.Drawing.Point(384, 390);
+            this.lblLegJefe.Location = new System.Drawing.Point(482, 72);
             this.lblLegJefe.Name = "lblLegJefe";
             this.lblLegJefe.Size = new System.Drawing.Size(0, 17);
             this.lblLegJefe.TabIndex = 84;
@@ -279,7 +252,7 @@ namespace Presentation.Colaboradores
             // lblmontoSalario
             // 
             this.lblmontoSalario.AutoSize = true;
-            this.lblmontoSalario.Location = new System.Drawing.Point(114, 57);
+            this.lblmontoSalario.Location = new System.Drawing.Point(91, 37);
             this.lblmontoSalario.Name = "lblmontoSalario";
             this.lblmontoSalario.Size = new System.Drawing.Size(45, 17);
             this.lblmontoSalario.TabIndex = 85;
@@ -288,7 +261,7 @@ namespace Presentation.Colaboradores
             // lblnombreEstado
             // 
             this.lblnombreEstado.AutoSize = true;
-            this.lblnombreEstado.Location = new System.Drawing.Point(333, 57);
+            this.lblnombreEstado.Location = new System.Drawing.Point(310, 37);
             this.lblnombreEstado.Name = "lblnombreEstado";
             this.lblnombreEstado.Size = new System.Drawing.Size(45, 17);
             this.lblnombreEstado.TabIndex = 86;
@@ -297,51 +270,89 @@ namespace Presentation.Colaboradores
             // lblnombreCargo
             // 
             this.lblnombreCargo.AutoSize = true;
-            this.lblnombreCargo.Location = new System.Drawing.Point(99, 350);
+            this.lblnombreCargo.Location = new System.Drawing.Point(91, 32);
             this.lblnombreCargo.Name = "lblnombreCargo";
             this.lblnombreCargo.Size = new System.Drawing.Size(45, 17);
             this.lblnombreCargo.TabIndex = 87;
             this.lblnombreCargo.Text = "label1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.lblmontoSalario1);
+            this.groupBox1.Controls.Add(this.lblnombreEstado);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.lblmontoSalario);
+            this.groupBox1.Controls.Add(this.lblEstado);
+            this.groupBox1.Controls.Add(this.lblSalario);
+            this.groupBox1.Controls.Add(this.lblObraSocial);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.lblSucursal);
+            this.groupBox1.Location = new System.Drawing.Point(25, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(763, 161);
+            this.groupBox1.TabIndex = 88;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "GENERALES";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.lblHoraIngreso);
+            this.groupBox2.Controls.Add(this.lblHoraSalida);
+            this.groupBox2.Controls.Add(this.lblDiaIngreso);
+            this.groupBox2.Controls.Add(this.lblDiaSalida);
+            this.groupBox2.Location = new System.Drawing.Point(25, 184);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(763, 142);
+            this.groupBox2.TabIndex = 89;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "HORARIO";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.lblnombreCargo);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.lblLegJefe);
+            this.groupBox3.Controls.Add(this.lblPuesto);
+            this.groupBox3.Controls.Add(this.lblNomJefe);
+            this.groupBox3.Location = new System.Drawing.Point(25, 350);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(763, 117);
+            this.groupBox3.TabIndex = 90;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ACTIVIDAD LABORAL";
             // 
             // frmDatosGrales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 510);
-            this.Controls.Add(this.lblnombreCargo);
-            this.Controls.Add(this.lblnombreEstado);
-            this.Controls.Add(this.lblmontoSalario);
-            this.Controls.Add(this.lblLegJefe);
-            this.Controls.Add(this.lblNomJefe);
-            this.Controls.Add(this.lblPuesto);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.lblSucursal);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.lblDiaSalida);
-            this.Controls.Add(this.lblDiaIngreso);
-            this.Controls.Add(this.lblHoraSalida);
-            this.Controls.Add(this.lblHoraIngreso);
-            this.Controls.Add(this.lblObraSocial);
-            this.Controls.Add(this.lblSalario);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblmontoSalario1);
+            this.ClientSize = new System.Drawing.Size(800, 674);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "frmDatosGrales";
             this.Text = "frmDatosGrales";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -349,14 +360,12 @@ namespace Presentation.Colaboradores
 
         private System.Windows.Forms.Label lblmontoSalario1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblSalario;
         private System.Windows.Forms.Label lblObraSocial;
         private System.Windows.Forms.Label lblHoraIngreso;
@@ -366,7 +375,6 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblPuesto;
@@ -375,5 +383,8 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.Label lblmontoSalario;
         private System.Windows.Forms.Label lblnombreEstado;
         private System.Windows.Forms.Label lblnombreCargo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
