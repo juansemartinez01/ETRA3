@@ -45,5 +45,84 @@ namespace DataAccess
                 }
             }
         }
+        public string InsertarEvento(int idTipoEvento,int legajoColaborador)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command2 = new SqlCommand())
+                {
+                    command2.Connection = connection;
+                    command2.CommandText = "INSERT INTO Evento VALUES (NULL,@idTipoEvento,0)";
+                    command2.CommandType = CommandType.Text;
+                    command2.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
+                    
+
+                    int resultado = command2.ExecuteNonQuery();
+                    if(resultado == 1)
+                    {
+                        
+                            
+                            using (var command = new SqlCommand())
+                            {
+                                int idEvento = int.Parse(BuscarIdUltimoEvento());
+                                command.Connection = connection;
+                                command.CommandText = "INSERT INTO HistorialEvento VALUES (@idEvento,GETDATE(),GETDATE(),GETDATE(),@legajoColaborador,0)";
+                                command.CommandType = CommandType.Text;
+                                command.Parameters.AddWithValue("@idEvento", idEvento);
+                                command.Parameters.AddWithValue("@legajoColaborador", legajoColaborador);
+
+                                command.ExecuteNonQuery();
+                                return "Evento creado con exito.";
+
+
+
+                            }
+                            
+                        
+                            
+;                        
+                        
+                    }
+                    else { 
+                        return "Error al crear el evento"; 
+                    }
+
+
+
+                }
+            }
+        }
+        public string BuscarIdUltimoEvento()
+        {
+
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+
+                    command.Connection = connection;
+                    command.CommandText = "SELECT MAX(id_evento) FROM Evento WHERE borradoLogico = 0";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            IDataRecord idEvento = (IDataRecord)reader;
+                            return "" + idEvento[0] + "";
+                        }
+                        return "Error con la base de datos";
+
+                    }
+                    else
+                    {
+                        return "Error con la base de datos";
+                    }
+                }
+            }
+        }
     }
 }

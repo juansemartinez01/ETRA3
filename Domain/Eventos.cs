@@ -17,5 +17,9 @@ namespace Domain
         {
             return eventosDao.getAllEventos();
         }
+        public string InsertarEventos(int tipoEvento,int legajoColaborador)
+        {
+            return eventosDao.InsertarEvento(tipoEvento,legajoColaborador);
+        }
     }
 }

@@ -35,20 +35,20 @@ namespace Presentation.Colaboradores
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbTipoEvento = new System.Windows.Forms.ComboBox();
+            this.cmbColaboradores = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btnAplicar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cmbColaboradores2 = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbTipoEvento2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -67,7 +67,7 @@ namespace Presentation.Colaboradores
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowTemplate.Height = 25;
-            this.dgvEventos.Size = new System.Drawing.Size(836, 317);
+            this.dgvEventos.Size = new System.Drawing.Size(836, 301);
             this.dgvEventos.TabIndex = 0;
             // 
             // label1
@@ -118,21 +118,21 @@ namespace Presentation.Colaboradores
             this.label6.TabIndex = 6;
             this.label6.Text = "Colaboradores";
             // 
-            // comboBox1
+            // cmbTipoEvento
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 25);
-            this.comboBox1.TabIndex = 7;
+            this.cmbTipoEvento.FormattingEnabled = true;
+            this.cmbTipoEvento.Location = new System.Drawing.Point(152, 15);
+            this.cmbTipoEvento.Name = "cmbTipoEvento";
+            this.cmbTipoEvento.Size = new System.Drawing.Size(121, 25);
+            this.cmbTipoEvento.TabIndex = 7;
             // 
-            // comboBox2
+            // cmbColaboradores
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(152, 54);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 25);
-            this.comboBox2.TabIndex = 8;
+            this.cmbColaboradores.FormattingEnabled = true;
+            this.cmbColaboradores.Location = new System.Drawing.Point(152, 54);
+            this.cmbColaboradores.Name = "cmbColaboradores";
+            this.cmbColaboradores.Size = new System.Drawing.Size(121, 25);
+            this.cmbColaboradores.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
@@ -156,6 +156,7 @@ namespace Presentation.Colaboradores
             this.btnAplicar.TabIndex = 11;
             this.btnAplicar.Text = "Aplicar Filtros";
             this.btnAplicar.UseVisualStyleBackColor = true;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // groupBox1
             // 
@@ -168,8 +169,8 @@ namespace Presentation.Colaboradores
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbColaboradores);
+            this.groupBox1.Controls.Add(this.cmbTipoEvento);
             this.groupBox1.Location = new System.Drawing.Point(22, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(836, 85);
@@ -181,29 +182,29 @@ namespace Presentation.Colaboradores
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.comboBox4);
+            this.groupBox2.Controls.Add(this.cmbColaboradores2);
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.cmbTipoEvento2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(22, 482);
+            this.groupBox2.Location = new System.Drawing.Point(22, 466);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(836, 310);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
             // 
-            // comboBox4
+            // cmbColaboradores2
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(27, 197);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(315, 25);
-            this.comboBox4.TabIndex = 15;
-            this.comboBox4.Text = "Colaboradores Afectados";
+            this.cmbColaboradores2.FormattingEnabled = true;
+            this.cmbColaboradores2.Location = new System.Drawing.Point(27, 197);
+            this.cmbColaboradores2.Name = "cmbColaboradores2";
+            this.cmbColaboradores2.Size = new System.Drawing.Size(315, 25);
+            this.cmbColaboradores2.TabIndex = 15;
+            this.cmbColaboradores2.Text = "Colaboradores Afectados";
             // 
             // richTextBox1
             // 
@@ -245,14 +246,14 @@ namespace Presentation.Colaboradores
             this.dateTimePicker3.Size = new System.Drawing.Size(188, 22);
             this.dateTimePicker3.TabIndex = 10;
             // 
-            // comboBox3
+            // cmbTipoEvento2
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(27, 21);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 25);
-            this.comboBox3.TabIndex = 2;
-            this.comboBox3.Text = "Nombre:";
+            this.cmbTipoEvento2.FormattingEnabled = true;
+            this.cmbTipoEvento2.Location = new System.Drawing.Point(27, 21);
+            this.cmbTipoEvento2.Name = "cmbTipoEvento2";
+            this.cmbTipoEvento2.Size = new System.Drawing.Size(121, 25);
+            this.cmbTipoEvento2.TabIndex = 2;
+            this.cmbTipoEvento2.Text = "Nombre:";
             // 
             // button1
             // 
@@ -262,12 +263,13 @@ namespace Presentation.Colaboradores
             this.button1.TabIndex = 0;
             this.button1.Text = " Crear Evento";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 804);
+            this.ClientSize = new System.Drawing.Size(870, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -293,20 +295,20 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbTipoEvento;
+        private System.Windows.Forms.ComboBox cmbColaboradores;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button btnAplicar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cmbColaboradores2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbTipoEvento2;
         private System.Windows.Forms.Button button1;
     }
 }

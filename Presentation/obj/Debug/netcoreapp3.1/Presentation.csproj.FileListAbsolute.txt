@@ -166,3 +166,5 @@ C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.f
 C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\usuario\Documents\ETRA\Programa\Presentation\bin\Debug\netcoreapp3.1\FontAwesome.Sharp.dll
 C:\Users\usuario\Documents\ETRA\Programa\Presentation\obj\Debug\netcoreapp3.1\Presentation.Colaboradores.frmEventos.resources
+C:\Users\juans\Desktop\ETRA2\Presentation\bin\Debug\netcoreapp3.1\FontAwesome.Sharp.dll
+C:\Users\juans\Desktop\ETRA2\Presentation\obj\Debug\netcoreapp3.1\Presentation.Colaboradores.frmEventos.resources

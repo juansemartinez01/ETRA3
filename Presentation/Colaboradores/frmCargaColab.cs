@@ -15,12 +15,25 @@ namespace Presentation.Colaboradores
     {
         DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
         public frmCargaColab()
+
         {
-            InitializeComponent();
             
+            InitializeComponent();
+            openFileDialog1.InitialDirectory = "no seleccionado";
+            LlenarCombo(cmbEstados, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
+            LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
+
+
+        }
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
         }
 
-        
+
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
@@ -36,15 +49,30 @@ namespace Presentation.Colaboradores
                             {
                                 if (txtNroCalle.Text != "")
                                 {
-                                    ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                    var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), int.Parse(txtCuit.Text), txtCalle.Text, int.Parse(txtNroCalle.Text));
-                                    agregarArchivoColaborador(colaboradorModelo);
+
+                                    if (cmbPuesto.SelectedIndex != -1)
+                                    {
+                                        ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
+                                        var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue);
+                                        if (openFileDialog1.InitialDirectory != "no seleccionado")
+                                        {
+
+                                            agregarArchivoColaborador(colaboradorModelo);
+                                        }
+                                        MessageBox.Show(cadenaRespuesta);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Debe asignarle un puesto al colaborador");
+                                    }
+                                    
+                                    
 
 
                                     
                                     
 
-                                    MessageBox.Show(cadenaRespuesta);
+                                    
                                 }
                                 else
                                 {

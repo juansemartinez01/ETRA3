@@ -4,6 +4,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace DataAccess
 {
     public class ColaboradorDao:ConnectionToSql
@@ -37,6 +38,9 @@ namespace DataAccess
                 }
             }
         }
+        
+
+        
         public string BuscarLegajoUltimoColaborador()
         {
             
@@ -156,7 +160,7 @@ namespace DataAccess
                 }
             }
         }
-        public int CrearColaborador(string nombre,string apellido,int dni,int cuit,string calle,int numeroCalle)
+        public int CrearColaborador(string nombre,string apellido,int dni,string cuit,string calle,int numeroCalle, int puesto)
         {
             using (var connection = GetConnection())
             {
@@ -174,7 +178,9 @@ namespace DataAccess
                         using (var command2 = new SqlCommand())
                         {
                             command2.Connection = connection;
-                            command2.CommandText = "INSERT INTO Colaborador (nombre,apellido,idDireccion,fechaIngreso,borradoLogico) VALUES (@nombre,@apellido,(SELECT MAX(id_direccion) FROM Direccion),GETDATE(),0)";
+                            command2.CommandText = "INSERT INTO Colaborador (nombre,apellido,idDireccion,fechaIngreso,borradoLogico,dni,CUIT) VALUES (@nombre,@apellido,(SELECT MAX(id_direccion) FROM Direccion),GETDATE(),0,@dni,@CUIT)";
+                            command2.Parameters.AddWithValue("@dni", dni);
+                            command2.Parameters.AddWithValue("@CUIT", cuit);
                             command2.Parameters.AddWithValue("@nombre", nombre);
                             command2.Parameters.AddWithValue("@apellido", apellido);
                             command2.CommandType = CommandType.Text;
@@ -230,7 +236,8 @@ namespace DataAccess
                                                                 {
 
                                                                     command7.Connection = connection;
-                                                                    command7.CommandText = "INSERT INTO HistorialCargo VALUES (1,GETDATE(),NULL,@legajo,0)";
+                                                                    command7.CommandText = "INSERT INTO HistorialCargo VALUES (@cargo,GETDATE(),NULL,@legajo,0)";
+                                                                    command7.Parameters.AddWithValue("@cargo", puesto);
                                                                     command7.Parameters.AddWithValue("@legajo", legajo);
                                                                     
                                                                     command6.CommandType = CommandType.Text;

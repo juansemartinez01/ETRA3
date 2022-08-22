@@ -65,6 +65,7 @@ namespace Presentation.Colaboradores
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.lblmontoSalario1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -400,6 +401,7 @@ namespace Presentation.Colaboradores
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.cmbPuesto);
             this.groupBox2.Controls.Add(this.lblmontoSalario1);
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.label25);
@@ -424,6 +426,14 @@ namespace Presentation.Colaboradores
             this.groupBox2.TabIndex = 95;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
+            // 
+            // cmbPuesto
+            // 
+            this.cmbPuesto.FormattingEnabled = true;
+            this.cmbPuesto.Location = new System.Drawing.Point(95, 294);
+            this.cmbPuesto.Name = "cmbPuesto";
+            this.cmbPuesto.Size = new System.Drawing.Size(146, 25);
+            this.cmbPuesto.TabIndex = 121;
             // 
             // lblmontoSalario1
             // 
@@ -571,7 +581,7 @@ namespace Presentation.Colaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 1080);
+            this.ClientSize = new System.Drawing.Size(1210, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label14);
@@ -644,5 +654,6 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cmbPuesto;
     }
 }

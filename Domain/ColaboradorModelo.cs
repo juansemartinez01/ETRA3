@@ -16,9 +16,9 @@ namespace Domain
         {
             return colaboradorDao.BuscarColaborador(legajo,  nombre,  apellido);
         }
-        public string CrearColaborador(string nombre,string apellido, int dni, int cuit, string calle, int numeroCalle)
+        public string CrearColaborador(string nombre,string apellido, int dni, string cuit, string calle, int numeroCalle,int puesto)
         {
-            var creadoExito = colaboradorDao.CrearColaborador(nombre,apellido,dni,cuit,calle,numeroCalle);
+            var creadoExito = colaboradorDao.CrearColaborador(nombre,apellido,dni,cuit,calle,numeroCalle,puesto);
             if(creadoExito == 1)
             {
                 return "El colaborador fue creado con exito";
@@ -29,6 +29,7 @@ namespace Domain
             }
 
         }
+        
         public string EliminarColaborador(int legajo)
         {
             int colaboradorEliminado = colaboradorDao.EliminarColaborador(legajo);
