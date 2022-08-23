@@ -516,7 +516,7 @@ namespace DataAccess
                     command.CommandText = "DELETE FROM HistorialEvento WHERE borradoLogico = 1";                   
                     command.CommandType = CommandType.Text;
                     var HistorialEventoEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                    if (HistorialEventoEliminado == 1)
+                    if (HistorialEventoEliminado != 0)
                     {
                         using (var command1 = new SqlCommand())
                         {
