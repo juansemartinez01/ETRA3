@@ -1,3 +1,4 @@
+USE [ETRA]
 /*Inicializador de la tabla Dia*/
 INSERT into Dia (nombre) VALUES ('Lunes')
 INSERT into Dia (nombre) VALUES ('Martes')

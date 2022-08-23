@@ -27,6 +27,10 @@ namespace Presentation
         {
             Backup backup = new Backup();
             MessageBox.Show(backup.GenerarBackup());
+            ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
+            string eliminacionColaboradores = colaboradorModelo.EliminarColaboradorPermanentemente();
+            MessageBox.Show(eliminacionColaboradores);
+            
 
             base.OnFormClosing(e);
         }

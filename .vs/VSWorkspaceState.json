@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Domain"
+    "\\Domain",
+    "\\Presentation",
+    "\\Presentation\\Colaboradores"
   ],
   "SelectedNode": "\\ETRA.sln",
   "PreviewInSolutionExplorer": false

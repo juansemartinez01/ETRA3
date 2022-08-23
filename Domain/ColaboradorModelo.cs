@@ -29,6 +29,19 @@ namespace Domain
             }
 
         }
+
+        public string EliminarColaboradorPermanentemente()
+        {
+            int correctaEliminacion = colaboradorDao.EliminarColaboradorPermanentemente();
+            if(correctaEliminacion == 1)
+            {
+                return "Colaborador eliminado correctamente";
+            }
+            else
+            {
+                return "Error";
+            }
+        }
         
         public string EliminarColaborador(int legajo)
         {

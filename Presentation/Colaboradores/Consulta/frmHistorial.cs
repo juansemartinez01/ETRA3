@@ -17,6 +17,8 @@ namespace Presentation.Colaboradores
         {
             InitializeComponent();
             CargarDG(legajo);
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
             
         }
         private void CargarDG(string legajo)
@@ -49,5 +51,7 @@ namespace Presentation.Colaboradores
             txtdescripcion.Text = filaSeleccionada.Cells["Descripción"].Value.ToString();
 
         }
+
+        
     }
 }

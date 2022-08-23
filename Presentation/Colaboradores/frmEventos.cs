@@ -86,6 +86,7 @@ namespace Presentation.Colaboradores
                 {
                     string respuesta = objetoEvento.InsertarEventos((int)cmbTipoEvento2.SelectedValue, (int)cmbColaboradores2.SelectedValue);
                     MessageBox.Show(respuesta);
+                    CargarDG();
                 }
                 else
                 {
