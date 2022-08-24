@@ -9,19 +9,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
-
+using FontAwesome.Sharp;
 
 namespace Presentation
 {
     public partial class FormularioPrincipal : Form
     {
+        private IconButton botonSeleccionado;
+        private Panel bordeInferior;
         public FormularioPrincipal()
         {
             
             InitializeComponent();
             customizeDesign();
             openChildFormInPanel(new frmInicio());
+            bordeInferior = new Panel();
+            bordeInferior.Size = new Size(200, 2);
+            pnlSideMenu.Controls.Add(bordeInferior);
+            pnlColaboradores.Controls.Add(bordeInferior);
 
+        }
+        private void ActivateButton(object button)
+        {
+            if (button != null)
+            {
+                DisableButton();
+                botonSeleccionado = (IconButton)button;
+                botonSeleccionado.ForeColor = Color.FromArgb(247, 160, 85);
+                botonSeleccionado.BackColor = Color.White;
+                botonSeleccionado.Font = new Font(botonSeleccionado.Font.Name, botonSeleccionado.Font.Size, FontStyle.Bold);
+                botonSeleccionado.IconColor = Color.FromArgb(247, 160, 85);
+
+                bordeInferior.BackColor = Color.FromArgb(247, 160, 85);
+                bordeInferior.Location = new Point(botonSeleccionado.Location.X, botonSeleccionado.Location.Y+35);
+                bordeInferior.Visible = true;
+                bordeInferior.BringToFront();
+            }
+        }
+        private void DisableButton()
+        {
+            if (botonSeleccionado != null)
+            {
+                botonSeleccionado.ForeColor = Color.White;
+                botonSeleccionado.IconColor = Color.White;
+                botonSeleccionado.BackColor = Color.FromArgb(247, 160, 85);
+                botonSeleccionado.Font = new Font(botonSeleccionado.Font.Name, botonSeleccionado.Font.Size, FontStyle.Regular);
+            }
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -30,8 +63,6 @@ namespace Presentation
             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
             string eliminacionColaboradores = colaboradorModelo.EliminarColaboradorPermanentemente();
             MessageBox.Show(eliminacionColaboradores);
-            
-
             base.OnFormClosing(e);
         }
 
@@ -48,20 +79,19 @@ namespace Presentation
             if (subMenu.Visible == false)
             {
                 hideSubMenu();
+                
                 subMenu.Visible = true;
             }
             else
+                
                 subMenu.Visible = false;
         }
 
         private void btnColaboradores_Click(object sender, EventArgs e)
         {
+            
             showSubMenu(pnlColaboradores);
         }
-
-        
-
-        
 
         private void FormularioPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -94,7 +124,7 @@ namespace Presentation
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
             openChildFormInPanel(new FormularioColaborador());
         }
 
@@ -104,6 +134,7 @@ namespace Presentation
 
         private void btnAgregarColab_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             openChildFormInPanel(new frmCargaColab());
         }
 
@@ -116,6 +147,7 @@ namespace Presentation
 
         private void btnEventos_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             openChildFormInPanel(new frmEventos());
         }
     }

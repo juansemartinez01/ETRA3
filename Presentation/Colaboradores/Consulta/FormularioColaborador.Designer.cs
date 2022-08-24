@@ -59,7 +59,7 @@ namespace Presentation
             this.pnlBuscar.Controls.Add(this.txtApellido);
             this.pnlBuscar.Controls.Add(this.lblApellido);
             this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Name = "pnlBuscar";
             this.pnlBuscar.Size = new System.Drawing.Size(800, 104);
@@ -68,13 +68,13 @@ namespace Presentation
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::Presentation.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblError.Location = new System.Drawing.Point(37, 60);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(34, 17);
+            this.lblError.Size = new System.Drawing.Size(42, 20);
             this.lblError.TabIndex = 15;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
@@ -83,9 +83,9 @@ namespace Presentation
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(713, 12);
+            this.btnBuscar.Location = new System.Drawing.Point(673, 12);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(115, 27);
             this.btnBuscar.TabIndex = 13;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@ namespace Presentation
             // 
             this.txtLegajo.Location = new System.Drawing.Point(95, 12);
             this.txtLegajo.Name = "txtLegajo";
-            this.txtLegajo.Size = new System.Drawing.Size(100, 22);
+            this.txtLegajo.Size = new System.Drawing.Size(100, 26);
             this.txtLegajo.TabIndex = 12;
             this.txtLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajo_KeyPress);
             // 
@@ -103,25 +103,25 @@ namespace Presentation
             // 
             this.txtNombre.Location = new System.Drawing.Point(299, 12);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 22);
+            this.txtNombre.Size = new System.Drawing.Size(100, 26);
             this.txtNombre.TabIndex = 8;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(234, 12);
+            this.lblNombre.Location = new System.Drawing.Point(221, 12);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(59, 17);
+            this.lblNombre.Size = new System.Drawing.Size(72, 20);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre:";
             // 
             // lblLegajo
             // 
             this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(37, 12);
+            this.lblLegajo.Location = new System.Drawing.Point(27, 12);
             this.lblLegajo.Name = "lblLegajo";
-            this.lblLegajo.Size = new System.Drawing.Size(52, 17);
+            this.lblLegajo.Size = new System.Drawing.Size(63, 20);
             this.lblLegajo.TabIndex = 11;
             this.lblLegajo.Text = "Legajo:";
             // 
@@ -129,16 +129,16 @@ namespace Presentation
             // 
             this.txtApellido.Location = new System.Drawing.Point(493, 12);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 22);
+            this.txtApellido.Size = new System.Drawing.Size(100, 26);
             this.txtApellido.TabIndex = 9;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(426, 12);
+            this.lblApellido.Location = new System.Drawing.Point(413, 12);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(61, 17);
+            this.lblApellido.Size = new System.Drawing.Size(73, 20);
             this.lblApellido.TabIndex = 10;
             this.lblApellido.Text = "Apellido:";
             // 
@@ -146,6 +146,7 @@ namespace Presentation
             // 
             this.pnlFormulario.Controls.Add(this.pnlBotones);
             this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlFormulario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlFormulario.Location = new System.Drawing.Point(0, 104);
             this.pnlFormulario.Name = "pnlFormulario";
             this.pnlFormulario.Size = new System.Drawing.Size(800, 481);
@@ -157,6 +158,7 @@ namespace Presentation
             this.pnlBotones.Controls.Add(this.btnDatosGenerales);
             this.pnlBotones.Controls.Add(this.btnDatosPersonales);
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(800, 39);
@@ -167,7 +169,7 @@ namespace Presentation
             this.btnHistorial.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnHistorial.FlatAppearance.BorderSize = 0;
             this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorial.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnHistorial.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHistorial.ForeColor = System.Drawing.Color.Black;
             this.btnHistorial.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHistorial.IconColor = System.Drawing.Color.Black;
@@ -185,7 +187,7 @@ namespace Presentation
             this.btnDatosGenerales.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDatosGenerales.FlatAppearance.BorderSize = 0;
             this.btnDatosGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatosGenerales.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDatosGenerales.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDatosGenerales.ForeColor = System.Drawing.Color.Black;
             this.btnDatosGenerales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosGenerales.IconColor = System.Drawing.Color.Black;
@@ -203,7 +205,7 @@ namespace Presentation
             this.btnDatosPersonales.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDatosPersonales.FlatAppearance.BorderSize = 0;
             this.btnDatosPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatosPersonales.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDatosPersonales.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDatosPersonales.ForeColor = System.Drawing.Color.Black;
             this.btnDatosPersonales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosPersonales.IconColor = System.Drawing.Color.Black;

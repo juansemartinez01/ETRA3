@@ -57,17 +57,17 @@ namespace Presentation.Colaboradores
             // 
             // dgvEventos
             // 
-            this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventos.Location = new System.Drawing.Point(22, 144);
+            this.dgvEventos.Location = new System.Drawing.Point(28, 271);
+            this.dgvEventos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowTemplate.Height = 25;
-            this.dgvEventos.Size = new System.Drawing.Size(836, 301);
+            this.dgvEventos.Size = new System.Drawing.Size(930, 241);
             this.dgvEventos.TabIndex = 0;
             // 
             // label1
@@ -75,7 +75,8 @@ namespace Presentation.Colaboradores
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(353, 9);
+            this.label1.Location = new System.Drawing.Point(483, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 28);
             this.label1.TabIndex = 1;
@@ -85,74 +86,83 @@ namespace Presentation.Colaboradores
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 18);
+            this.label2.Location = new System.Drawing.Point(35, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Eventos:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(323, 57);
+            this.label3.Location = new System.Drawing.Point(415, 67);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Fecha Fin:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(323, 18);
+            this.label4.Location = new System.Drawing.Point(415, 21);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 17);
+            this.label4.Size = new System.Drawing.Size(127, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Fecha de Inicio:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 57);
+            this.label6.Location = new System.Drawing.Point(35, 67);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 17);
+            this.label6.Size = new System.Drawing.Size(120, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Colaboradores";
             // 
             // cmbTipoEvento
             // 
             this.cmbTipoEvento.FormattingEnabled = true;
-            this.cmbTipoEvento.Location = new System.Drawing.Point(152, 15);
+            this.cmbTipoEvento.Location = new System.Drawing.Point(195, 18);
+            this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
-            this.cmbTipoEvento.Size = new System.Drawing.Size(121, 25);
+            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 28);
             this.cmbTipoEvento.TabIndex = 7;
             // 
             // cmbColaboradores
             // 
             this.cmbColaboradores.FormattingEnabled = true;
-            this.cmbColaboradores.Location = new System.Drawing.Point(152, 54);
+            this.cmbColaboradores.Location = new System.Drawing.Point(195, 64);
+            this.cmbColaboradores.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores.Name = "cmbColaboradores";
-            this.cmbColaboradores.Size = new System.Drawing.Size(121, 25);
+            this.cmbColaboradores.Size = new System.Drawing.Size(154, 28);
             this.cmbColaboradores.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(431, 15);
+            this.dateTimePicker1.Location = new System.Drawing.Point(554, 18);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(188, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(241, 26);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(431, 54);
+            this.dateTimePicker2.Location = new System.Drawing.Point(554, 64);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(188, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(241, 26);
             this.dateTimePicker2.TabIndex = 10;
             // 
             // btnAplicar
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(662, 56);
+            this.btnAplicar.Location = new System.Drawing.Point(839, 64);
+            this.btnAplicar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(117, 23);
+            this.btnAplicar.Size = new System.Drawing.Size(124, 27);
             this.btnAplicar.TabIndex = 11;
             this.btnAplicar.Text = "Aplicar Filtros";
             this.btnAplicar.UseVisualStyleBackColor = true;
@@ -171,16 +181,18 @@ namespace Presentation.Colaboradores
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbColaboradores);
             this.groupBox1.Controls.Add(this.cmbTipoEvento);
-            this.groupBox1.Location = new System.Drawing.Point(22, 53);
+            this.groupBox1.Location = new System.Drawing.Point(28, 62);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(836, 85);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1032, 159);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.cmbColaboradores2);
             this.groupBox2.Controls.Add(this.richTextBox1);
@@ -190,9 +202,11 @@ namespace Presentation.Colaboradores
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.cmbTipoEvento2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(22, 466);
+            this.groupBox2.Location = new System.Drawing.Point(28, 548);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(836, 310);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(1032, 347);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
@@ -200,66 +214,74 @@ namespace Presentation.Colaboradores
             // cmbColaboradores2
             // 
             this.cmbColaboradores2.FormattingEnabled = true;
-            this.cmbColaboradores2.Location = new System.Drawing.Point(27, 197);
+            this.cmbColaboradores2.Location = new System.Drawing.Point(35, 232);
+            this.cmbColaboradores2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores2.Name = "cmbColaboradores2";
-            this.cmbColaboradores2.Size = new System.Drawing.Size(315, 25);
+            this.cmbColaboradores2.Size = new System.Drawing.Size(404, 28);
             this.cmbColaboradores2.TabIndex = 15;
             this.cmbColaboradores2.Text = "Colaboradores Afectados";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(431, 21);
+            this.richTextBox1.Location = new System.Drawing.Point(467, 25);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(361, 136);
+            this.richTextBox1.Size = new System.Drawing.Size(463, 159);
             this.richTextBox1.TabIndex = 14;
             this.richTextBox1.Text = "Descripcion:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 92);
+            this.label7.Location = new System.Drawing.Point(35, 108);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 17);
+            this.label7.Size = new System.Drawing.Size(127, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Fecha de Inicio:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 140);
+            this.label5.Location = new System.Drawing.Point(35, 165);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 17);
+            this.label5.Size = new System.Drawing.Size(82, 20);
             this.label5.TabIndex = 12;
             this.label5.Text = "Fecha Fin:";
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(152, 135);
+            this.dateTimePicker4.Location = new System.Drawing.Point(195, 159);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(188, 22);
+            this.dateTimePicker4.Size = new System.Drawing.Size(241, 26);
             this.dateTimePicker4.TabIndex = 11;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(154, 87);
+            this.dateTimePicker3.Location = new System.Drawing.Point(198, 102);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(188, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(241, 26);
             this.dateTimePicker3.TabIndex = 10;
             // 
             // cmbTipoEvento2
             // 
             this.cmbTipoEvento2.FormattingEnabled = true;
-            this.cmbTipoEvento2.Location = new System.Drawing.Point(27, 21);
+            this.cmbTipoEvento2.Location = new System.Drawing.Point(35, 25);
+            this.cmbTipoEvento2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento2.Name = "cmbTipoEvento2";
-            this.cmbTipoEvento2.Size = new System.Drawing.Size(121, 25);
+            this.cmbTipoEvento2.Size = new System.Drawing.Size(154, 28);
             this.cmbTipoEvento2.TabIndex = 2;
             this.cmbTipoEvento2.Text = "Nombre:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(616, 252);
+            this.button1.Location = new System.Drawing.Point(780, 283);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
+            this.button1.Size = new System.Drawing.Size(150, 27);
             this.button1.TabIndex = 0;
             this.button1.Text = " Crear Evento";
             this.button1.UseVisualStyleBackColor = true;
@@ -267,14 +289,15 @@ namespace Presentation.Colaboradores
             // 
             // frmEventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 788);
+            this.ClientSize = new System.Drawing.Size(1119, 927);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvEventos);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEventos";
             this.Text = "frmEventos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();

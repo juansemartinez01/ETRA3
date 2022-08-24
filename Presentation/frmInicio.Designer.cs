@@ -42,7 +42,8 @@ namespace Presentation
             this.lblFechaActual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFechaActual.AutoSize = true;
             this.lblFechaActual.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblFechaActual.Location = new System.Drawing.Point(521, 37);
+            this.lblFechaActual.Location = new System.Drawing.Point(670, 50);
+            this.lblFechaActual.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaActual.Name = "lblFechaActual";
             this.lblFechaActual.Size = new System.Drawing.Size(0, 21);
             this.lblFechaActual.TabIndex = 5;
@@ -51,7 +52,8 @@ namespace Presentation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(21, 23);
+            this.label1.Location = new System.Drawing.Point(27, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 36);
             this.label1.TabIndex = 4;
@@ -63,9 +65,10 @@ namespace Presentation
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::Presentation.Properties.Resources.ETRA_Isologotipo_01;
-            this.pictureBox2.Location = new System.Drawing.Point(98, 123);
+            this.pictureBox2.Location = new System.Drawing.Point(126, 164);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(572, 278);
+            this.pictureBox2.Size = new System.Drawing.Size(735, 370);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -77,12 +80,14 @@ namespace Presentation
             // 
             // frmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1029, 600);
             this.Controls.Add(this.lblFechaActual);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "frmInicio";
             this.Text = "frmInicio";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

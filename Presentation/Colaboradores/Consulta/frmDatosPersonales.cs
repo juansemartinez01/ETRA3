@@ -36,6 +36,7 @@ namespace Presentation
                 Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
 
                 pictureBox2.Image = fotoPerfil;
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
                 fotoPerfilArchivo.Close();
 
                 if (!Directory.Exists(carpeta))
