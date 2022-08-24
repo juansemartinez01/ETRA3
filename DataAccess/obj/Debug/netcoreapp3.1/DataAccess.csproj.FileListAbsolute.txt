@@ -45,3 +45,13 @@ C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csp
 C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 C:\Users\Usuario\Desktop\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
 C:\Users\usuario\Documents\ETRA\Programa\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb

@@ -141,11 +141,7 @@ namespace Presentation.Colaboradores
             string direccion = AppDomain.CurrentDomain.BaseDirectory;
                 string carpeta = direccion + "/temp/";
                 string ubicacionCompleta = carpeta + Lista[0].Extension;
-            Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
-            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
-
-            pictureBox1.Image = fotoPerfil;
-            fotoPerfilArchivo.Close();
+            
             if (!Directory.Exists(carpeta))
                 {
                     Directory.CreateDirectory(carpeta);
@@ -155,20 +151,25 @@ namespace Presentation.Colaboradores
                     
                     File.Delete(ubicacionCompleta);
                 }
-                File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
+            File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
 
-            
+            Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
+            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
 
-            
-
-
-
-
+            pictureBox1.Image = fotoPerfil;
+            fotoPerfilArchivo.Close();
 
 
 
 
-            
+
+
+
+
+
+
+
+
         }
         
 
