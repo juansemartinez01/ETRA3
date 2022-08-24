@@ -22,6 +22,7 @@ namespace Presentation.Colaboradores
             openFileDialog1.InitialDirectory = "no seleccionado";
             LlenarCombo(cmbEstados, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
+            LlenarCombo(cmbProvincias, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
 
 
         }
@@ -37,7 +38,26 @@ namespace Presentation.Colaboradores
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if(txtNombre.Text != "")
+            string provincia;
+            string departamento;
+            string localidad;
+            if(cmbProvincias.SelectedIndex == -1)
+            {
+                provincia = "Cordoba";
+            }
+            else
+            {
+                provincia = "Cordoba";
+            }
+            if (txtLocalidad.Text != "")
+            {
+                localidad = txtLocalidad.Text.ToString();
+            }
+            else
+            {
+                localidad = "NULL";
+            }
+            if (txtNombre.Text != "")
             {
                 if(txtApellido.Text != "")
                 {
@@ -49,22 +69,50 @@ namespace Presentation.Colaboradores
                             {
                                 if (txtNroCalle.Text != "")
                                 {
+                                    
+                                    
 
-                                    if (cmbPuesto.SelectedIndex != -1)
-                                    {
-                                        ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                        var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue);
-                                        if (openFileDialog1.InitialDirectory != "no seleccionado")
+                                        if (cmbPuesto.SelectedIndex != -1)
                                         {
+                                            int piso;
+                                            if (txtPiso.Text != "")
+                                            {
+                                                piso = int.Parse(txtPiso.Text.ToString());
+                                                if (txtDepto.Text != "")
+                                                {
+                                                    departamento = txtDepto.Text.ToString();
+                                                    ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
+                                                    var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia);
+                                                    if (openFileDialog1.InitialDirectory != "no seleccionado")
+                                                    {
 
-                                            agregarArchivoColaborador(colaboradorModelo);
+                                                        agregarArchivoColaborador(colaboradorModelo);
+                                                    }
+                                                    MessageBox.Show(cadenaRespuesta);
+                                                }
+                                                else
+                                                {
+                                                    MessageBox.Show("Debe asignarle un departamento al colaborador(A,B,C...)");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                piso = 0;
+                                                departamento = "NULL";
+                                                ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
+                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia);
+                                                if (openFileDialog1.InitialDirectory != "no seleccionado")
+                                                {
+
+                                                    agregarArchivoColaborador(colaboradorModelo);
+                                                }
+                                                MessageBox.Show(cadenaRespuesta);
+                                            }
                                         }
-                                        MessageBox.Show(cadenaRespuesta);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Debe asignarle un puesto al colaborador");
-                                    }
+                                        else
+                                        {
+                                            MessageBox.Show("Debe asignarle un puesto al colaborador");
+                                        }
                                     
                                     
 

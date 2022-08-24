@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Presentation\\Presentation.csproj": {}
+    "C:\\Users\\juans\\Desktop\\ETRA2\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Usuario\\source\\repos\\ETRA2\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\juans\\Desktop\\ETRA2\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\juans\\Desktop\\ETRA2\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\ETRA2\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\juans\\Desktop\\ETRA2\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\juans\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juans\\Desktop\\ETRA2\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juans\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Domain\\Domain.csproj": {
+    "C:\\Users\\juans\\Desktop\\ETRA2\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\juans\\Desktop\\ETRA2\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\ETRA2\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\juans\\Desktop\\ETRA2\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\juans\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juans\\Desktop\\ETRA2\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juans\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,8 +88,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Usuario\\source\\repos\\ETRA2\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\juans\\Desktop\\ETRA2\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\juans\\Desktop\\ETRA2\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -116,8 +115,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -126,21 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Presentation\\Presentation.csproj": {
+    "C:\\Users\\juans\\Desktop\\ETRA2\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\juans\\Desktop\\ETRA2\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Presentation\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Usuario\\Source\\Repos\\ETRA2\\Presentation\\obj\\",
+        "projectPath": "C:\\Users\\juans\\Desktop\\ETRA2\\Presentation\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\juans\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\juans\\Desktop\\ETRA2\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juans\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -154,8 +152,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Usuario\\source\\repos\\ETRA2\\Domain\\Domain.csproj"
+              "C:\\Users\\juans\\Desktop\\ETRA2\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\juans\\Desktop\\ETRA2\\Domain\\Domain.csproj"
               }
             }
           }
@@ -185,11 +183,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.25, 3.1.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -198,7 +201,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     }
