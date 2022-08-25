@@ -43,7 +43,7 @@ namespace Presentation.Colaboradores
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbColaboradores2 = new System.Windows.Forms.ComboBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
@@ -195,7 +195,7 @@ namespace Presentation.Colaboradores
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.cmbColaboradores2);
-            this.groupBox2.Controls.Add(this.richTextBox1);
+            this.groupBox2.Controls.Add(this.txtDescripcion);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.dateTimePicker4);
@@ -221,14 +221,14 @@ namespace Presentation.Colaboradores
             this.cmbColaboradores2.TabIndex = 15;
             this.cmbColaboradores2.Text = "Colaboradores Afectados";
             // 
-            // richTextBox1
+            // txtDescripcion
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(467, 25);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(463, 159);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "Descripcion:";
+            this.txtDescripcion.Location = new System.Drawing.Point(467, 25);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(463, 159);
+            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.Text = "Descripcion:";
             // 
             // label7
             // 
@@ -291,7 +291,7 @@ namespace Presentation.Colaboradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 927);
+            this.ClientSize = new System.Drawing.Size(1238, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -333,5 +333,6 @@ namespace Presentation.Colaboradores
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.ComboBox cmbTipoEvento2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
     }
 }

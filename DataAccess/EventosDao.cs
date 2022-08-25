@@ -45,18 +45,19 @@ namespace DataAccess
                 }
             }
         }
-        public string InsertarEvento(int idTipoEvento,int legajoColaborador)
+        public string InsertarEvento(int idTipoEvento,int legajoColaborador, string descripcion,DateTime fechaInicio, DateTime fechaFin)
         {
             using (var connection = GetConnection())
             {
+                
                 connection.Open();
                 using (var command2 = new SqlCommand())
                 {
                     command2.Connection = connection;
-                    command2.CommandText = "INSERT INTO Evento VALUES (NULL,@idTipoEvento,0)";
+                    command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idTipoEvento,0)";
                     command2.CommandType = CommandType.Text;
                     command2.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
-                    
+                    command2.Parameters.AddWithValue("@descripcion", descripcion);
 
                     int resultado = command2.ExecuteNonQuery();
                     if(resultado == 1)
@@ -67,11 +68,12 @@ namespace DataAccess
                             {
                                 int idEvento = int.Parse(BuscarIdUltimoEvento());
                                 command.Connection = connection;
-                                command.CommandText = "INSERT INTO HistorialEvento VALUES (@idEvento,GETDATE(),GETDATE(),GETDATE(),@legajoColaborador,0)";
+                                command.CommandText = "INSERT INTO HistorialEvento VALUES (@idEvento,Format(@fechaInicio, 'yyyy - MM - dd'),Format(@fechaFin, 'yyyy - MM - dd'),GETDATE(),@legajoColaborador,0)";
                                 command.CommandType = CommandType.Text;
                                 command.Parameters.AddWithValue("@idEvento", idEvento);
                                 command.Parameters.AddWithValue("@legajoColaborador", legajoColaborador);
-
+                                command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                                command.Parameters.AddWithValue("@fechaFin", fechaFin);
                                 command.ExecuteNonQuery();
                                 return "Evento creado con exito.";
 

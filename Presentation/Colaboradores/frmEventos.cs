@@ -50,25 +50,32 @@ namespace Presentation.Colaboradores
         {
             try
             {
-                string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento";
+                string fechaInicio = dateTimePicker1.Value.ToString("yyyy/MM/dd");
+                string fechaFin = dateTimePicker2.Value.ToString("yyyy/MM/dd");
+                Dictionary<string, object> parametros = new Dictionary<string, object>();
+                parametros.Add("fechaInicio", fechaInicio);
+                parametros.Add("fechaFin", fechaFin);
+
+
+                string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.fechaInicio >= @fechaInicio AND H.fechaFin <= @fechaFin";
                 if (cmbColaboradores.SelectedIndex != -1 && cmbTipoEvento.SelectedIndex != -1)
                 {
                     string tipoEventoSelecconado = cmbTipoEvento.SelectedValue.ToString();
                     string legajoColaboradorSelecconado = cmbColaboradores.SelectedValue.ToString(); 
-                    consulta += " WHERE H.legajoColaborador =" + legajoColaboradorSelecconado + " AND T.id_tipoEvento =" + tipoEventoSelecconado;
+                    consulta += " AND H.legajoColaborador =" + legajoColaboradorSelecconado + " AND T.id_tipoEvento =" + tipoEventoSelecconado;
                 }
                 if (cmbTipoEvento.SelectedIndex != -1 && cmbColaboradores.SelectedIndex == -1)
                 {
                     string tipoEventoSelecconado = cmbTipoEvento.SelectedValue.ToString();
-                    consulta += " WHERE T.id_tipoEvento =" + tipoEventoSelecconado;
+                    consulta += " AND T.id_tipoEvento =" + tipoEventoSelecconado;
                 }
                 if (cmbColaboradores.SelectedIndex != -1 && cmbTipoEvento.SelectedIndex == -1)
                 {
                     string legajoColaboradorSelecconado = cmbColaboradores.SelectedValue.ToString();
-                    consulta += " WHERE H.legajoColaborador =" + legajoColaboradorSelecconado;
+                    consulta += " AND H.legajoColaborador =" + legajoColaboradorSelecconado;
                 }
 
-                DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta);
+                DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta,parametros);
                 dgvEventos.DataSource = tabla;
                 
             }
@@ -82,9 +89,12 @@ namespace Presentation.Colaboradores
         {
             if(cmbTipoEvento2.SelectedIndex != -1)
             {
+
                 if(cmbColaboradores2.SelectedIndex != -1)
                 {
-                    string respuesta = objetoEvento.InsertarEventos((int)cmbTipoEvento2.SelectedValue, (int)cmbColaboradores2.SelectedValue);
+                    
+                    
+                    string respuesta = objetoEvento.InsertarEventos((int)cmbTipoEvento2.SelectedValue, (int)cmbColaboradores2.SelectedValue,txtDescripcion.Text.ToString(), dateTimePicker3.Value.Date,dateTimePicker4.Value.Date);
                     MessageBox.Show(respuesta);
                     CargarDG();
                 }

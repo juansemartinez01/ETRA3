@@ -38,6 +38,10 @@ namespace Presentation.Colaboradores
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            if(cmbEstados.SelectedIndex == -1)
+            {
+                cmbEstados.SelectedIndex = 0;
+            }
             string provincia;
             string departamento;
             string localidad;
@@ -82,7 +86,7 @@ namespace Presentation.Colaboradores
                                                 {
                                                     departamento = txtDepto.Text.ToString();
                                                     ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                                    var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia);
+                                                    var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia,(int)cmbEstados.SelectedValue);
                                                     if (openFileDialog1.InitialDirectory != "no seleccionado")
                                                     {
 
@@ -100,7 +104,7 @@ namespace Presentation.Colaboradores
                                                 piso = 0;
                                                 departamento = "NULL";
                                                 ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia);
+                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue);
                                                 if (openFileDialog1.InitialDirectory != "no seleccionado")
                                                 {
 
