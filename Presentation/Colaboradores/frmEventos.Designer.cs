@@ -62,7 +62,7 @@ namespace Presentation.Colaboradores
             this.dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventos.Location = new System.Drawing.Point(28, 271);
+            this.dgvEventos.Location = new System.Drawing.Point(28, 229);
             this.dgvEventos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
@@ -159,7 +159,7 @@ namespace Presentation.Colaboradores
             // 
             // btnAplicar
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(839, 64);
+            this.btnAplicar.Location = new System.Drawing.Point(671, 124);
             this.btnAplicar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(124, 27);
@@ -185,7 +185,7 @@ namespace Presentation.Colaboradores
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1032, 159);
+            this.groupBox1.Size = new System.Drawing.Size(930, 159);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -202,11 +202,11 @@ namespace Presentation.Colaboradores
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.cmbTipoEvento2);
             this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(28, 548);
+            this.groupBox2.Location = new System.Drawing.Point(28, 506);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1032, 347);
+            this.groupBox2.Size = new System.Drawing.Size(930, 254);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
@@ -214,7 +214,7 @@ namespace Presentation.Colaboradores
             // cmbColaboradores2
             // 
             this.cmbColaboradores2.FormattingEnabled = true;
-            this.cmbColaboradores2.Location = new System.Drawing.Point(35, 232);
+            this.cmbColaboradores2.Location = new System.Drawing.Point(32, 196);
             this.cmbColaboradores2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores2.Name = "cmbColaboradores2";
             this.cmbColaboradores2.Size = new System.Drawing.Size(404, 28);
@@ -226,14 +226,14 @@ namespace Presentation.Colaboradores
             this.txtDescripcion.Location = new System.Drawing.Point(467, 25);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(463, 159);
+            this.txtDescripcion.Size = new System.Drawing.Size(405, 159);
             this.txtDescripcion.TabIndex = 14;
             this.txtDescripcion.Text = "Descripcion:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 108);
+            this.label7.Location = new System.Drawing.Point(35, 75);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 20);
@@ -243,7 +243,7 @@ namespace Presentation.Colaboradores
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 165);
+            this.label5.Location = new System.Drawing.Point(35, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 20);
@@ -252,7 +252,7 @@ namespace Presentation.Colaboradores
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(195, 159);
+            this.dateTimePicker4.Location = new System.Drawing.Point(195, 123);
             this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(241, 26);
@@ -260,7 +260,7 @@ namespace Presentation.Colaboradores
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(198, 102);
+            this.dateTimePicker3.Location = new System.Drawing.Point(195, 75);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(241, 26);
@@ -278,7 +278,7 @@ namespace Presentation.Colaboradores
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(780, 283);
+            this.button1.Location = new System.Drawing.Point(722, 197);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 27);
