@@ -59,6 +59,7 @@ namespace Presentation
         {
             string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lbllegajo.Text));
             MessageBox.Show(mensaje);
+            
         }
     }
 }
