@@ -386,8 +386,7 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@legajo", legajo);
                     command.CommandType = CommandType.Text;
                     var ColaboradorEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                    if (ColaboradorEliminado == 1)
-                    {
+                    
                         using (var command1 = new SqlCommand())
                         {
 
@@ -396,8 +395,7 @@ namespace DataAccess
                             command1.Parameters.AddWithValue("@legajo", legajo);
                             command1.CommandType = CommandType.Text;
                             var HistorialCargoEliminado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
-                            if (HistorialCargoEliminado != 0)
-                            {
+                            
                                 using (var command2 = new SqlCommand())
                                 {
 
@@ -406,8 +404,7 @@ namespace DataAccess
                                     command2.Parameters.AddWithValue("@legajo", legajo);
                                     command2.CommandType = CommandType.Text;
                                     var HistorialEventoEliminado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
-                                    if (HistorialEventoEliminado != 0)
-                                    {
+                                    
                                         using (var command3 = new SqlCommand())
                                         {
 
@@ -416,8 +413,7 @@ namespace DataAccess
                                             command3.Parameters.AddWithValue("@legajo", legajo);
                                             command3.CommandType = CommandType.Text;
                                             var HistorialEstadoEliminado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
-                                            if (HistorialEstadoEliminado != 0)
-                                            {
+                                            
                                                 using (var command4 = new SqlCommand())
                                                 {
 
@@ -426,8 +422,7 @@ namespace DataAccess
                                                     command4.Parameters.AddWithValue("@legajo", legajo);
                                                     command4.CommandType = CommandType.Text;
                                                     var HistorialSalarioEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
-                                                    if (HistorialSalarioEliminado != 0)
-                                                    {
+                                                    
                                                         using (var command5 = new SqlCommand())
                                                         {
 
@@ -436,8 +431,7 @@ namespace DataAccess
                                                             command5.Parameters.AddWithValue("@legajo", legajo);
                                                             command5.CommandType = CommandType.Text;
                                                             var ColaboradorMultimediaEliminado = command5.EndExecuteNonQuery(command5.BeginExecuteNonQuery());
-                                                            if (ColaboradorMultimediaEliminado != 0)
-                                                            {
+                                                            
                                                                 using (var command6 = new SqlCommand())
                                                                 {
 
@@ -445,79 +439,50 @@ namespace DataAccess
                                                                     command6.CommandText = "UPDATE Evento SET borradoLogico = 1 WHERE id_evento IN (SELECT E.id_evento FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento WHERE h.borradoLogico = 1)";                                                                   
                                                                     command6.CommandType = CommandType.Text;
                                                                     var EstadoEliminado = command6.EndExecuteNonQuery(command6.BeginExecuteNonQuery());
-                                                                    if (EstadoEliminado != 0)
-                                                                    {
-                                                                        using (var command7 = new SqlCommand())
+
+                                            using (var command7 = new SqlCommand())
                                                                         {
 
                                                                             command7.Connection = connection;
                                                                             command7.CommandText = "UPDATE Salario SET borradoLogico = 1 WHERE id_salario IN (SELECT S.id_salario FROM HistorialSalario H JOIN Salario S ON H.id_salario = S.id_salario WHERE h.borradoLogico = 1)";
                                                                             command7.CommandType = CommandType.Text;
                                                                             var SalarioEliminado = command7.EndExecuteNonQuery(command7.BeginExecuteNonQuery());
-                                                                            if (SalarioEliminado != 0)
-                                                                            {
-                                                                                return 1;
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                return 0;
-                                                                            }
-
+                                                                            int algunaModificacion = SalarioEliminado + EstadoEliminado + ColaboradorMultimediaEliminado + HistorialSalarioEliminado + HistorialEstadoEliminado + HistorialEventoEliminado + HistorialCargoEliminado + ColaboradorEliminado;
+                                                                            if(algunaModificacion == 0)
+                                                {
+                                                    return 0;
+                                                }
+                                                else
+                                                {
+                                                    return 1;
+                                                }
 
                                                                         }
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        return 0;
-                                                                    }
+                                                                    
 
 
                                                                 }
-                                                            }
-                                                            else
-                                                            {
-                                                                return 0;
-                                                            }
+                                                            
 
 
                                                         }
-                                                    }
-                                                    else
-                                                    {
-                                                        return 0;
-                                                    }
+                                                    
 
 
                                                 }
-                                            }
-                                            else
-                                            {
-                                                return 0;
-                                            }
+                                            
 
 
                                         }
-                                    }
-                                    else
-                                    {
-                                        return 0;
-                                    }
+                                    
 
 
                                 }
-                            }
-                            else
-                            {
-                                return 0;
-                            }
+                            
 
 
                         }
-                    }
-                    else
-                    {
-                        return 0;
-                    }
+                    
 
 
                 }
@@ -535,8 +500,7 @@ namespace DataAccess
                     command.CommandText = "DELETE FROM HistorialEvento WHERE borradoLogico = 1";                   
                     command.CommandType = CommandType.Text;
                     var HistorialEventoEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                    if (HistorialEventoEliminado != 0)
-                    {
+                    
                         using (var command1 = new SqlCommand())
                         {
 
@@ -545,8 +509,7 @@ namespace DataAccess
                             
                             command1.CommandType = CommandType.Text;
                             var EventoEliminado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
-                            if (EventoEliminado != 0)
-                            {
+                            
                                 using (var command2 = new SqlCommand())
                                 {
 
@@ -555,8 +518,7 @@ namespace DataAccess
                                     
                                     command2.CommandType = CommandType.Text;
                                     var HistorialCargoEliminado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
-                                    if (HistorialCargoEliminado != 0)
-                                    {
+                                    
                                         using (var command3 = new SqlCommand())
                                         {
 
@@ -565,8 +527,7 @@ namespace DataAccess
                                             
                                             command3.CommandType = CommandType.Text;
                                             var HistorialEstadoEliminado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
-                                            if (HistorialEstadoEliminado != 0)
-                                            {
+                                            
                                                 using (var command4 = new SqlCommand())
                                                 {
 
@@ -575,8 +536,7 @@ namespace DataAccess
                                                     
                                                     command4.CommandType = CommandType.Text;
                                                     var ColaboradorMultimediaEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
-                                                    if (ColaboradorMultimediaEliminado != 0)
-                                                    {
+                                                    
                                                         using (var command6 = new SqlCommand())
                                                         {
 
@@ -584,8 +544,7 @@ namespace DataAccess
                                                             command6.CommandText = "DELETE FROM HistorialSalario WHERE borradoLogico = 1";
                                                             command6.CommandType = CommandType.Text;
                                                             var EstadoEliminado = command6.EndExecuteNonQuery(command6.BeginExecuteNonQuery());
-                                                            if (EstadoEliminado != 0)
-                                                            {
+                                                            
                                                                 using (var command7 = new SqlCommand())
                                                                 {
 
@@ -593,8 +552,8 @@ namespace DataAccess
                                                                     command7.CommandText = "DELETE FROM Salario WHERE borradoLogico = 1";
                                                                     command7.CommandType = CommandType.Text;
                                                                     var SalarioEliminado = command7.EndExecuteNonQuery(command7.BeginExecuteNonQuery());
-                                                                    if (SalarioEliminado != 0)
-                                                                    {
+
+                                                                    
                                                                         using (var command8 = new SqlCommand())
                                                                         {
 
@@ -602,70 +561,43 @@ namespace DataAccess
                                                                             command8.CommandText = "DELETE FROM Colaborador WHERE borradoLogico = 1";
                                                                             command8.CommandType = CommandType.Text;
                                                                             var ColaboradorEliminado = command8.EndExecuteNonQuery(command8.BeginExecuteNonQuery());
-                                                                            if (ColaboradorEliminado != 0)
-                                                                            {
-                                                                                return 1;
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                return 0;
-                                                                            }
+                                                int algunaModificacion = ColaboradorEliminado + SalarioEliminado + EstadoEliminado + ColaboradorMultimediaEliminado + HistorialEstadoEliminado + HistorialCargoEliminado + EventoEliminado + HistorialEventoEliminado;
+                                                if(algunaModificacion == 0)
+                                                {
+                                                    return 0;
+                                                }
+                                                else
+                                                {
+                                                    return 1;
+                                                }
 
 
                                                                         }
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        return 0;
-                                                                    }
+                                                                    
 
 
                                                                 }
-                                                            }
-                                                            else
-                                                            {
-                                                                return 0;
-                                                            }
+                                                            
 
 
                                                         }
-                                                    }
-                                                    else
-                                                    {
-                                                        return 0;
-                                                    }
+                                                    
 
 
                                                 }
-                                            }
-                                            else
-                                            {
-                                                return 0;
-                                            }
+                                            
 
 
                                         }
-                                    }
-                                    else
-                                    {
-                                        return 0;
-                                    }
+                                    
 
 
                                 }
-                            }
-                            else
-                            {
-                                return 0;
-                            }
+                            
 
 
                         }
-                    }
-                    else
-                    {
-                        return 0;
-                    }
+                    
 
 
                 }

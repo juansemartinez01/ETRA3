@@ -34,10 +34,10 @@ INSERT into Perfil (nombre,borradoLogico) VALUES ('ADMINISTRADOR',0)
 SELECT * FROM Perfil
 
 /*Inicializador de la tabla Usuario*/
-INSERT into Usuario (legajoColaborador,id_perfil,nombre,contraseña,borradoLogico) VALUES (10000,1,'Admin','1234',0)
-INSERT into Usuario (legajoColaborador,id_perfil,nombre,contraseña,borradoLogico) VALUES (10001,1,'Juan','4567',0)
-INSERT into Usuario (legajoColaborador,id_perfil,nombre,contraseña,borradoLogico) VALUES (10002,1,'Gardo','765',0)
-INSERT into Usuario (legajoColaborador,id_perfil,nombre,contraseña,borradoLogico) VALUES (10003,1,'Pepito','1919',0)
+INSERT into Usuario (id_perfil,nombre,contraseña,borradoLogico) VALUES (1,'Admin','1234',0)
+INSERT into Usuario (id_perfil,nombre,contraseña,borradoLogico) VALUES (1,'Juan','4567',0)
+INSERT into Usuario (id_perfil,nombre,contraseña,borradoLogico) VALUES (1,'Gardo','765',0)
+INSERT into Usuario (id_perfil,nombre,contraseña,borradoLogico) VALUES (1,'Pepito','1919',0)
 
 
 SELECT * FROM Usuario
