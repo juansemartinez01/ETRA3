@@ -11,26 +11,34 @@ namespace DataAccess
     {
         public bool Login(string user,string pass)
         {
-            using (var connection = GetConnection())
+            try
             {
-                connection.Open();
-                using (var command = new SqlCommand())
+
+
+                using (var connection = GetConnection())
                 {
-                    command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Usuario WHERE nombre = @user AND contraseña = @pass";
-                    command.Parameters.AddWithValue("@user", user);
-                    command.Parameters.AddWithValue("@pass", pass);
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
+                    connection.Open();
+                    using (var command = new SqlCommand())
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
+                        command.Connection = connection;
+                        command.CommandText = "SELECT * FROM Usuario WHERE nombre = @user AND contraseña = @pass";
+                        command.Parameters.AddWithValue("@user", user);
+                        command.Parameters.AddWithValue("@pass", pass);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 }
+            }catch(Exception ex)
+            {
+                return false;
             }
         }
     }

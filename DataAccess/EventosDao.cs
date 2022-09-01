@@ -47,23 +47,27 @@ namespace DataAccess
         }
         public string InsertarEvento(int idTipoEvento,int legajoColaborador, string descripcion,DateTime fechaInicio, DateTime fechaFin)
         {
-            using (var connection = GetConnection())
+            try
             {
-                
-                connection.Open();
-                using (var command2 = new SqlCommand())
-                {
-                    command2.Connection = connection;
-                    command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idTipoEvento,0)";
-                    command2.CommandType = CommandType.Text;
-                    command2.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
-                    command2.Parameters.AddWithValue("@descripcion", descripcion);
 
-                    int resultado = command2.ExecuteNonQuery();
-                    if(resultado == 1)
+
+                using (var connection = GetConnection())
+                {
+
+                    connection.Open();
+                    using (var command2 = new SqlCommand())
                     {
-                        
-                            
+                        command2.Connection = connection;
+                        command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idTipoEvento,0)";
+                        command2.CommandType = CommandType.Text;
+                        command2.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
+                        command2.Parameters.AddWithValue("@descripcion", descripcion);
+
+                        int resultado = command2.ExecuteNonQuery();
+                        if (resultado == 1)
+                        {
+
+
                             using (var command = new SqlCommand())
                             {
                                 int idEvento = int.Parse(BuscarIdUltimoEvento());
@@ -80,50 +84,62 @@ namespace DataAccess
 
 
                             }
-                            
-                        
-                            
-;                        
-                        
+
+
+
+    ;
+
+                        }
+                        else
+                        {
+                            return "Error al crear el evento";
+                        }
+
+
+
                     }
-                    else { 
-                        return "Error al crear el evento"; 
-                    }
-
-
-
                 }
+            }catch(Exception ex)
+            {
+                return ex.Message;
             }
         }
         public string BuscarIdUltimoEvento()
         {
-
-
-            using (var connection = GetConnection())
+            try
             {
-                connection.Open();
-                using (var command = new SqlCommand())
+
+
+
+                using (var connection = GetConnection())
                 {
-
-                    command.Connection = connection;
-                    command.CommandText = "SELECT MAX(id_evento) FROM Evento WHERE borradoLogico = 0";
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.HasRows)
+                    connection.Open();
+                    using (var command = new SqlCommand())
                     {
-                        while (reader.Read())
+
+                        command.Connection = connection;
+                        command.CommandText = "SELECT MAX(id_evento) FROM Evento WHERE borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
                         {
-                            IDataRecord idEvento = (IDataRecord)reader;
-                            return "" + idEvento[0] + "";
-                        }
-                        return "Error con la base de datos";
+                            while (reader.Read())
+                            {
+                                IDataRecord idEvento = (IDataRecord)reader;
+                                return "" + idEvento[0] + "";
+                            }
+                            return "Error con la base de datos";
 
-                    }
-                    else
-                    {
-                        return "Error con la base de datos";
+                        }
+                        else
+                        {
+                            return "Error con la base de datos";
+                        }
                     }
                 }
+            }catch(Exception ex)
+            {
+                return ex.Message;
             }
         }
     }
