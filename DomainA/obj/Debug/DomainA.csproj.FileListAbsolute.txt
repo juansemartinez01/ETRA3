@@ -1,0 +1,9 @@
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\obj\Debug\DomainA.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\obj\Debug\DomainA.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\DomainA.dll
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\DomainA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\DataAccesA.dll
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\DataAccesA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\obj\Debug\DomainA.csproj.CopyComplete
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\obj\Debug\DomainA.dll
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\obj\Debug\DomainA.pdb
