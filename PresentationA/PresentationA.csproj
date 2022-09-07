@@ -58,6 +58,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -139,9 +140,18 @@
     <Compile Include="Reports\frmSalXCargo.Designer.cs">
       <DependentUpon>frmSalXCargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Tardanzas\frmTardanza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\Tardanzas\frmTardanza.Designer.cs">
+      <DependentUpon>frmTardanza.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -157,9 +167,15 @@
       <DependentUpon>frmSalXCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\Tardanzas\frmTardanza.resx">
+      <DependentUpon>frmTardanza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Tardanzas\rptTardanzas.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\DomainA.ReporteSalXCargo.datasource" />
+    <None Include="Properties\DataSources\DomainA.ReporteTardanza.datasource" />
     <None Include="Properties\DataSources\DomainA.SalXCargoListing.datasource" />
+    <None Include="Properties\DataSources\DomainA.TardanzaListing.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

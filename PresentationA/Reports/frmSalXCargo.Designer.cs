@@ -31,12 +31,20 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.reporteSalXCargoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salXCargoListingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.reporteSalXCargoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salXCargoListingBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reporteSalXCargoBindingSource
+            // 
+            this.reporteSalXCargoBindingSource.DataSource = typeof(DomainA.ReporteSalXCargo);
+            // 
+            // salXCargoListingBindingSource
+            // 
+            this.salXCargoListingBindingSource.DataSource = typeof(DomainA.SalXCargoListing);
             // 
             // reportViewer1
             // 
@@ -49,25 +57,19 @@
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "PresentationA.Reports.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(5);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(1333, 727);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // reporteSalXCargoBindingSource
-            // 
-            this.reporteSalXCargoBindingSource.DataSource = typeof(DomainA.ReporteSalXCargo);
-            // 
-            // salXCargoListingBindingSource
-            // 
-            this.salXCargoListingBindingSource.DataSource = typeof(DomainA.SalXCargoListing);
             // 
             // frmSalXCargo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1333, 727);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "frmSalXCargo";
             this.Text = "frmSalXCargo";
             this.Load += new System.EventHandler(this.frmSalXCargo_Load);

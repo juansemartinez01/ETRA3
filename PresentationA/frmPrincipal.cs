@@ -21,7 +21,7 @@ namespace PresentationA
             openChildFormInPanel(new frmInicio());
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(200, 2);
-            pnlSideMenu.Controls.Add(bordeInferior);
+            btn.Controls.Add(bordeInferior);
             pnlColaboradores.Controls.Add(bordeInferior);
 
         }
@@ -124,10 +124,6 @@ namespace PresentationA
             openChildFormInPanel(new FormularioColaborador());
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnAgregarColab_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
@@ -145,6 +141,23 @@ namespace PresentationA
         {
             ActivateButton(sender);
             openChildFormInPanel(new frmEventos());
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            showSubMenu(pnlReportes);
+        }
+
+        private void btnSalXCargo_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new Reports.frmSalXCargo());
+        }
+
+        private void btnTardanzas_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new Reports.Tardanzas.frmTardanza());
         }
     }
 }

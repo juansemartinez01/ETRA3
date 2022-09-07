@@ -30,45 +30,50 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.pnlSideMenu = new System.Windows.Forms.Panel();
+            this.btn = new System.Windows.Forms.Panel();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
             this.btnEventos = new FontAwesome.Sharp.IconButton();
-            this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnConsultar = new FontAwesome.Sharp.IconButton();
             this.btnColaboradores = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.pnlSideMenu.SuspendLayout();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.pnlReportes = new System.Windows.Forms.Panel();
+            this.btnTardanzas = new FontAwesome.Sharp.IconButton();
+            this.btnSalXCargo = new FontAwesome.Sharp.IconButton();
+            this.btn.SuspendLayout();
             this.pnlColaboradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlReportes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlSideMenu
+            // btn
             // 
-            this.pnlSideMenu.AutoScroll = true;
-            this.pnlSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.pnlSideMenu.Controls.Add(this.pnlColaboradores);
-            this.pnlSideMenu.Controls.Add(this.btnColaboradores);
-            this.pnlSideMenu.Controls.Add(this.pictureBox1);
-            this.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSideMenu.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pnlSideMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnlSideMenu.Name = "pnlSideMenu";
-            this.pnlSideMenu.Size = new System.Drawing.Size(200, 941);
-            this.pnlSideMenu.TabIndex = 1;
+            this.btn.AutoScroll = true;
+            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btn.Controls.Add(this.pnlReportes);
+            this.btn.Controls.Add(this.iconButton1);
+            this.btn.Controls.Add(this.pnlColaboradores);
+            this.btn.Controls.Add(this.btnColaboradores);
+            this.btn.Controls.Add(this.pictureBox1);
+            this.btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn.Location = new System.Drawing.Point(0, 0);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(200, 941);
+            this.btn.TabIndex = 1;
             // 
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
             this.pnlColaboradores.Controls.Add(this.btnEventos);
-            this.pnlColaboradores.Controls.Add(this.btnReportes);
             this.pnlColaboradores.Controls.Add(this.btnAgregar);
             this.pnlColaboradores.Controls.Add(this.btnConsultar);
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 120);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 179);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 141);
             this.pnlColaboradores.TabIndex = 2;
             // 
             // btnEventos
@@ -82,7 +87,7 @@
             this.btnEventos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEventos.IconSize = 30;
             this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEventos.Location = new System.Drawing.Point(0, 126);
+            this.btnEventos.Location = new System.Drawing.Point(0, 84);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnEventos.Size = new System.Drawing.Size(200, 42);
@@ -92,28 +97,6 @@
             this.btnEventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEventos.UseVisualStyleBackColor = true;
             this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.ForeColor = System.Drawing.Color.White;
-            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
-            this.btnReportes.IconColor = System.Drawing.Color.White;
-            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReportes.IconSize = 30;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 84);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(200, 42);
-            this.btnReportes.TabIndex = 2;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnAgregar
             // 
@@ -194,11 +177,86 @@
             // 
             this.pnlChildForm.AutoScroll = true;
             this.pnlChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlChildForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pnlChildForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(1184, 941);
             this.pnlChildForm.TabIndex = 2;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 261);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(200, 42);
+            this.iconButton1.TabIndex = 5;
+            this.iconButton1.Text = "Reportes";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // pnlReportes
+            // 
+            this.pnlReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlReportes.Controls.Add(this.btnTardanzas);
+            this.pnlReportes.Controls.Add(this.btnSalXCargo);
+            this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlReportes.Location = new System.Drawing.Point(0, 303);
+            this.pnlReportes.Name = "pnlReportes";
+            this.pnlReportes.Size = new System.Drawing.Size(200, 124);
+            this.pnlReportes.TabIndex = 6;
+            // 
+            // btnTardanzas
+            // 
+            this.btnTardanzas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTardanzas.FlatAppearance.BorderSize = 0;
+            this.btnTardanzas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTardanzas.ForeColor = System.Drawing.Color.White;
+            this.btnTardanzas.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.btnTardanzas.IconColor = System.Drawing.Color.White;
+            this.btnTardanzas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTardanzas.IconSize = 30;
+            this.btnTardanzas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTardanzas.Location = new System.Drawing.Point(0, 56);
+            this.btnTardanzas.Name = "btnTardanzas";
+            this.btnTardanzas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnTardanzas.Size = new System.Drawing.Size(200, 54);
+            this.btnTardanzas.TabIndex = 4;
+            this.btnTardanzas.Text = "Tardanzas por Período";
+            this.btnTardanzas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTardanzas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTardanzas.UseVisualStyleBackColor = true;
+            this.btnTardanzas.Click += new System.EventHandler(this.btnTardanzas_Click);
+            // 
+            // btnSalXCargo
+            // 
+            this.btnSalXCargo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSalXCargo.FlatAppearance.BorderSize = 0;
+            this.btnSalXCargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalXCargo.ForeColor = System.Drawing.Color.White;
+            this.btnSalXCargo.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.btnSalXCargo.IconColor = System.Drawing.Color.White;
+            this.btnSalXCargo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalXCargo.IconSize = 30;
+            this.btnSalXCargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalXCargo.Location = new System.Drawing.Point(0, 0);
+            this.btnSalXCargo.Name = "btnSalXCargo";
+            this.btnSalXCargo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSalXCargo.Size = new System.Drawing.Size(200, 56);
+            this.btnSalXCargo.TabIndex = 3;
+            this.btnSalXCargo.Text = "Salarios por Cargo";
+            this.btnSalXCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalXCargo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalXCargo.UseVisualStyleBackColor = true;
+            this.btnSalXCargo.Click += new System.EventHandler(this.btnSalXCargo_Click);
             // 
             // frmPrincipal
             // 
@@ -207,29 +265,33 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1384, 941);
             this.Controls.Add(this.pnlChildForm);
-            this.Controls.Add(this.pnlSideMenu);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.btn);
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
-            this.pnlSideMenu.ResumeLayout(false);
+            this.btn.ResumeLayout(false);
             this.pnlColaboradores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlReportes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlSideMenu;
+        private System.Windows.Forms.Panel btn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlColaboradores;
         private System.Windows.Forms.Panel pnlChildForm;
         private FontAwesome.Sharp.IconButton btnEventos;
-        private FontAwesome.Sharp.IconButton btnReportes;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconButton btnConsultar;
         private FontAwesome.Sharp.IconButton btnColaboradores;
+        private System.Windows.Forms.Panel pnlReportes;
+        private FontAwesome.Sharp.IconButton btnTardanzas;
+        private FontAwesome.Sharp.IconButton btnSalXCargo;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
 

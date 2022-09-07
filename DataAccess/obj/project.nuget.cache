@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8tKXfnqBVL+1UKXvOfJn7bUrhI1ULuf3aPRSqO/FPY7ZmXMGRYKBAr3FWovN4PngutjnScmKRt/NTcA4qmLTBw==",
+  "dgSpecHash": "HLsL6IuexKyTWC6ejrKZuGGE1ORPMa6SaHawgMGqOsQBKDZD7N6OnwvV7J1IXYmCx9957isKrECSMx9WwngM9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Documents\\ETRA\\Programa\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\Documents\\ETRA\\viejo\\Etra 2.5\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

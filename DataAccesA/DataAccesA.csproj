@@ -48,6 +48,7 @@
     <Compile Include="EventosDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteSalXCargoDao.cs" />
+    <Compile Include="ReporteTardanzaDao.cs" />
     <Compile Include="SalariosDao.cs" />
     <Compile Include="UsuarioDao.cs" />
   </ItemGroup>

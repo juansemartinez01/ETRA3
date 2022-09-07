@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using DomainA;
 namespace PresentationA.Reports
 {
-    public partial class frmSalXCargo : Form
+    public partial class frmSalXCargo : frmHijo
     {
         public frmSalXCargo()
         {
@@ -24,5 +24,6 @@ namespace PresentationA.Reports
 
             this.reportViewer1.RefreshReport();
         }
+
     }
 }

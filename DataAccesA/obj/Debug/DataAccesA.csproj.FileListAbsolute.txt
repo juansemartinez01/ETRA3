@@ -4,3 +4,9 @@ C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.csproj.
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.dll
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.pdb
+C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\DataAccesA\bin\Debug\DataAccesA.dll
+C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\DataAccesA\bin\Debug\DataAccesA.pdb
+C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\DataAccesA\obj\Debug\DataAccesA.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\DataAccesA\obj\Debug\DataAccesA.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\DataAccesA\obj\Debug\DataAccesA.dll
+C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\DataAccesA\obj\Debug\DataAccesA.pdb
