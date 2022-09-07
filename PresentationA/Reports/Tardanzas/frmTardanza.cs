@@ -23,5 +23,10 @@ namespace PresentationA.Reports.Tardanzas
         {
             getReportTardanza(Convert.ToDateTime(dtpFechaInicio.Value), Convert.ToDateTime(dtpFechaFin.Value));
         }
+
+        private void frmTardanza_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
