@@ -1,5 +1,7 @@
 ﻿using DomainA;
 using System;
+using System.Drawing.Printing;
+using System.Windows.Forms.VisualStyles;
 
 namespace PresentationA.Reports.Tardanzas
 {
@@ -26,7 +28,7 @@ namespace PresentationA.Reports.Tardanzas
 
         private void frmTardanza_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

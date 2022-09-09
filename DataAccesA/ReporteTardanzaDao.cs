@@ -17,7 +17,7 @@ namespace DataAccesA
                 {
                     command.Connection = connection;
                     
-                    command.CommandText = @"SELECT H.legajoColaborador AS 'Legajo Colaborador',ca.nombre as 'Cargo', E.descripcion as 'Descripcion', convert(varchar,H.fechaInicio,108) as 'HoraLlegada', convert(varchar,H.fechaInicio,3) as 'Fecha'
+                    command.CommandText = @"SELECT H.legajoColaborador AS 'Legajo Colaborador',ca.nombre as 'Cargo', E.descripcion as 'Descripcion', h.fechaInicio as 'Fecha'
                                             FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento 
                                             JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento 
                                             JOIN HistorialCargo hc on H.legajoColaborador = hc.legajoColaborador 

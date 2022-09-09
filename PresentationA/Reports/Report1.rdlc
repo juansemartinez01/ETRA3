@@ -79,7 +79,6 @@
                                 <TextRun>
                                   <Value>CARGO</Value>
                                   <Style>
-                                    <FontStyle>Italic</FontStyle>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -102,6 +101,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -115,7 +115,6 @@
                                 <TextRun>
                                   <Value>MONTO</Value>
                                   <Style>
-                                    <FontStyle>Italic</FontStyle>
                                     <FontFamily>CENTURY Gothic</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -139,6 +138,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -529,6 +529,7 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
+                    <IntervalType>Number</IntervalType>
                     <ChartMajorGridLines>
                       <Style>
                         <Border>
@@ -564,6 +565,7 @@
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
                     <ChartAxisScaleBreak>
+                      <Enabled>true</Enabled>
                       <Style />
                     </ChartAxisScaleBreak>
                   </ChartAxis>

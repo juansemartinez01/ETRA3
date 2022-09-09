@@ -29,8 +29,7 @@ namespace DomainA
                     LegajoColaborador = Convert.ToInt32(row[0]),
                     Cargo = Convert.ToString(row[1]),
                     Descripcion = Convert.ToString(row[2]),
-                    horaLlegada = Convert.ToDateTime(row[3]),
-                    fecha = Convert.ToDateTime(row[4]),
+                    fecha = Convert.ToDateTime(row[3]),
                 };
 
                 tardanzaListing.Add(tardanzaModel);
