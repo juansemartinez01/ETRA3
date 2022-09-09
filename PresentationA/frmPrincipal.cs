@@ -17,12 +17,12 @@ namespace PresentationA
         {
 
             InitializeComponent();
-            customizeDesign();
+            hideSubMenu();
             openChildFormInPanel(new frmInicio());
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(200, 2);
-            btn.Controls.Add(bordeInferior);
-            pnlColaboradores.Controls.Add(bordeInferior);
+            pnlPrincipal.Controls.Add(bordeInferior);
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
         }
         private void ActivateButton(object button)
@@ -37,7 +37,7 @@ namespace PresentationA
                 botonSeleccionado.IconColor = Color.FromArgb(247, 160, 85);
 
                 bordeInferior.BackColor = Color.FromArgb(247, 160, 85);
-                bordeInferior.Location = new Point(botonSeleccionado.Location.X, botonSeleccionado.Location.Y + 35);
+                bordeInferior.Location = new Point(botonSeleccionado.Location.X, botonSeleccionado.Location.Y + (botonSeleccionado.Height - 5));
                 bordeInferior.Visible = true;
                 bordeInferior.BringToFront();
             }
@@ -46,6 +46,7 @@ namespace PresentationA
         {
             if (botonSeleccionado != null)
             {
+                bordeInferior.Visible = false;
                 botonSeleccionado.ForeColor = Color.White;
                 botonSeleccionado.IconColor = Color.White;
                 botonSeleccionado.BackColor = Color.FromArgb(247, 160, 85);
@@ -62,20 +63,18 @@ namespace PresentationA
             base.OnFormClosing(e);
         }
 
-        private void customizeDesign()
-        {
-            pnlColaboradores.Visible = false;
-        }
         private void hideSubMenu()
         {
-            if (pnlColaboradores.Visible == true) pnlColaboradores.Visible = false;
+            //if (pnlColaboradores.Visible == true) pnlColaboradores.Visible = false;
+            pnlColaboradores.Visible = false;
+            pnlReportes.Visible = false;
         }
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
                 hideSubMenu();
-
+                subMenu.Controls.Add(bordeInferior);
                 subMenu.Visible = true;
             }
             else
@@ -85,7 +84,7 @@ namespace PresentationA
 
         private void btnColaboradores_Click(object sender, EventArgs e)
         {
-
+            DisableButton();
             showSubMenu(pnlColaboradores);
         }
 
@@ -134,6 +133,8 @@ namespace PresentationA
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            DisableButton();
+            hideSubMenu();
             openChildFormInPanel(new frmInicio());
         }
 
@@ -145,6 +146,7 @@ namespace PresentationA
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
+            DisableButton();
             showSubMenu(pnlReportes);
         }
 
@@ -158,6 +160,12 @@ namespace PresentationA
         {
             ActivateButton(sender);
             openChildFormInPanel(new Reports.Tardanzas.frmTardanza());
+        }
+
+        private void btnSalarios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmSalarios());
         }
     }
 }

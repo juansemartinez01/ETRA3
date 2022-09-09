@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Documents\\ETRA\\viejo\\Etra 2.5\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Documents\\ETRA\\Programa\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\usuario\\Documents\\ETRA\\viejo\\Etra 2.5\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\usuario\\Documents\\ETRA\\Programa\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Documents\\ETRA\\viejo\\Etra 2.5\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Documents\\ETRA\\Programa\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,6 +1,6 @@
 ﻿namespace PresentationA.Colaboradores.Consulta
 {
-    partial class frmHistorial
+    partial class frmHistorialEvento
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,27 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
-            this.txtfechaInicio = new System.Windows.Forms.TextBox();
-            this.txtfechaFin = new System.Windows.Forms.TextBox();
-            this.txtfechaRegistro = new System.Windows.Forms.TextBox();
             this.txtdescripcion = new System.Windows.Forms.RichTextBox();
             this.dgvEventos = new System.Windows.Forms.DataGridView();
+            this.cmbnombre = new System.Windows.Forms.ComboBox();
+            this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpfechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dtpfechaRegistro = new System.Windows.Forms.DateTimePicker();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(15, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -64,9 +67,9 @@
             this.label2.Location = new System.Drawing.Point(15, 79);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Evento:";
+            this.label2.Text = "Tipo Evento:";
             // 
             // label4
             // 
@@ -98,29 +101,19 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Fecha de Inicio:";
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(136, 424);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(96, 27);
-            this.btnModificar.TabIndex = 7;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(15, 424);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 476);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(96, 27);
             this.btnAgregar.TabIndex = 8;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Confirmar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(258, 424);
+            this.btnEliminar.Location = new System.Drawing.Point(288, 476);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(96, 27);
@@ -128,62 +121,20 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 233);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Archivos asociados:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 274);
+            this.label7.Location = new System.Drawing.Point(15, 240);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 11;
             this.label7.Text = "Descripción:";
             // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(188, 79);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(196, 26);
-            this.txtnombre.TabIndex = 12;
-            // 
-            // txtfechaInicio
-            // 
-            this.txtfechaInicio.Location = new System.Drawing.Point(188, 119);
-            this.txtfechaInicio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfechaInicio.Name = "txtfechaInicio";
-            this.txtfechaInicio.Size = new System.Drawing.Size(196, 26);
-            this.txtfechaInicio.TabIndex = 13;
-            // 
-            // txtfechaFin
-            // 
-            this.txtfechaFin.Location = new System.Drawing.Point(188, 156);
-            this.txtfechaFin.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfechaFin.Name = "txtfechaFin";
-            this.txtfechaFin.Size = new System.Drawing.Size(196, 26);
-            this.txtfechaFin.TabIndex = 14;
-            // 
-            // txtfechaRegistro
-            // 
-            this.txtfechaRegistro.Location = new System.Drawing.Point(188, 189);
-            this.txtfechaRegistro.Margin = new System.Windows.Forms.Padding(4);
-            this.txtfechaRegistro.Name = "txtfechaRegistro";
-            this.txtfechaRegistro.Size = new System.Drawing.Size(196, 26);
-            this.txtfechaRegistro.TabIndex = 15;
-            // 
             // txtdescripcion
             // 
             this.txtdescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdescripcion.Location = new System.Drawing.Point(188, 274);
+            this.txtdescripcion.Location = new System.Drawing.Point(188, 240);
             this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(196, 112);
@@ -193,33 +144,105 @@
             // dgvEventos
             // 
             this.dgvEventos.AllowUserToOrderColumns = true;
-            this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventos.Location = new System.Drawing.Point(421, 79);
+            this.dgvEventos.Location = new System.Drawing.Point(421, 76);
             this.dgvEventos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowTemplate.Height = 25;
-            this.dgvEventos.Size = new System.Drawing.Size(453, 372);
+            this.dgvEventos.Size = new System.Drawing.Size(530, 427);
             this.dgvEventos.TabIndex = 18;
             this.dgvEventos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             // 
-            // frmHistorial
+            // cmbnombre
+            // 
+            this.cmbnombre.FormattingEnabled = true;
+            this.cmbnombre.Location = new System.Drawing.Point(188, 76);
+            this.cmbnombre.Name = "cmbnombre";
+            this.cmbnombre.Size = new System.Drawing.Size(196, 28);
+            this.cmbnombre.TabIndex = 19;
+            // 
+            // dtpfechaInicio
+            // 
+            this.dtpfechaInicio.Location = new System.Drawing.Point(188, 119);
+            this.dtpfechaInicio.Name = "dtpfechaInicio";
+            this.dtpfechaInicio.Size = new System.Drawing.Size(200, 26);
+            this.dtpfechaInicio.TabIndex = 20;
+            // 
+            // dtpfechaFin
+            // 
+            this.dtpfechaFin.Location = new System.Drawing.Point(188, 156);
+            this.dtpfechaFin.Name = "dtpfechaFin";
+            this.dtpfechaFin.Size = new System.Drawing.Size(200, 26);
+            this.dtpfechaFin.TabIndex = 21;
+            // 
+            // dtpfechaRegistro
+            // 
+            this.dtpfechaRegistro.Location = new System.Drawing.Point(188, 195);
+            this.dtpfechaRegistro.Name = "dtpfechaRegistro";
+            this.dtpfechaRegistro.Size = new System.Drawing.Size(200, 26);
+            this.dtpfechaRegistro.TabIndex = 22;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Enabled = false;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 30;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.iconButton2.Location = new System.Drawing.Point(19, 359);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(365, 44);
+            this.iconButton2.TabIndex = 24;
+            this.iconButton2.Text = "Ver Archivo";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 40;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.iconButton1.Location = new System.Drawing.Point(20, 409);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(365, 44);
+            this.iconButton1.TabIndex = 25;
+            this.iconButton1.Text = "Agregar Archivo";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(154, 476);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(96, 27);
+            this.btnModificar.TabIndex = 7;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // frmHistorialEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 529);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.dtpfechaRegistro);
+            this.Controls.Add(this.dtpfechaFin);
+            this.Controls.Add(this.dtpfechaInicio);
+            this.Controls.Add(this.cmbnombre);
             this.Controls.Add(this.dgvEventos);
             this.Controls.Add(this.txtdescripcion);
-            this.Controls.Add(this.txtfechaRegistro);
-            this.Controls.Add(this.txtfechaFin);
-            this.Controls.Add(this.txtfechaInicio);
-            this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnModificar);
@@ -228,9 +251,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "frmHistorial";
+            this.Name = "frmHistorialEvento";
             this.Text = "frmHistorial";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();
             this.ResumeLayout(false);
@@ -245,16 +268,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.TextBox txtfechaInicio;
-        private System.Windows.Forms.TextBox txtfechaFin;
-        private System.Windows.Forms.TextBox txtfechaRegistro;
         private System.Windows.Forms.RichTextBox txtdescripcion;
         private System.Windows.Forms.DataGridView dgvEventos;
+        private System.Windows.Forms.ComboBox cmbnombre;
+        private System.Windows.Forms.DateTimePicker dtpfechaInicio;
+        private System.Windows.Forms.DateTimePicker dtpfechaFin;
+        private System.Windows.Forms.DateTimePicker dtpfechaRegistro;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

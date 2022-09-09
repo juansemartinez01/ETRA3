@@ -41,6 +41,7 @@
             this.btnAplicar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cmbColaboradores2 = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,8 +57,6 @@
             // 
             // dgvEventos
             // 
-            this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -66,15 +65,15 @@
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowTemplate.Height = 25;
-            this.dgvEventos.Size = new System.Drawing.Size(930, 241);
+            this.dgvEventos.Size = new System.Drawing.Size(936, 241);
             this.dgvEventos.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(483, 18);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(352, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 28);
@@ -145,20 +144,20 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(554, 18);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(241, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(368, 26);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(554, 64);
+            this.dateTimePicker2.Location = new System.Drawing.Point(554, 62);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(241, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(368, 26);
             this.dateTimePicker2.TabIndex = 10;
             // 
             // btnAplicar
             // 
-            this.btnAplicar.Location = new System.Drawing.Point(671, 124);
+            this.btnAplicar.Location = new System.Drawing.Point(671, 119);
             this.btnAplicar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(124, 27);
@@ -169,7 +168,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAplicar);
@@ -184,15 +183,16 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(930, 159);
+            this.groupBox1.Size = new System.Drawing.Size(936, 159);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbColaboradores2);
             this.groupBox2.Controls.Add(this.txtDescripcion);
             this.groupBox2.Controls.Add(this.label7);
@@ -205,10 +205,19 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(930, 254);
+            this.groupBox2.Size = new System.Drawing.Size(936, 254);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(35, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 20);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Nombre:";
             // 
             // cmbColaboradores2
             // 
@@ -268,12 +277,11 @@
             // cmbTipoEvento2
             // 
             this.cmbTipoEvento2.FormattingEnabled = true;
-            this.cmbTipoEvento2.Location = new System.Drawing.Point(35, 25);
+            this.cmbTipoEvento2.Location = new System.Drawing.Point(195, 25);
             this.cmbTipoEvento2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento2.Name = "cmbTipoEvento2";
             this.cmbTipoEvento2.Size = new System.Drawing.Size(154, 28);
             this.cmbTipoEvento2.TabIndex = 2;
-            this.cmbTipoEvento2.Text = "Nombre:";
             // 
             // button1
             // 
@@ -290,12 +298,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 788);
+            this.ClientSize = new System.Drawing.Size(977, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvEventos);
-            this.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmEventos";
             this.Text = "frmEventos";
@@ -333,5 +341,6 @@
         private System.Windows.Forms.ComboBox cmbTipoEvento2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox txtDescripcion;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -140,3 +140,13 @@ C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\PresentationA\obj\Debug\Presentat
 C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\PresentationA\obj\Debug\PresentationA.pdb
 C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\PresentationA\obj\Debug\PresentationA.frmPrincipal.resources
 C:\Users\usuario\Documents\ETRA\viejo\Etra 2.5\PresentationA\obj\Debug\PresentationA.Reports.Tardanzas.frmTardanza.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmPrincipal.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Reports.Tardanzas.frmTardanza.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmHijo.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmEventos.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmSalarios.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmCargaColab.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmDatosPersonales.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.FormularioColaborador.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmHistorialEvento.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmHistorialSalario.resources

@@ -30,51 +30,151 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.btn = new System.Windows.Forms.Panel();
+            this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.pnlReportes = new System.Windows.Forms.Panel();
+            this.btnSalXCargo = new FontAwesome.Sharp.IconButton();
+            this.btnTardanzas = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
+            this.btnSalarios = new FontAwesome.Sharp.IconButton();
             this.btnEventos = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnConsultar = new FontAwesome.Sharp.IconButton();
             this.btnColaboradores = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.pnlReportes = new System.Windows.Forms.Panel();
-            this.btnTardanzas = new FontAwesome.Sharp.IconButton();
-            this.btnSalXCargo = new FontAwesome.Sharp.IconButton();
-            this.btn.SuspendLayout();
+            this.pnlPrincipal.SuspendLayout();
+            this.pnlReportes.SuspendLayout();
             this.pnlColaboradores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlReportes.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn
+            // pnlPrincipal
             // 
-            this.btn.AutoScroll = true;
-            this.btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btn.Controls.Add(this.pnlReportes);
-            this.btn.Controls.Add(this.iconButton1);
-            this.btn.Controls.Add(this.pnlColaboradores);
-            this.btn.Controls.Add(this.btnColaboradores);
-            this.btn.Controls.Add(this.pictureBox1);
-            this.btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btn.Location = new System.Drawing.Point(0, 0);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(200, 941);
-            this.btn.TabIndex = 1;
+            this.pnlPrincipal.AutoScroll = true;
+            this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.pnlPrincipal.Controls.Add(this.pnlReportes);
+            this.pnlPrincipal.Controls.Add(this.iconButton1);
+            this.pnlPrincipal.Controls.Add(this.pnlColaboradores);
+            this.pnlPrincipal.Controls.Add(this.btnColaboradores);
+            this.pnlPrincipal.Controls.Add(this.pictureBox1);
+            this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPrincipal.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.pnlPrincipal.Name = "pnlPrincipal";
+            this.pnlPrincipal.Size = new System.Drawing.Size(200, 941);
+            this.pnlPrincipal.TabIndex = 1;
+            // 
+            // pnlReportes
+            // 
+            this.pnlReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlReportes.Controls.Add(this.btnSalXCargo);
+            this.pnlReportes.Controls.Add(this.btnTardanzas);
+            this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlReportes.Location = new System.Drawing.Point(0, 339);
+            this.pnlReportes.Name = "pnlReportes";
+            this.pnlReportes.Size = new System.Drawing.Size(200, 119);
+            this.pnlReportes.TabIndex = 0;
+            // 
+            // btnSalXCargo
+            // 
+            this.btnSalXCargo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSalXCargo.FlatAppearance.BorderSize = 0;
+            this.btnSalXCargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalXCargo.ForeColor = System.Drawing.Color.White;
+            this.btnSalXCargo.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.btnSalXCargo.IconColor = System.Drawing.Color.White;
+            this.btnSalXCargo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalXCargo.IconSize = 30;
+            this.btnSalXCargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalXCargo.Location = new System.Drawing.Point(0, 56);
+            this.btnSalXCargo.Name = "btnSalXCargo";
+            this.btnSalXCargo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSalXCargo.Size = new System.Drawing.Size(200, 56);
+            this.btnSalXCargo.TabIndex = 3;
+            this.btnSalXCargo.Text = "Salarios por Cargo";
+            this.btnSalXCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalXCargo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalXCargo.UseVisualStyleBackColor = true;
+            this.btnSalXCargo.Click += new System.EventHandler(this.btnSalXCargo_Click);
+            // 
+            // btnTardanzas
+            // 
+            this.btnTardanzas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTardanzas.FlatAppearance.BorderSize = 0;
+            this.btnTardanzas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTardanzas.ForeColor = System.Drawing.Color.White;
+            this.btnTardanzas.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.btnTardanzas.IconColor = System.Drawing.Color.White;
+            this.btnTardanzas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTardanzas.IconSize = 30;
+            this.btnTardanzas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTardanzas.Location = new System.Drawing.Point(0, 0);
+            this.btnTardanzas.Name = "btnTardanzas";
+            this.btnTardanzas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnTardanzas.Size = new System.Drawing.Size(200, 56);
+            this.btnTardanzas.TabIndex = 4;
+            this.btnTardanzas.Text = "Tardanzas por Período";
+            this.btnTardanzas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTardanzas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTardanzas.UseVisualStyleBackColor = true;
+            this.btnTardanzas.Click += new System.EventHandler(this.btnTardanzas_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 297);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(200, 42);
+            this.iconButton1.TabIndex = 5;
+            this.iconButton1.Text = "Reportes";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlColaboradores.Controls.Add(this.btnSalarios);
             this.pnlColaboradores.Controls.Add(this.btnEventos);
             this.pnlColaboradores.Controls.Add(this.btnAgregar);
             this.pnlColaboradores.Controls.Add(this.btnConsultar);
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 120);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 141);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 177);
             this.pnlColaboradores.TabIndex = 2;
+            // 
+            // btnSalarios
+            // 
+            this.btnSalarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSalarios.FlatAppearance.BorderSize = 0;
+            this.btnSalarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalarios.ForeColor = System.Drawing.Color.White;
+            this.btnSalarios.IconChar = FontAwesome.Sharp.IconChar.DollarSign;
+            this.btnSalarios.IconColor = System.Drawing.Color.White;
+            this.btnSalarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalarios.IconSize = 30;
+            this.btnSalarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalarios.Location = new System.Drawing.Point(0, 126);
+            this.btnSalarios.Name = "btnSalarios";
+            this.btnSalarios.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSalarios.Size = new System.Drawing.Size(200, 42);
+            this.btnSalarios.TabIndex = 4;
+            this.btnSalarios.Text = "Salarios";
+            this.btnSalarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalarios.UseVisualStyleBackColor = true;
+            this.btnSalarios.Click += new System.EventHandler(this.btnSalarios_Click);
             // 
             // btnEventos
             // 
@@ -183,81 +283,6 @@
             this.pnlChildForm.Size = new System.Drawing.Size(1184, 941);
             this.pnlChildForm.TabIndex = 2;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 261);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(200, 42);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "Reportes";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // pnlReportes
-            // 
-            this.pnlReportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
-            this.pnlReportes.Controls.Add(this.btnTardanzas);
-            this.pnlReportes.Controls.Add(this.btnSalXCargo);
-            this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReportes.Location = new System.Drawing.Point(0, 303);
-            this.pnlReportes.Name = "pnlReportes";
-            this.pnlReportes.Size = new System.Drawing.Size(200, 124);
-            this.pnlReportes.TabIndex = 6;
-            // 
-            // btnTardanzas
-            // 
-            this.btnTardanzas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTardanzas.FlatAppearance.BorderSize = 0;
-            this.btnTardanzas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTardanzas.ForeColor = System.Drawing.Color.White;
-            this.btnTardanzas.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
-            this.btnTardanzas.IconColor = System.Drawing.Color.White;
-            this.btnTardanzas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTardanzas.IconSize = 30;
-            this.btnTardanzas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTardanzas.Location = new System.Drawing.Point(0, 56);
-            this.btnTardanzas.Name = "btnTardanzas";
-            this.btnTardanzas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnTardanzas.Size = new System.Drawing.Size(200, 54);
-            this.btnTardanzas.TabIndex = 4;
-            this.btnTardanzas.Text = "Tardanzas por Período";
-            this.btnTardanzas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTardanzas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTardanzas.UseVisualStyleBackColor = true;
-            this.btnTardanzas.Click += new System.EventHandler(this.btnTardanzas_Click);
-            // 
-            // btnSalXCargo
-            // 
-            this.btnSalXCargo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSalXCargo.FlatAppearance.BorderSize = 0;
-            this.btnSalXCargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalXCargo.ForeColor = System.Drawing.Color.White;
-            this.btnSalXCargo.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
-            this.btnSalXCargo.IconColor = System.Drawing.Color.White;
-            this.btnSalXCargo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSalXCargo.IconSize = 30;
-            this.btnSalXCargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalXCargo.Location = new System.Drawing.Point(0, 0);
-            this.btnSalXCargo.Name = "btnSalXCargo";
-            this.btnSalXCargo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSalXCargo.Size = new System.Drawing.Size(200, 56);
-            this.btnSalXCargo.TabIndex = 3;
-            this.btnSalXCargo.Text = "Salarios por Cargo";
-            this.btnSalXCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalXCargo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSalXCargo.UseVisualStyleBackColor = true;
-            this.btnSalXCargo.Click += new System.EventHandler(this.btnSalXCargo_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -265,22 +290,22 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1384, 941);
             this.Controls.Add(this.pnlChildForm);
-            this.Controls.Add(this.btn);
+            this.Controls.Add(this.pnlPrincipal);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
-            this.btn.ResumeLayout(false);
+            this.pnlPrincipal.ResumeLayout(false);
+            this.pnlReportes.ResumeLayout(false);
             this.pnlColaboradores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlReportes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel btn;
+        private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlColaboradores;
         private System.Windows.Forms.Panel pnlChildForm;
@@ -288,10 +313,11 @@
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconButton btnConsultar;
         private FontAwesome.Sharp.IconButton btnColaboradores;
-        private System.Windows.Forms.Panel pnlReportes;
         private FontAwesome.Sharp.IconButton btnTardanzas;
         private FontAwesome.Sharp.IconButton btnSalXCargo;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Panel pnlReportes;
+        private FontAwesome.Sharp.IconButton btnSalarios;
     }
 }
 

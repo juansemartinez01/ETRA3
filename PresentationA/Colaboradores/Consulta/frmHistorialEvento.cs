@@ -6,11 +6,11 @@ using DomainA;
 
 namespace PresentationA.Colaboradores.Consulta
 {
-    public partial class frmHistorial : frmHijo
+    public partial class frmHistorialEvento : frmHijo
     {
         Eventos obje = new Eventos();
         DataTable historial;
-        public frmHistorial(string legajo)
+        public frmHistorialEvento(string legajo)
         {
             InitializeComponent();
             CargarDG(legajo);
@@ -41,14 +41,17 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             //completarLabels(this, historial, "txt");
-            txtnombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
-            txtfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
-            txtfechaFin.Text = filaSeleccionada.Cells["Fecha Fin"].Value.ToString();
-            txtfechaRegistro.Text = filaSeleccionada.Cells["Fecha de registro"].Value.ToString();
+            cmbnombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
+            dtpfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
+            dtpfechaFin.Text = filaSeleccionada.Cells["Fecha Fin"].Value.ToString();
+            dtpfechaRegistro.Text = filaSeleccionada.Cells["Fecha de registro"].Value.ToString();
             txtdescripcion.Text = filaSeleccionada.Cells["Descripción"].Value.ToString();
 
         }
 
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZgVKIHc2xtLjfn1RKCMItm5sjqn4bw+JxTESPoEVMx4h0jHOLsazKf6bfWl0rS0NhGF1pNLbPIAHkR/pwvPy/w==",
+  "dgSpecHash": "JBLBI0RwWtX8+u4nzu4L+/J+NRzlCJsYu9qEC5OqKOTRJPVSNjq5DTucbGGORGt40UQ2dH4rM218hKw8CD+JmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Documents\\ETRA\\viejo\\Etra 2.5\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\Documents\\ETRA\\Programa\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\fontawesome.sharp\\6.1.1\\fontawesome.sharp.6.1.1.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

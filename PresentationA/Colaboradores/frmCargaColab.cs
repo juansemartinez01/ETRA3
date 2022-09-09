@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Media;
 using DomainA;
 
 namespace PresentationA.Colaboradores
@@ -10,6 +11,10 @@ namespace PresentationA.Colaboradores
     public partial class frmCargaColab : frmHijo
     {
         DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
+        private List<string> camposObligatorios = new List<string>()
+        {
+            "txtNombre", "txtApellido","txtDni","txtCuit", "txtCalle","txtNroCalle", "cmbPuesto"
+        };
         public frmCargaColab()
         {
 
@@ -21,6 +26,18 @@ namespace PresentationA.Colaboradores
 
 
         }
+        //private void validarCamposObligatorios()
+        //{
+        //    foreach (string campo in camposObligatorios)
+        //    {
+        //        var control = this.Controls.Find(campo, true);
+        //        if (control[0].Text == string.Empty)
+        //        {
+        //            Control labelControl = this.Controls.Find("lbl" + campo, true);
+        //            labelControl.BackColor = Colors.Red;
+        //        }
+        //    }
+        //}
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             cbo.ValueMember = value;
@@ -113,13 +130,6 @@ namespace PresentationA.Colaboradores
                                         MessageBox.Show("Debe asignarle un puesto al colaborador");
                                     }
 
-
-
-
-
-
-
-
                                 }
                                 else
                                 {
@@ -203,39 +213,27 @@ namespace PresentationA.Colaboradores
             Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
             Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
 
-            //pictureBox1.Image = fotoPerfil;
+            pictureBox1.Image = fotoPerfil;
             fotoPerfilArchivo.Close();
-
-
-
-
-
-
-
-
-
-
-
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.InitialDirectory = "C:\\Documentos";
+            openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
 
-        //private void pictureBox1_Click(object sender, EventArgs e)
-        //{
-        //    openFileDialog1.InitialDirectory = "C:\\Documentos";
-        //    openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
-        //    openFileDialog1.FilterIndex = 1;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
 
-        //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-        //    {
+            }
+            Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
+            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
 
-        //    }
-        //    Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
-        //    Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
-
-        //    pictureBox1.Image = fotoPerfil;
-        //    fotoPerfilArchivo.Close();
-        //}
+            pictureBox1.Image = fotoPerfil;
+            fotoPerfilArchivo.Close();
+        }
 
     }
 }

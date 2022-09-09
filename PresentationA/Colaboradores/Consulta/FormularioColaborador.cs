@@ -152,7 +152,13 @@ namespace PresentationA
         private void btnHistorial_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            openChildFormInPanel(new frmHistorial(colaborador.Rows[0]["legajo"].ToString()));
+            openChildFormInPanel(new frmHistorialEvento(colaborador.Rows[0]["legajo"].ToString()));
+        }
+
+        private void btnHistorialSalarios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmHistorialSalario(colaborador.Rows[0]["legajo"].ToString()));
         }
         //private void changeMenu(bool value)
         //{

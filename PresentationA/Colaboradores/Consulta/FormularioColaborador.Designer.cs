@@ -30,7 +30,7 @@
         {
             this.pnlBuscar = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -39,7 +39,8 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.Panel();
-            this.btnHistorial = new FontAwesome.Sharp.IconButton();
+            this.btnHistorialSalarios = new FontAwesome.Sharp.IconButton();
+            this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
             this.btnDatosGenerales = new FontAwesome.Sharp.IconButton();
             this.btnDatosPersonales = new FontAwesome.Sharp.IconButton();
             this.pnlBuscar.SuspendLayout();
@@ -58,16 +59,16 @@
             this.pnlBuscar.Controls.Add(this.txtApellido);
             this.pnlBuscar.Controls.Add(this.lblApellido);
             this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(800, 104);
+            this.pnlBuscar.Size = new System.Drawing.Size(1000, 104);
             this.pnlBuscar.TabIndex = 2;
             // 
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -82,10 +83,13 @@
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.Location = new System.Drawing.Point(673, 12);
+            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnBuscar.IconColor = System.Drawing.Color.Black;
+            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBuscar.Location = new System.Drawing.Point(779, 12);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(115, 27);
-            this.btnBuscar.TabIndex = 13;
+            this.btnBuscar.Size = new System.Drawing.Size(176, 38);
+            this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -145,53 +149,72 @@
             // 
             this.pnlFormulario.Controls.Add(this.pnlBotones);
             this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormulario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnlFormulario.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.pnlFormulario.Location = new System.Drawing.Point(0, 104);
             this.pnlFormulario.Name = "pnlFormulario";
-            this.pnlFormulario.Size = new System.Drawing.Size(800, 481);
+            this.pnlFormulario.Size = new System.Drawing.Size(1000, 481);
             this.pnlFormulario.TabIndex = 3;
             // 
             // pnlBotones
             // 
-            this.pnlBotones.Controls.Add(this.btnHistorial);
+            this.pnlBotones.Controls.Add(this.btnHistorialSalarios);
+            this.pnlBotones.Controls.Add(this.btnHistorialEventos);
             this.pnlBotones.Controls.Add(this.btnDatosGenerales);
             this.pnlBotones.Controls.Add(this.btnDatosPersonales);
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnlBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(800, 39);
+            this.pnlBotones.Size = new System.Drawing.Size(1000, 39);
             this.pnlBotones.TabIndex = 0;
             // 
-            // btnHistorial
+            // btnHistorialSalarios
             // 
-            this.btnHistorial.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHistorial.FlatAppearance.BorderSize = 0;
-            this.btnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorial.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHistorial.ForeColor = System.Drawing.Color.Black;
-            this.btnHistorial.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnHistorial.IconColor = System.Drawing.Color.Black;
-            this.btnHistorial.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistorial.Location = new System.Drawing.Point(562, 3);
-            this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(183, 30);
-            this.btnHistorial.TabIndex = 1;
-            this.btnHistorial.Text = "Historial";
-            this.btnHistorial.UseVisualStyleBackColor = true;
-            this.btnHistorial.Click += new System.EventHandler(this.btnHistorial_Click);
+            this.btnHistorialSalarios.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHistorialSalarios.FlatAppearance.BorderSize = 0;
+            this.btnHistorialSalarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialSalarios.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnHistorialSalarios.ForeColor = System.Drawing.Color.Black;
+            this.btnHistorialSalarios.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnHistorialSalarios.IconColor = System.Drawing.Color.Black;
+            this.btnHistorialSalarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistorialSalarios.Location = new System.Drawing.Point(779, 3);
+            this.btnHistorialSalarios.Name = "btnHistorialSalarios";
+            this.btnHistorialSalarios.Size = new System.Drawing.Size(183, 30);
+            this.btnHistorialSalarios.TabIndex = 2;
+            this.btnHistorialSalarios.Text = "Historial Salarios";
+            this.btnHistorialSalarios.UseVisualStyleBackColor = true;
+            this.btnHistorialSalarios.Click += new System.EventHandler(this.btnHistorialSalarios_Click);
+            // 
+            // btnHistorialEventos
+            // 
+            this.btnHistorialEventos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHistorialEventos.FlatAppearance.BorderSize = 0;
+            this.btnHistorialEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialEventos.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnHistorialEventos.ForeColor = System.Drawing.Color.Black;
+            this.btnHistorialEventos.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnHistorialEventos.IconColor = System.Drawing.Color.Black;
+            this.btnHistorialEventos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistorialEventos.Location = new System.Drawing.Point(534, 3);
+            this.btnHistorialEventos.Name = "btnHistorialEventos";
+            this.btnHistorialEventos.Size = new System.Drawing.Size(183, 30);
+            this.btnHistorialEventos.TabIndex = 1;
+            this.btnHistorialEventos.Text = "Historial Eventos";
+            this.btnHistorialEventos.UseVisualStyleBackColor = true;
+            this.btnHistorialEventos.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
             // btnDatosGenerales
             // 
             this.btnDatosGenerales.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDatosGenerales.FlatAppearance.BorderSize = 0;
             this.btnDatosGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatosGenerales.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDatosGenerales.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnDatosGenerales.ForeColor = System.Drawing.Color.Black;
             this.btnDatosGenerales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosGenerales.IconColor = System.Drawing.Color.Black;
             this.btnDatosGenerales.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDatosGenerales.Location = new System.Drawing.Point(299, 3);
+            this.btnDatosGenerales.Location = new System.Drawing.Point(282, 3);
             this.btnDatosGenerales.Name = "btnDatosGenerales";
             this.btnDatosGenerales.Size = new System.Drawing.Size(183, 30);
             this.btnDatosGenerales.TabIndex = 1;
@@ -204,7 +227,7 @@
             this.btnDatosPersonales.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDatosPersonales.FlatAppearance.BorderSize = 0;
             this.btnDatosPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatosPersonales.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDatosPersonales.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.btnDatosPersonales.ForeColor = System.Drawing.Color.Black;
             this.btnDatosPersonales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosPersonales.IconColor = System.Drawing.Color.Black;
@@ -220,10 +243,10 @@
             // FormularioColaborador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(800, 585);
+            this.ClientSize = new System.Drawing.Size(1000, 585);
             this.Controls.Add(this.pnlFormulario);
             this.Controls.Add(this.pnlBuscar);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.Name = "FormularioColaborador";
             this.Text = "FormularioColaborador";
             this.pnlBuscar.ResumeLayout(false);
@@ -236,7 +259,6 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlBuscar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -247,7 +269,9 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Panel pnlBotones;
         private FontAwesome.Sharp.IconButton btnDatosPersonales;
-        private FontAwesome.Sharp.IconButton btnHistorial;
+        private FontAwesome.Sharp.IconButton btnHistorialEventos;
         private FontAwesome.Sharp.IconButton btnDatosGenerales;
+        private FontAwesome.Sharp.IconButton btnHistorialSalarios;
+        private FontAwesome.Sharp.IconButton btnBuscar;
     }
 }
