@@ -30,10 +30,10 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtApellidoBusqueda = new System.Windows.Forms.TextBox();
+            this.txtNombreBusqueda = new System.Windows.Forms.TextBox();
+            this.txtMontoBusqueda = new System.Windows.Forms.TextBox();
+            this.txtLegajoBusqueda = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,10 +56,10 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.iconButton1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtApellidoBusqueda);
+            this.groupBox1.Controls.Add(this.txtNombreBusqueda);
+            this.groupBox1.Controls.Add(this.txtMontoBusqueda);
+            this.groupBox1.Controls.Add(this.txtLegajoBusqueda);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -84,38 +84,39 @@
             this.iconButton1.TabIndex = 8;
             this.iconButton1.Text = "Aplicar";
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // textBox4
+            // txtApellidoBusqueda
             // 
-            this.textBox4.Location = new System.Drawing.Point(546, 82);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(286, 32);
-            this.textBox4.TabIndex = 7;
+            this.txtApellidoBusqueda.Location = new System.Drawing.Point(546, 82);
+            this.txtApellidoBusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtApellidoBusqueda.Name = "txtApellidoBusqueda";
+            this.txtApellidoBusqueda.Size = new System.Drawing.Size(286, 32);
+            this.txtApellidoBusqueda.TabIndex = 7;
             // 
-            // textBox3
+            // txtNombreBusqueda
             // 
-            this.textBox3.Location = new System.Drawing.Point(546, 22);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(286, 32);
-            this.textBox3.TabIndex = 6;
+            this.txtNombreBusqueda.Location = new System.Drawing.Point(546, 22);
+            this.txtNombreBusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtNombreBusqueda.Name = "txtNombreBusqueda";
+            this.txtNombreBusqueda.Size = new System.Drawing.Size(286, 32);
+            this.txtNombreBusqueda.TabIndex = 6;
             // 
-            // textBox2
+            // txtMontoBusqueda
             // 
-            this.textBox2.Location = new System.Drawing.Point(120, 82);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(286, 32);
-            this.textBox2.TabIndex = 5;
+            this.txtMontoBusqueda.Location = new System.Drawing.Point(120, 82);
+            this.txtMontoBusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMontoBusqueda.Name = "txtMontoBusqueda";
+            this.txtMontoBusqueda.Size = new System.Drawing.Size(286, 32);
+            this.txtMontoBusqueda.TabIndex = 5;
             // 
-            // textBox1
+            // txtLegajoBusqueda
             // 
-            this.textBox1.Location = new System.Drawing.Point(120, 22);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(286, 32);
-            this.textBox1.TabIndex = 4;
+            this.txtLegajoBusqueda.Location = new System.Drawing.Point(120, 22);
+            this.txtLegajoBusqueda.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtLegajoBusqueda.Name = "txtLegajoBusqueda";
+            this.txtLegajoBusqueda.Size = new System.Drawing.Size(286, 32);
+            this.txtLegajoBusqueda.TabIndex = 4;
             // 
             // label5
             // 
@@ -280,10 +281,10 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtApellidoBusqueda;
+        private System.Windows.Forms.TextBox txtNombreBusqueda;
+        private System.Windows.Forms.TextBox txtMontoBusqueda;
+        private System.Windows.Forms.TextBox txtLegajoBusqueda;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

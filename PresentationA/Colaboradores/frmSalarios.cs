@@ -56,5 +56,13 @@ namespace PresentationA.Colaboradores
             txtLegajoColaboradorModificacion.Text = "";
             txtMontoModificacion.Text = "";
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if(txtLegajoBusqueda.Text != "")
+            {
+
+            }
+        }
     }
 }
