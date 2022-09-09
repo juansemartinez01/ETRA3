@@ -48,5 +48,22 @@ namespace PresentationA.Colaboradores.Consulta
             }
             
         }
+
+        private void dgvSalarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            //sal.FilaSeleccionadaHistorialEvento = indice;
+            if (indice == -1)
+            {
+                return;
+            }
+            //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+            DataGridViewRow filaSeleccionada = dgvSalarios.Rows[indice];
+            //completarLabels(this, historial, "txt");
+            txtmonto.Text = filaSeleccionada.Cells["Monto"].Value.ToString();
+            dtpfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
+            dtpfechaFin.Text = filaSeleccionada.Cells["Fecha de Fin"].Value.ToString();
+
+        }
     }
 }

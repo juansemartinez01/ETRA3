@@ -28,6 +28,10 @@ namespace PresentationA.Colaboradores.Consulta
             btnVerArchivo.Enabled = false;
             LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
             LlenarCombo(cmbTipoMultimedia, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMultimedia WHERE borradoLogico = 0"), "nombre", "id_tipoMultimedia");
+            dtpfechaInicio.Format = DateTimePickerFormat.Custom;
+            dtpfechaInicio.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            dtpfechaFin.Format = DateTimePickerFormat.Custom;
+            dtpfechaFin.CustomFormat = "dd/MM/yyyy hh:mm:ss";
 
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -54,8 +58,11 @@ namespace PresentationA.Colaboradores.Consulta
         {
             int indice = e.RowIndex;
             obje.FilaSeleccionadaHistorialEvento = indice;
-            if (indice == -1)
+            if (indice == -1 || (indice + 1) >= (dgvEventos.Rows.Count))
             {
+                btnVerArchivo.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnModificar.Enabled = false;
                 return;
             }
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
@@ -67,6 +74,8 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaRegistro.Text = filaSeleccionada.Cells["Fecha de registro"].Value.ToString();
             txtDescripcion.Text = filaSeleccionada.Cells["Descripción"].Value.ToString();
             btnVerArchivo.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
 
         }
 
