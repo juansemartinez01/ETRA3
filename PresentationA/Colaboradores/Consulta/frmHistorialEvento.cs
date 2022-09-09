@@ -131,18 +131,28 @@ namespace PresentationA.Colaboradores.Consulta
                 MessageBox.Show("Debe seleccionar primero el tipo de evento que quiere crear");
                 return;
             }
-            if (cmbTipoEvento.SelectedIndex == 2)
+            if ((int)cmbTipoEvento.SelectedValue == 2)
             {
-                dtpfechaFin.Value = dtpfechaInicio.Value.Date;
-            }
-            string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date);
-            if (openFileDialog1.InitialDirectory != "no seleccionado")
-            {
+                string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaInicio.Value.Date);
+                if (openFileDialog1.InitialDirectory != "no seleccionado")
+                {
 
-                agregarArchivoEvento();
+                    agregarArchivoEvento();
+                }
+                MessageBox.Show(respuesta);
+                CargarDG(nuevoDocumento.LegajoColaborador.ToString());
             }
-            MessageBox.Show(respuesta);
-            CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+            else
+            {
+                string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date);
+                if (openFileDialog1.InitialDirectory != "no seleccionado")
+                {
+
+                    agregarArchivoEvento();
+                }
+                MessageBox.Show(respuesta);
+                CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+            }
         }
 
         private void btnVerArchivo_Click(object sender, EventArgs e)

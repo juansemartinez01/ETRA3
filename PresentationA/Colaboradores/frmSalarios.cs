@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,21 @@ namespace PresentationA.Colaboradores
 {
     public partial class frmSalarios : frmHijo
     {
+        Salario sal = new Salario();
         public frmSalarios()
         {
             InitializeComponent();
+            CargarTabla();
+
+        }
+        public void CargarTabla()
+        {
+            dgvSalarios.DataSource = sal.getAllSalarios();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

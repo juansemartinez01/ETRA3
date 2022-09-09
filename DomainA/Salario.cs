@@ -32,6 +32,10 @@ namespace DomainA
             }
 
         }
+        public DataTable getAllSalarios()
+        {
+            return salariosDao.getAllSalarios();
+        }
     }
     
 }

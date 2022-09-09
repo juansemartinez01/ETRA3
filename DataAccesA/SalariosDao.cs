@@ -143,5 +143,24 @@ namespace DataAccessA
 
             return atributosColaborador;
         }
+        public DataTable getAllSalarios()
+        {
+            DataTable resultado = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT C.nombre AS 'Nombre',C.apellido AS 'Apellido',CONVERT(varchar,H.fechaInicio,103) AS 'Fecha desde',S.monto AS 'Monto' FROM Salario S JOIN HistorialSalario H ON S.id_salario = H.id_salario JOIN Colaborador C ON c.legajo = H.legajoColaborador WHERE S.borradoLogico = 0 AND H.borradoLogico = 0 AND C.borradoLogico = 0 AND H.fechaFin IS NULL ORDER BY S.monto DESC";
+
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    resultado.Load(reader);
+                    return resultado;
+                }
+            }
+
+        }
     }
 }
