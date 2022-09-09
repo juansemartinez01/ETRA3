@@ -9,6 +9,24 @@ namespace DataAccessA
 {
     public class SalariosDao : ConnectionToSql
     {
+        public DataTable obtenerSalarios(string legajo)
+        {
+            DataTable resultado = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT S.monto AS 'Monto', CONVERT(varchar,H.fechaInicio,103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin,103) AS 'Fecha de Fin' FROM HistorialSalario H JOIN Salario S ON H.id_salario = S.id_salario WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0 AND S.borradoLogico = 0";
+                    command.Parameters.AddWithValue("@legajo", legajo);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    resultado.Load(reader);
+                    return resultado;
+                }
+            }
+        }
         public int modificarSalarioColaborador(int legajo, float monto)
         {
             try
