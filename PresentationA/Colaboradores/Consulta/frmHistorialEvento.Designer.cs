@@ -36,17 +36,19 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtdescripcion = new System.Windows.Forms.RichTextBox();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.dgvEventos = new System.Windows.Forms.DataGridView();
-            this.cmbnombre = new System.Windows.Forms.ComboBox();
+            this.cmbTipoEvento = new System.Windows.Forms.ComboBox();
             this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpfechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpfechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnVerArchivo = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbTipoMultimedia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@
             this.label1.Location = new System.Drawing.Point(15, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 28);
+            this.label1.Size = new System.Drawing.Size(295, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Historial de Eventos";
             // 
@@ -67,7 +69,7 @@
             this.label2.Location = new System.Drawing.Point(15, 79);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.Size = new System.Drawing.Size(122, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo Evento:";
             // 
@@ -77,7 +79,7 @@
             this.label4.Location = new System.Drawing.Point(15, 195);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
+            this.label4.Size = new System.Drawing.Size(180, 22);
             this.label4.TabIndex = 4;
             this.label4.Text = "Fecha de Registro:";
             // 
@@ -87,7 +89,7 @@
             this.label5.Location = new System.Drawing.Point(15, 156);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(102, 22);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha Fin:";
             // 
@@ -97,23 +99,24 @@
             this.label6.Location = new System.Drawing.Point(15, 119);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 20);
+            this.label6.Size = new System.Drawing.Size(155, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Fecha de Inicio:";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(15, 476);
+            this.btnAgregar.Location = new System.Drawing.Point(13, 517);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(96, 27);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Confirmar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(288, 476);
+            this.btnEliminar.Location = new System.Drawing.Point(292, 517);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(96, 27);
@@ -127,19 +130,19 @@
             this.label7.Location = new System.Drawing.Point(15, 240);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 20);
+            this.label7.Size = new System.Drawing.Size(121, 22);
             this.label7.TabIndex = 11;
             this.label7.Text = "Descripción:";
             // 
-            // txtdescripcion
+            // txtDescripcion
             // 
-            this.txtdescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdescripcion.Location = new System.Drawing.Point(188, 240);
-            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtdescripcion.Name = "txtdescripcion";
-            this.txtdescripcion.Size = new System.Drawing.Size(196, 112);
-            this.txtdescripcion.TabIndex = 17;
-            this.txtdescripcion.Text = "";
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Location = new System.Drawing.Point(188, 240);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(196, 112);
+            this.txtDescripcion.TabIndex = 17;
+            this.txtDescripcion.Text = "";
             // 
             // dgvEventos
             // 
@@ -151,59 +154,60 @@
             this.dgvEventos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
+            this.dgvEventos.RowHeadersWidth = 51;
             this.dgvEventos.RowTemplate.Height = 25;
             this.dgvEventos.Size = new System.Drawing.Size(530, 427);
             this.dgvEventos.TabIndex = 18;
             this.dgvEventos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             // 
-            // cmbnombre
+            // cmbTipoEvento
             // 
-            this.cmbnombre.FormattingEnabled = true;
-            this.cmbnombre.Location = new System.Drawing.Point(188, 76);
-            this.cmbnombre.Name = "cmbnombre";
-            this.cmbnombre.Size = new System.Drawing.Size(196, 28);
-            this.cmbnombre.TabIndex = 19;
+            this.cmbTipoEvento.FormattingEnabled = true;
+            this.cmbTipoEvento.Location = new System.Drawing.Point(188, 76);
+            this.cmbTipoEvento.Name = "cmbTipoEvento";
+            this.cmbTipoEvento.Size = new System.Drawing.Size(196, 30);
+            this.cmbTipoEvento.TabIndex = 19;
             // 
             // dtpfechaInicio
             // 
             this.dtpfechaInicio.Location = new System.Drawing.Point(188, 119);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(200, 26);
+            this.dtpfechaInicio.Size = new System.Drawing.Size(200, 30);
             this.dtpfechaInicio.TabIndex = 20;
             // 
             // dtpfechaFin
             // 
             this.dtpfechaFin.Location = new System.Drawing.Point(188, 156);
             this.dtpfechaFin.Name = "dtpfechaFin";
-            this.dtpfechaFin.Size = new System.Drawing.Size(200, 26);
+            this.dtpfechaFin.Size = new System.Drawing.Size(200, 30);
             this.dtpfechaFin.TabIndex = 21;
             // 
             // dtpfechaRegistro
             // 
             this.dtpfechaRegistro.Location = new System.Drawing.Point(188, 195);
             this.dtpfechaRegistro.Name = "dtpfechaRegistro";
-            this.dtpfechaRegistro.Size = new System.Drawing.Size(200, 26);
+            this.dtpfechaRegistro.Size = new System.Drawing.Size(200, 30);
             this.dtpfechaRegistro.TabIndex = 22;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // iconButton2
+            // btnVerArchivo
             // 
-            this.iconButton2.Enabled = false;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 30;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.iconButton2.Location = new System.Drawing.Point(19, 359);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(365, 44);
-            this.iconButton2.TabIndex = 24;
-            this.iconButton2.Text = "Ver Archivo";
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.btnVerArchivo.Enabled = false;
+            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnVerArchivo.IconColor = System.Drawing.Color.Black;
+            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerArchivo.IconSize = 30;
+            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnVerArchivo.Location = new System.Drawing.Point(19, 359);
+            this.btnVerArchivo.Name = "btnVerArchivo";
+            this.btnVerArchivo.Size = new System.Drawing.Size(365, 44);
+            this.btnVerArchivo.TabIndex = 24;
+            this.btnVerArchivo.Text = "Ver Archivo";
+            this.btnVerArchivo.UseVisualStyleBackColor = true;
+            this.btnVerArchivo.Click += new System.EventHandler(this.btnVerArchivo_Click);
             // 
             // iconButton1
             // 
@@ -218,10 +222,11 @@
             this.iconButton1.TabIndex = 25;
             this.iconButton1.Text = "Agregar Archivo";
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(154, 476);
+            this.btnModificar.Location = new System.Drawing.Point(157, 517);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(96, 27);
@@ -229,19 +234,39 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 465);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 22);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Tipo Evento:";
+            // 
+            // cmbTipoMultimedia
+            // 
+            this.cmbTipoMultimedia.FormattingEnabled = true;
+            this.cmbTipoMultimedia.Location = new System.Drawing.Point(188, 462);
+            this.cmbTipoMultimedia.Name = "cmbTipoMultimedia";
+            this.cmbTipoMultimedia.Size = new System.Drawing.Size(196, 30);
+            this.cmbTipoMultimedia.TabIndex = 27;
+            // 
             // frmHistorialEvento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 529);
+            this.ClientSize = new System.Drawing.Size(1101, 599);
+            this.Controls.Add(this.cmbTipoMultimedia);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.btnVerArchivo);
             this.Controls.Add(this.dtpfechaRegistro);
             this.Controls.Add(this.dtpfechaFin);
             this.Controls.Add(this.dtpfechaInicio);
-            this.Controls.Add(this.cmbnombre);
+            this.Controls.Add(this.cmbTipoEvento);
             this.Controls.Add(this.dgvEventos);
-            this.Controls.Add(this.txtdescripcion);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
@@ -271,16 +296,18 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox txtdescripcion;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.DataGridView dgvEventos;
-        private System.Windows.Forms.ComboBox cmbnombre;
+        private System.Windows.Forms.ComboBox cmbTipoEvento;
         private System.Windows.Forms.DateTimePicker dtpfechaInicio;
         private System.Windows.Forms.DateTimePicker dtpfechaFin;
         private System.Windows.Forms.DateTimePicker dtpfechaRegistro;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnVerArchivo;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbTipoMultimedia;
     }
 }

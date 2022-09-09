@@ -56,6 +56,10 @@ namespace DomainA
                 return "No se pudo eliminar al colaborador";
             }
         }
+        public int BuscarIdUltimoEvento()
+        {
+            return int.Parse(colaboradorDao.BuscarIdUltimoEvento());
+        }
 
     }
 }

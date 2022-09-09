@@ -189,7 +189,9 @@ namespace PresentationA.Colaboradores
             nuevoDocumento.Extension = openFileDialog1.SafeFileName;
             nuevoDocumento.Id_tipoMultimedia = 5;
             nuevoDocumento.LegajoColaborador = int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador());
-            string variableMuerta = nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
+            //Despues arreglar bien esto!!!!!
+            int idEvento = colaboradorModelo.BuscarIdUltimoEvento();
+            string variableMuerta = nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador,idEvento);
 
             //Parte para ver la imagen
             var Lista = new List<DocumentosColaborador>();

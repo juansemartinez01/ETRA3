@@ -98,7 +98,7 @@ namespace DataAccesA
 
             return atributosColaborador;
         }
-        public string AgregarDocumento(string Nombre, byte[] Documento, string Extension, int TipoMultimedia, int Legajo)
+        public string AgregarDocumento(string Nombre, byte[] Documento, string Extension, int TipoMultimedia, int Legajo,int idEvento)
         {
             try
             {
@@ -108,13 +108,14 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO ColaboradorMultimedia VALUES (@nombre, @documento, @extension, @tipo, @legajoColaborador,0)";
+                        command.CommandText = "INSERT INTO ColaboradorMultimedia VALUES (@nombre, @documento, @extension, @tipo, @legajoColaborador,0,@idEvento)";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@nombre", Nombre);
                         command.Parameters.AddWithValue("@documento", Documento);
                         command.Parameters.AddWithValue("@extension", Extension);
                         command.Parameters.AddWithValue("@tipo", TipoMultimedia);
                         command.Parameters.AddWithValue("@legajoColaborador", Legajo);
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
                         command.ExecuteNonQuery();
                         return "Documento agregado con exito";
 
@@ -145,6 +146,37 @@ namespace DataAccesA
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@idTipo", TipoMultimedia);
                         command.Parameters.AddWithValue("@legajoColaborador", Legajo);
+                        SqlDataReader lector = command.ExecuteReader();
+                        tabla.Load(lector);
+                        return tabla;
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return tabla;
+            }
+        }
+        public DataTable BuscarDocumentoEvento(int idEvento)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+
+
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE id_evento = @idEvento AND borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
                         SqlDataReader lector = command.ExecuteReader();
                         tabla.Load(lector);
                         return tabla;

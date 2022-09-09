@@ -5,9 +5,11 @@ using DataAccesA;
 
 namespace DomainA
 {
+    
     public class Eventos
     {
         EventosDao eventosDao = new EventosDao();
+        public int FilaSeleccionadaHistorialEvento;
         public DataTable obtenerEventos(string legajo)
         {
             return eventosDao.obtenerEventos(legajo);
@@ -19,6 +21,10 @@ namespace DomainA
         public string InsertarEventos(int tipoEvento, int legajoColaborador, string descripcion, DateTime fechaInicio, DateTime fechaFin)
         {
             return eventosDao.InsertarEvento(tipoEvento, legajoColaborador, descripcion, fechaInicio, fechaFin);
+        }
+        public string buscarUltimoEvento()
+        {
+            return eventosDao.BuscarIdUltimoEvento();
         }
     }
 }
