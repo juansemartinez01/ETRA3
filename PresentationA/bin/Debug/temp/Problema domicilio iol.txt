@@ -1,0 +1,143 @@
+Resolucion del ticket
+Nos dan como dato el numero y año del expediente en el siguiente formato: NNNNNNN/AAAA (Las N son para el numero y las A para el año)
+Primero debemos buscar el exp_id
+1-CONSULTA: SELECT * FROM exp WHERE exp_numero = (NNNNNNN) AND exp_anio = (AAAA)
+1-RESULTADO: EEEEEEE (exp_id)
+Ahora buscamos el per_id
+2-CONSULTA: SELECT per_id, tvi_id FROM exp_per WHERE exp_id = EEEEEEE (exp_id, resultado 1)
+2-RESULTADO: IIIIIII(per_id)
+
+3-SELECT per_id,p_dom_id,p_dom_calle,p_dom_nro,cal_id,p_dom_validado FROM per_dom WHERE per_id = IIIIIII(per_id) AND exp_id = EEEEEEE (exp_id, resultado 1)
+3-RESULTADO: PPPPPPP (per_dom_id), CCC (cal_id)
+
+4-CONSULTA: SELECT * FROM cal WHERE cal_id = CCC (cal_id, resultado consulta 3)
+4-RESULTADO:
+
+5-CONSULTA: SELECT * FROM zon WHERE cal_id = 509 AND fue_id = 1 AND aud_fec_baja IS NULL AND zon_estado = 0
+5-RESULTADO:
+
+
+QUERY PARA EJECUTAR:
+begin;
+UPDATE per_dom SET p_dom_validado = 1 WHERE p_dom_id = PPPPPPP (per_dom_id, resultado consulta 3);
+INSERT INTO exp_aprocesar SELECT nextval('seq_exp_aproc'), EEEEEEE (exp_id, resultado consulta 1), 'EDICION', 0, now(), NULL;
+ROLLBACK;
+commit;
+
+Usuario portal litigante: 20393884186
+
+
+
+Mensaje inicial:
+Estimado usuario:
+Hemos recibido su solicitud y la misma ha sido derivada para su análisis, nos contactaremos con ustedes para informarle la resolución de la misma en el menor tiempo posible. 
+
+Atentamente,
+Equipo de Mesa de Ayuda
+
+
+Mensaje para el usuario:
+Estimado usuario:
+
+Nos ponemos en contacto con usted, para comunicarle que su solicitud ha sido Resuelta.
+
+En base a la información brindada hemos procedido a validar el domicilio del demandado para que lo pueda visualizar en el portal. Le comentamos que se trata de un inconveniente generalizado que esta siendo tratado en el tk 299548 para su posterior solución a la brevedad, pero para su caso ya lo hemos subsanado.
+
+Quedamos a su entera disposición ante cualquier duda que pueda tener al respecto.
+
+Atentamente,
+
+
+
+Equipo de Mesa de Ayuda
+
+PAra derivacion:
+
+UNITECH DERIVA PARA SEGUIMIENTO
+Buenas, a continuación les enviamos un listado, les pedimos por favor si pueden enviarlo al Juzgado, para validarlo, ya que en su mail indica que debíamos eliminar 97 actuaciones, y buscando las actuaciones pendientes de firma de su Juzgado nos da 193.
+ 
+Quedamos a disposición por cualquier duda o consulta. Muchas Gracias!
+
+
+
+
+SELECT tid_id, loc_id, p_dom_id, dto_id, p_dom_validado, p_dom_activo, p_dom_calle, p_dom_nro, p_dom_fechadesv, cal_id, p_dom_cuil
+FROM per_dom WHERE per_id =3440741 AND exp_id =2283976
+
+SELECT * FROM usuario_persona_iurix_expediente WHERE exp_id = 2283976
+
+SELECT * FROM usuario WHERE usuario_id = 7461
+DELETE FROM usuario_persona_iurix_expediente WHERE usuario_id = 7461 AND per_id =1455486 AND exp_id = 2283976 – tenia fecha 23 de junio
+SELECT * FROM usuario_persona_iurix WHERE usuario_id = 7461
+DELETE FROM usuario_persona_iurix WHERE usuario_id =7461 AND per_id = 1455486
+SELECT * FROM usuario WHERE usuario_id = 7461
+SELECT * FROM usuario_politica WHERE usuario_id = 7461
+SELECT * FROM usuario_profesional WHERE usuario_id = 7461
+
+vanesal
+Vanesa Lukowiec añadió un comentario - Hace 7 minutos
+Linkperm
+SELECT * FROM exp_per WHERE exp_id =2283976
+SELECT * FROM per_per WHERE per_id =1455486 AND exp_id =2283976
+SELECT * FROM per_dom WHERE per_id =3440741 AND exp_id IS NULL AND dem_id IS NULL
+SELECT * FROM per_dom WHERE per_id = AND exp_id =
+SELECT * FROM per WHERE per_id =3440741
+SELECT * FROM pro WHERE pro_id = 2828341 3565104
+
+
+
+--Domicilio electronico
+BEGIN;
+INSERT INTO iurix.per ("per_id", "tip_id", "tdo_id", "per_nrodoc", "per_obs", "per_tper", "per_cuit", "per_existe_iol", "per_procesado")
+VALUES
+(nextval('seq_per'), 1, 1, E--'DNI', NULL, NULL, E--'cuittt', 1, 2);
+
+----tpf_id= 1 para abogados, 2 para peritos
+INSERT INTO iurix.pro ("per_id", "tpf_id", "pro_desde", "pro_hasta", "pro_mail", "pro_domail", "cir_id", "pro_id", "pro_mat", "pro_cod", "usr_id", "aud_usr_alta", "aud_usr_baja", "aud_usr_mod", "aud_fec_alta", "aud_fec_mod", "aud_fec_baja", "estado", "pro_tomo", "pro_folio", "pro_convenio", "pro_existe_iol", "pro_depurado")
+VALUES
+(currval('seq_per'), --x--, NULL, NULL, NULL, NULL, NULL, nextval('seq_pro'),null, NULL, NULL, NULL, NULL, NULL, now(), NULL, NULL, False,NULL, NULL, NULL, 1, 0);
+
+---el nombre y apellido le copias de la tabla iol
+INSERT INTO iurix.pfi ("pfi_nom", "pfi_ape", "sex_id", "pfi_fecnac", "eci_id", "nci_id", "pfi_ocupa", "pfi_lugnac", "per_id", "pfi_prontuario", "pfi_nyapad", "pfi_nyamad", "pfi_edad", "pfi_cant_hijos", "nivedu_id", "nivsocec_id", "pfi_alias", "sithabit_id", "cobmed_id", "gen_id", "sitlab_id", "ocu_id", "pfi_genero")
+VALUES
+(E'nombre', E'apellido', NULL, NULL, NULL, NULL, NULL, NULL, currval('seq_per'), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+--- cuit del abogado
+INSERT INTO iurix.per_dom ("per_id", "p_dom_id", "loc_id", "tid_id", "p_dom_calle", "p_dom_nro", "p_dom_piso", "p_dom_barrio", "p_dom_mnz", "p_dom_casa", "p_dom_tel", "p_dom_cel", "p_dom_cp", "p_dom_obs", "p_dom_email", "cir_id", "exp_id", "p_dom_depto", "pai_id", "prv_id", "dto_id", "cal_id", "tca_id", "p_dom_tcadato", "tpi_id", "p_dom_tpidato", "tde_id", "p_dom_tdedato", "bar_id", "zon_id", "p_dom_horario", "ain_id", "p_dom_contacto_alt", "p_dom_validado", "p_dom_latitud", "p_dom_longitud", "p_dom_activo", "p_dom_fecha", "p_dom_fechadesv", "p_dom_cuil", "dem_id")
+VALUES
+(currval('seq_per'),nextval('seq_per_dom'), 248, 42, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, 1, NULL, NULL, E--'cuit', NULL);
+
+COMMIT;
+
+INSERT INTO iurix.per_aprocesar (per_aproc_id, per_id, per_aproc_tipo, per_aproc_estado, per_aproc_hora_creacion, per_aproc_hora_proceso)
+VALUES (nextval('seq_per_aproc'), --per_idnuevo, 'ALTA', 0, now(), NULL);
+
+y esto en base iol insert into iol.usuario_persona_iurix (usuario_id, per_id)
+values (--usuario,per_id);
+
+
+
+Estimado/a usuario/a: Hemos recibido su solicitud y le informamos que hemos corroborado que el registro que está tomando EJE para el perito no es el correcto. Deberá inhabilitar ese y cargar el correcto siguiendo los siguientes pasos:
+
+1.- Deben ir al listado de sujetos de ese expediente y presionar el botón Nuevo que se encuentra en la parte superior de la pantalla a la izquierda.
+
+2.- SIN COMPLETAR NADA, presionar el texto remarcado con azul que dice Buscar.
+
+3.- En la ventana que se abre, SOLO COMPLETAR ESTOS DATOS -- En identificación --> seleccionar CUIT -- En el recuadro de al lado, colocar el número de CUIT del perito, sin guiones--> xxxxxx
+
+4.- Deberán presionar el botón Buscar y hacer doble click en el registro que el sistema les traerá.
+
+5.- Completar los demás datos de la ventana de vínculo que es a donde los llevará ahora el sistema y presionar Guardar.
+
+6.- Luego deberán cargar el domicilio electrónico para el perito.
+
+Entendemos que no tendrá usted luego problemas para notificar a la perito, pero si se presentase algún inconveniente, no dude en comunicarse con nosotros nuevamente.
+
+Quedamos a su entera disposición ante cualquier duda que pueda tener al respecto.
+
+Atentamente, Equipo de Mesa de Ayuda
+
+
+
+Para cuando hay que vincular a un abogado a una causa 
+https://unihelp.unitech.com.ar/browse/CMC02-49603

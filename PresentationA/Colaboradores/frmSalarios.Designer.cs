@@ -40,8 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtMontoModificacion = new System.Windows.Forms.TextBox();
+            this.txtLegajoColaboradorModificacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvSalarios = new System.Windows.Forms.DataGridView();
@@ -162,8 +162,8 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.iconButton2);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtMontoModificacion);
+            this.groupBox2.Controls.Add(this.txtLegajoColaboradorModificacion);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(14, 525);
@@ -189,21 +189,21 @@
             this.iconButton2.UseVisualStyleBackColor = true;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // textBox6
+            // txtMontoModificacion
             // 
-            this.textBox6.Location = new System.Drawing.Point(120, 108);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(286, 32);
-            this.textBox6.TabIndex = 7;
+            this.txtMontoModificacion.Location = new System.Drawing.Point(120, 108);
+            this.txtMontoModificacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtMontoModificacion.Name = "txtMontoModificacion";
+            this.txtMontoModificacion.Size = new System.Drawing.Size(286, 32);
+            this.txtMontoModificacion.TabIndex = 7;
             // 
-            // textBox5
+            // txtLegajoColaboradorModificacion
             // 
-            this.textBox5.Location = new System.Drawing.Point(120, 49);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(286, 32);
-            this.textBox5.TabIndex = 6;
+            this.txtLegajoColaboradorModificacion.Location = new System.Drawing.Point(120, 49);
+            this.txtLegajoColaboradorModificacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtLegajoColaboradorModificacion.Name = "txtLegajoColaboradorModificacion";
+            this.txtLegajoColaboradorModificacion.Size = new System.Drawing.Size(286, 32);
+            this.txtLegajoColaboradorModificacion.TabIndex = 6;
             // 
             // label7
             // 
@@ -290,8 +290,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtMontoModificacion;
+        private System.Windows.Forms.TextBox txtLegajoColaboradorModificacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvSalarios;
