@@ -44,6 +44,7 @@
     <Compile Include="BackupDao.cs" />
     <Compile Include="ColaboradorDao.cs" />
     <Compile Include="ConnectionToSql.cs" />
+    <Compile Include="CuentaColaboradorDao.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="EventosDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

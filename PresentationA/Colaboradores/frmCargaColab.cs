@@ -10,6 +10,7 @@ namespace PresentationA.Colaboradores
 {
     public partial class frmCargaColab : frmHijo
     {
+        CuentaColaboradorModelo cuentaColaborador = new CuentaColaboradorModelo();
         DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
         private List<string> camposObligatorios = new List<string>()
         {
@@ -104,6 +105,7 @@ namespace PresentationA.Colaboradores
 
                                                     agregarArchivoColaborador(colaboradorModelo);
                                                 }
+                                                
                                                 MessageBox.Show(cadenaRespuesta);
                                             }
                                             else
@@ -122,6 +124,7 @@ namespace PresentationA.Colaboradores
 
                                                 agregarArchivoColaborador(colaboradorModelo);
                                             }
+                                            MessageBox.Show(cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()),0));
                                             MessageBox.Show(cadenaRespuesta);
                                         }
                                     }

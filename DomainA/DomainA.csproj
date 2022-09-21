@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Backup.cs" />
     <Compile Include="ColaboradorModelo.cs" />
+    <Compile Include="CuentaColaboradorModelo.cs" />
     <Compile Include="DocumentosColaborador.cs" />
     <Compile Include="Eventos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
