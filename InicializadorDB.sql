@@ -143,3 +143,9 @@ INSERT INTO HistorialEstado VALUES (GETDATE(),NULL,1,10005,0)
 INSERT INTO HistorialEstado VALUES (GETDATE(),NULL,1,10006,0)
 INSERT INTO HistorialEstado VALUES (GETDATE(),NULL,1,10007,0)
 
+/*Inicializador TipoFamiliar*/
+
+INSERT INTO TipoFamiliar VALUES ('Hijo del colaborador')
+INSERT INTO TipoFamiliar VALUES ('Padre del colaborador')
+INSERT INTO TipoFamiliar VALUES ('Pareja del colaborador')
+

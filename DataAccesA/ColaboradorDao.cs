@@ -469,6 +469,42 @@ namespace DataAccesA
                 using (var connection = GetConnection())
                 {
                     connection.Open();
+                    using (var command8 = new SqlCommand())
+                    {
+
+                        command8.Connection = connection;
+                        command8.CommandText = "UPDATE CuentaColaborador SET borradoLogico = 1 WHERE numeroCuenta IN (SELECT C.numeroCuenta FROM CuentaColaborador C JOIN HistorialCuentaColaborador H ON C.numeroCuenta = H.nroCuenta WHERE legajoColaborador = @legajo)";
+                        command8.Parameters.AddWithValue("@legajo", legajo);
+                        command8.CommandType = CommandType.Text;
+                        var cuentaEliminada = command8.EndExecuteNonQuery(command8.BeginExecuteNonQuery());
+                        
+                        
+
+                    }
+                    using (var command9 = new SqlCommand())
+                    {
+
+                        command9.Connection = connection;
+                        command9.CommandText = "UPDATE HistorialCuentaColaborador SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                        command9.Parameters.AddWithValue("@legajo", legajo);
+                        command9.CommandType = CommandType.Text;
+                        var HistorialCuentaeliminada = command9.EndExecuteNonQuery(command9.BeginExecuteNonQuery());
+
+
+
+                    }
+                    using (var command10 = new SqlCommand())
+                    {
+
+                        command10.Connection = connection;
+                        command10.CommandText = "UPDATE FamiliarColaborador SET borradoLogico = 1 WHERE legajoColaborador = @legajo";
+                        command10.Parameters.AddWithValue("@legajo", legajo);
+                        command10.CommandType = CommandType.Text;
+                        var HistorialCuentaeliminada = command10.EndExecuteNonQuery(command10.BeginExecuteNonQuery());
+
+
+
+                    }
                     using (var command = new SqlCommand())
                     {
 
@@ -593,6 +629,39 @@ namespace DataAccesA
                 using (var connection = GetConnection())
                 {
                     connection.Open();
+                    using (var command9 = new SqlCommand())
+                    {
+
+                        command9.Connection = connection;
+                        command9.CommandText = "DELETE FROM FamiliarColaborador WHERE borradoLogico = 1";
+                        command9.CommandType = CommandType.Text;
+                        var FamiliarEliminado = command9.EndExecuteNonQuery(command9.BeginExecuteNonQuery());
+                        
+
+
+                    }
+                    using (var command10 = new SqlCommand())
+                    {
+
+                        command10.Connection = connection;
+                        command10.CommandText = "DELETE FROM CuentaColaborador WHERE borradoLogico = 1";
+                        command10.CommandType = CommandType.Text;
+                        var CuentaEliminada = command10.EndExecuteNonQuery(command10.BeginExecuteNonQuery());
+
+
+
+                    }
+                    using (var command11 = new SqlCommand())
+                    {
+
+                        command11.Connection = connection;
+                        command11.CommandText = "DELETE FROM HistorialCuentaColaborador WHERE borradoLogico = 1";
+                        command11.CommandType = CommandType.Text;
+                        var HistorialCuentaColaborador = command11.EndExecuteNonQuery(command11.BeginExecuteNonQuery());
+
+
+
+                    }
                     using (var command = new SqlCommand())
                     {
 

@@ -5,12 +5,14 @@ using System.Drawing;
 using System.Windows.Forms;
 using DomainA;
 using FontAwesome.Sharp;
-
+using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Point = Microsoft.Reporting.Map.WebForms.BingMaps.Point;
 
 namespace PresentationA
 {
     public partial class frmPrincipal : Form
     {
+        NotifiacacionesGeneralesModelo notifiacaciones = new NotifiacacionesGeneralesModelo();
         private IconButton botonSeleccionado;
         private Panel bordeInferior;
         public frmPrincipal()
@@ -22,7 +24,17 @@ namespace PresentationA
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(200, 2);
             pnlPrincipal.Controls.Add(bordeInferior);
+            string[] cumpleañosCercanosColaboradores = notifiacaciones.notificacionesDeCumpleaños();
+            string textoConCumpleaños = "";
+            foreach (string linea in cumpleañosCercanosColaboradores)
+            {
+                textoConCumpleaños += linea;
+            }
+            MessageBox.Show(textoConCumpleaños);
+
+
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            
 
         }
         private void ActivateButton(object button)
@@ -37,7 +49,7 @@ namespace PresentationA
                 botonSeleccionado.IconColor = Color.FromArgb(247, 160, 85);
 
                 bordeInferior.BackColor = Color.FromArgb(247, 160, 85);
-                bordeInferior.Location = new Point(botonSeleccionado.Location.X, botonSeleccionado.Location.Y + (botonSeleccionado.Height - 5));
+                bordeInferior.Location = new System.Drawing.Point(botonSeleccionado.Location.X, botonSeleccionado.Location.Y + (botonSeleccionado.Height - 5));
                 bordeInferior.Visible = true;
                 bordeInferior.BringToFront();
             }
@@ -167,5 +179,7 @@ namespace PresentationA
             ActivateButton(sender);
             openChildFormInPanel(new frmSalarios());
         }
+
+        
     }
 }

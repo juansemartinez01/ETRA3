@@ -125,52 +125,36 @@ namespace DataAccesA
         }
         public string modificarSaldo(int legajo,float monto)
         {
-            int idHistorialCuentaActual = 0;
+            
             try
             {
                 using (var connection = GetConnection())
                 {
                     connection.Open();
-                    using (var command = new SqlCommand())
+
+
+
+
+                    using (var command1 = new SqlCommand())
                     {
-
-                        command.Connection = connection;
-                        command.CommandText = "SELECT idHistorialCuenta FROM HistorialCuentaColaborador WHERE legajoColaborador = @legajo AND fechaFin IS NULL AND borradoLogico = 0";
-                        command.Parameters.AddWithValue("@lagajo", legajo);
-                        command.CommandType = CommandType.Text;
-                        SqlDataReader reader = command.ExecuteReader();
-                        if (reader.HasRows)
+                        command1.Connection = connection;
+                        command1.CommandText = "UPDATE HistorialCuentaColaborador SET fechaFin = GETDATE() WHERE legajoColaborador = @legajo AND fechaFin IS NULL AND borradoLogico = 0";
+                        command1.Parameters.AddWithValue("@legajo", legajo);
+                        command1.CommandType = CommandType.Text;
+                        var exito = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                        if (exito == 1)
                         {
-                            while (reader.Read())
-                            {
-                                IDataRecord rowHistorialCuenta = (IDataRecord)reader;
-                                idHistorialCuentaActual = int.Parse(rowHistorialCuenta[0].ToString());
-                            }
-                            
-                                using (var command1 = new SqlCommand())
-                                {
-                                command1.Connection = connection;
-                                command1.CommandText = "UPDATE HistorialCuentaColaborador SET fechaFin = GETDATE() WHERE legajoColaborador = @legajo AND fechaFin IS NULL AND borradoLogico = 0";
-                                command1.Parameters.AddWithValue("@legajo", legajo);
-                                command1.CommandType = CommandType.Text;
-                                    var exito = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
-                                if(exito == 1)
-                                {
-                                    return crearCuentaColaborador(legajo, monto);
-                                }
-                                else
-                                {
-                                    return "Error para modificar el saldo.";
-                                }
-                                }
-                            
                             return crearCuentaColaborador(legajo, monto);
-
                         }
                         else
                         {
-                            return "Error con la base de datos";
+                            return "Error para modificar el saldo.";
                         }
+
+
+
+
+
                     }
                 }
             }

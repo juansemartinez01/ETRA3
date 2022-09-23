@@ -47,6 +47,8 @@
     <Compile Include="CuentaColaboradorModelo.cs" />
     <Compile Include="DocumentosColaborador.cs" />
     <Compile Include="Eventos.cs" />
+    <Compile Include="FamiliarColaboradorModelo.cs" />
+    <Compile Include="NotifiacacionesGeneralesModelo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteSalXCargo.cs" />
     <Compile Include="ReporteTardanza.cs" />

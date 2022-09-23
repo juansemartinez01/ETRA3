@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DataAccesA"
   ],
-  "SelectedNode": "\\ETRA.sln",
+  "SelectedNode": "\\DataAccesA\\CuentaColaboradorDao.cs",
   "PreviewInSolutionExplorer": false
 }
