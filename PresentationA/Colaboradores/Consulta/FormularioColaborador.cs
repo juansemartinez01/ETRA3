@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 using DomainA;
 using FontAwesome.Sharp;
@@ -10,7 +11,9 @@ namespace PresentationA
 {
     public partial class FormularioColaborador : frmHijo
     {
+        
         public DataTable colaborador = new DataTable();
+        public DataTable colaboradores = new DataTable();
         private IconButton botonSeleccionado;
         private Panel bordeInferior;
 
@@ -51,28 +54,22 @@ namespace PresentationA
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            
             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-            if (txtLegajo.Text != "")
-            {
-                colaborador = colaboradorModelo.BuscarColaborador(int.Parse(txtLegajo.Text), txtNombre.Text.ToString(), txtApellido.Text.ToString());
-            }
-            else
-            {
-                if (txtNombre.Text != "" || txtApellido.Text != "")
-                {
-                    //txtLegajo.Text = "0";
-                    colaborador = colaboradorModelo.BuscarColaborador(0, txtNombre.Text.ToString(), txtApellido.Text.ToString());
-                }
-                else
-                {
-                    msgError("Error: Debe ingresar al menos un parámetro", true);
-                    //changeMenu(false);
-                    return;
-                }
-            }
+            dgvBusqueda.Rows.Clear();
+            colaboradores = colaboradorModelo.BuscarColaborador(txtLegajo.Text.ToString(), txtNombre.Text.ToString(), txtApellido.Text.ToString());
+            //if (txtLegajo.Text != "" || txtNombre.Text != "" || txtApellido.Text != "")
+            //{
+            //    colaboradores = colaboradorModelo.BuscarColaborador(txtLegajo.Text, txtNombre.Text.ToString(), txtApellido.Text.ToString());
+            //}
+            //else
+            //{
+            //    msgError("Error: Debe ingresar al menos un parámetro", true);
+            //    return;
+                
+            //}
 
-            if (colaborador.Rows.Count == 0)
+            if (colaboradores.Rows.Count == 0)
             {
                 msgError("Error: No se encontraron colaboradores con esos parametros.", true);
                 //changeMenu(false);
@@ -81,11 +78,17 @@ namespace PresentationA
             else
             {
 
-                //datosPersonalesToolStripMenuItem.BackColor = Color.FromArgb(250, 166, 26);
                 msgError("", false);
                 pnlBotones.Enabled = true;
-                btnDatosPersonales_Click(btnDatosPersonales, e);
+                //btnDatosPersonales_Click(btnDatosPersonales, e);
+                colaborador = colaboradores.Clone();
 
+                for (int i = 0; i < colaboradores.Rows.Count; i++)
+                {
+                    dgvBusqueda.Rows.Add(colaboradores.Rows[i]["legajo"], colaboradores.Rows[i]["nombre"], colaboradores.Rows[i]["apellido"]);
+                }
+                //dgvBusqueda.DataSource = colaboradores;  
+                
             }
 
         }
@@ -159,6 +162,15 @@ namespace PresentationA
         {
             ActivateButton(sender);
             openChildFormInPanel(new frmHistorialSalario(colaborador.Rows[0]["legajo"].ToString()));
+        }
+
+
+        private void dgvBusqueda_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            colaborador.Clear();
+            colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
+            btnDatosPersonales_Click(btnDatosPersonales, e);
         }
         //private void changeMenu(bool value)
         //{

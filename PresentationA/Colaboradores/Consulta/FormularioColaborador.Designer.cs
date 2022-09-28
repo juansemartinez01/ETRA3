@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.dgvBusqueda = new System.Windows.Forms.DataGridView();
+            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblError = new System.Windows.Forms.Label();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtLegajo = new System.Windows.Forms.TextBox();
@@ -44,12 +48,14 @@
             this.btnDatosGenerales = new FontAwesome.Sharp.IconButton();
             this.btnDatosPersonales = new FontAwesome.Sharp.IconButton();
             this.pnlBuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.pnlFormulario.SuspendLayout();
             this.pnlBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBuscar
             // 
+            this.pnlBuscar.Controls.Add(this.dgvBusqueda);
             this.pnlBuscar.Controls.Add(this.lblError);
             this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.txtLegajo);
@@ -62,8 +68,49 @@
             this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(1000, 104);
+            this.pnlBuscar.Size = new System.Drawing.Size(1000, 285);
             this.pnlBuscar.TabIndex = 2;
+            // 
+            // dgvBusqueda
+            // 
+            this.dgvBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.legajo,
+            this.nombre,
+            this.apellido});
+            this.dgvBusqueda.Location = new System.Drawing.Point(4, 100);
+            this.dgvBusqueda.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvBusqueda.Name = "dgvBusqueda";
+            this.dgvBusqueda.ReadOnly = true;
+            this.dgvBusqueda.RowHeadersWidth = 51;
+            this.dgvBusqueda.RowTemplate.Height = 25;
+            this.dgvBusqueda.Size = new System.Drawing.Size(989, 160);
+            this.dgvBusqueda.TabIndex = 18;
+            this.dgvBusqueda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentDoubleClick);
+            this.dgvBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentDoubleClick);
+            this.dgvBusqueda.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentDoubleClick);
+            // 
+            // legajo
+            // 
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
             // 
             // lblError
             // 
@@ -72,7 +119,7 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(37, 60);
+            this.lblError.Location = new System.Drawing.Point(27, 65);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(42, 20);
             this.lblError.TabIndex = 15;
@@ -81,14 +128,13 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.Location = new System.Drawing.Point(779, 12);
+            this.btnBuscar.Location = new System.Drawing.Point(746, 10);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(176, 38);
+            this.btnBuscar.Size = new System.Drawing.Size(242, 28);
             this.btnBuscar.TabIndex = 16;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -96,7 +142,7 @@
             // 
             // txtLegajo
             // 
-            this.txtLegajo.Location = new System.Drawing.Point(95, 12);
+            this.txtLegajo.Location = new System.Drawing.Point(120, 12);
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(100, 26);
             this.txtLegajo.TabIndex = 12;
@@ -104,7 +150,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(299, 12);
+            this.txtNombre.Location = new System.Drawing.Point(355, 15);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 26);
             this.txtNombre.TabIndex = 8;
@@ -113,7 +159,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(221, 12);
+            this.lblNombre.Location = new System.Drawing.Point(262, 12);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(72, 20);
             this.lblNombre.TabIndex = 7;
@@ -130,7 +176,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(493, 12);
+            this.txtApellido.Location = new System.Drawing.Point(623, 12);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 26);
             this.txtApellido.TabIndex = 9;
@@ -139,7 +185,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(413, 12);
+            this.lblApellido.Location = new System.Drawing.Point(501, 12);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(73, 20);
             this.lblApellido.TabIndex = 10;
@@ -150,9 +196,9 @@
             this.pnlFormulario.Controls.Add(this.pnlBotones);
             this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormulario.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.pnlFormulario.Location = new System.Drawing.Point(0, 104);
+            this.pnlFormulario.Location = new System.Drawing.Point(0, 285);
             this.pnlFormulario.Name = "pnlFormulario";
-            this.pnlFormulario.Size = new System.Drawing.Size(1000, 481);
+            this.pnlFormulario.Size = new System.Drawing.Size(1000, 300);
             this.pnlFormulario.TabIndex = 3;
             // 
             // pnlBotones
@@ -196,7 +242,7 @@
             this.btnHistorialEventos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHistorialEventos.IconColor = System.Drawing.Color.Black;
             this.btnHistorialEventos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistorialEventos.Location = new System.Drawing.Point(534, 3);
+            this.btnHistorialEventos.Location = new System.Drawing.Point(517, 3);
             this.btnHistorialEventos.Name = "btnHistorialEventos";
             this.btnHistorialEventos.Size = new System.Drawing.Size(183, 30);
             this.btnHistorialEventos.TabIndex = 1;
@@ -214,7 +260,7 @@
             this.btnDatosGenerales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosGenerales.IconColor = System.Drawing.Color.Black;
             this.btnDatosGenerales.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDatosGenerales.Location = new System.Drawing.Point(282, 3);
+            this.btnDatosGenerales.Location = new System.Drawing.Point(243, 3);
             this.btnDatosGenerales.Name = "btnDatosGenerales";
             this.btnDatosGenerales.Size = new System.Drawing.Size(183, 30);
             this.btnDatosGenerales.TabIndex = 1;
@@ -232,7 +278,7 @@
             this.btnDatosPersonales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosPersonales.IconColor = System.Drawing.Color.Black;
             this.btnDatosPersonales.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDatosPersonales.Location = new System.Drawing.Point(12, 3);
+            this.btnDatosPersonales.Location = new System.Drawing.Point(6, 3);
             this.btnDatosPersonales.Name = "btnDatosPersonales";
             this.btnDatosPersonales.Size = new System.Drawing.Size(183, 30);
             this.btnDatosPersonales.TabIndex = 0;
@@ -251,6 +297,7 @@
             this.Text = "FormularioColaborador";
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
             this.pnlFormulario.ResumeLayout(false);
             this.pnlBotones.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -273,5 +320,9 @@
         private FontAwesome.Sharp.IconButton btnDatosGenerales;
         private FontAwesome.Sharp.IconButton btnHistorialSalarios;
         private FontAwesome.Sharp.IconButton btnBuscar;
+        private System.Windows.Forms.DataGridView dgvBusqueda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
     }
 }

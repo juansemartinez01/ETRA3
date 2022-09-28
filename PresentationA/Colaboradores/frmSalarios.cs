@@ -38,7 +38,7 @@ namespace PresentationA.Colaboradores
                 MessageBox.Show("Debe ingresar un monto para modificar un salario");
                 return;
             }
-            DataTable colaboradorAModificar = colaboradorModelo.BuscarColaborador(int.Parse(txtLegajoColaboradorModificacion.Text), "", "");
+            DataTable colaboradorAModificar = colaboradorModelo.BuscarColaborador(txtLegajoColaboradorModificacion.Text, "", "");
             if(colaboradorAModificar.Rows.Count > 0)
             {
                 string respuesta = sal.modificarSalarioColaborador(int.Parse(txtLegajoColaboradorModificacion.Text), float.Parse(txtMontoModificacion.Text));
@@ -63,6 +63,11 @@ namespace PresentationA.Colaboradores
             {
 
             }
+        }
+
+        private void dgvSalarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
