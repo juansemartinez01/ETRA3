@@ -38,9 +38,10 @@
             this.cmbColaboradores = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.btnAplicar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new PresentationA.Controls.BotonPadre();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbColaboradores2 = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.RichTextBox();
@@ -49,7 +50,6 @@
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.cmbTipoEvento2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -155,23 +155,12 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(368, 26);
             this.dateTimePicker2.TabIndex = 10;
             // 
-            // btnAplicar
-            // 
-            this.btnAplicar.Location = new System.Drawing.Point(671, 119);
-            this.btnAplicar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(124, 27);
-            this.btnAplicar.TabIndex = 11;
-            this.btnAplicar.Text = "Aplicar Filtros";
-            this.btnAplicar.UseVisualStyleBackColor = true;
-            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAplicar);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.label4);
@@ -188,10 +177,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
+            // btnAplicar
+            // 
+            this.btnAplicar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnAplicar.FlatAppearance.BorderSize = 0;
+            this.btnAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAplicar.ForeColor = System.Drawing.Color.White;
+            this.btnAplicar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAplicar.IconColor = System.Drawing.Color.Black;
+            this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAplicar.Location = new System.Drawing.Point(772, 112);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(150, 40);
+            this.btnAplicar.TabIndex = 11;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbColaboradores2);
             this.groupBox2.Controls.Add(this.txtDescripcion);
@@ -200,7 +209,6 @@
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.cmbTipoEvento2);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Location = new System.Drawing.Point(28, 506);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
@@ -209,6 +217,26 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.button1.IconColor = System.Drawing.Color.Black;
+            this.button1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(772, 196);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 40);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Crear Evento";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label8
             // 
@@ -283,17 +311,6 @@
             this.cmbTipoEvento2.Size = new System.Drawing.Size(154, 28);
             this.cmbTipoEvento2.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(722, 197);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 27);
-            this.button1.TabIndex = 0;
-            this.button1.Text = " Crear Evento";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -329,7 +346,6 @@
         private System.Windows.Forms.ComboBox cmbColaboradores;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button btnAplicar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cmbColaboradores2;
@@ -339,8 +355,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.ComboBox cmbTipoEvento2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Label label8;
+        private Controls.BotonPadre btnAplicar;
+        private Controls.BotonPadre button1;
     }
 }

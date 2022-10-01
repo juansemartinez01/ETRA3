@@ -1,13 +1,9 @@
 ﻿using DomainA;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace PresentationA.Colaboradores
 {
@@ -26,7 +22,7 @@ namespace PresentationA.Colaboradores
             dgvSalarios.DataSource = sal.getAllSalarios();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             if(txtLegajoColaboradorModificacion.Text == "")
             {
@@ -57,7 +53,7 @@ namespace PresentationA.Colaboradores
             txtMontoModificacion.Text = "";
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnAplicar_Click(object sender, EventArgs e)
         {
             if(txtLegajoBusqueda.Text != "")
             {
@@ -65,9 +61,26 @@ namespace PresentationA.Colaboradores
             }
         }
 
-        private void dgvSalarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(true);
+            int icol = 0;
+            int irow = 0;
+            foreach (DataGridViewColumn col in dgvSalarios.Columns)
+            {
+                icol++;
+                excel.Cells[1, icol] = col.Name;
+                foreach (DataGridViewRow row in dgvSalarios.Rows)
+                {
+                    irow++;
+                    excel.Cells[irow + 1, icol] = row.Cells[col.Name].Value;
+                }
+                irow = 0;
+            }
+
+            excel.Visible = true;
         }
     }
 }

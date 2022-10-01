@@ -204,5 +204,7 @@ namespace PresentationA.Colaboradores.Consulta
 
             archivo.Close();
         }
+
+
     }
 }

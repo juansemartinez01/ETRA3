@@ -33,11 +33,11 @@ namespace PresentationA
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.lnkRecuperar = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.botonPadre1 = new PresentationA.Controls.BotonPadre();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,20 +80,6 @@ namespace PresentationA
             this.label1.Size = new System.Drawing.Size(100, 33);
             this.label1.TabIndex = 3;
             this.label1.Text = "LOGIN";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnLogin.Location = new System.Drawing.Point(307, 300);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(524, 40);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Iniciar Sesión";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lnkRecuperar
             // 
@@ -144,6 +130,25 @@ namespace PresentationA
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
             // 
+            // botonPadre1
+            // 
+            this.botonPadre1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.botonPadre1.FlatAppearance.BorderSize = 0;
+            this.botonPadre1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPadre1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.botonPadre1.ForeColor = System.Drawing.Color.White;
+            this.botonPadre1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.botonPadre1.IconColor = System.Drawing.Color.Black;
+            this.botonPadre1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.botonPadre1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonPadre1.Location = new System.Drawing.Point(307, 305);
+            this.botonPadre1.Name = "botonPadre1";
+            this.botonPadre1.Size = new System.Drawing.Size(524, 40);
+            this.botonPadre1.TabIndex = 5;
+            this.botonPadre1.Text = "Iniciar Sesion";
+            this.botonPadre1.UseVisualStyleBackColor = false;
+            this.botonPadre1.Click += new System.EventHandler(this.frmLogin_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -151,9 +156,9 @@ namespace PresentationA
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(910, 406);
+            this.Controls.Add(this.botonPadre1);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lnkRecuperar);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
@@ -181,9 +186,9 @@ namespace PresentationA
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel lnkRecuperar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblError;
+        private Controls.BotonPadre botonPadre1;
     }
 }

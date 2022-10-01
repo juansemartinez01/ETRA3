@@ -72,6 +72,7 @@ namespace PresentationA
             if (colaboradores.Rows.Count == 0)
             {
                 msgError("Error: No se encontraron colaboradores con esos parametros.", true);
+                dgvBusqueda.Rows.Clear();
                 //changeMenu(false);
 
             }

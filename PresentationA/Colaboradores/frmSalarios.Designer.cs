@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnExportar = new PresentationA.Controls.BotonPadre();
+            this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.txtApellidoBusqueda = new System.Windows.Forms.TextBox();
             this.txtNombreBusqueda = new System.Windows.Forms.TextBox();
             this.txtMontoBusqueda = new System.Windows.Forms.TextBox();
@@ -39,7 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.botonPadre1 = new PresentationA.Controls.BotonPadre();
             this.txtMontoModificacion = new System.Windows.Forms.TextBox();
             this.txtLegajoColaboradorModificacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,7 +56,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.iconButton1);
+            this.groupBox1.Controls.Add(this.btnExportar);
+            this.groupBox1.Controls.Add(this.btnAplicar);
             this.groupBox1.Controls.Add(this.txtApellidoBusqueda);
             this.groupBox1.Controls.Add(this.txtNombreBusqueda);
             this.groupBox1.Controls.Add(this.txtMontoBusqueda);
@@ -70,18 +72,45 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // iconButton1
+            // btnExportar
             // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(26, 126);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(175, 32);
-            this.iconButton1.TabIndex = 8;
-            this.iconButton1.Text = "Aplicar";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.btnExportar.IconColor = System.Drawing.Color.White;
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 30;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExportar.Location = new System.Drawing.Point(517, 118);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(177, 40);
+            this.btnExportar.TabIndex = 11;
+            this.btnExportar.Text = "Exportar a Excel";
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // btnAplicar
+            // 
+            this.btnAplicar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnAplicar.FlatAppearance.BorderSize = 0;
+            this.btnAplicar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAplicar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAplicar.ForeColor = System.Drawing.Color.White;
+            this.btnAplicar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAplicar.IconColor = System.Drawing.Color.Black;
+            this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAplicar.Location = new System.Drawing.Point(26, 118);
+            this.btnAplicar.Name = "btnAplicar";
+            this.btnAplicar.Size = new System.Drawing.Size(150, 40);
+            this.btnAplicar.TabIndex = 10;
+            this.btnAplicar.Text = "Aplicar";
+            this.btnAplicar.UseVisualStyleBackColor = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
             // txtApellidoBusqueda
             // 
@@ -151,7 +180,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.iconButton2);
+            this.groupBox2.Controls.Add(this.botonPadre1);
             this.groupBox2.Controls.Add(this.txtMontoModificacion);
             this.groupBox2.Controls.Add(this.txtLegajoColaboradorModificacion);
             this.groupBox2.Controls.Add(this.label7);
@@ -163,18 +192,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar";
             // 
-            // iconButton2
+            // botonPadre1
             // 
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(519, 99);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(175, 32);
-            this.iconButton2.TabIndex = 9;
-            this.iconButton2.Text = "Modificar";
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.botonPadre1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.botonPadre1.FlatAppearance.BorderSize = 0;
+            this.botonPadre1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPadre1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.botonPadre1.ForeColor = System.Drawing.Color.White;
+            this.botonPadre1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.botonPadre1.IconColor = System.Drawing.Color.Black;
+            this.botonPadre1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.botonPadre1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonPadre1.Location = new System.Drawing.Point(544, 99);
+            this.botonPadre1.Name = "botonPadre1";
+            this.botonPadre1.Size = new System.Drawing.Size(150, 40);
+            this.botonPadre1.TabIndex = 11;
+            this.botonPadre1.Text = "Modificar";
+            this.botonPadre1.UseVisualStyleBackColor = false;
+            this.botonPadre1.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtMontoModificacion
             // 
@@ -216,14 +251,13 @@
             this.dgvSalarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalarios.Location = new System.Drawing.Point(12, 231);
-            this.dgvSalarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSalarios.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalarios.Name = "dgvSalarios";
             this.dgvSalarios.ReadOnly = true;
             this.dgvSalarios.RowHeadersWidth = 51;
             this.dgvSalarios.RowTemplate.Height = 25;
             this.dgvSalarios.Size = new System.Drawing.Size(731, 241);
             this.dgvSalarios.TabIndex = 4;
-            this.dgvSalarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellContentClick);
             // 
             // label8
             // 
@@ -262,7 +296,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.TextBox txtApellidoBusqueda;
         private System.Windows.Forms.TextBox txtNombreBusqueda;
         private System.Windows.Forms.TextBox txtMontoBusqueda;
@@ -272,12 +305,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.TextBox txtMontoModificacion;
         private System.Windows.Forms.TextBox txtLegajoColaboradorModificacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvSalarios;
         private System.Windows.Forms.Label label8;
+        private Controls.BotonPadre btnAplicar;
+        private Controls.BotonPadre btnExportar;
+        private Controls.BotonPadre botonPadre1;
     }
 }

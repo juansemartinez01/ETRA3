@@ -34,7 +34,6 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblError = new System.Windows.Forms.Label();
-            this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
             this.btnDatosGenerales = new FontAwesome.Sharp.IconButton();
             this.btnDatosPersonales = new FontAwesome.Sharp.IconButton();
+            this.btnBuscar = new PresentationA.Controls.BotonPadre();
             this.pnlBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.pnlFormulario.SuspendLayout();
@@ -55,9 +55,9 @@
             // 
             // pnlBuscar
             // 
+            this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.dgvBusqueda);
             this.pnlBuscar.Controls.Add(this.lblError);
-            this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.txtLegajo);
             this.pnlBuscar.Controls.Add(this.txtNombre);
             this.pnlBuscar.Controls.Add(this.lblNombre);
@@ -125,20 +125,6 @@
             this.lblError.TabIndex = 15;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnBuscar.IconColor = System.Drawing.Color.Black;
-            this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBuscar.Location = new System.Drawing.Point(746, 10);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(242, 28);
-            this.btnBuscar.TabIndex = 16;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtLegajo
             // 
@@ -286,6 +272,23 @@
             this.btnDatosPersonales.UseVisualStyleBackColor = true;
             this.btnDatosPersonales.Click += new System.EventHandler(this.btnDatosPersonales_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(769, 12);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(193, 29);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // FormularioColaborador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -319,10 +322,10 @@
         private FontAwesome.Sharp.IconButton btnHistorialEventos;
         private FontAwesome.Sharp.IconButton btnDatosGenerales;
         private FontAwesome.Sharp.IconButton btnHistorialSalarios;
-        private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.DataGridView dgvBusqueda;
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private Controls.BotonPadre btnBuscar;
     }
 }

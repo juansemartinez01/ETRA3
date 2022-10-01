@@ -30,7 +30,7 @@ namespace PresentationA
             {
                 textoConCumpleaños += linea;
             }
-            MessageBox.Show(textoConCumpleaños);
+            //MessageBox.Show(textoConCumpleaños);
 
 
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
