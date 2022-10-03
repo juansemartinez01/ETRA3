@@ -231,3 +231,5 @@ C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.csproj
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.exe
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.csproj.ResolveComReference.cache
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmCtaCte.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmVacaciones.resources

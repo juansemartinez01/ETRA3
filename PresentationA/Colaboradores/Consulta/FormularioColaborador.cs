@@ -20,6 +20,8 @@ namespace PresentationA
         public FormularioColaborador()
         {
             InitializeComponent();
+            dgvBusqueda.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(242, 103, 34);
+            dgvBusqueda.EnableHeadersVisualStyles = false;
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(183, 2);
             pnlBotones.Controls.Add(bordeInferior);

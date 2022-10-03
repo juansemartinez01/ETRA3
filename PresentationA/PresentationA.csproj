@@ -78,6 +78,12 @@
     <Compile Include="Colaboradores\Consulta\FormularioColaborador.Designer.cs">
       <DependentUpon>FormularioColaborador.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\Consulta\frmCtaCte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Consulta\frmCtaCte.Designer.cs">
+      <DependentUpon>frmCtaCte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\Consulta\frmDatosGenerales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="Colaboradores\Consulta\frmHistorialSalario.Designer.cs">
       <DependentUpon>frmHistorialSalario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\Consulta\frmVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Consulta\frmVacaciones.Designer.cs">
+      <DependentUpon>frmVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\frmCargaColab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +133,9 @@
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\BotonPadre.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridPadre.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="frmInicio.cs">
@@ -165,6 +180,9 @@
     <EmbeddedResource Include="Colaboradores\Consulta\FormularioColaborador.resx">
       <DependentUpon>FormularioColaborador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Consulta\frmCtaCte.resx">
+      <DependentUpon>frmCtaCte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Consulta\frmDatosPersonales.resx">
       <DependentUpon>frmDatosPersonales.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Consulta\frmHistorialSalario.resx">
       <DependentUpon>frmHistorialSalario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Consulta\frmVacaciones.resx">
+      <DependentUpon>frmVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmCargaColab.resx">
       <DependentUpon>frmCargaColab.cs</DependentUpon>
