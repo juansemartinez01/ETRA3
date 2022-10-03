@@ -12,7 +12,7 @@ namespace PresentationA.Colaboradores.Consulta
 {
     public partial class frmCtaCte : frmHijo
     {
-        public frmCtaCte()
+        public frmCtaCte(string legajo)
         {
             InitializeComponent();
         }

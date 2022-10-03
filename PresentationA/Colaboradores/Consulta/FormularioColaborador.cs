@@ -16,7 +16,7 @@ namespace PresentationA
         public DataTable colaboradores = new DataTable();
         private IconButton botonSeleccionado;
         private Panel bordeInferior;
-
+        private Form activeForm = null;
         public FormularioColaborador()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace PresentationA
                 //botonSeleccionado.IconColor = Color.Red;
 
                 bordeInferior.BackColor = Color.FromArgb(250, 166, 26);
-                bordeInferior.Location = new Point(botonSeleccionado.Location.X, 28);
+                bordeInferior.Location = new Point(botonSeleccionado.Location.X, botonSeleccionado.Location.Y + botonSeleccionado.Size.Height - 5);
                 bordeInferior.Visible = true;
                 bordeInferior.BringToFront();
             }
@@ -50,7 +50,7 @@ namespace PresentationA
             {
                 botonSeleccionado.ForeColor = Color.Black;
                 botonSeleccionado.Font = new Font(botonSeleccionado.Font.Name, botonSeleccionado.Font.Size, FontStyle.Regular);
-
+                bordeInferior.Visible = false;
             }
         }
 
@@ -60,34 +60,25 @@ namespace PresentationA
             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
             dgvBusqueda.Rows.Clear();
             colaboradores = colaboradorModelo.BuscarColaborador(txtLegajo.Text.ToString(), txtNombre.Text.ToString(), txtApellido.Text.ToString());
-            //if (txtLegajo.Text != "" || txtNombre.Text != "" || txtApellido.Text != "")
-            //{
-            //    colaboradores = colaboradorModelo.BuscarColaborador(txtLegajo.Text, txtNombre.Text.ToString(), txtApellido.Text.ToString());
-            //}
-            //else
-            //{
-            //    msgError("Error: Debe ingresar al menos un parámetro", true);
-            //    return;
-                
-            //}
+
 
             if (colaboradores.Rows.Count == 0)
             {
                 msgError("Error: No se encontraron colaboradores con esos parametros.", true);
                 dgvBusqueda.Rows.Clear();
-                //changeMenu(false);
-
+                if (activeForm != null)
+                    activeForm.Close();
+                pnlBotones.Enabled = false;
+                DisableButton();
             }
             else
             {
 
                 msgError("", false);
-                pnlBotones.Enabled = true;
-                //btnDatosPersonales_Click(btnDatosPersonales, e);
                 colaborador = colaboradores.Clone();
-
                 for (int i = 0; i < colaboradores.Rows.Count; i++)
                 {
+                    //crear metodo completar labels
                     dgvBusqueda.Rows.Add(colaboradores.Rows[i]["legajo"], colaboradores.Rows[i]["nombre"], colaboradores.Rows[i]["apellido"]);
                 }
                 //dgvBusqueda.DataSource = colaboradores;  
@@ -118,7 +109,7 @@ namespace PresentationA
                 btnBuscar_Click(sender, e);
             }
         }
-        private Form activeForm = null;
+
         private void openChildFormInPanel(Form childForm)
         {
 
@@ -133,7 +124,6 @@ namespace PresentationA
             pnlFormulario.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            //changeMenu(true);
         }
 
 
@@ -173,15 +163,23 @@ namespace PresentationA
             
             colaborador.Clear();
             colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
+            pnlBotones.Enabled = true;
             btnDatosPersonales_Click(btnDatosPersonales, e);
         }
-        //private void changeMenu(bool value)
-        //{
-        //    datosPersonalesToolStripMenuItem.Enabled = value;
-        //    datosGeneralesToolStripMenuItem.Enabled = value;
-        //    historialToolStripMenuItem.Enabled = value;
-        //    this.pnlFormulario.Visible = value;
-        //}
+
+        private void dgvBusqueda_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            colaborador.Clear();
+            colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
+            pnlBotones.Enabled = true;
+            btnDatosPersonales_Click(btnDatosPersonales, e);
+        }
+
+        private void btnCtaCte_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmCtaCte(colaborador.Rows[0]["legajo"].ToString()));
+        }
 
     }
 }

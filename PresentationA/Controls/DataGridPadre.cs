@@ -17,10 +17,13 @@ namespace PresentationA.Controls
             this.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             this.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+            this.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(242, 103, 34);
             this.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            
             this.DefaultCellStyle.SelectionBackColor = Color.FromArgb(80, 43, 26);
             this.DefaultCellStyle.SelectionForeColor = Color.White;
             this.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            this.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(80, 43, 26);
             this.BorderStyle = BorderStyle.FixedSingle;
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
@@ -31,6 +34,7 @@ namespace PresentationA.Controls
             this.GridColor = Color.FromArgb(242, 103, 34);
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.BackgroundColor = Color.White;
+            this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             
         }
         private void Container_BackColorChanged(object sender, EventArgs e)

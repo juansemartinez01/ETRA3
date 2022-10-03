@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.dgvBusqueda = new PresentationA.Controls.DataGridPadre();
+            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new PresentationA.Controls.BotonPadre();
             this.lblError = new System.Windows.Forms.Label();
             this.txtLegajo = new System.Windows.Forms.TextBox();
@@ -42,18 +46,15 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.btnCtaCte = new FontAwesome.Sharp.IconButton();
             this.btnHistorialSalarios = new FontAwesome.Sharp.IconButton();
             this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
             this.btnDatosGenerales = new FontAwesome.Sharp.IconButton();
             this.btnDatosPersonales = new FontAwesome.Sharp.IconButton();
-            this.dgvBusqueda = new PresentationA.Controls.DataGridPadre();
-            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBuscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.pnlFormulario.SuspendLayout();
             this.pnlBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBuscar
@@ -74,8 +75,83 @@
             this.pnlBuscar.Size = new System.Drawing.Size(1000, 285);
             this.pnlBuscar.TabIndex = 2;
             // 
+            // dgvBusqueda
+            // 
+            this.dgvBusqueda.AllowUserToAddRows = false;
+            this.dgvBusqueda.AllowUserToDeleteRows = false;
+            this.dgvBusqueda.AllowUserToOrderColumns = true;
+            this.dgvBusqueda.AllowUserToResizeColumns = false;
+            this.dgvBusqueda.AllowUserToResizeRows = false;
+            this.dgvBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBusqueda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBusqueda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusqueda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.legajo,
+            this.nombre,
+            this.apellido});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusqueda.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvBusqueda.EnableHeadersVisualStyles = false;
+            this.dgvBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dgvBusqueda.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            this.dgvBusqueda.Location = new System.Drawing.Point(31, 109);
+            this.dgvBusqueda.Name = "dgvBusqueda";
+            this.dgvBusqueda.ReadOnly = true;
+            this.dgvBusqueda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusqueda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBusqueda.Size = new System.Drawing.Size(931, 149);
+            this.dgvBusqueda.TabIndex = 20;
+            this.dgvBusqueda.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentDoubleClick);
+            this.dgvBusqueda.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_RowHeaderMouseClick);
+            this.dgvBusqueda.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBusqueda_RowHeaderMouseClick);
+            // 
+            // legajo
+            // 
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,19 +248,40 @@
             // 
             // pnlBotones
             // 
+            this.pnlBotones.Controls.Add(this.btnCtaCte);
             this.pnlBotones.Controls.Add(this.btnHistorialSalarios);
             this.pnlBotones.Controls.Add(this.btnHistorialEventos);
             this.pnlBotones.Controls.Add(this.btnDatosGenerales);
             this.pnlBotones.Controls.Add(this.btnDatosPersonales);
-            this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(1000, 39);
+            this.pnlBotones.Size = new System.Drawing.Size(190, 300);
             this.pnlBotones.TabIndex = 0;
+            // 
+            // btnCtaCte
+            // 
+            this.btnCtaCte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCtaCte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCtaCte.FlatAppearance.BorderSize = 0;
+            this.btnCtaCte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCtaCte.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnCtaCte.ForeColor = System.Drawing.Color.Black;
+            this.btnCtaCte.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnCtaCte.IconColor = System.Drawing.Color.Black;
+            this.btnCtaCte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCtaCte.Location = new System.Drawing.Point(0, 156);
+            this.btnCtaCte.Name = "btnCtaCte";
+            this.btnCtaCte.Size = new System.Drawing.Size(190, 39);
+            this.btnCtaCte.TabIndex = 3;
+            this.btnCtaCte.Text = "Cuenta Corriente";
+            this.btnCtaCte.UseVisualStyleBackColor = true;
+            this.btnCtaCte.Click += new System.EventHandler(this.btnCtaCte_Click);
             // 
             // btnHistorialSalarios
             // 
+            this.btnHistorialSalarios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHistorialSalarios.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnHistorialSalarios.FlatAppearance.BorderSize = 0;
             this.btnHistorialSalarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -193,9 +290,9 @@
             this.btnHistorialSalarios.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHistorialSalarios.IconColor = System.Drawing.Color.Black;
             this.btnHistorialSalarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistorialSalarios.Location = new System.Drawing.Point(779, 3);
+            this.btnHistorialSalarios.Location = new System.Drawing.Point(0, 117);
             this.btnHistorialSalarios.Name = "btnHistorialSalarios";
-            this.btnHistorialSalarios.Size = new System.Drawing.Size(183, 30);
+            this.btnHistorialSalarios.Size = new System.Drawing.Size(190, 39);
             this.btnHistorialSalarios.TabIndex = 2;
             this.btnHistorialSalarios.Text = "Historial Salarios";
             this.btnHistorialSalarios.UseVisualStyleBackColor = true;
@@ -203,6 +300,7 @@
             // 
             // btnHistorialEventos
             // 
+            this.btnHistorialEventos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHistorialEventos.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnHistorialEventos.FlatAppearance.BorderSize = 0;
             this.btnHistorialEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -211,9 +309,9 @@
             this.btnHistorialEventos.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHistorialEventos.IconColor = System.Drawing.Color.Black;
             this.btnHistorialEventos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistorialEventos.Location = new System.Drawing.Point(517, 3);
+            this.btnHistorialEventos.Location = new System.Drawing.Point(0, 78);
             this.btnHistorialEventos.Name = "btnHistorialEventos";
-            this.btnHistorialEventos.Size = new System.Drawing.Size(183, 30);
+            this.btnHistorialEventos.Size = new System.Drawing.Size(190, 39);
             this.btnHistorialEventos.TabIndex = 1;
             this.btnHistorialEventos.Text = "Historial Eventos";
             this.btnHistorialEventos.UseVisualStyleBackColor = true;
@@ -221,6 +319,7 @@
             // 
             // btnDatosGenerales
             // 
+            this.btnDatosGenerales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDatosGenerales.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDatosGenerales.FlatAppearance.BorderSize = 0;
             this.btnDatosGenerales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -229,9 +328,9 @@
             this.btnDatosGenerales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosGenerales.IconColor = System.Drawing.Color.Black;
             this.btnDatosGenerales.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDatosGenerales.Location = new System.Drawing.Point(243, 3);
+            this.btnDatosGenerales.Location = new System.Drawing.Point(0, 39);
             this.btnDatosGenerales.Name = "btnDatosGenerales";
-            this.btnDatosGenerales.Size = new System.Drawing.Size(183, 30);
+            this.btnDatosGenerales.Size = new System.Drawing.Size(190, 39);
             this.btnDatosGenerales.TabIndex = 1;
             this.btnDatosGenerales.Text = "Datos Generales";
             this.btnDatosGenerales.UseVisualStyleBackColor = true;
@@ -239,6 +338,7 @@
             // 
             // btnDatosPersonales
             // 
+            this.btnDatosPersonales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDatosPersonales.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnDatosPersonales.FlatAppearance.BorderSize = 0;
             this.btnDatosPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -247,83 +347,13 @@
             this.btnDatosPersonales.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnDatosPersonales.IconColor = System.Drawing.Color.Black;
             this.btnDatosPersonales.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDatosPersonales.Location = new System.Drawing.Point(6, 3);
+            this.btnDatosPersonales.Location = new System.Drawing.Point(0, 0);
             this.btnDatosPersonales.Name = "btnDatosPersonales";
-            this.btnDatosPersonales.Size = new System.Drawing.Size(183, 30);
+            this.btnDatosPersonales.Size = new System.Drawing.Size(190, 39);
             this.btnDatosPersonales.TabIndex = 0;
             this.btnDatosPersonales.Text = "Datos Personales";
             this.btnDatosPersonales.UseVisualStyleBackColor = true;
             this.btnDatosPersonales.Click += new System.EventHandler(this.btnDatosPersonales_Click);
-            // 
-            // dgvBusqueda
-            // 
-            this.dgvBusqueda.AllowUserToAddRows = false;
-            this.dgvBusqueda.AllowUserToDeleteRows = false;
-            this.dgvBusqueda.AllowUserToOrderColumns = true;
-            this.dgvBusqueda.AllowUserToResizeColumns = false;
-            this.dgvBusqueda.AllowUserToResizeRows = false;
-            this.dgvBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBusqueda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvBusqueda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusqueda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.legajo,
-            this.nombre,
-            this.apellido});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusqueda.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvBusqueda.EnableHeadersVisualStyles = false;
-            this.dgvBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dgvBusqueda.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvBusqueda.Location = new System.Drawing.Point(31, 109);
-            this.dgvBusqueda.Name = "dgvBusqueda";
-            this.dgvBusqueda.ReadOnly = true;
-            this.dgvBusqueda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusqueda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvBusqueda.Size = new System.Drawing.Size(931, 149);
-            this.dgvBusqueda.TabIndex = 20;
-            // 
-            // legajo
-            // 
-            this.legajo.HeaderText = "Legajo";
-            this.legajo.Name = "legajo";
-            this.legajo.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
             // 
             // FormularioColaborador
             // 
@@ -336,9 +366,9 @@
             this.Text = "FormularioColaborador";
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
             this.pnlFormulario.ResumeLayout(false);
             this.pnlBotones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,5 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private FontAwesome.Sharp.IconButton btnCtaCte;
     }
 }
