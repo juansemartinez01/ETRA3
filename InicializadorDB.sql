@@ -149,3 +149,8 @@ INSERT INTO TipoFamiliar VALUES ('Hijo del colaborador')
 INSERT INTO TipoFamiliar VALUES ('Padre del colaborador')
 INSERT INTO TipoFamiliar VALUES ('Pareja del colaborador')
 
+/*Inicializador tipo Movimiento*/
+INSERT INTO TipoMovimiento VALUES ('Pago',0)
+INSERT INTO TipoMovimiento VALUES ('Prestamo',0)
+INSERT INTO TipoMovimiento VALUES ('Creacion cuenta',0)
+

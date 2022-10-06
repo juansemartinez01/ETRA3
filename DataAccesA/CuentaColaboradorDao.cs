@@ -11,7 +11,7 @@ namespace DataAccesA
     public class CuentaColaboradorDao:ConnectionToSql
     {
 
-        public DataTable BuscarCuentaColaborador(int legajo, string nombre, string apellido)
+        public DataTable BuscarCuentaColaborador(int legajo)
         {
             DataTable cuentaColaborador = new DataTable();
             //colaboradorArray[0] = "";
@@ -23,7 +23,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT numeroCuenta as 'Numero de cuenta',saldoAdeudado as 'Saldo adeudado',legajoColaborador as 'Legajo colaborador' FROM CuentaColaborador WHERE legajoColaborador = @legajo AND borradoLogico = 0";
+                        command.CommandText = "SELECT T.nombre AS 'Tipo movimiento',H.fechaInicio AS 'Fecha registro',H.montoMoviento AS 'Monto del mov.',C.saldoAdeudado AS 'Saldo final' FROM TipoMovimiento T JOIN HistorialCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
@@ -77,6 +77,7 @@ namespace DataAccesA
 
         public string crearCuentaColaborador(int legajo, float monto)
         {
+            monto = -monto;
             try
             {
                 using (var connection = GetConnection())
@@ -85,8 +86,8 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO CuentaColaborador VALUES (@monto,0)";
-                        command.Parameters.AddWithValue("@monto", monto);
+                        command.CommandText = "INSERT INTO CuentaColaborador VALUES (0,0,@montoMaximo)";
+                        command.Parameters.AddWithValue("@montoMaximo", monto);
                         command.CommandType = CommandType.Text;
                         var cuentaCreada = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
                         if(cuentaCreada == 1)
@@ -94,7 +95,7 @@ namespace DataAccesA
                             using (var command1 = new SqlCommand())
                             {
                                 command1.Connection = connection;
-                                command1.CommandText = "INSERT INTO HistorialCuentaColaborador VALUES (GETDATE(),NULL,@legajo,@nroCuenta,0)";
+                                command1.CommandText = "INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),@legajo,@nroCuenta,0,3,0)";
                                 command1.Parameters.AddWithValue("@legajo", legajo);
                                 command1.Parameters.AddWithValue("@nroCuenta", int.Parse(BuscarIdUltimaCuenta()));
                                 command1.CommandType = CommandType.Text;
@@ -123,9 +124,15 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public string modificarSaldo(int legajo,float monto)
+        public string modificarSaldo(int legajo,float montoMovimiento,int tipoMovimiento)
         {
-            
+            if(tipoMovimiento == 2)
+            {
+                montoMovimiento = -montoMovimiento;
+            }
+            string montoActual = "";
+            string montoMaximo;
+            float montoNuevo;
             try
             {
                 using (var connection = GetConnection())
@@ -138,17 +145,74 @@ namespace DataAccesA
                     using (var command1 = new SqlCommand())
                     {
                         command1.Connection = connection;
-                        command1.CommandText = "UPDATE HistorialCuentaColaborador SET fechaFin = GETDATE() WHERE legajoColaborador = @legajo AND fechaFin IS NULL AND borradoLogico = 0";
+                        command1.CommandText = "SELECT C.saldoAdeudado,C.SaldoMaximo FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON C.numeroCuenta = M.nroCuenta WHERE M.legajoColaborador = @legajo";
                         command1.Parameters.AddWithValue("@legajo", legajo);
                         command1.CommandType = CommandType.Text;
-                        var exito = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
-                        if (exito == 1)
+                        SqlDataReader reader = command1.ExecuteReader();
+                        if (reader.HasRows)
                         {
-                            return crearCuentaColaborador(legajo, monto);
+                            while (reader.Read())
+                            {
+                                IDataRecord montoActualBase = (IDataRecord)reader;
+                                montoActual = "" + montoActualBase[0] + "";
+                                montoMaximo = "" + montoActualBase[1] + "";
+                            }
+                            if(montoActual != "")
+                            {
+                                montoNuevo = float.Parse(montoActual) + montoMovimiento;
+
+
+
+                                using (var command2 = new SqlCommand())
+                                {
+                                    command2.Connection = connection;
+                                    command2.CommandText = "UPDATE CuentaColaborador SET saldoAdeudado = @montoNuevo WHERE numeroCuenta = (SELECT C.numeroCuenta FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.legajoColaborador = @legajo)";
+                                    command2.Parameters.AddWithValue("@legajo", legajo);
+                                    command2.Parameters.AddWithValue("@montoNuevo", montoNuevo);
+                                    command2.CommandType = CommandType.Text;
+                                    var historialCreado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
+                                    if (historialCreado == 1)
+                                    {
+                                        using (var command3 = new SqlCommand())
+                                        {
+                                            command3.Connection = connection;
+                                            command3.CommandText = "";
+                                            command3.Parameters.AddWithValue("@legajo", legajo);
+                                            
+                                            command3.CommandType = CommandType.Text;
+                                            var movimientoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
+                                            if (movimientoCreado == 1)
+                                            {
+                                                return "Cuenta creada con exito.";
+
+                                            }
+                                            else
+                                            {
+                                                return "Error al crear la cuenta.";
+                                            }
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                        return "Error al crear la cuenta.";
+                                    }
+                                }
+
+                            }
+                            
+                            else
+                            {
+                                return "Error al realizar el movimiento";
+                            }
+
+
+                            
+
                         }
                         else
                         {
-                            return "Error para modificar el saldo.";
+                            return "Error con la base de datos";
                         }
 
 
