@@ -59,7 +59,7 @@
             this.label1.Location = new System.Drawing.Point(15, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 28);
+            this.label1.Size = new System.Drawing.Size(295, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Historial de Eventos";
             // 
@@ -69,7 +69,7 @@
             this.label2.Location = new System.Drawing.Point(15, 79);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.Size = new System.Drawing.Size(122, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo Evento:";
             // 
@@ -79,7 +79,7 @@
             this.label4.Location = new System.Drawing.Point(15, 195);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 20);
+            this.label4.Size = new System.Drawing.Size(180, 22);
             this.label4.TabIndex = 4;
             this.label4.Text = "Fecha de Registro:";
             // 
@@ -89,7 +89,7 @@
             this.label5.Location = new System.Drawing.Point(15, 156);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(102, 22);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha Fin:";
             // 
@@ -99,7 +99,7 @@
             this.label6.Location = new System.Drawing.Point(15, 119);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 20);
+            this.label6.Size = new System.Drawing.Size(155, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Fecha de Inicio:";
             // 
@@ -109,7 +109,7 @@
             this.label7.Location = new System.Drawing.Point(15, 240);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 20);
+            this.label7.Size = new System.Drawing.Size(121, 22);
             this.label7.TabIndex = 11;
             this.label7.Text = "Descripción:";
             // 
@@ -146,28 +146,28 @@
             this.cmbTipoEvento.FormattingEnabled = true;
             this.cmbTipoEvento.Location = new System.Drawing.Point(188, 76);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
-            this.cmbTipoEvento.Size = new System.Drawing.Size(306, 28);
+            this.cmbTipoEvento.Size = new System.Drawing.Size(306, 30);
             this.cmbTipoEvento.TabIndex = 19;
             // 
             // dtpfechaInicio
             // 
             this.dtpfechaInicio.Location = new System.Drawing.Point(188, 119);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(306, 26);
+            this.dtpfechaInicio.Size = new System.Drawing.Size(306, 30);
             this.dtpfechaInicio.TabIndex = 20;
             // 
             // dtpfechaFin
             // 
             this.dtpfechaFin.Location = new System.Drawing.Point(188, 156);
             this.dtpfechaFin.Name = "dtpfechaFin";
-            this.dtpfechaFin.Size = new System.Drawing.Size(306, 26);
+            this.dtpfechaFin.Size = new System.Drawing.Size(306, 30);
             this.dtpfechaFin.TabIndex = 21;
             // 
             // dtpfechaRegistro
             // 
             this.dtpfechaRegistro.Location = new System.Drawing.Point(188, 195);
             this.dtpfechaRegistro.Name = "dtpfechaRegistro";
-            this.dtpfechaRegistro.Size = new System.Drawing.Size(306, 26);
+            this.dtpfechaRegistro.Size = new System.Drawing.Size(306, 30);
             this.dtpfechaRegistro.TabIndex = 22;
             // 
             // openFileDialog1
@@ -211,7 +211,7 @@
             this.label3.Location = new System.Drawing.Point(13, 465);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 20);
+            this.label3.Size = new System.Drawing.Size(159, 22);
             this.label3.TabIndex = 26;
             this.label3.Text = "Tipo de Archivo:";
             // 
@@ -220,7 +220,7 @@
             this.cmbTipoMultimedia.FormattingEnabled = true;
             this.cmbTipoMultimedia.Location = new System.Drawing.Point(188, 462);
             this.cmbTipoMultimedia.Name = "cmbTipoMultimedia";
-            this.cmbTipoMultimedia.Size = new System.Drawing.Size(306, 28);
+            this.cmbTipoMultimedia.Size = new System.Drawing.Size(306, 30);
             this.cmbTipoMultimedia.TabIndex = 27;
             // 
             // btnEliminar
@@ -240,6 +240,7 @@
             this.btnEliminar.TabIndex = 43;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -280,7 +281,7 @@
             // 
             // frmHistorialEvento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 941);
             this.Controls.Add(this.btnEliminar);

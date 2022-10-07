@@ -25,6 +25,9 @@ namespace PresentationA.Colaboradores.Consulta
             LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
             CargarDG(legajo);
             buscarSaldo();
+            LimpiarCampos();
+
+
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -49,12 +52,18 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            if(txtMontoMovimiento.Text == "" || cmbTipoMovimiento.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe completar el monto del movimiento y seleccionar un tipo de movimiento");
+                return;
+            }
             float monto = float.Parse(txtMontoMovimiento.Text);
             int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
             string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, tipoMovimiento);
             MessageBox.Show(mensaje);
             CargarDG(colaboradorModelo.legajo.ToString());
             buscarSaldo();
+            LimpiarCampos();
         }
         private void buscarSaldo()
         {
@@ -63,7 +72,48 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            int resultado = cuenta.eliminarMovimiento(colaboradorModelo.legajo, cuenta.Movimientoid);
+            if (resultado == 0)
+            {
+                MessageBox.Show("ocurrio un error.");
+            }
+            else
+            {
+                MessageBox.Show("Movimiento eliminado correctamente.");
+                buscarSaldo();
+                CargarDG(colaboradorModelo.legajo.ToString());
+                LimpiarCampos();
+            }
         }
+
+        private void dgvBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idMovimiento = 0;
+            int indice = e.RowIndex;
+            
+            if (indice == -1 || (indice + 1) >= (dgvBusqueda.Rows.Count))
+            {
+                btnVerArchivo.Enabled = false;
+                btnEliminar.Enabled = false;
+                
+                return;
+            }
+            DataGridViewRow filaSeleccionada = dgvBusqueda.Rows[indice];
+            cuenta.Movimientoid = int.Parse(filaSeleccionada.Cells["Numero mov."].Value.ToString());
+            
+            btnEliminar.Enabled = true;
+            
+        }
+        private void LimpiarCampos()
+        {
+            txtMontoMovimiento.Text = "";
+            cmbTipoMovimiento.SelectedIndex = -1;
+            btnEliminar.Enabled = false;
+            
+            cuenta.Movimientoid = -1;
+            
+        }
+
+        
     }
 }

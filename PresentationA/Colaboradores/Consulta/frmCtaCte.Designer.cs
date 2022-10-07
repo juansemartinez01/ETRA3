@@ -30,14 +30,11 @@
         {
             this.dgvBusqueda = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpfechaRegistro = new System.Windows.Forms.DateTimePicker();
             this.cmbTipoMovimiento = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtMontoMovimiento = new System.Windows.Forms.TextBox();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
-            this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnVerArchivo = new FontAwesome.Sharp.IconButton();
@@ -61,6 +58,7 @@
             this.dgvBusqueda.RowTemplate.Height = 25;
             this.dgvBusqueda.Size = new System.Drawing.Size(664, 532);
             this.dgvBusqueda.TabIndex = 19;
+            this.dgvBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentClick);
             // 
             // label1
             // 
@@ -73,14 +71,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Cuenta Corriente";
             // 
-            // dtpfechaRegistro
-            // 
-            this.dtpfechaRegistro.Location = new System.Drawing.Point(224, 150);
-            this.dtpfechaRegistro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dtpfechaRegistro.Name = "dtpfechaRegistro";
-            this.dtpfechaRegistro.Size = new System.Drawing.Size(366, 32);
-            this.dtpfechaRegistro.TabIndex = 30;
-            // 
             // cmbTipoMovimiento
             // 
             this.cmbTipoMovimiento.FormattingEnabled = true;
@@ -89,16 +79,6 @@
             this.cmbTipoMovimiento.Name = "cmbTipoMovimiento";
             this.cmbTipoMovimiento.Size = new System.Drawing.Size(366, 31);
             this.cmbTipoMovimiento.TabIndex = 27;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 150);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 23);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Fecha de Registro:";
             // 
             // label2
             // 
@@ -147,25 +127,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnModificar.IconColor = System.Drawing.Color.Black;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(220, 568);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(162, 37);
-            this.btnModificar.TabIndex = 45;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
             // 
             // btnAgregar
             // 
@@ -230,7 +191,7 @@
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(232, 372);
+            this.lblSaldo.Location = new System.Drawing.Point(282, 372);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(0, 23);
             this.lblSaldo.TabIndex = 50;
@@ -245,13 +206,10 @@
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnVerArchivo);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtMontoMovimiento);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpfechaRegistro);
             this.Controls.Add(this.cmbTipoMovimiento);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBusqueda);
@@ -268,14 +226,11 @@
 
         private System.Windows.Forms.DataGridView dgvBusqueda;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpfechaRegistro;
         private System.Windows.Forms.ComboBox cmbTipoMovimiento;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtMontoMovimiento;
         private Controls.BotonPadre btnEliminar;
-        private Controls.BotonPadre btnModificar;
         private Controls.BotonPadre btnAgregar;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnVerArchivo;

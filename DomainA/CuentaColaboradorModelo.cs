@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace DomainA
 {
+    
     public  class CuentaColaboradorModelo
     {
         CuentaColaboradorDao cuentaColaborador = new CuentaColaboradorDao();
+        public int Movimientoid { get; set; }
 
         public string crearCuentaColaborador(int legajo,float monto)
         {
@@ -28,6 +30,10 @@ namespace DomainA
         public float buscarSaldo(int legajo)
         {
             return cuentaColaborador.buscarSaldo(legajo);
+        }
+        public int eliminarMovimiento(int legajo, int idMovimiento)
+        {
+            return cuentaColaborador.eliminarMovimiento(legajo, idMovimiento);
         }
     }
 }

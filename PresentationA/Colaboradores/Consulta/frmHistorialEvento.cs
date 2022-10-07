@@ -205,6 +205,9 @@ namespace PresentationA.Colaboradores.Consulta
             archivo.Close();
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
