@@ -100,6 +100,11 @@ namespace PresentationA.Colaboradores.Consulta
             }
             DataGridViewRow filaSeleccionada = dgvBusqueda.Rows[indice];
             cuenta.Movimientoid = int.Parse(filaSeleccionada.Cells["Numero mov."].Value.ToString());
+            if(filaSeleccionada.Cells["Tipo movimiento"].Value.ToString() == "Creacion cuenta                                   ")
+            {
+                btnEliminar.Enabled = false;
+                return ;
+            }
             
             btnEliminar.Enabled = true;
             

@@ -13,6 +13,7 @@ namespace DomainA
     {
         CuentaColaboradorDao cuentaColaborador = new CuentaColaboradorDao();
         public int Movimientoid { get; set; }
+        public int TipoMovimineto { get; set; }
 
         public string crearCuentaColaborador(int legajo,float monto)
         {
