@@ -41,6 +41,8 @@
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnVerArchivo = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblSaldo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +146,7 @@
             this.btnEliminar.TabIndex = 46;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -215,11 +218,30 @@
             this.btnVerArchivo.Text = "Ver Archivo";
             this.btnVerArchivo.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 372);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(206, 23);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Saldo de la cuenta:";
+            // 
+            // lblSaldo
+            // 
+            this.lblSaldo.AutoSize = true;
+            this.lblSaldo.Location = new System.Drawing.Point(232, 372);
+            this.lblSaldo.Name = "lblSaldo";
+            this.lblSaldo.Size = new System.Drawing.Size(0, 23);
+            this.lblSaldo.TabIndex = 50;
+            // 
             // frmCtaCte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 649);
+            this.Controls.Add(this.lblSaldo);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.btnVerArchivo);
             this.Controls.Add(this.btnEliminar);
@@ -257,5 +279,7 @@
         private Controls.BotonPadre btnAgregar;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnVerArchivo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblSaldo;
     }
 }

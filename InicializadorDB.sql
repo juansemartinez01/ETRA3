@@ -79,9 +79,17 @@ INSERT INTO TipoMultimedia VALUES ('Foto del colaborador',0)
 
 /*Inicializador de la tabla Cargo*/
 
-INSERT INTO Cargo VALUES ('Repartidor',0)
-INSERT INTO Cargo VALUES ('Control stock',0)
-INSERT INTO Cargo VALUES ('Supervisor',0)
+INSERT INTO Cargo VALUES ('Encargado',0)
+INSERT INTO Cargo VALUES ('Maestranza',0)
+INSERT INTO Cargo VALUES ('Chofer',0)
+INSERT INTO Cargo VALUES ('Vendedor de mostrador',0)
+INSERT INTO Cargo VALUES ('Mulero',0)
+INSERT INTO Cargo VALUES ('Vendedor',0)
+INSERT INTO Cargo VALUES ('Operario deposito',0)
+INSERT INTO Cargo VALUES ('Atencion al publico en sucursal',0)
+INSERT INTO Cargo VALUES ('Encargado logistica y deposito',0)
+INSERT INTO Cargo VALUES ('Deposito',0)
+INSERT INTO Cargo VALUES ('Administracion y comunicacion',0)
 
 
 

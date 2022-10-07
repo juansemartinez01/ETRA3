@@ -8,6 +8,7 @@ namespace DomainA
     public class ColaboradorModelo
     {
         ColaboradorDao colaboradorDao = new ColaboradorDao();
+        public int legajo;
 
         public string BuscarLegajoUltimoColaborador()
         {

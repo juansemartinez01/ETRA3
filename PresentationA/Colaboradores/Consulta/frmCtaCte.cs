@@ -16,11 +16,15 @@ namespace PresentationA.Colaboradores.Consulta
     {
         CuentaColaboradorModelo cuenta = new CuentaColaboradorModelo();
         DataTable cuentaColaborador;
+        ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
         public frmCtaCte(string legajo)
         {
             InitializeComponent();
-            LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0"), "nombre", "id_tipoMovimiento");
+            colaboradorModelo.legajo = int.Parse(legajo);
+            
+            LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
             CargarDG(legajo);
+            buscarSaldo();
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -46,6 +50,19 @@ namespace PresentationA.Colaboradores.Consulta
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             float monto = float.Parse(txtMontoMovimiento.Text);
+            int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
+            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, tipoMovimiento);
+            MessageBox.Show(mensaje);
+            CargarDG(colaboradorModelo.legajo.ToString());
+            buscarSaldo();
+        }
+        private void buscarSaldo()
+        {
+            lblSaldo.Text = cuenta.buscarSaldo(colaboradorModelo.legajo).ToString();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -23,7 +23,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT T.nombre AS 'Tipo movimiento',H.fechaInicio AS 'Fecha registro',H.montoMoviento AS 'Monto del mov.',C.saldoAdeudado AS 'Saldo final' FROM TipoMovimiento T JOIN HistorialCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
+                        command.CommandText = "SELECT T.nombre AS 'Tipo movimiento',H.fechaInicio AS 'Fecha registro',H.montoMoviento AS 'Monto del mov.' FROM TipoMovimiento T JOIN MovimientosCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
@@ -124,6 +124,49 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
+        public float buscarSaldo(int legajo)
+        {
+            float saldo = 123456789;
+
+
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "SELECT DISTINCT saldoAdeudado FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.idHistorialCuenta = (SELECT MAX(idHistorialCuenta) FROM MovimientosCuentaColaborador WHERE legajoColaborador = @legajo)";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord saldoBase = (IDataRecord)reader;
+                                saldo = float.Parse("" + saldoBase[0] + "");
+                            }
+                            return saldo;
+
+                        }
+                        else
+                        {
+                            return saldo;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return saldo;
+            }
+
+
+            return saldo;
+        }
         public string modificarSaldo(int legajo,float montoMovimiento,int tipoMovimiento)
         {
             if(tipoMovimiento == 2)
@@ -156,8 +199,10 @@ namespace DataAccesA
                                 IDataRecord montoActualBase = (IDataRecord)reader;
                                 montoActual = "" + montoActualBase[0] + "";
                                 montoMaximo = "" + montoActualBase[1] + "";
+                                
                             }
-                            if(montoActual != "")
+                            reader.Close();
+                            if (montoActual != "")
                             {
                                 montoNuevo = float.Parse(montoActual) + montoMovimiento;
 
@@ -166,19 +211,26 @@ namespace DataAccesA
                                 using (var command2 = new SqlCommand())
                                 {
                                     command2.Connection = connection;
-                                    command2.CommandText = "UPDATE CuentaColaborador SET saldoAdeudado = @montoNuevo WHERE numeroCuenta = (SELECT C.numeroCuenta FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.legajoColaborador = @legajo)";
+                                    command2.CommandText = "UPDATE CuentaColaborador SET saldoAdeudado = @montoNuevo WHERE numeroCuenta = (SELECT DISTINCT C.numeroCuenta FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.legajoColaborador = @legajo)";
                                     command2.Parameters.AddWithValue("@legajo", legajo);
                                     command2.Parameters.AddWithValue("@montoNuevo", montoNuevo);
                                     command2.CommandType = CommandType.Text;
                                     var historialCreado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
                                     if (historialCreado == 1)
                                     {
+                                        int numeroCuenta = buscarNumeroCuenta(legajo);
+                                        if (numeroCuenta == 0)
+                                        {
+                                            return "Error al buscar el numero de cuenta";
+                                        }
                                         using (var command3 = new SqlCommand())
                                         {
                                             command3.Connection = connection;
-                                            command3.CommandText = "";
+                                            command3.CommandText = "INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),NULL,@legajo,@numeroCuenta,0,@tipoMovimiento,@montoMovimiento)";
                                             command3.Parameters.AddWithValue("@legajo", legajo);
-                                            
+                                            command3.Parameters.AddWithValue("@numeroCuenta", numeroCuenta);
+                                            command3.Parameters.AddWithValue("@tipoMovimiento", tipoMovimiento);
+                                            command3.Parameters.AddWithValue("@montoMovimiento", montoMovimiento);
                                             command3.CommandType = CommandType.Text;
                                             var movimientoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
                                             if (movimientoCreado == 1)
@@ -226,6 +278,50 @@ namespace DataAccesA
             {
                 return ex.Message;
             }
+        }
+        public int buscarNumeroCuenta(int legajo)
+        {
+            int numeroCuenta = 0;
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "SELECT C.numeroCuenta FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.legajoColaborador = @legajo";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord numeroCuentaBase = (IDataRecord)reader;
+                                numeroCuenta = int.Parse("" + numeroCuentaBase[0] + "");
+                                return numeroCuenta;
+                            }
+                            return 0;
+
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public int eliminarMovimiento(int legajo,int idMovimiento) 
+        {
+            return 4;
+        
         }
 
 

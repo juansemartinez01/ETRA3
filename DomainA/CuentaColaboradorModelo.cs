@@ -21,5 +21,13 @@ namespace DomainA
         {
             return cuentaColaborador.BuscarCuentaColaborador(legajo);
         }
+        public string modificarSaldo(int legajo, float saldo,int tipoMovimiento)
+        {
+            return cuentaColaborador.modificarSaldo(legajo, saldo, tipoMovimiento);
+        }
+        public float buscarSaldo(int legajo)
+        {
+            return cuentaColaborador.buscarSaldo(legajo);
+        }
     }
 }
