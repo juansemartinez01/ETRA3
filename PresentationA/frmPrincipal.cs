@@ -180,6 +180,10 @@ namespace PresentationA
             openChildFormInPanel(new frmSalarios());
         }
 
-        
+        private void btnDocumentos_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmDocumentos());
+        }
     }
 }

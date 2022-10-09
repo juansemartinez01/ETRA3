@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using DomainA;
 using System.Diagnostics;
 using System.Data.Common;
-
+using PresentationA.Controls;
 
 namespace PresentationA.Colaboradores.Consulta
 {
@@ -27,6 +27,9 @@ namespace PresentationA.Colaboradores.Consulta
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
             btnVerArchivo.Enabled = false;
+            lblTipoArchivo.Visible = false;
+            btnAgregarArchivo.Visible = false;
+            cmbTipoMultimedia.Visible = false;
             LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
             LlenarCombo(cmbTipoMultimedia, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMultimedia WHERE borradoLogico = 0"), "nombre", "id_tipoMultimedia");
             dtpfechaInicio.Format = DateTimePickerFormat.Custom;
@@ -141,33 +144,45 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (cmbTipoEvento.SelectedIndex == -1)
+            if (btnAgregar.Text == "Guardar")
             {
-                MessageBox.Show("Debe seleccionar primero el tipo de evento que quiere crear");
+                // guardar nuevo valor
+                if (cmbTipoEvento.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar primero el tipo de evento que quiere crear");
+                    return;
+                }
+                if ((int)cmbTipoEvento.SelectedValue == 2)
+                {
+                    string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaInicio.Value.Date);
+                    if (openFileDialog1.InitialDirectory != "no seleccionado")
+                    {
+
+                        agregarArchivoEvento();
+                    }
+                    MessageBox.Show(respuesta);
+                    CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+                }
+                else
+                {
+                    string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date);
+                    if (openFileDialog1.InitialDirectory != "no seleccionado")
+                    {
+
+                        agregarArchivoEvento();
+                    }
+                    MessageBox.Show(respuesta);
+                    CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+                }
+                btnAgregar.Text = "Agregar";
+                switchButtons(false);
                 return;
             }
-            if ((int)cmbTipoEvento.SelectedValue == 2)
-            {
-                string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaInicio.Value.Date);
-                if (openFileDialog1.InitialDirectory != "no seleccionado")
-                {
+            btnAgregar.Text = "Guardar";
+            switchButtons(true);
+            
 
-                    agregarArchivoEvento();
-                }
-                MessageBox.Show(respuesta);
-                CargarDG(nuevoDocumento.LegajoColaborador.ToString());
-            }
-            else
-            {
-                string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date);
-                if (openFileDialog1.InitialDirectory != "no seleccionado")
-                {
 
-                    agregarArchivoEvento();
-                }
-                MessageBox.Show(respuesta);
-                CargarDG(nuevoDocumento.LegajoColaborador.ToString());
-            }
         }
 
         private void btnVerArchivo_Click(object sender, EventArgs e)
@@ -215,5 +230,50 @@ namespace PresentationA.Colaboradores.Consulta
         {
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            if (btnModificar.Text == "Guardar")
+            {
+                //Guardar cambios, resetear estado de botones
+                btnModificar.Text = "Modificar";
+                btnAgregar.Enabled = true;
+                switchButtons(false);
+                return;
+                //query guardar cambios JUANSE
+            }
+            // Habilitar todos los botones
+            btnModificar.Text = "Guardar";
+            btnAgregar.Enabled = false;
+            switchButtons(true);
+        }
+        private void switchButtons(bool value)
+        {
+            if (value == false)
+            {
+                cmbTipoEvento.SelectedItem = null;
+                dtpfechaInicio.Value = DateTime.Now;
+                dtpfechaFin.Value = DateTime.Now;
+                dtpfechaRegistro.Value = DateTime.Now;
+                txtDescripcion.Text = null;
+                lblTipoArchivo.Visible = value;
+                btnAgregarArchivo.Visible = value;
+                cmbTipoMultimedia.Visible = value;
+            }
+            cmbTipoEvento.Enabled = value;
+            dtpfechaInicio.Enabled = value;
+            dtpfechaFin.Enabled = value;
+            dtpfechaRegistro.Enabled = value;
+            txtDescripcion.Enabled = value;
+            lblTipoArchivo.Visible = value;
+            btnAgregarArchivo.Visible = value;
+            cmbTipoMultimedia.Visible = value;
+            dgvEventos.CurrentRow.Selected = false;
+        }
+
+       
+
+        
     }
 }

@@ -36,6 +36,7 @@
             this.btnTardanzas = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
+            this.btnDocumentos = new FontAwesome.Sharp.IconButton();
             this.btnSalarios = new FontAwesome.Sharp.IconButton();
             this.btnEventos = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
@@ -71,7 +72,7 @@
             this.pnlReportes.Controls.Add(this.btnSalXCargo);
             this.pnlReportes.Controls.Add(this.btnTardanzas);
             this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReportes.Location = new System.Drawing.Point(0, 339);
+            this.pnlReportes.Location = new System.Drawing.Point(0, 394);
             this.pnlReportes.Name = "pnlReportes";
             this.pnlReportes.Size = new System.Drawing.Size(200, 119);
             this.pnlReportes.TabIndex = 0;
@@ -131,7 +132,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 297);
+            this.iconButton1.Location = new System.Drawing.Point(0, 352);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(200, 42);
             this.iconButton1.TabIndex = 5;
@@ -144,6 +145,7 @@
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlColaboradores.Controls.Add(this.btnDocumentos);
             this.pnlColaboradores.Controls.Add(this.btnSalarios);
             this.pnlColaboradores.Controls.Add(this.btnEventos);
             this.pnlColaboradores.Controls.Add(this.btnAgregar);
@@ -151,8 +153,30 @@
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 120);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 177);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 232);
             this.pnlColaboradores.TabIndex = 2;
+            // 
+            // btnDocumentos
+            // 
+            this.btnDocumentos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDocumentos.FlatAppearance.BorderSize = 0;
+            this.btnDocumentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDocumentos.ForeColor = System.Drawing.Color.White;
+            this.btnDocumentos.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnDocumentos.IconColor = System.Drawing.Color.White;
+            this.btnDocumentos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDocumentos.IconSize = 30;
+            this.btnDocumentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocumentos.Location = new System.Drawing.Point(0, 168);
+            this.btnDocumentos.Name = "btnDocumentos";
+            this.btnDocumentos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnDocumentos.Size = new System.Drawing.Size(200, 42);
+            this.btnDocumentos.TabIndex = 5;
+            this.btnDocumentos.Text = "Documentos";
+            this.btnDocumentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDocumentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDocumentos.UseVisualStyleBackColor = true;
+            this.btnDocumentos.Click += new System.EventHandler(this.btnDocumentos_Click);
             // 
             // btnSalarios
             // 
@@ -318,6 +342,7 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel pnlReportes;
         private FontAwesome.Sharp.IconButton btnSalarios;
+        private FontAwesome.Sharp.IconButton btnDocumentos;
     }
 }
 

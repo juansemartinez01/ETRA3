@@ -120,6 +120,12 @@
     <Compile Include="Colaboradores\frmCargaColab.Designer.cs">
       <DependentUpon>frmCargaColab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\frmDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\frmDocumentos.Designer.cs">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\frmEventos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmCargaColab.resx">
       <DependentUpon>frmCargaColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\frmDocumentos.resx">
+      <DependentUpon>frmDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmEventos.resx">
       <DependentUpon>frmEventos.cs</DependentUpon>

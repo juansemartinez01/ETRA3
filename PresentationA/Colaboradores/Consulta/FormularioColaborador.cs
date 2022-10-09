@@ -189,7 +189,7 @@ namespace PresentationA
         {
             {
                 frmModifcarColab mod = new frmModifcarColab(colaborador);
-                mod.Show();
+                mod.ShowDialog();
             }
         }
     }

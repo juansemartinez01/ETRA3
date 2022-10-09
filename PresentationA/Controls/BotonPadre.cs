@@ -38,6 +38,7 @@ namespace PresentationA.Controls
             path.CloseFigure();
             return path;
         }
+        
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
@@ -60,6 +61,7 @@ namespace PresentationA.Controls
         {
             base.OnHandleCreated(e);
             this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
+            
         }
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
