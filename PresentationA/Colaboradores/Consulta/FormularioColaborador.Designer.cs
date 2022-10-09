@@ -46,6 +46,7 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnCtaCte = new FontAwesome.Sharp.IconButton();
             this.btnHistorialSalarios = new FontAwesome.Sharp.IconButton();
             this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
@@ -243,11 +244,12 @@
             this.pnlFormulario.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.pnlFormulario.Location = new System.Drawing.Point(0, 285);
             this.pnlFormulario.Name = "pnlFormulario";
-            this.pnlFormulario.Size = new System.Drawing.Size(1000, 300);
+            this.pnlFormulario.Size = new System.Drawing.Size(1000, 597);
             this.pnlFormulario.TabIndex = 3;
             // 
             // pnlBotones
             // 
+            this.pnlBotones.Controls.Add(this.btnModificar);
             this.pnlBotones.Controls.Add(this.btnCtaCte);
             this.pnlBotones.Controls.Add(this.btnHistorialSalarios);
             this.pnlBotones.Controls.Add(this.btnHistorialEventos);
@@ -257,8 +259,31 @@
             this.pnlBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(190, 300);
+            this.pnlBotones.Size = new System.Drawing.Size(190, 597);
             this.pnlBotones.TabIndex = 0;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnModificar.Enabled = false;
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 25;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(31, 545);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(125, 40);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCtaCte
             // 
@@ -273,9 +298,11 @@
             this.btnCtaCte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCtaCte.Location = new System.Drawing.Point(0, 156);
             this.btnCtaCte.Name = "btnCtaCte";
+            this.btnCtaCte.Padding = new System.Windows.Forms.Padding(5);
             this.btnCtaCte.Size = new System.Drawing.Size(190, 39);
             this.btnCtaCte.TabIndex = 3;
             this.btnCtaCte.Text = "Cuenta Corriente";
+            this.btnCtaCte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCtaCte.UseVisualStyleBackColor = true;
             this.btnCtaCte.Click += new System.EventHandler(this.btnCtaCte_Click);
             // 
@@ -292,9 +319,11 @@
             this.btnHistorialSalarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHistorialSalarios.Location = new System.Drawing.Point(0, 117);
             this.btnHistorialSalarios.Name = "btnHistorialSalarios";
+            this.btnHistorialSalarios.Padding = new System.Windows.Forms.Padding(5);
             this.btnHistorialSalarios.Size = new System.Drawing.Size(190, 39);
             this.btnHistorialSalarios.TabIndex = 2;
             this.btnHistorialSalarios.Text = "Historial Salarios";
+            this.btnHistorialSalarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistorialSalarios.UseVisualStyleBackColor = true;
             this.btnHistorialSalarios.Click += new System.EventHandler(this.btnHistorialSalarios_Click);
             // 
@@ -311,9 +340,11 @@
             this.btnHistorialEventos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHistorialEventos.Location = new System.Drawing.Point(0, 78);
             this.btnHistorialEventos.Name = "btnHistorialEventos";
+            this.btnHistorialEventos.Padding = new System.Windows.Forms.Padding(5);
             this.btnHistorialEventos.Size = new System.Drawing.Size(190, 39);
             this.btnHistorialEventos.TabIndex = 1;
             this.btnHistorialEventos.Text = "Historial Eventos";
+            this.btnHistorialEventos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHistorialEventos.UseVisualStyleBackColor = true;
             this.btnHistorialEventos.Click += new System.EventHandler(this.btnHistorial_Click);
             // 
@@ -330,9 +361,11 @@
             this.btnDatosGenerales.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDatosGenerales.Location = new System.Drawing.Point(0, 39);
             this.btnDatosGenerales.Name = "btnDatosGenerales";
+            this.btnDatosGenerales.Padding = new System.Windows.Forms.Padding(5);
             this.btnDatosGenerales.Size = new System.Drawing.Size(190, 39);
             this.btnDatosGenerales.TabIndex = 1;
             this.btnDatosGenerales.Text = "Datos Generales";
+            this.btnDatosGenerales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosGenerales.UseVisualStyleBackColor = true;
             this.btnDatosGenerales.Click += new System.EventHandler(this.btnDatosGenerales_Click);
             // 
@@ -349,16 +382,18 @@
             this.btnDatosPersonales.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDatosPersonales.Location = new System.Drawing.Point(0, 0);
             this.btnDatosPersonales.Name = "btnDatosPersonales";
+            this.btnDatosPersonales.Padding = new System.Windows.Forms.Padding(5);
             this.btnDatosPersonales.Size = new System.Drawing.Size(190, 39);
             this.btnDatosPersonales.TabIndex = 0;
             this.btnDatosPersonales.Text = "Datos Personales";
+            this.btnDatosPersonales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosPersonales.UseVisualStyleBackColor = true;
             this.btnDatosPersonales.Click += new System.EventHandler(this.btnDatosPersonales_Click);
             // 
             // FormularioColaborador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1000, 585);
+            this.ClientSize = new System.Drawing.Size(1000, 882);
             this.Controls.Add(this.pnlFormulario);
             this.Controls.Add(this.pnlBuscar);
             this.Font = new System.Drawing.Font("Century Gothic", 9F);
@@ -394,5 +429,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private FontAwesome.Sharp.IconButton btnCtaCte;
+        private Controls.BotonPadre btnModificar;
     }
 }

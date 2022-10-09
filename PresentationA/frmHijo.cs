@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Net.Security;
 using System.Windows.Forms;
 
 namespace PresentationA
@@ -14,12 +15,17 @@ namespace PresentationA
     {
         foreach (DataColumn columna in colaborador.Columns)
         {
-            string value = columna.ToString();
-            var control = form.Controls.Find(prefijo + value, true);
+            string atributo = columna.ToString();
+            //string value = colaborador.Rows[0][atributo].ToString();
+            var control = form.Controls.Find(prefijo + atributo, true);
             if (control.Length > 0)
             {
-                //Label ctrl = control[0] as Label;
-                control[0].Text = colaborador.Rows[0][value].ToString();
+                
+                //if (value == "null")
+                //   {
+                //        value = " ";
+                //    }
+                control[0].Text = colaborador.Rows[0][atributo].ToString();
             }
             else
             {

@@ -126,6 +126,12 @@
     <Compile Include="Colaboradores\frmEventos.Designer.cs">
       <DependentUpon>frmEventos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\frmModifcarColab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\frmModifcarColab.Designer.cs">
+      <DependentUpon>frmModifcarColab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\frmSalarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <EmbeddedResource Include="Colaboradores\Consulta\frmCtaCte.resx">
       <DependentUpon>frmCtaCte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Consulta\frmDatosGenerales.resx">
+      <DependentUpon>frmDatosGenerales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Consulta\frmDatosPersonales.resx">
       <DependentUpon>frmDatosPersonales.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmEventos.resx">
       <DependentUpon>frmEventos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\frmModifcarColab.resx">
+      <DependentUpon>frmModifcarColab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmSalarios.resx">
       <DependentUpon>frmSalarios.cs</DependentUpon>

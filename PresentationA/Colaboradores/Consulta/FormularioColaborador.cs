@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using DomainA;
 using FontAwesome.Sharp;
+using PresentationA.Colaboradores;
 using PresentationA.Colaboradores.Consulta;
 
 namespace PresentationA
@@ -26,6 +27,7 @@ namespace PresentationA
             bordeInferior.Size = new Size(183, 2);
             pnlBotones.Controls.Add(bordeInferior);
             pnlBotones.Enabled = false;
+            btnModificar.Enabled = false;
         }
 
         private void ActivateButton(object button)
@@ -164,6 +166,7 @@ namespace PresentationA
             colaborador.Clear();
             colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
             pnlBotones.Enabled = true;
+            btnModificar.Enabled = true; 
             btnDatosPersonales_Click(btnDatosPersonales, e);
         }
 
@@ -172,6 +175,7 @@ namespace PresentationA
             colaborador.Clear();
             colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
             pnlBotones.Enabled = true;
+            btnModificar.Enabled = true;
             btnDatosPersonales_Click(btnDatosPersonales, e);
         }
 
@@ -181,5 +185,12 @@ namespace PresentationA
             openChildFormInPanel(new frmCtaCte(colaborador.Rows[0]["legajo"].ToString()));
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            {
+                frmModifcarColab mod = new frmModifcarColab(colaborador);
+                mod.Show();
+            }
+        }
     }
 }
