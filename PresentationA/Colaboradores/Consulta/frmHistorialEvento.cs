@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using DomainA;
 using System.Diagnostics;
+using System.Data.Common;
 
 
 namespace PresentationA.Colaboradores.Consulta
@@ -46,7 +47,12 @@ namespace PresentationA.Colaboradores.Consulta
             try
             {
                 historial = obje.obtenerEventos(legajo);
-                dgvEventos.DataSource = historial;
+                for (int i = 0; i < historial.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvEventos.Rows.Add(historial.Rows[i]["Tipo"], historial.Rows[i]["Descripción"], historial.Rows[i]["Fecha de Inicio"], historial.Rows[i]["Fecha Fin"], historial.Rows[i]["Fecha de Registro"]);
+                }
+                
 
             }
             catch (Exception ex)
@@ -58,7 +64,7 @@ namespace PresentationA.Colaboradores.Consulta
         {
             int indice = e.RowIndex;
             obje.FilaSeleccionadaHistorialEvento = indice;
-            if (indice == -1 || (indice + 1) >= (dgvEventos.Rows.Count))
+            if (indice == -1)
             {
                 btnVerArchivo.Enabled = false;
                 btnEliminar.Enabled = false;
@@ -68,11 +74,11 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             //completarLabels(this, historial, "txt");
-            cmbTipoEvento.Text = filaSeleccionada.Cells["Nombre"].Value.ToString();
-            dtpfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
-            dtpfechaFin.Text = filaSeleccionada.Cells["Fecha Fin"].Value.ToString();
-            dtpfechaRegistro.Text = filaSeleccionada.Cells["Fecha de registro"].Value.ToString();
-            txtDescripcion.Text = filaSeleccionada.Cells["Descripción"].Value.ToString();
+            cmbTipoEvento.Text = filaSeleccionada.Cells["Tipo"].Value.ToString();
+            dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
+            dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
+            dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
+            txtDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
             btnVerArchivo.Enabled = true;
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;

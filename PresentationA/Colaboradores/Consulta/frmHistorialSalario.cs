@@ -25,7 +25,11 @@ namespace PresentationA.Colaboradores.Consulta
             try
             {
                 DataTable salarios = sal.obtenerSalarios(legajo);
-                dgvSalarios.DataSource = salarios;
+                for (int i = 0; i < salarios.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvSalarios.Rows.Add(salarios.Rows[i]["Monto"], salarios.Rows[i]["Fecha de Inicio"], salarios.Rows[i]["Fecha Fin"]);
+                }
 
             }
             catch (Exception ex)
@@ -60,10 +64,9 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvSalarios.Rows[indice];
             //completarLabels(this, historial, "txt");
-            txtmonto.Text = filaSeleccionada.Cells["Monto"].Value.ToString();
-            dtpfechaInicio.Text = filaSeleccionada.Cells["Fecha de Inicio"].Value.ToString();
-            dtpfechaFin.Text = filaSeleccionada.Cells["Fecha de Fin"].Value.ToString();
-
+            txtmonto.Text = filaSeleccionada.Cells["monto"].Value.ToString();
+            dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
+            dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
         }
     }
 }

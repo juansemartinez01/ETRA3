@@ -18,7 +18,7 @@ namespace DataAccessA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT S.monto AS 'Monto', CONVERT(varchar,H.fechaInicio,103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin,103) AS 'Fecha de Fin' FROM HistorialSalario H JOIN Salario S ON H.id_salario = S.id_salario WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0 AND S.borradoLogico = 0";
+                    command.CommandText = "SELECT S.monto AS 'Monto', CONVERT(varchar,H.fechaInicio,103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin,103) AS 'Fecha Fin' FROM HistorialSalario H JOIN Salario S ON H.id_salario = S.id_salario WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0 AND S.borradoLogico = 0";
                     command.Parameters.AddWithValue("@legajo", legajo);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
@@ -152,7 +152,7 @@ namespace DataAccessA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT C.nombre AS 'Nombre',C.apellido AS 'Apellido',CONVERT(varchar,H.fechaInicio,103) AS 'Fecha desde',S.monto AS 'Monto' FROM Salario S JOIN HistorialSalario H ON S.id_salario = H.id_salario JOIN Colaborador C ON c.legajo = H.legajoColaborador WHERE S.borradoLogico = 0 AND H.borradoLogico = 0 AND C.borradoLogico = 0 AND H.fechaFin IS NULL ORDER BY S.monto DESC";
+                    command.CommandText = "SELECT C.legajo ,CONVERT(varchar,H.fechaInicio,103) as 'fechaInicio',S.monto FROM Salario S JOIN HistorialSalario H ON S.id_salario = H.id_salario JOIN Colaborador C ON c.legajo = H.legajoColaborador WHERE S.borradoLogico = 0 AND H.borradoLogico = 0 AND C.borradoLogico = 0 AND H.fechaFin IS NULL ORDER BY S.monto DESC";
 
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();

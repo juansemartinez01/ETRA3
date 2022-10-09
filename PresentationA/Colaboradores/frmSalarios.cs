@@ -19,7 +19,12 @@ namespace PresentationA.Colaboradores
         }
         public void CargarTabla()
         {
-            dgvSalarios.DataSource = sal.getAllSalarios();
+            DataTable salarios = sal.getAllSalarios();
+            for (int i = 0; i < salarios.Rows.Count; i++)
+            {
+                //crear metodo completar labels
+                dgvSalarios.Rows.Add(salarios.Rows[i]["legajo"],salarios.Rows[i]["monto"], salarios.Rows[i]["fechaInicio"]);
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

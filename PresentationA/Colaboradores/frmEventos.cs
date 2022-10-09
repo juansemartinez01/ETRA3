@@ -27,7 +27,11 @@ namespace PresentationA.Colaboradores
             try
             {
                 eventos = objetoEvento.getAllEventos();
-                dgvEventos.DataSource = eventos;
+                for (int i = 0; i < eventos.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvEventos.Rows.Add(eventos.Rows[i]["Legajo Colaborador"],eventos.Rows[i]["Tipo"], eventos.Rows[i]["Descripción"], eventos.Rows[i]["Fecha de Inicio"], eventos.Rows[i]["Fecha Fin"], eventos.Rows[i]["Fecha de Registro"]);
+                }
 
             }
             catch (Exception ex)

@@ -254,7 +254,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(1081, 251);
+            this.groupBox1.Size = new System.Drawing.Size(1064, 251);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
@@ -359,7 +359,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox2.Size = new System.Drawing.Size(1081, 86);
+            this.groupBox2.Size = new System.Drawing.Size(1064, 86);
             this.groupBox2.TabIndex = 78;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONTACTO";
@@ -431,7 +431,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(771, 13);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(264, 221);
+            this.pictureBox2.Size = new System.Drawing.Size(247, 221);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -511,7 +511,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(1081, 246);
+            this.groupBox3.Size = new System.Drawing.Size(1064, 246);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -624,7 +624,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox4.Size = new System.Drawing.Size(1081, 137);
+            this.groupBox4.Size = new System.Drawing.Size(1064, 137);
             this.groupBox4.TabIndex = 89;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS GENERALES";
@@ -754,7 +754,7 @@
             this.groupBox5.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox5.Size = new System.Drawing.Size(1081, 85);
+            this.groupBox5.Size = new System.Drawing.Size(1064, 85);
             this.groupBox5.TabIndex = 90;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "HORARIO";
@@ -813,7 +813,7 @@
             this.groupBox6.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox6.Size = new System.Drawing.Size(1081, 83);
+            this.groupBox6.Size = new System.Drawing.Size(1064, 83);
             this.groupBox6.TabIndex = 91;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ACTIVIDAD LABORAL";
