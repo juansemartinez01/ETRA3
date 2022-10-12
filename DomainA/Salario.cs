@@ -20,8 +20,12 @@ namespace DomainA
             
             return salariosDao.modificarSalariosTotalidadCargo(idCargo, monto);
         }
-        public string modificarSalariosCargoPorcentaje(int idCargo, float porcentaje)
+        public DataTable getAllSalariosPorCargo(int idCargo)
         {
+            return  salariosDao.getAllSalariosPorCargo(idCargo);
+        }
+        public string modificarSalariosCargoPorcentaje(int idCargo,float porcentaje)
+        { 
             return salariosDao.modificarSalariosCargoPorcentaje(idCargo, porcentaje);
         }
 

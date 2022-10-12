@@ -79,9 +79,17 @@ namespace PresentationA.Colaboradores
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
-            if(txtLegajoBusqueda.Text != "")
+            if(cmbFiltroCargo.SelectedIndex != -1)
             {
-
+                dgvSalarios.Rows.Clear();
+                DataTable salarios = new DataTable();
+                salarios = sal.getAllSalariosPorCargo(int.Parse(cmbFiltroCargo.SelectedValue.ToString()));
+                for (int i = 0; i < salarios.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvSalarios.Rows.Add(salarios.Rows[i]["legajo"], salarios.Rows[i]["monto"], salarios.Rows[i]["fechaInicio"]);
+                }
+                LimpiarCampos();
             }
         }
 

@@ -433,11 +433,29 @@ namespace DataAccessA
                 return ex.Message;
             }
         }
+        public DataTable getAllSalariosPorCargo(int idCargo)
+        {
+            DataTable resultado = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT C.legajo ,CONVERT(varchar,H.fechaInicio,103) as 'fechaInicio',S.monto FROM Salario S JOIN HistorialSalario H ON S.id_salario = H.id_salario JOIN Colaborador C ON c.legajo = H.legajoColaborador JOIN HistorialCargo HC ON HC.legajoColaborador = C.legajo JOIN Cargo CC ON CC.id_cargo = HC.id_cargo WHERE S.borradoLogico = 0 AND H.borradoLogico = 0 AND C.borradoLogico = 0 AND H.fechaFin IS NULL AND HC.fechaFin IS NULL AND CC.id_cargo = @idCargo ORDER BY S.monto DESC";
+                    command.Parameters.AddWithValue("@idCargo", idCargo);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    resultado.Load(reader);
+                    return resultado;
+                }
+            }
+
+        }
 
 
 
 
 
-        
     }
 }
