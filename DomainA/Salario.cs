@@ -15,6 +15,16 @@ namespace DomainA
         SalariosDao salariosDao = new SalariosDao();
         public int legajoColaborador;
 
+        public string modificarSalariosDeCargo(int idCargo,float monto)
+        {
+            
+            return salariosDao.modificarSalariosTotalidadCargo(idCargo, monto);
+        }
+        public string modificarSalariosCargoPorcentaje(int idCargo, float porcentaje)
+        {
+            return salariosDao.modificarSalariosCargoPorcentaje(idCargo, porcentaje);
+        }
+
         public DataTable obtenerSalarios(string legajo)
         {
             return salariosDao.obtenerSalarios(legajo);

@@ -15,11 +15,23 @@ namespace PresentationA.Colaboradores
         {
             InitializeComponent();
             CargarTabla();
+            LlenarCombo(cmbModificarSalarioCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
+            LlenarCombo(cmbCargoPorcentaje, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
+            LlenarCombo(cmbFiltroCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
 
+        }
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
         }
         public void CargarTabla()
         {
-            DataTable salarios = sal.getAllSalarios();
+            dgvSalarios.Rows.Clear();
+            DataTable salarios = new DataTable();
+            salarios = sal.getAllSalarios();
             for (int i = 0; i < salarios.Rows.Count; i++)
             {
                 //crear metodo completar labels
@@ -56,6 +68,13 @@ namespace PresentationA.Colaboradores
         {
             txtLegajoColaboradorModificacion.Text = "";
             txtMontoModificacion.Text = "";
+            cmbModificarSalarioCargo.SelectedIndex = -1;
+            txtMontoModificarSalarioCargo.Text = "";
+            txtApellidoBusqueda.Text = "";
+            txtLegajoBusqueda.Text = "";
+            txtPorcentaje.Text = "";
+            cmbCargoPorcentaje.SelectedIndex = -1;
+            cmbFiltroCargo.SelectedIndex = -1;
         }
 
         private void btnAplicar_Click(object sender, EventArgs e)
@@ -86,6 +105,41 @@ namespace PresentationA.Colaboradores
             }
 
             excel.Visible = true;
+        }
+
+        private void btnModificarSalariosCargo_Click(object sender, EventArgs e)
+        {
+            if(txtMontoModificarSalarioCargo.Text == "" || cmbModificarSalarioCargo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe completar ambos campos para poder modificar");
+                LimpiarCampos();
+                return;
+            }
+            else
+            {
+                string mensaje = sal.modificarSalariosDeCargo(int.Parse(cmbModificarSalarioCargo.SelectedValue.ToString()), float.Parse(txtMontoModificarSalarioCargo.Text.ToString()));
+                MessageBox.Show(mensaje);
+                LimpiarCampos();
+                CargarTabla();
+            }
+            
+        }
+
+        private void btnPorcentaje_Click(object sender, EventArgs e)
+        {
+            if(txtPorcentaje.Text == "" || cmbCargoPorcentaje.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe completar ambos campos para poder modificar");
+                LimpiarCampos();
+                return;
+            }
+            else
+            {
+                string mensaje = sal.modificarSalariosCargoPorcentaje(int.Parse(cmbCargoPorcentaje.SelectedValue.ToString()), float.Parse(txtPorcentaje.Text.ToString()));
+                MessageBox.Show(mensaje);
+                LimpiarCampos();
+                CargarTabla();
+            }
         }
     }
 }
