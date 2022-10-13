@@ -124,8 +124,9 @@ namespace PresentationA.Colaboradores
 
                                                 agregarArchivoColaborador(colaboradorModelo);
                                             }
-                                            MessageBox.Show(cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()),0));
+                                            string masnsajeCuentaCreada = cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()),0);
                                             MessageBox.Show(cadenaRespuesta);
+                                            limpiarCampos();
                                         }
                                     }
                                     else
@@ -247,5 +248,25 @@ namespace PresentationA.Colaboradores
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+        }
+        private void limpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtDni.Text = "";
+            txtCuit.Text = "";
+            txtCalle.Text = "";
+            txtNroCalle.Text = "";
+            txtBarrio.Text = "";
+            txtPiso.Text = "";
+            txtDepto.Text = "";
+            txtLocalidad.Text = "";
+            cmbProvincias.SelectedIndex = -1;
+            cmbEstados.SelectedIndex = -1;
+            cmbPuesto.SelectedIndex = -1;
+        }
     }
 }

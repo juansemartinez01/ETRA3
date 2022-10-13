@@ -625,8 +625,9 @@ namespace DataAccesA
                 return 0;
             }
         }
-        public int EliminarColaboradorPermanentemente()
+        public string EliminarColaboradorPermanentemente()
         {
+            int algunDelete = 0;
             try
             {
 
@@ -634,35 +635,35 @@ namespace DataAccesA
                 using (var connection = GetConnection())
                 {
                     connection.Open();
-                    using (var command9 = new SqlCommand())
+                    using (var command = new SqlCommand())
                     {
 
-                        command9.Connection = connection;
-                        command9.CommandText = "DELETE FROM FamiliarColaborador WHERE borradoLogico = 1";
-                        command9.CommandType = CommandType.Text;
-                        var FamiliarEliminado = command9.EndExecuteNonQuery(command9.BeginExecuteNonQuery());
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM FamiliarColaborador WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
                         
 
 
                     }
-                    using (var command10 = new SqlCommand())
+                    using (var command = new SqlCommand())
                     {
 
-                        command10.Connection = connection;
-                        command10.CommandText = "DELETE FROM CuentaColaborador WHERE borradoLogico = 1";
-                        command10.CommandType = CommandType.Text;
-                        var CuentaEliminada = command10.EndExecuteNonQuery(command10.BeginExecuteNonQuery());
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM CuentaColaborador WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
 
 
 
                     }
-                    using (var command11 = new SqlCommand())
+                    using (var command = new SqlCommand())
                     {
 
-                        command11.Connection = connection;
-                        command11.CommandText = "DELETE FROM MovimientosCuentaColaborador WHERE borradoLogico = 1";
-                        command11.CommandType = CommandType.Text;
-                        var HistorialCuentaColaborador = command11.EndExecuteNonQuery(command11.BeginExecuteNonQuery());
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM MovimientosCuentaColaborador WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
 
 
 
@@ -673,115 +674,79 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM HistorialEvento WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        var HistorialEventoEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
                     }
-                    using (var command4 = new SqlCommand())
+                    using (var command = new SqlCommand())
                     {
 
-                        command4.Connection = connection;
-                        command4.CommandText = "DELETE FROM ColaboradorMultimedia WHERE borradoLogico = 1";
-
-                        command4.CommandType = CommandType.Text;
-                        var ColaboradorMultimediaEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM ColaboradorMultimedia WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
                     }
-                        using (var command1 = new SqlCommand())
-                        {
+                    using (var command = new SqlCommand())
+                    {
 
-                            command1.Connection = connection;
-                            command1.CommandText = "DELETE FROM Evento WHERE borradoLogico = 1";
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM Evento WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    }
+                    using (var command = new SqlCommand())
+                    {
 
-                            command1.CommandType = CommandType.Text;
-                            var EventoEliminado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM HistorialCargo WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    }
+                    using (var command = new SqlCommand())
+                    {
 
-                            using (var command2 = new SqlCommand())
-                            {
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM HistorialEstado WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    }
 
-                                command2.Connection = connection;
-                                command2.CommandText = "DELETE FROM HistorialCargo WHERE borradoLogico = 1";
+                    using (var command = new SqlCommand())
+                    {
 
-                                command2.CommandType = CommandType.Text;
-                                var HistorialCargoEliminado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM HistorialSalario WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    }
+                    using (var command = new SqlCommand())
+                    {
 
-                                using (var command3 = new SqlCommand())
-                                {
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM Salario WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
 
-                                    command3.Connection = connection;
-                                    command3.CommandText = "DELETE FROM HistorialEstado WHERE borradoLogico = 1";
+                    }
+                    using (var command = new SqlCommand())
+                    {
 
-                                    command3.CommandType = CommandType.Text;
-                                    var HistorialEstadoEliminado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
-
-                                    
-
-                                        using (var command6 = new SqlCommand())
-                                        {
-
-                                            command6.Connection = connection;
-                                            command6.CommandText = "DELETE FROM HistorialSalario WHERE borradoLogico = 1";
-                                            command6.CommandType = CommandType.Text;
-                                            var EstadoEliminado = command6.EndExecuteNonQuery(command6.BeginExecuteNonQuery());
-
-                                            using (var command7 = new SqlCommand())
-                                            {
-
-                                                command7.Connection = connection;
-                                                command7.CommandText = "DELETE FROM Salario WHERE borradoLogico = 1";
-                                                command7.CommandType = CommandType.Text;
-                                                var SalarioEliminado = command7.EndExecuteNonQuery(command7.BeginExecuteNonQuery());
-
-
-                                                using (var command8 = new SqlCommand())
-                                                {
-
-                                                    command8.Connection = connection;
-                                                    command8.CommandText = "DELETE FROM Colaborador WHERE borradoLogico = 1";
-                                                    command8.CommandType = CommandType.Text;
-                                                    var ColaboradorEliminado = command8.EndExecuteNonQuery(command8.BeginExecuteNonQuery());
-                                                    int algunaModificacion = ColaboradorEliminado + SalarioEliminado + EstadoEliminado + HistorialEstadoEliminado + HistorialCargoEliminado + EventoEliminado;
-                                                    if (algunaModificacion == 0)
-                                                    {
-                                                        return 0;
-                                                    }
-                                                    else
-                                                    {
-                                                        return 1;
-                                                    }
-
-
-                                                }
-
-
-
-                                            }
-
-
-
-                                        }
-
-
-
-                                    
-
-
-
-                                }
-
-
-
-                            }
-
-
-
-                        }
-
-
-
-                    
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM Colaborador WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    }
+                    if(algunDelete == 0)
+                    {
+                        return "No se elimino ningun elemento de la base de datos.";
+                    }
+                    else
+                    {
+                        return "Se eliminaron elementos de la base de datos";
+                    }       
                 }
             }
             catch (Exception ex)
             {
-                return 0;
+                return ex.Message;
             }
         }
         public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento)

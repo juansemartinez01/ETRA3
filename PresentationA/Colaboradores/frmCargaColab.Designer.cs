@@ -62,6 +62,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -74,8 +76,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -330,6 +330,7 @@
             this.button2.TabIndex = 91;
             this.button2.Text = "Limpiar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // openFileDialog1
             // 
@@ -340,7 +341,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(290, 26);
+            this.label14.Location = new System.Drawing.Point(279, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(355, 37);
             this.label14.TabIndex = 93;
@@ -381,10 +382,27 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.groupBox1.Location = new System.Drawing.Point(29, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(893, 362);
+            this.groupBox1.Size = new System.Drawing.Size(872, 362);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // dtpfechaInicio
+            // 
+            this.dtpfechaInicio.Enabled = false;
+            this.dtpfechaInicio.Location = new System.Drawing.Point(438, 173);
+            this.dtpfechaInicio.Name = "dtpfechaInicio";
+            this.dtpfechaInicio.Size = new System.Drawing.Size(306, 30);
+            this.dtpfechaInicio.TabIndex = 91;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(293, 179);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(131, 22);
+            this.label15.TabIndex = 90;
+            this.label15.Text = "* Fecha Nac:";
             // 
             // pictureBox1
             // 
@@ -416,7 +434,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(29, 425);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(893, 338);
+            this.groupBox2.Size = new System.Drawing.Size(872, 338);
             this.groupBox2.TabIndex = 95;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
@@ -505,28 +523,11 @@
             this.label18.TabIndex = 114;
             this.label18.Text = "* Puesto:";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(293, 179);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(131, 22);
-            this.label15.TabIndex = 90;
-            this.label15.Text = "* Fecha Nac:";
-            // 
-            // dtpfechaInicio
-            // 
-            this.dtpfechaInicio.Enabled = false;
-            this.dtpfechaInicio.Location = new System.Drawing.Point(438, 173);
-            this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(306, 30);
-            this.dtpfechaInicio.TabIndex = 91;
-            // 
             // frmCargaColab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 788);
+            this.ClientSize = new System.Drawing.Size(1031, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label14);
