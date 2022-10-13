@@ -782,6 +782,51 @@ namespace DataAccesA
                 return 0;
             }
         }
+        public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento)
+        {
+            DataTable documentos = new DataTable();
+            try
+            {
+                
+                if (legajoColaborador == 0 && tipoDocumento == 0 && tipoEvento == 0)
+                {
+
+                    using (var connection = GetConnection())
+                    {
+                        connection.Open();
+                        using (var command = new SqlCommand())
+                        {
+                            command.Connection = connection;
+                            command.CommandText = "SELECT CM.id_colaboradorMultimedia AS 'Numero',CM.legajoColaborador AS 'Legajo',TM.nombre AS 'Tipo doc',TE.nombre AS 'Evento' FROM ColaboradorMultimedia CM JOIN TipoMultimedia TM ON CM.id_tipoMultimedia = TM.id_tipoMultimedia JOIN Evento E ON CM.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE CM.borradoLogico = 0 AND E.borradoLogico = 0 AND TE.borradoLogico = 0 AND TM.borradoLogico = 0";
+                            command.CommandType = CommandType.Text;
+                            SqlDataReader reader = command.ExecuteReader();
+                            documentos.Load(reader);
+                            return documentos;
+                        }
+                    }
+
+
+
+
+                }
+                else
+                {
+                    return documentos;
+                }
+
+
+
+
+
+
+
+
+
+            }catch(Exception ex)
+            {
+                return documentos;
+            }
+        }
 
     }
 }

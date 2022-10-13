@@ -49,6 +49,7 @@ namespace PresentationA.Colaboradores.Consulta
         {
             try
             {
+                dgvEventos.Rows.Clear();
                 historial = obje.obtenerEventos(legajo);
                 for (int i = 0; i < historial.Rows.Count; i++)
                 {
@@ -187,43 +188,49 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnVerArchivo_Click(object sender, EventArgs e)
         {
-            int indice = obje.FilaSeleccionadaHistorialEvento;
-            if (indice == -1)
+            try
             {
-                return;
-            }
-            //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
-            DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
-            int idEvento = int.Parse(filaSeleccionada.Cells["Id evento"].Value.ToString());
-            var Lista = new List<DocumentosColaborador>();
-            Lista = nuevoDocumento.filtroDocumentosEvento(idEvento);
-            if(Lista.Count == 0)
+                int indice = obje.FilaSeleccionadaHistorialEvento;
+                if (indice == -1)
+                {
+                    return;
+                }
+                //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+                DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
+                int idEvento = int.Parse(filaSeleccionada.Cells["Id evento"].Value.ToString());
+                var Lista = new List<DocumentosColaborador>();
+                Lista = nuevoDocumento.filtroDocumentosEvento(idEvento);
+                if (Lista.Count == 0)
+                {
+                    MessageBox.Show("No hay ningun archivo asociado a este evento");
+                    return;
+                }
+
+                string direccion = AppDomain.CurrentDomain.BaseDirectory;
+                string carpeta = direccion + "/temp/";
+                string ubicacionCompleta = carpeta + Lista[0].Extension;
+
+                if (!Directory.Exists(carpeta))
+                {
+                    Directory.CreateDirectory(carpeta);
+                }
+                if (File.Exists(ubicacionCompleta))
+                {
+
+                    File.Delete(ubicacionCompleta);
+                }
+                File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
+
+                Stream archivo = File.OpenRead(ubicacionCompleta);
+
+                Process.Start(ubicacionCompleta);
+
+
+                archivo.Close();
+            }catch(Exception ex)
             {
-                MessageBox.Show("No hay ningun archivo asociado a este evento");
-                return;
+                MessageBox.Show(ex.Message);
             }
-
-            string direccion = AppDomain.CurrentDomain.BaseDirectory;
-            string carpeta = direccion + "/temp/";
-            string ubicacionCompleta = carpeta + Lista[0].Extension;
-
-            if (!Directory.Exists(carpeta))
-            {
-                Directory.CreateDirectory(carpeta);
-            }
-            if (File.Exists(ubicacionCompleta))
-            {
-
-                File.Delete(ubicacionCompleta);
-            }
-            File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
-
-            Stream archivo = File.OpenRead(ubicacionCompleta);
-
-            Process.Start(ubicacionCompleta);
-            
-
-            archivo.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -9,7 +9,7 @@ namespace DomainA
     public class DocumentosColaborador
     {
 
-
+        ColaboradorDao colaboradorDocumento = new ColaboradorDao();
         private int id_colaboradorMultimedia;
         private string nombre;
         private byte[] documento;
@@ -27,7 +27,7 @@ namespace DomainA
 
         public string AgregarDocumento(string nombre, byte[] documento, string extension, int tipoMultimedia, int legajoColaborador, int idEvento)
         {
-            ColaboradorDao colaboradorDocumento = new ColaboradorDao();
+            
 
             string var = colaboradorDocumento.AgregarDocumento(nombre, documento, extension, tipoMultimedia, legajoColaborador, idEvento);
             return var;
@@ -69,6 +69,10 @@ namespace DomainA
                 });
             }
             return infoDocumento;
+        }
+        public DataTable getAllDocumentos(int legajoColaborador, int tipoDocumento, int tipoEvento)
+        {
+            return colaboradorDocumento.getAllDocumentos(legajoColaborador,tipoDocumento,tipoEvento);
         }
     }
 

@@ -64,29 +64,18 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.lblmontoSalario1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
             this.lblLegJefe = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.lblNomJefe = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -351,7 +340,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(301, 26);
+            this.label14.Location = new System.Drawing.Point(290, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(355, 37);
             this.label14.TabIndex = 93;
@@ -362,6 +351,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtpfechaInicio);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtPiso);
             this.groupBox1.Controls.Add(this.label1);
@@ -390,7 +381,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.groupBox1.Location = new System.Drawing.Point(29, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(914, 362);
+            this.groupBox1.Size = new System.Drawing.Size(893, 362);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -410,86 +401,25 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.comboBox6);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.cmbPuesto);
             this.groupBox2.Controls.Add(this.lblmontoSalario1);
             this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.lblLegJefe);
-            this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.lblNomJefe);
-            this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.lblPuesto);
-            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cmbEstados);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.lblEstado);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(29, 425);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(914, 338);
+            this.groupBox2.Size = new System.Drawing.Size(893, 338);
             this.groupBox2.TabIndex = 95;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(821, 156);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 30);
-            this.comboBox6.TabIndex = 128;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(395, 200);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 30);
-            this.comboBox5.TabIndex = 127;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(395, 156);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 30);
-            this.comboBox4.TabIndex = 126;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(132, 200);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 30);
-            this.comboBox3.TabIndex = 125;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(132, 156);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 30);
-            this.comboBox2.TabIndex = 124;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(107, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 30);
-            this.comboBox1.TabIndex = 123;
             // 
             // textBox1
             // 
@@ -524,16 +454,6 @@
             this.label26.TabIndex = 98;
             this.label26.Text = "Obra Social:";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label25.Location = new System.Drawing.Point(19, 122);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(62, 18);
-            this.label25.TabIndex = 99;
-            this.label25.Text = "Horario";
-            // 
             // lblLegJefe
             // 
             this.lblLegJefe.AutoSize = true;
@@ -541,15 +461,6 @@
             this.lblLegJefe.Name = "lblLegJefe";
             this.lblLegJefe.Size = new System.Drawing.Size(0, 22);
             this.lblLegJefe.TabIndex = 120;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(18, 159);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(131, 22);
-            this.label24.TabIndex = 100;
-            this.label24.Text = "Hora Ingreso:";
             // 
             // lblNomJefe
             // 
@@ -559,15 +470,6 @@
             this.lblNomJefe.Size = new System.Drawing.Size(0, 22);
             this.lblNomJefe.TabIndex = 119;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(18, 203);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(118, 22);
-            this.label23.TabIndex = 101;
-            this.label23.Text = "Hora Salida:";
-            // 
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
@@ -575,33 +477,6 @@
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(0, 22);
             this.lblPuesto.TabIndex = 118;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(293, 159);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(117, 22);
-            this.label22.TabIndex = 102;
-            this.label22.Text = "Día Ingreso:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(575, 164);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(280, 22);
-            this.label15.TabIndex = 117;
-            this.label15.Text = "Legajo Responsable a Cargo:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(293, 203);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(104, 22);
-            this.label21.TabIndex = 103;
-            this.label21.Text = "Día Salida:";
             // 
             // label17
             // 
@@ -630,14 +505,22 @@
             this.label18.TabIndex = 114;
             this.label18.Text = "* Puesto:";
             // 
-            // label19
+            // label15
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(18, 81);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(89, 22);
-            this.label19.TabIndex = 112;
-            this.label19.Text = "Sucursal:";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(293, 179);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(131, 22);
+            this.label15.TabIndex = 90;
+            this.label15.Text = "* Fecha Nac:";
+            // 
+            // dtpfechaInicio
+            // 
+            this.dtpfechaInicio.Enabled = false;
+            this.dtpfechaInicio.Location = new System.Drawing.Point(438, 173);
+            this.dtpfechaInicio.Name = "dtpfechaInicio";
+            this.dtpfechaInicio.Size = new System.Drawing.Size(306, 30);
+            this.dtpfechaInicio.TabIndex = 91;
             // 
             // frmCargaColab
             // 
@@ -702,27 +585,16 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblmontoSalario1;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label lblLegJefe;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label lblNomJefe;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label lblPuesto;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtpfechaInicio;
     }
 }

@@ -225,19 +225,26 @@ namespace PresentationA.Colaboradores
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.InitialDirectory = "C:\\Documentos";
-            openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
-            openFileDialog1.FilterIndex = 1;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
+                openFileDialog1.InitialDirectory = "C:\\Documentos";
+                openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
+                openFileDialog1.FilterIndex = 1;
 
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+                Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
+                Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
+
+                pictureBox1.Image = fotoPerfil;
+                fotoPerfilArchivo.Close();
             }
-            Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
-            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
-
-            pictureBox1.Image = fotoPerfil;
-            fotoPerfilArchivo.Close();
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

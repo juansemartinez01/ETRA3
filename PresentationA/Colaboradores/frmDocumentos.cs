@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace PresentationA.Colaboradores
 {
     public partial class frmDocumentos : frmHijo
     {
+        DocumentosColaborador documentosColaborador = new DocumentosColaborador();
         public frmDocumentos()
         {
             InitializeComponent();
+            cargarTabla(0, 0, 0);
+            
         }
         private void btnExportar_Click(object sender, EventArgs e)
         {
@@ -36,6 +40,23 @@ namespace PresentationA.Colaboradores
 
             excel.Visible = true;
         
+        }
+        private void cargarTabla(int legajo,int tipoDocumento,int tipoEvento)
+        {
+            try
+            {
+                dgvDocumentos.Rows.Clear();
+                DataTable documentos = new DataTable();
+                documentos = documentosColaborador.getAllDocumentos(legajo, tipoDocumento, tipoEvento);
+                for (int i = 0; i < documentos.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvDocumentos.Rows.Add(documentos.Rows[i]["Numero"], documentos.Rows[i]["Legajo"], documentos.Rows[i]["Tipo doc"], documentos.Rows[i]["Evento"]);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
