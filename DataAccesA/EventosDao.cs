@@ -20,7 +20,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT TE.nombre as 'Tipo', E.descripcion as 'Descripción', CONVERT(varchar,HE.fechaInicio,103) AS 'Fecha de Inicio', CONVERT(varchar,HE.fechaFin,103) AS 'Fecha Fin', CONVERT(varchar,HE.fechaRegistro,103) AS 'Fecha de Registro',E.id_evento AS 'Numero' FROM HistorialEvento HE JOIN Colaborador C ON HE.legajoColaborador = C.legajo JOIN Evento E ON E.id_evento = HE.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE C.legajo = @legajo AND C.borradoLogico = 0";
+                    command.CommandText = "SELECT TE.nombre as 'Tipo', E.descripcion as 'Descripción', CONVERT(varchar,HE.fechaInicio,103) AS 'Fecha de Inicio', CONVERT(varchar,HE.fechaFin,103) AS 'Fecha Fin', CONVERT(varchar,HE.fechaRegistro,103) AS 'Fecha de Registro',E.id_evento AS 'Numero' FROM HistorialEvento HE JOIN Colaborador C ON HE.legajoColaborador = C.legajo JOIN Evento E ON E.id_evento = HE.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE C.legajo = @legajo AND C.borradoLogico = 0 AND E.borradoLogico = 0 AND HE.borradoLogico = 0";
                     command.Parameters.AddWithValue("@legajo", legajo);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
@@ -38,7 +38,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT C.legajo as 'Legajo Colaborador', TE.nombre as 'Tipo', E.descripcion as 'Descripción', CONVERT(varchar,HE.fechaInicio,103) AS 'Fecha de Inicio', CONVERT(varchar,HE.fechaFin,103) AS 'Fecha Fin', CONVERT(varchar,HE.fechaRegistro,103) AS 'Fecha de Registro' FROM HistorialEvento HE JOIN Colaborador C ON HE.legajoColaborador = C.legajo JOIN Evento E ON E.id_evento = HE.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE C.borradoLogico = 0";
+                    command.CommandText = "SELECT C.legajo as 'Legajo Colaborador', TE.nombre as 'Tipo', E.descripcion as 'Descripción', CONVERT(varchar,HE.fechaInicio,103) AS 'Fecha de Inicio', CONVERT(varchar,HE.fechaFin,103) AS 'Fecha Fin', CONVERT(varchar,HE.fechaRegistro,103) AS 'Fecha de Registro' FROM HistorialEvento HE JOIN Colaborador C ON HE.legajoColaborador = C.legajo JOIN Evento E ON E.id_evento = HE.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE C.borradoLogico = 0 AND E.borradoLogico = 0 AND HE.borradoLogico = 0";
 
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
@@ -142,6 +142,62 @@ namespace DataAccesA
                 }
             }
             catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string eliminarEvento(int idEvento)
+        {
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE Evento SET borradoLogico = 1 WHERE id_evento = @idEvento";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
+                        int eventoEliminado = command.ExecuteNonQuery();
+                        if(eventoEliminado != 1)
+                        {
+                            return "Ocurrio un error al eliminar el evento.";
+                        }
+                    }
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE HistorialEvento SET borradoLogico = 1 WHERE id_evento = @idEvento";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
+                        int historialEventoEliminado = command.ExecuteNonQuery();
+                        if (historialEventoEliminado != 1)
+                        {
+                            return "Ocurrio un error al eliminar el historial del evento.";
+                        }
+                    }
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE ColaboradorMultimedia SET borradoLogico = 1 WHERE id_evento = @idEvento";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
+                        int historialEventoEliminado = command.ExecuteNonQuery();
+                        if (historialEventoEliminado != 1)
+                        {
+                            return "Ocurrio un error al eliminar el historial del evento.";
+                        }
+                    }
+                    return "Evento eliminado con exito.";
+
+
+
+                }
+            }catch(Exception ex)
             {
                 return ex.Message;
             }

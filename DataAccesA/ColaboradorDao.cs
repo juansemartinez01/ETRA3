@@ -660,7 +660,7 @@ namespace DataAccesA
                     {
 
                         command11.Connection = connection;
-                        command11.CommandText = "DELETE FROM HistorialCuentaColaborador WHERE borradoLogico = 1";
+                        command11.CommandText = "DELETE FROM MovimientosCuentaColaborador WHERE borradoLogico = 1";
                         command11.CommandType = CommandType.Text;
                         var HistorialCuentaColaborador = command11.EndExecuteNonQuery(command11.BeginExecuteNonQuery());
 
@@ -674,7 +674,16 @@ namespace DataAccesA
                         command.CommandText = "DELETE FROM HistorialEvento WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
                         var HistorialEventoEliminado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    }
+                    using (var command4 = new SqlCommand())
+                    {
 
+                        command4.Connection = connection;
+                        command4.CommandText = "DELETE FROM ColaboradorMultimedia WHERE borradoLogico = 1";
+
+                        command4.CommandType = CommandType.Text;
+                        var ColaboradorMultimediaEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
+                    }
                         using (var command1 = new SqlCommand())
                         {
 
@@ -702,14 +711,7 @@ namespace DataAccesA
                                     command3.CommandType = CommandType.Text;
                                     var HistorialEstadoEliminado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
 
-                                    using (var command4 = new SqlCommand())
-                                    {
-
-                                        command4.Connection = connection;
-                                        command4.CommandText = "DELETE FROM ColaboradorMultimedia WHERE borradoLogico = 1";
-
-                                        command4.CommandType = CommandType.Text;
-                                        var ColaboradorMultimediaEliminado = command4.EndExecuteNonQuery(command4.BeginExecuteNonQuery());
+                                    
 
                                         using (var command6 = new SqlCommand())
                                         {
@@ -735,7 +737,7 @@ namespace DataAccesA
                                                     command8.CommandText = "DELETE FROM Colaborador WHERE borradoLogico = 1";
                                                     command8.CommandType = CommandType.Text;
                                                     var ColaboradorEliminado = command8.EndExecuteNonQuery(command8.BeginExecuteNonQuery());
-                                                    int algunaModificacion = ColaboradorEliminado + SalarioEliminado + EstadoEliminado + ColaboradorMultimediaEliminado + HistorialEstadoEliminado + HistorialCargoEliminado + EventoEliminado + HistorialEventoEliminado;
+                                                    int algunaModificacion = ColaboradorEliminado + SalarioEliminado + EstadoEliminado + HistorialEstadoEliminado + HistorialCargoEliminado + EventoEliminado;
                                                     if (algunaModificacion == 0)
                                                     {
                                                         return 0;
@@ -758,7 +760,7 @@ namespace DataAccesA
 
 
 
-                                    }
+                                    
 
 
 
@@ -774,7 +776,7 @@ namespace DataAccesA
 
 
 
-                    }
+                    
                 }
             }
             catch (Exception ex)

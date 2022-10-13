@@ -26,5 +26,9 @@ namespace DomainA
         {
             return eventosDao.BuscarIdUltimoEvento();
         }
+        public string eliminarEvento(int idEvento)
+        {
+            return eventosDao.eliminarEvento(idEvento);
+        }
     }
 }

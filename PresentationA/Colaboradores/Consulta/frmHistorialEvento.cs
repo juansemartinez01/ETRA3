@@ -235,7 +235,17 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            int indice = obje.FilaSeleccionadaHistorialEvento;
+            if (indice == -1)
+            {
+                return;
+            }
+            //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+            DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
+            int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+            string mensaje = obje.eliminarEvento(idEvento);
+            MessageBox.Show(mensaje);
+            CargarDG(nuevoDocumento.LegajoColaborador.ToString());
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

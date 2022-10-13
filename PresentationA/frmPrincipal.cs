@@ -13,6 +13,7 @@ namespace PresentationA
     public partial class frmPrincipal : Form
     {
         NotifiacacionesGeneralesModelo notifiacaciones = new NotifiacacionesGeneralesModelo();
+        ColaboradorModelo colaborador = new ColaboradorModelo();
         private IconButton botonSeleccionado;
         private Panel bordeInferior;
         public frmPrincipal()
@@ -104,6 +105,8 @@ namespace PresentationA
         {
             if (MessageBox.Show("Desea salir?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
+                string mensaje = colaborador.EliminarColaboradorPermanentemente();
+                MessageBox.Show(mensaje);
                 Environment.Exit(0);
             }
             else
@@ -184,6 +187,11 @@ namespace PresentationA
         {
             ActivateButton(sender);
             openChildFormInPanel(new frmDocumentos());
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
