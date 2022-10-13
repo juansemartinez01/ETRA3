@@ -54,7 +54,7 @@ namespace PresentationA.Colaboradores.Consulta
                 for (int i = 0; i < historial.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvEventos.Rows.Add(historial.Rows[i]["Tipo"], historial.Rows[i]["Descripción"], historial.Rows[i]["Fecha de Inicio"], historial.Rows[i]["Fecha Fin"], historial.Rows[i]["Fecha de Registro"]);
+                    dgvEventos.Rows.Add(historial.Rows[i]["Tipo"], historial.Rows[i]["Descripción"], historial.Rows[i]["Fecha de Inicio"], historial.Rows[i]["Fecha Fin"], historial.Rows[i]["Fecha de Registro"], historial.Rows[i]["Numero"]);
                 }
                 
 
@@ -197,7 +197,7 @@ namespace PresentationA.Colaboradores.Consulta
                 }
                 //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
                 DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
-                int idEvento = int.Parse(filaSeleccionada.Cells["Id evento"].Value.ToString());
+                int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
                 var Lista = new List<DocumentosColaborador>();
                 Lista = nuevoDocumento.filtroDocumentosEvento(idEvento);
                 if (Lista.Count == 0)
