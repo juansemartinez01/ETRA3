@@ -25,13 +25,8 @@ namespace PresentationA
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(200, 2);
             pnlPrincipal.Controls.Add(bordeInferior);
-            string[] cumpleañosCercanosColaboradores = notifiacaciones.notificacionesDeCumpleaños();
-            string textoConCumpleaños = "";
-            foreach (string linea in cumpleañosCercanosColaboradores)
-            {
-                textoConCumpleaños += linea;
-            }
-            //MessageBox.Show(textoConCumpleaños);
+            
+            
 
 
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -198,6 +193,12 @@ namespace PresentationA
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNotificaciones_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmNotificaciones());
         }
     }
 }

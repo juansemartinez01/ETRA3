@@ -242,3 +242,4 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.C
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmDatosGenerales.resources
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.frmDocumentos.resources
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.frmModifcarColab.resources
+C:\Users\Usuario\source\repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.frmNotificaciones.resources

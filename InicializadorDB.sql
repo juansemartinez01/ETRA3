@@ -17,7 +17,7 @@ INSERT into Direccion (nombreCalle,numeroCalle,esEdificio,piso,departamento,loca
 SELECT * FROM Direccion
 
 /*Inicializador de la tabla Colaborador*/
-INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso,borradoLogico,dni,CUIT,sexo,nroContacto,nroEmergencia,obraSocial,legajoResponsable) VALUES ('Francisco','Paez','elXeneize@hotmail.edu.ar',1,'01-01-2001',GETDATE(),0,42892322,'23-42892322-8','M','3584291952','3584291952','OSDE',NULL)
+INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso,borradoLogico,dni,CUIT,sexo,nroContacto,nroEmergencia,obraSocial,legajoResponsable) VALUES ('Francisco','Paez','elXeneize@hotmail.edu.ar',1,'10-10-2001',GETDATE(),0,42892322,'23-42892322-8','M','3584291952','3584291952','OSDE',NULL)
 INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso,borradoLogico,dni,CUIT,sexo,nroContacto,nroEmergencia,obraSocial,legajoResponsable) VALUES ('Juan Sebastian','Martinez','lanus@hotmail.edu.ar',2,'02-02-2001',GETDATE(),0,42892322,'23-42892322-8','M','3584291952','3584291952','OSDE',10000)
 INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso,borradoLogico,dni,CUIT,sexo,nroContacto,nroEmergencia,obraSocial,legajoResponsable) VALUES ('Carlos','Gardel','riverPlate@hotmail.edu.ar',3,'04-04-2001',GETDATE(),0,42892322,'23-42892322-8','M','3584291952','3584291952','OSDE',10000)
 INSERT into Colaborador (nombre,apellido,mail,idDireccion,fechaNacimiento,fechaIngreso,borradoLogico,dni,CUIT,sexo,nroContacto,nroEmergencia,obraSocial,legajoResponsable) VALUES ('Pepe','Argento','AzulYOro@hotmail.edu.ar',1,'07-06-2001',GETDATE(),0,42892322,'23-42892322-8','M','3584291952','3584291952','OSDE',10000)

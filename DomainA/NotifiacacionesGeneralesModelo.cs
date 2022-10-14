@@ -1,6 +1,7 @@
 ﻿using DataAccesA;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace DomainA
     {
         NotificacionesGeneralesDao notificacion = new NotificacionesGeneralesDao();
 
-        public string[] notificacionesDeCumpleaños()
+        public DataTable notificacionesDeCumpleaños()
         {
-            return notificacion.notificacionesDeCumpleaños();
+            return notificacion.notificacionesDeCumpleañosColaboradores();
             
         }
     }
