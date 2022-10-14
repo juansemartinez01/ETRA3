@@ -254,12 +254,13 @@ namespace PresentationA.Colaboradores.Consulta
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
+            int cambiarBotones = 0;
             if (btnModificar.Text == "Guardar")
             {
                 //Guardar cambios, resetear estado de botones
                 btnModificar.Text = "Modificar";
                 btnAgregar.Enabled = true;
-                switchButtons(false);
+                
                 int indice = eventosModelo.FilaSeleccionadaHistorialEvento;
                 if (indice == -1)
                 {
@@ -268,6 +269,7 @@ namespace PresentationA.Colaboradores.Consulta
                 //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
                 DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
                 int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+                
                 if (cmbTipoMultimedia.SelectedIndex != -1)
                 {
                     agregarArchivoEvento(idEvento);
@@ -276,12 +278,17 @@ namespace PresentationA.Colaboradores.Consulta
                 string mensaje = eventosModelo.modificarEvento(idEvento, (int)cmbTipoEvento.SelectedValue, dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date, dtpfechaRegistro.Value.Date, txtDescripcion.Text.ToString());
                 MessageBox.Show(mensaje);
                 CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+                switchButtons(false);
+                cambiarBotones++;
 
             }
-            // Habilitar todos los botones
-            btnModificar.Text = "Guardar";
-            btnAgregar.Enabled = false;
-            switchButtons(true);
+            if (btnModificar.Text == "Modificar" && cambiarBotones == 0)
+            {
+                // Habilitar todos los botones
+                btnModificar.Text = "Guardar";
+                btnAgregar.Enabled = false;
+                switchButtons(true);
+            }
         }
         private void switchButtons(bool value)
         {
