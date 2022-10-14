@@ -148,6 +148,7 @@ namespace DataAccesA
         }
         public string eliminarEvento(int idEvento)
         {
+            DataTable documentosAsociados = new DataTable();
             try
             {
                 using (var connection = GetConnection())
@@ -183,13 +184,31 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "UPDATE ColaboradorMultimedia SET borradoLogico = 1 WHERE id_evento = @idEvento";
-                        command.CommandType = CommandType.Text;
+                        command.CommandText = "SELECT id_colaboradorMultimedia FROM ColaboradorMultimedia  WHERE id_evento = @idEvento";
                         command.Parameters.AddWithValue("@idEvento", idEvento);
-                        int historialEventoEliminado = command.ExecuteNonQuery();
-                        if (historialEventoEliminado != 1)
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        documentosAsociados.Load(reader);
+                        
+                    }
+                    int cantidadDocumentos = documentosAsociados.Rows.Count;
+                    if (cantidadDocumentos > 0)
+                    {
+
+
+
+                        using (var command = new SqlCommand())
                         {
-                            return "Ocurrio un error al eliminar el historial del evento.";
+
+                            command.Connection = connection;
+                            command.CommandText = "UPDATE ColaboradorMultimedia SET borradoLogico = 1 WHERE id_evento = @idEvento";
+                            command.CommandType = CommandType.Text;
+                            command.Parameters.AddWithValue("@idEvento", idEvento);
+                            int documentosEventoEliminado = command.ExecuteNonQuery();
+                            if (documentosEventoEliminado != cantidadDocumentos)
+                            {
+                                return "Ocurrio un error al eliminar los documentos del evento.";
+                            }
                         }
                     }
                     return "Evento eliminado con exito.";
@@ -202,5 +221,104 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
+        public string modificarEvento(int idEvento, int tipoEvento, DateTime fechaInicio, DateTime fechaFin, DateTime fechaRegistro, string descripcion)
+        {
+            
+            try
+            {
+
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                 
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE HistorialEvento SET fechaInicio = Format(@fechaInicio, 'yyyy - MM - dd'),fechaFin = Format(@fechaFin, 'yyyy - MM - dd'),fechaRegistro = Format(@fechaRegistro, 'yyyy - MM - dd') WHERE id_evento = @idEvento";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
+                        command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                        command.Parameters.AddWithValue("@fechaFin", fechaFin);
+                        command.Parameters.AddWithValue("@fechaRegistro", fechaRegistro);
+                        int historialEventoModificado = command.ExecuteNonQuery();
+                        if (historialEventoModificado != 1)
+                        {
+                            return "Ocurrio un error al modificar el historial del evento.";
+                        }
+                    }
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE Evento SET id_tipoEvento = @tipoEvento,descripcion = @descripcion WHERE id_evento = @idEvento";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@idEvento", idEvento);
+                        command.Parameters.AddWithValue("@tipoEvento", tipoEvento);
+                        command.Parameters.AddWithValue("@descripcion", descripcion);
+
+                        int eventoModificado = command.ExecuteNonQuery();
+                        if (eventoModificado != 1)
+                        {
+                            return "Ocurrio un error al modificar el evento.";
+                        }
+                    }
+                    return "Evento modificado con exito";
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public int buscarIdEventoConNombre(string nombreEvento)
+        {
+            int idTipoEvento = 0;
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "SELECT id_tipoEvento FROM TipoEvento WHERE nombre LIKE @tipoEvento AND borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@tipoEvento", nombreEvento);
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord idTipoEventoReader = (IDataRecord)reader;
+                                idTipoEvento = int.Parse("" + idTipoEventoReader[0] + "");
+                            }
+                            reader.Close();
+                            return idTipoEvento;
+
+                        }
+                        else
+                        {
+                            return idTipoEvento;
+                        }
+                    }
+                    
+
+                }
+
+
+                }catch(Exception ex)
+            {
+                return idTipoEvento;
+            }
+        }
     }
+    
+
+
 }

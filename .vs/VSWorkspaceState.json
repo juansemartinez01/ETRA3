@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DataAccesA"
+    "\\DataAccesA",
+    "\\PresentationA",
+    "\\PresentationA\\Colaboradores"
   ],
-  "SelectedNode": "\\DataAccesA\\SalariosDao.cs",
+  "SelectedNode": "\\PresentationA\\Colaboradores\\frmSalarios.cs",
   "PreviewInSolutionExplorer": false
 }

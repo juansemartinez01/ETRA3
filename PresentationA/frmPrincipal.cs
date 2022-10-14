@@ -117,16 +117,22 @@ namespace PresentationA
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnlChildForm.Controls.Add(childForm);
-            pnlChildForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            try
+            {
+                if (activeForm != null)
+                    activeForm.Close();
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                pnlChildForm.Controls.Add(childForm);
+                pnlChildForm.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

@@ -13,7 +13,7 @@ namespace PresentationA.Colaboradores.Consulta
 {
     public partial class frmHistorialEvento : frmHijo
     {
-        Eventos obje = new Eventos();
+        Eventos eventosModelo = new Eventos();
         DataTable historial;
         DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
         
@@ -50,7 +50,7 @@ namespace PresentationA.Colaboradores.Consulta
             try
             {
                 dgvEventos.Rows.Clear();
-                historial = obje.obtenerEventos(legajo);
+                historial = eventosModelo.obtenerEventos(legajo);
                 for (int i = 0; i < historial.Rows.Count; i++)
                 {
                     //crear metodo completar labels
@@ -67,7 +67,7 @@ namespace PresentationA.Colaboradores.Consulta
         private void dgvEventos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            obje.FilaSeleccionadaHistorialEvento = indice;
+            eventosModelo.FilaSeleccionadaHistorialEvento = indice;
             if (indice == -1)
             {
                 btnVerArchivo.Enabled = false;
@@ -78,7 +78,7 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             //completarLabels(this, historial, "txt");
-            cmbTipoEvento.Text = filaSeleccionada.Cells["Tipo"].Value.ToString();
+            cmbTipoEvento.SelectedValue = eventosModelo.buscarIdEventoConNombre(filaSeleccionada.Cells["Tipo"].Value.ToString());
             dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
             dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
@@ -108,7 +108,7 @@ namespace PresentationA.Colaboradores.Consulta
             }
             
         }
-        public void agregarArchivoEvento()
+        public void agregarArchivoEvento(int idEvento)
         {
 
             
@@ -133,9 +133,12 @@ namespace PresentationA.Colaboradores.Consulta
             nuevoDocumento.Nombre = "ArchivoCualquiera";
             nuevoDocumento.Documento = archivo;
             nuevoDocumento.Extension = openFileDialog1.SafeFileName;
-            nuevoDocumento.Id_tipoMultimedia = cmbTipoMultimedia.SelectedIndex;           
+            nuevoDocumento.Id_tipoMultimedia = cmbTipoMultimedia.SelectedIndex;
             //Despues arreglar bien esto!!!!!
-            int idEvento = int.Parse(obje.buscarUltimoEvento());
+            if (idEvento == 0)
+            {
+                idEvento = int.Parse(eventosModelo.buscarUltimoEvento());
+            }
             string variableMuerta = nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador, idEvento);
 
             //Parte para ver la imagen
@@ -155,22 +158,22 @@ namespace PresentationA.Colaboradores.Consulta
                 }
                 if ((int)cmbTipoEvento.SelectedValue == 2)
                 {
-                    string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaInicio.Value.Date);
+                    string respuesta = eventosModelo.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaInicio.Value.Date);
                     if (openFileDialog1.InitialDirectory != "no seleccionado")
                     {
 
-                        agregarArchivoEvento();
+                        agregarArchivoEvento(0);
                     }
                     MessageBox.Show(respuesta);
                     CargarDG(nuevoDocumento.LegajoColaborador.ToString());
                 }
                 else
                 {
-                    string respuesta = obje.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date);
+                    string respuesta = eventosModelo.InsertarEventos((int)cmbTipoEvento.SelectedValue, nuevoDocumento.LegajoColaborador, txtDescripcion.Text.ToString(), dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date);
                     if (openFileDialog1.InitialDirectory != "no seleccionado")
                     {
 
-                        agregarArchivoEvento();
+                        agregarArchivoEvento(0);
                     }
                     MessageBox.Show(respuesta);
                     CargarDG(nuevoDocumento.LegajoColaborador.ToString());
@@ -190,7 +193,7 @@ namespace PresentationA.Colaboradores.Consulta
         {
             try
             {
-                int indice = obje.FilaSeleccionadaHistorialEvento;
+                int indice = eventosModelo.FilaSeleccionadaHistorialEvento;
                 if (indice == -1)
                 {
                     return;
@@ -235,7 +238,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int indice = obje.FilaSeleccionadaHistorialEvento;
+            int indice = eventosModelo.FilaSeleccionadaHistorialEvento;
             if (indice == -1)
             {
                 return;
@@ -243,7 +246,7 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
-            string mensaje = obje.eliminarEvento(idEvento);
+            string mensaje = eventosModelo.eliminarEvento(idEvento);
             MessageBox.Show(mensaje);
             CargarDG(nuevoDocumento.LegajoColaborador.ToString());
         }
@@ -257,8 +260,23 @@ namespace PresentationA.Colaboradores.Consulta
                 btnModificar.Text = "Modificar";
                 btnAgregar.Enabled = true;
                 switchButtons(false);
-                return;
-                //query guardar cambios JUANSE
+                int indice = eventosModelo.FilaSeleccionadaHistorialEvento;
+                if (indice == -1)
+                {
+                    return;
+                }
+                //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+                DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
+                int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+                if (cmbTipoMultimedia.SelectedIndex != -1)
+                {
+                    agregarArchivoEvento(idEvento);
+                }
+                
+                string mensaje = eventosModelo.modificarEvento(idEvento, (int)cmbTipoEvento.SelectedValue, dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date, dtpfechaRegistro.Value.Date, txtDescripcion.Text.ToString());
+                MessageBox.Show(mensaje);
+                CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+
             }
             // Habilitar todos los botones
             btnModificar.Text = "Guardar";

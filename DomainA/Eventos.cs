@@ -30,5 +30,13 @@ namespace DomainA
         {
             return eventosDao.eliminarEvento(idEvento);
         }
+        public string modificarEvento(int idEvento, int tipoEvento, DateTime fechaInicio, DateTime fechaFin, DateTime fechaRegistro, string descripcion)
+        {
+            return eventosDao.modificarEvento(idEvento, tipoEvento, fechaInicio, fechaFin, fechaRegistro, descripcion);
+        }
+        public int buscarIdEventoConNombre(string nombreEvento)
+        {
+            return eventosDao.buscarIdEventoConNombre(nombreEvento);
+        }
     }
 }
