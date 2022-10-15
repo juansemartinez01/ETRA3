@@ -12,10 +12,10 @@ using DomainA;
 
 namespace PresentationA.Colaboradores
 {
-    public partial class frmNotificaciones : frmHijo
+    public partial class frmAvisos : frmHijo
     {
         NotifiacacionesGeneralesModelo notificacion = new NotifiacacionesGeneralesModelo();
-        public frmNotificaciones()
+        public frmAvisos()
         {
             InitializeComponent();
             cargarGrillaCumpleaños();
@@ -32,8 +32,6 @@ namespace PresentationA.Colaboradores
                     //crear metodo completar labels
                     dgvCumpleañosDelMes.Rows.Add(cumpleañosColaboradores.Rows[i]["Nombre"], cumpleañosColaboradores.Rows[i]["Apellido"], cumpleañosColaboradores.Rows[i]["Cumpleaños"]);
                 }
-
-
             }
             catch (Exception ex)
             {

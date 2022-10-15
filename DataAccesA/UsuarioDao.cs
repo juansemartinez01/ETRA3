@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Collections.Generic;
 
 namespace DataAccesA
 {
@@ -38,6 +38,43 @@ namespace DataAccesA
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+        public List<string> recoverPassword(string userRequesting)
+        {
+            using (var connection = GetConnection())
+            {
+                List<string> result = new List<string>();
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select * from Usuario where nombre=@nombre";
+                    command.Parameters.AddWithValue("@nombre", userRequesting);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    Random rnd = new Random();
+                    string code = rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString();
+                    if (reader.Read() == true)
+                    {
+                        string userMail = reader.GetString(2);
+                        string passMail = reader.GetString(3);
+
+                        var mailService = new MailServices.SystemSupportMail();
+                        mailService.sendMail(
+                            subject: "ETRA: Solicitud de recuperar contraseña",
+                            body: "Hola, userName este es su codigo para cambiar la contraseña: " + code,
+                            recipientMail: new List<string> { userMail }
+                            );
+                        result.Add("Hola, userName \r\nYa hemos enviado su solicitud para recuperar la contraseña.\r\n" + "Por favor, revise su casilla de correo: " + userMail);
+                        result.Add(code);
+                        return result;
+
+                    }
+                    else
+                        result.Add("Lo sentimos, \r\nNo hay ningun usuario registrado con ese correo electronico");
+                        return result;
+                }
             }
         }
     }

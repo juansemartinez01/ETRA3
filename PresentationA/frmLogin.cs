@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using DomainA;
+using PresentationA.Colaboradores;
 
 namespace PresentationA
 {
@@ -36,8 +37,12 @@ namespace PresentationA
 
         private void txtPass_Enter(object sender, EventArgs e)
         {
-            txtPass.Text = "";
-            txtPass.UseSystemPasswordChar = true;
+            if (txtPass.Text == "CONTRASEÑA")
+            {
+                txtPass.Text = "";
+                txtPass.UseSystemPasswordChar = true;
+            }
+            
         }
 
         private void txtPass_Leave(object sender, EventArgs e)
@@ -75,6 +80,8 @@ namespace PresentationA
                     else
                     {
                         msgError("Error: Usuario o contraseña incorrectos");
+                        txtPass_Leave(sender,e);
+                        txtUser_Leave(sender,e);
                     }
                 }
                 else
@@ -105,6 +112,12 @@ namespace PresentationA
         {
             lblError.Text = "      " + msg;
             lblError.Visible = true;
+        }
+
+        private void lnkRecuperar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRecupero rec = new frmRecupero();
+            rec.ShowDialog();
         }
     }
 }

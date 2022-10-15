@@ -36,6 +36,7 @@
             this.btnTardanzas = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
+            this.btnAvisos = new FontAwesome.Sharp.IconButton();
             this.btnDocumentos = new FontAwesome.Sharp.IconButton();
             this.btnSalarios = new FontAwesome.Sharp.IconButton();
             this.btnEventos = new FontAwesome.Sharp.IconButton();
@@ -44,7 +45,6 @@
             this.btnColaboradores = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.btnNotificaciones = new FontAwesome.Sharp.IconButton();
             this.pnlPrincipal.SuspendLayout();
             this.pnlReportes.SuspendLayout();
             this.pnlColaboradores.SuspendLayout();
@@ -73,7 +73,7 @@
             this.pnlReportes.Controls.Add(this.btnSalXCargo);
             this.pnlReportes.Controls.Add(this.btnTardanzas);
             this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReportes.Location = new System.Drawing.Point(0, 394);
+            this.pnlReportes.Location = new System.Drawing.Point(0, 419);
             this.pnlReportes.Name = "pnlReportes";
             this.pnlReportes.Size = new System.Drawing.Size(200, 119);
             this.pnlReportes.TabIndex = 0;
@@ -133,7 +133,7 @@
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 352);
+            this.iconButton1.Location = new System.Drawing.Point(0, 377);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(200, 42);
             this.iconButton1.TabIndex = 5;
@@ -146,7 +146,7 @@
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
-            this.pnlColaboradores.Controls.Add(this.btnNotificaciones);
+            this.pnlColaboradores.Controls.Add(this.btnAvisos);
             this.pnlColaboradores.Controls.Add(this.btnDocumentos);
             this.pnlColaboradores.Controls.Add(this.btnSalarios);
             this.pnlColaboradores.Controls.Add(this.btnEventos);
@@ -155,8 +155,30 @@
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 120);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 232);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 257);
             this.pnlColaboradores.TabIndex = 2;
+            // 
+            // btnAvisos
+            // 
+            this.btnAvisos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAvisos.FlatAppearance.BorderSize = 0;
+            this.btnAvisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvisos.ForeColor = System.Drawing.Color.White;
+            this.btnAvisos.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.btnAvisos.IconColor = System.Drawing.Color.White;
+            this.btnAvisos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAvisos.IconSize = 30;
+            this.btnAvisos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvisos.Location = new System.Drawing.Point(0, 210);
+            this.btnAvisos.Name = "btnAvisos";
+            this.btnAvisos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnAvisos.Size = new System.Drawing.Size(200, 42);
+            this.btnAvisos.TabIndex = 6;
+            this.btnAvisos.Text = "Avisos";
+            this.btnAvisos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvisos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAvisos.UseVisualStyleBackColor = true;
+            this.btnAvisos.Click += new System.EventHandler(this.btnAvisos_Click);
             // 
             // btnDocumentos
             // 
@@ -309,31 +331,9 @@
             this.pnlChildForm.Size = new System.Drawing.Size(1184, 941);
             this.pnlChildForm.TabIndex = 2;
             // 
-            // btnNotificaciones
-            // 
-            this.btnNotificaciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNotificaciones.FlatAppearance.BorderSize = 0;
-            this.btnNotificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotificaciones.ForeColor = System.Drawing.Color.White;
-            this.btnNotificaciones.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnNotificaciones.IconColor = System.Drawing.Color.White;
-            this.btnNotificaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNotificaciones.IconSize = 30;
-            this.btnNotificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotificaciones.Location = new System.Drawing.Point(0, 210);
-            this.btnNotificaciones.Name = "btnNotificaciones";
-            this.btnNotificaciones.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnNotificaciones.Size = new System.Drawing.Size(200, 42);
-            this.btnNotificaciones.TabIndex = 6;
-            this.btnNotificaciones.Text = "Notificaciones";
-            this.btnNotificaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotificaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNotificaciones.UseVisualStyleBackColor = true;
-            this.btnNotificaciones.Click += new System.EventHandler(this.btnNotificaciones_Click);
-            // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1384, 941);
@@ -368,7 +368,7 @@
         private System.Windows.Forms.Panel pnlReportes;
         private FontAwesome.Sharp.IconButton btnSalarios;
         private FontAwesome.Sharp.IconButton btnDocumentos;
-        private FontAwesome.Sharp.IconButton btnNotificaciones;
+        private FontAwesome.Sharp.IconButton btnAvisos;
     }
 }
 

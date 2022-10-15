@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using DomainA;
 using System.Diagnostics;
-using System.Data.Common;
-using PresentationA.Controls;
 
 namespace PresentationA.Colaboradores.Consulta
 {
@@ -24,9 +21,9 @@ namespace PresentationA.Colaboradores.Consulta
             openFileDialog1.InitialDirectory = "no seleccionado";
             nuevoDocumento.LegajoColaborador = int.Parse(legajo);
             CargarDG(legajo);
-            btnEliminar.Enabled = false;
-            btnModificar.Enabled = false;
-            btnVerArchivo.Enabled = false;
+            btnEliminar.Visible = false;
+            btnModificar.Visible = false;
+            btnVerArchivo.Visible = false;
             lblTipoArchivo.Visible = false;
             btnAgregarArchivo.Visible = false;
             cmbTipoMultimedia.Visible = false;
@@ -83,15 +80,15 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
             dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
             txtDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
-            btnVerArchivo.Enabled = true;
-            btnEliminar.Enabled = true;
-            btnModificar.Enabled = true;
+            btnVerArchivo.Visible = true;
+            btnEliminar.Visible = true;
+            btnModificar.Visible = true;
 
         }
 
         
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnAgregarArchivo_Click(object sender, EventArgs e)
         {
             if (cmbTipoMultimedia.SelectedIndex == -1)
             {
@@ -123,11 +120,6 @@ namespace PresentationA.Colaboradores.Consulta
 
                 }
             }
-
-
-
-
-
 
             //Agregamos los atributos del objeto DocumentosColaborador
             nuevoDocumento.Nombre = "ArchivoCualquiera";
@@ -179,14 +171,16 @@ namespace PresentationA.Colaboradores.Consulta
                     CargarDG(nuevoDocumento.LegajoColaborador.ToString());
                 }
                 btnAgregar.Text = "Agregar";
+                btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+                dgvEventos.Enabled = true;
                 switchButtons(false);
                 return;
             }
             btnAgregar.Text = "Guardar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            btnVerArchivo.Visible = false;
+            dgvEventos.Enabled = false;
             switchButtons(true);
-            
-
-
         }
 
         private void btnVerArchivo_Click(object sender, EventArgs e)
@@ -249,6 +243,7 @@ namespace PresentationA.Colaboradores.Consulta
             string mensaje = eventosModelo.eliminarEvento(idEvento);
             MessageBox.Show(mensaje);
             CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+            switchButtons(false);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -259,7 +254,8 @@ namespace PresentationA.Colaboradores.Consulta
             {
                 //Guardar cambios, resetear estado de botones
                 btnModificar.Text = "Modificar";
-                btnAgregar.Enabled = true;
+                btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+                btnAgregar.Visible = true;
                 
                 int indice = eventosModelo.FilaSeleccionadaHistorialEvento;
                 if (indice == -1)
@@ -286,7 +282,8 @@ namespace PresentationA.Colaboradores.Consulta
             {
                 // Habilitar todos los botones
                 btnModificar.Text = "Guardar";
-                btnAgregar.Enabled = false;
+                btnModificar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+                btnAgregar.Visible = false;
                 switchButtons(true);
             }
         }
@@ -299,9 +296,7 @@ namespace PresentationA.Colaboradores.Consulta
                 dtpfechaFin.Value = DateTime.Now;
                 dtpfechaRegistro.Value = DateTime.Now;
                 txtDescripcion.Text = null;
-                lblTipoArchivo.Visible = value;
-                btnAgregarArchivo.Visible = value;
-                cmbTipoMultimedia.Visible = value;
+                
             }
             cmbTipoEvento.Enabled = value;
             dtpfechaInicio.Enabled = value;
@@ -311,11 +306,8 @@ namespace PresentationA.Colaboradores.Consulta
             lblTipoArchivo.Visible = value;
             btnAgregarArchivo.Visible = value;
             cmbTipoMultimedia.Visible = value;
-            dgvEventos.CurrentRow.Selected = false;
+            if (dgvEventos.CurrentRow != null) { dgvEventos.CurrentRow.Selected = false; }
+            
         }
-
-       
-
-        
     }
 }

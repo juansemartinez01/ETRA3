@@ -53,6 +53,7 @@ namespace PresentationA
             this.txtUser.Size = new System.Drawing.Size(524, 20);
             this.txtUser.TabIndex = 1;
             this.txtUser.Text = "USUARIO";
+            this.txtUser.Click += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
             this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
@@ -67,6 +68,7 @@ namespace PresentationA
             this.txtPass.Size = new System.Drawing.Size(524, 20);
             this.txtPass.TabIndex = 2;
             this.txtPass.Text = "CONTRASEÑA";
+            this.txtPass.Click += new System.EventHandler(this.txtPass_Enter);
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
@@ -91,6 +93,7 @@ namespace PresentationA
             this.lnkRecuperar.TabIndex = 0;
             this.lnkRecuperar.TabStop = true;
             this.lnkRecuperar.Text = "Ha olvidado la contraseña?";
+            this.lnkRecuperar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkRecuperar_LinkClicked);
             // 
             // panel1
             // 
@@ -147,7 +150,7 @@ namespace PresentationA
             this.botonPadre1.TabIndex = 5;
             this.botonPadre1.Text = "Iniciar Sesion";
             this.botonPadre1.UseVisualStyleBackColor = false;
-            this.botonPadre1.Click += new System.EventHandler(this.frmLogin_Click);
+            this.botonPadre1.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // frmLogin
             // 

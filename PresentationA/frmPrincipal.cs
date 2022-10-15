@@ -195,10 +195,10 @@ namespace PresentationA
 
         }
 
-        private void btnNotificaciones_Click(object sender, EventArgs e)
+        private void btnAvisos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            openChildFormInPanel(new frmNotificaciones());
+            openChildFormInPanel(new frmAvisos());
         }
     }
 }

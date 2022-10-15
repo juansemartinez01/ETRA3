@@ -138,11 +138,11 @@
     <Compile Include="Colaboradores\frmModifcarColab.Designer.cs">
       <DependentUpon>frmModifcarColab.cs</DependentUpon>
     </Compile>
-    <Compile Include="Colaboradores\frmNotificaciones.cs">
+    <Compile Include="Colaboradores\frmAvisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colaboradores\frmNotificaciones.Designer.cs">
-      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    <Compile Include="Colaboradores\frmAvisos.Designer.cs">
+      <DependentUpon>frmAvisos.cs</DependentUpon>
     </Compile>
     <Compile Include="Colaboradores\frmSalarios.cs">
       <SubType>Form</SubType>
@@ -173,6 +173,12 @@
     </Compile>
     <Compile Include="frmHijo.Designer.cs">
       <DependentUpon>frmHijo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecupero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecupero.Designer.cs">
+      <DependentUpon>frmRecupero.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
@@ -228,8 +234,8 @@
     <EmbeddedResource Include="Colaboradores\frmModifcarColab.resx">
       <DependentUpon>frmModifcarColab.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colaboradores\frmNotificaciones.resx">
-      <DependentUpon>frmNotificaciones.cs</DependentUpon>
+    <EmbeddedResource Include="Colaboradores\frmAvisos.resx">
+      <DependentUpon>frmAvisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmSalarios.resx">
       <DependentUpon>frmSalarios.cs</DependentUpon>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecupero.resx">
+      <DependentUpon>frmRecupero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

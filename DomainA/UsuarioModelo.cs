@@ -1,4 +1,5 @@
 ﻿using DataAccesA;
+using System.Collections.Generic;
 
 namespace DomainA
 {
@@ -8,6 +9,10 @@ namespace DomainA
         public bool LoginUser(string user, string pass)
         {
             return usuarioDao.Login(user, pass);
+        }
+        public List<string> recoverPassword(string userRequesting)
+        {
+            return usuarioDao.recoverPassword(userRequesting);
         }
     }
 }

@@ -38,13 +38,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtmonto = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new PresentationA.Controls.BotonPadre();
-            this.btnModificar = new PresentationA.Controls.BotonPadre();
-            this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.dgvSalarios = new PresentationA.Controls.DataGridPadre();
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDeInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new PresentationA.Controls.BotonPadre();
+            this.btnAgregar = new PresentationA.Controls.BotonPadre();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +60,7 @@
             // 
             // dtpfechaFin
             // 
+            this.dtpfechaFin.Enabled = false;
             this.dtpfechaFin.Location = new System.Drawing.Point(205, 138);
             this.dtpfechaFin.Name = "dtpfechaFin";
             this.dtpfechaFin.Size = new System.Drawing.Size(200, 27);
@@ -68,6 +68,7 @@
             // 
             // dtpfechaInicio
             // 
+            this.dtpfechaInicio.Enabled = false;
             this.dtpfechaInicio.Location = new System.Drawing.Point(205, 94);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
             this.dtpfechaInicio.Size = new System.Drawing.Size(200, 27);
@@ -104,72 +105,19 @@
             // 
             // txtmonto
             // 
+            this.txtmonto.Enabled = false;
             this.txtmonto.Location = new System.Drawing.Point(205, 232);
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(200, 27);
             this.txtmonto.TabIndex = 34;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAgregar.IconColor = System.Drawing.Color.Black;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 426);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(132, 34);
-            this.btnAgregar.TabIndex = 38;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnModificar.IconColor = System.Drawing.Color.Black;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(159, 426);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(135, 34);
-            this.btnModificar.TabIndex = 39;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnEliminar.IconColor = System.Drawing.Color.Black;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(305, 426);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(135, 34);
-            this.btnEliminar.TabIndex = 40;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
             // dgvSalarios
             // 
             this.dgvSalarios.AllowUserToAddRows = false;
             this.dgvSalarios.AllowUserToDeleteRows = false;
             this.dgvSalarios.AllowUserToOrderColumns = true;
-            this.dgvSalarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvSalarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSalarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalarios.BackgroundColor = System.Drawing.Color.White;
@@ -236,15 +184,55 @@
             this.fechaFin.Name = "fechaFin";
             this.fechaFin.ReadOnly = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 30;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(225, 383);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(122, 37);
+            this.btnEliminar.TabIndex = 50;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAgregar.IconColor = System.Drawing.Color.White;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 30;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(80, 383);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(122, 37);
+            this.btnAgregar.TabIndex = 48;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // frmHistorialSalario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 495);
-            this.Controls.Add(this.dgvSalarios);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.dgvSalarios);
             this.Controls.Add(this.txtmonto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpfechaFin);
@@ -252,6 +240,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
+            this.Enabled = false;
             this.Name = "frmHistorialSalario";
             this.Text = "frmHistorialSalario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalarios)).EndInit();
@@ -268,12 +257,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtmonto;
-        private Controls.BotonPadre btnAgregar;
-        private Controls.BotonPadre btnModificar;
-        private Controls.BotonPadre btnEliminar;
         private Controls.DataGridPadre dgvSalarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
+        private Controls.BotonPadre btnEliminar;
+        private Controls.BotonPadre btnAgregar;
     }
 }

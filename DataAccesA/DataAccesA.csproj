@@ -48,6 +48,8 @@
     <Compile Include="DataManager.cs" />
     <Compile Include="EventosDao.cs" />
     <Compile Include="FamiliarColaboradorDao.cs" />
+    <Compile Include="MailServices\MasterMailServer.cs" />
+    <Compile Include="MailServices\SystemSupportMail.cs" />
     <Compile Include="NotificacionesGeneralesDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteSalXCargoDao.cs" />

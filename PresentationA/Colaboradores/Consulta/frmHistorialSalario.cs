@@ -1,4 +1,5 @@
 ﻿using DomainA;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,22 @@ namespace PresentationA.Colaboradores.Consulta
 {
     public partial class frmHistorialSalario : frmHijo
     {
-        Salario sal = new Salario();
+        Salario salarioModelo = new Salario();
         public frmHistorialSalario(string legajo)
         {
             InitializeComponent();
             CargarDG(legajo);
-            sal.legajoColaborador = int.Parse(legajo);
+            salarioModelo.legajoColaborador = int.Parse(legajo);
         }
         private void CargarDG(string legajo)
         {
             try
             {
-                DataTable salarios = sal.obtenerSalarios(legajo);
-                for (int i = 0; i < salarios.Rows.Count; i++)
+                DataTable salarioModeloarios = salarioModelo.obtenerSalarios(legajo);
+                for (int i = 0; i < salarioModeloarios.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvSalarios.Rows.Add(salarios.Rows[i]["Monto"], salarios.Rows[i]["Fecha de Inicio"], salarios.Rows[i]["Fecha Fin"]);
+                    dgvSalarios.Rows.Add(salarioModeloarios.Rows[i]["Monto"], salarioModeloarios.Rows[i]["Fecha de Inicio"], salarioModeloarios.Rows[i]["Fecha Fin"]);
                 }
 
             }
@@ -43,20 +44,43 @@ namespace PresentationA.Colaboradores.Consulta
             if(txtmonto.Text == "")
             {
                 MessageBox.Show("Debe ingresar un monto.");
+                return;
             }
             else
             {
-                string respuesta = sal.modificarSalarioColaborador(sal.legajoColaborador, float.Parse(txtmonto.Text));
-                MessageBox.Show(respuesta);
-                CargarDG(sal.legajoColaborador.ToString());
+                
             }
-            
+
+            if (btnAgregar.Text == "Guardar")
+            {
+                // guardar nuevo valor
+                if (txtmonto.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un monto.");
+                    return;
+                }
+                
+                else
+                {
+                    //agrgar nuevo valor
+                    string respuesta = salarioModelo.modificarSalarioColaborador(salarioModelo.legajoColaborador, float.Parse(txtmonto.Text));
+                    MessageBox.Show(respuesta);
+                    CargarDG(salarioModelo.legajoColaborador.ToString());
+                }
+                btnAgregar.Text = "Agregar";
+                btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+                switchButtons(false);
+                return;
+            }
+            btnAgregar.Text = "Guardar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            switchButtons(true);
         }
 
         private void dgvSalarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
-            //sal.FilaSeleccionadaHistorialEvento = indice;
+            //salarioModelo.FilaSeleccionadaHistorialEvento = indice;
             if (indice == -1)
             {
                 return;
@@ -68,5 +92,17 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
         }
+
+        private void switchButtons(bool value)
+        {
+            if (value == false)
+            {
+                dtpfechaInicio.Value = DateTime.Now;
+                dtpfechaFin.Value = DateTime.Now;
+            }
+            dtpfechaInicio.Enabled = value;
+            dtpfechaFin.Enabled = value;
+        }
+
     }
 }
