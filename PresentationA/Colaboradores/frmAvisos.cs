@@ -18,11 +18,12 @@ namespace PresentationA.Colaboradores
         public frmAvisos()
         {
             InitializeComponent();
-            cargarGrillaCumpleaños();
+            cargarGrillasCumpleaños();
         }
-        public void cargarGrillaCumpleaños()
+        public void cargarGrillasCumpleaños()
         {
             DataTable cumpleañosColaboradores = new DataTable();
+            DataTable cumpleañosFamiliares = new DataTable();
             try
             {
                 dgvCumpleañosDelMes.Rows.Clear();
@@ -32,6 +33,10 @@ namespace PresentationA.Colaboradores
                     //crear metodo completar labels
                     dgvCumpleañosDelMes.Rows.Add(cumpleañosColaboradores.Rows[i]["Nombre"], cumpleañosColaboradores.Rows[i]["Apellido"], cumpleañosColaboradores.Rows[i]["Cumpleaños"]);
                 }
+                
+                cumpleañosFamiliares = notificacion.cumpleañosFamiliaresColaboradores();
+                dgvCumpleañosFamiliares.DataSource = cumpleañosFamiliares;
+
             }
             catch (Exception ex)
             {

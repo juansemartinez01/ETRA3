@@ -36,5 +36,9 @@ namespace DomainA
         {
             return cuentaColaborador.eliminarMovimiento(legajo, idMovimiento);
         }
+        public string buscarFondoMaximoPermitido(int legajo)
+        {
+            return cuentaColaborador.buscarFondoMaximoPermitido(legajo);
+        }
     }
 }

@@ -51,6 +51,15 @@ namespace PresentationA.Colaboradores
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            float prestamoMaximo;
+            if(txtPrestamoMaximo.Text == "")
+            {
+                prestamoMaximo = 0;
+            }
+            else
+            {
+                prestamoMaximo = float.Parse(txtPrestamoMaximo.Text);
+            }
             if (cmbEstados.SelectedIndex == -1)
             {
                 cmbEstados.SelectedIndex = 0;
@@ -105,7 +114,8 @@ namespace PresentationA.Colaboradores
 
                                                     agregarArchivoColaborador(colaboradorModelo);
                                                 }
-                                                
+                                                string masnsajeCuentaCreada = cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()), prestamoMaximo);
+
                                                 MessageBox.Show(cadenaRespuesta);
                                             }
                                             else
@@ -124,7 +134,7 @@ namespace PresentationA.Colaboradores
 
                                                 agregarArchivoColaborador(colaboradorModelo);
                                             }
-                                            string masnsajeCuentaCreada = cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()),0);
+                                            string masnsajeCuentaCreada = cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()), prestamoMaximo);
                                             MessageBox.Show(cadenaRespuesta);
                                             limpiarCampos();
                                         }

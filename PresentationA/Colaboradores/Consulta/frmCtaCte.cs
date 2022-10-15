@@ -21,7 +21,7 @@ namespace PresentationA.Colaboradores.Consulta
         {
             InitializeComponent();
             colaboradorModelo.legajo = int.Parse(legajo);
-            
+            lblFondoMaximoPermitido.Text = cuenta.buscarFondoMaximoPermitido(colaboradorModelo.legajo);
             LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
             CargarDG(legajo);
             buscarSaldo();
@@ -119,6 +119,9 @@ namespace PresentationA.Colaboradores.Consulta
             
         }
 
-        
+        private void frmCtaCte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -66,7 +66,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSalario = new System.Windows.Forms.TextBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.lblmontoSalario1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -76,6 +76,9 @@
             this.label17 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtPrestamoMaximo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -341,7 +344,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(269, 26);
+            this.label14.Location = new System.Drawing.Point(259, 26);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(355, 37);
             this.label14.TabIndex = 93;
@@ -382,7 +385,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.groupBox1.Location = new System.Drawing.Point(29, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(851, 362);
+            this.groupBox1.Size = new System.Drawing.Size(830, 362);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -419,7 +422,10 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtPrestamoMaximo);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.txtSalario);
             this.groupBox2.Controls.Add(this.cmbPuesto);
             this.groupBox2.Controls.Add(this.lblmontoSalario1);
             this.groupBox2.Controls.Add(this.label26);
@@ -434,17 +440,17 @@
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.groupBox2.Location = new System.Drawing.Point(29, 425);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(851, 338);
+            this.groupBox2.Size = new System.Drawing.Size(830, 338);
             this.groupBox2.TabIndex = 95;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
             // 
-            // textBox1
+            // txtSalario
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 30);
-            this.textBox1.TabIndex = 122;
+            this.txtSalario.Location = new System.Drawing.Point(107, 35);
+            this.txtSalario.Name = "txtSalario";
+            this.txtSalario.Size = new System.Drawing.Size(146, 30);
+            this.txtSalario.TabIndex = 122;
             // 
             // cmbPuesto
             // 
@@ -523,6 +529,31 @@
             this.label18.TabIndex = 114;
             this.label18.Text = "* Puesto:";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 181);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(321, 22);
+            this.label16.TabIndex = 123;
+            this.label16.Text = "Cuenta corriente del colaborador";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(18, 245);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(283, 22);
+            this.label19.TabIndex = 124;
+            this.label19.Text = "Prestamo maximo permitido: $";
+            // 
+            // txtPrestamoMaximo
+            // 
+            this.txtPrestamoMaximo.Location = new System.Drawing.Point(321, 242);
+            this.txtPrestamoMaximo.Name = "txtPrestamoMaximo";
+            this.txtPrestamoMaximo.Size = new System.Drawing.Size(146, 30);
+            this.txtPrestamoMaximo.TabIndex = 125;
+            // 
             // frmCargaColab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -594,8 +625,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmbPuesto;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker dtpfechaInicio;
+        private System.Windows.Forms.TextBox txtPrestamoMaximo;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label16;
     }
 }

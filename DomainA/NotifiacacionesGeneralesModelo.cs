@@ -17,5 +17,9 @@ namespace DomainA
             return notificacion.notificacionesDeCumpleañosColaboradores();
             
         }
+        public DataTable cumpleañosFamiliaresColaboradores()
+        {
+            return notificacion.cumpleañosFamiliaresColaboradores();
+        }
     }
 }

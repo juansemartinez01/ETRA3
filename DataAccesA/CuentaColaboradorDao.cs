@@ -38,6 +38,44 @@ namespace DataAccesA
                 return cuentaColaborador;
             }
         }
+        public string buscarFondoMaximoPermitido(int legajo)
+        {
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT C.SaldoMaximo FROM TipoMovimiento T JOIN MovimientosCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord saldoMaximo = (IDataRecord)reader;
+                                return "" + saldoMaximo[0] + "";
+                            }
+                            return "Error con la base de datos";
+
+                        }
+                        else
+                        {
+                            return "Error con la base de datos";
+                        }
+                    }
+                }
+
+
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
+            }
+        }
         public string BuscarIdUltimaCuenta()
         {
 

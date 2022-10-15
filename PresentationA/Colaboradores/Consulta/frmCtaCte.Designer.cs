@@ -40,6 +40,8 @@
             this.btnVerArchivo = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblFondoMaximoPermitido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,7 +184,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 372);
+            this.label5.Location = new System.Drawing.Point(63, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(206, 23);
             this.label5.TabIndex = 49;
@@ -191,16 +193,36 @@
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(282, 372);
+            this.lblSaldo.Location = new System.Drawing.Point(333, 322);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(0, 23);
             this.lblSaldo.TabIndex = 50;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 383);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(259, 23);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "Fondo maximo permitido:";
+            // 
+            // lblFondoMaximoPermitido
+            // 
+            this.lblFondoMaximoPermitido.AutoSize = true;
+            this.lblFondoMaximoPermitido.Location = new System.Drawing.Point(333, 383);
+            this.lblFondoMaximoPermitido.Name = "lblFondoMaximoPermitido";
+            this.lblFondoMaximoPermitido.Size = new System.Drawing.Size(72, 23);
+            this.lblFondoMaximoPermitido.TabIndex = 52;
+            this.lblFondoMaximoPermitido.Text = "label6";
             // 
             // frmCtaCte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 649);
+            this.Controls.Add(this.lblFondoMaximoPermitido);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.iconButton1);
@@ -216,6 +238,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmCtaCte";
             this.Text = "frmCtaCorriente";
+            this.Load += new System.EventHandler(this.frmCtaCte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -236,5 +259,7 @@
         private FontAwesome.Sharp.IconButton btnVerArchivo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblSaldo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFondoMaximoPermitido;
     }
 }
