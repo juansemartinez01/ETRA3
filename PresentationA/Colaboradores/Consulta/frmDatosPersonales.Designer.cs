@@ -63,7 +63,6 @@
             this.lblSexo = new System.Windows.Forms.Label();
             this.lbllegajo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.bttnEliminarColaborador = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -490,21 +489,8 @@
             this.label19.TabIndex = 71;
             this.label19.Text = "Legajo:";
             // 
-            // bttnEliminarColaborador
-            // 
-            this.bttnEliminarColaborador.Location = new System.Drawing.Point(22, 639);
-            this.bttnEliminarColaborador.Margin = new System.Windows.Forms.Padding(4);
-            this.bttnEliminarColaborador.Name = "bttnEliminarColaborador";
-            this.bttnEliminarColaborador.Size = new System.Drawing.Size(212, 27);
-            this.bttnEliminarColaborador.TabIndex = 73;
-            this.bttnEliminarColaborador.Text = "Eliminar Colaborador";
-            this.bttnEliminarColaborador.UseVisualStyleBackColor = true;
-            this.bttnEliminarColaborador.Click += new System.EventHandler(this.bttnEliminarColaborador_Click);
-            // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -530,8 +516,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label16);
@@ -549,8 +533,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label6);
@@ -579,11 +561,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1038, 684);
+            this.ClientSize = new System.Drawing.Size(1021, 639);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.bttnEliminarColaborador);
             this.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmDatosPersonales";
@@ -635,7 +616,6 @@
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lbllegajo;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button bttnEliminarColaborador;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;

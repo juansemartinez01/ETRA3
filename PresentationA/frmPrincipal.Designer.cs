@@ -64,7 +64,7 @@
             this.pnlPrincipal.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(200, 941);
+            this.pnlPrincipal.Size = new System.Drawing.Size(200, 574);
             this.pnlPrincipal.TabIndex = 1;
             // 
             // pnlReportes
@@ -328,7 +328,7 @@
             this.pnlChildForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(1184, 941);
+            this.pnlChildForm.Size = new System.Drawing.Size(751, 574);
             this.pnlChildForm.TabIndex = 2;
             // 
             // frmPrincipal
@@ -336,11 +336,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1384, 941);
+            this.ClientSize = new System.Drawing.Size(951, 574);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.pnlPrincipal);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(800, 613);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);

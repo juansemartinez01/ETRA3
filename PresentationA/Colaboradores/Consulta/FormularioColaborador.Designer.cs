@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.dgvBusqueda = new PresentationA.Controls.DataGridPadre();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,6 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.Panel();
-            this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnCtaCte = new FontAwesome.Sharp.IconButton();
             this.btnHistorialSalarios = new FontAwesome.Sharp.IconButton();
             this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
@@ -60,6 +60,8 @@
             // 
             // pnlBuscar
             // 
+            this.pnlBuscar.AutoScroll = true;
+            this.pnlBuscar.Controls.Add(this.btnModificar);
             this.pnlBuscar.Controls.Add(this.dgvBusqueda);
             this.pnlBuscar.Controls.Add(this.btnBuscar);
             this.pnlBuscar.Controls.Add(this.lblError);
@@ -72,9 +74,32 @@
             this.pnlBuscar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBuscar.Location = new System.Drawing.Point(0, 0);
+            this.pnlBuscar.MinimumSize = new System.Drawing.Size(704, 323);
             this.pnlBuscar.Name = "pnlBuscar";
-            this.pnlBuscar.Size = new System.Drawing.Size(1000, 285);
+            this.pnlBuscar.Size = new System.Drawing.Size(906, 342);
             this.pnlBuscar.TabIndex = 2;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnModificar.Enabled = false;
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 25;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.Location = new System.Drawing.Point(12, 277);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(254, 40);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar Colaborador";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // dgvBusqueda
             // 
@@ -83,8 +108,6 @@
             this.dgvBusqueda.AllowUserToOrderColumns = true;
             this.dgvBusqueda.AllowUserToResizeColumns = false;
             this.dgvBusqueda.AllowUserToResizeRows = false;
-            this.dgvBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
             this.dgvBusqueda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -126,7 +149,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBusqueda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBusqueda.Size = new System.Drawing.Size(931, 149);
+            this.dgvBusqueda.Size = new System.Drawing.Size(849, 154);
             this.dgvBusqueda.TabIndex = 20;
             this.dgvBusqueda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentDoubleClick);
             this.dgvBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentDoubleClick);
@@ -155,7 +178,6 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -166,9 +188,9 @@
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 30;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(849, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(764, 55);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(113, 38);
+            this.btnBuscar.Size = new System.Drawing.Size(120, 38);
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,24 +213,24 @@
             // 
             // txtLegajo
             // 
-            this.txtLegajo.Location = new System.Drawing.Point(120, 12);
+            this.txtLegajo.Location = new System.Drawing.Point(94, 12);
             this.txtLegajo.Name = "txtLegajo";
-            this.txtLegajo.Size = new System.Drawing.Size(100, 26);
+            this.txtLegajo.Size = new System.Drawing.Size(172, 26);
             this.txtLegajo.TabIndex = 12;
             this.txtLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajo_KeyPress);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(355, 15);
+            this.txtNombre.Location = new System.Drawing.Point(394, 12);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 26);
+            this.txtNombre.Size = new System.Drawing.Size(172, 26);
             this.txtNombre.TabIndex = 8;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(262, 12);
+            this.lblNombre.Location = new System.Drawing.Point(307, 15);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(72, 20);
             this.lblNombre.TabIndex = 7;
@@ -217,7 +239,7 @@
             // lblLegajo
             // 
             this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(27, 12);
+            this.lblLegajo.Location = new System.Drawing.Point(25, 12);
             this.lblLegajo.Name = "lblLegajo";
             this.lblLegajo.Size = new System.Drawing.Size(63, 20);
             this.lblLegajo.TabIndex = 11;
@@ -225,16 +247,16 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(623, 12);
+            this.txtApellido.Location = new System.Drawing.Point(708, 12);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 26);
+            this.txtApellido.Size = new System.Drawing.Size(172, 26);
             this.txtApellido.TabIndex = 9;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(501, 12);
+            this.lblApellido.Location = new System.Drawing.Point(589, 15);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(73, 20);
             this.lblApellido.TabIndex = 10;
@@ -242,17 +264,18 @@
             // 
             // pnlFormulario
             // 
+            this.pnlFormulario.AutoScroll = true;
             this.pnlFormulario.Controls.Add(this.pnlBotones);
             this.pnlFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormulario.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.pnlFormulario.Location = new System.Drawing.Point(0, 285);
+            this.pnlFormulario.Location = new System.Drawing.Point(0, 342);
             this.pnlFormulario.Name = "pnlFormulario";
-            this.pnlFormulario.Size = new System.Drawing.Size(1000, 597);
+            this.pnlFormulario.Size = new System.Drawing.Size(906, 347);
             this.pnlFormulario.TabIndex = 3;
             // 
             // pnlBotones
             // 
-            this.pnlBotones.Controls.Add(this.btnModificar);
+            this.pnlBotones.AutoScroll = true;
             this.pnlBotones.Controls.Add(this.btnCtaCte);
             this.pnlBotones.Controls.Add(this.btnHistorialSalarios);
             this.pnlBotones.Controls.Add(this.btnHistorialEventos);
@@ -262,31 +285,8 @@
             this.pnlBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlBotones.Location = new System.Drawing.Point(0, 0);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(190, 597);
+            this.pnlBotones.Size = new System.Drawing.Size(190, 347);
             this.pnlBotones.TabIndex = 0;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnModificar.Enabled = false;
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnModificar.IconColor = System.Drawing.Color.White;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 25;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(31, 545);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(125, 40);
-            this.btnModificar.TabIndex = 1;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCtaCte
             // 
@@ -396,7 +396,7 @@
             // FormularioColaborador
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1000, 882);
+            this.ClientSize = new System.Drawing.Size(906, 689);
             this.Controls.Add(this.pnlFormulario);
             this.Controls.Add(this.pnlBuscar);
             this.Font = new System.Drawing.Font("Century Gothic", 9F);

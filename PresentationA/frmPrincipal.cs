@@ -118,6 +118,7 @@ namespace PresentationA
                     activeForm.Close();
                 activeForm = childForm;
                 childForm.TopLevel = false;
+                childForm.AutoScroll = true;
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
                 pnlChildForm.Controls.Add(childForm);

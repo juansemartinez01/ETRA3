@@ -116,9 +116,6 @@
             this.dgvSalarios.AllowUserToAddRows = false;
             this.dgvSalarios.AllowUserToDeleteRows = false;
             this.dgvSalarios.AllowUserToOrderColumns = true;
-            this.dgvSalarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSalarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -147,7 +144,7 @@
             this.dgvSalarios.EnableHeadersVisualStyles = false;
             this.dgvSalarios.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvSalarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvSalarios.Location = new System.Drawing.Point(447, 94);
+            this.dgvSalarios.Location = new System.Drawing.Point(446, 94);
             this.dgvSalarios.Name = "dgvSalarios";
             this.dgvSalarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -229,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 495);
+            this.ClientSize = new System.Drawing.Size(932, 442);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvSalarios);

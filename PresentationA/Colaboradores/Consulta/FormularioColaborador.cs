@@ -121,6 +121,7 @@ namespace PresentationA
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
+            childForm.AutoScroll = true;
             childForm.TopMost = true;
             this.pnlFormulario.Controls.Add(childForm);
             pnlFormulario.Tag = childForm;

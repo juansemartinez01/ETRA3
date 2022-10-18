@@ -258,7 +258,7 @@ namespace PresentationA.Colaboradores
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
         }
