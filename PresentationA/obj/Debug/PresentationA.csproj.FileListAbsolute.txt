@@ -246,3 +246,4 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.C
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmRecupero.resources
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.frmAvisos.resources
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.frmRecupero.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmNewPass.resources

@@ -14,5 +14,9 @@ namespace DomainA
         {
             return usuarioDao.recoverPassword(userRequesting);
         }
+        public string updatePassword(string user, string pass)
+        {
+            return usuarioDao.updatePassword(user, pass);  
+        }
     }
 }

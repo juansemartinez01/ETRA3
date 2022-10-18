@@ -30,11 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.txtMail = new System.Windows.Forms.TextBox();
             this.btnEnviar = new PresentationA.Controls.BotonPadre();
             this.lblError = new System.Windows.Forms.Label();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.btnValidar = new PresentationA.Controls.BotonPadre();
+            this.txtMail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -50,26 +50,11 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(74, 66);
+            this.lblInfo.Location = new System.Drawing.Point(79, 68);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(291, 21);
             this.lblInfo.TabIndex = 2;
             this.lblInfo.Text = "\"Te vamos a enviar un código para \"";
-            // 
-            // txtMail
-            // 
-            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMail.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtMail.ForeColor = System.Drawing.Color.DimGray;
-            this.txtMail.Location = new System.Drawing.Point(133, 145);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(201, 20);
-            this.txtMail.TabIndex = 3;
-            this.txtMail.Text = "INGRESE AQUÍ SU MAIL";
-            this.txtMail.Click += new System.EventHandler(this.txtMail_Enter);
-            this.txtMail.Enter += new System.EventHandler(this.txtMail_Enter);
-            this.txtMail.Leave += new System.EventHandler(this.txtMail_Leave);
             // 
             // btnEnviar
             // 
@@ -97,7 +82,7 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(75, 361);
+            this.lblError.Location = new System.Drawing.Point(58, 360);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(34, 17);
             this.lblError.TabIndex = 5;
@@ -138,22 +123,38 @@
             this.btnValidar.UseVisualStyleBackColor = false;
             this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
+            // txtMail
+            // 
+            this.txtMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMail.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtMail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtMail.Location = new System.Drawing.Point(120, 138);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(208, 20);
+            this.txtMail.TabIndex = 11;
+            this.txtMail.Text = "INGRESE AQUÍ SU MAIL";
+            this.txtMail.Click += new System.EventHandler(this.txtMail_Enter);
+            this.txtMail.Enter += new System.EventHandler(this.txtMail_Enter);
+            this.txtMail.Leave += new System.EventHandler(this.txtMail_Leave);
+            // 
             // frmRecupero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 465);
+            this.Controls.Add(this.txtMail);
             this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.txtMail);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "frmRecupero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Recuperar Contraseña";
             this.Click += new System.EventHandler(this.frmRecupero_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,10 +164,10 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblInfo;
-        private System.Windows.Forms.TextBox txtMail;
         private Controls.BotonPadre btnEnviar;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.TextBox txtCode;
         private Controls.BotonPadre btnValidar;
+        private System.Windows.Forms.TextBox txtMail;
     }
 }

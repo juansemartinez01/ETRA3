@@ -1,11 +1,8 @@
-﻿using Microsoft.Office.Interop.Excel;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-
 using DomainA;
-using System.Linq.Expressions;
+
 
 namespace PresentationA
 {
@@ -18,8 +15,7 @@ namespace PresentationA
             lblInfo.Text = "Te vamos a enviar un código para " + "\r\n" + "recuperar tu contraseña.";
             txtCode.Visible = false;
             btnValidar.Visible = false;
-
-
+            lblError.Visible = false;
         }
         private void msgError(string msg)
         {
@@ -95,11 +91,13 @@ namespace PresentationA
             }
             if(txtCode.Text == codigo)
             {
-                msgError("Valido");
+                this.Hide();
+                frmNewPass newpass = new frmNewPass(txtMail.Text);
+                newpass.ShowDialog();
             }
             else
             {
-                msgError("Invalido");
+                msgError("Código Inválido");
             }
         }
     }
