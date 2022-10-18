@@ -70,9 +70,9 @@ namespace DomainA
             }
             return infoDocumento;
         }
-        public DataTable getAllDocumentos(int legajoColaborador, int tipoDocumento, int tipoEvento)
+        public DataTable getAllDocumentos(int legajoColaborador, int tipoDocumento, int tipoEvento, DateTime fecha,bool aplicarFecha)
         {
-            return colaboradorDocumento.getAllDocumentos(legajoColaborador,tipoDocumento,tipoEvento);
+            return colaboradorDocumento.getAllDocumentos(legajoColaborador,tipoDocumento,tipoEvento,fecha,aplicarFecha);
         }
     }
 

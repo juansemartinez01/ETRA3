@@ -749,14 +749,33 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento)
+        public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento, DateTime fecha, bool aplicarFecha)
         {
+
             DataTable documentos = new DataTable();
+            string parametrosAdicionales = "";
+            
+            if (aplicarFecha) 
+            {
+                fecha = fecha.Date;
+                parametrosAdicionales = parametrosAdicionales + "AND HE.fechaRegistro >= " + "Format(" + fecha + ", 'yyyy - MM - dd')";
+            }
+            if(legajoColaborador != 0)
+            {
+                parametrosAdicionales = parametrosAdicionales + "AND CM.legajoColaborador = " + legajoColaborador;
+            }
+            if(tipoDocumento != 0)
+            {
+                parametrosAdicionales = parametrosAdicionales + "AND TM.id_tipoMultimedia = " + tipoDocumento;
+            }
+            if (tipoEvento != 0)
+            {
+                parametrosAdicionales = parametrosAdicionales + "AND TE.id_tipoEvento = " + tipoEvento;
+            }
             try
             {
                 
-                if (legajoColaborador == 0 && tipoDocumento == 0 && tipoEvento == 0)
-                {
+                
 
                     using (var connection = GetConnection())
                     {
@@ -764,7 +783,7 @@ namespace DataAccesA
                         using (var command = new SqlCommand())
                         {
                             command.Connection = connection;
-                            command.CommandText = "SELECT CM.id_colaboradorMultimedia AS 'Numero',CM.legajoColaborador AS 'Legajo',TM.nombre AS 'Tipo doc',TE.nombre AS 'Evento' FROM ColaboradorMultimedia CM JOIN TipoMultimedia TM ON CM.id_tipoMultimedia = TM.id_tipoMultimedia JOIN Evento E ON CM.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE CM.borradoLogico = 0 AND E.borradoLogico = 0 AND TE.borradoLogico = 0 AND TM.borradoLogico = 0";
+                            command.CommandText = "SELECT CM.id_colaboradorMultimedia AS 'Numero',CM.legajoColaborador AS 'Legajo',TM.nombre AS 'Tipo doc',TE.nombre AS 'Evento',HE.fechaRegistro AS 'Fecha Registro' FROM ColaboradorMultimedia CM JOIN TipoMultimedia TM ON CM.id_tipoMultimedia = TM.id_tipoMultimedia JOIN Evento E ON CM.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento JOIN HistorialEvento HE ON HE.id_evento = E.id_evento WHERE CM.borradoLogico = 0 AND E.borradoLogico = 0 AND TE.borradoLogico = 0 AND TM.borradoLogico = 0" + " " + parametrosAdicionales;
                             command.CommandType = CommandType.Text;
                             SqlDataReader reader = command.ExecuteReader();
                             documentos.Load(reader);
@@ -775,11 +794,7 @@ namespace DataAccesA
 
 
 
-                }
-                else
-                {
-                    return documentos;
-                }
+                
 
 
 
