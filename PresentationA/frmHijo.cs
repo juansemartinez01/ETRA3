@@ -26,6 +26,10 @@ namespace PresentationA
                 //        value = " ";
                 //    }
                 control[0].Text = colaborador.Rows[0][atributo].ToString();
+                    if (control[0].Text == "NULL")
+                    {
+                        control[0].Text = "No especifica";
+                    }
             }
             else
             {
