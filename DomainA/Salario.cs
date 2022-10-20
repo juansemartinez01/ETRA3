@@ -46,9 +46,9 @@ namespace DomainA
             }
 
         }
-        public DataTable getAllSalarios()
+        public DataTable getAllSalarios(int legajo,string nombre,string apellido,float monto,int cargo)
         {
-            return salariosDao.getAllSalarios();
+            return salariosDao.getAllSalarios(legajo,nombre,apellido,monto,cargo);
         }
     }
     

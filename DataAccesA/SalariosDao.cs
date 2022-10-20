@@ -147,8 +147,13 @@ namespace DataAccessA
 
             return atributosColaborador;
         }
-        public DataTable getAllSalarios()
+        public DataTable getAllSalarios(int legajo,string nombre,string apellido,float monto,int cargo)
         {
+            string cadenaFiltros = "";
+            if(cargo != 0)
+            {
+                cadenaFiltros = "AND HC.id_cargo = " + cargo;
+            }
             DataTable resultado = new DataTable();
             using (var connection = GetConnection())
             {
@@ -156,8 +161,11 @@ namespace DataAccessA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT C.legajo ,CONVERT(varchar,H.fechaInicio,103) as 'fechaInicio',S.monto FROM Salario S JOIN HistorialSalario H ON S.id_salario = H.id_salario JOIN Colaborador C ON c.legajo = H.legajoColaborador WHERE S.borradoLogico = 0 AND H.borradoLogico = 0 AND C.borradoLogico = 0 AND H.fechaFin IS NULL ORDER BY S.monto DESC";
-
+                    command.CommandText = "SELECT C.legajo,C.nombre,C.apellido ,CONVERT(varchar,H.fechaInicio,103) as 'fechaInicio',S.monto FROM Salario S JOIN HistorialSalario H ON S.id_salario = H.id_salario JOIN Colaborador C ON c.legajo = H.legajoColaborador JOIN HistorialCargo HC ON HC.legajoColaborador = C.legajo WHERE S.borradoLogico = 0 AND H.borradoLogico = 0 AND C.borradoLogico = 0 AND H.fechaFin IS NULL AND C.legajo LIKE @legajo AND C.nombre LIKE @nombre AND C.apellido LIKE @apellido AND S.monto > @monto " + cadenaFiltros + " ORDER BY S.monto DESC";
+                    command.Parameters.AddWithValue("@legajo", legajo + "%");
+                    command.Parameters.AddWithValue("@nombre", nombre + "%");
+                    command.Parameters.AddWithValue("@apellido", apellido + "%");
+                    command.Parameters.AddWithValue("@monto", monto);
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
                     resultado.Load(reader);

@@ -14,7 +14,7 @@ namespace PresentationA.Colaboradores
         public frmSalarios()
         {
             InitializeComponent();
-            CargarTabla();
+            CargarTabla(1,"","",0,0);
             LlenarCombo(cmbModificarSalarioCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             LlenarCombo(cmbCargoPorcentaje, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             LlenarCombo(cmbFiltroCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
@@ -27,11 +27,11 @@ namespace PresentationA.Colaboradores
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
-        public void CargarTabla()
+        public void CargarTabla(int legajo,string nombre,string apellido, float monto, int cargo)
         {
             dgvSalarios.Rows.Clear();
             DataTable salarios = new DataTable();
-            salarios = sal.getAllSalarios();
+            salarios = sal.getAllSalarios(legajo,nombre,apellido,monto,cargo);
             for (int i = 0; i < salarios.Rows.Count; i++)
             {
                 //crear metodo completar labels
@@ -56,7 +56,7 @@ namespace PresentationA.Colaboradores
             {
                 string respuesta = sal.modificarSalarioColaborador(int.Parse(txtLegajoColaboradorModificacion.Text), float.Parse(txtMontoModificacion.Text));
                 MessageBox.Show(respuesta);
-                CargarTabla();
+                CargarTabla(1, "", "", 0, 0);
                 LimpiarCampos();
                 return;
                 
@@ -79,18 +79,33 @@ namespace PresentationA.Colaboradores
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
+            int legajo = 0;
+            string nombre = "";
+            string apellido = "";
+            float monto = 0;
+            int cargo = 0;
+            if(txtLegajoBusqueda.Text != "")
+            {
+                legajo = int.Parse(txtLegajoBusqueda.Text);
+            }
+            if(txtNombreBusqueda.Text != "")
+            {
+                nombre = txtNombreBusqueda.Text;
+            }
+            if(txtApellidoBusqueda.Text != "")
+            {
+                apellido = txtApellidoBusqueda.Text;
+            }
+            if(txtMontoBusqueda.Text != "")
+            {
+                monto = float.Parse(txtMontoBusqueda.Text);
+            }
             if(cmbFiltroCargo.SelectedIndex != -1)
             {
-                dgvSalarios.Rows.Clear();
-                DataTable salarios = new DataTable();
-                salarios = sal.getAllSalariosPorCargo(int.Parse(cmbFiltroCargo.SelectedValue.ToString()));
-                for (int i = 0; i < salarios.Rows.Count; i++)
-                {
-                    //crear metodo completar labels
-                    dgvSalarios.Rows.Add(salarios.Rows[i]["legajo"], salarios.Rows[i]["monto"], salarios.Rows[i]["fechaInicio"]);
-                }
-                LimpiarCampos();
+                cargo = int.Parse(cmbFiltroCargo.SelectedValue.ToString());
             }
+            CargarTabla(legajo,nombre, apellido, monto, cargo);
+            LimpiarCampos();
         }
 
 
@@ -128,7 +143,7 @@ namespace PresentationA.Colaboradores
                 string mensaje = sal.modificarSalariosDeCargo(int.Parse(cmbModificarSalarioCargo.SelectedValue.ToString()), float.Parse(txtMontoModificarSalarioCargo.Text.ToString()));
                 MessageBox.Show(mensaje);
                 LimpiarCampos();
-                CargarTabla();
+                CargarTabla(1,"","",0,0);
             }
             
         }
@@ -146,7 +161,7 @@ namespace PresentationA.Colaboradores
                 string mensaje = sal.modificarSalariosCargoPorcentaje(int.Parse(cmbCargoPorcentaje.SelectedValue.ToString()), float.Parse(txtPorcentaje.Text.ToString()));
                 MessageBox.Show(mensaje);
                 LimpiarCampos();
-                CargarTabla();
+                CargarTabla(1, "", "", 0, 0);
             }
         }
     }
