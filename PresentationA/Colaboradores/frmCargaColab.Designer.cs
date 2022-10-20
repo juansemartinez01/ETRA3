@@ -113,6 +113,7 @@
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(146, 30);
             this.txtPiso.TabIndex = 79;
+            this.txtPiso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPiso_KeyPress);
             // 
             // txtDepto
             // 
@@ -141,6 +142,7 @@
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(146, 30);
             this.txtCuit.TabIndex = 74;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtApellido
             // 
@@ -271,6 +273,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(146, 30);
             this.txtDni.TabIndex = 84;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // label8
             // 
@@ -458,6 +461,7 @@
             this.txtLegajoResponsable.Name = "txtLegajoResponsable";
             this.txtLegajoResponsable.Size = new System.Drawing.Size(129, 30);
             this.txtLegajoResponsable.TabIndex = 133;
+            this.txtLegajoResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajoResponsable_KeyPress);
             // 
             // label24
             // 
@@ -481,6 +485,7 @@
             this.txtNroContacto.Name = "txtNroContacto";
             this.txtNroContacto.Size = new System.Drawing.Size(307, 30);
             this.txtNroContacto.TabIndex = 130;
+            this.txtNroContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroContacto_KeyPress);
             // 
             // txtNroEmergencia
             // 
@@ -488,6 +493,7 @@
             this.txtNroEmergencia.Name = "txtNroEmergencia";
             this.txtNroEmergencia.Size = new System.Drawing.Size(307, 30);
             this.txtNroEmergencia.TabIndex = 129;
+            this.txtNroEmergencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroEmergencia_KeyPress);
             // 
             // txtMail
             // 
@@ -529,6 +535,7 @@
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(146, 30);
             this.txtSalario.TabIndex = 122;
+            this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalario_KeyPress);
             // 
             // cmbPuesto
             // 

@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DataAccesA"
+    "\\DataAccesA",
+    "\\PresentationA",
+    "\\PresentationA\\Colaboradores"
   ],
-  "SelectedNode": "\\DataAccesA\\ConnectionToSql.cs",
+  "SelectedNode": "\\PresentationA\\Colaboradores\\frmCargaColab.cs",
   "PreviewInSolutionExplorer": false
 }
