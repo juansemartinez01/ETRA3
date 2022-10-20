@@ -75,9 +75,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtPrestamoMaximo = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
             this.lblmontoSalario1 = new System.Windows.Forms.Label();
@@ -435,9 +432,6 @@
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.txtPrestamoMaximo);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.txtSalario);
             this.groupBox2.Controls.Add(this.cmbPuesto);
             this.groupBox2.Controls.Add(this.lblmontoSalario1);
@@ -528,31 +522,6 @@
             this.label20.Size = new System.Drawing.Size(51, 22);
             this.label20.TabIndex = 126;
             this.label20.Text = "Mail:";
-            // 
-            // txtPrestamoMaximo
-            // 
-            this.txtPrestamoMaximo.Location = new System.Drawing.Point(321, 242);
-            this.txtPrestamoMaximo.Name = "txtPrestamoMaximo";
-            this.txtPrestamoMaximo.Size = new System.Drawing.Size(146, 30);
-            this.txtPrestamoMaximo.TabIndex = 125;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(18, 245);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(283, 22);
-            this.label19.TabIndex = 124;
-            this.label19.Text = "Prestamo maximo permitido: $";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 181);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(321, 22);
-            this.label16.TabIndex = 123;
-            this.label16.Text = "Cuenta corriente del colaborador";
             // 
             // txtSalario
             // 
@@ -767,9 +736,6 @@
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DateTimePicker dtpfechaNacimiento;
-        private System.Windows.Forms.TextBox txtPrestamoMaximo;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label16;
         private Controls.BotonPadre btnConfirmar;
         private Controls.BotonPadre btnCancelar;
         private Controls.BotonPadre btnLimpiar;

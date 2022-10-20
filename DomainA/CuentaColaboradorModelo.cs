@@ -15,7 +15,7 @@ namespace DomainA
         public int Movimientoid { get; set; }
         public int TipoMovimineto { get; set; }
 
-        public string crearCuentaColaborador(int legajo,float monto)
+        public string crearCuentaColaborador(int legajo,double monto)
         {
             return cuentaColaborador.crearCuentaColaborador(legajo,monto);
         }

@@ -114,7 +114,7 @@ namespace DataAccesA
             }
         }
 
-        public string crearCuentaColaborador(int legajo, float monto)
+        public string crearCuentaColaborador(int legajo, double monto)
         {
             monto = -monto;
             try

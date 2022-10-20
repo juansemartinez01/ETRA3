@@ -98,15 +98,12 @@ namespace PresentationA.Colaboradores
                 MessageBox.Show("Debe asignarle un salario al colaborador.");
                 return;
             }
-            float prestamoMaximo;
-            if(txtPrestamoMaximo.Text == "")
-            {
-                prestamoMaximo = 0;
-            }
-            else
-            {
-                prestamoMaximo = float.Parse(txtPrestamoMaximo.Text);
-            }
+
+
+            double prestamoMaximo = (30 * 100 / float.Parse(txtSalario.Text));
+            prestamoMaximo = Math.Round(prestamoMaximo);
+
+            
             if (cmbEstados.SelectedIndex == -1)
             {
                 cmbEstados.SelectedIndex = 0;
