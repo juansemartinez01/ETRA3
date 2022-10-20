@@ -45,7 +45,6 @@
             this.lblHoraSalida = new System.Windows.Forms.Label();
             this.lblDiaIngreso = new System.Windows.Forms.Label();
             this.lblDiaSalida = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -70,7 +69,7 @@
             this.lblmontoSalario1.Location = new System.Drawing.Point(22, 44);
             this.lblmontoSalario1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblmontoSalario1.Name = "lblmontoSalario1";
-            this.lblmontoSalario1.Size = new System.Drawing.Size(73, 20);
+            this.lblmontoSalario1.Size = new System.Drawing.Size(90, 22);
             this.lblmontoSalario1.TabIndex = 0;
             this.lblmontoSalario1.Text = "Salario: $";
             // 
@@ -80,7 +79,7 @@
             this.label2.Location = new System.Drawing.Point(314, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.Size = new System.Drawing.Size(121, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Obra Social:";
             // 
@@ -90,7 +89,7 @@
             this.label4.Location = new System.Drawing.Point(22, 41);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 20);
+            this.label4.Size = new System.Drawing.Size(131, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "Hora Ingreso:";
             // 
@@ -100,7 +99,7 @@
             this.label5.Location = new System.Drawing.Point(22, 93);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 20);
+            this.label5.Size = new System.Drawing.Size(118, 22);
             this.label5.TabIndex = 4;
             this.label5.Text = "Hora Salida:";
             // 
@@ -110,7 +109,7 @@
             this.label6.Location = new System.Drawing.Point(314, 41);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 20);
+            this.label6.Size = new System.Drawing.Size(117, 22);
             this.label6.TabIndex = 5;
             this.label6.Text = "Día Ingreso:";
             // 
@@ -120,7 +119,7 @@
             this.label7.Location = new System.Drawing.Point(314, 93);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.Size = new System.Drawing.Size(104, 22);
             this.label7.TabIndex = 6;
             this.label7.Text = "Día Salida:";
             // 
@@ -130,7 +129,7 @@
             this.lblEstado.Location = new System.Drawing.Point(464, 44);
             this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(0, 20);
+            this.lblEstado.Size = new System.Drawing.Size(0, 22);
             this.lblEstado.TabIndex = 59;
             // 
             // label13
@@ -139,7 +138,7 @@
             this.label13.Location = new System.Drawing.Point(314, 44);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 20);
+            this.label13.Size = new System.Drawing.Size(77, 22);
             this.label13.TabIndex = 57;
             this.label13.Text = "Estado:";
             // 
@@ -149,7 +148,7 @@
             this.lblSalario.Location = new System.Drawing.Point(152, 44);
             this.lblSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(0, 20);
+            this.lblSalario.Size = new System.Drawing.Size(0, 22);
             this.lblSalario.TabIndex = 68;
             // 
             // lblObraSocial
@@ -158,7 +157,7 @@
             this.lblObraSocial.Location = new System.Drawing.Point(464, 91);
             this.lblObraSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblObraSocial.Name = "lblObraSocial";
-            this.lblObraSocial.Size = new System.Drawing.Size(0, 20);
+            this.lblObraSocial.Size = new System.Drawing.Size(0, 22);
             this.lblObraSocial.TabIndex = 69;
             // 
             // lblHoraIngreso
@@ -167,7 +166,7 @@
             this.lblHoraIngreso.Location = new System.Drawing.Point(152, 41);
             this.lblHoraIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoraIngreso.Name = "lblHoraIngreso";
-            this.lblHoraIngreso.Size = new System.Drawing.Size(0, 20);
+            this.lblHoraIngreso.Size = new System.Drawing.Size(0, 22);
             this.lblHoraIngreso.TabIndex = 70;
             // 
             // lblHoraSalida
@@ -176,7 +175,7 @@
             this.lblHoraSalida.Location = new System.Drawing.Point(152, 93);
             this.lblHoraSalida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoraSalida.Name = "lblHoraSalida";
-            this.lblHoraSalida.Size = new System.Drawing.Size(0, 20);
+            this.lblHoraSalida.Size = new System.Drawing.Size(0, 22);
             this.lblHoraSalida.TabIndex = 71;
             // 
             // lblDiaIngreso
@@ -185,7 +184,7 @@
             this.lblDiaIngreso.Location = new System.Drawing.Point(464, 41);
             this.lblDiaIngreso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiaIngreso.Name = "lblDiaIngreso";
-            this.lblDiaIngreso.Size = new System.Drawing.Size(0, 20);
+            this.lblDiaIngreso.Size = new System.Drawing.Size(0, 22);
             this.lblDiaIngreso.TabIndex = 72;
             // 
             // lblDiaSalida
@@ -194,18 +193,8 @@
             this.lblDiaSalida.Location = new System.Drawing.Point(464, 93);
             this.lblDiaSalida.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiaSalida.Name = "lblDiaSalida";
-            this.lblDiaSalida.Size = new System.Drawing.Size(0, 20);
+            this.lblDiaSalida.Size = new System.Drawing.Size(0, 22);
             this.lblDiaSalida.TabIndex = 73;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(22, 91);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 20);
-            this.label16.TabIndex = 75;
-            this.label16.Text = "Sucursal:";
             // 
             // lblSucursal
             // 
@@ -213,7 +202,7 @@
             this.lblSucursal.Location = new System.Drawing.Point(152, 91);
             this.lblSucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSucursal.Name = "lblSucursal";
-            this.lblSucursal.Size = new System.Drawing.Size(0, 20);
+            this.lblSucursal.Size = new System.Drawing.Size(0, 22);
             this.lblSucursal.TabIndex = 76;
             // 
             // label10
@@ -222,7 +211,7 @@
             this.label10.Location = new System.Drawing.Point(44, 38);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
+            this.label10.Size = new System.Drawing.Size(76, 22);
             this.label10.TabIndex = 77;
             this.label10.Text = "Puesto:";
             // 
@@ -232,7 +221,7 @@
             this.label12.Location = new System.Drawing.Point(359, 38);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(171, 20);
+            this.label12.Size = new System.Drawing.Size(213, 22);
             this.label12.TabIndex = 79;
             this.label12.Text = "Responsable a Cargo:";
             // 
@@ -242,7 +231,7 @@
             this.label15.Location = new System.Drawing.Point(359, 85);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(225, 20);
+            this.label15.Size = new System.Drawing.Size(280, 22);
             this.label15.TabIndex = 81;
             this.label15.Text = "Legajo Responsable a Cargo:";
             // 
@@ -252,7 +241,7 @@
             this.lblPuesto.Location = new System.Drawing.Point(171, 38);
             this.lblPuesto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPuesto.Name = "lblPuesto";
-            this.lblPuesto.Size = new System.Drawing.Size(0, 20);
+            this.lblPuesto.Size = new System.Drawing.Size(0, 22);
             this.lblPuesto.TabIndex = 82;
             // 
             // lblNomJefe
@@ -261,7 +250,7 @@
             this.lblNomJefe.Location = new System.Drawing.Point(543, 38);
             this.lblNomJefe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomJefe.Name = "lblNomJefe";
-            this.lblNomJefe.Size = new System.Drawing.Size(0, 20);
+            this.lblNomJefe.Size = new System.Drawing.Size(0, 22);
             this.lblNomJefe.TabIndex = 83;
             // 
             // lblLegJefe
@@ -270,7 +259,7 @@
             this.lblLegJefe.Location = new System.Drawing.Point(620, 85);
             this.lblLegJefe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLegJefe.Name = "lblLegJefe";
-            this.lblLegJefe.Size = new System.Drawing.Size(0, 20);
+            this.lblLegJefe.Size = new System.Drawing.Size(0, 22);
             this.lblLegJefe.TabIndex = 84;
             // 
             // lblmontoSalario
@@ -279,7 +268,7 @@
             this.lblmontoSalario.Location = new System.Drawing.Point(117, 44);
             this.lblmontoSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblmontoSalario.Name = "lblmontoSalario";
-            this.lblmontoSalario.Size = new System.Drawing.Size(53, 20);
+            this.lblmontoSalario.Size = new System.Drawing.Size(65, 22);
             this.lblmontoSalario.TabIndex = 85;
             this.lblmontoSalario.Text = "label1";
             // 
@@ -289,7 +278,7 @@
             this.lblnombreEstado.Location = new System.Drawing.Point(399, 44);
             this.lblnombreEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnombreEstado.Name = "lblnombreEstado";
-            this.lblnombreEstado.Size = new System.Drawing.Size(53, 20);
+            this.lblnombreEstado.Size = new System.Drawing.Size(65, 22);
             this.lblnombreEstado.TabIndex = 86;
             this.lblnombreEstado.Text = "label1";
             // 
@@ -299,7 +288,7 @@
             this.lblnombreCargo.Location = new System.Drawing.Point(117, 38);
             this.lblnombreCargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnombreCargo.Name = "lblnombreCargo";
-            this.lblnombreCargo.Size = new System.Drawing.Size(53, 20);
+            this.lblnombreCargo.Size = new System.Drawing.Size(65, 22);
             this.lblnombreCargo.TabIndex = 87;
             this.lblnombreCargo.Text = "label1";
             // 
@@ -313,7 +302,6 @@
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.lblSalario);
             this.groupBox1.Controls.Add(this.lblObraSocial);
-            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.lblSucursal);
             this.groupBox1.Location = new System.Drawing.Point(32, 14);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -342,6 +330,7 @@
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "HORARIO";
+            this.groupBox2.Visible = false;
             // 
             // groupBox3
             // 
@@ -363,7 +352,7 @@
             // 
             // frmDatosGenerales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(731, 579);
@@ -402,7 +391,6 @@
         private System.Windows.Forms.Label lblHoraSalida;
         private System.Windows.Forms.Label lblDiaIngreso;
         private System.Windows.Forms.Label lblDiaSalida;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;

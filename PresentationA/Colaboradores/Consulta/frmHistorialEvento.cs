@@ -33,7 +33,7 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaInicio.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             dtpfechaFin.Format = DateTimePickerFormat.Custom;
             dtpfechaFin.CustomFormat = "dd/MM/yyyy hh:mm:ss";
-
+            
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {

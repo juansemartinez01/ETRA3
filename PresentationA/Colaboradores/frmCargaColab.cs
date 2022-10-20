@@ -24,7 +24,8 @@ namespace PresentationA.Colaboradores
             LlenarCombo(cmbEstados, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             LlenarCombo(cmbProvincias, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
-
+            chkIngresaHoy.Checked = true;
+            dtpFechaingreso.Enabled = false;
 
         }
         //private void validarCamposObligatorios()
@@ -51,6 +52,52 @@ namespace PresentationA.Colaboradores
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
+            DateTime fechaIngreso;
+            string obraSocial = txtObraSocial.Text;
+            int legajoResponsable = 10000;
+            if (chkIngresaHoy.Checked)
+            {
+                fechaIngreso = DateTime.Now;
+            }
+            else
+            {
+                fechaIngreso = dtpFechaingreso.Value.Date;
+            }
+            if (dtpfechaNacimiento.Value.Date.Year == DateTime.Now.Year)
+            {
+                MessageBox.Show("Debe ingresar una fecha de nacimiento valida");
+                return;
+            }
+            if(txtObraSocial.Text == "")
+            {
+                obraSocial = "No especifica";
+            }
+            if(txtLegajoResponsable.Text != "")
+            {
+                legajoResponsable = int.Parse(txtLegajoResponsable.Text.ToString());
+            }
+
+            string telefonoEmergencia = txtNroEmergencia.Text;
+            string telefonoContacto = txtNroContacto.Text;
+            string mail = txtMail.Text;
+            if(txtMail.Text == "")
+            {
+                mail = "No especifica";
+            }
+            if(txtNroEmergencia.Text == "")
+            {
+                telefonoEmergencia = "No especifica";
+            }
+            if(txtNroContacto.Text == "")
+            {
+                telefonoContacto = "No especifica";
+            }
+            if(txtSalario.Text == "")
+            {
+                MessageBox.Show("Debe asignarle un salario al colaborador.");
+                return;
+            }
             float prestamoMaximo;
             if(txtPrestamoMaximo.Text == "")
             {
@@ -108,7 +155,7 @@ namespace PresentationA.Colaboradores
                                             {
                                                 departamento = txtDepto.Text.ToString();
                                                 ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue);
+                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue,float.Parse(txtSalario.Text.ToString()),mail,telefonoContacto,telefonoEmergencia,fechaNacimiento,fechaIngreso,obraSocial,legajoResponsable);
                                                 if (openFileDialog1.InitialDirectory != "no seleccionado")
                                                 {
 
@@ -128,7 +175,7 @@ namespace PresentationA.Colaboradores
                                             piso = 0;
                                             departamento = "NULL";
                                             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                            var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue);
+                                            var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable);
                                             if (openFileDialog1.InitialDirectory != "no seleccionado")
                                             {
 
@@ -277,6 +324,18 @@ namespace PresentationA.Colaboradores
             cmbProvincias.SelectedIndex = -1;
             cmbEstados.SelectedIndex = -1;
             cmbPuesto.SelectedIndex = -1;
+        }
+
+        private void chkIngresaHoy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkIngresaHoy.Checked)
+            {
+                dtpFechaingreso.Enabled = false;
+            }
+            else
+            {
+                dtpFechaingreso.Enabled = true;
+            }
         }
     }
 }

@@ -274,7 +274,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado)
+        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado,float salario,string mail,string telefonoContacto,string telefonoEmergencia,DateTime fechaNacimiento,DateTime fechaIngreso,string obraSocial,int legajoResponsable)
         {
             try
             {
@@ -314,11 +314,19 @@ namespace DataAccesA
                             using (var command2 = new SqlCommand())
                             {
                                 command2.Connection = connection;
-                                command2.CommandText = "INSERT INTO Colaborador (nombre,apellido,idDireccion,fechaIngreso,borradoLogico,dni,CUIT) VALUES (@nombre,@apellido,(SELECT MAX(id_direccion) FROM Direccion),GETDATE(),0,@dni,@CUIT)";
-                                command2.Parameters.AddWithValue("@dni", dni);
-                                command2.Parameters.AddWithValue("@CUIT", cuit);
+                                command2.CommandText = "INSERT INTO Colaborador VALUES (@nombre,@apellido,@mail,(SELECT MAX(id_direccion) FROM Direccion),Format(@fechaNacimiento, 'yyyy - MM - dd'),Format(@fechaIngreso, 'yyyy - MM - dd'),0,@dni,@cuit,NULL,@nroContacto,@nroEmergencia,@obraSocial,@legajoResponsable,NULL)";
                                 command2.Parameters.AddWithValue("@nombre", nombre);
                                 command2.Parameters.AddWithValue("@apellido", apellido);
+                                command2.Parameters.AddWithValue("@mail", mail);
+                                command2.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                                command2.Parameters.AddWithValue("@fechaIngreso", fechaIngreso);
+                                command2.Parameters.AddWithValue("@dni", dni);
+                                command2.Parameters.AddWithValue("@cuit", cuit);
+                                command2.Parameters.AddWithValue("@nroContacto", telefonoContacto);
+                                command2.Parameters.AddWithValue("@nroEmergencia", telefonoEmergencia);
+                                command2.Parameters.AddWithValue("@obraSocial", obraSocial);
+                                command2.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
+
                                 command2.CommandType = CommandType.Text;
 
                                 var colaboradorCreado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
@@ -329,8 +337,8 @@ namespace DataAccesA
                                     {
 
                                         command3.Connection = connection;
-                                        command3.CommandText = "INSERT INTO Salario VALUES (19900,0)";
-
+                                        command3.CommandText = "INSERT INTO Salario VALUES (@salario,0)";
+                                        command3.Parameters.AddWithValue("@salario", salario);
                                         command3.CommandType = CommandType.Text;
                                         var SalarioCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
                                         if (SalarioCreado != 0)

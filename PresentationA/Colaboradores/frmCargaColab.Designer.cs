@@ -59,10 +59,22 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.chkIngresaHoy = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dtpFechaingreso = new System.Windows.Forms.DateTimePicker();
+            this.dtpfechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtLegajoResponsable = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtObraSocial = new System.Windows.Forms.TextBox();
+            this.txtNroContacto = new System.Windows.Forms.TextBox();
+            this.txtNroEmergencia = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtPrestamoMaximo = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -79,13 +91,6 @@
             this.btnConfirmar = new PresentationA.Controls.BotonPadre();
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
             this.btnLimpiar = new PresentationA.Controls.BotonPadre();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtNroEmergencia = new System.Windows.Forms.TextBox();
-            this.txtNroContacto = new System.Windows.Forms.TextBox();
-            this.txtObraSocial = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -327,7 +332,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpfechaInicio);
+            this.groupBox1.Controls.Add(this.chkIngresaHoy);
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.dtpFechaingreso);
+            this.groupBox1.Controls.Add(this.dtpfechaNacimiento);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.txtPiso);
@@ -362,13 +370,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
-            // dtpfechaInicio
+            // chkIngresaHoy
             // 
-            this.dtpfechaInicio.Enabled = false;
-            this.dtpfechaInicio.Location = new System.Drawing.Point(423, 25);
-            this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(120, 30);
-            this.dtpfechaInicio.TabIndex = 91;
+            this.chkIngresaHoy.AutoSize = true;
+            this.chkIngresaHoy.Location = new System.Drawing.Point(561, 90);
+            this.chkIngresaHoy.Name = "chkIngresaHoy";
+            this.chkIngresaHoy.Size = new System.Drawing.Size(140, 26);
+            this.chkIngresaHoy.TabIndex = 94;
+            this.chkIngresaHoy.Text = "Ingresa hoy";
+            this.chkIngresaHoy.UseVisualStyleBackColor = true;
+            this.chkIngresaHoy.CheckedChanged += new System.EventHandler(this.chkIngresaHoy_CheckedChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(286, 89);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(157, 22);
+            this.label23.TabIndex = 93;
+            this.label23.Text = "* Fecha ingreso:";
+            // 
+            // dtpFechaingreso
+            // 
+            this.dtpFechaingreso.Location = new System.Drawing.Point(423, 83);
+            this.dtpFechaingreso.Name = "dtpFechaingreso";
+            this.dtpFechaingreso.Size = new System.Drawing.Size(120, 30);
+            this.dtpFechaingreso.TabIndex = 92;
+            // 
+            // dtpfechaNacimiento
+            // 
+            this.dtpfechaNacimiento.Location = new System.Drawing.Point(423, 25);
+            this.dtpfechaNacimiento.Name = "dtpfechaNacimiento";
+            this.dtpfechaNacimiento.Size = new System.Drawing.Size(120, 30);
+            this.dtpfechaNacimiento.TabIndex = 91;
             // 
             // label15
             // 
@@ -392,6 +426,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtLegajoResponsable);
+            this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.txtObraSocial);
             this.groupBox2.Controls.Add(this.txtNroContacto);
             this.groupBox2.Controls.Add(this.txtNroEmergencia);
@@ -422,6 +458,77 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
             // 
+            // txtLegajoResponsable
+            // 
+            this.txtLegajoResponsable.Location = new System.Drawing.Point(722, 126);
+            this.txtLegajoResponsable.Name = "txtLegajoResponsable";
+            this.txtLegajoResponsable.Size = new System.Drawing.Size(129, 30);
+            this.txtLegajoResponsable.TabIndex = 133;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(524, 134);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(192, 22);
+            this.label24.TabIndex = 132;
+            this.label24.Text = "Legajo responsable:";
+            // 
+            // txtObraSocial
+            // 
+            this.txtObraSocial.Location = new System.Drawing.Point(414, 83);
+            this.txtObraSocial.Name = "txtObraSocial";
+            this.txtObraSocial.Size = new System.Drawing.Size(129, 30);
+            this.txtObraSocial.TabIndex = 131;
+            // 
+            // txtNroContacto
+            // 
+            this.txtNroContacto.Location = new System.Drawing.Point(639, 217);
+            this.txtNroContacto.Name = "txtNroContacto";
+            this.txtNroContacto.Size = new System.Drawing.Size(307, 30);
+            this.txtNroContacto.TabIndex = 130;
+            // 
+            // txtNroEmergencia
+            // 
+            this.txtNroEmergencia.Location = new System.Drawing.Point(639, 253);
+            this.txtNroEmergencia.Name = "txtNroEmergencia";
+            this.txtNroEmergencia.Size = new System.Drawing.Size(307, 30);
+            this.txtNroEmergencia.TabIndex = 129;
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(639, 178);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(307, 30);
+            this.txtMail.TabIndex = 92;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(481, 214);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(142, 22);
+            this.label22.TabIndex = 128;
+            this.label22.Text = "Nro Contacto:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(481, 250);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(162, 22);
+            this.label21.TabIndex = 127;
+            this.label21.Text = "Nro Emergencia:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(481, 181);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 22);
+            this.label20.TabIndex = 126;
+            this.label20.Text = "Mail:";
+            // 
             // txtPrestamoMaximo
             // 
             this.txtPrestamoMaximo.Location = new System.Drawing.Point(321, 242);
@@ -449,7 +556,7 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(107, 35);
+            this.txtSalario.Location = new System.Drawing.Point(128, 35);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(146, 30);
             this.txtSalario.TabIndex = 122;
@@ -467,9 +574,9 @@
             this.lblmontoSalario1.AutoSize = true;
             this.lblmontoSalario1.Location = new System.Drawing.Point(18, 38);
             this.lblmontoSalario1.Name = "lblmontoSalario1";
-            this.lblmontoSalario1.Size = new System.Drawing.Size(90, 22);
+            this.lblmontoSalario1.Size = new System.Drawing.Size(104, 22);
             this.lblmontoSalario1.TabIndex = 97;
-            this.lblmontoSalario1.Text = "Salario: $";
+            this.lblmontoSalario1.Text = "* Salario: $";
             // 
             // label26
             // 
@@ -589,61 +696,6 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(481, 181);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 22);
-            this.label20.TabIndex = 126;
-            this.label20.Text = "Mail:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(481, 250);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(162, 22);
-            this.label21.TabIndex = 127;
-            this.label21.Text = "Nro Emergencia:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(481, 214);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(142, 22);
-            this.label22.TabIndex = 128;
-            this.label22.Text = "Nro Contacto:";
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(639, 178);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(307, 30);
-            this.txtMail.TabIndex = 92;
-            // 
-            // txtNroEmergencia
-            // 
-            this.txtNroEmergencia.Location = new System.Drawing.Point(639, 253);
-            this.txtNroEmergencia.Name = "txtNroEmergencia";
-            this.txtNroEmergencia.Size = new System.Drawing.Size(307, 30);
-            this.txtNroEmergencia.TabIndex = 129;
-            // 
-            // txtNroContacto
-            // 
-            this.txtNroContacto.Location = new System.Drawing.Point(639, 217);
-            this.txtNroContacto.Name = "txtNroContacto";
-            this.txtNroContacto.Size = new System.Drawing.Size(307, 30);
-            this.txtNroContacto.TabIndex = 130;
-            // 
-            // txtObraSocial
-            // 
-            this.txtObraSocial.Location = new System.Drawing.Point(414, 83);
-            this.txtObraSocial.Name = "txtObraSocial";
-            this.txtObraSocial.Size = new System.Drawing.Size(129, 30);
-            this.txtObraSocial.TabIndex = 131;
-            // 
             // frmCargaColab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -714,7 +766,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dtpfechaInicio;
+        private System.Windows.Forms.DateTimePicker dtpfechaNacimiento;
         private System.Windows.Forms.TextBox txtPrestamoMaximo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label16;
@@ -728,5 +780,10 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.CheckBox chkIngresaHoy;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dtpFechaingreso;
+        private System.Windows.Forms.TextBox txtLegajoResponsable;
+        private System.Windows.Forms.Label label24;
     }
 }

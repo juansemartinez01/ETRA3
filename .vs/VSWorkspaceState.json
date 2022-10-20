@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DataAccesA"
   ],
-  "SelectedNode": "\\ETRA.sln",
+  "SelectedNode": "\\DataAccesA\\ConnectionToSql.cs",
   "PreviewInSolutionExplorer": false
 }
