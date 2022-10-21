@@ -34,7 +34,7 @@ namespace DataAccesA
                         //    command.Parameters.AddWithValue("@legajo", legajo.ToString() + '%');
                         //}
 
-                        command.CommandText = "SELECT legajo, c.nombre, apellido,CUIT AS Cuit,nroContacto AS NroCont,nroEmergencia AS NroEmer, mail,CONVERT(varchar,fechaNacimiento, 103) AS FechaNac,d.nombreCalle,d.numeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto AS montoSalario,d.piso AS piso, d.departamento AS Depto, d.localidad AS localidad, d.provincia AS provincia,C.dni as Dni,C.obraSocial as ObraSocial FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL";
+                        command.CommandText = "SELECT legajo AS Legajo, c.nombre, apellido,CUIT AS Cuit,nroContacto AS NroContacto,nroEmergencia AS NroEmergencia, mail AS Mail,CONVERT(varchar,fechaNacimiento, 103) AS FechaNacimiento,d.nombreCalle AS Calle,d.numeroCalle AS NumeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto AS Salario,d.piso AS Piso, d.departamento AS Departamento, d.localidad AS Localidad, d.provincia AS Provincia,C.dni as Dni,C.obraSocial as ObraSocial FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL";
                         command.Parameters.AddWithValue("@legajo", legajo + "%");
                         command.Parameters.AddWithValue("@nombre", nombre + "%");
                         command.Parameters.AddWithValue("@apellido", apellido + "%");
@@ -635,7 +635,7 @@ namespace DataAccesA
         }
         public string EliminarColaboradorPermanentemente()
         {
-            int algunDelete = 0;
+            bool algunDelete = false;
             try
             {
 
@@ -649,7 +649,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM FamiliarColaborador WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if(var > 0)
+                        {
+                            algunDelete = true;
+                        }
                         
 
 
@@ -660,7 +664,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM CuentaColaborador WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
 
 
 
@@ -671,7 +679,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM MovimientosCuentaColaborador WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
 
 
 
@@ -682,7 +694,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM HistorialEvento WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
                     using (var command = new SqlCommand())
                     {
@@ -690,7 +706,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM ColaboradorMultimedia WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
                     using (var command = new SqlCommand())
                     {
@@ -698,7 +718,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM Evento WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
                     using (var command = new SqlCommand())
                     {
@@ -706,7 +730,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM HistorialCargo WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
                     using (var command = new SqlCommand())
                     {
@@ -714,7 +742,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM HistorialEstado WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
 
                     using (var command = new SqlCommand())
@@ -723,7 +755,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM HistorialSalario WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
                     using (var command = new SqlCommand())
                     {
@@ -731,7 +767,11 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM Salario WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
 
                     }
                     using (var command = new SqlCommand())
@@ -740,9 +780,13 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "DELETE FROM Colaborador WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
-                        algunDelete += command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
                     }
-                    if(algunDelete == 0)
+                    if(algunDelete == false)
                     {
                         return "No se elimino ningun elemento de la base de datos.";
                     }
@@ -815,6 +859,107 @@ namespace DataAccesA
             }catch(Exception ex)
             {
                 return documentos;
+            }
+        }
+        public string modificarColaborador(int legajo,string nombre,string apellido,DateTime fechaNacimiento,string Cuit,int dni,string calle,int numeroCalle,int piso, string depto,string localidad,string mail,string telefonoContacto,string telefonoEmergencia,int estado,string obraSocial,int puesto,int legajoResponsable)
+        {
+            int esEdificio = 0;
+            if(piso > 0)
+            {
+                esEdificio = 1;
+            }
+            int idDireccionBase = 0;
+            bool algunaModificacion = false;
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre,apellido = @apellido,mail = @mail,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,CUIT=@cuit,nroContacto = @nroContacto,nroEmergencia = @nroEmergencia,obraSocial = @obraSocial,legajoResponsable = @legajoResponsable  WHERE legajo = @legajo";
+                        command.Parameters.AddWithValue("@nombre", nombre);
+                        command.Parameters.AddWithValue("@apellido", apellido);
+                        command.Parameters.AddWithValue("@mail", mail);
+                        command.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                        command.Parameters.AddWithValue("@dni", dni);
+                        command.Parameters.AddWithValue("@cuit", Cuit);
+                        command.Parameters.AddWithValue("@nroContacto", telefonoContacto);
+                        command.Parameters.AddWithValue("@nroEmergencia", telefonoEmergencia);
+                        command.Parameters.AddWithValue("@obraSocial", obraSocial);
+                        command.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        var colaboradorModificado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if(colaboradorModificado > 0)
+                        {
+                            algunaModificacion = true;
+                        }
+                    }
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT idDireccion FROM Colaborador WHERE legajo = @legajo";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord idDireccion = (IDataRecord)reader;
+                                idDireccionBase = int.Parse("" + idDireccion[0] + "");
+                            }
+                            if (idDireccionBase > 0)
+                            {
+                                using (var command1 = new SqlCommand())
+                                {
+                                    command1.Connection = connection;
+                                    command1.CommandText = "UPDATE Direccion SET nombreCalle = @nombreCalle, numeroCalle = @numeroCalle,esEdificio = @esEdificio,piso = @piso,departamento = @departamento,localidad = @localidad WHERE id_direccion = @idDireccion";
+                                    command1.Parameters.AddWithValue("@nombreCalle", calle);
+                                    command1.Parameters.AddWithValue("@numeroCalle", numeroCalle);
+                                    command1.Parameters.AddWithValue("@esEdificio", esEdificio);
+                                    command1.Parameters.AddWithValue("@piso", piso);
+                                    command1.Parameters.AddWithValue("@departamento", depto);
+                                    command1.Parameters.AddWithValue("@localidad", localidad);
+                                    command1.Parameters.AddWithValue("@idDireccion", idDireccionBase);
+
+                                    command1.CommandType = CommandType.Text;
+                                    var colaboradorModificado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                                    if (colaboradorModificado > 0)
+                                    {
+                                        algunaModificacion = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                return "Error con la base de datos";
+                            }
+
+                        }
+                        else
+                        {
+                            return "Error con la base de datos";
+                        }
+                        if (algunaModificacion)
+                        {
+                            return "Se aplicaron las modificaciones";
+                        }
+                        else
+                        {
+                            return "No se modifico ningun parametro";
+                        }
+
+
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
             }
         }
 

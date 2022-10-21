@@ -56,6 +56,9 @@ namespace DomainA
         {
             return int.Parse(colaboradorDao.BuscarIdUltimoEvento());
         }
-
+        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable)
+        {
+            return colaboradorDao.modificarColaborador(legajo,nombre,apellido,fechaNacimiento,Cuit,dni,calle,numeroCalle,piso,depto,localidad,mail,telefonoContacto,telefonoEmergencia,estado,obraSocial,puesto,legajoResponsable); 
+        }
     }
 }

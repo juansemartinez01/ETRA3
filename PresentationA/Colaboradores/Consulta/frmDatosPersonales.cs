@@ -57,7 +57,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void bttnEliminarColaborador_Click(object sender, EventArgs e)
         {
-            string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lbllegajo.Text));
+            string mensaje = colaboradorModelo.EliminarColaborador(int.Parse(lbllLegajo.Text));
             MessageBox.Show(mensaje);
 
         }
