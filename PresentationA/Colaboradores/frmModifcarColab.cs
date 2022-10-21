@@ -19,7 +19,15 @@ namespace PresentationA.Colaboradores
             InitializeComponent();
             completarLabels(this, colaborador, "lbl");
             completarLabels(this, colaborador, "txt");
+            LlenarCombo(cmbEstado, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
+            LlenarCombo(cmbLegajoResponsable, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
+            LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_puesto");
             
+
+        }
+        public void traerCombos(DataTable colaborador)
+        {
+
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -118,7 +126,9 @@ namespace PresentationA.Colaboradores
             }
             int puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
             int legajoResponsable = 10000;
-            colaboradorModelo.modificarColaborador(legajo,nombre,apellido,fechaNacimiento,Cuit,dni,calle,numeroCalle,piso,departamento,localidad,mail,numeroContacto,numeroEmergencia,estado,obraSocial,puesto,legajoResponsable)
+
+            
+            colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable);
         }
     }
 }
