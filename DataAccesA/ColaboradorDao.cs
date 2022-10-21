@@ -757,7 +757,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento, DateTime fecha, bool aplicarFecha)
+        public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento, string fecha, bool aplicarFecha)
         {
 
             DataTable documentos = new DataTable();
@@ -765,8 +765,8 @@ namespace DataAccesA
             
             if (aplicarFecha) 
             {
-                fecha = DateTime.Parse(fecha.ToShortDateString());
-                parametrosAdicionales = parametrosAdicionales + "AND HE.fechaRegistro >= " + "Format(" + fecha + ", 'yyyy - MM - dd')";
+
+                parametrosAdicionales = parametrosAdicionales + "AND HE.fechaRegistro >= '" + fecha + "'";
             }
             if(legajoColaborador != 0)
             {

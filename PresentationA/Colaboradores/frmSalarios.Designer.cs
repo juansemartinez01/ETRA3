@@ -65,8 +65,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.dgvSalarios = new PresentationA.Controls.DataGridPadre();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalarios)).BeginInit();
@@ -483,8 +485,10 @@
             this.dgvSalarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.legajo,
+            this.nombre,
+            this.apellido,
             this.monto,
-            this.fechaDeInicio});
+            this.fechaInicio});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -520,19 +524,31 @@
             this.legajo.Name = "legajo";
             this.legajo.ReadOnly = true;
             // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 6;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
             // monto
             // 
             this.monto.HeaderText = "Monto";
             this.monto.MinimumWidth = 6;
             this.monto.Name = "monto";
-            this.monto.ReadOnly = true;
             // 
-            // fechaDeInicio
+            // fechaInicio
             // 
-            this.fechaDeInicio.HeaderText = "Fecha de Inicio";
-            this.fechaDeInicio.MinimumWidth = 6;
-            this.fechaDeInicio.Name = "fechaDeInicio";
-            this.fechaDeInicio.ReadOnly = true;
+            this.fechaInicio.HeaderText = "Fecha";
+            this.fechaInicio.MinimumWidth = 6;
+            this.fechaInicio.Name = "fechaInicio";
             // 
             // frmSalarios
             // 
@@ -577,9 +593,6 @@
         private Controls.BotonPadre btnExportar;
         private Controls.BotonPadre botonPadre1;
         private Controls.DataGridPadre dgvSalarios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeInicio;
         private Controls.BotonPadre btnModificarSalariosCargo;
         private System.Windows.Forms.TextBox txtMontoModificarSalarioCargo;
         private System.Windows.Forms.Label label9;
@@ -594,5 +607,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
     }
 }

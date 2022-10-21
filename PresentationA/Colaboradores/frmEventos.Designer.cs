@@ -41,6 +41,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkFiltroFecha = new System.Windows.Forms.CheckBox();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new PresentationA.Controls.BotonPadre();
@@ -53,12 +54,6 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.cmbTipoEvento2 = new System.Windows.Forms.ComboBox();
             this.dgvEventos = new PresentationA.Controls.DataGridPadre();
-            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDeInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
@@ -152,6 +147,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkFiltroFecha);
             this.groupBox1.Controls.Add(this.btnAplicar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -169,6 +165,17 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // chkFiltroFecha
+            // 
+            this.chkFiltroFecha.AutoSize = true;
+            this.chkFiltroFecha.Location = new System.Drawing.Point(954, 40);
+            this.chkFiltroFecha.Name = "chkFiltroFecha";
+            this.chkFiltroFecha.Size = new System.Drawing.Size(203, 26);
+            this.chkFiltroFecha.TabIndex = 12;
+            this.chkFiltroFecha.Text = "Activar filtro fecha";
+            this.chkFiltroFecha.UseVisualStyleBackColor = true;
+            this.chkFiltroFecha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btnAplicar
             // 
@@ -319,13 +326,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.legajo,
-            this.tipo,
-            this.descripcion,
-            this.fechaDeInicio,
-            this.fechaFin,
-            this.fechaRegistro});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -352,48 +352,6 @@
             this.dgvEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEventos.Size = new System.Drawing.Size(936, 242);
             this.dgvEventos.TabIndex = 45;
-            // 
-            // legajo
-            // 
-            this.legajo.HeaderText = "Legajo";
-            this.legajo.MinimumWidth = 6;
-            this.legajo.Name = "legajo";
-            this.legajo.ReadOnly = true;
-            // 
-            // tipo
-            // 
-            this.tipo.HeaderText = "Tipo";
-            this.tipo.MinimumWidth = 6;
-            this.tipo.Name = "tipo";
-            this.tipo.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // fechaDeInicio
-            // 
-            this.fechaDeInicio.HeaderText = "Fecha de Inicio";
-            this.fechaDeInicio.MinimumWidth = 6;
-            this.fechaDeInicio.Name = "fechaDeInicio";
-            this.fechaDeInicio.ReadOnly = true;
-            // 
-            // fechaFin
-            // 
-            this.fechaFin.HeaderText = "Fecha Fin";
-            this.fechaFin.MinimumWidth = 6;
-            this.fechaFin.Name = "fechaFin";
-            this.fechaFin.ReadOnly = true;
-            // 
-            // fechaRegistro
-            // 
-            this.fechaRegistro.HeaderText = "Fecha de Registro";
-            this.fechaRegistro.MinimumWidth = 6;
-            this.fechaRegistro.Name = "fechaRegistro";
-            this.fechaRegistro.ReadOnly = true;
             // 
             // frmEventos
             // 
@@ -442,11 +400,6 @@
         private Controls.BotonPadre btnAplicar;
         private Controls.BotonPadre button1;
         private Controls.DataGridPadre dgvEventos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDeInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private System.Windows.Forms.CheckBox chkFiltroFecha;
     }
 }

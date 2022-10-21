@@ -17,7 +17,7 @@ namespace PresentationA.Colaboradores
         public frmDocumentos()
         {
             InitializeComponent();
-            cargarTabla(0, 0, 0,DateTime.Now,false);
+            cargarTabla(0, 0, 0,"",false);
             limpiarCampos();
             LlenarCombo(cmbColaborador, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
             LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
@@ -52,7 +52,7 @@ namespace PresentationA.Colaboradores
             excel.Visible = true;
         
         }
-        private void cargarTabla(int legajo,int tipoDocumento,int tipoEvento,DateTime fecha,bool aplicarFecha)
+        private void cargarTabla(int legajo,int tipoDocumento,int tipoEvento,string fecha,bool aplicarFecha)
         {
             try
             {
@@ -75,11 +75,11 @@ namespace PresentationA.Colaboradores
             int legajo = 0;
             int tipoEvento = 0;
             int tipoDocumento = 0;
-            DateTime fecha = DateTime.Now;
+            string fecha = "";
             bool aplicarFecha = false;
             if (chkFiltroFecha.Checked)
             {
-                fecha = dtpFechaRegistro.Value.Date;
+                fecha = dtpFechaRegistro.Value.ToString("yyyy/MM/dd");
                 aplicarFecha = true;
             }
             if(cmbColaborador.SelectedIndex != -1)

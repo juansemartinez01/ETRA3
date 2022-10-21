@@ -15,6 +15,8 @@ namespace PresentationA.Colaboradores
         {
             InitializeComponent();
             CargarDG();
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
             LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
             LlenarCombo(cmbTipoEvento2, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
             LlenarCombo(cmbColaboradores, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
@@ -26,12 +28,17 @@ namespace PresentationA.Colaboradores
         {
             try
             {
+                string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
+                DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta);
+                dgvEventos.DataSource = tabla;
+                /*
                 eventos = objetoEvento.getAllEventos();
                 for (int i = 0; i < eventos.Rows.Count; i++)
                 {
                     //crear metodo completar labels
                     dgvEventos.Rows.Add(eventos.Rows[i]["Legajo Colaborador"],eventos.Rows[i]["Tipo"], eventos.Rows[i]["Descripción"], eventos.Rows[i]["Fecha de Inicio"], eventos.Rows[i]["Fecha Fin"], eventos.Rows[i]["Fecha de Registro"]);
                 }
+                */
 
             }
             catch (Exception ex)
@@ -53,12 +60,14 @@ namespace PresentationA.Colaboradores
             {
                 string fechaInicio = dateTimePicker1.Value.ToString("yyyy/MM/dd");
                 string fechaFin = dateTimePicker2.Value.ToString("yyyy/MM/dd");
-                Dictionary<string, object> parametros = new Dictionary<string, object>();
-                parametros.Add("fechaInicio", fechaInicio);
-                parametros.Add("fechaFin", fechaFin);
-
-
-                string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.fechaInicio >= @fechaInicio AND H.fechaFin <= @fechaFin";
+                
+                
+             
+                string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
+                if (chkFiltroFecha.Checked)
+                {
+                    consulta += " AND H.fechaInicio >= " + fechaInicio + " AND H.fechaFin <= " + fechaFin;
+                }
                 if (cmbColaboradores.SelectedIndex != -1 && cmbTipoEvento.SelectedIndex != -1)
                 {
                     string tipoEventoSelecconado = cmbTipoEvento.SelectedValue.ToString();
@@ -76,8 +85,9 @@ namespace PresentationA.Colaboradores
                     consulta += " AND H.legajoColaborador =" + legajoColaboradorSelecconado;
                 }
 
-                DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta, parametros);
+                DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta);
                 dgvEventos.DataSource = tabla;
+                limpiarCampos();
 
             }
             catch (Exception ex)
@@ -108,6 +118,26 @@ namespace PresentationA.Colaboradores
             {
                 MessageBox.Show("Debe seleccionar un tipo de evento");
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFiltroFecha.Checked)
+            {
+                dateTimePicker1.Enabled = true;
+                dateTimePicker2.Enabled = true;
+            }
+            else
+            {
+                dateTimePicker1.Enabled = false;
+                dateTimePicker2.Enabled = false;
+            }
+        }
+        private void limpiarCampos()
+        {
+            cmbTipoEvento.SelectedIndex = -1;
+            cmbColaboradores.SelectedIndex = -1;
+            chkFiltroFecha.Checked = false;
         }
     }
 }

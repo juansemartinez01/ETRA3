@@ -35,7 +35,7 @@ namespace PresentationA.Colaboradores
             for (int i = 0; i < salarios.Rows.Count; i++)
             {
                 //crear metodo completar labels
-                dgvSalarios.Rows.Add(salarios.Rows[i]["legajo"],salarios.Rows[i]["monto"], salarios.Rows[i]["fechaInicio"]);
+                dgvSalarios.Rows.Add(salarios.Rows[i]["legajo"], salarios.Rows[i]["nombre"], salarios.Rows[i]["apellido"], salarios.Rows[i]["monto"], salarios.Rows[i]["fechaInicio"]);
             }
         }
 
@@ -75,11 +75,13 @@ namespace PresentationA.Colaboradores
             txtPorcentaje.Text = "";
             cmbCargoPorcentaje.SelectedIndex = -1;
             cmbFiltroCargo.SelectedIndex = -1;
+            txtMontoBusqueda.Text = "";
+            txtNombreBusqueda.Text = "";
         }
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
-            int legajo = 0;
+            int legajo = 1;
             string nombre = "";
             string apellido = "";
             float monto = 0;
