@@ -66,7 +66,7 @@ namespace PresentationA.Colaboradores
                 string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
                 if (chkFiltroFecha.Checked)
                 {
-                    consulta += " AND H.fechaInicio >= " + fechaInicio + " AND H.fechaFin <= " + fechaFin;
+                    consulta += " AND H.fechaInicio >= '" + fechaInicio + "' AND H.fechaFin <= '" + fechaFin + "'";
                 }
                 if (cmbColaboradores.SelectedIndex != -1 && cmbTipoEvento.SelectedIndex != -1)
                 {
