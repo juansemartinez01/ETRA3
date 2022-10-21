@@ -100,7 +100,7 @@ namespace PresentationA.Colaboradores
             }
 
 
-            double prestamoMaximo = (30 * 100 / float.Parse(txtSalario.Text));
+            double prestamoMaximo = ((30 * float.Parse(txtSalario.Text)) / 100);
             prestamoMaximo = Math.Round(prestamoMaximo);
 
             
