@@ -20,6 +20,11 @@ namespace PresentationA.Colaboradores.Consulta
             InitializeComponent();
             CargarDG(legajo);
             salarioModelo.legajoColaborador = int.Parse(legajo);
+            dtpfechaInicio.Format = DateTimePickerFormat.Custom;
+            dtpfechaInicio.CustomFormat = "dd/MM/yyyy";
+            dtpfechaFin.Format = DateTimePickerFormat.Custom;
+            dtpfechaFin.CustomFormat = "dd/MM/yyyy";
+            ViewState();
         }
         private void CargarDG(string legajo)
         {
@@ -41,16 +46,8 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if(txtmonto.Text == "")
-            {
-                MessageBox.Show("Debe ingresar un monto.");
-                return;
-            }
-            else
-            {
-                
-            }
-
+            
+            
             if (btnAgregar.Text == "Guardar")
             {
                 // guardar nuevo valor
@@ -59,22 +56,14 @@ namespace PresentationA.Colaboradores.Consulta
                     MessageBox.Show("Debe ingresar un monto.");
                     return;
                 }
-                
-                else
-                {
-                    //agrgar nuevo valor
-                    string respuesta = salarioModelo.modificarSalarioColaborador(salarioModelo.legajoColaborador, float.Parse(txtmonto.Text));
-                    MessageBox.Show(respuesta);
-                    CargarDG(salarioModelo.legajoColaborador.ToString());
-                }
-                btnAgregar.Text = "Agregar";
-                btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-                switchButtons(false);
+                string respuesta = salarioModelo.modificarSalarioColaborador(salarioModelo.legajoColaborador, float.Parse(txtmonto.Text));
+                MessageBox.Show(respuesta);
+                CargarDG(salarioModelo.legajoColaborador.ToString());
+
+                ViewState();
                 return;
             }
-            btnAgregar.Text = "Guardar";
-            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            switchButtons(true);
+            AddState();
         }
 
         private void dgvSalarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -91,19 +80,36 @@ namespace PresentationA.Colaboradores.Consulta
             txtmonto.Text = filaSeleccionada.Cells["monto"].Value.ToString();
             dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
+            ViewState();
         }
 
-        private void switchButtons(bool value)
+        private void ViewState()
         {
-            if (value == false)
-            {
-                dtpfechaInicio.Value = DateTime.Now;
-                dtpfechaFin.Value = DateTime.Now;
-            }
-            dtpfechaInicio.Enabled = value;
-            dtpfechaFin.Enabled = value;
-        }
+            
+            dtpfechaFin.Enabled = false;
+            dtpfechaInicio.Enabled = false;
+            txtmonto.Enabled = false;
 
+
+            dtpfechaInicio.Value = DateTime.Now;
+            dtpfechaFin.Value = DateTime.Now;
+            txtmonto.Text = null;
+
+            btnAgregar.Text = "Agregar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            btnEliminar.Visible = true;
+            dgvSalarios.Enabled = true;
+            return;
+        }
+        private void AddState()
+        {
+            btnAgregar.Text = "Guardar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            txtmonto.Enabled = true;
+            btnEliminar.Visible = false;
+            dgvSalarios.Enabled = false;
+            return;
+        }
         private void txtmonto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))

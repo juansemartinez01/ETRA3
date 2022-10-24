@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpfechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -51,65 +51,61 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(37, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(31, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 37);
+            this.label1.Size = new System.Drawing.Size(238, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Historial de Salarios";
             // 
             // dtpfechaFin
             // 
-            this.dtpfechaFin.Location = new System.Drawing.Point(246, 151);
-            this.dtpfechaFin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpfechaFin.Location = new System.Drawing.Point(205, 138);
             this.dtpfechaFin.Name = "dtpfechaFin";
-            this.dtpfechaFin.Size = new System.Drawing.Size(239, 32);
+            this.dtpfechaFin.Size = new System.Drawing.Size(200, 27);
             this.dtpfechaFin.TabIndex = 31;
             // 
             // dtpfechaInicio
             // 
-            this.dtpfechaInicio.Location = new System.Drawing.Point(246, 103);
-            this.dtpfechaInicio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpfechaInicio.Location = new System.Drawing.Point(205, 94);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(239, 32);
+            this.dtpfechaInicio.Size = new System.Drawing.Size(200, 27);
             this.dtpfechaInicio.TabIndex = 30;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 103);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(32, 94);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 23);
+            this.label6.Size = new System.Drawing.Size(133, 21);
             this.label6.TabIndex = 26;
             this.label6.Text = "Fecha de Inicio:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 151);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(32, 138);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 23);
+            this.label5.Size = new System.Drawing.Size(88, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "Fecha Fin:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 257);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(32, 235);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 23);
+            this.label3.Size = new System.Drawing.Size(66, 21);
             this.label3.TabIndex = 33;
             this.label3.Text = "Monto:";
             // 
             // txtmonto
             // 
-            this.txtmonto.Location = new System.Drawing.Point(246, 254);
-            this.txtmonto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtmonto.Location = new System.Drawing.Point(205, 232);
             this.txtmonto.Name = "txtmonto";
-            this.txtmonto.Size = new System.Drawing.Size(239, 32);
+            this.txtmonto.Size = new System.Drawing.Size(200, 27);
             this.txtmonto.TabIndex = 34;
             this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmonto_KeyPress);
             // 
@@ -122,45 +118,44 @@
             this.dgvSalarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSalarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSalarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSalarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.monto,
             this.fechaDeInicio,
             this.fechaFin});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSalarios.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalarios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalarios.EnableHeadersVisualStyles = false;
             this.dgvSalarios.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvSalarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvSalarios.Location = new System.Drawing.Point(535, 103);
-            this.dgvSalarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvSalarios.Location = new System.Drawing.Point(446, 94);
             this.dgvSalarios.Name = "dgvSalarios";
             this.dgvSalarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSalarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSalarios.RowHeadersWidth = 51;
             this.dgvSalarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSalarios.Size = new System.Drawing.Size(544, 357);
+            this.dgvSalarios.Size = new System.Drawing.Size(453, 326);
             this.dgvSalarios.TabIndex = 41;
             this.dgvSalarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellClick);
             this.dgvSalarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellClick);
@@ -200,10 +195,9 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(270, 419);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEliminar.Location = new System.Drawing.Point(225, 383);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(146, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(122, 37);
             this.btnEliminar.TabIndex = 50;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -221,10 +215,9 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(96, 419);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAgregar.Location = new System.Drawing.Point(80, 383);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(146, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(122, 37);
             this.btnAgregar.TabIndex = 48;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -233,9 +226,9 @@
             // 
             // frmHistorialSalario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 484);
+            this.ClientSize = new System.Drawing.Size(932, 442);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvSalarios);
@@ -246,8 +239,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Enabled = false;
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmHistorialSalario";
             this.Text = "frmHistorialSalario";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalarios)).EndInit();
