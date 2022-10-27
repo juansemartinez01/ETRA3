@@ -317,7 +317,7 @@ namespace DataAccesA
 
                     esEdificio = 0;
 
-                    departamento = "NULL";
+                    
                 }
                 else
                 {

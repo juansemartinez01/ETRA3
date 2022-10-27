@@ -23,7 +23,6 @@ namespace PresentationA.Colaboradores
             openFileDialog1.InitialDirectory = "no seleccionado";
             LlenarCombo(cmbEstados, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
-            LlenarCombo(cmbProvincias, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             chkIngresaHoy.Checked = true;
             dtpFechaingreso.Enabled = false;
 
@@ -108,24 +107,18 @@ namespace PresentationA.Colaboradores
             {
                 cmbEstados.SelectedIndex = 0;
             }
-            string provincia;
+            string provincia = "Cordoba";
             string departamento;
             string localidad;
-            if (cmbProvincias.SelectedIndex == -1)
-            {
-                provincia = "Cordoba";
-            }
-            else
-            {
-                provincia = "Cordoba";
-            }
+            
+            
             if (txtLocalidad.Text != "")
             {
                 localidad = txtLocalidad.Text.ToString();
             }
             else
             {
-                localidad = "NULL";
+                localidad = "No especifica";
             }
             if (txtNombre.Text != "")
             {
@@ -170,7 +163,7 @@ namespace PresentationA.Colaboradores
                                         else
                                         {
                                             piso = 0;
-                                            departamento = "NULL";
+                                            departamento = "No especifica";
                                             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                             var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable);
                                             if (openFileDialog1.InitialDirectory != "no seleccionado")
@@ -318,7 +311,6 @@ namespace PresentationA.Colaboradores
             txtPiso.Text = "";
             txtDepto.Text = "";
             txtLocalidad.Text = "";
-            cmbProvincias.SelectedIndex = -1;
             cmbEstados.SelectedIndex = -1;
             cmbPuesto.SelectedIndex = -1;
         }

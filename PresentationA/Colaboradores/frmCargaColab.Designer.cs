@@ -38,7 +38,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@
             this.txtDni = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbEstados = new System.Windows.Forms.ComboBox();
-            this.cmbProvincias = new System.Windows.Forms.ComboBox();
             this.lblFotoPerfil = new System.Windows.Forms.Label();
             this.ofdFotoPerfil = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -98,21 +96,21 @@
             this.txtLocalidad.Location = new System.Drawing.Point(397, 307);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(146, 30);
-            this.txtLocalidad.TabIndex = 81;
+            this.txtLocalidad.TabIndex = 13;
             // 
             // txtBarrio
             // 
             this.txtBarrio.Location = new System.Drawing.Point(107, 304);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(146, 30);
-            this.txtBarrio.TabIndex = 80;
+            this.txtBarrio.TabIndex = 10;
             // 
             // txtPiso
             // 
             this.txtPiso.Location = new System.Drawing.Point(397, 213);
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(146, 30);
-            this.txtPiso.TabIndex = 79;
+            this.txtPiso.TabIndex = 11;
             this.txtPiso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPiso_KeyPress);
             // 
             // txtDepto
@@ -120,28 +118,28 @@
             this.txtDepto.Location = new System.Drawing.Point(397, 261);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(146, 30);
-            this.txtDepto.TabIndex = 78;
+            this.txtDepto.TabIndex = 12;
             // 
             // txtNroCalle
             // 
             this.txtNroCalle.Location = new System.Drawing.Point(107, 258);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.Size = new System.Drawing.Size(146, 30);
-            this.txtNroCalle.TabIndex = 77;
+            this.txtNroCalle.TabIndex = 9;
             // 
             // txtCalle
             // 
             this.txtCalle.Location = new System.Drawing.Point(107, 217);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(146, 30);
-            this.txtCalle.TabIndex = 76;
+            this.txtCalle.TabIndex = 8;
             // 
             // txtCuit
             // 
             this.txtCuit.Location = new System.Drawing.Point(121, 141);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(146, 30);
-            this.txtCuit.TabIndex = 74;
+            this.txtCuit.TabIndex = 4;
             this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // txtApellido
@@ -149,14 +147,14 @@
             this.txtApellido.Location = new System.Drawing.Point(121, 65);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(146, 30);
-            this.txtApellido.TabIndex = 73;
+            this.txtApellido.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(121, 25);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(146, 30);
-            this.txtNombre.TabIndex = 72;
+            this.txtNombre.TabIndex = 1;
             // 
             // label13
             // 
@@ -166,15 +164,6 @@
             this.label13.Size = new System.Drawing.Size(77, 22);
             this.label13.TabIndex = 70;
             this.label13.Text = "Estado:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(585, 216);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 22);
-            this.label12.TabIndex = 69;
-            this.label12.Text = "Provincia:";
             // 
             // label11
             // 
@@ -272,7 +261,7 @@
             this.txtDni.Location = new System.Drawing.Point(121, 100);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(146, 30);
-            this.txtDni.TabIndex = 84;
+            this.txtDni.TabIndex = 3;
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // label8
@@ -290,15 +279,7 @@
             this.cmbEstados.Location = new System.Drawing.Point(375, 38);
             this.cmbEstados.Name = "cmbEstados";
             this.cmbEstados.Size = new System.Drawing.Size(146, 30);
-            this.cmbEstados.TabIndex = 85;
-            // 
-            // cmbProvincias
-            // 
-            this.cmbProvincias.FormattingEnabled = true;
-            this.cmbProvincias.Location = new System.Drawing.Point(722, 217);
-            this.cmbProvincias.Name = "cmbProvincias";
-            this.cmbProvincias.Size = new System.Drawing.Size(181, 30);
-            this.cmbProvincias.TabIndex = 86;
+            this.cmbEstados.TabIndex = 15;
             // 
             // lblFotoPerfil
             // 
@@ -346,7 +327,6 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblFotoPerfil);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.cmbProvincias);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtDni);
@@ -354,7 +334,6 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtLocalidad);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtBarrio);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtDepto);
@@ -376,7 +355,7 @@
             this.chkIngresaHoy.Location = new System.Drawing.Point(561, 90);
             this.chkIngresaHoy.Name = "chkIngresaHoy";
             this.chkIngresaHoy.Size = new System.Drawing.Size(140, 26);
-            this.chkIngresaHoy.TabIndex = 94;
+            this.chkIngresaHoy.TabIndex = 7;
             this.chkIngresaHoy.Text = "Ingresa hoy";
             this.chkIngresaHoy.UseVisualStyleBackColor = true;
             this.chkIngresaHoy.CheckedChanged += new System.EventHandler(this.chkIngresaHoy_CheckedChanged);
@@ -395,14 +374,14 @@
             this.dtpFechaingreso.Location = new System.Drawing.Point(423, 83);
             this.dtpFechaingreso.Name = "dtpFechaingreso";
             this.dtpFechaingreso.Size = new System.Drawing.Size(120, 30);
-            this.dtpFechaingreso.TabIndex = 92;
+            this.dtpFechaingreso.TabIndex = 6;
             // 
             // dtpfechaNacimiento
             // 
             this.dtpfechaNacimiento.Location = new System.Drawing.Point(423, 25);
             this.dtpfechaNacimiento.Name = "dtpfechaNacimiento";
             this.dtpfechaNacimiento.Size = new System.Drawing.Size(120, 30);
-            this.dtpfechaNacimiento.TabIndex = 91;
+            this.dtpfechaNacimiento.TabIndex = 5;
             // 
             // label15
             // 
@@ -457,16 +436,16 @@
             // 
             // txtLegajoResponsable
             // 
-            this.txtLegajoResponsable.Location = new System.Drawing.Point(722, 126);
+            this.txtLegajoResponsable.Location = new System.Drawing.Point(774, 89);
             this.txtLegajoResponsable.Name = "txtLegajoResponsable";
-            this.txtLegajoResponsable.Size = new System.Drawing.Size(129, 30);
-            this.txtLegajoResponsable.TabIndex = 133;
+            this.txtLegajoResponsable.Size = new System.Drawing.Size(152, 30);
+            this.txtLegajoResponsable.TabIndex = 18;
             this.txtLegajoResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajoResponsable_KeyPress);
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(524, 134);
+            this.label24.Location = new System.Drawing.Point(557, 92);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(192, 22);
             this.label24.TabIndex = 132;
@@ -474,38 +453,38 @@
             // 
             // txtObraSocial
             // 
-            this.txtObraSocial.Location = new System.Drawing.Point(414, 83);
+            this.txtObraSocial.Location = new System.Drawing.Point(375, 92);
             this.txtObraSocial.Name = "txtObraSocial";
-            this.txtObraSocial.Size = new System.Drawing.Size(129, 30);
-            this.txtObraSocial.TabIndex = 131;
+            this.txtObraSocial.Size = new System.Drawing.Size(146, 30);
+            this.txtObraSocial.TabIndex = 16;
             // 
             // txtNroContacto
             // 
-            this.txtNroContacto.Location = new System.Drawing.Point(639, 217);
+            this.txtNroContacto.Location = new System.Drawing.Point(194, 211);
             this.txtNroContacto.Name = "txtNroContacto";
             this.txtNroContacto.Size = new System.Drawing.Size(307, 30);
-            this.txtNroContacto.TabIndex = 130;
+            this.txtNroContacto.TabIndex = 20;
             this.txtNroContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroContacto_KeyPress);
             // 
             // txtNroEmergencia
             // 
-            this.txtNroEmergencia.Location = new System.Drawing.Point(639, 253);
+            this.txtNroEmergencia.Location = new System.Drawing.Point(194, 247);
             this.txtNroEmergencia.Name = "txtNroEmergencia";
             this.txtNroEmergencia.Size = new System.Drawing.Size(307, 30);
-            this.txtNroEmergencia.TabIndex = 129;
+            this.txtNroEmergencia.TabIndex = 21;
             this.txtNroEmergencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroEmergencia_KeyPress);
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(639, 178);
+            this.txtMail.Location = new System.Drawing.Point(194, 172);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(307, 30);
-            this.txtMail.TabIndex = 92;
+            this.txtMail.TabIndex = 19;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(481, 214);
+            this.label22.Location = new System.Drawing.Point(36, 208);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(142, 22);
             this.label22.TabIndex = 128;
@@ -514,7 +493,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(481, 250);
+            this.label21.Location = new System.Drawing.Point(36, 244);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(162, 22);
             this.label21.TabIndex = 127;
@@ -523,7 +502,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(481, 181);
+            this.label20.Location = new System.Drawing.Point(36, 175);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(51, 22);
             this.label20.TabIndex = 126;
@@ -534,16 +513,16 @@
             this.txtSalario.Location = new System.Drawing.Point(128, 35);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(146, 30);
-            this.txtSalario.TabIndex = 122;
+            this.txtSalario.TabIndex = 14;
             this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalario_KeyPress);
             // 
             // cmbPuesto
             // 
             this.cmbPuesto.FormattingEnabled = true;
-            this.cmbPuesto.Location = new System.Drawing.Point(722, 83);
+            this.cmbPuesto.Location = new System.Drawing.Point(670, 43);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(181, 30);
-            this.cmbPuesto.TabIndex = 121;
+            this.cmbPuesto.TabIndex = 17;
             // 
             // lblmontoSalario1
             // 
@@ -557,7 +536,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(293, 86);
+            this.label26.Location = new System.Drawing.Point(245, 95);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(121, 22);
             this.label26.TabIndex = 98;
@@ -566,7 +545,7 @@
             // lblLegJefe
             // 
             this.lblLegJefe.AutoSize = true;
-            this.lblLegJefe.Location = new System.Drawing.Point(702, 199);
+            this.lblLegJefe.Location = new System.Drawing.Point(257, 193);
             this.lblLegJefe.Name = "lblLegJefe";
             this.lblLegJefe.Size = new System.Drawing.Size(0, 22);
             this.lblLegJefe.TabIndex = 120;
@@ -574,7 +553,7 @@
             // lblNomJefe
             // 
             this.lblNomJefe.AutoSize = true;
-            this.lblNomJefe.Location = new System.Drawing.Point(702, 159);
+            this.lblNomJefe.Location = new System.Drawing.Point(257, 153);
             this.lblNomJefe.Name = "lblNomJefe";
             this.lblNomJefe.Size = new System.Drawing.Size(0, 22);
             this.lblNomJefe.TabIndex = 119;
@@ -591,7 +570,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label17.Location = new System.Drawing.Point(586, 38);
+            this.label17.Location = new System.Drawing.Point(535, 18);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(140, 18);
             this.label17.TabIndex = 115;
@@ -608,7 +587,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(585, 86);
+            this.label18.Location = new System.Drawing.Point(557, 46);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(90, 22);
             this.label18.TabIndex = 114;
@@ -707,7 +686,6 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -721,7 +699,6 @@
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbEstados;
-        private System.Windows.Forms.ComboBox cmbProvincias;
         private System.Windows.Forms.Label lblFotoPerfil;
         private System.Windows.Forms.OpenFileDialog ofdFotoPerfil;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
