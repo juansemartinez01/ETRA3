@@ -30,6 +30,7 @@ namespace PresentationA.Colaboradores.Consulta
         {
             try
             {
+                dgvSalarios.Rows.Clear();
                 DataTable salarioModeloarios = salarioModelo.obtenerSalarios(legajo);
                 for (int i = 0; i < salarioModeloarios.Rows.Count; i++)
                 {
@@ -97,7 +98,7 @@ namespace PresentationA.Colaboradores.Consulta
 
             btnAgregar.Text = "Agregar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            btnEliminar.Visible = true;
+            
             dgvSalarios.Enabled = true;
             return;
         }
@@ -106,7 +107,7 @@ namespace PresentationA.Colaboradores.Consulta
             btnAgregar.Text = "Guardar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
             txtmonto.Enabled = true;
-            btnEliminar.Visible = false;
+            
             dgvSalarios.Enabled = false;
             return;
         }
