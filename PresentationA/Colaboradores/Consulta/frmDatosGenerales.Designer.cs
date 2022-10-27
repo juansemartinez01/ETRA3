@@ -52,7 +52,6 @@
             this.lblPuesto = new System.Windows.Forms.Label();
             this.lblNomJefe = new System.Windows.Forms.Label();
             this.lblLegJefe = new System.Windows.Forms.Label();
-            this.lblmontoSalario = new System.Windows.Forms.Label();
             this.lblnombreEstado = new System.Windows.Forms.Label();
             this.lblnombreCargo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -145,7 +144,7 @@
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(152, 44);
+            this.lblSalario.Location = new System.Drawing.Point(140, 44);
             this.lblSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(0, 22);
@@ -262,16 +261,6 @@
             this.lblLegJefe.Size = new System.Drawing.Size(0, 22);
             this.lblLegJefe.TabIndex = 84;
             // 
-            // lblmontoSalario
-            // 
-            this.lblmontoSalario.AutoSize = true;
-            this.lblmontoSalario.Location = new System.Drawing.Point(117, 44);
-            this.lblmontoSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblmontoSalario.Name = "lblmontoSalario";
-            this.lblmontoSalario.Size = new System.Drawing.Size(65, 22);
-            this.lblmontoSalario.TabIndex = 85;
-            this.lblmontoSalario.Text = "label1";
-            // 
             // lblnombreEstado
             // 
             this.lblnombreEstado.AutoSize = true;
@@ -298,7 +287,6 @@
             this.groupBox1.Controls.Add(this.lblmontoSalario1);
             this.groupBox1.Controls.Add(this.lblnombreEstado);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lblmontoSalario);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.lblSalario);
             this.groupBox1.Controls.Add(this.lblObraSocial);
@@ -398,7 +386,6 @@
         private System.Windows.Forms.Label lblPuesto;
         private System.Windows.Forms.Label lblNomJefe;
         private System.Windows.Forms.Label lblLegJefe;
-        private System.Windows.Forms.Label lblmontoSalario;
         private System.Windows.Forms.Label lblnombreEstado;
         private System.Windows.Forms.Label lblnombreCargo;
         private System.Windows.Forms.GroupBox groupBox1;

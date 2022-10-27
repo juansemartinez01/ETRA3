@@ -869,6 +869,7 @@ namespace DataAccesA
                 esEdificio = 1;
             }
             int idDireccionBase = 0;
+            int idHistorialbase = 0;
             bool algunaModificacion = false;
             try
             {
@@ -897,6 +898,94 @@ namespace DataAccesA
                             algunaModificacion = true;
                         }
                     }
+                    /*Modificacion Cargo*/
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT id_historialCargo FROM HistorialCargo WHERE legajoColaborador = @legajo AND fechaFin IS NULL";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord idHistorial = (IDataRecord)reader;
+                                idHistorialbase = int.Parse("" + idHistorial[0] + "");
+                            }
+                            reader.Close();
+                            if (idHistorialbase > 0)
+                            {
+                                using (var command1 = new SqlCommand())
+                                {
+                                    command1.Connection = connection;
+                                    command1.CommandText = "UPDATE HistorialCargo SET id_cargo = @idCargo WHERE legajoColaborador = @legajo AND fechaFin IS NULL";
+                                    command1.Parameters.AddWithValue("@legajo", legajo);
+                                    command1.Parameters.AddWithValue("@idCargo", puesto);
+                                    command1.CommandType = CommandType.Text;
+                                    var colaboradorModificado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                                    if (colaboradorModificado > 0)
+                                    {
+                                        algunaModificacion = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                return "Error con la base de datos";
+                            }
+
+                        }
+                        else
+                        {
+                            return "Error con la base de datos";
+                        }
+                    }
+                    /*Modificacion de estado*/
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT id_historialEstado FROM HistorialEstado WHERE legajoColaborador = @legajo AND fechaFin IS NULL";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord idHistorial = (IDataRecord)reader;
+                                idHistorialbase = int.Parse("" + idHistorial[0] + "");
+                            }
+                            reader.Close();
+                            if (idHistorialbase > 0)
+                            {
+                                idHistorialbase = 0;
+                                using (var command1 = new SqlCommand())
+                                {
+                                    command1.Connection = connection;
+                                    command1.CommandText = "UPDATE HistorialEstado SET id_estado = @idEstado WHERE legajoColaborador = @legajo AND fechaFin IS NULL";
+                                    command1.Parameters.AddWithValue("@legajo", legajo);
+                                    command1.Parameters.AddWithValue("@idEstado", estado);
+                                    command1.CommandType = CommandType.Text;
+                                    var colaboradorModificado = command1.EndExecuteNonQuery(command1.BeginExecuteNonQuery());
+                                    if (colaboradorModificado > 0)
+                                    {
+                                        algunaModificacion = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                return "Error con la base de datos";
+                            }
+
+                        }
+                        else
+                        {
+                            return "Error con la base de datos";
+                        }
+                    }
+                    /*Modificacion Domicilio*/
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
@@ -911,6 +1000,7 @@ namespace DataAccesA
                                 IDataRecord idDireccion = (IDataRecord)reader;
                                 idDireccionBase = int.Parse("" + idDireccion[0] + "");
                             }
+                            reader.Close();
                             if (idDireccionBase > 0)
                             {
                                 using (var command1 = new SqlCommand())
@@ -943,6 +1033,7 @@ namespace DataAccesA
                         {
                             return "Error con la base de datos";
                         }
+                    }
                         if (algunaModificacion)
                         {
                             return "Se aplicaron las modificaciones";
@@ -953,7 +1044,7 @@ namespace DataAccesA
                         }
 
 
-                    }
+                    
 
                 }
             }

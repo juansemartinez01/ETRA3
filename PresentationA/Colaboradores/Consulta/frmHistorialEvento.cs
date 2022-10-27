@@ -75,7 +75,7 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             //completarLabels(this, historial, "txt");
-            cmbTipoEvento.SelectedValue = eventosModelo.buscarIdEventoConNombre(filaSeleccionada.Cells["Tipo"].Value.ToString());
+            cmbTipoEvento.SelectedValue = eventosModelo.buscarIdConNombre(filaSeleccionada.Cells["Tipo"].Value.ToString(), "TipoEvento");
             dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
             dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();

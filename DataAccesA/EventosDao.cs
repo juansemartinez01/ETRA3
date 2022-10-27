@@ -60,9 +60,9 @@ namespace DataAccesA
                     using (var command2 = new SqlCommand())
                     {
                         command2.Connection = connection;
-                        command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idTipoEvento,0)";
+                        command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idBusqueda,0)";
                         command2.CommandType = CommandType.Text;
-                        command2.Parameters.AddWithValue("@idTipoEvento", idTipoEvento);
+                        command2.Parameters.AddWithValue("@idBusqueda", idTipoEvento);
                         command2.Parameters.AddWithValue("@descripcion", descripcion);
 
                         int resultado = command2.ExecuteNonQuery();
@@ -275,9 +275,30 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public int buscarIdEventoConNombre(string nombreEvento)
+        public int buscarIdConNombre(string nombreBusqueda,string tablaBusqueda)
         {
-            int idTipoEvento = 0;
+            string columnaBusqueda = "";
+            string columnaWhere = "";
+            if (tablaBusqueda == "TipoEvento")
+            {
+                columnaBusqueda = "id_tipoEvento";
+                columnaWhere = "nombre";
+            }
+            if(tablaBusqueda == "EstadoColaborador")
+            {
+                columnaBusqueda = "id_estado";
+                columnaWhere = "nombre";
+            }
+            if (tablaBusqueda == "Cargo")
+            {
+                columnaBusqueda = "id_cargo";
+                columnaWhere = "nombre";
+            }
+            if (columnaBusqueda == "" || columnaWhere == "")
+            {
+                return 0;
+            }
+            int idBusqueda = 0;
             try
             {
                 using (var connection = GetConnection())
@@ -287,24 +308,24 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "SELECT id_tipoEvento FROM TipoEvento WHERE nombre LIKE @tipoEvento AND borradoLogico = 0";
+                        command.CommandText = "SELECT "+ columnaBusqueda +" FROM "+ tablaBusqueda + " WHERE "+ columnaWhere + " LIKE @nombreBusqueda AND borradoLogico = 0";
                         command.CommandType = CommandType.Text;
-                        command.Parameters.AddWithValue("@tipoEvento", nombreEvento);
+                        command.Parameters.AddWithValue("@nombreBusqueda", nombreBusqueda);
                         SqlDataReader reader = command.ExecuteReader();
                         if (reader.HasRows)
                         {
                             while (reader.Read())
                             {
-                                IDataRecord idTipoEventoReader = (IDataRecord)reader;
-                                idTipoEvento = int.Parse("" + idTipoEventoReader[0] + "");
+                                IDataRecord idReader = (IDataRecord)reader;
+                                idBusqueda = int.Parse("" + idReader[0] + "");
                             }
                             reader.Close();
-                            return idTipoEvento;
+                            return idBusqueda;
 
                         }
                         else
                         {
-                            return idTipoEvento;
+                            return idBusqueda;
                         }
                     }
                     
@@ -314,7 +335,7 @@ namespace DataAccesA
 
                 }catch(Exception ex)
             {
-                return idTipoEvento;
+                return idBusqueda;
             }
         }
     }
