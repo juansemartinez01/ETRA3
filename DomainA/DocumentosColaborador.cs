@@ -70,6 +70,25 @@ namespace DomainA
             }
             return infoDocumento;
         }
+        public List<DocumentosColaborador> filtroDocumentosLegajo(int legajo)
+        {
+            ColaboradorDao colaboradorDocumento = new ColaboradorDao();
+            var tabla = colaboradorDocumento.BuscarDocumentoLegajo(legajo);
+            var infoDocumento = new List<DocumentosColaborador>();
+            foreach (DataRow item in tabla.Rows)
+            {
+                infoDocumento.Add(new DocumentosColaborador
+                {
+                    Id_colaboradorMultimedia = Convert.ToInt32(item[0]),
+                    Nombre = item[1].ToString(),
+                    Documento = (byte[])item[2],
+                    Extension = item[3].ToString(),
+                    Id_tipoMultimedia = Convert.ToInt32(item[4]),
+                    LegajoColaborador = Convert.ToInt32(item[5])
+                });
+            }
+            return infoDocumento;
+        }
         public DataTable getAllDocumentos(int legajoColaborador, int tipoDocumento, int tipoEvento, string fecha,bool aplicarFecha)
         {
             return colaboradorDocumento.getAllDocumentos(legajoColaborador,tipoDocumento,tipoEvento,fecha,aplicarFecha);

@@ -9,7 +9,7 @@ namespace DomainA
     public class Eventos
     {
         EventosDao eventosDao = new EventosDao();
-        public int FilaSeleccionadaHistorialEvento;
+        public int FilaSeleccionadaHistorialEvento = -1;
         public DataTable obtenerEventos(string legajo)
         {
             return eventosDao.obtenerEventos(legajo);

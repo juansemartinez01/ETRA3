@@ -616,7 +616,7 @@
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBotones.Location = new System.Drawing.Point(0, 1026);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(1186, 100);
+            this.pnlBotones.Size = new System.Drawing.Size(1228, 100);
             this.pnlBotones.TabIndex = 94;
             // 
             // label26
@@ -638,7 +638,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(50, 50);
             this.AutoScrollMinSize = new System.Drawing.Size(50, 50);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1207, 491);
+            this.ClientSize = new System.Drawing.Size(1249, 491);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.groupBox6);
@@ -653,6 +653,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar Colaborador";
+            this.Load += new System.EventHandler(this.frmModifcarColab_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

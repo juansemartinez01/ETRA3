@@ -49,6 +49,7 @@
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipodoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnVerArchivo);
             this.groupBox1.Controls.Add(this.chkFiltroFecha);
             this.groupBox1.Controls.Add(this.btnExportar);
             this.groupBox1.Controls.Add(this.cmbTipoEvento);
@@ -264,6 +266,7 @@
             this.dgvDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocumentos.Size = new System.Drawing.Size(1156, 413);
             this.dgvDocumentos.TabIndex = 46;
+            this.dgvDocumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
             // 
             // Numero
             // 
@@ -288,6 +291,27 @@
             this.Evento.HeaderText = "Evento";
             this.Evento.MinimumWidth = 6;
             this.Evento.Name = "Evento";
+            // 
+            // btnVerArchivo
+            // 
+            this.btnVerArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnVerArchivo.FlatAppearance.BorderSize = 0;
+            this.btnVerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVerArchivo.ForeColor = System.Drawing.Color.White;
+            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnVerArchivo.IconColor = System.Drawing.Color.White;
+            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerArchivo.IconSize = 25;
+            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerArchivo.Location = new System.Drawing.Point(89, 119);
+            this.btnVerArchivo.Name = "btnVerArchivo";
+            this.btnVerArchivo.Size = new System.Drawing.Size(302, 47);
+            this.btnVerArchivo.TabIndex = 49;
+            this.btnVerArchivo.Text = "Ver Archivo";
+            this.btnVerArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVerArchivo.UseVisualStyleBackColor = false;
+            this.btnVerArchivo.Click += new System.EventHandler(this.btnVerArchivo_Click);
             // 
             // frmDocumentos
             // 
@@ -328,5 +352,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipodoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Evento;
         private System.Windows.Forms.CheckBox chkFiltroFecha;
+        private Controls.BotonPadre btnVerArchivo;
     }
 }

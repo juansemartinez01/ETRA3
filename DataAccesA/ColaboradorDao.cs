@@ -196,6 +196,37 @@ namespace DataAccesA
                 return tabla;
             }
         }
+        public DataTable BuscarDocumentoLegajo(int legajo)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+
+
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE legajoColaborador = @legajo AND borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        SqlDataReader lector = command.ExecuteReader();
+                        tabla.Load(lector);
+                        return tabla;
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return tabla;
+            }
+        }
         public string BuscarIdUltimoEvento()
         {
 

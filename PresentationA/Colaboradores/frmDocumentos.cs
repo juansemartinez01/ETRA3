@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace PresentationA.Colaboradores
@@ -14,6 +17,7 @@ namespace PresentationA.Colaboradores
     public partial class frmDocumentos : frmHijo
     {
         DocumentosColaborador documentosColaborador = new DocumentosColaborador();
+        Eventos eventosModelo = new Eventos();
         public frmDocumentos()
         {
             InitializeComponent();
@@ -120,6 +124,58 @@ namespace PresentationA.Colaboradores
             {
                 dtpFechaRegistro.Enabled = false;
             }
+        }
+
+        private void btnVerArchivo_Click(object sender, EventArgs e)
+        {
+            if(eventosModelo.FilaSeleccionadaHistorialEvento == -1)
+            {
+                MessageBox.Show("Debe seleccionar un archivo.");
+                return;
+            }
+            DataGridViewRow filaSeleccionada = dgvDocumentos.Rows[eventosModelo.FilaSeleccionadaHistorialEvento];
+            int legajo = int.Parse(filaSeleccionada.Cells["Legajo"].Value.ToString());
+            var Lista = new List<DocumentosColaborador>();
+            Lista = documentosColaborador.filtroDocumentosLegajo(legajo);
+            if (Lista.Count == 0)
+            {
+                MessageBox.Show("No hay ningun archivo asociado a este evento");
+                return;
+            }
+
+            string direccion = AppDomain.CurrentDomain.BaseDirectory;
+            string carpeta = direccion + "/temp/";
+            string ubicacionCompleta = carpeta + Lista[0].Extension;
+
+            if (!Directory.Exists(carpeta))
+            {
+                Directory.CreateDirectory(carpeta);
+            }
+            if (File.Exists(ubicacionCompleta))
+            {
+
+                File.Delete(ubicacionCompleta);
+            }
+            File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
+
+            Stream archivo = File.OpenRead(ubicacionCompleta);
+
+            Process.Start(ubicacionCompleta);
+
+
+            archivo.Close();
+        }
+        
+
+
+
+        private void dgvDocumentos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            int indice = e.RowIndex;
+            eventosModelo.FilaSeleccionadaHistorialEvento = indice;
+
+
         }
     }
 }

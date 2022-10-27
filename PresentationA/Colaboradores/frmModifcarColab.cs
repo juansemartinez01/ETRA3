@@ -135,7 +135,14 @@ namespace PresentationA.Colaboradores
 
                 MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable));
 
+                this.Close();
             }
+
+        }
+        
+
+        private void frmModifcarColab_Load(object sender, EventArgs e)
+        {
 
         }
     }
