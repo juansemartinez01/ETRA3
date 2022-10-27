@@ -21,7 +21,10 @@ namespace PresentationA.Colaboradores.Consulta
         {
             InitializeComponent();
             colaboradorModelo.legajo = int.Parse(legajo);
-            lblFondoMaximoPermitido.Text = cuenta.buscarFondoMaximoPermitido(colaboradorModelo.legajo);
+            float fondoMaximo = float.Parse(cuenta.buscarFondoMaximoPermitido(colaboradorModelo.legajo));
+            fondoMaximo = -fondoMaximo;
+            lblFondoMaximoPermitido.Text = fondoMaximo.ToString();
+            lblFondoMaximoPermitido.ForeColor = Color.Red;
             LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
             CargarDG(legajo);
             buscarSaldo();
@@ -67,7 +70,19 @@ namespace PresentationA.Colaboradores.Consulta
         }
         private void buscarSaldo()
         {
-            lblSaldo.Text = cuenta.buscarSaldo(colaboradorModelo.legajo).ToString();
+            float saldo = cuenta.buscarSaldo(colaboradorModelo.legajo);
+            if(saldo > 0 || saldo == 0)
+            {
+                
+                lblSaldo.Text = saldo.ToString();
+                lblSaldo.ForeColor = Color.Green;
+            }
+            else
+            {
+                saldo = -saldo;
+                lblSaldo.Text = saldo.ToString();
+                lblSaldo.ForeColor = Color.Red;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
