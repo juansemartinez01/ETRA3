@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
             this.chkFiltroFecha = new System.Windows.Forms.CheckBox();
             this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.cmbTipoEvento = new System.Windows.Forms.ComboBox();
@@ -49,7 +50,8 @@
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipodoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +90,27 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // btnVerArchivo
+            // 
+            this.btnVerArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnVerArchivo.FlatAppearance.BorderSize = 0;
+            this.btnVerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVerArchivo.ForeColor = System.Drawing.Color.White;
+            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnVerArchivo.IconColor = System.Drawing.Color.White;
+            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerArchivo.IconSize = 25;
+            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerArchivo.Location = new System.Drawing.Point(89, 119);
+            this.btnVerArchivo.Name = "btnVerArchivo";
+            this.btnVerArchivo.Size = new System.Drawing.Size(302, 47);
+            this.btnVerArchivo.TabIndex = 49;
+            this.btnVerArchivo.Text = "Ver Archivo";
+            this.btnVerArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVerArchivo.UseVisualStyleBackColor = false;
+            this.btnVerArchivo.Click += new System.EventHandler(this.btnVerArchivo_Click);
             // 
             // chkFiltroFecha
             // 
@@ -225,28 +248,28 @@
             this.dgvDocumentos.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocumentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDocumentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocumentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocumentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocumentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,
             this.Legajo,
             this.Tipodoc,
             this.Evento});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocumentos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocumentos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDocumentos.EnableHeadersVisualStyles = false;
             this.dgvDocumentos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvDocumentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -254,14 +277,14 @@
             this.dgvDocumentos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvDocumentos.Name = "dgvDocumentos";
             this.dgvDocumentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocumentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocumentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDocumentos.RowHeadersWidth = 51;
             this.dgvDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocumentos.Size = new System.Drawing.Size(1156, 413);
@@ -292,26 +315,9 @@
             this.Evento.MinimumWidth = 6;
             this.Evento.Name = "Evento";
             // 
-            // btnVerArchivo
+            // openFileDialog1
             // 
-            this.btnVerArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnVerArchivo.FlatAppearance.BorderSize = 0;
-            this.btnVerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnVerArchivo.ForeColor = System.Drawing.Color.White;
-            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnVerArchivo.IconColor = System.Drawing.Color.White;
-            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVerArchivo.IconSize = 25;
-            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVerArchivo.Location = new System.Drawing.Point(89, 119);
-            this.btnVerArchivo.Name = "btnVerArchivo";
-            this.btnVerArchivo.Size = new System.Drawing.Size(302, 47);
-            this.btnVerArchivo.TabIndex = 49;
-            this.btnVerArchivo.Text = "Ver Archivo";
-            this.btnVerArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVerArchivo.UseVisualStyleBackColor = false;
-            this.btnVerArchivo.Click += new System.EventHandler(this.btnVerArchivo_Click);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmDocumentos
             // 
@@ -353,5 +359,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Evento;
         private System.Windows.Forms.CheckBox chkFiltroFecha;
         private Controls.BotonPadre btnVerArchivo;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

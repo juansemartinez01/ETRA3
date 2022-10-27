@@ -125,7 +125,7 @@ namespace PresentationA.Colaboradores.Consulta
             nuevoDocumento.Nombre = "ArchivoCualquiera";
             nuevoDocumento.Documento = archivo;
             nuevoDocumento.Extension = openFileDialog1.SafeFileName;
-            nuevoDocumento.Id_tipoMultimedia = cmbTipoMultimedia.SelectedIndex;
+            nuevoDocumento.Id_tipoMultimedia = int.Parse(cmbTipoMultimedia.SelectedValue.ToString());
             //Despues arreglar bien esto!!!!!
             if (idEvento == 0)
             {

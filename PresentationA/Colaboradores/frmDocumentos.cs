@@ -134,9 +134,9 @@ namespace PresentationA.Colaboradores
                 return;
             }
             DataGridViewRow filaSeleccionada = dgvDocumentos.Rows[eventosModelo.FilaSeleccionadaHistorialEvento];
-            int legajo = int.Parse(filaSeleccionada.Cells["Legajo"].Value.ToString());
+            int idDocumento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
             var Lista = new List<DocumentosColaborador>();
-            Lista = documentosColaborador.filtroDocumentosLegajo(legajo);
+            Lista = documentosColaborador.filtroDocumentosId(idDocumento);
             if (Lista.Count == 0)
             {
                 MessageBox.Show("No hay ningun archivo asociado a este evento");

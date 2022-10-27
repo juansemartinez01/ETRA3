@@ -196,7 +196,7 @@ namespace DataAccesA
                 return tabla;
             }
         }
-        public DataTable BuscarDocumentoLegajo(int legajo)
+        public DataTable BuscarDocumentoPorId(int idDocumento)
         {
             DataTable tabla = new DataTable();
             try
@@ -209,10 +209,10 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE legajoColaborador = @legajo AND borradoLogico = 0";
+                        command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE id_colaboradorMultimedia = @idDocumento AND borradoLogico = 0";
                         command.CommandType = CommandType.Text;
 
-                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.Parameters.AddWithValue("@idDocumento", idDocumento);
                         SqlDataReader lector = command.ExecuteReader();
                         tabla.Load(lector);
                         return tabla;

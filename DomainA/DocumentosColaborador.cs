@@ -70,10 +70,10 @@ namespace DomainA
             }
             return infoDocumento;
         }
-        public List<DocumentosColaborador> filtroDocumentosLegajo(int legajo)
+        public List<DocumentosColaborador> filtroDocumentosId(int idDocumento)
         {
             ColaboradorDao colaboradorDocumento = new ColaboradorDao();
-            var tabla = colaboradorDocumento.BuscarDocumentoLegajo(legajo);
+            var tabla = colaboradorDocumento.BuscarDocumentoPorId(idDocumento);
             var infoDocumento = new List<DocumentosColaborador>();
             foreach (DataRow item in tabla.Rows)
             {
