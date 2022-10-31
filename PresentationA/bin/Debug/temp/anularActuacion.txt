@@ -1,0 +1,9 @@
+BEGIN;
+UPDATE iurix.act SET eac_id = 4, act_publica = 0 WHERE act_id =40468261;
+INSERT INTO iurix.act_aprocesar VALUES (nextval('seq_act_aproc'), 40468261, 0, now(), NULL, 'BAJA');
+INSERT INTO iurix.act_aprocesar_b VALUES (nextval('seq_act_aproc_b'), 40468261, 0, now(), NULL, 'BAJA');
+INSERT INTO iurix.aac_aprocesar VALUES (nextval('seq_aac_aproc'), 40468261, 0, now(), null, 'BAJA', NULL);
+INSERT INTO exp_aprocesar SELECT nextval('seq_exp_aproc'),402479, 'EDICION', 0, now(), NULL;
+INSERT INTO hae (hae_id, hae_fecha, exp_id, acc_id, usr_id, dep_id, hae_obs,act_id)
+VALUES (nextval('seq_hae'), now(),402479, 46,3,null, 'Actuacion ANULADA - GLPI 346592',40468261);
+COMMIT;

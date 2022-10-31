@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using DataAccesA;
 
 
@@ -10,9 +11,9 @@ namespace DomainA
     {
         EventosDao eventosDao = new EventosDao();
         public int FilaSeleccionadaHistorialEvento = -1;
-        public DataTable obtenerEventos(string legajo)
+        public DataTable obtenerEventos(string legajo,bool soloPagosSueldo)
         {
-            return eventosDao.obtenerEventos(legajo);
+            return eventosDao.obtenerEventos(legajo, soloPagosSueldo);
         }
         public DataTable getAllEventos()
         {

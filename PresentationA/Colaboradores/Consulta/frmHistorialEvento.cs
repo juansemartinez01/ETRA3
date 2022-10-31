@@ -20,7 +20,7 @@ namespace PresentationA.Colaboradores.Consulta
             InitializeComponent();
             openFileDialog1.InitialDirectory = "no seleccionado";
             nuevoDocumento.LegajoColaborador = int.Parse(legajo);
-            CargarDG(legajo);
+            CargarDG(legajo, false);
             btnEliminar.Visible = false;
             btnModificar.Visible = false;
             btnVerArchivo.Visible = false;
@@ -34,6 +34,7 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaFin.Format = DateTimePickerFormat.Custom;
             dtpfechaFin.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             
+            
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -42,12 +43,12 @@ namespace PresentationA.Colaboradores.Consulta
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
         }
-        private void CargarDG(string legajo)
+        private void CargarDG(string legajo,bool soloPagosSueldo)
         {
             try
             {
                 dgvEventos.Rows.Clear();
-                historial = eventosModelo.obtenerEventos(legajo);
+                historial = eventosModelo.obtenerEventos(legajo, soloPagosSueldo);
                 for (int i = 0; i < historial.Rows.Count; i++)
                 {
                     //crear metodo completar labels
@@ -157,7 +158,7 @@ namespace PresentationA.Colaboradores.Consulta
                         agregarArchivoEvento(0);
                     }
                     MessageBox.Show(respuesta);
-                    CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+                    CargarDG(nuevoDocumento.LegajoColaborador.ToString(),false);
                 }
                 else
                 {
@@ -168,7 +169,7 @@ namespace PresentationA.Colaboradores.Consulta
                         agregarArchivoEvento(0);
                     }
                     MessageBox.Show(respuesta);
-                    CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+                    CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
                 }
                 btnAgregar.Text = "Agregar";
                 btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -242,7 +243,7 @@ namespace PresentationA.Colaboradores.Consulta
             int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
             string mensaje = eventosModelo.eliminarEvento(idEvento);
             MessageBox.Show(mensaje);
-            CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+            CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
             switchButtons(false);
         }
 
@@ -273,7 +274,7 @@ namespace PresentationA.Colaboradores.Consulta
                 
                 string mensaje = eventosModelo.modificarEvento(idEvento, (int)cmbTipoEvento.SelectedValue, dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date, dtpfechaRegistro.Value.Date, txtDescripcion.Text.ToString());
                 MessageBox.Show(mensaje);
-                CargarDG(nuevoDocumento.LegajoColaborador.ToString());
+                CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
                 switchButtons(false);
                 cambiarBotones++;
 
@@ -308,6 +309,20 @@ namespace PresentationA.Colaboradores.Consulta
             cmbTipoMultimedia.Visible = value;
             if (dgvEventos.CurrentRow != null) { dgvEventos.CurrentRow.Selected = false; }
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSoloPagosSueldo.Checked)
+            {
+                
+                CargarDG(nuevoDocumento.LegajoColaborador.ToString(), true);
+            }
+            else
+            {
+                
+                CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
+            }
         }
     }
 }

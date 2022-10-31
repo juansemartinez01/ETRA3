@@ -30,6 +30,7 @@ namespace DataAccessA
         }
         public int modificarSalarioColaborador(int legajo, float monto)
         {
+            
             try
             {
 
@@ -66,7 +67,24 @@ namespace DataAccessA
                                         int historialSalarioCreado = command2.ExecuteNonQuery();
                                         if (historialSalarioCreado == 1)
                                         {
-                                            return 1;
+                                            using (var command3 = new SqlCommand())
+                                            {
+                                                float fondoActualizado = (30 * monto) / 100;
+                                                command3.Connection = connection;
+                                                command3.CommandText = "UPDATE CuentaColaborador SET SaldoMaximo = @fondo WHERE numeroCuenta = (SELECT nroCuenta FROM MovimientosCuentaColaborador WHERE tipoMovimiento = 3 AND legajoColaborador = @legajo)";
+                                                command3.Parameters.AddWithValue("@legajo", legajo);
+                                                command3.Parameters.AddWithValue("@fondo", fondoActualizado);
+                                                command3.CommandType = CommandType.Text;
+                                                int fondoCuentaActualizado = command3.ExecuteNonQuery();
+                                                if (fondoCuentaActualizado == 1)
+                                                {
+                                                    return 1;
+                                                }
+                                                else
+                                                {
+                                                    return 0;
+                                                }
+                                            }
                                         }
                                         else
                                         {
@@ -179,6 +197,7 @@ namespace DataAccessA
             int cantidadDePersonasCargo = 0;
             int salarioCreado = 0;
             int historialesDadosDeBaja = 0;
+            
             int salariosInsertados = 0;
             DataTable legajosColaboradoresAfectados = new DataTable();
             try
@@ -244,6 +263,21 @@ namespace DataAccessA
                             return "Error al dar de baja los salarios antiguos.";
                         }
                     }
+                    /*Aca hacemos el UPDATE a los fondos de las cuentas de los colaboradores*/
+                    using (var command = new SqlCommand())
+                    {
+                        float nuevoFondo = (30 * monto) / 100;
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE CuentaColaborador SET SaldoMaximo = @fondo WHERE numeroCuenta IN (SELECT nroCuenta FROM MovimientosCuentaColaborador WHERE tipoMovimiento = 3 AND legajoColaborador IN (SELECT DISTINCT legajoColaborador FROM HistorialCargo WHERE fechaFin IS NULL AND id_cargo = @idCargo))";
+                        command.Parameters.AddWithValue("@idCargo", idCargo);
+                        command.Parameters.AddWithValue("@fondo", nuevoFondo);
+                        command.CommandType = CommandType.Text;
+                        int fondoCuentaActualizado = command.ExecuteNonQuery();
+                        if (fondoCuentaActualizado != cantidadDePersonasCargo)
+                        {
+                            return "Error al dar de baja los salarios antiguos.";
+                        }
+                    }
 
                     /*Aca hacemos el insert de los nuevos historiales de Salario*/
                     using (var command = new SqlCommand())
@@ -293,6 +327,8 @@ namespace DataAccessA
                         }
 
                     }
+                    
+
 
 
 
@@ -383,6 +419,7 @@ namespace DataAccessA
                                 float salarioBase = float.Parse(row["Monto"].ToString());
                                 float porcentajeSalario = porcentaje * salarioBase / 100;
                                 float salarioFinal = salarioBase + porcentajeSalario;
+                            float nuevoFondo = (30 * salarioFinal) / 100;
                                 using (var command1 = new SqlCommand())
                                 {
 
@@ -396,7 +433,22 @@ namespace DataAccessA
                                         return "Error al insertar el monto del salario, porfavor verifique ese campo.";
                                     }
                                 }
-                                int idUltimoSalario = int.Parse(BuscarIdUltimoSalario());
+
+                            using (var command1 = new SqlCommand())
+                            {
+
+                                command1.Connection = connection;
+                                command1.CommandText = "UPDATE CuentaColaborador SET SaldoMaximo = @fondo WHERE numeroCuenta = (SELECT nroCuenta FROM MovimientosCuentaColaborador WHERE tipoMovimiento = 3 AND legajoColaborador = @legajo)";
+                                command1.Parameters.AddWithValue("@fondo", nuevoFondo);
+                                command1.Parameters.AddWithValue("@legajo", legajoColaborador);
+                                command1.CommandType = CommandType.Text;
+                                int cuentaActualizada = command1.ExecuteNonQuery();
+                                if (cuentaActualizada != 1)
+                                {
+                                    return "Error al actualizar el fondo de la cuenta del legajo: " + legajoColaborador;
+                                }
+                            }
+                            int idUltimoSalario = int.Parse(BuscarIdUltimoSalario());
 
                                 using (var command2 = new SqlCommand())
                                 {

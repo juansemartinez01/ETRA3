@@ -86,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 151);
+            this.label5.Location = new System.Drawing.Point(92, 151);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 23);
@@ -96,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 257);
+            this.label3.Location = new System.Drawing.Point(123, 263);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 23);
@@ -105,7 +105,7 @@
             // 
             // txtmonto
             // 
-            this.txtmonto.Location = new System.Drawing.Point(246, 254);
+            this.txtmonto.Location = new System.Drawing.Point(246, 263);
             this.txtmonto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(239, 32);
@@ -145,7 +145,7 @@
             this.dgvSalarios.EnableHeadersVisualStyles = false;
             this.dgvSalarios.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvSalarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvSalarios.Location = new System.Drawing.Point(535, 103);
+            this.dgvSalarios.Location = new System.Drawing.Point(638, 103);
             this.dgvSalarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvSalarios.Name = "dgvSalarios";
             this.dgvSalarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -199,7 +199,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(96, 419);
+            this.btnAgregar.Location = new System.Drawing.Point(339, 419);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(146, 41);
@@ -213,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 484);
+            this.ClientSize = new System.Drawing.Size(1363, 615);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvSalarios);
             this.Controls.Add(this.txtmonto);

@@ -57,6 +57,7 @@ INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Bienvenida',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Tardanza',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Salud',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Tomar el dia',0)
+INSERT INTO TipoEvento VALUES ('Pago Sueldo',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Otro',0)
 
 SELECT * FROM EstadoColaborador
