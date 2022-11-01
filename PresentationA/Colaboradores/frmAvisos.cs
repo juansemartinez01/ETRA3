@@ -43,5 +43,44 @@ namespace PresentationA.Colaboradores
                 throw ex;
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int[] legajos = new int[50];
+            string legajoCompleto = "";
+            int i = 0;
+            int cantidadCaracteres = 0;
+            foreach(char caracter in txtLegajos.Text)
+            {
+                if(caracter == char.Parse(","))
+                {
+                    if(legajoCompleto.Length > 0)
+                    {
+                        legajos[i] = int.Parse(legajoCompleto);
+                        i++;
+                        legajoCompleto = "";
+                    }
+                }
+                else
+                {
+                    
+                    legajoCompleto += caracter.ToString();
+                }
+                cantidadCaracteres++;
+            }
+            if(cantidadCaracteres == txtLegajos.TextLength)
+            {
+                legajos[i] = int.Parse(legajoCompleto);
+            }
+            int posicionLegajo = 0;
+            foreach(int legajo in legajos)
+            {
+                if(legajo == 0)
+                {
+                    legajos[posicionLegajo]
+                }
+                posicionLegajo++;
+            }
+        }
     }
 }

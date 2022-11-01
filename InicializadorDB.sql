@@ -190,4 +190,9 @@ INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10005,10000
 INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10006,10000006,0,3,0)
 INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10007,10000007,0,3,0)
 
+/*Inicializador tipos de avisos*/
+INSERT INTO TipoAviso VALUES ('Cumpleaños',0)
+INSERT INTO TipoAviso VALUES ('Deuda Cuenta corriente',0)
+INSERT INTO TipoAviso VALUES ('Otro',0)
+
 

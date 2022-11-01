@@ -47,12 +47,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaNotificacion = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvCumpleañosFamiliares = new PresentationA.Controls.DataGridPadre();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtLegajos = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
+            this.chkCargo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosDelMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosFamiliares)).BeginInit();
             this.SuspendLayout();
@@ -201,11 +204,12 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dtpfechaInicio
             // 
             this.dtpfechaInicio.Enabled = false;
-            this.dtpfechaInicio.Location = new System.Drawing.Point(275, 194);
+            this.dtpfechaInicio.Location = new System.Drawing.Point(275, 362);
             this.dtpfechaInicio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
             this.dtpfechaInicio.Size = new System.Drawing.Size(362, 32);
@@ -215,7 +219,7 @@
             // 
             this.cmbTipoEvento.Enabled = false;
             this.cmbTipoEvento.FormattingEnabled = true;
-            this.cmbTipoEvento.Location = new System.Drawing.Point(275, 135);
+            this.cmbTipoEvento.Location = new System.Drawing.Point(275, 295);
             this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
             this.cmbTipoEvento.Size = new System.Drawing.Size(362, 31);
@@ -224,7 +228,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 206);
+            this.label6.Location = new System.Drawing.Point(171, 369);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 23);
@@ -234,7 +238,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 140);
+            this.label1.Location = new System.Drawing.Point(137, 303);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 23);
@@ -251,29 +255,19 @@
             this.label3.TabIndex = 57;
             this.label3.Text = "Legajo Colaborador:";
             // 
-            // comboBox1
+            // dtpFechaNotificacion
             // 
-            this.comboBox1.Enabled = false;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(275, 77);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(362, 31);
-            this.comboBox1.TabIndex = 58;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(275, 266);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(362, 32);
-            this.dateTimePicker1.TabIndex = 60;
+            this.dtpFechaNotificacion.Enabled = false;
+            this.dtpFechaNotificacion.Location = new System.Drawing.Point(275, 424);
+            this.dtpFechaNotificacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpFechaNotificacion.Name = "dtpFechaNotificacion";
+            this.dtpFechaNotificacion.Size = new System.Drawing.Size(362, 32);
+            this.dtpFechaNotificacion.TabIndex = 60;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 272);
+            this.label4.Location = new System.Drawing.Point(14, 431);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(243, 23);
@@ -344,17 +338,58 @@
             this.label7.TabIndex = 63;
             this.label7.Text = "Cumpleaños familiares colaboradores";
             // 
+            // txtLegajos
+            // 
+            this.txtLegajos.Location = new System.Drawing.Point(275, 85);
+            this.txtLegajos.Multiline = true;
+            this.txtLegajos.Name = "txtLegajos";
+            this.txtLegajos.Size = new System.Drawing.Size(362, 88);
+            this.txtLegajos.TabIndex = 64;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(171, 253);
+            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 23);
+            this.label8.TabIndex = 65;
+            this.label8.Text = "Cargo:";
+            // 
+            // cmbCargo
+            // 
+            this.cmbCargo.Enabled = false;
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Location = new System.Drawing.Point(275, 253);
+            this.cmbCargo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(362, 31);
+            this.cmbCargo.TabIndex = 66;
+            // 
+            // chkCargo
+            // 
+            this.chkCargo.AutoSize = true;
+            this.chkCargo.Location = new System.Drawing.Point(275, 199);
+            this.chkCargo.Name = "chkCargo";
+            this.chkCargo.Size = new System.Drawing.Size(254, 27);
+            this.chkCargo.TabIndex = 67;
+            this.chkCargo.Text = "Notificar todo el cargo";
+            this.chkCargo.UseVisualStyleBackColor = true;
+            // 
             // frmAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 588);
+            this.Controls.Add(this.chkCargo);
+            this.Controls.Add(this.cmbCargo);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtLegajos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvCumpleañosFamiliares);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaNotificacion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpfechaInicio);
             this.Controls.Add(this.cmbTipoEvento);
@@ -388,11 +423,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaNotificacion;
         private System.Windows.Forms.Label label4;
         private Controls.DataGridPadre dgvCumpleañosFamiliares;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtLegajos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbCargo;
+        private System.Windows.Forms.CheckBox chkCargo;
     }
 }
