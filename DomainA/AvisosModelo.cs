@@ -13,10 +13,10 @@ namespace DomainA
         AvisosDao AvisosDao = new AvisosDao();
 
 
-        public string crearAviso(int idTipoAviso, string descripcion, DateTime fechaCarga, DateTime fechaOcurrencia, DateTime fechaNotificacion, int[] legajosNotificados)
+        public string crearAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion, int[] legajosNotificados)
         {
             string mensajeErrorInsercion = "";
-            mensajeErrorInsercion = AvisosDao.insertarAviso(idTipoAviso, descripcion, fechaCarga, fechaOcurrencia, fechaNotificacion);
+            mensajeErrorInsercion = AvisosDao.insertarAviso(idTipoAviso, descripcion, fechaOcurrencia, fechaNotificacion);
             if(mensajeErrorInsercion != "Insercion del aviso exitosa")
             {
                 return mensajeErrorInsercion;

@@ -12,7 +12,7 @@ namespace DataAccesA
     public class AvisosDao : ConnectionToSql
     {
         /*Insercion del aviso*/
-        public string insertarAviso(int idTipoAviso,string descripcion,DateTime fechaCarga,DateTime fechaOcurrencia,DateTime fechaNotificacion)
+        public string insertarAviso(int idTipoAviso,string descripcion,DateTime fechaOcurrencia,DateTime fechaNotificacion)
         {
             try
             {
@@ -22,11 +22,11 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,Format(@fechaCarga, 'yyyy - MM - dd'),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'),0)";
+                        command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,GETDATE(),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'),0)";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@idTipoAviso", idTipoAviso);
                         command.Parameters.AddWithValue("@descripcion", descripcion);
-                        command.Parameters.AddWithValue("@fechaCarga", fechaCarga);
+                        
                         command.Parameters.AddWithValue("@fechaOcurrencia", fechaOcurrencia);
                         command.Parameters.AddWithValue("@fechaNotificacion", fechaNotificacion);
 
@@ -55,13 +55,24 @@ namespace DataAccesA
         {
             try
             {
-                int cantidadNotificados = legajosNotificados.Length;
+                int cantidadNotificados = 0;
+                foreach (int legajo in legajosNotificados)
+                {
+                    if (legajo != 0)
+                    {
+                        cantidadNotificados++;
+                    }  
+                }
                 int insercionesExitosas = 0;
                 using (var connection = GetConnection())
                 {
                     connection.Open();
                     foreach (int legajo in legajosNotificados)
                     {
+                        if(legajo == 0)
+                        {
+                            continue;
+                        }
                         using (var command = new SqlCommand())
                         {
                             command.Connection = connection;

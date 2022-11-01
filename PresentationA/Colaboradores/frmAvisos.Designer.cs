@@ -56,6 +56,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.chkCargo = new System.Windows.Forms.CheckBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosDelMes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosFamiliares)).BeginInit();
             this.SuspendLayout();
@@ -154,7 +156,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(431, 508);
+            this.btnEliminar.Location = new System.Drawing.Point(441, 654);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(146, 41);
@@ -175,7 +177,7 @@
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 30;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(224, 508);
+            this.btnModificar.Location = new System.Drawing.Point(225, 654);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(146, 41);
@@ -196,7 +198,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(25, 508);
+            this.btnAgregar.Location = new System.Drawing.Point(18, 654);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(146, 41);
@@ -208,8 +210,7 @@
             // 
             // dtpfechaInicio
             // 
-            this.dtpfechaInicio.Enabled = false;
-            this.dtpfechaInicio.Location = new System.Drawing.Point(275, 362);
+            this.dtpfechaInicio.Location = new System.Drawing.Point(275, 531);
             this.dtpfechaInicio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
             this.dtpfechaInicio.Size = new System.Drawing.Size(362, 32);
@@ -217,9 +218,8 @@
             // 
             // cmbTipoEvento
             // 
-            this.cmbTipoEvento.Enabled = false;
             this.cmbTipoEvento.FormattingEnabled = true;
-            this.cmbTipoEvento.Location = new System.Drawing.Point(275, 295);
+            this.cmbTipoEvento.Location = new System.Drawing.Point(275, 464);
             this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
             this.cmbTipoEvento.Size = new System.Drawing.Size(362, 31);
@@ -228,7 +228,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(171, 369);
+            this.label6.Location = new System.Drawing.Point(171, 538);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 23);
@@ -238,7 +238,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(137, 303);
+            this.label1.Location = new System.Drawing.Point(137, 472);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 23);
@@ -257,8 +257,7 @@
             // 
             // dtpFechaNotificacion
             // 
-            this.dtpFechaNotificacion.Enabled = false;
-            this.dtpFechaNotificacion.Location = new System.Drawing.Point(275, 424);
+            this.dtpFechaNotificacion.Location = new System.Drawing.Point(275, 593);
             this.dtpFechaNotificacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dtpFechaNotificacion.Name = "dtpFechaNotificacion";
             this.dtpFechaNotificacion.Size = new System.Drawing.Size(362, 32);
@@ -267,7 +266,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 431);
+            this.label4.Location = new System.Drawing.Point(14, 600);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(243, 23);
@@ -349,7 +348,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(171, 253);
+            this.label8.Location = new System.Drawing.Point(171, 422);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 23);
@@ -358,9 +357,8 @@
             // 
             // cmbCargo
             // 
-            this.cmbCargo.Enabled = false;
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(275, 253);
+            this.cmbCargo.Location = new System.Drawing.Point(275, 422);
             this.cmbCargo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(362, 31);
@@ -369,18 +367,38 @@
             // chkCargo
             // 
             this.chkCargo.AutoSize = true;
-            this.chkCargo.Location = new System.Drawing.Point(275, 199);
+            this.chkCargo.Location = new System.Drawing.Point(275, 368);
             this.chkCargo.Name = "chkCargo";
             this.chkCargo.Size = new System.Drawing.Size(254, 27);
             this.chkCargo.TabIndex = 67;
             this.chkCargo.Text = "Notificar todo el cargo";
             this.chkCargo.UseVisualStyleBackColor = true;
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(275, 219);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(362, 88);
+            this.txtDescripcion.TabIndex = 68;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(35, 219);
+            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 23);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "Descripcion:";
+            // 
             // frmAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1396, 588);
+            this.ClientSize = new System.Drawing.Size(1396, 720);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.chkCargo);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.label8);
@@ -432,5 +450,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.CheckBox chkCargo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label9;
     }
 }
