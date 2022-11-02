@@ -248,3 +248,4 @@ C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colabo
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.frmRecupero.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmNewPass.resources
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.frmNewPass.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmInicio.resources

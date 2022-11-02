@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
+using System.Data;
 
 namespace DataAccesA.MailServices
 {
@@ -15,7 +16,7 @@ namespace DataAccesA.MailServices
         protected string password { get; set; }
         protected string host { get; set; }
         protected int port { get; set; }
-        protected bool ssl { get; set; }    
+        protected bool ssl { get; set; }
         protected void initializeSmtpClient()
         {
             smtpClient = new SmtpClient();
@@ -25,7 +26,7 @@ namespace DataAccesA.MailServices
             smtpClient.EnableSsl = ssl;
         }
 
-        public void sendMail(string subject, string body, List<string> recipientMail)
+        public void sendMail(string subject, string body, List<string> recipientMail, bool isHtml = false)
         {
             var mailMesssage = new MailMessage();
             try
@@ -36,11 +37,13 @@ namespace DataAccesA.MailServices
                     mailMesssage.To.Add(mail);
                 }
                 mailMesssage.Subject = subject;
+                mailMesssage.IsBodyHtml = isHtml;
                 mailMesssage.Body = body;
                 mailMesssage.Priority = MailPriority.Normal;
+
                 smtpClient.Send(mailMesssage);
             }
-            catch(Exception ex){}
+            catch (Exception ex) { }
             finally
             {
                 mailMesssage.Dispose();
@@ -48,5 +51,6 @@ namespace DataAccesA.MailServices
             }
 
         }
+
     }
 }

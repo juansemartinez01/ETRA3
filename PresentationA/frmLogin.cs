@@ -73,6 +73,8 @@ namespace PresentationA
                     var validLogin = user.LoginUser(txtUser.Text, txtPass.Text);
                     if (validLogin == true)
                     {
+                        AvisosModelo avisos = new AvisosModelo();
+                        avisos.notificarMesActual();
                         frmPrincipal mainMenu = new frmPrincipal();
                         mainMenu.Show();
                         this.Hide();

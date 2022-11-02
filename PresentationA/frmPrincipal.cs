@@ -25,13 +25,7 @@ namespace PresentationA
             bordeInferior = new Panel();
             bordeInferior.Size = new Size(200, 2);
             pnlPrincipal.Controls.Add(bordeInferior);
-            
-            
-
-
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            
-
         }
         private void ActivateButton(object button)
         {

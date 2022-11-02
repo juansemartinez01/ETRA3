@@ -1,6 +1,7 @@
 ﻿using DataAccesA;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -12,7 +13,9 @@ namespace DomainA
     {
         AvisosDao AvisosDao = new AvisosDao();
 
+        public bool notificarMesActual() { return AvisosDao.notificarMesActual(); }
 
+        public DataTable getAllAvisosMesActual() { return AvisosDao.getAllAvisosMesActual(); }
         public string crearAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion, int[] legajosNotificados)
         {
             string mensajeErrorInsercion = "";
