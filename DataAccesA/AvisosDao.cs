@@ -217,8 +217,11 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT * from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
-                                              "  where MONTH(a.fechaOcurrencia) = MONTH(GETDATE())";
+                        command.CommandText = "SELECT ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
+                                                "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
+                                                "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
+                                                "join Colaborador c on c.legajo = ac.legajoColaborador " +
+                                                "where MONTH(a.fechaOcurrencia) = MONTH(GETDATE())";
                         command.CommandType = CommandType.Text;
 
                         resultado.Load(command.ExecuteReader());
@@ -231,7 +234,33 @@ namespace DataAccesA
                 return resultado;
             }
         }
+        public DataTable getAllAvisos()
+        {
+            DataTable resultado = new DataTable();
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
+                                            "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
+                                            "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
+                                            "join Colaborador c on c.legajo = ac.legajoColaborador";
+                        command.CommandType = CommandType.Text;
 
+                        resultado.Load(command.ExecuteReader());
+                        return resultado;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return resultado;
+            }
+        }
         public DataTable getAvisosMesActualColab(string legajo)
         {
             DataTable resultado = new DataTable();

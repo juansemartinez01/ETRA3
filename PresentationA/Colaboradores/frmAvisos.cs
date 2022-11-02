@@ -20,8 +20,8 @@ namespace PresentationA.Colaboradores
         public frmAvisos()
         {
             InitializeComponent();
-            cargarGrillasCumpleaños();
-            LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0"), "nombre", "id_tipoAviso");
+            cargarAvisos();
+            LlenarCombo(cmbTipoAviso, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0"), "nombre", "id_tipoAviso");
             LlenarCombo(cmbCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_Cargo");
             txtLegajos.Enabled = true;
             cmbCargo.Enabled = false;
@@ -41,12 +41,12 @@ namespace PresentationA.Colaboradores
             DataTable cumpleañosFamiliares = new DataTable();
             try
             {
-                dgvCumpleañosDelMes.Rows.Clear();
+                dgvAvisos.Rows.Clear();
                 cumpleañosColaboradores = notificacion.notificacionesDeCumpleaños();
                 for (int i = 0; i < cumpleañosColaboradores.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvCumpleañosDelMes.Rows.Add(cumpleañosColaboradores.Rows[i]["Nombre"], cumpleañosColaboradores.Rows[i]["Apellido"], cumpleañosColaboradores.Rows[i]["Cumpleaños"]);
+                    dgvAvisos.Rows.Add(cumpleañosColaboradores.Rows[i]["Nombre"], cumpleañosColaboradores.Rows[i]["Apellido"], cumpleañosColaboradores.Rows[i]["Cumpleaños"]);
                 }
                 
                 cumpleañosFamiliares = notificacion.cumpleañosFamiliaresColaboradores();
@@ -59,6 +59,27 @@ namespace PresentationA.Colaboradores
             }
         }
 
+        public void cargarAvisos()
+        {
+            //Tenemos que traer la tabla segun los valores ingresados en el filtro, en un principio solo traemos todos los avisos
+            DataTable avisos = avisosModelo.getAllAvisos();
+            try
+            {
+                dgvAvisos.Rows.Clear();
+                
+                for (int i = 0; i < avisos.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvAvisos.Rows.Add(avisos.Rows[i]["nombre"], avisos.Rows[i]["legajo"], avisos.Rows[i]["fechaOcurrencia"], avisos.Rows[i]["descripcion"], avisos.Rows[i]["fechaCarga"], avisos.Rows[i]["fechaNotificacion"]);
+                }
+                  
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             int[] legajos = new int[50];
@@ -112,17 +133,18 @@ namespace PresentationA.Colaboradores
                 return;
             }
             string descripcion = txtDescripcion.Text;
-            DateTime fechaOcurrencia = dtpfechaInicio.Value.Date;
-            DateTime fechaNotificacion = dtpFechaNotificacion.Value.Date;
-            if (cmbTipoEvento.SelectedIndex == -1)
+            DateTime fechaOcurrencia = dtpfechaOcurrencia.Value.Date;
+            DateTime fechaNotificacion = dtpfechaNotificacion.Value.Date;
+            if (cmbTipoAviso.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar un tipo de aviso");
                 return;
             }
-            int idTipoAviso = int.Parse(cmbTipoEvento.SelectedValue.ToString());
+            int idTipoAviso = int.Parse(cmbTipoAviso.SelectedValue.ToString());
 
             string mensaje = avisosModelo.crearAviso(idTipoAviso, descripcion, fechaOcurrencia, fechaNotificacion, legajos);
             MessageBox.Show(mensaje);
+            cargarAvisos();
 
         }
 
