@@ -20,13 +20,19 @@ namespace PresentationA.Colaboradores
         public frmAvisos()
         {
             InitializeComponent();
-            cargarAvisos();
+            cargarAvisos(0, 0, "", "", "", false);
             LlenarCombo(cmbTipoAviso, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0"), "nombre", "id_tipoAviso");
             LlenarCombo(cmbCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_Cargo");
             txtLegajos.Enabled = true;
             cmbCargo.Enabled = false;
             lblCargo.Enabled = false;
             chkCargo.Checked = false;
+            LlenarCombo(cmbColaborador, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
+            LlenarCombo(cmbTipoAvisoFiltro, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0"), "nombre", "id_tipoAviso");
+            chkFiltroFecha.Enabled = true;
+            dtpfechaCargaFiltro.Enabled = false;
+            dtpfechaNotifiaciónFiltro.Enabled = false;
+            dtpfechaOcurrenciaFiltro.Enabled = false;
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -59,10 +65,10 @@ namespace PresentationA.Colaboradores
             }
         }
 
-        public void cargarAvisos()
+        public void cargarAvisos(int legajo,int idTipoAviso, string fechaOcurrencia,string fechaCarga,string fechaNotificacion,bool filtroFecha)
         {
             //Tenemos que traer la tabla segun los valores ingresados en el filtro, en un principio solo traemos todos los avisos
-            DataTable avisos = avisosModelo.getAllAvisos();
+            DataTable avisos = avisosModelo.getAllAvisos(legajo, idTipoAviso, fechaOcurrencia,fechaCarga,fechaNotificacion,filtroFecha);
             try
             {
                 dgvAvisos.Rows.Clear();
@@ -144,7 +150,8 @@ namespace PresentationA.Colaboradores
 
             string mensaje = avisosModelo.crearAviso(idTipoAviso, descripcion, fechaOcurrencia, fechaNotificacion, legajos);
             MessageBox.Show(mensaje);
-            cargarAvisos();
+            cargarAvisos(0,0,"","","",false);
+            limpiarCampos();
 
         }
 
@@ -182,6 +189,65 @@ namespace PresentationA.Colaboradores
             {
                 e.Handled = true;
             }
+        }
+
+        private void chkFiltroFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkFiltroFecha.Checked == true)
+            {
+                dtpfechaCargaFiltro.Enabled = true;
+                dtpfechaNotifiaciónFiltro.Enabled = true;
+                dtpfechaOcurrenciaFiltro.Enabled = true;
+            }
+            else
+            {
+                dtpfechaCargaFiltro.Enabled = false;
+                dtpfechaNotifiaciónFiltro.Enabled = false;
+                dtpfechaOcurrenciaFiltro.Enabled = false;
+            }
+        }
+
+        private void btnAplicar_Click(object sender, EventArgs e)
+        {
+            string fechaCarga = dtpfechaCargaFiltro.Value.ToString("yyyy/MM/dd");
+            string fechaNotificacion = dtpfechaNotifiaciónFiltro.Value.ToString("yyyy/MM/dd");
+            string fechaOcurrencia = dtpfechaOcurrenciaFiltro.Value.ToString("yyyy/MM/dd");
+            int colaboradorFiltro = 0;
+            int tipoAvisofiltro = 0;
+            bool filtroFecha = false;
+
+            if(cmbColaborador.SelectedIndex != -1)
+            {
+                colaboradorFiltro = int.Parse(cmbColaborador.SelectedValue.ToString());
+            }
+            if(cmbTipoAvisoFiltro.SelectedIndex != -1)
+            {
+                tipoAvisofiltro = int.Parse(cmbTipoAvisoFiltro.SelectedValue.ToString());
+            }
+            if (chkFiltroFecha.Checked)
+            {
+                filtroFecha = true;
+            }
+            cargarAvisos(colaboradorFiltro, tipoAvisofiltro, fechaOcurrencia, fechaCarga, fechaNotificacion, filtroFecha);
+            limpiarCampos();
+
+        }
+        public void limpiarCampos()
+        {
+            cmbColaborador.SelectedIndex = -1;
+            cmbTipoAvisoFiltro.SelectedIndex = -1;
+            dtpfechaCargaFiltro.Value = DateTime.Now;
+            dtpfechaNotifiaciónFiltro.Value = DateTime.Now;
+            dtpfechaOcurrenciaFiltro.Value = DateTime.Now;
+            chkFiltroFecha.Checked = false;
+            txtLegajos.Text = "";
+            txtDescripcion.Text = "";
+            cmbCargo.SelectedIndex = -1;
+            dtpfechaOcurrencia.Value = DateTime.Now;
+            dtpfechaNotificacion.Value = DateTime.Now;
+            cmbTipoAviso.SelectedIndex = -1;
+            
+
         }
     }
 }

@@ -234,8 +234,29 @@ namespace DataAccesA
                 return resultado;
             }
         }
-        public DataTable getAllAvisos()
+        public DataTable getAllAvisos(int legajo, int idTipoAviso, string fechaOcurrencia, string fechaCarga, string fechaNotificacion, bool filtroFecha)
         {
+            string parametros = "";
+            if(legajo != 0)
+            {
+                parametros += " AND ac.legajoColaborador = " + legajo;
+            }
+            if(idTipoAviso != 0)
+            {
+                parametros += " AND ta.id_tipoAviso = " + idTipoAviso;
+            }
+            if(filtroFecha)
+            {
+                parametros += " AND a.fechaCarga >= '" + fechaCarga + "'";
+            }
+            if (filtroFecha)
+            {
+                parametros += " AND a.fechaOcurrencia >= '" + fechaOcurrencia + "'";
+            }
+            if (filtroFecha)
+            {
+                parametros += " AND a.fechaNotificacion >= '" + fechaNotificacion + "'";
+            }
             DataTable resultado = new DataTable();
             try
             {
@@ -248,7 +269,7 @@ namespace DataAccesA
                         command.CommandText = "SELECT ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
                                             "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
-                                            "join Colaborador c on c.legajo = ac.legajoColaborador";
+                                            "join Colaborador c on c.legajo = ac.legajoColaborador AND a.borradoLogico = 0" + parametros;
                         command.CommandType = CommandType.Text;
 
                         resultado.Load(command.ExecuteReader());

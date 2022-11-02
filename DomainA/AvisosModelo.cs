@@ -16,7 +16,7 @@ namespace DomainA
         public bool notificarMesActual() { return AvisosDao.notificarMesActual(); }
 
         public DataTable getAllAvisosMesActual() { return AvisosDao.getAllAvisosMesActual(); }
-        public DataTable getAllAvisos() { return AvisosDao.getAllAvisos(); }
+        public DataTable getAllAvisos(int legajo, int idTipoAviso, string fechaOcurrencia, string fechaCarga, string fechaNotificacion,bool filtroFecha) { return AvisosDao.getAllAvisos(legajo, idTipoAviso, fechaOcurrencia,fechaCarga,fechaNotificacion,filtroFecha); }
 
         public string crearAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion, int[] legajosNotificados)
         {
