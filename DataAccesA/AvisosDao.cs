@@ -56,7 +56,40 @@ namespace DataAccesA
         }
         public string declararNotificados(int idAviso, int[] legajosNotificados)
         {
-            try
+            
+            DataTable dt = new DataTable();
+            /*Aca buscamos lso legajos de todos los caolaboradores para confirmar que los legajos que ingresan existan*/
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT legajo FROM Colaborador WHERE borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        dt.Load(reader);
+                        
+                    }
+                }
+            bool legajoEncontrado = false;
+            for (int i = 0; i < legajosNotificados.Length; i++)
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (int.Parse(row["Legajo"].ToString()) == legajosNotificados[i])
+                    {
+                        legajoEncontrado = true;
+                        break;
+                    }
+                }
+                if (!legajoEncontrado)
+                {
+                    legajosNotificados[i] = 0;
+                }
+                legajoEncontrado = false;
+            }
+                try
             {
                 int cantidadNotificados = 0;
                 foreach (int legajo in legajosNotificados)

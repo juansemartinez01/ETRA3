@@ -31,9 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCumpleañosDelMes = new PresentationA.Controls.DataGridPadre();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,17 +46,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFechaNotificacion = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvCumpleañosFamiliares = new PresentationA.Controls.DataGridPadre();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtLegajos = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCargo = new System.Windows.Forms.Label();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.chkCargo = new System.Windows.Forms.CheckBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosDelMes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosFamiliares)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvCumpleañosDelMes
@@ -251,9 +246,9 @@
             this.label3.Location = new System.Drawing.Point(34, 85);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 23);
+            this.label3.Size = new System.Drawing.Size(243, 23);
             this.label3.TabIndex = 57;
-            this.label3.Text = "Legajo Colaborador:";
+            this.label3.Text = "Legajos Colaboradores:";
             // 
             // dtpFechaNotificacion
             // 
@@ -273,87 +268,33 @@
             this.label4.TabIndex = 59;
             this.label4.Text = "Fecha de Recordatorio:";
             // 
-            // dgvCumpleañosFamiliares
-            // 
-            this.dgvCumpleañosFamiliares.AllowUserToAddRows = false;
-            this.dgvCumpleañosFamiliares.AllowUserToDeleteRows = false;
-            this.dgvCumpleañosFamiliares.AllowUserToOrderColumns = true;
-            this.dgvCumpleañosFamiliares.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCumpleañosFamiliares.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCumpleañosFamiliares.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCumpleañosFamiliares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCumpleañosFamiliares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCumpleañosFamiliares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCumpleañosFamiliares.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCumpleañosFamiliares.EnableHeadersVisualStyles = false;
-            this.dgvCumpleañosFamiliares.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dgvCumpleañosFamiliares.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvCumpleañosFamiliares.Location = new System.Drawing.Point(677, 331);
-            this.dgvCumpleañosFamiliares.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dgvCumpleañosFamiliares.Name = "dgvCumpleañosFamiliares";
-            this.dgvCumpleañosFamiliares.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCumpleañosFamiliares.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvCumpleañosFamiliares.RowHeadersWidth = 51;
-            this.dgvCumpleañosFamiliares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCumpleañosFamiliares.Size = new System.Drawing.Size(684, 218);
-            this.dgvCumpleañosFamiliares.TabIndex = 61;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(677, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(288, 23);
+            this.label5.Size = new System.Drawing.Size(268, 23);
             this.label5.TabIndex = 62;
-            this.label5.Text = "Cumpleaños colaboradores";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(677, 298);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(385, 23);
-            this.label7.TabIndex = 63;
-            this.label7.Text = "Cumpleaños familiares colaboradores";
+            this.label5.Text = "Cumpleaños de este mes ";
             // 
             // txtLegajos
             // 
-            this.txtLegajos.Location = new System.Drawing.Point(275, 85);
+            this.txtLegajos.Location = new System.Drawing.Point(312, 85);
             this.txtLegajos.Multiline = true;
             this.txtLegajos.Name = "txtLegajos";
             this.txtLegajos.Size = new System.Drawing.Size(362, 88);
             this.txtLegajos.TabIndex = 64;
+            this.txtLegajos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajos_KeyPress);
             // 
-            // label8
+            // lblCargo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(171, 422);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 23);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "Cargo:";
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(171, 422);
+            this.lblCargo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(77, 23);
+            this.lblCargo.TabIndex = 65;
+            this.lblCargo.Text = "Cargo:";
             // 
             // cmbCargo
             // 
@@ -373,6 +314,7 @@
             this.chkCargo.TabIndex = 67;
             this.chkCargo.Text = "Notificar todo el cargo";
             this.chkCargo.UseVisualStyleBackColor = true;
+            this.chkCargo.CheckedChanged += new System.EventHandler(this.chkCargo_CheckedChanged);
             // 
             // txtDescripcion
             // 
@@ -392,20 +334,29 @@
             this.label9.TabIndex = 69;
             this.label9.Text = "Descripcion:";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.label8.Location = new System.Drawing.Point(-5, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(311, 20);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "Debe escrbirlos separados por una coma";
+            // 
             // frmAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1396, 720);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.chkCargo);
             this.Controls.Add(this.cmbCargo);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblCargo);
             this.Controls.Add(this.txtLegajos);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dgvCumpleañosFamiliares);
             this.Controls.Add(this.dtpFechaNotificacion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -421,7 +372,6 @@
             this.Name = "frmAvisos";
             this.Text = "frmNotificaciones";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosDelMes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCumpleañosFamiliares)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,14 +393,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFechaNotificacion;
         private System.Windows.Forms.Label label4;
-        private Controls.DataGridPadre dgvCumpleañosFamiliares;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtLegajos;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCargo;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.CheckBox chkCargo;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

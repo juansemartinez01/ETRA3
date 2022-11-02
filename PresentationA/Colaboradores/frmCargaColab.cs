@@ -72,10 +72,7 @@ namespace PresentationA.Colaboradores
             {
                 obraSocial = "No especifica";
             }
-            if(txtLegajoResponsable.Text != "")
-            {
-                legajoResponsable = int.Parse(txtLegajoResponsable.Text.ToString());
-            }
+            
 
             string telefonoEmergencia = txtNroEmergencia.Text;
             string telefonoContacto = txtNroContacto.Text;

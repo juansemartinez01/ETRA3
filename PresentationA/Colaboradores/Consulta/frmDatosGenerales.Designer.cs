@@ -47,11 +47,7 @@
             this.lblDiaSalida = new System.Windows.Forms.Label();
             this.lblSucursal = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
-            this.lblNomJefe = new System.Windows.Forms.Label();
-            this.lblLegJefe = new System.Windows.Forms.Label();
             this.lblnombreEstado = new System.Windows.Forms.Label();
             this.lblnombreCargo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -214,26 +210,6 @@
             this.label10.TabIndex = 77;
             this.label10.Text = "Puesto:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(359, 38);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(213, 22);
-            this.label12.TabIndex = 79;
-            this.label12.Text = "Responsable a Cargo:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(359, 85);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(280, 22);
-            this.label15.TabIndex = 81;
-            this.label15.Text = "Legajo Responsable a Cargo:";
-            // 
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
@@ -242,24 +218,6 @@
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(0, 22);
             this.lblPuesto.TabIndex = 82;
-            // 
-            // lblNomJefe
-            // 
-            this.lblNomJefe.AutoSize = true;
-            this.lblNomJefe.Location = new System.Drawing.Point(543, 38);
-            this.lblNomJefe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNomJefe.Name = "lblNomJefe";
-            this.lblNomJefe.Size = new System.Drawing.Size(0, 22);
-            this.lblNomJefe.TabIndex = 83;
-            // 
-            // lblLegJefe
-            // 
-            this.lblLegJefe.AutoSize = true;
-            this.lblLegJefe.Location = new System.Drawing.Point(620, 85);
-            this.lblLegJefe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLegJefe.Name = "lblLegJefe";
-            this.lblLegJefe.Size = new System.Drawing.Size(0, 22);
-            this.lblLegJefe.TabIndex = 84;
             // 
             // lblnombreEstado
             // 
@@ -324,11 +282,7 @@
             // 
             this.groupBox3.Controls.Add(this.lblnombreCargo);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.lblLegJefe);
             this.groupBox3.Controls.Add(this.lblPuesto);
-            this.groupBox3.Controls.Add(this.lblNomJefe);
             this.groupBox3.Location = new System.Drawing.Point(32, 412);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
@@ -381,11 +335,7 @@
         private System.Windows.Forms.Label lblDiaSalida;
         private System.Windows.Forms.Label lblSucursal;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblPuesto;
-        private System.Windows.Forms.Label lblNomJefe;
-        private System.Windows.Forms.Label lblLegJefe;
         private System.Windows.Forms.Label lblnombreEstado;
         private System.Windows.Forms.Label lblnombreCargo;
         private System.Windows.Forms.GroupBox groupBox1;

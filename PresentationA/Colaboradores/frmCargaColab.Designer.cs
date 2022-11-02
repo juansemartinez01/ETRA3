@@ -64,8 +64,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtLegajoResponsable = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.txtObraSocial = new System.Windows.Forms.TextBox();
             this.txtNroContacto = new System.Windows.Forms.TextBox();
             this.txtNroEmergencia = new System.Windows.Forms.TextBox();
@@ -405,8 +403,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtLegajoResponsable);
-            this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.txtObraSocial);
             this.groupBox2.Controls.Add(this.txtNroContacto);
             this.groupBox2.Controls.Add(this.txtNroEmergencia);
@@ -433,23 +429,6 @@
             this.groupBox2.TabIndex = 95;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
-            // 
-            // txtLegajoResponsable
-            // 
-            this.txtLegajoResponsable.Location = new System.Drawing.Point(774, 89);
-            this.txtLegajoResponsable.Name = "txtLegajoResponsable";
-            this.txtLegajoResponsable.Size = new System.Drawing.Size(152, 30);
-            this.txtLegajoResponsable.TabIndex = 18;
-            this.txtLegajoResponsable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajoResponsable_KeyPress);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(557, 92);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(192, 22);
-            this.label24.TabIndex = 132;
-            this.label24.Text = "Legajo responsable:";
             // 
             // txtObraSocial
             // 
@@ -733,7 +712,5 @@
         private System.Windows.Forms.CheckBox chkIngresaHoy;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dtpFechaingreso;
-        private System.Windows.Forms.TextBox txtLegajoResponsable;
-        private System.Windows.Forms.Label label24;
     }
 }

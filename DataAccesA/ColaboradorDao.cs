@@ -1084,6 +1084,31 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
+        public DataTable buscarLegajosDeUnCargo(int idCargo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT HC.legajoColaborador AS Legajo FROM HistorialCargo HC JOIN Cargo C ON HC.id_cargo = C.id_cargo WHERE HC.fechaFin IS NULL AND HC.id_cargo = @idCargo AND HC.borradoLogico = 0 AND C.borradoLogico = 0";         
+                        command.Parameters.AddWithValue("@idCargo", idCargo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        dt.Load(reader);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return dt;
+            }
+        }
 
     }
 }

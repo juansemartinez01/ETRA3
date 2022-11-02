@@ -107,6 +107,7 @@
             this.txtMontoMovimiento.Name = "txtMontoMovimiento";
             this.txtMontoMovimiento.Size = new System.Drawing.Size(366, 32);
             this.txtMontoMovimiento.TabIndex = 34;
+            this.txtMontoMovimiento.TextChanged += new System.EventHandler(this.txtMontoMovimiento_TextChanged);
             this.txtMontoMovimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoMovimiento_KeyPress);
             // 
             // btnEliminar

@@ -146,5 +146,10 @@ namespace PresentationA.Colaboradores.Consulta
                 e.Handled = true;
             }
         }
+
+        private void txtMontoMovimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

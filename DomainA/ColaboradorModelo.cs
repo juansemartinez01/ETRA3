@@ -60,5 +60,9 @@ namespace DomainA
         {
             return colaboradorDao.modificarColaborador(legajo,nombre,apellido,fechaNacimiento,Cuit,dni,calle,numeroCalle,piso,depto,localidad,mail,telefonoContacto,telefonoEmergencia,estado,obraSocial,puesto,legajoResponsable); 
         }
+        public DataTable buscarLegajosDeUnCargo(int idCargo)
+        {
+            return colaboradorDao.buscarLegajosDeUnCargo(idCargo);
+        }
     }
 }

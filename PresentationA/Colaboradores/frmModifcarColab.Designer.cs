@@ -30,14 +30,12 @@
         {
             this.btnGuardar = new PresentationA.Controls.BotonPadre();
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
-            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.txtPiso = new System.Windows.Forms.TextBox();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
@@ -69,11 +67,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.txtObraSocial = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cmbPuesto = new System.Windows.Forms.ComboBox();
-            this.cmbLegajoResponsable = new System.Windows.Forms.ComboBox();
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -127,18 +123,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(705, 71);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 22);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Provincia:";
             // 
             // label9
             // 
@@ -204,7 +188,6 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.cmbProvincia);
             this.groupBox1.Controls.Add(this.txtPiso);
             this.groupBox1.Controls.Add(this.txtDepartamento);
             this.groupBox1.Controls.Add(this.txtLocalidad);
@@ -215,23 +198,14 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Location = new System.Drawing.Point(35, 286);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(997, 251);
+            this.groupBox1.Size = new System.Drawing.Size(934, 251);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
-            // 
-            // cmbProvincia
-            // 
-            this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(807, 68);
-            this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(205, 30);
-            this.cmbProvincia.TabIndex = 12;
             // 
             // txtPiso
             // 
@@ -318,7 +292,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox2.Size = new System.Drawing.Size(997, 86);
+            this.groupBox2.Size = new System.Drawing.Size(934, 86);
             this.groupBox2.TabIndex = 78;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONTACTO";
@@ -377,7 +351,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(766, 13);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(183, 221);
+            this.pictureBox2.Size = new System.Drawing.Size(120, 221);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -455,7 +429,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(997, 246);
+            this.groupBox3.Size = new System.Drawing.Size(934, 246);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -536,7 +510,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox4.Size = new System.Drawing.Size(997, 137);
+            this.groupBox4.Size = new System.Drawing.Size(934, 137);
             this.groupBox4.TabIndex = 89;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS GENERALES";
@@ -556,16 +530,6 @@
             this.txtObraSocial.Size = new System.Drawing.Size(226, 30);
             this.txtObraSocial.TabIndex = 18;
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(287, 43);
-            this.label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(280, 22);
-            this.label27.TabIndex = 81;
-            this.label27.Text = "Legajo Responsable a Cargo:";
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -581,14 +545,12 @@
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.cmbPuesto);
-            this.groupBox6.Controls.Add(this.cmbLegajoResponsable);
             this.groupBox6.Controls.Add(this.label25);
-            this.groupBox6.Controls.Add(this.label27);
             this.groupBox6.Location = new System.Drawing.Point(35, 893);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox6.Size = new System.Drawing.Size(997, 83);
+            this.groupBox6.Size = new System.Drawing.Size(934, 83);
             this.groupBox6.TabIndex = 91;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ACTIVIDAD LABORAL";
@@ -601,14 +563,6 @@
             this.cmbPuesto.Size = new System.Drawing.Size(177, 30);
             this.cmbPuesto.TabIndex = 19;
             // 
-            // cmbLegajoResponsable
-            // 
-            this.cmbLegajoResponsable.FormattingEnabled = true;
-            this.cmbLegajoResponsable.Location = new System.Drawing.Point(535, 40);
-            this.cmbLegajoResponsable.Name = "cmbLegajoResponsable";
-            this.cmbLegajoResponsable.Size = new System.Drawing.Size(177, 30);
-            this.cmbLegajoResponsable.TabIndex = 20;
-            // 
             // pnlBotones
             // 
             this.pnlBotones.Controls.Add(this.btnCancelar);
@@ -616,7 +570,7 @@
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBotones.Location = new System.Drawing.Point(0, 1026);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(1228, 100);
+            this.pnlBotones.Size = new System.Drawing.Size(1249, 100);
             this.pnlBotones.TabIndex = 94;
             // 
             // label26
@@ -624,7 +578,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(354, 9);
+            this.label26.Location = new System.Drawing.Point(324, 9);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(417, 37);
             this.label26.TabIndex = 95;
@@ -638,7 +592,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(50, 50);
             this.AutoScrollMinSize = new System.Drawing.Size(50, 50);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1249, 491);
+            this.ClientSize = new System.Drawing.Size(1270, 491);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.groupBox6);
@@ -674,7 +628,6 @@
         #endregion
         private Controls.BotonPadre btnGuardar;
         private Controls.BotonPadre btnCancelar;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -696,11 +649,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Panel pnlBotones;
-        private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.TextBox txtPiso;
         private System.Windows.Forms.TextBox txtDepartamento;
         private System.Windows.Forms.TextBox txtLocalidad;
@@ -718,7 +669,6 @@
         private System.Windows.Forms.TextBox txtObraSocial;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.ComboBox cmbPuesto;
-        private System.Windows.Forms.ComboBox cmbLegajoResponsable;
         private System.Windows.Forms.Label label26;
     }
 }
