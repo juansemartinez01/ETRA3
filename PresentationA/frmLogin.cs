@@ -74,7 +74,7 @@ namespace PresentationA
                     if (validLogin == true)
                     {
                         AvisosModelo avisos = new AvisosModelo();
-                        avisos.notificarMesActual();
+                        avisos.notificarAvisosHoy();
                         frmPrincipal mainMenu = new frmPrincipal();
                         mainMenu.Show();
                         this.Hide();

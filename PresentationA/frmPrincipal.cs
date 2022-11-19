@@ -9,11 +9,15 @@ using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Point = Microsoft.Reporting.Map.WebForms.BingMaps.Point;
 
 namespace PresentationA
+
 {
+    
     public partial class frmPrincipal : Form
     {
+
         NotifiacacionesGeneralesModelo notifiacaciones = new NotifiacacionesGeneralesModelo();
         ColaboradorModelo colaborador = new ColaboradorModelo();
+        AvisosModelo avisos = new AvisosModelo();
         private IconButton botonSeleccionado;
         private Panel bordeInferior;
         public frmPrincipal()
@@ -185,10 +189,7 @@ namespace PresentationA
             openChildFormInPanel(new frmDocumentos());
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnAvisos_Click(object sender, EventArgs e)
         {

@@ -30,6 +30,7 @@ SELECT * FROM Colaborador
 
 /*Inicializador de la tabla Perfil*/
 INSERT into Perfil (nombre,borradoLogico) VALUES ('ADMINISTRADOR',0)
+INSERT into Perfil (nombre,borradoLogico) VALUES ('COLABORADOR',0)
 
 SELECT * FROM Perfil
 

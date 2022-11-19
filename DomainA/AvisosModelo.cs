@@ -13,7 +13,7 @@ namespace DomainA
     {
         AvisosDao AvisosDao = new AvisosDao();
 
-        public bool notificarMesActual() { return AvisosDao.notificarMesActual(); }
+        public bool notificarAvisosHoy() { return AvisosDao.notificarAvisosHoy(); }
 
         public DataTable getAllAvisosMesActual() { return AvisosDao.getAllAvisosMesActual(); }
         public DataTable getAllAvisos(int legajo, int idTipoAviso, string fechaOcurrencia, string fechaCarga, string fechaNotificacion,bool filtroFecha) { return AvisosDao.getAllAvisos(legajo, idTipoAviso, fechaOcurrencia,fechaCarga,fechaNotificacion,filtroFecha); }
@@ -34,5 +34,7 @@ namespace DomainA
             }
             return "Aviso creado con exito";
         }
+
+        public bool notificarAviso(int id, string subject, string body) { return AvisosDao.notificarAviso(id, subject, body); }
     }
 }

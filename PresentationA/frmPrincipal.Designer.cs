@@ -345,7 +345,6 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlReportes.ResumeLayout(false);
             this.pnlColaboradores.ResumeLayout(false);
