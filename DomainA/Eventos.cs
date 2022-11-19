@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
+using Common.Cache;
 using DataAccesA;
 
 
@@ -21,7 +22,8 @@ namespace DomainA
         }
         public string InsertarEventos(int tipoEvento, int legajoColaborador, string descripcion, DateTime fechaInicio, DateTime fechaFin)
         {
-            return eventosDao.InsertarEvento(tipoEvento, legajoColaborador, descripcion, fechaInicio, fechaFin);
+            if (UserCache.perfil == Perfiles.admin) {return eventosDao.InsertarEvento(tipoEvento, legajoColaborador, descripcion, fechaInicio, fechaFin); }
+            return "No tiene permisos";
         }
         public string buscarUltimoEvento()
         {
@@ -29,11 +31,13 @@ namespace DomainA
         }
         public string eliminarEvento(int idEvento)
         {
-            return eventosDao.eliminarEvento(idEvento);
+            if (UserCache.perfil == Perfiles.admin) { return eventosDao.eliminarEvento(idEvento); }
+            return "No tiene permisos";
         }
         public string modificarEvento(int idEvento, int tipoEvento, DateTime fechaInicio, DateTime fechaFin, DateTime fechaRegistro, string descripcion)
         {
-            return eventosDao.modificarEvento(idEvento, tipoEvento, fechaInicio, fechaFin, fechaRegistro, descripcion);
+            if (UserCache.perfil == Perfiles.admin) { return eventosDao.modificarEvento(idEvento, tipoEvento, fechaInicio, fechaFin, fechaRegistro, descripcion); }
+            return "No tiene permisos";
         }
         public int buscarIdConNombre(string nombreBusqueda,string nombreTabla)
         {

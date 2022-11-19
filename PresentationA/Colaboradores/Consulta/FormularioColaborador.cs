@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
-using System.Reflection;
+using Common.Cache;
 using System.Windows.Forms;
 using DomainA;
 using FontAwesome.Sharp;
@@ -176,7 +176,8 @@ namespace PresentationA
             colaborador.Clear();
             colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
             pnlBotones.Enabled = true;
-            btnModificar.Enabled = true;
+            if (UserCache.perfil == Perfiles.admin) {btnModificar.Enabled = true; }
+
             btnDatosPersonales_Click(btnDatosPersonales, e);
         }
 
@@ -192,6 +193,11 @@ namespace PresentationA
                 frmModifcarColab mod = new frmModifcarColab(colaborador);
                 mod.ShowDialog();
             }
+        }
+
+        private void FormularioColaborador_Load(object sender, EventArgs e)
+        {
+            if(UserCache.perfil != Perfiles.admin){btnModificar.Enabled = false; }
         }
     }
 }

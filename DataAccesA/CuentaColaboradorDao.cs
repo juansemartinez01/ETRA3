@@ -24,7 +24,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT H.idHistorialCuenta AS 'Numero mov.',T.nombre AS 'Tipo movimiento',H.fechaInicio AS 'Fecha registro',H.montoMoviento AS 'Monto del mov.' FROM TipoMovimiento T JOIN MovimientosCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
+                        command.CommandText = "SELECT H.idHistorialCuenta,T.nombre,H.fechaInicio ,H.montoMoviento FROM TipoMovimiento T JOIN MovimientosCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
@@ -220,10 +220,6 @@ namespace DataAccesA
                 using (var connection = GetConnection())
                 {
                     connection.Open();
-
-
-
-
                     using (var command1 = new SqlCommand())
                     {
                         command1.Connection = connection;
@@ -244,9 +240,6 @@ namespace DataAccesA
                             if (montoActual != "")
                             {
                                 montoNuevo = float.Parse(montoActual) + montoMovimiento;
-
-
-
                                 using (var command2 = new SqlCommand())
                                 {
                                     command2.Connection = connection;

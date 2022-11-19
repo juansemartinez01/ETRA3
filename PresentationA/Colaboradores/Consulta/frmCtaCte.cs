@@ -1,4 +1,5 @@
-﻿using DataAccesA;
+﻿using Common.Cache;
+using DataAccesA;
 using DomainA;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,13 @@ namespace PresentationA.Colaboradores.Consulta
         public frmCtaCte(string legajo)
         {
             InitializeComponent();
+            lblError.Visible = false;
             colaboradorModelo.legajo = int.Parse(legajo);
             float fondoMaximo = float.Parse(cuenta.buscarFondoMaximoPermitido(colaboradorModelo.legajo));
             fondoMaximo = -fondoMaximo;
             lblFondoMaximoPermitido.Text = fondoMaximo.ToString();
             lblFondoMaximoPermitido.ForeColor = Color.Red;
-            LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
+            //LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
             CargarDG(legajo);
             buscarSaldo();
             LimpiarCampos();
@@ -43,9 +45,13 @@ namespace PresentationA.Colaboradores.Consulta
         {
             try
             {
+                dgvCtaCte.Rows.Clear();
                 cuentaColaborador = cuenta.buscarCuentaColaborador(int.Parse(legajo));
-                dgvBusqueda.DataSource =cuentaColaborador;
-
+                for (int i = 0; i < cuentaColaborador.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvCtaCte.Rows.Add(cuentaColaborador.Rows[i]["idHistorialCuenta"],cuentaColaborador.Rows[i]["nombre"], cuentaColaborador.Rows[i]["montoMoviento"], cuentaColaborador.Rows[i]["fechaInicio"]);
+                }
             }
             catch (Exception ex)
             {
@@ -53,20 +59,21 @@ namespace PresentationA.Colaboradores.Consulta
             }
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnDepositar_Click(object sender, EventArgs e)
         {
-            if(txtMontoMovimiento.Text == "" || cmbTipoMovimiento.SelectedIndex == -1)
+            if(txtDepositar.Text == "")
             {
-                MessageBox.Show("Debe completar el monto del movimiento y seleccionar un tipo de movimiento");
+                msgError("Debe completar el monto del movimiento con un valor mayor a cero");
                 return;
             }
-            float monto = float.Parse(txtMontoMovimiento.Text);
-            int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
-            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, tipoMovimiento);
+            float monto = float.Parse(txtDepositar.Text);
+            //int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
+            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, 1);
             MessageBox.Show(mensaje);
             CargarDG(colaboradorModelo.legajo.ToString());
             buscarSaldo();
             LimpiarCampos();
+            lblError.Visible = false;
         }
         private void buscarSaldo()
         {
@@ -85,58 +92,34 @@ namespace PresentationA.Colaboradores.Consulta
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int resultado = cuenta.eliminarMovimiento(colaboradorModelo.legajo, cuenta.Movimientoid);
-            if (resultado == 0)
-            {
-                MessageBox.Show("ocurrio un error.");
-            }
-            else
-            {
-                MessageBox.Show("Movimiento eliminado correctamente.");
-                buscarSaldo();
-                CargarDG(colaboradorModelo.legajo.ToString());
-                LimpiarCampos();
-            }
-        }
-
         private void dgvBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idMovimiento = 0;
+            
             int indice = e.RowIndex;
             
-            if (indice == -1 || (indice + 1) >= (dgvBusqueda.Rows.Count))
+            if (indice == -1 || (indice + 1) >= (dgvCtaCte.Rows.Count))
             {
-                btnVerArchivo.Enabled = false;
-                btnEliminar.Enabled = false;
-                
                 return;
             }
-            DataGridViewRow filaSeleccionada = dgvBusqueda.Rows[indice];
+            DataGridViewRow filaSeleccionada = dgvCtaCte.Rows[indice];
             cuenta.Movimientoid = int.Parse(filaSeleccionada.Cells["Numero mov."].Value.ToString());
             if(filaSeleccionada.Cells["Tipo movimiento"].Value.ToString() == "Creacion cuenta                                   ")
             {
-                btnEliminar.Enabled = false;
+                
                 return ;
-            }
-            
-            btnEliminar.Enabled = true;
-            
+            }       
         }
         private void LimpiarCampos()
         {
-            txtMontoMovimiento.Text = "";
-            cmbTipoMovimiento.SelectedIndex = -1;
-            btnEliminar.Enabled = false;
-            
+            txtDepositar.Text = "";
+            txtRetirar.Text = "";
             cuenta.Movimientoid = -1;
             
         }
 
         private void frmCtaCte_Load(object sender, EventArgs e)
         {
-
+            if(UserCache.perfil != Perfiles.admin) { btnDepositar.Enabled = false;}
         }
 
         private void txtMontoMovimiento_KeyPress(object sender, KeyPressEventArgs e)
@@ -147,9 +130,27 @@ namespace PresentationA.Colaboradores.Consulta
             }
         }
 
-        private void txtMontoMovimiento_TextChanged(object sender, EventArgs e)
+        private void btnRetirar_Click(object sender, EventArgs e)
         {
+            if (txtRetirar.Text == "" || txtRetirar.Text == "0")
+            {
+                msgError("Debe completar el monto del movimiento con un valor mayor a cero");
+                return;
+            }
 
+            float monto = float.Parse(txtRetirar.Text);
+            //int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
+            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, 2);
+            CargarDG(colaboradorModelo.legajo.ToString());
+            buscarSaldo();
+            LimpiarCampos();
+            lblError.Visible = false;
         }
+        private void msgError(string msg)
+        {
+            lblError.Text = "     " + msg;
+            lblError.Visible = true;
+        }
+
     }
 }

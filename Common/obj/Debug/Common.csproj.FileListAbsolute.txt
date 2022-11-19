@@ -1,0 +1,6 @@
+C:\Users\usuario\Documents\ETRA\Programa\Common\bin\Debug\Common.dll
+C:\Users\usuario\Documents\ETRA\Programa\Common\bin\Debug\Common.pdb
+C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.dll
+C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.pdb

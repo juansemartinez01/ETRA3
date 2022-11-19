@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
+using Common.Cache;
 
 namespace DataAccesA
 {
@@ -26,6 +27,10 @@ namespace DataAccesA
                         SqlDataReader reader = command.ExecuteReader();
                         if (reader.HasRows)
                         {
+                            while (reader.Read()) {
+                                UserCache.perfil = reader.GetInt32(1);
+                                UserCache.mail = reader.GetString(2);   
+                            }
                             return true;
                         }
                         else

@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using DomainA;
 using System.Diagnostics;
+using Common.Cache;
 
 namespace PresentationA.Colaboradores.Consulta
 {
@@ -84,10 +85,7 @@ namespace PresentationA.Colaboradores.Consulta
             btnVerArchivo.Visible = true;
             btnEliminar.Visible = true;
             btnModificar.Visible = true;
-
         }
-
-        
 
         private void btnAgregarArchivo_Click(object sender, EventArgs e)
         {
@@ -264,6 +262,7 @@ namespace PresentationA.Colaboradores.Consulta
                     return;
                 }
                 //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+                //Error, controlar if con indice menor a cero, juanse no sabe nada ni testear puede
                 DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
                 int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
                 
@@ -322,6 +321,17 @@ namespace PresentationA.Colaboradores.Consulta
             {
                 
                 CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
+            }
+        }
+
+        private void frmHistorialEvento_Load(object sender, EventArgs e)
+        {
+            if (UserCache.perfil != Perfiles.admin) 
+            {
+                btnAgregar.Enabled = false;
+                btnModificar.Enabled = false;
+                btnEliminar.Enabled = false;
+                btnAgregarArchivo.Enabled = false;
             }
         }
     }

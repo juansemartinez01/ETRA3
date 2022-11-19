@@ -28,242 +28,289 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvBusqueda = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbTipoMovimiento = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMontoMovimiento = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new PresentationA.Controls.BotonPadre();
-            this.btnAgregar = new PresentationA.Controls.BotonPadre();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnVerArchivo = new FontAwesome.Sharp.IconButton();
+            this.txtDepositar = new System.Windows.Forms.TextBox();
+            this.btnDepositar = new PresentationA.Controls.BotonPadre();
             this.label5 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblFondoMaximoPermitido = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
+            this.dgvCtaCte = new PresentationA.Controls.DataGridPadre();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoMoviento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaIncio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRetirar = new PresentationA.Controls.BotonPadre();
+            this.txtRetirar = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCtaCte)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvBusqueda
-            // 
-            this.dgvBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBusqueda.Location = new System.Drawing.Point(708, 73);
-            this.dgvBusqueda.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dgvBusqueda.Name = "dgvBusqueda";
-            this.dgvBusqueda.ReadOnly = true;
-            this.dgvBusqueda.RowHeadersWidth = 51;
-            this.dgvBusqueda.RowTemplate.Height = 25;
-            this.dgvBusqueda.Size = new System.Drawing.Size(738, 532);
-            this.dgvBusqueda.TabIndex = 19;
-            this.dgvBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(16, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 37);
+            this.label1.Size = new System.Drawing.Size(211, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Cuenta Corriente";
             // 
-            // cmbTipoMovimiento
+            // txtDepositar
             // 
-            this.cmbTipoMovimiento.FormattingEnabled = true;
-            this.cmbTipoMovimiento.Location = new System.Drawing.Point(292, 83);
-            this.cmbTipoMovimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cmbTipoMovimiento.Name = "cmbTipoMovimiento";
-            this.cmbTipoMovimiento.Size = new System.Drawing.Size(366, 31);
-            this.cmbTipoMovimiento.TabIndex = 27;
+            this.txtDepositar.Location = new System.Drawing.Point(181, 85);
+            this.txtDepositar.Name = "txtDepositar";
+            this.txtDepositar.Size = new System.Drawing.Size(185, 27);
+            this.txtDepositar.TabIndex = 34;
+            this.txtDepositar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoMovimiento_KeyPress);
             // 
-            // label2
+            // btnDepositar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 92);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 23);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Tipo de Movimiento:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 204);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(236, 23);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Monto del movimiento:";
-            // 
-            // txtMontoMovimiento
-            // 
-            this.txtMontoMovimiento.Location = new System.Drawing.Point(292, 200);
-            this.txtMontoMovimiento.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtMontoMovimiento.Name = "txtMontoMovimiento";
-            this.txtMontoMovimiento.Size = new System.Drawing.Size(366, 32);
-            this.txtMontoMovimiento.TabIndex = 34;
-            this.txtMontoMovimiento.TextChanged += new System.EventHandler(this.txtMontoMovimiento_TextChanged);
-            this.txtMontoMovimiento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoMovimiento_KeyPress);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnEliminar.IconColor = System.Drawing.Color.Black;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(425, 568);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(162, 37);
-            this.btnEliminar.TabIndex = 46;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAgregar.IconColor = System.Drawing.Color.Black;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(14, 568);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(158, 37);
-            this.btnAgregar.TabIndex = 44;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 40;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.iconButton1.Location = new System.Drawing.Point(224, 479);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(367, 48);
-            this.iconButton1.TabIndex = 48;
-            this.iconButton1.Text = "Agregar Archivo";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // btnVerArchivo
-            // 
-            this.btnVerArchivo.Enabled = false;
-            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnVerArchivo.IconColor = System.Drawing.Color.Black;
-            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVerArchivo.IconSize = 30;
-            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnVerArchivo.Location = new System.Drawing.Point(224, 424);
-            this.btnVerArchivo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnVerArchivo.Name = "btnVerArchivo";
-            this.btnVerArchivo.Size = new System.Drawing.Size(367, 48);
-            this.btnVerArchivo.TabIndex = 47;
-            this.btnVerArchivo.Text = "Ver Archivo";
-            this.btnVerArchivo.UseVisualStyleBackColor = true;
+            this.btnDepositar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnDepositar.FlatAppearance.BorderSize = 0;
+            this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepositar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDepositar.ForeColor = System.Drawing.Color.White;
+            this.btnDepositar.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnDepositar.IconColor = System.Drawing.Color.White;
+            this.btnDepositar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDepositar.IconSize = 30;
+            this.btnDepositar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDepositar.Location = new System.Drawing.Point(387, 81);
+            this.btnDepositar.Name = "btnDepositar";
+            this.btnDepositar.Size = new System.Drawing.Size(132, 34);
+            this.btnDepositar.TabIndex = 44;
+            this.btnDepositar.Text = "Depositar";
+            this.btnDepositar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDepositar.UseVisualStyleBackColor = false;
+            this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 304);
+            this.label5.Location = new System.Drawing.Point(562, 89);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 23);
+            this.label5.Size = new System.Drawing.Size(162, 21);
             this.label5.TabIndex = 49;
             this.label5.Text = "Saldo de la cuenta:";
             // 
             // lblSaldo
             // 
-            this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(334, 322);
+            this.lblSaldo.Location = new System.Drawing.Point(794, 89);
             this.lblSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(0, 23);
+            this.lblSaldo.Size = new System.Drawing.Size(129, 21);
             this.lblSaldo.TabIndex = 50;
+            this.lblSaldo.Text = "saldo";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 365);
+            this.label4.Location = new System.Drawing.Point(559, 144);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(259, 23);
+            this.label4.Size = new System.Drawing.Size(208, 21);
             this.label4.TabIndex = 51;
             this.label4.Text = "Fondo maximo permitido:";
             // 
             // lblFondoMaximoPermitido
             // 
-            this.lblFondoMaximoPermitido.AutoSize = true;
-            this.lblFondoMaximoPermitido.Location = new System.Drawing.Point(334, 365);
+            this.lblFondoMaximoPermitido.Location = new System.Drawing.Point(794, 144);
             this.lblFondoMaximoPermitido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFondoMaximoPermitido.Name = "lblFondoMaximoPermitido";
-            this.lblFondoMaximoPermitido.Size = new System.Drawing.Size(72, 23);
+            this.lblFondoMaximoPermitido.Size = new System.Drawing.Size(129, 21);
             this.lblFondoMaximoPermitido.TabIndex = 52;
             this.lblFondoMaximoPermitido.Text = "label6";
             // 
+            // dgvCtaCte
+            // 
+            this.dgvCtaCte.AllowUserToAddRows = false;
+            this.dgvCtaCte.AllowUserToDeleteRows = false;
+            this.dgvCtaCte.AllowUserToOrderColumns = true;
+            this.dgvCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCtaCte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCtaCte.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCtaCte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCtaCte.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCtaCte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvCtaCte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCtaCte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.nombre,
+            this.montoMoviento,
+            this.fechaIncio});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCtaCte.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvCtaCte.EnableHeadersVisualStyles = false;
+            this.dgvCtaCte.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dgvCtaCte.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            this.dgvCtaCte.Location = new System.Drawing.Point(12, 246);
+            this.dgvCtaCte.Name = "dgvCtaCte";
+            this.dgvCtaCte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCtaCte.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvCtaCte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCtaCte.Size = new System.Drawing.Size(911, 250);
+            this.dgvCtaCte.TabIndex = 53;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "numeroMov";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Tipo de Movimiento";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // montoMoviento
+            // 
+            this.montoMoviento.HeaderText = "Monto";
+            this.montoMoviento.Name = "montoMoviento";
+            this.montoMoviento.ReadOnly = true;
+            // 
+            // fechaIncio
+            // 
+            this.fechaIncio.HeaderText = "Fecha de Registro";
+            this.fechaIncio.Name = "fechaIncio";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 88);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 21);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Monto a Depositar:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 151);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 21);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "Monto a Retirar:";
+            // 
+            // btnRetirar
+            // 
+            this.btnRetirar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnRetirar.FlatAppearance.BorderSize = 0;
+            this.btnRetirar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetirar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRetirar.ForeColor = System.Drawing.Color.White;
+            this.btnRetirar.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.btnRetirar.IconColor = System.Drawing.Color.White;
+            this.btnRetirar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRetirar.IconSize = 30;
+            this.btnRetirar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRetirar.Location = new System.Drawing.Point(387, 144);
+            this.btnRetirar.Name = "btnRetirar";
+            this.btnRetirar.Size = new System.Drawing.Size(132, 34);
+            this.btnRetirar.TabIndex = 56;
+            this.btnRetirar.Text = "Retirar";
+            this.btnRetirar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRetirar.UseVisualStyleBackColor = false;
+            this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
+            // 
+            // txtRetirar
+            // 
+            this.txtRetirar.Location = new System.Drawing.Point(181, 148);
+            this.txtRetirar.Name = "txtRetirar";
+            this.txtRetirar.Size = new System.Drawing.Size(185, 27);
+            this.txtRetirar.TabIndex = 55;
+            this.txtRetirar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoMovimiento_KeyPress);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblError.ForeColor = System.Drawing.Color.DimGray;
+            this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblError.Location = new System.Drawing.Point(14, 199);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(42, 20);
+            this.lblError.TabIndex = 58;
+            this.lblError.Text = "Error";
+            this.lblError.Visible = false;
+            // 
             // frmCtaCte
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1514, 633);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(941, 528);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnRetirar);
+            this.Controls.Add(this.txtRetirar);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dgvCtaCte);
             this.Controls.Add(this.lblFondoMaximoPermitido);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblSaldo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.btnVerArchivo);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtMontoMovimiento);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbTipoMovimiento);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnDepositar);
+            this.Controls.Add(this.txtDepositar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvBusqueda);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmCtaCte";
             this.Text = "frmCtaCorriente";
             this.Load += new System.EventHandler(this.frmCtaCte_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCtaCte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvBusqueda;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbTipoMovimiento;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMontoMovimiento;
-        private Controls.BotonPadre btnEliminar;
-        private Controls.BotonPadre btnAgregar;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton btnVerArchivo;
+        private System.Windows.Forms.TextBox txtDepositar;
+        private Controls.BotonPadre btnDepositar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblFondoMaximoPermitido;
+        private Controls.DataGridPadre dgvCtaCte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montoMoviento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaIncio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private Controls.BotonPadre btnRetirar;
+        private System.Windows.Forms.TextBox txtRetirar;
+        private System.Windows.Forms.Label lblError;
     }
 }

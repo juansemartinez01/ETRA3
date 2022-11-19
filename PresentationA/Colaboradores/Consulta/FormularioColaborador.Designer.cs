@@ -108,6 +108,8 @@
             this.dgvBusqueda.AllowUserToOrderColumns = true;
             this.dgvBusqueda.AllowUserToResizeColumns = false;
             this.dgvBusqueda.AllowUserToResizeRows = false;
+            this.dgvBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvBusqueda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
             this.dgvBusqueda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -199,7 +201,6 @@
             // 
             // lblError
             // 
-            this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
@@ -229,7 +230,7 @@
             // 
             // lblNombre
             // 
-            this.lblNombre.AutoSize = true;
+            this.lblNombre.AutoEllipsis = true;
             this.lblNombre.Location = new System.Drawing.Point(307, 15);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(72, 20);
@@ -238,7 +239,7 @@
             // 
             // lblLegajo
             // 
-            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.AutoEllipsis = true;
             this.lblLegajo.Location = new System.Drawing.Point(25, 12);
             this.lblLegajo.Name = "lblLegajo";
             this.lblLegajo.Size = new System.Drawing.Size(63, 20);
@@ -255,7 +256,7 @@
             // 
             // lblApellido
             // 
-            this.lblApellido.AutoSize = true;
+            this.lblApellido.AutoEllipsis = true;
             this.lblApellido.Location = new System.Drawing.Point(589, 15);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(73, 20);
@@ -402,6 +403,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.Name = "FormularioColaborador";
             this.Text = "FormularioColaborador";
+            this.Load += new System.EventHandler(this.FormularioColaborador_Load);
             this.pnlBuscar.ResumeLayout(false);
             this.pnlBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).EndInit();

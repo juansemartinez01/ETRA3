@@ -1,4 +1,5 @@
-﻿using DataAccesA;
+﻿using Common.Cache;
+using DataAccesA;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,21 +21,26 @@ namespace DomainA
 
         public string crearAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion, int[] legajosNotificados)
         {
-            string mensajeErrorInsercion = "";
-            mensajeErrorInsercion = AvisosDao.insertarAviso(idTipoAviso, descripcion, fechaOcurrencia, fechaNotificacion);
-            if(mensajeErrorInsercion != "Insercion del aviso exitosa")
+            if (UserCache.perfil == Perfiles.admin)
             {
-                return mensajeErrorInsercion;
+
+                string mensajeErrorInsercion = "";
+                mensajeErrorInsercion = AvisosDao.insertarAviso(idTipoAviso, descripcion, fechaOcurrencia, fechaNotificacion);
+                if (mensajeErrorInsercion != "Insercion del aviso exitosa")
+                {
+                    return mensajeErrorInsercion;
+                }
+                int idAviso = int.Parse(AvisosDao.buscarIdUltimoAviso());
+                mensajeErrorInsercion = AvisosDao.declararNotificados(idAviso, legajosNotificados);
+                if (mensajeErrorInsercion != "Insercion de los notificados exitosa")
+                {
+                    return mensajeErrorInsercion;
+                }
+                return "Aviso creado con exito";
             }
-            int idAviso = int.Parse(AvisosDao.buscarIdUltimoAviso());
-            mensajeErrorInsercion = AvisosDao.declararNotificados(idAviso, legajosNotificados);
-            if (mensajeErrorInsercion != "Insercion de los notificados exitosa")
-            {
-                return mensajeErrorInsercion;
-            }
-            return "Aviso creado con exito";
+            return "No tiene permisos";
         }
 
-        public bool notificarAviso(int id, string subject, string body) { return AvisosDao.notificarAviso(id, subject, body); }
+        public bool notificarAviso(int id, string subject, string body) { if (UserCache.perfil == Perfiles.admin) { return AvisosDao.notificarAviso(id, subject, body); } return false; }
     }
 }

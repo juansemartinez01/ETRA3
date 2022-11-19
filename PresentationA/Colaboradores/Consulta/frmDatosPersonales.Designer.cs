@@ -56,7 +56,7 @@
             this.lblMail = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
-            this.lbllLegajo = new System.Windows.Forms.Label();
+            this.lblllegajo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -77,7 +77,7 @@
             this.label12.Location = new System.Drawing.Point(657, 46);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 22);
+            this.label12.Size = new System.Drawing.Size(82, 20);
             this.label12.TabIndex = 43;
             this.label12.Text = "Provincia:";
             // 
@@ -89,7 +89,7 @@
             this.label10.Location = new System.Drawing.Point(381, 133);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 22);
+            this.label10.Size = new System.Drawing.Size(86, 20);
             this.label10.TabIndex = 41;
             this.label10.Text = "Localidad:";
             // 
@@ -101,7 +101,7 @@
             this.label9.Location = new System.Drawing.Point(381, 88);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 22);
+            this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 40;
             this.label9.Text = "Depto:";
             // 
@@ -114,7 +114,7 @@
             this.label7.Location = new System.Drawing.Point(292, 51);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 22);
+            this.label7.Size = new System.Drawing.Size(88, 20);
             this.label7.TabIndex = 38;
             this.label7.Text = "CUIT/CUIL:";
             // 
@@ -127,7 +127,7 @@
             this.label6.Location = new System.Drawing.Point(18, 149);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 22);
+            this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 37;
             this.label6.Text = "Apellido:";
             // 
@@ -139,7 +139,7 @@
             this.label4.Location = new System.Drawing.Point(18, 46);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 22);
+            this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 35;
             this.label4.Text = "Calle:";
             // 
@@ -151,7 +151,7 @@
             this.label3.Location = new System.Drawing.Point(18, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 22);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 34;
             this.label3.Text = "Número:";
             // 
@@ -163,7 +163,7 @@
             this.label2.Location = new System.Drawing.Point(381, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 22);
+            this.label2.Size = new System.Drawing.Size(41, 20);
             this.label2.TabIndex = 33;
             this.label2.Text = "Piso:";
             // 
@@ -176,7 +176,7 @@
             this.label1.Location = new System.Drawing.Point(18, 100);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 22);
+            this.label1.Size = new System.Drawing.Size(72, 20);
             this.label1.TabIndex = 32;
             this.label1.Text = "Nombre:";
             // 
@@ -200,7 +200,7 @@
             this.lblPiso.Location = new System.Drawing.Point(508, 46);
             this.lblPiso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPiso.Name = "lblPiso";
-            this.lblPiso.Size = new System.Drawing.Size(0, 22);
+            this.lblPiso.Size = new System.Drawing.Size(0, 20);
             this.lblPiso.TabIndex = 46;
             // 
             // lblNumeroCalle
@@ -211,7 +211,7 @@
             this.lblNumeroCalle.Location = new System.Drawing.Point(144, 92);
             this.lblNumeroCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroCalle.Name = "lblNumeroCalle";
-            this.lblNumeroCalle.Size = new System.Drawing.Size(0, 22);
+            this.lblNumeroCalle.Size = new System.Drawing.Size(0, 20);
             this.lblNumeroCalle.TabIndex = 48;
             // 
             // lblCalle
@@ -222,7 +222,7 @@
             this.lblCalle.Location = new System.Drawing.Point(135, 46);
             this.lblCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(0, 22);
+            this.lblCalle.Size = new System.Drawing.Size(0, 20);
             this.lblCalle.TabIndex = 49;
             // 
             // lblDni
@@ -234,7 +234,7 @@
             this.lblDni.Location = new System.Drawing.Point(445, 100);
             this.lblDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(0, 22);
+            this.lblDni.Size = new System.Drawing.Size(0, 20);
             this.lblDni.TabIndex = 50;
             // 
             // lblApellido
@@ -246,7 +246,7 @@
             this.lblApellido.Location = new System.Drawing.Point(165, 149);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(0, 22);
+            this.lblApellido.Size = new System.Drawing.Size(0, 20);
             this.lblApellido.TabIndex = 51;
             // 
             // lblNombre
@@ -258,7 +258,7 @@
             this.lblNombre.Location = new System.Drawing.Point(165, 100);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(0, 22);
+            this.lblNombre.Size = new System.Drawing.Size(0, 20);
             this.lblNombre.TabIndex = 52;
             // 
             // label22
@@ -270,7 +270,7 @@
             this.label22.Location = new System.Drawing.Point(292, 100);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(48, 22);
+            this.label22.Size = new System.Drawing.Size(40, 20);
             this.label22.TabIndex = 53;
             this.label22.Text = "DNI:";
             // 
@@ -283,7 +283,7 @@
             this.lblCuit.Location = new System.Drawing.Point(445, 51);
             this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuit.Name = "lblCuit";
-            this.lblCuit.Size = new System.Drawing.Size(0, 22);
+            this.lblCuit.Size = new System.Drawing.Size(0, 20);
             this.lblCuit.TabIndex = 54;
             // 
             // lblLocalidad
@@ -294,7 +294,7 @@
             this.lblLocalidad.Location = new System.Drawing.Point(508, 133);
             this.lblLocalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(0, 22);
+            this.lblLocalidad.Size = new System.Drawing.Size(0, 20);
             this.lblLocalidad.TabIndex = 56;
             // 
             // lblDepartamento
@@ -305,7 +305,7 @@
             this.lblDepartamento.Location = new System.Drawing.Point(508, 92);
             this.lblDepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(0, 22);
+            this.lblDepartamento.Size = new System.Drawing.Size(0, 20);
             this.lblDepartamento.TabIndex = 57;
             // 
             // lblProvincia
@@ -316,7 +316,7 @@
             this.lblProvincia.Location = new System.Drawing.Point(775, 46);
             this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(0, 22);
+            this.lblProvincia.Size = new System.Drawing.Size(0, 20);
             this.lblProvincia.TabIndex = 58;
             // 
             // label14
@@ -327,7 +327,7 @@
             this.label14.Location = new System.Drawing.Point(609, 56);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(192, 22);
+            this.label14.Size = new System.Drawing.Size(155, 20);
             this.label14.TabIndex = 59;
             this.label14.Text = "Nro de Emergencia:";
             // 
@@ -339,7 +339,7 @@
             this.label16.Location = new System.Drawing.Point(255, 56);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(172, 22);
+            this.label16.Size = new System.Drawing.Size(138, 20);
             this.label16.TabIndex = 61;
             this.label16.Text = "Nro de Contacto:";
             // 
@@ -351,7 +351,7 @@
             this.label17.Location = new System.Drawing.Point(8, 56);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 22);
+            this.label17.Size = new System.Drawing.Size(44, 20);
             this.label17.TabIndex = 62;
             this.label17.Text = "Mail:";
             // 
@@ -363,7 +363,7 @@
             this.lblNroContacto.Location = new System.Drawing.Point(445, 56);
             this.lblNroContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroContacto.Name = "lblNroContacto";
-            this.lblNroContacto.Size = new System.Drawing.Size(0, 22);
+            this.lblNroContacto.Size = new System.Drawing.Size(0, 20);
             this.lblNroContacto.TabIndex = 64;
             // 
             // lblMail
@@ -374,7 +374,7 @@
             this.lblMail.Location = new System.Drawing.Point(95, 56);
             this.lblMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(0, 22);
+            this.lblMail.Size = new System.Drawing.Size(0, 20);
             this.lblMail.TabIndex = 65;
             // 
             // label8
@@ -386,7 +386,7 @@
             this.label8.Location = new System.Drawing.Point(18, 211);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 22);
+            this.label8.Size = new System.Drawing.Size(118, 20);
             this.label8.TabIndex = 67;
             this.label8.Text = "Fecha de Nac:";
             // 
@@ -399,20 +399,20 @@
             this.lblSexo.Location = new System.Drawing.Point(396, 149);
             this.lblSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(0, 22);
+            this.lblSexo.Size = new System.Drawing.Size(0, 20);
             this.lblSexo.TabIndex = 70;
             // 
-            // lbllLegajo
+            // lblllegajo
             // 
-            this.lbllLegajo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblllegajo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbllLegajo.AutoSize = true;
-            this.lbllLegajo.Location = new System.Drawing.Point(165, 51);
-            this.lbllLegajo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbllLegajo.Name = "lbllLegajo";
-            this.lbllLegajo.Size = new System.Drawing.Size(0, 22);
-            this.lbllLegajo.TabIndex = 72;
+            this.lblllegajo.AutoSize = true;
+            this.lblllegajo.Location = new System.Drawing.Point(165, 51);
+            this.lblllegajo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblllegajo.Name = "lblllegajo";
+            this.lblllegajo.Size = new System.Drawing.Size(0, 20);
+            this.lblllegajo.TabIndex = 72;
             // 
             // label19
             // 
@@ -423,7 +423,7 @@
             this.label19.Location = new System.Drawing.Point(18, 51);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 22);
+            this.label19.Size = new System.Drawing.Size(63, 20);
             this.label19.TabIndex = 71;
             this.label19.Text = "Legajo:";
             // 
@@ -476,7 +476,7 @@
             this.lblNroEmergencia.Location = new System.Drawing.Point(825, 56);
             this.lblNroEmergencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroEmergencia.Name = "lblNroEmergencia";
-            this.lblNroEmergencia.Size = new System.Drawing.Size(0, 22);
+            this.lblNroEmergencia.Size = new System.Drawing.Size(0, 20);
             this.lblNroEmergencia.TabIndex = 75;
             // 
             // groupBox3
@@ -487,7 +487,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.pictureBox2);
-            this.groupBox3.Controls.Add(this.lbllLegajo);
+            this.groupBox3.Controls.Add(this.lblllegajo);
             this.groupBox3.Controls.Add(this.lblDni);
             this.groupBox3.Controls.Add(this.lblApellido);
             this.groupBox3.Controls.Add(this.lblSexo);
@@ -513,12 +513,12 @@
             this.lblFechaNacimiento.Location = new System.Drawing.Point(188, 211);
             this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(0, 22);
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(0, 20);
             this.lblFechaNacimiento.TabIndex = 73;
             // 
             // frmDatosPersonales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1021, 639);
             this.Controls.Add(this.groupBox3);
@@ -568,7 +568,7 @@
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.Label lbllLegajo;
+        private System.Windows.Forms.Label lblllegajo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

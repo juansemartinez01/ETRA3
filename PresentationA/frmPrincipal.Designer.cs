@@ -34,8 +34,9 @@
             this.pnlReportes = new System.Windows.Forms.Panel();
             this.btnSalXCargo = new FontAwesome.Sharp.IconButton();
             this.btnTardanzas = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnAvisos = new FontAwesome.Sharp.IconButton();
             this.btnDocumentos = new FontAwesome.Sharp.IconButton();
             this.btnSalarios = new FontAwesome.Sharp.IconButton();
@@ -56,7 +57,7 @@
             this.pnlPrincipal.AutoScroll = true;
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.pnlPrincipal.Controls.Add(this.pnlReportes);
-            this.pnlPrincipal.Controls.Add(this.iconButton1);
+            this.pnlPrincipal.Controls.Add(this.btnReportes);
             this.pnlPrincipal.Controls.Add(this.pnlColaboradores);
             this.pnlPrincipal.Controls.Add(this.btnColaboradores);
             this.pnlPrincipal.Controls.Add(this.pictureBox1);
@@ -64,7 +65,7 @@
             this.pnlPrincipal.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.pnlPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(200, 574);
+            this.pnlPrincipal.Size = new System.Drawing.Size(200, 650);
             this.pnlPrincipal.TabIndex = 1;
             // 
             // pnlReportes
@@ -73,7 +74,7 @@
             this.pnlReportes.Controls.Add(this.btnSalXCargo);
             this.pnlReportes.Controls.Add(this.btnTardanzas);
             this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReportes.Location = new System.Drawing.Point(0, 419);
+            this.pnlReportes.Location = new System.Drawing.Point(0, 462);
             this.pnlReportes.Name = "pnlReportes";
             this.pnlReportes.Size = new System.Drawing.Size(200, 119);
             this.pnlReportes.TabIndex = 0;
@@ -122,30 +123,31 @@
             this.btnTardanzas.UseVisualStyleBackColor = true;
             this.btnTardanzas.Click += new System.EventHandler(this.btnTardanzas_Click);
             // 
-            // iconButton1
+            // btnReportes
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 377);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(200, 42);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "Reportes";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.ForeColor = System.Drawing.Color.White;
+            this.btnReportes.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
+            this.btnReportes.IconColor = System.Drawing.Color.White;
+            this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReportes.IconSize = 30;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 420);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(200, 42);
+            this.btnReportes.TabIndex = 5;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlColaboradores.Controls.Add(this.btnUsuarios);
             this.pnlColaboradores.Controls.Add(this.btnAvisos);
             this.pnlColaboradores.Controls.Add(this.btnDocumentos);
             this.pnlColaboradores.Controls.Add(this.btnSalarios);
@@ -155,8 +157,30 @@
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 120);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 257);
+            this.pnlColaboradores.Size = new System.Drawing.Size(200, 300);
             this.pnlColaboradores.TabIndex = 2;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
+            this.btnUsuarios.IconColor = System.Drawing.Color.White;
+            this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUsuarios.IconSize = 30;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 252);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnUsuarios.Size = new System.Drawing.Size(200, 42);
+            this.btnUsuarios.TabIndex = 7;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // btnAvisos
             // 
@@ -230,7 +254,7 @@
             this.btnEventos.FlatAppearance.BorderSize = 0;
             this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEventos.ForeColor = System.Drawing.Color.White;
-            this.btnEventos.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
+            this.btnEventos.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
             this.btnEventos.IconColor = System.Drawing.Color.White;
             this.btnEventos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEventos.IconSize = 30;
@@ -328,7 +352,7 @@
             this.pnlChildForm.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold);
             this.pnlChildForm.Location = new System.Drawing.Point(200, 0);
             this.pnlChildForm.Name = "pnlChildForm";
-            this.pnlChildForm.Size = new System.Drawing.Size(751, 574);
+            this.pnlChildForm.Size = new System.Drawing.Size(751, 650);
             this.pnlChildForm.TabIndex = 2;
             // 
             // frmPrincipal
@@ -336,7 +360,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(951, 574);
+            this.ClientSize = new System.Drawing.Size(951, 650);
             this.Controls.Add(this.pnlChildForm);
             this.Controls.Add(this.pnlPrincipal);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
@@ -344,6 +368,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 613);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.pnlPrincipal.ResumeLayout(false);
             this.pnlReportes.ResumeLayout(false);
@@ -364,11 +389,12 @@
         private FontAwesome.Sharp.IconButton btnColaboradores;
         private FontAwesome.Sharp.IconButton btnTardanzas;
         private FontAwesome.Sharp.IconButton btnSalXCargo;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnReportes;
         private System.Windows.Forms.Panel pnlReportes;
         private FontAwesome.Sharp.IconButton btnSalarios;
         private FontAwesome.Sharp.IconButton btnDocumentos;
         private FontAwesome.Sharp.IconButton btnAvisos;
+        private FontAwesome.Sharp.IconButton btnUsuarios;
     }
 }
 

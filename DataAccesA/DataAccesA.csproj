@@ -58,5 +58,11 @@
     <Compile Include="SalariosDao.cs" />
     <Compile Include="UsuarioDao.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4f8c4989-66f7-4bb3-a618-919e62e844dc}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

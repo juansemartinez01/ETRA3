@@ -59,6 +59,10 @@
     <Compile Include="UsuarioModelo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4f8c4989-66f7-4bb3-a618-919e62e844dc}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccesA\DataAccesA.csproj">
       <Project>{a2b0b56e-aba0-4622-bc80-86dc88e3549d}</Project>
       <Name>DataAccesA</Name>

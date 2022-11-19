@@ -50,65 +50,61 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(37, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(31, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 37);
+            this.label1.Size = new System.Drawing.Size(238, 28);
             this.label1.TabIndex = 20;
             this.label1.Text = "Historial de Salarios";
             // 
             // dtpfechaFin
             // 
-            this.dtpfechaFin.Location = new System.Drawing.Point(246, 151);
-            this.dtpfechaFin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpfechaFin.Location = new System.Drawing.Point(205, 138);
             this.dtpfechaFin.Name = "dtpfechaFin";
-            this.dtpfechaFin.Size = new System.Drawing.Size(239, 32);
+            this.dtpfechaFin.Size = new System.Drawing.Size(200, 27);
             this.dtpfechaFin.TabIndex = 31;
             // 
             // dtpfechaInicio
             // 
-            this.dtpfechaInicio.Location = new System.Drawing.Point(246, 103);
-            this.dtpfechaInicio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtpfechaInicio.Location = new System.Drawing.Point(205, 94);
             this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(239, 32);
+            this.dtpfechaInicio.Size = new System.Drawing.Size(200, 27);
             this.dtpfechaInicio.TabIndex = 30;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 103);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(32, 94);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(165, 23);
+            this.label6.Size = new System.Drawing.Size(133, 21);
             this.label6.TabIndex = 26;
             this.label6.Text = "Fecha de Inicio:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(92, 151);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(77, 138);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 23);
+            this.label5.Size = new System.Drawing.Size(88, 21);
             this.label5.TabIndex = 25;
             this.label5.Text = "Fecha Fin:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 263);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(102, 240);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 23);
+            this.label3.Size = new System.Drawing.Size(66, 21);
             this.label3.TabIndex = 33;
             this.label3.Text = "Monto:";
             // 
             // txtmonto
             // 
-            this.txtmonto.Location = new System.Drawing.Point(246, 263);
-            this.txtmonto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtmonto.Location = new System.Drawing.Point(205, 240);
             this.txtmonto.Name = "txtmonto";
-            this.txtmonto.Size = new System.Drawing.Size(239, 32);
+            this.txtmonto.Size = new System.Drawing.Size(200, 27);
             this.txtmonto.TabIndex = 34;
             this.txtmonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmonto_KeyPress);
             // 
@@ -145,8 +141,7 @@
             this.dgvSalarios.EnableHeadersVisualStyles = false;
             this.dgvSalarios.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvSalarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvSalarios.Location = new System.Drawing.Point(638, 103);
-            this.dgvSalarios.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvSalarios.Location = new System.Drawing.Point(532, 94);
             this.dgvSalarios.Name = "dgvSalarios";
             this.dgvSalarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -159,7 +154,7 @@
             this.dgvSalarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSalarios.RowHeadersWidth = 51;
             this.dgvSalarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSalarios.Size = new System.Drawing.Size(544, 357);
+            this.dgvSalarios.Size = new System.Drawing.Size(453, 326);
             this.dgvSalarios.TabIndex = 41;
             this.dgvSalarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellClick);
             this.dgvSalarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellClick);
@@ -199,10 +194,9 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(339, 419);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnAgregar.Location = new System.Drawing.Point(282, 383);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(146, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(122, 37);
             this.btnAgregar.TabIndex = 48;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -211,9 +205,9 @@
             // 
             // frmHistorialSalario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 615);
+            this.ClientSize = new System.Drawing.Size(1136, 562);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvSalarios);
             this.Controls.Add(this.txtmonto);
@@ -223,9 +217,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "frmHistorialSalario";
             this.Text = "frmHistorialSalario";
+            this.Load += new System.EventHandler(this.frmHistorialSalario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

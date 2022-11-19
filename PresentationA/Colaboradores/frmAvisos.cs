@@ -250,9 +250,12 @@ namespace PresentationA.Colaboradores
 
         private void btnNotificar_Click(object sender, EventArgs e)
         {
-            frmMail mail = new frmMail((int) dgvAvisos.SelectedRows[0].Cells["id_aviso"].Value);
+            if(dgvAvisos.SelectedRows.Count == 1)
+            {
+                frmMail mail = new frmMail((int)dgvAvisos.SelectedRows[0].Cells["id_aviso"].Value);
+                mail.ShowDialog();
+            }
             
-            mail.ShowDialog();
         }
     }
 }

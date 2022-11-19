@@ -1,4 +1,5 @@
-﻿using DomainA;
+﻿using Common.Cache;
+using DomainA;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -117,6 +118,11 @@ namespace PresentationA.Colaboradores.Consulta
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmHistorialSalario_Load(object sender, EventArgs e)
+        {
+            if(UserCache.perfil != Perfiles.admin) { btnAgregar.Enabled = false; }
         }
     }
 }

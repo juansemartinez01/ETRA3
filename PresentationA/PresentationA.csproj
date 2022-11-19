@@ -156,6 +156,12 @@
     <Compile Include="Colaboradores\frmSalarios.Designer.cs">
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BotonPadre.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     <EmbeddedResource Include="Colaboradores\frmSalarios.resx">
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHijo.resx">
       <DependentUpon>frmHijo.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +319,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4f8c4989-66f7-4bb3-a618-919e62e844dc}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccesA\DataAccesA.csproj">
       <Project>{a2b0b56e-aba0-4622-bc80-86dc88e3549d}</Project>
       <Name>DataAccesA</Name>

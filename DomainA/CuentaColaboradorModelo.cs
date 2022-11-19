@@ -1,4 +1,5 @@
-﻿using DataAccesA;
+﻿using Common.Cache;
+using DataAccesA;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,16 +18,19 @@ namespace DomainA
 
         public string crearCuentaColaborador(int legajo,double monto)
         {
-            return cuentaColaborador.crearCuentaColaborador(legajo,monto);
+            if (UserCache.perfil == Perfiles.admin){return cuentaColaborador.crearCuentaColaborador(legajo, monto); }
+            return "No tiene permisos";
         }
 
         public DataTable buscarCuentaColaborador(int legajo)
         {
+            
             return cuentaColaborador.BuscarCuentaColaborador(legajo);
         }
         public string modificarSaldo(int legajo, float saldo,int tipoMovimiento)
         {
-            return cuentaColaborador.modificarSaldo(legajo, saldo, tipoMovimiento);
+            if (UserCache.perfil == Perfiles.admin) { return cuentaColaborador.modificarSaldo(legajo, saldo, tipoMovimiento); }
+            return "No tiene permisos";
         }
         public float buscarSaldo(int legajo)
         {
@@ -34,7 +38,8 @@ namespace DomainA
         }
         public int eliminarMovimiento(int legajo, int idMovimiento)
         {
-            return cuentaColaborador.eliminarMovimiento(legajo, idMovimiento);
+            if (UserCache.perfil == Perfiles.admin) {return cuentaColaborador.eliminarMovimiento(legajo, idMovimiento); }
+            return -1;
         }
         public string buscarFondoMaximoPermitido(int legajo)
         {

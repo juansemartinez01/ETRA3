@@ -251,3 +251,6 @@ C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.frmNew
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmInicio.resources
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.frmInicio.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmMail.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Common.dll
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Common.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmUsuarios.resources

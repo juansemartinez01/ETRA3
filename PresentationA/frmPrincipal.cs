@@ -7,6 +7,7 @@ using DomainA;
 using FontAwesome.Sharp;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Point = Microsoft.Reporting.Map.WebForms.BingMaps.Point;
+using Common.Cache;
 
 namespace PresentationA
 
@@ -24,6 +25,16 @@ namespace PresentationA
         {
 
             InitializeComponent();
+            if(UserCache.perfil != Perfiles.admin)
+            {
+                btnReportes.Enabled = false;
+                btnAgregar.Enabled = false;
+                btnSalarios.Enabled = false;
+                btnEventos.Enabled = false;
+                btnDocumentos.Enabled = false;
+                btnAvisos.Enabled = false;
+                btnUsuarios.Enabled = false;
+            }
             hideSubMenu();
             openChildFormInPanel(new frmInicio());
             bordeInferior = new Panel();
@@ -189,12 +200,16 @@ namespace PresentationA
             openChildFormInPanel(new frmDocumentos());
         }
 
-        
-
         private void btnAvisos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             openChildFormInPanel(new frmAvisos());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmUsuarios());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DataAccesA;
+﻿using Common.Cache;
+using DataAccesA;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,22 +13,23 @@ namespace DomainA
 
         public void createReporteSalXCargo()
         {
-            reportDate = DateTime.Now;
-            var report = new ReporteSalXCargoDao();
-            DataTable resultado = report.getSalXCargo();
-            salXCargoListing = new List<SalXCargoListing>();
-            foreach (DataRow row in resultado.Rows)
+            if (UserCache.perfil == Perfiles.admin)
             {
-                var salXCargoModel = new SalXCargoListing()
+                reportDate = DateTime.Now;
+                var report = new ReporteSalXCargoDao();
+                DataTable resultado = report.getSalXCargo();
+                salXCargoListing = new List<SalXCargoListing>();
+                foreach (DataRow row in resultado.Rows)
                 {
-                    cargo = Convert.ToString(row[0]),
-                    monto = Convert.ToDouble(row[1]) 
-                };
+                    var salXCargoModel = new SalXCargoListing()
+                    {
+                        cargo = Convert.ToString(row[0]),
+                        monto = Convert.ToDouble(row[1])
+                    };
 
-                salXCargoListing.Add(salXCargoModel);
+                    salXCargoListing.Add(salXCargoModel);
+                }
             }
-
-
         }
 
     }

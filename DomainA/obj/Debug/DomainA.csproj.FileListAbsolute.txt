@@ -25,3 +25,5 @@ C:\Users\Usuario\Source\Repos\ETRA2\DomainA\obj\Debug\DomainA.csproj.CoreCompile
 C:\Users\Usuario\Source\Repos\ETRA2\DomainA\obj\Debug\DomainA.csproj.CopyComplete
 C:\Users\Usuario\Source\Repos\ETRA2\DomainA\obj\Debug\DomainA.dll
 C:\Users\Usuario\Source\Repos\ETRA2\DomainA\obj\Debug\DomainA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\Common.dll
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\Common.pdb

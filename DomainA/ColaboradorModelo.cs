@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using Common.Cache;
 using DataAccesA;
 
 
@@ -36,21 +37,26 @@ namespace DomainA
 
         public string EliminarColaboradorPermanentemente()
         {
-            return colaboradorDao.EliminarColaboradorPermanentemente();
+            if (UserCache.perfil == Perfiles.admin) { return colaboradorDao.EliminarColaboradorPermanentemente(); }
+            return "No tiene permisos";
             
         }
 
         public string EliminarColaborador(int legajo)
         {
-            int colaboradorEliminado = colaboradorDao.EliminarColaborador(legajo);
-            if (colaboradorEliminado == 1)
+            if (UserCache.perfil == Perfiles.admin)
             {
-                return "Colaborador eliminado correctamente";
+                int colaboradorEliminado = colaboradorDao.EliminarColaborador(legajo);
+                if (colaboradorEliminado == 1)
+                {
+                    return "Colaborador eliminado correctamente";
+                }
+                else
+                {
+                    return "No se pudo eliminar al colaborador";
+                }
             }
-            else
-            {
-                return "No se pudo eliminar al colaborador";
-            }
+            return "No tiene permisos";
         }
         public int BuscarIdUltimoEvento()
         {
@@ -58,7 +64,8 @@ namespace DomainA
         }
         public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable)
         {
-            return colaboradorDao.modificarColaborador(legajo,nombre,apellido,fechaNacimiento,Cuit,dni,calle,numeroCalle,piso,depto,localidad,mail,telefonoContacto,telefonoEmergencia,estado,obraSocial,puesto,legajoResponsable); 
+            if (UserCache.perfil == Perfiles.admin){ return colaboradorDao.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, depto, localidad, mail, telefonoContacto, telefonoEmergencia, estado, obraSocial, puesto, legajoResponsable); }
+            return "No tiene permisos";
         }
         public DataTable buscarLegajosDeUnCargo(int idCargo)
         {
