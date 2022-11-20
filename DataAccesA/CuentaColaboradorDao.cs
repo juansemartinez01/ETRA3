@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Xml.Linq;
+using System.Collections.Generic;
 
 namespace DataAccesA
 {
@@ -264,43 +265,52 @@ namespace DataAccesA
                                             var movimientoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
                                             if (movimientoCreado == 1)
                                             {
-                                                if (((montoNuevo * 100) / float.Parse(montoMaximo)) >= 25)
+                                                float porc = (montoNuevo * 100) / float.Parse(montoMaximo);
+                                                if (float.Parse(montoMaximo) > montoNuevo)
                                                 {
-                                                    //El monto no lo supera pero esta en el 25 por ciento
-                                                    string subject = "ETRA: AVISO CUENTA CORRIENTE CON SALDO CERCANO A MAXIMO";
-                                                    string body = "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " tiene un saldo en su cuenta corriente de $ " + montoNuevo.ToString() + " , teniendo un valor permitido de saldo maximo $" + montoActual.ToString();
-
-                                                    if (float.Parse(montoMaximo) < montoNuevo)
-                                                    {
-                                                        //El monto supera el saldo maximo
-                                                        subject = "ETRA: MOVIMIENTO EXCEDE SALDO MAXIMO MENSUAL";
-                                                        body = "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " acaba de realizar un movimiento en su cuenta corriente que excede el monto permitido. Detalle del movimiento:  " +
-                                                                     " Monto: $" + montoMovimiento.ToString() + " , Saldo Anterior: $" + montoActual.ToString() + " , Saldo Nuevo: $" + montoNuevo.ToString();
-
-                                                    }
+                                                    //El monto supera el saldo maximo
                                                     ColaboradorDao colaboradorDao = new ColaboradorDao();
                                                     var mailService = new MailServices.SystemSupportMail();
                                                     mailService.sendMail(
-                                                        subject: subject,
-                                                        body: body,
+                                                        subject: "ETRA: MOVIMIENTO EXCEDE SALDO MAXIMO MENSUAL",
+                                                        body: "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " acaba de realizar un movimiento en su cuenta corriente que excede el monto permitido. Detalle del movimiento:  " +
+                                                                 " Monto: $" + montoMovimiento.ToString() + " , Saldo Anterior: $" + montoActual.ToString() + " , Saldo Nuevo: $" + montoNuevo.ToString(),
+                                                        recipientMail: colaboradorDao.getAdmins(),
+                                                        isHtml: false
+                                                        );
+                                                    return "Movimiento agregado con exito";
+                                                }
+                                                
+                                                else if( porc >= 65 & porc <= 100)
+                                                {
+                                                    //El monto no lo supera pero esta en el 25 por ciento
+                                                    ColaboradorDao colaboradorDao = new ColaboradorDao();
+                                                    var mailService = new MailServices.SystemSupportMail();
+                                                    mailService.sendMail(
+                                                        subject: "ETRA: AVISO CUENTA CORRIENTE CON SALDO CERCANO A MAXIMO",
+                                                        body: "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " tiene un saldo en su cuenta corriente de $ " + montoNuevo.ToString() + " , teniendo un valor permitido de saldo maximo $" + montoActual.ToString(),
                                                         recipientMail: colaboradorDao.getAdmins(),
                                                         isHtml: false
                                                         );
                                                     //crear aviso notificado de deuda cuenta corriente o cerca de monto
+                                                    AvisosDao aviso = new AvisosDao();
+                                                    aviso.insertarAviso(2,"Cuenta alcanza un " + porc.ToString() +"% del saldo maximo",DateTime.Now,DateTime.Now, DateTime.Now);
+                                                    int idAviso = int.Parse(aviso.buscarIdUltimoAviso());
+                                                    return aviso.declararNotificados(idAviso, new int[1] { legajo });
                                                 }
-                                                return "Cuenta creada con exito.";
+                                                return "Movimiento agregado con exito.";
 
                                             }
                                             else
                                             {
-                                                return "Error al crear la cuenta.";
+                                                return "Error al cargar el movimiento";
                                             }
                                         }
 
                                     }
                                     else
                                     {
-                                        return "Error al crear la cuenta.";
+                                        return "Error al cargar el movimiento";
                                     }
                                 }
 
@@ -308,7 +318,7 @@ namespace DataAccesA
                             
                             else
                             {
-                                return "Error al realizar el movimiento";
+                                return "Error al cargar el movimiento";
                             }
 
 

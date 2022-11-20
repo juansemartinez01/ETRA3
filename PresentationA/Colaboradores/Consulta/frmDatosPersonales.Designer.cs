@@ -55,8 +55,7 @@
             this.lblNroContacto = new System.Windows.Forms.Label();
             this.lblMail = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblSexo = new System.Windows.Forms.Label();
-            this.lblllegajo = new System.Windows.Forms.Label();
+            this.lbllegajo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -74,7 +73,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(657, 46);
+            this.label12.Location = new System.Drawing.Point(292, 46);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 20);
@@ -86,7 +85,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(381, 133);
+            this.label10.Location = new System.Drawing.Point(18, 133);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 20);
@@ -98,7 +97,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(381, 88);
+            this.label9.Location = new System.Drawing.Point(315, 133);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 20);
@@ -111,7 +110,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(292, 51);
+            this.label7.Location = new System.Drawing.Point(285, 51);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 20);
@@ -160,7 +159,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(381, 46);
+            this.label2.Location = new System.Drawing.Point(333, 92);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 20);
@@ -182,12 +181,11 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Location = new System.Drawing.Point(629, 27);
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Location = new System.Drawing.Point(588, 27);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(239, 208);
+            this.pictureBox2.Size = new System.Drawing.Size(282, 216);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -197,7 +195,7 @@
             this.lblPiso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPiso.AutoSize = true;
-            this.lblPiso.Location = new System.Drawing.Point(508, 46);
+            this.lblPiso.Location = new System.Drawing.Point(401, 92);
             this.lblPiso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(0, 20);
@@ -208,7 +206,7 @@
             this.lblNumeroCalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumeroCalle.AutoSize = true;
-            this.lblNumeroCalle.Location = new System.Drawing.Point(144, 92);
+            this.lblNumeroCalle.Location = new System.Drawing.Point(122, 88);
             this.lblNumeroCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroCalle.Name = "lblNumeroCalle";
             this.lblNumeroCalle.Size = new System.Drawing.Size(0, 20);
@@ -219,7 +217,7 @@
             this.lblCalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCalle.AutoSize = true;
-            this.lblCalle.Location = new System.Drawing.Point(135, 46);
+            this.lblCalle.Location = new System.Drawing.Point(122, 46);
             this.lblCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(0, 20);
@@ -231,7 +229,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(445, 100);
+            this.lblDni.Location = new System.Drawing.Point(394, 100);
             this.lblDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(0, 20);
@@ -243,7 +241,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(165, 149);
+            this.lblApellido.Location = new System.Drawing.Point(122, 149);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(0, 20);
@@ -255,7 +253,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(165, 100);
+            this.lblNombre.Location = new System.Drawing.Point(122, 100);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(0, 20);
@@ -267,7 +265,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(292, 100);
+            this.label22.Location = new System.Drawing.Point(333, 100);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(40, 20);
@@ -280,7 +278,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(445, 51);
+            this.lblCuit.Location = new System.Drawing.Point(394, 51);
             this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(0, 20);
@@ -291,7 +289,7 @@
             this.lblLocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(508, 133);
+            this.lblLocalidad.Location = new System.Drawing.Point(122, 133);
             this.lblLocalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(0, 20);
@@ -302,7 +300,7 @@
             this.lblDepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.Location = new System.Drawing.Point(508, 92);
+            this.lblDepartamento.Location = new System.Drawing.Point(401, 133);
             this.lblDepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepartamento.Name = "lblDepartamento";
             this.lblDepartamento.Size = new System.Drawing.Size(0, 20);
@@ -313,7 +311,7 @@
             this.lblProvincia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(775, 46);
+            this.lblProvincia.Location = new System.Drawing.Point(401, 46);
             this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(0, 20);
@@ -324,7 +322,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(609, 56);
+            this.label14.Location = new System.Drawing.Point(18, 103);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(155, 20);
@@ -336,7 +334,7 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(255, 56);
+            this.label16.Location = new System.Drawing.Point(18, 68);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(138, 20);
@@ -348,7 +346,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 56);
+            this.label17.Location = new System.Drawing.Point(18, 32);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 20);
@@ -360,7 +358,7 @@
             this.lblNroContacto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNroContacto.AutoSize = true;
-            this.lblNroContacto.Location = new System.Drawing.Point(445, 56);
+            this.lblNroContacto.Location = new System.Drawing.Point(193, 68);
             this.lblNroContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroContacto.Name = "lblNroContacto";
             this.lblNroContacto.Size = new System.Drawing.Size(0, 20);
@@ -371,7 +369,7 @@
             this.lblMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(95, 56);
+            this.lblMail.Location = new System.Drawing.Point(122, 32);
             this.lblMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(0, 20);
@@ -383,36 +381,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 211);
+            this.label8.Location = new System.Drawing.Point(18, 189);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 20);
+            this.label8.Size = new System.Drawing.Size(171, 20);
             this.label8.TabIndex = 67;
-            this.label8.Text = "Fecha de Nac:";
+            this.label8.Text = "Fecha de Nacimiento:";
             // 
-            // lblSexo
+            // lbllegajo
             // 
-            this.lblSexo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbllegajo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(396, 149);
-            this.lblSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(0, 20);
-            this.lblSexo.TabIndex = 70;
-            // 
-            // lblllegajo
-            // 
-            this.lblllegajo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblllegajo.AutoSize = true;
-            this.lblllegajo.Location = new System.Drawing.Point(165, 51);
-            this.lblllegajo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblllegajo.Name = "lblllegajo";
-            this.lblllegajo.Size = new System.Drawing.Size(0, 20);
-            this.lblllegajo.TabIndex = 72;
+            this.lbllegajo.AutoSize = true;
+            this.lbllegajo.Location = new System.Drawing.Point(122, 51);
+            this.lbllegajo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbllegajo.Name = "lbllegajo";
+            this.lbllegajo.Size = new System.Drawing.Size(0, 20);
+            this.lbllegajo.TabIndex = 72;
             // 
             // label19
             // 
@@ -429,6 +415,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -445,13 +433,15 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(955, 181);
+            this.groupBox1.Size = new System.Drawing.Size(895, 181);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.lblNroEmergencia);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label14);
@@ -462,7 +452,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(955, 118);
+            this.groupBox2.Size = new System.Drawing.Size(895, 146);
             this.groupBox2.TabIndex = 75;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONTACTO";
@@ -473,7 +463,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNroEmergencia.AutoSize = true;
-            this.lblNroEmergencia.Location = new System.Drawing.Point(825, 56);
+            this.lblNroEmergencia.Location = new System.Drawing.Point(193, 103);
             this.lblNroEmergencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNroEmergencia.Name = "lblNroEmergencia";
             this.lblNroEmergencia.Size = new System.Drawing.Size(0, 20);
@@ -481,16 +471,17 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lblFechaNacimiento);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.pictureBox2);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.pictureBox2);
-            this.groupBox3.Controls.Add(this.lblllegajo);
+            this.groupBox3.Controls.Add(this.lbllegajo);
             this.groupBox3.Controls.Add(this.lblDni);
             this.groupBox3.Controls.Add(this.lblApellido);
-            this.groupBox3.Controls.Add(this.lblSexo);
             this.groupBox3.Controls.Add(this.lblNombre);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.lblCuit);
@@ -499,7 +490,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(955, 262);
+            this.groupBox3.Size = new System.Drawing.Size(895, 262);
             this.groupBox3.TabIndex = 76;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -510,7 +501,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(188, 211);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(197, 189);
             this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(0, 20);
@@ -520,7 +511,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 639);
+            this.ClientSize = new System.Drawing.Size(965, 678);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -567,8 +558,7 @@
         private System.Windows.Forms.Label lblNroContacto;
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.Label lblllegajo;
+        private System.Windows.Forms.Label lbllegajo;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;

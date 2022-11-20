@@ -10,5 +10,6 @@ namespace PresentationA.Colaboradores.Consulta
             InitializeComponent();
             completarLabels(this, colaborador, "lbl");
         }
+
     }
 }

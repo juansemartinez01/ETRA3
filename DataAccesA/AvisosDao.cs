@@ -9,7 +9,7 @@ namespace DataAccesA
     {
         
         /*Insercion del aviso*/
-        public string insertarAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion)
+        public string insertarAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion, Nullable<DateTime> fechaUltimaNotificacion = null)
         {
             try
             {
@@ -19,13 +19,13 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,GETDATE(),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'),0)";
+                        command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,GETDATE(),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'), Format(@fechaUltimaNotificacion, 'yyyy - MM - dd'),0)";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@idTipoAviso", idTipoAviso);
                         command.Parameters.AddWithValue("@descripcion", descripcion);
-
                         command.Parameters.AddWithValue("@fechaOcurrencia", fechaOcurrencia);
                         command.Parameters.AddWithValue("@fechaNotificacion", fechaNotificacion);
+                        command.Parameters.AddWithValue("@fechaUltimaNotificacion", fechaNotificacion);
 
                         int insecionExitosa = command.ExecuteNonQuery();
                         if (insecionExitosa == 1)

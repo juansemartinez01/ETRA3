@@ -82,9 +82,11 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
             dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
             txtDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
+
             btnVerArchivo.Visible = true;
             btnEliminar.Visible = true;
             btnModificar.Visible = true;
+            btnAgregar.Visible = true;
         }
 
         private void btnAgregarArchivo_Click(object sender, EventArgs e)
@@ -157,6 +159,7 @@ namespace PresentationA.Colaboradores.Consulta
                     }
                     MessageBox.Show(respuesta);
                     CargarDG(nuevoDocumento.LegajoColaborador.ToString(),false);
+                    
                 }
                 else
                 {
@@ -168,18 +171,12 @@ namespace PresentationA.Colaboradores.Consulta
                     }
                     MessageBox.Show(respuesta);
                     CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
+                    
                 }
-                btnAgregar.Text = "Agregar";
-                btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-                dgvEventos.Enabled = true;
-                switchButtons(false);
+                ViewState();
                 return;
             }
-            btnAgregar.Text = "Guardar";
-            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            btnVerArchivo.Visible = false;
-            dgvEventos.Enabled = false;
-            switchButtons(true);
+            AddState();
         }
 
         private void btnVerArchivo_Click(object sender, EventArgs e)
@@ -242,23 +239,20 @@ namespace PresentationA.Colaboradores.Consulta
             string mensaje = eventosModelo.eliminarEvento(idEvento);
             MessageBox.Show(mensaje);
             CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
-            switchButtons(false);
+            ViewState();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
 
-            int cambiarBotones = 0;
             if (btnModificar.Text == "Guardar")
             {
                 //Guardar cambios, resetear estado de botones
-                btnModificar.Text = "Modificar";
-                btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-                btnAgregar.Visible = true;
                 
                 int indice = eventosModelo.FilaSeleccionadaHistorialEvento;
                 if (indice == -1)
                 {
+                    ViewState();
                     return;
                 }
                 //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
@@ -274,18 +268,9 @@ namespace PresentationA.Colaboradores.Consulta
                 string mensaje = eventosModelo.modificarEvento(idEvento, (int)cmbTipoEvento.SelectedValue, dtpfechaInicio.Value.Date, dtpfechaFin.Value.Date, dtpfechaRegistro.Value.Date, txtDescripcion.Text.ToString());
                 MessageBox.Show(mensaje);
                 CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
-                switchButtons(false);
-                cambiarBotones++;
-
+                ViewState();
             }
-            if (btnModificar.Text == "Modificar" && cambiarBotones == 0)
-            {
-                // Habilitar todos los botones
-                btnModificar.Text = "Guardar";
-                btnModificar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-                btnAgregar.Visible = false;
-                switchButtons(true);
-            }
+            ModifyState();
         }
         private void switchButtons(bool value)
         {
@@ -333,6 +318,82 @@ namespace PresentationA.Colaboradores.Consulta
                 btnEliminar.Enabled = false;
                 btnAgregarArchivo.Enabled = false;
             }
+        }
+
+        private void AddState()
+        {
+            dtpfechaFin.Enabled = true;
+            dtpfechaInicio.Enabled = true;
+            txtDescripcion.Enabled = true;
+            cmbTipoEvento.Enabled = true;
+            lblTipoArchivo.Visible = true;
+            cmbTipoMultimedia.Visible = true;
+            btnAgregarArchivo.Visible = true;
+
+            dtpfechaInicio.Value = DateTime.Now;
+            dtpfechaFin.Value = DateTime.Now;
+            dtpfechaRegistro.Value = DateTime.Now;
+            txtDescripcion.Text = null;
+            cmbTipoEvento.Text = null;
+
+            btnAgregar.Text = "Guardar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+
+            btnModificar.Visible = false;
+            btnEliminar.Visible = false;
+
+            dgvEventos.Enabled = false;
+            return;
+        }
+        private void ViewState()
+        {
+            dtpfechaFin.Enabled = false;
+            dtpfechaInicio.Enabled = false;
+            txtDescripcion.Enabled = false;
+            cmbTipoEvento.Enabled = false;
+            lblTipoArchivo.Visible = false;
+            cmbTipoMultimedia.Visible = false;
+            btnAgregarArchivo.Visible = false;
+
+            dtpfechaInicio.Value = DateTime.Now;
+            dtpfechaFin.Value = DateTime.Now;
+            dtpfechaRegistro.Value = DateTime.Now;
+            txtDescripcion.Text = null;
+            cmbTipoEvento.Text = null;
+
+            btnAgregar.Text = "Agregar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+
+            btnModificar.Text = "Modificar";
+            btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+
+            dgvEventos.Enabled = true;
+            return;
+        }
+        private void ModifyState()
+        {
+            dtpfechaFin.Enabled = true;
+            dtpfechaInicio.Enabled = true;
+            txtDescripcion.Enabled = true;
+            cmbTipoEvento.Enabled = true;
+            lblTipoArchivo.Visible = true;
+            cmbTipoMultimedia.Visible = true;
+            btnAgregarArchivo.Visible = true;
+
+            btnVerArchivo.Visible = true;
+            btnEliminar.Visible = false;
+            
+
+            btnAgregar.Visible = false;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            
+            btnModificar.Visible = true;
+            btnModificar.Text = "Guardar";
+            btnModificar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+
+            dgvEventos.Enabled = false;
+
         }
     }
 }
