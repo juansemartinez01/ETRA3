@@ -6,13 +6,15 @@ using System.Windows.Forms;
 using DomainA;
 using System.Diagnostics;
 using Common.Cache;
+using Microsoft.Office.Interop.Excel;
+
 
 namespace PresentationA.Colaboradores.Consulta
 {
     public partial class frmHistorialEvento : frmHijo
     {
         Eventos eventosModelo = new Eventos();
-        DataTable historial;
+        System.Data.DataTable historial;
         DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
         
         public frmHistorialEvento(string legajo)
@@ -22,20 +24,13 @@ namespace PresentationA.Colaboradores.Consulta
             openFileDialog1.InitialDirectory = "no seleccionado";
             nuevoDocumento.LegajoColaborador = int.Parse(legajo);
             CargarDG(legajo, false);
-            btnEliminar.Visible = false;
-            btnModificar.Visible = false;
-            btnVerArchivo.Visible = false;
-            lblTipoArchivo.Visible = false;
-            btnAgregarArchivo.Visible = false;
-            cmbTipoMultimedia.Visible = false;
             LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
             LlenarCombo(cmbTipoMultimedia, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMultimedia WHERE borradoLogico = 0"), "nombre", "id_tipoMultimedia");
             dtpfechaInicio.Format = DateTimePickerFormat.Custom;
             dtpfechaInicio.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             dtpfechaFin.Format = DateTimePickerFormat.Custom;
             dtpfechaFin.CustomFormat = "dd/MM/yyyy hh:mm:ss";
-            
-            
+            ViewState();
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -83,18 +78,15 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
             txtDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
 
-            btnVerArchivo.Visible = true;
-            btnEliminar.Visible = true;
-            btnModificar.Visible = true;
-            btnAgregar.Visible = true;
+            ViewState();
         }
 
         private void btnAgregarArchivo_Click(object sender, EventArgs e)
         {
             if (cmbTipoMultimedia.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar primero el tipo de contenido multimedia que va a subir.");
-                return;
+               MessageBox.Show("Debe seleccionar primero el tipo de contenido multimedia que va a subir.");
+               return;
             }
             openFileDialog1.InitialDirectory = "C:\\Documentos";
             openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
@@ -111,13 +103,13 @@ namespace PresentationA.Colaboradores.Consulta
 
             
             byte[] archivo = null;
+            // bug, cancelar un archivo a subir hace esto
             using (Stream MyStream = openFileDialog1.OpenFile())
             {
                 using (MemoryStream obj = new MemoryStream())
                 {
                     MyStream.CopyTo(obj);
                     archivo = obj.ToArray();
-
 
                 }
             }
@@ -269,32 +261,10 @@ namespace PresentationA.Colaboradores.Consulta
                 MessageBox.Show(mensaje);
                 CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
                 ViewState();
+                return;
             }
             ModifyState();
         }
-        private void switchButtons(bool value)
-        {
-            if (value == false)
-            {
-                cmbTipoEvento.SelectedItem = null;
-                dtpfechaInicio.Value = DateTime.Now;
-                dtpfechaFin.Value = DateTime.Now;
-                dtpfechaRegistro.Value = DateTime.Now;
-                txtDescripcion.Text = null;
-                
-            }
-            cmbTipoEvento.Enabled = value;
-            dtpfechaInicio.Enabled = value;
-            dtpfechaFin.Enabled = value;
-            dtpfechaRegistro.Enabled = value;
-            txtDescripcion.Enabled = value;
-            lblTipoArchivo.Visible = value;
-            btnAgregarArchivo.Visible = value;
-            cmbTipoMultimedia.Visible = value;
-            if (dgvEventos.CurrentRow != null) { dgvEventos.CurrentRow.Selected = false; }
-            
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSoloPagosSueldo.Checked)
@@ -328,7 +298,11 @@ namespace PresentationA.Colaboradores.Consulta
             cmbTipoEvento.Enabled = true;
             lblTipoArchivo.Visible = true;
             cmbTipoMultimedia.Visible = true;
+            cmbTipoMultimedia.Location = new System.Drawing.Point(lblTipoArchivo.Location.X + 139, lblTipoArchivo.Location.Y);
             btnAgregarArchivo.Visible = true;
+            btnAgregarArchivo.Location = new System.Drawing.Point(lblTipoArchivo.Location.X + 184, lblTipoArchivo.Location.Y + 41);
+            btnCancelar.Visible = true;
+            btnCancelar.Location = new System.Drawing.Point(btnAgregar.Location.X + 357, btnAgregar.Location.Y - 63);
 
             dtpfechaInicio.Value = DateTime.Now;
             dtpfechaFin.Value = DateTime.Now;
@@ -342,6 +316,7 @@ namespace PresentationA.Colaboradores.Consulta
             btnModificar.Visible = false;
             btnEliminar.Visible = false;
 
+            if (dgvEventos.CurrentRow != null) { dgvEventos.CurrentRow.Selected = false; }
             dgvEventos.Enabled = false;
             return;
         }
@@ -354,7 +329,7 @@ namespace PresentationA.Colaboradores.Consulta
             lblTipoArchivo.Visible = false;
             cmbTipoMultimedia.Visible = false;
             btnAgregarArchivo.Visible = false;
-
+            btnCancelar.Visible = false;
             dtpfechaInicio.Value = DateTime.Now;
             dtpfechaFin.Value = DateTime.Now;
             dtpfechaRegistro.Value = DateTime.Now;
@@ -367,6 +342,23 @@ namespace PresentationA.Colaboradores.Consulta
             btnModificar.Text = "Modificar";
             btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
 
+
+            btnAgregar.Visible = true;
+            bool aux = true;
+            if (dgvEventos.CurrentCell == null) { aux = false; }
+
+            btnModificar.Visible = aux;
+            btnModificar.Location = new System.Drawing.Point(btnAgregar.Location.X + 177, btnAgregar.Location.Y);
+            btnEliminar.Visible = aux;
+            btnEliminar.Location = new System.Drawing.Point(btnAgregar.Location.X + 357, btnAgregar.Location.Y);
+            btnVerArchivo.Visible = aux;
+            btnVerArchivo.Location = new System.Drawing.Point(btnAgregar.Location.X + 133, btnAgregar.Location.Y - 63);
+            
+            btnAgregar.Enabled = true;
+            btnModificar.Enabled = aux;
+            btnEliminar.Enabled = aux;
+            btnVerArchivo.Enabled = aux;
+
             dgvEventos.Enabled = true;
             return;
         }
@@ -378,12 +370,14 @@ namespace PresentationA.Colaboradores.Consulta
             cmbTipoEvento.Enabled = true;
             lblTipoArchivo.Visible = true;
             cmbTipoMultimedia.Visible = true;
+            cmbTipoMultimedia.Location = new System.Drawing.Point(lblTipoArchivo.Location.X + 139, lblTipoArchivo.Location.Y);
             btnAgregarArchivo.Visible = true;
+            btnAgregarArchivo.Location = new System.Drawing.Point(lblTipoArchivo.Location.X + 184, lblTipoArchivo.Location.Y + 41);
+            btnCancelar.Visible = true;
+            btnCancelar.Location = new System.Drawing.Point(btnAgregar.Location.X + 357, btnAgregar.Location.Y - 63);
 
             btnVerArchivo.Visible = true;
             btnEliminar.Visible = false;
-            
-
             btnAgregar.Visible = false;
             btnAgregar.Text = "Agregar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
@@ -394,6 +388,12 @@ namespace PresentationA.Colaboradores.Consulta
 
             dgvEventos.Enabled = false;
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if(dgvEventos.Rows.Count > 0) {   dgvEventos.Rows[dgvEventos.CurrentRow.Index].Selected = true;  }
+            ViewState();
         }
     }
 }
