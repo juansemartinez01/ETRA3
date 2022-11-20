@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationA.Colaboradores.Consulta
@@ -31,7 +28,6 @@ namespace PresentationA.Colaboradores.Consulta
             CargarDG(legajo);
             buscarSaldo();
             LimpiarCampos();
-
 
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -137,10 +133,17 @@ namespace PresentationA.Colaboradores.Consulta
                 msgError("Debe completar el monto del movimiento con un valor mayor a cero");
                 return;
             }
-
             float monto = float.Parse(txtRetirar.Text);
+            float saldoMax = float.Parse(lblFondoMaximoPermitido.Text);
+            float saldoActual = float.Parse(lblSaldo.Text);
+            float saldoNuevo = monto + saldoActual;
+            if (saldoNuevo > saldoMax) 
+            {
+                if (MessageBox.Show("El movimiento que quiere realizar excede al saldo maximo permitido. Desea realizarlo de todas formas? Los adminsitradores serán notificados ", "Movimiento Inválido", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+            }
+            
             //int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
-            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, 2);
+            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto , 2);
             CargarDG(colaboradorModelo.legajo.ToString());
             buscarSaldo();
             LimpiarCampos();

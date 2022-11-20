@@ -214,6 +214,7 @@ namespace PresentationA.Colaboradores
 
         public void agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
         {
+            //Error, hacer click una vez en el perfil y no cargas nada y se rompe
             byte[] archivo = null;
             using (Stream MyStream = openFileDialog1.OpenFile())
             {

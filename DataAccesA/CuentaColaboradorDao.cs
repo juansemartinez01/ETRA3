@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
+using System.Xml.Linq;
 
 namespace DataAccesA
 {
@@ -213,7 +209,7 @@ namespace DataAccesA
                 montoMovimiento = -montoMovimiento;
             }
             string montoActual = "";
-            string montoMaximo;
+            string montoMaximo = "";
             float montoNuevo;
             try
             {
@@ -234,12 +230,13 @@ namespace DataAccesA
                                 IDataRecord montoActualBase = (IDataRecord)reader;
                                 montoActual = "" + montoActualBase[0] + "";
                                 montoMaximo = "" + montoActualBase[1] + "";
-                                
                             }
+                            
                             reader.Close();
                             if (montoActual != "")
                             {
                                 montoNuevo = float.Parse(montoActual) + montoMovimiento;
+                                
                                 using (var command2 = new SqlCommand())
                                 {
                                     command2.Connection = connection;
@@ -267,6 +264,30 @@ namespace DataAccesA
                                             var movimientoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
                                             if (movimientoCreado == 1)
                                             {
+                                                if (((montoNuevo * 100) / float.Parse(montoMaximo)) >= 25)
+                                                {
+                                                    //El monto no lo supera pero esta en el 25 por ciento
+                                                    string subject = "ETRA: AVISO CUENTA CORRIENTE CON SALDO CERCANO A MAXIMO";
+                                                    string body = "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " tiene un saldo en su cuenta corriente de $ " + montoNuevo.ToString() + " , teniendo un valor permitido de saldo maximo $" + montoActual.ToString();
+
+                                                    if (float.Parse(montoMaximo) < montoNuevo)
+                                                    {
+                                                        //El monto supera el saldo maximo
+                                                        subject = "ETRA: MOVIMIENTO EXCEDE SALDO MAXIMO MENSUAL";
+                                                        body = "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " acaba de realizar un movimiento en su cuenta corriente que excede el monto permitido. Detalle del movimiento:  " +
+                                                                     " Monto: $" + montoMovimiento.ToString() + " , Saldo Anterior: $" + montoActual.ToString() + " , Saldo Nuevo: $" + montoNuevo.ToString();
+
+                                                    }
+                                                    ColaboradorDao colaboradorDao = new ColaboradorDao();
+                                                    var mailService = new MailServices.SystemSupportMail();
+                                                    mailService.sendMail(
+                                                        subject: subject,
+                                                        body: body,
+                                                        recipientMail: colaboradorDao.getAdmins(),
+                                                        isHtml: false
+                                                        );
+                                                    //crear aviso notificado de deuda cuenta corriente o cerca de monto
+                                                }
                                                 return "Cuenta creada con exito.";
 
                                             }
