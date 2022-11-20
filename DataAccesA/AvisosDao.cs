@@ -19,13 +19,21 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,GETDATE(),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'), Format(@fechaUltimaNotificacion, 'yyyy - MM - dd'),0)";
+                        
+                        command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,GETDATE(),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'),";
+                        string aux = "null,0)";
+                        if (fechaUltimaNotificacion != null) 
+                        { 
+                            aux = "Format(@fechaUltimaNotificacion, 'yyyy - MM - dd'),0)";
+                            command.Parameters.AddWithValue("@fechaUltimaNotificacion", fechaUltimaNotificacion);
+                        }
+                        command.CommandText += aux;
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@idTipoAviso", idTipoAviso);
                         command.Parameters.AddWithValue("@descripcion", descripcion);
                         command.Parameters.AddWithValue("@fechaOcurrencia", fechaOcurrencia);
                         command.Parameters.AddWithValue("@fechaNotificacion", fechaNotificacion);
-                        command.Parameters.AddWithValue("@fechaUltimaNotificacion", fechaNotificacion);
+                        
 
                         int insecionExitosa = command.ExecuteNonQuery();
                         if (insecionExitosa == 1)
@@ -167,7 +175,7 @@ namespace DataAccesA
             }
         }
 
-        public bool actualizarAviso(int id_aviso, DateTime fechaNotificacion)
+        public bool actualizarAviso(int id_aviso, DateTime fechaUtlimaNotificacion)
         {
             try
             {
@@ -177,10 +185,10 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Aviso set fechaNotificacion = Format(@fechaNotificacion, 'yyyy - MM - dd') WHERE id_aviso = @id_aviso";
+                        command.CommandText = "UPDATE Aviso set fechaUtlimaNotificacion = Format(@fechaUtlimaNotificacion, 'yyyy - MM - dd') WHERE id_aviso = @id_aviso";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@id_aviso", id_aviso);
-                        command.Parameters.AddWithValue("@fechaNotificacion", fechaNotificacion);
+                        command.Parameters.AddWithValue("@fechaUtlimaNotificacion", fechaUtlimaNotificacion);
                         int insecionExitosa = command.ExecuteNonQuery();
                         if (insecionExitosa == 1)
                         {
@@ -229,35 +237,7 @@ namespace DataAccesA
             }
         }
 
-        public DataTable getAllAvisosHoy()
-        {
-            DataTable resultado = new DataTable();
-            try
-            {
-                using (var connection = GetConnection())
-                {
-                    connection.Open();
-                    using (var command = new SqlCommand())
-                    {
-                        command.Connection = connection;
-                        command.CommandText = "SELECT a.id_aviso, ta.nombre, c.nombre, c.mail, a.fechaOcurrencia, a.descripcion" +
-                                                "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
-                                                "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
-                                                "join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                                "where a.fechaOcurrencia = GETDATE() or (a.fechaOcurrencia < GETDATE() and a.fechaNotificacion is null)";
-                        command.CommandType = CommandType.Text;
-
-                        resultado.Load(command.ExecuteReader());
-                        return resultado;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                return resultado;
-            }
-        }
-
+        
         public DataTable getAllAvisos(int legajo, int idTipoAviso, string fechaOcurrencia, string fechaCarga, string fechaNotificacion, bool filtroFecha)
         {
             string parametros = "";
@@ -356,7 +336,7 @@ namespace DataAccesA
                                             "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                             "join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                            "where (a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaOcurrencia < CAST( GETDATE() AS Date ) and a.fechaNotificacion is null)";
+                                            "where (a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaNotificacion < CAST( GETDATE() AS Date ) and a.fechaUltimaNotificacion is null) or (a.fechaNotificacion = CAST(GETDATE() AS DATE) AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE) ";
                         command.CommandType = CommandType.Text;
                         resultado.Load(command.ExecuteReader());
                         return resultado;
@@ -527,9 +507,9 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select 1 from Aviso where id_aviso = 1 and DATEDIFF(D,fechaNotificacion,CAST(GETDATE() AS DATE)) >= 15";
+                        //Busca el aviso con id 1 que corresponde a los avisos a los admins, y verifica que la ultima fecha de notificacion sea hace mas de dos semanas
+                        command.CommandText = "select 1 from Aviso where id_aviso = 1 and DATEDIFF(D,fechaUltimaNotificacion,CAST(GETDATE() AS DATE)) >= 15";
                         command.CommandType = CommandType.Text;
-                        
                         return command.ExecuteReader().HasRows;
                     }
                 }
@@ -539,24 +519,57 @@ namespace DataAccesA
                 return false;
             }
         }
+
+        public DataTable getAvisosEntre(DateTime desde, DateTime hasta)
+        {
+            DataTable resultado = new DataTable();
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT a.id_aviso, ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
+                                            "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
+                                            "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
+                                            "join Colaborador c on c.legajo = ac.legajoColaborador AND a.borradoLogico = 0 AND CAST(@desde AS DATE) <= a.fechaOcurrencia and a.fechaOcurrencia <= CAST(@hasta AS DATE)";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@desde", desde);
+                        command.Parameters.AddWithValue("@hasta", hasta);
+                        resultado.Load(command.ExecuteReader());
+                        return resultado;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return resultado;
+            }
+        }
         public bool notificarAdmins()
         {
             //Notifica a los administradores los avisos de las proximas dos semanas
             try {
                 //Ya fue enviada la notificacion?
-                if (consultarAvisoAdmin()) { return true; }
+                if (this.consultarAvisoAdmin() == false) { return true; }
                 ColaboradorDao colab = new ColaboradorDao();
-                DataTable avisos = getAllAvisos(0, 0, DateTime.Now.ToString(), null, null, true);
-                String titulo = "Administradores, les enviamos un resumen de los avisos de las proximas dos semanas: ";
-                string body = GetHtmlTable(titulo, avisos);
-                var mailService = new MailServices.SystemSupportMail();
-                mailService.sendMail(
-                    subject: "ETRA: AVISOS",
-                    body: body,
-                    recipientMail: colab.getAdmins(),
-                    isHtml: true
-                    );
-
+                DataTable avisos = getAvisosEntre(DateTime.Now, DateTime.Now.AddDays(15));
+                //Hay avisos en las proximas dos semanas? 
+                if(avisos.Rows.Count > 0)
+                {
+                    String titulo = "Administradores, les enviamos un resumen de los avisos de las proximas dos semanas: ";
+                    string body = GetHtmlTable(titulo, avisos);
+                    var mailService = new MailServices.SystemSupportMail();
+                    mailService.sendMail(
+                        subject: "ETRA: AVISOS",
+                        body: body,
+                        recipientMail: colab.getAdmins(),
+                        isHtml: true
+                        );
+                    this.actualizarAviso(1,DateTime.Now);
+                }
                 return true;
             }
             catch { return false; }

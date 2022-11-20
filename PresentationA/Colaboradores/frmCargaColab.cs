@@ -151,6 +151,7 @@ namespace PresentationA.Colaboradores
                                                 string masnsajeCuentaCreada = cuentaColaborador.crearCuentaColaborador(int.Parse(colaboradorModelo.BuscarLegajoUltimoColaborador()), prestamoMaximo);
 
                                                 MessageBox.Show(cadenaRespuesta);
+                                                limpiarCampos();
                                             }
                                             else
                                             {

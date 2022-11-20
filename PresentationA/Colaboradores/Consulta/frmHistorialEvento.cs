@@ -225,6 +225,7 @@ namespace PresentationA.Colaboradores.Consulta
             {
                 return;
             }
+            if(MessageBox.Show("Esta seguro que desea eliminar el evento?","Elminar Evento",MessageBoxButtons.YesNo) == DialogResult.No) { ViewState(); return; }
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
@@ -247,6 +248,7 @@ namespace PresentationA.Colaboradores.Consulta
                     ViewState();
                     return;
                 }
+                if(cmbTipoEvento.SelectedValue == null) { MessageBox.Show("Debe seleccionar un tipo de evento");ViewState(); return; }
                 //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
                 //Error, controlar if con indice menor a cero, juanse no sabe nada ni testear puede
                 DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
@@ -292,6 +294,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void AddState()
         {
+            //Vaciar lo que sea que haya en en archivos, sino se guarda de movimiento anterior, JUANSE
             dtpfechaFin.Enabled = true;
             dtpfechaInicio.Enabled = true;
             txtDescripcion.Enabled = true;
@@ -335,7 +338,7 @@ namespace PresentationA.Colaboradores.Consulta
             dtpfechaRegistro.Value = DateTime.Now;
             txtDescripcion.Text = null;
             cmbTipoEvento.Text = null;
-
+            cmbTipoMultimedia.Text = null;
             btnAgregar.Text = "Agregar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
 
@@ -364,6 +367,7 @@ namespace PresentationA.Colaboradores.Consulta
         }
         private void ModifyState()
         {
+            //Vaciar lo que sea que haya en en archivos, sino se guarda de movimiento anterior, JUANSE
             dtpfechaFin.Enabled = true;
             dtpfechaInicio.Enabled = true;
             txtDescripcion.Enabled = true;
