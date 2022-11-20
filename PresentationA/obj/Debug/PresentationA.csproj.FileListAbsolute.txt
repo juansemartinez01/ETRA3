@@ -254,3 +254,4 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.C
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Common.dll
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Common.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmUsuarios.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmNuevoAviso.resources

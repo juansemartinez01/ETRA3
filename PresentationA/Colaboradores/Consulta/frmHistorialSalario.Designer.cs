@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(102, 240);
+            this.label3.Location = new System.Drawing.Point(425, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 21);
             this.label3.TabIndex = 33;
@@ -102,7 +102,7 @@
             // 
             // txtmonto
             // 
-            this.txtmonto.Location = new System.Drawing.Point(205, 240);
+            this.txtmonto.Location = new System.Drawing.Point(516, 91);
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(200, 27);
             this.txtmonto.TabIndex = 34;
@@ -113,6 +113,9 @@
             this.dgvSalarios.AllowUserToAddRows = false;
             this.dgvSalarios.AllowUserToDeleteRows = false;
             this.dgvSalarios.AllowUserToOrderColumns = true;
+            this.dgvSalarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSalarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -141,8 +144,9 @@
             this.dgvSalarios.EnableHeadersVisualStyles = false;
             this.dgvSalarios.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvSalarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvSalarios.Location = new System.Drawing.Point(532, 94);
+            this.dgvSalarios.Location = new System.Drawing.Point(36, 195);
             this.dgvSalarios.Name = "dgvSalarios";
+            this.dgvSalarios.ReadOnly = true;
             this.dgvSalarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -154,7 +158,7 @@
             this.dgvSalarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSalarios.RowHeadersWidth = 51;
             this.dgvSalarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSalarios.Size = new System.Drawing.Size(453, 326);
+            this.dgvSalarios.Size = new System.Drawing.Size(650, 198);
             this.dgvSalarios.TabIndex = 41;
             this.dgvSalarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellClick);
             this.dgvSalarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellClick);
@@ -194,7 +198,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(282, 383);
+            this.btnAgregar.Location = new System.Drawing.Point(583, 130);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 37);
             this.btnAgregar.TabIndex = 48;
@@ -207,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 562);
+            this.ClientSize = new System.Drawing.Size(727, 423);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvSalarios);
             this.Controls.Add(this.txtmonto);

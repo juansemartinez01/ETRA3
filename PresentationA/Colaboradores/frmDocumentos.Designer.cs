@@ -83,9 +83,9 @@
             this.groupBox1.Controls.Add(this.cmbTipoDocumento);
             this.groupBox1.Controls.Add(this.cmbColaborador);
             this.groupBox1.Location = new System.Drawing.Point(6, 61);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1127, 159);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
@@ -149,7 +149,7 @@
             // 
             this.cmbTipoEvento.FormattingEnabled = true;
             this.cmbTipoEvento.Location = new System.Drawing.Point(195, 64);
-            this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
             this.cmbTipoEvento.Size = new System.Drawing.Size(154, 29);
             this.cmbTipoEvento.TabIndex = 13;
@@ -206,7 +206,7 @@
             // dtpFechaRegistro
             // 
             this.dtpFechaRegistro.Location = new System.Drawing.Point(577, 16);
-            this.dtpFechaRegistro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFechaRegistro.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
             this.dtpFechaRegistro.Size = new System.Drawing.Size(368, 27);
             this.dtpFechaRegistro.TabIndex = 9;
@@ -225,7 +225,7 @@
             // 
             this.cmbTipoDocumento.FormattingEnabled = true;
             this.cmbTipoDocumento.Location = new System.Drawing.Point(577, 64);
-            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(154, 29);
             this.cmbTipoDocumento.TabIndex = 8;
@@ -234,7 +234,7 @@
             // 
             this.cmbColaborador.FormattingEnabled = true;
             this.cmbColaborador.Location = new System.Drawing.Point(195, 18);
-            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaborador.Name = "cmbColaborador";
             this.cmbColaborador.Size = new System.Drawing.Size(154, 29);
             this.cmbColaborador.TabIndex = 7;
@@ -275,6 +275,7 @@
             this.dgvDocumentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
             this.dgvDocumentos.Location = new System.Drawing.Point(6, 227);
             this.dgvDocumentos.Name = "dgvDocumentos";
+            this.dgvDocumentos.ReadOnly = true;
             this.dgvDocumentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -295,24 +296,28 @@
             this.Numero.HeaderText = "Numero";
             this.Numero.MinimumWidth = 6;
             this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
             // 
             // Legajo
             // 
             this.Legajo.HeaderText = "Legajo";
             this.Legajo.MinimumWidth = 6;
             this.Legajo.Name = "Legajo";
+            this.Legajo.ReadOnly = true;
             // 
             // Tipodoc
             // 
             this.Tipodoc.HeaderText = "Tipo doc";
             this.Tipodoc.MinimumWidth = 6;
             this.Tipodoc.Name = "Tipodoc";
+            this.Tipodoc.ReadOnly = true;
             // 
             // Evento
             // 
             this.Evento.HeaderText = "Evento";
             this.Evento.MinimumWidth = 6;
             this.Evento.Name = "Evento";
+            this.Evento.ReadOnly = true;
             // 
             // openFileDialog1
             // 

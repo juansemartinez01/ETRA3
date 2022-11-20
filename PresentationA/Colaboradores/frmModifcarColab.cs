@@ -69,8 +69,8 @@ namespace PresentationA.Colaboradores
                     MessageBox.Show("No puede dejar el Dni vacio");
                     return;
                 }
-                DateTime fechaNacimiento = dtpFechaNacimiento.Value.Date;
-                if (dtpFechaNacimiento.Value.Date == DateTime.Now)
+                DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
+                if (dtpfechaNacimiento.Value.Date == DateTime.Now)
                 {
                     MessageBox.Show("Debe ingresar una fecha de nacimiento valida");
                     return;

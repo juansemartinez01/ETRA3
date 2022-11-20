@@ -35,7 +35,7 @@ namespace PresentationA.Controls
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.BackgroundColor = Color.White;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            
+            this.ReadOnly = true;
         }
         private void Container_BackColorChanged(object sender, EventArgs e)
         {

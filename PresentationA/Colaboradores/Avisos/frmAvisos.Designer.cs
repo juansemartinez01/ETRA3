@@ -33,22 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
-            this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
-            this.dtpfechaOcurrencia = new System.Windows.Forms.DateTimePicker();
-            this.cmbTipoAviso = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpfechaNotificacion = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtLegajos = new System.Windows.Forms.TextBox();
-            this.lblCargo = new System.Windows.Forms.Label();
-            this.cmbCargo = new System.Windows.Forms.ComboBox();
-            this.chkCargo = new System.Windows.Forms.CheckBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpfechaNotifiaciónFiltro = new System.Windows.Forms.DateTimePicker();
@@ -64,9 +49,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cmbCargoFiltro = new System.Windows.Forms.ComboBox();
             this.cmbColaborador = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvAvisos = new PresentationA.Controls.DataGridPadre();
             this.btnNotificar = new PresentationA.Controls.BotonPadre();
+            this.dgvAvisos = new PresentationA.Controls.DataGridPadre();
             this.id_aviso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.legajoColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +59,6 @@
             this.fechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +75,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,36 +86,17 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(372, 679);
+            this.btnEliminar.Location = new System.Drawing.Point(302, 518);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(122, 37);
+            this.btnEliminar.Size = new System.Drawing.Size(117, 40);
             this.btnEliminar.TabIndex = 50;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnModificar.IconColor = System.Drawing.Color.White;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 30;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(192, 679);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(122, 37);
-            this.btnModificar.TabIndex = 49;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
             // btnAgregar
             // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -142,146 +107,14 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(19, 679);
+            this.btnAgregar.Location = new System.Drawing.Point(11, 518);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(122, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(117, 40);
             this.btnAgregar.TabIndex = 48;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // dtpfechaOcurrencia
-            // 
-            this.dtpfechaOcurrencia.Location = new System.Drawing.Point(672, 111);
-            this.dtpfechaOcurrencia.Name = "dtpfechaOcurrencia";
-            this.dtpfechaOcurrencia.Size = new System.Drawing.Size(476, 27);
-            this.dtpfechaOcurrencia.TabIndex = 56;
-            // 
-            // cmbTipoAviso
-            // 
-            this.cmbTipoAviso.FormattingEnabled = true;
-            this.cmbTipoAviso.Location = new System.Drawing.Point(672, 63);
-            this.cmbTipoAviso.Name = "cmbTipoAviso";
-            this.cmbTipoAviso.Size = new System.Drawing.Size(475, 29);
-            this.cmbTipoAviso.TabIndex = 55;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(558, 113);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 21);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "Fecha:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(557, 63);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 21);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Tipo Aviso:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 8);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 42);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Legajos\r\nColaboradores:";
-            // 
-            // dtpfechaNotificacion
-            // 
-            this.dtpfechaNotificacion.Location = new System.Drawing.Point(778, 152);
-            this.dtpfechaNotificacion.Name = "dtpfechaNotificacion";
-            this.dtpfechaNotificacion.Size = new System.Drawing.Size(369, 27);
-            this.dtpfechaNotificacion.TabIndex = 60;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(557, 157);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 21);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Fecha de Notificación:";
-            // 
-            // txtLegajos
-            // 
-            this.txtLegajos.Location = new System.Drawing.Point(160, 12);
-            this.txtLegajos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtLegajos.Multiline = true;
-            this.txtLegajos.Name = "txtLegajos";
-            this.txtLegajos.Size = new System.Drawing.Size(336, 81);
-            this.txtLegajos.TabIndex = 64;
-            this.txtLegajos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajos_KeyPress);
-            // 
-            // lblCargo
-            // 
-            this.lblCargo.AutoSize = true;
-            this.lblCargo.Location = new System.Drawing.Point(557, 12);
-            this.lblCargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCargo.Name = "lblCargo";
-            this.lblCargo.Size = new System.Drawing.Size(64, 21);
-            this.lblCargo.TabIndex = 65;
-            this.lblCargo.Text = "Cargo:";
-            // 
-            // cmbCargo
-            // 
-            this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(628, 9);
-            this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(302, 29);
-            this.cmbCargo.TabIndex = 66;
-            // 
-            // chkCargo
-            // 
-            this.chkCargo.AutoSize = true;
-            this.chkCargo.Location = new System.Drawing.Point(949, 11);
-            this.chkCargo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.chkCargo.Name = "chkCargo";
-            this.chkCargo.Size = new System.Drawing.Size(205, 25);
-            this.chkCargo.TabIndex = 67;
-            this.chkCargo.Text = "Notificar todo el cargo";
-            this.chkCargo.UseVisualStyleBackColor = true;
-            this.chkCargo.CheckedChanged += new System.EventHandler(this.chkCargo_CheckedChanged);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(160, 113);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(336, 81);
-            this.txtDescripcion.TabIndex = 68;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 139);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 21);
-            this.label9.TabIndex = 69;
-            this.label9.Text = "Descripcion:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label8.Location = new System.Drawing.Point(12, 50);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 51);
-            this.label8.TabIndex = 70;
-            this.label8.Text = "Debe escrbirlos \r\nseparados por\r\nuna coma";
             // 
             // groupBox1
             // 
@@ -305,7 +138,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1160, 215);
+            this.groupBox1.Size = new System.Drawing.Size(1001, 215);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -452,35 +285,35 @@
             this.cmbColaborador.Size = new System.Drawing.Size(189, 29);
             this.cmbColaborador.TabIndex = 7;
             // 
-            // panel1
+            // btnNotificar
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.txtLegajos);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.cmbTipoAviso);
-            this.panel1.Controls.Add(this.txtDescripcion);
-            this.panel1.Controls.Add(this.dtpfechaOcurrencia);
-            this.panel1.Controls.Add(this.chkCargo);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.cmbCargo);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lblCargo);
-            this.panel1.Controls.Add(this.dtpfechaNotificacion);
-            this.panel1.Location = new System.Drawing.Point(4, 468);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1162, 205);
-            this.panel1.TabIndex = 72;
+            this.btnNotificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNotificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnNotificar.FlatAppearance.BorderSize = 0;
+            this.btnNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNotificar.ForeColor = System.Drawing.Color.White;
+            this.btnNotificar.IconChar = FontAwesome.Sharp.IconChar.Bell;
+            this.btnNotificar.IconColor = System.Drawing.Color.White;
+            this.btnNotificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNotificar.IconSize = 30;
+            this.btnNotificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNotificar.Location = new System.Drawing.Point(159, 518);
+            this.btnNotificar.Name = "btnNotificar";
+            this.btnNotificar.Size = new System.Drawing.Size(117, 40);
+            this.btnNotificar.TabIndex = 74;
+            this.btnNotificar.Text = "Notificar";
+            this.btnNotificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNotificar.UseVisualStyleBackColor = false;
+            this.btnNotificar.Click += new System.EventHandler(this.btnNotificar_Click);
             // 
             // dgvAvisos
             // 
             this.dgvAvisos.AllowUserToAddRows = false;
             this.dgvAvisos.AllowUserToDeleteRows = false;
             this.dgvAvisos.AllowUserToOrderColumns = true;
-            this.dgvAvisos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvAvisos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAvisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAvisos.BackgroundColor = System.Drawing.Color.White;
@@ -514,8 +347,9 @@
             this.dgvAvisos.EnableHeadersVisualStyles = false;
             this.dgvAvisos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvAvisos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvAvisos.Location = new System.Drawing.Point(4, 279);
+            this.dgvAvisos.Location = new System.Drawing.Point(3, 279);
             this.dgvAvisos.Name = "dgvAvisos";
+            this.dgvAvisos.ReadOnly = true;
             this.dgvAvisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -527,29 +361,12 @@
             this.dgvAvisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAvisos.RowHeadersWidth = 51;
             this.dgvAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAvisos.Size = new System.Drawing.Size(1160, 183);
+            this.dgvAvisos.Size = new System.Drawing.Size(1002, 233);
             this.dgvAvisos.TabIndex = 73;
-            // 
-            // btnNotificar
-            // 
-            this.btnNotificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnNotificar.FlatAppearance.BorderSize = 0;
-            this.btnNotificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNotificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNotificar.ForeColor = System.Drawing.Color.White;
-            this.btnNotificar.IconChar = FontAwesome.Sharp.IconChar.Bell;
-            this.btnNotificar.IconColor = System.Drawing.Color.White;
-            this.btnNotificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNotificar.IconSize = 30;
-            this.btnNotificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotificar.Location = new System.Drawing.Point(538, 679);
-            this.btnNotificar.Name = "btnNotificar";
-            this.btnNotificar.Size = new System.Drawing.Size(122, 37);
-            this.btnNotificar.TabIndex = 74;
-            this.btnNotificar.Text = "Notificar";
-            this.btnNotificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNotificar.UseVisualStyleBackColor = false;
-            this.btnNotificar.Click += new System.EventHandler(this.btnNotificar_Click);
+            this.dgvAvisos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
+            this.dgvAvisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
+            this.dgvAvisos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
+            this.dgvAvisos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
             // 
             // id_aviso
             // 
@@ -584,39 +401,39 @@
             this.descripcion.HeaderText = "Descripción";
             this.descripcion.MinimumWidth = 6;
             this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // fechaCarga
             // 
             this.fechaCarga.HeaderText = "Fecha de Carga";
             this.fechaCarga.MinimumWidth = 6;
             this.fechaCarga.Name = "fechaCarga";
+            this.fechaCarga.ReadOnly = true;
             // 
             // fechaNotificacion
             // 
             this.fechaNotificacion.HeaderText = "Fecha de Notificación";
             this.fechaNotificacion.MinimumWidth = 6;
             this.fechaNotificacion.Name = "fechaNotificacion";
+            this.fechaNotificacion.ReadOnly = true;
             // 
             // frmAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 737);
+            this.ClientSize = new System.Drawing.Size(1025, 593);
             this.Controls.Add(this.btnNotificar);
             this.Controls.Add(this.dgvAvisos);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAgregar);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmAvisos";
             this.Text = "frmNotificaciones";
+            this.Load += new System.EventHandler(this.frmAvisos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -626,22 +443,7 @@
         #endregion
         private System.Windows.Forms.Label label2;
         private Controls.BotonPadre btnEliminar;
-        private Controls.BotonPadre btnModificar;
         private Controls.BotonPadre btnAgregar;
-        private System.Windows.Forms.DateTimePicker dtpfechaOcurrencia;
-        private System.Windows.Forms.ComboBox cmbTipoAviso;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpfechaNotificacion;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtLegajos;
-        private System.Windows.Forms.Label lblCargo;
-        private System.Windows.Forms.ComboBox cmbCargo;
-        private System.Windows.Forms.CheckBox chkCargo;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkFiltroFecha;
         private System.Windows.Forms.ComboBox cmbTipoAvisoFiltro;
@@ -653,7 +455,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cmbCargoFiltro;
         private System.Windows.Forms.ComboBox cmbColaborador;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpfechaNotifiaciónFiltro;
         private System.Windows.Forms.Label label5;

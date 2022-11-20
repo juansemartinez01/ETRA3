@@ -224,6 +224,7 @@
             this.dgvEventos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
             this.dgvEventos.Location = new System.Drawing.Point(568, 79);
             this.dgvEventos.Name = "dgvEventos";
+            this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -281,6 +282,7 @@
             this.Numero.HeaderText = "Numero";
             this.Numero.MinimumWidth = 6;
             this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
             this.Numero.Visible = false;
             // 
             // btnAgregar

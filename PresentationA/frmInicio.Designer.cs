@@ -129,6 +129,7 @@
             this.dgvAvisos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
             this.dgvAvisos.Location = new System.Drawing.Point(21, 362);
             this.dgvAvisos.Name = "dgvAvisos";
+            this.dgvAvisos.ReadOnly = true;
             this.dgvAvisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -146,31 +147,37 @@
             // 
             this.nombre.HeaderText = "Tipo de Aviso";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             // 
             // legajo
             // 
             this.legajo.HeaderText = "Legajo";
             this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
             // 
             // fechaOcurrencia
             // 
             this.fechaOcurrencia.HeaderText = "Fecha";
             this.fechaOcurrencia.Name = "fechaOcurrencia";
+            this.fechaOcurrencia.ReadOnly = true;
             // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Descripción";
             this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // fechaCarga
             // 
             this.fechaCarga.HeaderText = "Fecha de Carga";
             this.fechaCarga.Name = "fechaCarga";
+            this.fechaCarga.ReadOnly = true;
             // 
             // fechaNotificacion
             // 
             this.fechaNotificacion.HeaderText = "Fecha de Notificación";
             this.fechaNotificacion.Name = "fechaNotificacion";
+            this.fechaNotificacion.ReadOnly = true;
             // 
             // label2
             // 
