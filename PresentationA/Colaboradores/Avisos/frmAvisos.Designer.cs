@@ -58,6 +58,7 @@
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaUltimaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).BeginInit();
             this.SuspendLayout();
@@ -335,7 +336,8 @@
             this.fechaOcurrencia,
             this.descripcion,
             this.fechaCarga,
-            this.fechaNotificacion});
+            this.fechaNotificacion,
+            this.fechaUltimaNotificacion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -417,6 +419,12 @@
             this.fechaNotificacion.Name = "fechaNotificacion";
             this.fechaNotificacion.ReadOnly = true;
             // 
+            // fechaUltimaNotificacion
+            // 
+            this.fechaUltimaNotificacion.HeaderText = "Ultima Notificación";
+            this.fechaUltimaNotificacion.Name = "fechaUltimaNotificacion";
+            this.fechaUltimaNotificacion.ReadOnly = true;
+            // 
             // frmAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -468,5 +476,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNotificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaUltimaNotificacion;
     }
 }

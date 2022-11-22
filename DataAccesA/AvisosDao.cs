@@ -185,7 +185,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Aviso set fechaUtlimaNotificacion = Format(@fechaUtlimaNotificacion, 'yyyy - MM - dd') WHERE id_aviso = @id_aviso";
+                        command.CommandText = "UPDATE Aviso set fechaUltimaNotificacion = Format(@fechaUtlimaNotificacion, 'yyyy - MM - dd') WHERE id_aviso = @id_aviso";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@id_aviso", id_aviso);
                         command.Parameters.AddWithValue("@fechaUtlimaNotificacion", fechaUtlimaNotificacion);
@@ -219,7 +219,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
+                        command.CommandText = "SELECT ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion, a.fechaUltimaNotificacion " +
                                                 "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                                 "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                                 "join Colaborador c on c.legajo = ac.legajoColaborador " +
@@ -275,7 +275,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT a.id_aviso, ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
+                        command.CommandText = "SELECT a.id_aviso, ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion, a.fechaUltimaNotificacion " +
                                             "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                             "join Colaborador c on c.legajo = ac.legajoColaborador AND a.borradoLogico = 0" + parametros;
@@ -508,7 +508,31 @@ namespace DataAccesA
                     {
                         command.Connection = connection;
                         //Busca el aviso con id 1 que corresponde a los avisos a los admins, y verifica que la ultima fecha de notificacion sea hace mas de dos semanas
-                        command.CommandText = "select 1 from Aviso where id_aviso = 1 and DATEDIFF(D,fechaUltimaNotificacion,CAST(GETDATE() AS DATE)) >= 15";
+                        command.CommandText = "select 1 from Aviso where id_aviso = 1 and ( DATEDIFF(D,fechaUltimaNotificacion,CAST(GETDATE() AS DATE)) >= 15 OR fechaUltimaNotificacion is null )";
+                        command.CommandType = CommandType.Text;
+                        return command.ExecuteReader().HasRows;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool consultarAvisoCumple()
+        {
+
+            try
+            {
+
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select 1 from Aviso where id_aviso = 2 and ( MONTH(fechaUltimaNotificacion) = MONTH(GETDATE()) or fechaUltimaNotificacion is null)";
                         command.CommandType = CommandType.Text;
                         return command.ExecuteReader().HasRows;
                     }
@@ -574,6 +598,52 @@ namespace DataAccesA
             }
             catch { return false; }
             
+        }
+
+        public bool insertarAvisosCumple()
+        {
+            try
+            {
+                //Consultar si ya fueron cargados los cumpleaños de este mes
+                if(consultarAvisoCumple() == true) { return true; }    
+                //Busca los cumpleaños de este mes
+                ColaboradorDao colab = new ColaboradorDao();
+                DataTable cumpleaños = colab.getCumpleañosMesActual();
+
+                //hay cumpleaños este mes?
+                if (cumpleaños.Rows.Count == 0) {  return true; }
+                
+
+                    using (var connection = GetConnection())
+                    {
+                        connection.Open();
+                        using (var command = new SqlCommand())
+                        {
+                        
+                            command.Connection = connection;
+                            string query = "";
+                            string cumple = "";
+                            foreach(DataRow row in cumpleaños.Rows) 
+                            {
+                                    //MODIFICAR VALOR DE TIPO AVISO
+                                cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3,3) + row["fechaNacimiento"].ToString().Substring(0, 2);
+                                query += " INSERT INTO Aviso VALUES (3, ' ', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
+                                         " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
+                            }
+                            command.CommandText = query;
+                            command.CommandType = CommandType.Text;
+                            command.ExecuteNonQuery();
+                            actualizarAviso(2,DateTime.Now);
+                        }
+                    }
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
     }
     

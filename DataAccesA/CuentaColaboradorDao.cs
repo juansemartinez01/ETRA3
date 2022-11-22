@@ -294,7 +294,7 @@ namespace DataAccesA
                                                         );
                                                     //crear aviso notificado de deuda cuenta corriente o cerca de monto
                                                     AvisosDao aviso = new AvisosDao();
-                                                    aviso.insertarAviso(2,"Cuenta alcanza un " + porc.ToString() +"% del saldo maximo",DateTime.Now,DateTime.Now, DateTime.Now);
+                                                    aviso.insertarAviso(4,"Cuenta alcanza un " + porc.ToString() +"% del saldo maximo",DateTime.Now,DateTime.Now, DateTime.Now);
                                                     int idAviso = int.Parse(aviso.buscarIdUltimoAviso());
                                                     return aviso.declararNotificados(idAviso, new int[1] { legajo });
                                                 }

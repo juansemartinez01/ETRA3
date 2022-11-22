@@ -37,13 +37,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgvAvisos = new PresentationA.Controls.DataGridPadre();
+            this.label2 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaOcurrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
+            this.fechaUltimaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +116,8 @@
             this.fechaOcurrencia,
             this.descripcion,
             this.fechaCarga,
-            this.fechaNotificacion});
+            this.fechaNotificacion,
+            this.fechaUltimaNotificacion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -142,6 +144,15 @@
             this.dgvAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAvisos.Size = new System.Drawing.Size(972, 187);
             this.dgvAvisos.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 324);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Avisos de este mes";
             // 
             // nombre
             // 
@@ -179,14 +190,11 @@
             this.fechaNotificacion.Name = "fechaNotificacion";
             this.fechaNotificacion.ReadOnly = true;
             // 
-            // label2
+            // fechaUltimaNotificacion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 324);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Avisos de este mes";
+            this.fechaUltimaNotificacion.HeaderText = "Ultima Notificación";
+            this.fechaUltimaNotificacion.Name = "fechaUltimaNotificacion";
+            this.fechaUltimaNotificacion.ReadOnly = true;
             // 
             // frmInicio
             // 
@@ -216,12 +224,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Timer timer1;
         private Controls.DataGridPadre dgvAvisos;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaOcurrencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaCarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNotificacion;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaUltimaNotificacion;
     }
 }

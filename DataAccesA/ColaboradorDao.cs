@@ -79,7 +79,7 @@ namespace DataAccesA
                         command.CommandText = "select c.mail from Colaborador c join Usuario u on u.legajoColaborador = c.legajo where u.id_perfil = 1";
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
-                        while(reader.Read()) { resultado.Add(reader.ToString()); }
+                        while (reader.Read()) { resultado.Add(reader.ToString()); }
                         return resultado;
                     }
                 }
@@ -139,7 +139,7 @@ namespace DataAccesA
 
             return atributosColaborador;
         }
-        public string AgregarDocumento(string Nombre, byte[] Documento, string Extension, int TipoMultimedia, int Legajo,int idEvento)
+        public string AgregarDocumento(string Nombre, byte[] Documento, string Extension, int TipoMultimedia, int Legajo, int idEvento)
         {
             try
             {
@@ -216,7 +216,7 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "SELECT * FROM ColaboradorMultimedia WHERE id_evento = @idEvento AND borradoLogico = 0";
                         command.CommandType = CommandType.Text;
-                        
+
                         command.Parameters.AddWithValue("@idEvento", idEvento);
                         SqlDataReader lector = command.ExecuteReader();
                         tabla.Load(lector);
@@ -341,7 +341,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado,float salario,string mail,string telefonoContacto,string telefonoEmergencia,DateTime fechaNacimiento,DateTime fechaIngreso,string obraSocial,int legajoResponsable)
+        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable)
         {
             try
             {
@@ -353,7 +353,7 @@ namespace DataAccesA
 
                     esEdificio = 0;
 
-                    
+
                 }
                 else
                 {
@@ -557,8 +557,8 @@ namespace DataAccesA
                         command8.Parameters.AddWithValue("@legajo", legajo);
                         command8.CommandType = CommandType.Text;
                         var cuentaEliminada = command8.EndExecuteNonQuery(command8.BeginExecuteNonQuery());
-                        
-                        
+
+
 
                     }
                     using (var command9 = new SqlCommand())
@@ -717,11 +717,11 @@ namespace DataAccesA
                         command.CommandText = "DELETE FROM FamiliarColaborador WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
                         int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                        if(var > 0)
+                        if (var > 0)
                         {
                             algunDelete = true;
                         }
-                        
+
 
 
                     }
@@ -853,14 +853,14 @@ namespace DataAccesA
                             algunDelete = true;
                         }
                     }
-                    if(algunDelete == false)
+                    if (algunDelete == false)
                     {
                         return "No se elimino ningun elemento de la base de datos.";
                     }
                     else
                     {
                         return "Se eliminaron elementos de la base de datos";
-                    }       
+                    }
                 }
             }
             catch (Exception ex)
@@ -868,22 +868,22 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public DataTable getAllDocumentos(int legajoColaborador,int tipoDocumento, int tipoEvento, string fecha, bool aplicarFecha)
+        public DataTable getAllDocumentos(int legajoColaborador, int tipoDocumento, int tipoEvento, string fecha, bool aplicarFecha)
         {
 
             DataTable documentos = new DataTable();
             string parametrosAdicionales = "";
-            
-            if (aplicarFecha) 
+
+            if (aplicarFecha)
             {
 
                 parametrosAdicionales = parametrosAdicionales + "AND HE.fechaRegistro >= '" + fecha + "'";
             }
-            if(legajoColaborador != 0)
+            if (legajoColaborador != 0)
             {
                 parametrosAdicionales = parametrosAdicionales + "AND CM.legajoColaborador = " + legajoColaborador;
             }
-            if(tipoDocumento != 0)
+            if (tipoDocumento != 0)
             {
                 parametrosAdicionales = parametrosAdicionales + "AND TM.id_tipoMultimedia = " + tipoDocumento;
             }
@@ -893,28 +893,22 @@ namespace DataAccesA
             }
             try
             {
-                
-                
 
-                    using (var connection = GetConnection())
+
+
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
                     {
-                        connection.Open();
-                        using (var command = new SqlCommand())
-                        {
-                            command.Connection = connection;
-                            command.CommandText = "SELECT CM.id_colaboradorMultimedia AS 'Numero',CM.legajoColaborador AS 'Legajo',TM.nombre AS 'Tipo doc',TE.nombre AS 'Evento',HE.fechaRegistro AS 'Fecha Registro' FROM ColaboradorMultimedia CM JOIN TipoMultimedia TM ON CM.id_tipoMultimedia = TM.id_tipoMultimedia JOIN Evento E ON CM.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento JOIN HistorialEvento HE ON HE.id_evento = E.id_evento WHERE CM.borradoLogico = 0 AND E.borradoLogico = 0 AND TE.borradoLogico = 0 AND TM.borradoLogico = 0" + " " + parametrosAdicionales;
-                            command.CommandType = CommandType.Text;
-                            SqlDataReader reader = command.ExecuteReader();
-                            documentos.Load(reader);
-                            return documentos;
-                        }
+                        command.Connection = connection;
+                        command.CommandText = "SELECT CM.id_colaboradorMultimedia AS 'Numero',CM.legajoColaborador AS 'Legajo',TM.nombre AS 'Tipo doc',TE.nombre AS 'Evento',HE.fechaRegistro AS 'Fecha Registro' FROM ColaboradorMultimedia CM JOIN TipoMultimedia TM ON CM.id_tipoMultimedia = TM.id_tipoMultimedia JOIN Evento E ON CM.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento JOIN HistorialEvento HE ON HE.id_evento = E.id_evento WHERE CM.borradoLogico = 0 AND E.borradoLogico = 0 AND TE.borradoLogico = 0 AND TM.borradoLogico = 0" + " " + parametrosAdicionales;
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        documentos.Load(reader);
+                        return documentos;
                     }
-
-
-
-
-                
-
+                }
 
 
 
@@ -923,15 +917,21 @@ namespace DataAccesA
 
 
 
-            }catch(Exception ex)
+
+
+
+
+
+
+            } catch (Exception ex)
             {
                 return documentos;
             }
         }
-        public string modificarColaborador(int legajo,string nombre,string apellido,DateTime fechaNacimiento,string Cuit,int dni,string calle,int numeroCalle,int piso, string depto,string localidad,string mail,string telefonoContacto,string telefonoEmergencia,int estado,string obraSocial,int puesto,int legajoResponsable)
+        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable)
         {
             int esEdificio = 0;
-            if(piso > 0)
+            if (piso > 0)
             {
                 esEdificio = 1;
             }
@@ -960,7 +960,7 @@ namespace DataAccesA
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         var colaboradorModificado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                        if(colaboradorModificado > 0)
+                        if (colaboradorModificado > 0)
                         {
                             algunaModificacion = true;
                         }
@@ -1101,21 +1101,21 @@ namespace DataAccesA
                             return "Error con la base de datos";
                         }
                     }
-                        if (algunaModificacion)
-                        {
-                            return "Se aplicaron las modificaciones";
-                        }
-                        else
-                        {
-                            return "No se modifico ningun parametro";
-                        }
+                    if (algunaModificacion)
+                    {
+                        return "Se aplicaron las modificaciones";
+                    }
+                    else
+                    {
+                        return "No se modifico ningun parametro";
+                    }
 
 
-                    
+
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return ex.Message;
             }
@@ -1131,7 +1131,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT HC.legajoColaborador AS Legajo FROM HistorialCargo HC JOIN Cargo C ON HC.id_cargo = C.id_cargo WHERE HC.fechaFin IS NULL AND HC.id_cargo = @idCargo AND HC.borradoLogico = 0 AND C.borradoLogico = 0";         
+                        command.CommandText = "SELECT HC.legajoColaborador AS Legajo FROM HistorialCargo HC JOIN Cargo C ON HC.id_cargo = C.id_cargo WHERE HC.fechaFin IS NULL AND HC.id_cargo = @idCargo AND HC.borradoLogico = 0 AND C.borradoLogico = 0";
                         command.Parameters.AddWithValue("@idCargo", idCargo);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
@@ -1146,5 +1146,29 @@ namespace DataAccesA
             }
         }
 
+        public DataTable getCumpleañosMesActual()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select legajo, fechaNacimiento from Colaborador where MONTH(GETDATE()) = MONTH(fechaNacimiento)  AND borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        dt.Load(command.ExecuteReader());
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return dt;
+            }
+        } 
+    
     }
 }

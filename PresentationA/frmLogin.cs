@@ -76,6 +76,7 @@ namespace PresentationA
                         AvisosModelo avisos = new AvisosModelo();
                         avisos.notificarAvisosHoy();
                         avisos.notificarAdmins();
+                        avisos.insertarAvisosCumple();
                         frmPrincipal mainMenu = new frmPrincipal();
                         mainMenu.Show();
                         this.Hide();
