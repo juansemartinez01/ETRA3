@@ -729,6 +729,37 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
+                        command.CommandText = "DELETE FROM AvisoXColaborador WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
+
+
+
+                    }
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM Aviso WHERE borradoLogico = 1";
+                        command.CommandType = CommandType.Text;
+                        int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        if (var > 0)
+                        {
+                            algunDelete = true;
+                        }
+
+
+
+                    }
+                    
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
                         command.CommandText = "DELETE FROM CuentaColaborador WHERE borradoLogico = 1";
                         command.CommandType = CommandType.Text;
                         int var = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());

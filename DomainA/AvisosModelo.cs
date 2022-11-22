@@ -47,5 +47,7 @@ namespace DomainA
         public bool notificarAviso(int id, string subject, string body) { if (UserCache.perfil == Perfiles.admin) { return AvisosDao.notificarAviso(id, subject, body); } return false; }
 
         public bool insertarAvisosCumple() { return AvisosDao.insertarAvisosCumple(); }
+
+        public int eliminarAvisoLogico(int idAviso) { return AvisosDao.eliminarAvisoLogico(idAviso);}
     }
 }

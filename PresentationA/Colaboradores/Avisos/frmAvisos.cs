@@ -180,5 +180,23 @@ namespace PresentationA.Colaboradores
         {
             cargarAvisos(0, 0, "", "", "", false);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int colaboradoresAfectados = 0;
+            if (dgvAvisos.SelectedRows.Count == 1)
+            {
+                int idAviso = (int)dgvAvisos.SelectedRows[0].Cells["id_aviso"].Value;
+                colaboradoresAfectados = avisosModelo.eliminarAvisoLogico(idAviso);
+                if(colaboradoresAfectados > 0)
+                {
+                    MessageBox.Show("Se elimino correctamente el aviso. El aviso estaba relacionado a " + colaboradoresAfectados + " colaboradores.");
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al eliminar el aviso.");
+                }
+            }
+        }
     }
 }

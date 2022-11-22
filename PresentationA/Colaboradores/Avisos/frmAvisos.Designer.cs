@@ -67,10 +67,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(27, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(38, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 28);
+            this.label2.Size = new System.Drawing.Size(130, 43);
             this.label2.TabIndex = 3;
             this.label2.Text = "Avisos";
             // 
@@ -87,13 +87,15 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(302, 518);
+            this.btnEliminar.Location = new System.Drawing.Point(423, 740);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(117, 40);
+            this.btnEliminar.Size = new System.Drawing.Size(164, 57);
             this.btnEliminar.TabIndex = 50;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
@@ -108,9 +110,10 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(11, 518);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 740);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(117, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(164, 57);
             this.btnAgregar.TabIndex = 48;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -135,11 +138,11 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cmbCargoFiltro);
             this.groupBox1.Controls.Add(this.cmbColaborador);
-            this.groupBox1.Location = new System.Drawing.Point(4, 57);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(6, 81);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1001, 215);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Size = new System.Drawing.Size(1401, 307);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -147,46 +150,46 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(415, 112);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(581, 160);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(186, 21);
+            this.label13.Size = new System.Drawing.Size(288, 30);
             this.label13.TabIndex = 18;
             this.label13.Text = "Fecha de Notificación:";
             // 
             // dtpfechaNotifiaciónFiltro
             // 
-            this.dtpfechaNotifiaciónFiltro.Location = new System.Drawing.Point(623, 110);
-            this.dtpfechaNotifiaciónFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpfechaNotifiaciónFiltro.Location = new System.Drawing.Point(872, 157);
+            this.dtpfechaNotifiaciónFiltro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpfechaNotifiaciónFiltro.Name = "dtpfechaNotifiaciónFiltro";
-            this.dtpfechaNotifiaciónFiltro.Size = new System.Drawing.Size(368, 27);
+            this.dtpfechaNotifiaciónFiltro.Size = new System.Drawing.Size(514, 37);
             this.dtpfechaNotifiaciónFiltro.TabIndex = 19;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(415, 24);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(581, 34);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 21);
+            this.label5.Size = new System.Drawing.Size(95, 30);
             this.label5.TabIndex = 16;
             this.label5.Text = "Fecha:";
             // 
             // dtpfechaCargaFiltro
             // 
-            this.dtpfechaCargaFiltro.Location = new System.Drawing.Point(623, 61);
-            this.dtpfechaCargaFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpfechaCargaFiltro.Location = new System.Drawing.Point(872, 87);
+            this.dtpfechaCargaFiltro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpfechaCargaFiltro.Name = "dtpfechaCargaFiltro";
-            this.dtpfechaCargaFiltro.Size = new System.Drawing.Size(368, 27);
+            this.dtpfechaCargaFiltro.Size = new System.Drawing.Size(514, 37);
             this.dtpfechaCargaFiltro.TabIndex = 17;
             // 
             // chkFiltroFecha
             // 
             this.chkFiltroFecha.AutoSize = true;
-            this.chkFiltroFecha.Location = new System.Drawing.Point(419, 159);
-            this.chkFiltroFecha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.chkFiltroFecha.Location = new System.Drawing.Point(587, 227);
+            this.chkFiltroFecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
-            this.chkFiltroFecha.Size = new System.Drawing.Size(115, 25);
+            this.chkFiltroFecha.Size = new System.Drawing.Size(172, 34);
             this.chkFiltroFecha.TabIndex = 15;
             this.chkFiltroFecha.Text = "Filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
@@ -195,19 +198,19 @@
             // cmbTipoAvisoFiltro
             // 
             this.cmbTipoAvisoFiltro.FormattingEnabled = true;
-            this.cmbTipoAvisoFiltro.Location = new System.Drawing.Point(160, 64);
-            this.cmbTipoAvisoFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTipoAvisoFiltro.Location = new System.Drawing.Point(224, 91);
+            this.cmbTipoAvisoFiltro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmbTipoAvisoFiltro.Name = "cmbTipoAvisoFiltro";
-            this.cmbTipoAvisoFiltro.Size = new System.Drawing.Size(189, 29);
+            this.cmbTipoAvisoFiltro.Size = new System.Drawing.Size(263, 38);
             this.cmbTipoAvisoFiltro.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 72);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(45, 103);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 21);
+            this.label7.Size = new System.Drawing.Size(140, 30);
             this.label7.TabIndex = 12;
             this.label7.Text = "Tipo Aviso:";
             // 
@@ -222,9 +225,10 @@
             this.btnAplicar.IconColor = System.Drawing.Color.Black;
             this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAplicar.Location = new System.Drawing.Point(841, 159);
+            this.btnAplicar.Location = new System.Drawing.Point(1177, 227);
+            this.btnAplicar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(150, 40);
+            this.btnAplicar.Size = new System.Drawing.Size(210, 57);
             this.btnAplicar.TabIndex = 11;
             this.btnAplicar.Text = "Aplicar";
             this.btnAplicar.UseVisualStyleBackColor = false;
@@ -233,57 +237,57 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 116);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(45, 166);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 21);
+            this.label10.Size = new System.Drawing.Size(95, 30);
             this.label10.TabIndex = 2;
             this.label10.Text = "Cargo:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(415, 67);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(581, 96);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(143, 21);
+            this.label11.Size = new System.Drawing.Size(216, 30);
             this.label11.TabIndex = 4;
             this.label11.Text = "Fecha de Carga:";
             // 
             // dtpfechaOcurrenciaFiltro
             // 
-            this.dtpfechaOcurrenciaFiltro.Location = new System.Drawing.Point(623, 21);
-            this.dtpfechaOcurrenciaFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpfechaOcurrenciaFiltro.Location = new System.Drawing.Point(872, 30);
+            this.dtpfechaOcurrenciaFiltro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dtpfechaOcurrenciaFiltro.Name = "dtpfechaOcurrenciaFiltro";
-            this.dtpfechaOcurrenciaFiltro.Size = new System.Drawing.Size(368, 27);
+            this.dtpfechaOcurrenciaFiltro.Size = new System.Drawing.Size(514, 37);
             this.dtpfechaOcurrenciaFiltro.TabIndex = 9;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(32, 21);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(45, 30);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 21);
+            this.label12.Size = new System.Drawing.Size(191, 30);
             this.label12.TabIndex = 6;
             this.label12.Text = "Colaboradores";
             // 
             // cmbCargoFiltro
             // 
             this.cmbCargoFiltro.FormattingEnabled = true;
-            this.cmbCargoFiltro.Location = new System.Drawing.Point(160, 113);
-            this.cmbCargoFiltro.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCargoFiltro.Location = new System.Drawing.Point(224, 161);
+            this.cmbCargoFiltro.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmbCargoFiltro.Name = "cmbCargoFiltro";
-            this.cmbCargoFiltro.Size = new System.Drawing.Size(189, 29);
+            this.cmbCargoFiltro.Size = new System.Drawing.Size(263, 38);
             this.cmbCargoFiltro.TabIndex = 8;
             // 
             // cmbColaborador
             // 
             this.cmbColaborador.FormattingEnabled = true;
-            this.cmbColaborador.Location = new System.Drawing.Point(160, 18);
-            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbColaborador.Location = new System.Drawing.Point(224, 26);
+            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cmbColaborador.Name = "cmbColaborador";
-            this.cmbColaborador.Size = new System.Drawing.Size(189, 29);
+            this.cmbColaborador.Size = new System.Drawing.Size(263, 38);
             this.cmbColaborador.TabIndex = 7;
             // 
             // btnNotificar
@@ -299,9 +303,10 @@
             this.btnNotificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNotificar.IconSize = 30;
             this.btnNotificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotificar.Location = new System.Drawing.Point(159, 518);
+            this.btnNotificar.Location = new System.Drawing.Point(223, 740);
+            this.btnNotificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNotificar.Name = "btnNotificar";
-            this.btnNotificar.Size = new System.Drawing.Size(117, 40);
+            this.btnNotificar.Size = new System.Drawing.Size(164, 57);
             this.btnNotificar.TabIndex = 74;
             this.btnNotificar.Text = "Notificar";
             this.btnNotificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -349,7 +354,8 @@
             this.dgvAvisos.EnableHeadersVisualStyles = false;
             this.dgvAvisos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvAvisos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvAvisos.Location = new System.Drawing.Point(3, 279);
+            this.dgvAvisos.Location = new System.Drawing.Point(4, 399);
+            this.dgvAvisos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvAvisos.Name = "dgvAvisos";
             this.dgvAvisos.ReadOnly = true;
             this.dgvAvisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -363,7 +369,7 @@
             this.dgvAvisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAvisos.RowHeadersWidth = 51;
             this.dgvAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAvisos.Size = new System.Drawing.Size(1002, 233);
+            this.dgvAvisos.Size = new System.Drawing.Size(1403, 333);
             this.dgvAvisos.TabIndex = 73;
             this.dgvAvisos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
             this.dgvAvisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
@@ -373,6 +379,7 @@
             // id_aviso
             // 
             this.id_aviso.HeaderText = "id_aviso";
+            this.id_aviso.MinimumWidth = 8;
             this.id_aviso.Name = "id_aviso";
             this.id_aviso.ReadOnly = true;
             this.id_aviso.Visible = false;
@@ -422,21 +429,22 @@
             // fechaUltimaNotificacion
             // 
             this.fechaUltimaNotificacion.HeaderText = "Ultima Notificación";
+            this.fechaUltimaNotificacion.MinimumWidth = 8;
             this.fechaUltimaNotificacion.Name = "fechaUltimaNotificacion";
             this.fechaUltimaNotificacion.ReadOnly = true;
             // 
             // frmAvisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 593);
+            this.ClientSize = new System.Drawing.Size(1435, 847);
             this.Controls.Add(this.btnNotificar);
             this.Controls.Add(this.dgvAvisos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.Name = "frmAvisos";
             this.Text = "frmNotificaciones";
             this.Load += new System.EventHandler(this.frmAvisos_Load);

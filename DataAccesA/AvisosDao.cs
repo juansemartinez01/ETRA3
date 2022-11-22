@@ -645,6 +645,47 @@ namespace DataAccesA
             }
 
         }
+        public int eliminarAvisoLogico(int idAviso)
+        {
+            int avisoEliminado = 0;
+            int resultadoModificacion = 0;
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE Aviso set borradoLogico = 1 WHERE id_aviso = @id_aviso";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@id_aviso", idAviso);     
+                        avisoEliminado = command.ExecuteNonQuery();
+                    }
+                    if (avisoEliminado == 1)
+                    {
+                        using (var command = new SqlCommand())
+                        {
+                            command.Connection = connection;
+                            command.CommandText = "UPDATE AvisoXColaborador set borradoLogico = 1 WHERE id_aviso = @id_aviso";
+                            command.CommandType = CommandType.Text;
+                            command.Parameters.AddWithValue("@id_aviso", idAviso);
+                            resultadoModificacion = command.ExecuteNonQuery();
+                            return resultadoModificacion;
+                        }
+                    }
+                    else
+                    {
+                        return avisoEliminado;
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                return resultadoModificacion;
+            }
+        }
     }
     
 }

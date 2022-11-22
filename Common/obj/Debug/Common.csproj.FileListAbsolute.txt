@@ -4,3 +4,9 @@ C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.csproj.Assembly
 C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.dll
 C:\Users\usuario\Documents\ETRA\Programa\Common\obj\Debug\Common.pdb
+C:\Users\Usuario\Source\Repos\ETRA2\Common\bin\Debug\Common.dll
+C:\Users\Usuario\Source\Repos\ETRA2\Common\bin\Debug\Common.pdb
+C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.dll
+C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.pdb

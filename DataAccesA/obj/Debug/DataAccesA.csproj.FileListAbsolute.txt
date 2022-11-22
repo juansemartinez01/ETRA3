@@ -19,3 +19,6 @@ C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\obj\Debug\DataAccesA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\bin\Debug\Common.dll
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\bin\Debug\Common.pdb
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\bin\Debug\Common.dll
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\bin\Debug\Common.pdb
+C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
