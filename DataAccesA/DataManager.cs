@@ -11,7 +11,7 @@ public class DataManager
     public DataManager()
     {
 
-        string_conexion = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=ETRA;Integrated Security=True";
+        string_conexion = "Data Source=192.168.0.89;Initial Catalog=ETRA;Persist Security Info=True;User ID=soporte;Password=soporte";
 
     }
     public static DataManager GetInstance()

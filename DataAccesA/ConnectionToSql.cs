@@ -7,7 +7,7 @@ namespace DataAccesA
 
             public ConnectionToSql()
             {
-                connectionString = "Server = (local)\\SQLEXPRESS;DataBase= ETRA;integrated security= true";
+                connectionString = "Data Source=192.168.0.89;Initial Catalog=ETRA;Persist Security Info=True;User ID=soporte;Password=soporte";
             }
             protected SqlConnection GetConnection()
             {
