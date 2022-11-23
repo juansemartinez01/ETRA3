@@ -310,8 +310,16 @@ namespace PresentationA.Colaboradores
             txtPiso.Text = "";
             txtDepto.Text = "";
             txtLocalidad.Text = "";
+            txtMail.Text = "";
+            txtNroEmergencia.Text = "";
+            txtNroContacto.Text = "";
+            txtObraSocial.Text = "";
+            txtSalario.Text = "";
+            dtpfechaNacimiento.Value = DateTime.Now;
             cmbEstados.SelectedIndex = -1;
             cmbPuesto.SelectedIndex = -1;
+            //foto de perfil JUANSE
+
         }
 
         private void chkIngresaHoy_CheckedChanged(object sender, EventArgs e)

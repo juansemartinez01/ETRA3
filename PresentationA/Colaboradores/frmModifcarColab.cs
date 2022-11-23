@@ -15,20 +15,18 @@ namespace PresentationA.Colaboradores
     {
         ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
         Eventos evento = new Eventos();
+        bool hayCambios = false;
         public frmModifcarColab(DataTable colaborador)
         {
             InitializeComponent();
             completarLabels(this, colaborador, "lbl");
             completarLabels(this, colaborador, "txt");
-            
+            completarLabels(this, colaborador, "dtp");
             LlenarCombo(cmbEstado, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
-            
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             cmbEstado.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreEstado"].ToString(), "EstadoColaborador");
             cmbPuesto.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreCargo"].ToString(), "Cargo");
-
-
-
+            hayCambios = false;
         }
         
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -75,8 +73,8 @@ namespace PresentationA.Colaboradores
                     MessageBox.Show("Debe ingresar una fecha de nacimiento valida");
                     return;
                 }
-                string calle = txtCalle.Text;
-                if (txtCalle.Text == "")
+                string calle = txtnombreCalle.Text;
+                if (txtnombreCalle.Text == "")
                 {
                     MessageBox.Show("No puede dejar la calle vacia");
                     return;
@@ -89,7 +87,7 @@ namespace PresentationA.Colaboradores
                 }
                 int piso = -1;
                 string departamento;
-                if (txtPiso.Text == "")
+                if (txtpiso.Text == "")
                 {
                     piso = 0;
                     departamento = "No aplica";
@@ -98,28 +96,28 @@ namespace PresentationA.Colaboradores
                 {
                     piso = 1;
                     departamento = "No especifica";
-                    if (txtDepartamento.Text != "")
+                    if (txtdepartamento.Text != "")
                     {
-                        departamento = txtDepartamento.Text;
+                        departamento = txtdepartamento.Text;
                     }
                 }
-                string localidad = txtLocalidad.Text;
-                if (txtLocalidad.Text == "")
+                string localidad = txtlocalidad.Text;
+                if (txtlocalidad.Text == "")
                 {
                     localidad = "No especifica";
                 }
-                string mail = txtMail.Text;
-                if (txtMail.Text == "")
+                string mail = txtmail.Text;
+                if (txtmail.Text == "")
                 {
                     mail = "No especifica";
                 }
-                string numeroContacto = txtNroContacto.Text;
-                if (txtNroContacto.Text == "")
+                string numeroContacto = txtnroContacto.Text;
+                if (txtnroContacto.Text == "")
                 {
                     numeroContacto = "No especifica";
                 }
-                string numeroEmergencia = txtNroEmergencia.Text;
-                if (txtNroEmergencia.Text == "")
+                string numeroEmergencia = txtnroEmergencia.Text;
+                if (txtnroEmergencia.Text == "")
                 {
                     numeroEmergencia = "No especifica";
                 }
@@ -139,11 +137,29 @@ namespace PresentationA.Colaboradores
             }
 
         }
-        
 
-        private void frmModifcarColab_Load(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            hayCambios = true;
+        }
+
+        private void frmModifcarColab_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (hayCambios == true)
+            {
+                if(DialogResult.No == MessageBox.Show("Esta seguro que desea descartar los cambios?", "AVISO", MessageBoxButtons.YesNo))
+                {
+                e.Cancel = true; 
+                return; 
+                }
+            }
+        }
+
+        
     }
 }

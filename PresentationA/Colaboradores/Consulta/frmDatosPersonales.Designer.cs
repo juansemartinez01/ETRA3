@@ -38,28 +38,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblPiso = new System.Windows.Forms.Label();
-            this.lblNumeroCalle = new System.Windows.Forms.Label();
-            this.lblCalle = new System.Windows.Forms.Label();
+            this.lblpiso = new System.Windows.Forms.Label();
+            this.lblnumeroCalle = new System.Windows.Forms.Label();
+            this.lblnombreCalle = new System.Windows.Forms.Label();
             this.lblDni = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lblCuit = new System.Windows.Forms.Label();
-            this.lblLocalidad = new System.Windows.Forms.Label();
-            this.lblDepartamento = new System.Windows.Forms.Label();
-            this.lblProvincia = new System.Windows.Forms.Label();
+            this.lbllocalidad = new System.Windows.Forms.Label();
+            this.lbldepartamento = new System.Windows.Forms.Label();
+            this.lblprovincia = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.lblNroContacto = new System.Windows.Forms.Label();
-            this.lblMail = new System.Windows.Forms.Label();
+            this.lblnroContacto = new System.Windows.Forms.Label();
+            this.lblmail = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbllegajo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblNroEmergencia = new System.Windows.Forms.Label();
+            this.lblnroEmergencia = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -181,46 +181,46 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(588, 27);
+            this.pictureBox2.Location = new System.Drawing.Point(556, 27);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(282, 216);
+            this.pictureBox2.Size = new System.Drawing.Size(278, 216);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
             // 
-            // lblPiso
+            // lblpiso
             // 
-            this.lblPiso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblpiso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPiso.AutoSize = true;
-            this.lblPiso.Location = new System.Drawing.Point(401, 92);
-            this.lblPiso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPiso.Name = "lblPiso";
-            this.lblPiso.Size = new System.Drawing.Size(0, 20);
-            this.lblPiso.TabIndex = 46;
+            this.lblpiso.AutoSize = true;
+            this.lblpiso.Location = new System.Drawing.Point(401, 92);
+            this.lblpiso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblpiso.Name = "lblpiso";
+            this.lblpiso.Size = new System.Drawing.Size(0, 20);
+            this.lblpiso.TabIndex = 46;
             // 
-            // lblNumeroCalle
+            // lblnumeroCalle
             // 
-            this.lblNumeroCalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblnumeroCalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNumeroCalle.AutoSize = true;
-            this.lblNumeroCalle.Location = new System.Drawing.Point(122, 88);
-            this.lblNumeroCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNumeroCalle.Name = "lblNumeroCalle";
-            this.lblNumeroCalle.Size = new System.Drawing.Size(0, 20);
-            this.lblNumeroCalle.TabIndex = 48;
+            this.lblnumeroCalle.AutoSize = true;
+            this.lblnumeroCalle.Location = new System.Drawing.Point(122, 88);
+            this.lblnumeroCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnumeroCalle.Name = "lblnumeroCalle";
+            this.lblnumeroCalle.Size = new System.Drawing.Size(0, 20);
+            this.lblnumeroCalle.TabIndex = 48;
             // 
-            // lblCalle
+            // lblnombreCalle
             // 
-            this.lblCalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblnombreCalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCalle.AutoSize = true;
-            this.lblCalle.Location = new System.Drawing.Point(122, 46);
-            this.lblCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(0, 20);
-            this.lblCalle.TabIndex = 49;
+            this.lblnombreCalle.AutoSize = true;
+            this.lblnombreCalle.Location = new System.Drawing.Point(122, 46);
+            this.lblnombreCalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnombreCalle.Name = "lblnombreCalle";
+            this.lblnombreCalle.Size = new System.Drawing.Size(0, 20);
+            this.lblnombreCalle.TabIndex = 49;
             // 
             // lblDni
             // 
@@ -228,7 +228,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(394, 100);
+            this.lblDni.Location = new System.Drawing.Point(382, 100);
             this.lblDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(0, 20);
@@ -277,44 +277,44 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCuit.AutoSize = true;
-            this.lblCuit.Location = new System.Drawing.Point(394, 51);
+            this.lblCuit.Location = new System.Drawing.Point(382, 51);
             this.lblCuit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(0, 20);
             this.lblCuit.TabIndex = 54;
             // 
-            // lblLocalidad
+            // lbllocalidad
             // 
-            this.lblLocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbllocalidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(122, 133);
-            this.lblLocalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(0, 20);
-            this.lblLocalidad.TabIndex = 56;
+            this.lbllocalidad.AutoSize = true;
+            this.lbllocalidad.Location = new System.Drawing.Point(122, 133);
+            this.lbllocalidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbllocalidad.Name = "lbllocalidad";
+            this.lbllocalidad.Size = new System.Drawing.Size(0, 20);
+            this.lbllocalidad.TabIndex = 56;
             // 
-            // lblDepartamento
+            // lbldepartamento
             // 
-            this.lblDepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbldepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDepartamento.AutoSize = true;
-            this.lblDepartamento.Location = new System.Drawing.Point(401, 133);
-            this.lblDepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDepartamento.Name = "lblDepartamento";
-            this.lblDepartamento.Size = new System.Drawing.Size(0, 20);
-            this.lblDepartamento.TabIndex = 57;
+            this.lbldepartamento.AutoSize = true;
+            this.lbldepartamento.Location = new System.Drawing.Point(401, 133);
+            this.lbldepartamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbldepartamento.Name = "lbldepartamento";
+            this.lbldepartamento.Size = new System.Drawing.Size(0, 20);
+            this.lbldepartamento.TabIndex = 57;
             // 
-            // lblProvincia
+            // lblprovincia
             // 
-            this.lblProvincia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblprovincia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(401, 46);
-            this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(0, 20);
-            this.lblProvincia.TabIndex = 58;
+            this.lblprovincia.AutoSize = true;
+            this.lblprovincia.Location = new System.Drawing.Point(401, 46);
+            this.lblprovincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblprovincia.Name = "lblprovincia";
+            this.lblprovincia.Size = new System.Drawing.Size(0, 20);
+            this.lblprovincia.TabIndex = 58;
             // 
             // label14
             // 
@@ -352,27 +352,27 @@
             this.label17.TabIndex = 62;
             this.label17.Text = "Mail:";
             // 
-            // lblNroContacto
+            // lblnroContacto
             // 
-            this.lblNroContacto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblnroContacto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNroContacto.AutoSize = true;
-            this.lblNroContacto.Location = new System.Drawing.Point(193, 68);
-            this.lblNroContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNroContacto.Name = "lblNroContacto";
-            this.lblNroContacto.Size = new System.Drawing.Size(0, 20);
-            this.lblNroContacto.TabIndex = 64;
+            this.lblnroContacto.AutoSize = true;
+            this.lblnroContacto.Location = new System.Drawing.Point(193, 68);
+            this.lblnroContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnroContacto.Name = "lblnroContacto";
+            this.lblnroContacto.Size = new System.Drawing.Size(0, 20);
+            this.lblnroContacto.TabIndex = 64;
             // 
-            // lblMail
+            // lblmail
             // 
-            this.lblMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMail.AutoSize = true;
-            this.lblMail.Location = new System.Drawing.Point(122, 32);
-            this.lblMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(0, 20);
-            this.lblMail.TabIndex = 65;
+            this.lblmail.AutoSize = true;
+            this.lblmail.Location = new System.Drawing.Point(122, 32);
+            this.lblmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmail.Name = "lblmail";
+            this.lblmail.Size = new System.Drawing.Size(0, 20);
+            this.lblmail.TabIndex = 65;
             // 
             // label8
             // 
@@ -414,40 +414,36 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.lblPiso);
-            this.groupBox1.Controls.Add(this.lblNumeroCalle);
-            this.groupBox1.Controls.Add(this.lblCalle);
-            this.groupBox1.Controls.Add(this.lblLocalidad);
-            this.groupBox1.Controls.Add(this.lblDepartamento);
-            this.groupBox1.Controls.Add(this.lblProvincia);
-            this.groupBox1.Location = new System.Drawing.Point(42, 309);
+            this.groupBox1.Controls.Add(this.lblpiso);
+            this.groupBox1.Controls.Add(this.lblnumeroCalle);
+            this.groupBox1.Controls.Add(this.lblnombreCalle);
+            this.groupBox1.Controls.Add(this.lbllocalidad);
+            this.groupBox1.Controls.Add(this.lbldepartamento);
+            this.groupBox1.Controls.Add(this.lblprovincia);
+            this.groupBox1.Location = new System.Drawing.Point(42, 296);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(895, 181);
+            this.groupBox1.Size = new System.Drawing.Size(895, 175);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.lblNroEmergencia);
+            this.groupBox2.Controls.Add(this.lblnroEmergencia);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.lblNroContacto);
-            this.groupBox2.Controls.Add(this.lblMail);
-            this.groupBox2.Location = new System.Drawing.Point(42, 498);
+            this.groupBox2.Controls.Add(this.lblnroContacto);
+            this.groupBox2.Controls.Add(this.lblmail);
+            this.groupBox2.Location = new System.Drawing.Point(42, 492);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -456,22 +452,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONTACTO";
             // 
-            // lblNroEmergencia
+            // lblnroEmergencia
             // 
-            this.lblNroEmergencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblnroEmergencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNroEmergencia.AutoSize = true;
-            this.lblNroEmergencia.Location = new System.Drawing.Point(193, 103);
-            this.lblNroEmergencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNroEmergencia.Name = "lblNroEmergencia";
-            this.lblNroEmergencia.Size = new System.Drawing.Size(0, 20);
-            this.lblNroEmergencia.TabIndex = 75;
+            this.lblnroEmergencia.AutoSize = true;
+            this.lblnroEmergencia.Location = new System.Drawing.Point(193, 103);
+            this.lblnroEmergencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnroEmergencia.Name = "lblnroEmergencia";
+            this.lblnroEmergencia.Size = new System.Drawing.Size(0, 20);
+            this.lblnroEmergencia.TabIndex = 75;
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lblFechaNacimiento);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label1);
@@ -510,7 +504,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 678);
+            this.ClientSize = new System.Drawing.Size(962, 663);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -540,22 +534,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblPiso;
-        private System.Windows.Forms.Label lblNumeroCalle;
-        private System.Windows.Forms.Label lblCalle;
+        private System.Windows.Forms.Label lblpiso;
+        private System.Windows.Forms.Label lblnumeroCalle;
+        private System.Windows.Forms.Label lblnombreCalle;
         private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.Label lblLocalidad;
-        private System.Windows.Forms.Label lblDepartamento;
-        private System.Windows.Forms.Label lblProvincia;
+        private System.Windows.Forms.Label lbllocalidad;
+        private System.Windows.Forms.Label lbldepartamento;
+        private System.Windows.Forms.Label lblprovincia;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label lblNroContacto;
-        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.Label lblnroContacto;
+        private System.Windows.Forms.Label lblmail;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbllegajo;
         private System.Windows.Forms.Label label19;
@@ -563,6 +557,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblFechaNacimiento;
-        private System.Windows.Forms.Label lblNroEmergencia;
+        private System.Windows.Forms.Label lblnroEmergencia;
     }
 }

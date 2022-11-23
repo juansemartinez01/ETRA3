@@ -20,11 +20,6 @@ namespace PresentationA
             var control = form.Controls.Find(prefijo + atributo, true);
             if (control.Length > 0)
             {
-                
-                //if (value == "null")
-                //   {
-                //        value = " ";
-                //    }
                 control[0].Text = colaborador.Rows[0][atributo].ToString();
                     if (control[0].Text == "NULL")
                     {

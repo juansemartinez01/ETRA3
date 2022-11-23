@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTipoEvento = new System.Windows.Forms.ComboBox();
             this.cmbColaboradores = new System.Windows.Forms.ComboBox();
@@ -44,6 +44,7 @@
             this.chkFiltroFecha = new System.Windows.Forms.CheckBox();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.button1 = new PresentationA.Controls.BotonPadre();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbColaboradores2 = new System.Windows.Forms.ComboBox();
@@ -54,7 +55,13 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.cmbTipoEvento2 = new System.Windows.Forms.ComboBox();
             this.dgvEventos = new PresentationA.Controls.DataGridPadre();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajoColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
@@ -64,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(352, 18);
+            this.label1.Location = new System.Drawing.Point(389, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 28);
@@ -82,25 +89,25 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Eventos:";
             // 
-            // label3
+            // lblFechaFin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(415, 67);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Fecha Fin:";
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Location = new System.Drawing.Point(392, 67);
+            this.lblFechaFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(82, 20);
+            this.lblFechaFin.TabIndex = 3;
+            this.lblFechaFin.Text = "Fecha Fin:";
             // 
-            // label4
+            // lblFechaInicio
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(415, 21);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Fecha de Inicio:";
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(392, 21);
+            this.lblFechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(127, 20);
+            this.lblFechaInicio.TabIndex = 4;
+            this.lblFechaInicio.Text = "Fecha de Inicio:";
             // 
             // label6
             // 
@@ -132,18 +139,18 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(554, 18);
+            this.dateTimePicker1.Location = new System.Drawing.Point(531, 18);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(368, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(286, 26);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(554, 62);
+            this.dateTimePicker2.Location = new System.Drawing.Point(531, 62);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(368, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(286, 26);
             this.dateTimePicker2.TabIndex = 10;
             // 
             // groupBox1
@@ -151,9 +158,9 @@
             this.groupBox1.Controls.Add(this.chkFiltroFecha);
             this.groupBox1.Controls.Add(this.btnAplicar);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblFechaFin);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblFechaInicio);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbColaboradores);
@@ -162,7 +169,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1351, 159);
+            this.groupBox1.Size = new System.Drawing.Size(911, 159);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -170,7 +177,7 @@
             // chkFiltroFecha
             // 
             this.chkFiltroFecha.AutoSize = true;
-            this.chkFiltroFecha.Location = new System.Drawing.Point(954, 40);
+            this.chkFiltroFecha.Location = new System.Drawing.Point(396, 112);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
             this.chkFiltroFecha.Size = new System.Drawing.Size(165, 24);
             this.chkFiltroFecha.TabIndex = 12;
@@ -189,7 +196,7 @@
             this.btnAplicar.IconColor = System.Drawing.Color.Black;
             this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAplicar.Location = new System.Drawing.Point(772, 112);
+            this.btnAplicar.Location = new System.Drawing.Point(667, 102);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(150, 40);
             this.btnAplicar.TabIndex = 11;
@@ -199,6 +206,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cmbColaboradores2);
@@ -208,14 +218,23 @@
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.cmbTipoEvento2);
-            this.groupBox2.Location = new System.Drawing.Point(28, 506);
+            this.groupBox2.Location = new System.Drawing.Point(28, 385);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(936, 254);
+            this.groupBox2.Size = new System.Drawing.Size(911, 257);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(463, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 20);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Descripción:";
             // 
             // button1
             // 
@@ -228,9 +247,9 @@
             this.button1.IconColor = System.Drawing.Color.Black;
             this.button1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(658, 196);
+            this.button1.Location = new System.Drawing.Point(667, 191);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 40);
+            this.button1.Size = new System.Drawing.Size(150, 40);
             this.button1.TabIndex = 17;
             this.button1.Text = "Crear Evento";
             this.button1.UseVisualStyleBackColor = false;
@@ -239,35 +258,34 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 28);
+            this.label8.Location = new System.Drawing.Point(35, 76);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 20);
+            this.label8.Size = new System.Drawing.Size(65, 20);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Nombre:";
+            this.label8.Text = "Evento:";
             // 
             // cmbColaboradores2
             // 
             this.cmbColaboradores2.FormattingEnabled = true;
-            this.cmbColaboradores2.Location = new System.Drawing.Point(32, 196);
+            this.cmbColaboradores2.Location = new System.Drawing.Point(195, 73);
             this.cmbColaboradores2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores2.Name = "cmbColaboradores2";
-            this.cmbColaboradores2.Size = new System.Drawing.Size(404, 28);
+            this.cmbColaboradores2.Size = new System.Drawing.Size(241, 28);
             this.cmbColaboradores2.TabIndex = 15;
-            this.cmbColaboradores2.Text = "Colaboradores Afectados";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(467, 25);
+            this.txtDescripcion.Location = new System.Drawing.Point(467, 46);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(405, 159);
+            this.txtDescripcion.Size = new System.Drawing.Size(350, 138);
             this.txtDescripcion.TabIndex = 14;
-            this.txtDescripcion.Text = "Descripcion:";
+            this.txtDescripcion.Text = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 75);
+            this.label7.Location = new System.Drawing.Point(35, 122);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 20);
@@ -277,7 +295,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 123);
+            this.label5.Location = new System.Drawing.Point(35, 164);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 20);
@@ -286,7 +304,7 @@
             // 
             // dateTimePicker4
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(195, 123);
+            this.dateTimePicker4.Location = new System.Drawing.Point(195, 117);
             this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(241, 26);
@@ -294,7 +312,7 @@
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(195, 75);
+            this.dateTimePicker3.Location = new System.Drawing.Point(195, 159);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(241, 26);
@@ -303,10 +321,10 @@
             // cmbTipoEvento2
             // 
             this.cmbTipoEvento2.FormattingEnabled = true;
-            this.cmbTipoEvento2.Location = new System.Drawing.Point(195, 25);
+            this.cmbTipoEvento2.Location = new System.Drawing.Point(195, 34);
             this.cmbTipoEvento2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento2.Name = "cmbTipoEvento2";
-            this.cmbTipoEvento2.Size = new System.Drawing.Size(154, 28);
+            this.cmbTipoEvento2.Size = new System.Drawing.Size(241, 28);
             this.cmbTipoEvento2.TabIndex = 2;
             // 
             // dgvEventos
@@ -314,6 +332,9 @@
             this.dgvEventos.AllowUserToAddRows = false;
             this.dgvEventos.AllowUserToDeleteRows = false;
             this.dgvEventos.AllowUserToOrderColumns = true;
+            this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEventos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -328,7 +349,12 @@
             this.dgvEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.legajoColaborador,
+            this.nombre,
+            this.descripcion,
+            this.fechaInicio,
+            this.fechaFin,
+            this.fechaRegistro});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -354,20 +380,60 @@
             this.dgvEventos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEventos.RowHeadersWidth = 51;
             this.dgvEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEventos.Size = new System.Drawing.Size(936, 242);
+            this.dgvEventos.Size = new System.Drawing.Size(911, 129);
             this.dgvEventos.TabIndex = 45;
             // 
-            // Column1
+            // legajoColaborador
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.legajoColaborador.HeaderText = "Legajo Colaborador";
+            this.legajoColaborador.Name = "legajoColaborador";
+            this.legajoColaborador.ReadOnly = true;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Evento";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            // 
+            // fechaInicio
+            // 
+            this.fechaInicio.HeaderText = "Fecha de Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
+            // 
+            // fechaFin
+            // 
+            this.fechaFin.HeaderText = "Fecha Fin";
+            this.fechaFin.Name = "fechaFin";
+            this.fechaFin.ReadOnly = true;
+            // 
+            // fechaRegistro
+            // 
+            this.fechaRegistro.HeaderText = "Fecha de Registro";
+            this.fechaRegistro.Name = "fechaRegistro";
+            this.fechaRegistro.ReadOnly = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(35, 37);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 20);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Colaborador";
             // 
             // frmEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 788);
+            this.ClientSize = new System.Drawing.Size(960, 650);
             this.Controls.Add(this.dgvEventos);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -389,8 +455,8 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFechaFin;
+        private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbTipoEvento;
         private System.Windows.Forms.ComboBox cmbColaboradores;
@@ -411,6 +477,13 @@
         private Controls.BotonPadre button1;
         private Controls.DataGridPadre dgvEventos;
         private System.Windows.Forms.CheckBox chkFiltroFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajoColaborador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private System.Windows.Forms.Label label10;
     }
 }

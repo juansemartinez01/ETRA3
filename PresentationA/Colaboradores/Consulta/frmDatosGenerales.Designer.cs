@@ -38,8 +38,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblSalario = new System.Windows.Forms.Label();
-            this.lblObraSocial = new System.Windows.Forms.Label();
+            this.lblmonto = new System.Windows.Forms.Label();
+            this.lblobraSocial = new System.Windows.Forms.Label();
             this.lblHoraIngreso = new System.Windows.Forms.Label();
             this.lblHoraSalida = new System.Windows.Forms.Label();
             this.lblDiaIngreso = new System.Windows.Forms.Label();
@@ -126,23 +126,23 @@
             this.label13.TabIndex = 57;
             this.label13.Text = "Estado:";
             // 
-            // lblSalario
+            // lblmonto
             // 
-            this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(129, 44);
-            this.lblSalario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSalario.Name = "lblSalario";
-            this.lblSalario.Size = new System.Drawing.Size(0, 20);
-            this.lblSalario.TabIndex = 68;
+            this.lblmonto.AutoSize = true;
+            this.lblmonto.Location = new System.Drawing.Point(129, 44);
+            this.lblmonto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblmonto.Name = "lblmonto";
+            this.lblmonto.Size = new System.Drawing.Size(0, 20);
+            this.lblmonto.TabIndex = 68;
             // 
-            // lblObraSocial
+            // lblobraSocial
             // 
-            this.lblObraSocial.AutoSize = true;
-            this.lblObraSocial.Location = new System.Drawing.Point(131, 138);
-            this.lblObraSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblObraSocial.Name = "lblObraSocial";
-            this.lblObraSocial.Size = new System.Drawing.Size(0, 20);
-            this.lblObraSocial.TabIndex = 69;
+            this.lblobraSocial.AutoSize = true;
+            this.lblobraSocial.Location = new System.Drawing.Point(129, 132);
+            this.lblobraSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblobraSocial.Name = "lblobraSocial";
+            this.lblobraSocial.Size = new System.Drawing.Size(0, 20);
+            this.lblobraSocial.TabIndex = 69;
             // 
             // lblHoraIngreso
             // 
@@ -221,14 +221,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.lblmontoSalario1);
             this.groupBox1.Controls.Add(this.lblnombreEstado);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.lblSalario);
-            this.groupBox1.Controls.Add(this.lblObraSocial);
+            this.groupBox1.Controls.Add(this.lblmonto);
+            this.groupBox1.Controls.Add(this.lblobraSocial);
             this.groupBox1.Location = new System.Drawing.Point(32, 14);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -240,8 +238,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
@@ -250,11 +246,11 @@
             this.groupBox2.Controls.Add(this.lblHoraSalida);
             this.groupBox2.Controls.Add(this.lblDiaIngreso);
             this.groupBox2.Controls.Add(this.lblDiaSalida);
-            this.groupBox2.Location = new System.Drawing.Point(32, 216);
+            this.groupBox2.Location = new System.Drawing.Point(32, 395);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(662, 167);
+            this.groupBox2.Size = new System.Drawing.Size(662, 153);
             this.groupBox2.TabIndex = 89;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "HORARIO";
@@ -262,12 +258,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.lblnombreCargo);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.lblPuesto);
-            this.groupBox3.Location = new System.Drawing.Point(32, 412);
+            this.groupBox3.Location = new System.Drawing.Point(32, 228);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
@@ -310,8 +304,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblSalario;
-        private System.Windows.Forms.Label lblObraSocial;
+        private System.Windows.Forms.Label lblmonto;
+        private System.Windows.Forms.Label lblobraSocial;
         private System.Windows.Forms.Label lblHoraIngreso;
         private System.Windows.Forms.Label lblHoraSalida;
         private System.Windows.Forms.Label lblDiaIngreso;

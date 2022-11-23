@@ -15,6 +15,8 @@ namespace PresentationA.Colaboradores
         {
             InitializeComponent();
             CargarDG();
+            lblFechaFin.Enabled= false;
+            lblFechaInicio.Enabled = false;
             dateTimePicker1.Enabled = false;
             dateTimePicker2.Enabled = false;
             LlenarCombo(cmbTipoEvento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoEvento WHERE borradoLogico = 0"), "nombre", "id_tipoEvento");
@@ -26,25 +28,17 @@ namespace PresentationA.Colaboradores
 
         private void CargarDG()
         {
-            try
-            {
-                string consulta = "SELECT H.legajoColaborador AS 'Legajo Colaborador', T.nombre AS 'Nombre Evento', E.descripcion AS 'Descripcion', CONVERT(varchar,H.fechaInicio, 103) AS 'Fecha de Inicio',CONVERT(varchar,H.fechaFin, 103) AS 'Fecha Fin',CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
-                DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta);
-                dgvEventos.DataSource = tabla;
-                /*
-                eventos = objetoEvento.getAllEventos();
+                //string consulta = "SELECT H.legajoColaborador, T.nombre, E.descripcion, CONVERT(varchar,H.fechaInicio, 103),CONVERT(varchar,H.fechaFin, 103),CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
+
+                //DataTable eventos = DataManager.GetInstance().ConsultaSQL(consulta);
+
+
+                DataTable eventos = objetoEvento.getAllEventos();
                 for (int i = 0; i < eventos.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvEventos.Rows.Add(eventos.Rows[i]["Legajo Colaborador"],eventos.Rows[i]["Tipo"], eventos.Rows[i]["Descripción"], eventos.Rows[i]["Fecha de Inicio"], eventos.Rows[i]["Fecha Fin"], eventos.Rows[i]["Fecha de Registro"]);
+                    dgvEventos.Rows.Add(eventos.Rows[i]["legajo"],eventos.Rows[i]["nombre"], eventos.Rows[i]["descripcion"], eventos.Rows[i]["fechaInicio"], eventos.Rows[i]["fechaFin"], eventos.Rows[i]["fechaRegistro"]);
                 }
-                */
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -124,11 +118,15 @@ namespace PresentationA.Colaboradores
         {
             if (chkFiltroFecha.Checked)
             {
+                lblFechaFin.Enabled = true;
+                lblFechaInicio.Enabled = true;
                 dateTimePicker1.Enabled = true;
                 dateTimePicker2.Enabled = true;
             }
             else
             {
+                lblFechaFin.Enabled = false;
+                lblFechaInicio.Enabled = false;
                 dateTimePicker1.Enabled = false;
                 dateTimePicker2.Enabled = false;
             }
