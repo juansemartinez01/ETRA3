@@ -10,3 +10,9 @@ C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.csproj.AssemblyRefer
 C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.dll
 C:\Users\Usuario\Source\Repos\ETRA2\Common\obj\Debug\Common.pdb
+C:\Users\juans\source\repos\ETRA2\Common\bin\Debug\Common.dll
+C:\Users\juans\source\repos\ETRA2\Common\bin\Debug\Common.pdb
+C:\Users\juans\source\repos\ETRA2\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\juans\source\repos\ETRA2\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\juans\source\repos\ETRA2\Common\obj\Debug\Common.dll
+C:\Users\juans\source\repos\ETRA2\Common\obj\Debug\Common.pdb

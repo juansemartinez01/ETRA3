@@ -11,7 +11,7 @@ public class DataManager
     public DataManager()
     {
 
-        string_conexion = "Data Source=192.168.0.89;Initial Catalog=ETRA;Persist Security Info=True;User ID=soporte;Password=soporte";
+        string_conexion = "Server=tcp:DBServer\\ServidorEtra,49500;DataBase=ETRA;User ID=acceso;Password=admin123";
 
     }
     public static DataManager GetInstance()

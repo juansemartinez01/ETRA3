@@ -7,7 +7,7 @@ namespace DataAccesA
 
             public ConnectionToSql()
             {
-                connectionString = "Data Source=192.168.0.89;Initial Catalog=ETRA;Persist Security Info=True;User ID=soporte;Password=soporte";
+                connectionString = "Server=tcp:DBServer\\ServidorEtra,49500;DataBase=ETRA;User ID=acceso;Password=admin123";
             }
             protected SqlConnection GetConnection()
             {
