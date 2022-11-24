@@ -177,5 +177,15 @@ namespace PresentationA.Colaboradores
 
 
         }
+
+        private void cmbColaborador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbTipoEvento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

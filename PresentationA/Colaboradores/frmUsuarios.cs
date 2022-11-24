@@ -221,5 +221,15 @@ namespace PresentationA.Colaboradores
                 txtMail.Enabled = false;
             }
         }
+
+        private void cmblegajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbperfil_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

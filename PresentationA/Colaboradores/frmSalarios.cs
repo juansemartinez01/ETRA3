@@ -214,5 +214,20 @@ namespace PresentationA.Colaboradores
                 e.Handled = true;
             }
         }
+
+        private void cmbFiltroCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbModificarSalarioCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbCargoPorcentaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
