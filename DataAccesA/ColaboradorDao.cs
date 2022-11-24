@@ -1200,6 +1200,40 @@ namespace DataAccesA
                 return dt;
             }
         } 
+        public string buscarMailColaborador(int legajo)
+        {
+            string mail = "No especifica";
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT mail FROM Colaborador WHERE borradoLogico = 0 AND legajo = @legajo";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                IDataRecord mailBase = (IDataRecord)reader;
+                                mail = "" + mailBase[0] + "";
+                            }
+                            reader.Close();
+                        }
+
+                        return mail;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return mail;
+            }
+        }
     
     }
 }

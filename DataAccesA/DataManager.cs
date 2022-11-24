@@ -11,7 +11,7 @@ public class DataManager
     public DataManager()
     {
 
-        string_conexion = "Server=tcp:DBServer\\ServidorEtra,49500;DataBase=ETRA;User ID=acceso;Password=admin123";
+        string_conexion = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = ETRA; Integrated Security = True";
 
     }
     public static DataManager GetInstance()

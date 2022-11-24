@@ -241,7 +241,7 @@ namespace DataAccesA
                                 using (var command2 = new SqlCommand())
                                 {
                                     command2.Connection = connection;
-                                    command2.CommandText = "UPDATE CuentaColaborador SET saldoAdeudado = @montoNuevo WHERE numeroCuenta = (SELECT DISTINCT C.numeroCuenta FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.legajoColaborador = @legajo)";
+                                    command2.CommandText = "BEGIN TRANSACTION UPDATE CuentaColaborador SET saldoAdeudado = @montoNuevo WHERE numeroCuenta = (SELECT DISTINCT C.numeroCuenta FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON M.nroCuenta = C.numeroCuenta WHERE M.legajoColaborador = @legajo) COMMIT";
                                     command2.Parameters.AddWithValue("@legajo", legajo);
                                     command2.Parameters.AddWithValue("@montoNuevo", montoNuevo);
                                     command2.CommandType = CommandType.Text;
@@ -256,7 +256,7 @@ namespace DataAccesA
                                         using (var command3 = new SqlCommand())
                                         {
                                             command3.Connection = connection;
-                                            command3.CommandText = "INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),NULL,@legajo,@numeroCuenta,0,@tipoMovimiento,@montoMovimiento)";
+                                            command3.CommandText = "BEGIN TRANSACTION INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),NULL,@legajo,@numeroCuenta,0,@tipoMovimiento,@montoMovimiento) COMMIT";
                                             command3.Parameters.AddWithValue("@legajo", legajo);
                                             command3.Parameters.AddWithValue("@numeroCuenta", numeroCuenta);
                                             command3.Parameters.AddWithValue("@tipoMovimiento", tipoMovimiento);

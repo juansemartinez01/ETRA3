@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
 using Common.Cache;
+using System.Threading;
 
 namespace DataAccesA
 {
@@ -114,6 +115,63 @@ namespace DataAccesA
             catch (Exception ex)
             {
                 return ex.ToString();
+            }
+        }
+        public DataTable getAllUsuarios(int legajo)
+        {
+            string cadenaFiltros = "";
+            
+            DataTable resultado = new DataTable();
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT legajoColaborador,P.nombre FROM Usuario U JOIN Perfil P ON U.id_perfil = P.id_perfil WHERE U.borradoLogico = 0 AND P.borradoLogico = 0 AND legajoColaborador LIKE @legajo";
+                    command.Parameters.AddWithValue("@legajo", legajo + "%");
+                    
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    resultado.Load(reader);
+                    return resultado;
+                }
+            }
+
+        }
+        public string crearNuevoUsuario(int idPerfil,string mail,string contraseña,int legajo)
+        {
+            try
+            {
+                int usuarioCreado = 0;
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "INSERT INTO Usuario VALUES (@idPerfil,@mail,@contraseña,@legajo,0)";
+                        command.Parameters.AddWithValue("@idPerfil", idPerfil);
+                        command.Parameters.AddWithValue("@mail", mail);
+                        command.Parameters.AddWithValue("@contraseña", contraseña);
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        usuarioCreado = command.ExecuteNonQuery();
+                        if (usuarioCreado != 1)
+                        {
+                            return "Error al crear el usuario.";
+                        }
+                        else
+                        {
+                            return "Usuario creado con exito.";
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                return ex.Message;
             }
         }
     }

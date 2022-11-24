@@ -143,7 +143,7 @@ namespace PresentationA.Colaboradores
                                                 departamento = txtDepto.Text.ToString();
                                                 ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                                 var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue,float.Parse(txtSalario.Text.ToString()),mail,telefonoContacto,telefonoEmergencia,fechaNacimiento,fechaIngreso,obraSocial,legajoResponsable);
-                                                if (openFileDialog1.InitialDirectory != "no seleccionado")
+                                                if (openFileDialog1.InitialDirectory != "no seleccionado" && openFileDialog1.InitialDirectory != "C:\\Documentos")
                                                 {
 
                                                     agregarArchivoColaborador(colaboradorModelo);
@@ -164,7 +164,7 @@ namespace PresentationA.Colaboradores
                                             departamento = "No especifica";
                                             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
                                             var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable);
-                                            if (openFileDialog1.InitialDirectory != "no seleccionado")
+                                            if (openFileDialog1.InitialDirectory != "no seleccionado" && openFileDialog1.InitialDirectory != "C:\\Documentos")
                                             {
 
                                                 agregarArchivoColaborador(colaboradorModelo);
@@ -278,7 +278,7 @@ namespace PresentationA.Colaboradores
                 openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
                 openFileDialog1.FilterIndex = 1;
 
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.InitialDirectory != "C:\\Documentos")
                 {
 
                 }
