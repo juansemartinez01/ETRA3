@@ -28,16 +28,17 @@ namespace PresentationA.Colaboradores
 
         private void CargarDG()
         {
-                //string consulta = "SELECT H.legajoColaborador, T.nombre, E.descripcion, CONVERT(varchar,H.fechaInicio, 103),CONVERT(varchar,H.fechaFin, 103),CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
+            //string consulta = "SELECT H.legajoColaborador, T.nombre, E.descripcion, CONVERT(varchar,H.fechaInicio, 103),CONVERT(varchar,H.fechaFin, 103),CONVERT(varchar,H.fechaRegistro, 103) AS 'Fecha de Registro' FROM HistorialEvento H JOIN Evento E ON H.id_evento = E.id_evento JOIN TipoEvento T ON T.id_tipoEvento = E.id_tipoEvento WHERE H.borradoLogico = 0";
 
-                //DataTable eventos = DataManager.GetInstance().ConsultaSQL(consulta);
+            //DataTable eventos = DataManager.GetInstance().ConsultaSQL(consulta);
 
-
-                DataTable eventos = objetoEvento.getAllEventos();
-                for (int i = 0; i < eventos.Rows.Count; i++)
+            dgvEventos.Rows.Clear();
+            DataTable eventosTabla = new DataTable();
+            eventosTabla = objetoEvento.getAllEventos();
+            for (int i = 0; i < eventosTabla.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvEventos.Rows.Add(eventos.Rows[i]["legajo"],eventos.Rows[i]["nombre"], eventos.Rows[i]["descripcion"], eventos.Rows[i]["fechaInicio"], eventos.Rows[i]["fechaFin"], eventos.Rows[i]["fechaRegistro"]);
+                    dgvEventos.Rows.Add(eventosTabla.Rows[i]["legajo"], eventosTabla.Rows[i]["nombre"], eventosTabla.Rows[i]["descripcion"], eventosTabla.Rows[i]["fechaInicio"], eventosTabla.Rows[i]["fechaFin"], eventosTabla.Rows[i]["fechaRegistro"]);
                 }
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -80,7 +81,12 @@ namespace PresentationA.Colaboradores
                 }
 
                 DataTable tabla = DataManager.GetInstance().ConsultaSQL(consulta);
-                dgvEventos.DataSource = tabla;
+                dgvEventos.Rows.Clear();
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvEventos.Rows.Add(tabla.Rows[i]["Legajo Colaborador"], tabla.Rows[i]["Nombre Evento"], tabla.Rows[i]["Descripcion"], tabla.Rows[i]["Fecha de Inicio"], tabla.Rows[i]["Fecha Fin"], tabla.Rows[i]["Fecha de Registro"]);
+                }
                 limpiarCampos();
 
             }

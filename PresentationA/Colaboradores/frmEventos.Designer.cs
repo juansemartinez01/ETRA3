@@ -44,6 +44,7 @@
             this.chkFiltroFecha = new System.Windows.Forms.CheckBox();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new PresentationA.Controls.BotonPadre();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
@@ -74,7 +74,7 @@
             this.label1.Location = new System.Drawing.Point(389, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 28);
+            this.label1.Size = new System.Drawing.Size(173, 43);
             this.label1.TabIndex = 1;
             this.label1.Text = "EVENTOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -85,7 +85,7 @@
             this.label2.Location = new System.Drawing.Point(35, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(106, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "Eventos:";
             // 
@@ -95,7 +95,7 @@
             this.lblFechaFin.Location = new System.Drawing.Point(392, 67);
             this.lblFechaFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(82, 20);
+            this.lblFechaFin.Size = new System.Drawing.Size(126, 27);
             this.lblFechaFin.TabIndex = 3;
             this.lblFechaFin.Text = "Fecha Fin:";
             // 
@@ -105,7 +105,7 @@
             this.lblFechaInicio.Location = new System.Drawing.Point(392, 21);
             this.lblFechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(127, 20);
+            this.lblFechaInicio.Size = new System.Drawing.Size(194, 27);
             this.lblFechaInicio.TabIndex = 4;
             this.lblFechaInicio.Text = "Fecha de Inicio:";
             // 
@@ -115,7 +115,7 @@
             this.label6.Location = new System.Drawing.Point(35, 67);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 20);
+            this.label6.Size = new System.Drawing.Size(184, 27);
             this.label6.TabIndex = 6;
             this.label6.Text = "Colaboradores";
             // 
@@ -125,7 +125,7 @@
             this.cmbTipoEvento.Location = new System.Drawing.Point(195, 18);
             this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
-            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 28);
+            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 35);
             this.cmbTipoEvento.TabIndex = 7;
             // 
             // cmbColaboradores
@@ -134,7 +134,7 @@
             this.cmbColaboradores.Location = new System.Drawing.Point(195, 64);
             this.cmbColaboradores.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores.Name = "cmbColaboradores";
-            this.cmbColaboradores.Size = new System.Drawing.Size(154, 28);
+            this.cmbColaboradores.Size = new System.Drawing.Size(154, 35);
             this.cmbColaboradores.TabIndex = 8;
             // 
             // dateTimePicker1
@@ -142,7 +142,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(531, 18);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(286, 35);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // dateTimePicker2
@@ -150,7 +150,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(531, 62);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(286, 35);
             this.dateTimePicker2.TabIndex = 10;
             // 
             // groupBox1
@@ -179,7 +179,7 @@
             this.chkFiltroFecha.AutoSize = true;
             this.chkFiltroFecha.Location = new System.Drawing.Point(396, 112);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
-            this.chkFiltroFecha.Size = new System.Drawing.Size(165, 24);
+            this.chkFiltroFecha.Size = new System.Drawing.Size(250, 31);
             this.chkFiltroFecha.TabIndex = 12;
             this.chkFiltroFecha.Text = "Activar filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.groupBox2.Controls.Add(this.dateTimePicker4);
             this.groupBox2.Controls.Add(this.dateTimePicker3);
             this.groupBox2.Controls.Add(this.cmbTipoEvento2);
-            this.groupBox2.Location = new System.Drawing.Point(28, 385);
+            this.groupBox2.Location = new System.Drawing.Point(28, 360);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -227,12 +227,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nuevo Evento";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(35, 37);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(160, 27);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Colaborador";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(463, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 20);
+            this.label9.Size = new System.Drawing.Size(153, 27);
             this.label9.TabIndex = 18;
             this.label9.Text = "Descripción:";
             // 
@@ -260,7 +270,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(35, 76);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.Size = new System.Drawing.Size(97, 27);
             this.label8.TabIndex = 16;
             this.label8.Text = "Evento:";
             // 
@@ -270,7 +280,7 @@
             this.cmbColaboradores2.Location = new System.Drawing.Point(195, 73);
             this.cmbColaboradores2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores2.Name = "cmbColaboradores2";
-            this.cmbColaboradores2.Size = new System.Drawing.Size(241, 28);
+            this.cmbColaboradores2.Size = new System.Drawing.Size(241, 35);
             this.cmbColaboradores2.TabIndex = 15;
             // 
             // txtDescripcion
@@ -288,7 +298,7 @@
             this.label7.Location = new System.Drawing.Point(35, 122);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 20);
+            this.label7.Size = new System.Drawing.Size(194, 27);
             this.label7.TabIndex = 13;
             this.label7.Text = "Fecha de Inicio:";
             // 
@@ -298,7 +308,7 @@
             this.label5.Location = new System.Drawing.Point(35, 164);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(126, 27);
             this.label5.TabIndex = 12;
             this.label5.Text = "Fecha Fin:";
             // 
@@ -307,7 +317,7 @@
             this.dateTimePicker4.Location = new System.Drawing.Point(195, 117);
             this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(241, 26);
+            this.dateTimePicker4.Size = new System.Drawing.Size(241, 35);
             this.dateTimePicker4.TabIndex = 11;
             // 
             // dateTimePicker3
@@ -315,7 +325,7 @@
             this.dateTimePicker3.Location = new System.Drawing.Point(195, 159);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(241, 26);
+            this.dateTimePicker3.Size = new System.Drawing.Size(241, 35);
             this.dateTimePicker3.TabIndex = 10;
             // 
             // cmbTipoEvento2
@@ -324,7 +334,7 @@
             this.cmbTipoEvento2.Location = new System.Drawing.Point(195, 34);
             this.cmbTipoEvento2.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento2.Name = "cmbTipoEvento2";
-            this.cmbTipoEvento2.Size = new System.Drawing.Size(241, 28);
+            this.cmbTipoEvento2.Size = new System.Drawing.Size(241, 35);
             this.cmbTipoEvento2.TabIndex = 2;
             // 
             // dgvEventos
@@ -380,60 +390,56 @@
             this.dgvEventos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEventos.RowHeadersWidth = 51;
             this.dgvEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEventos.Size = new System.Drawing.Size(911, 129);
+            this.dgvEventos.Size = new System.Drawing.Size(908, 104);
             this.dgvEventos.TabIndex = 45;
             // 
             // legajoColaborador
             // 
             this.legajoColaborador.HeaderText = "Legajo Colaborador";
+            this.legajoColaborador.MinimumWidth = 8;
             this.legajoColaborador.Name = "legajoColaborador";
             this.legajoColaborador.ReadOnly = true;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Evento";
+            this.nombre.MinimumWidth = 8;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
             // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Descripción";
+            this.descripcion.MinimumWidth = 8;
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
             // fechaInicio
             // 
             this.fechaInicio.HeaderText = "Fecha de Inicio";
+            this.fechaInicio.MinimumWidth = 8;
             this.fechaInicio.Name = "fechaInicio";
             this.fechaInicio.ReadOnly = true;
             // 
             // fechaFin
             // 
             this.fechaFin.HeaderText = "Fecha Fin";
+            this.fechaFin.MinimumWidth = 8;
             this.fechaFin.Name = "fechaFin";
             this.fechaFin.ReadOnly = true;
             // 
             // fechaRegistro
             // 
             this.fechaRegistro.HeaderText = "Fecha de Registro";
+            this.fechaRegistro.MinimumWidth = 8;
             this.fechaRegistro.Name = "fechaRegistro";
             this.fechaRegistro.ReadOnly = true;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 37);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 20);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Colaborador";
-            // 
             // frmEventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 650);
+            this.ClientSize = new System.Drawing.Size(921, 675);
             this.Controls.Add(this.dgvEventos);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

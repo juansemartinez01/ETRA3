@@ -92,6 +92,7 @@ INSERT INTO Cargo VALUES ('Atencion al publico en sucursal',0)
 INSERT INTO Cargo VALUES ('Encargado logistica y deposito',0)
 INSERT INTO Cargo VALUES ('Deposito',0)
 INSERT INTO Cargo VALUES ('Administracion y comunicacion',0)
+INSERT INTO Cargo VALUES ('Pasante',0)
 
 
 
