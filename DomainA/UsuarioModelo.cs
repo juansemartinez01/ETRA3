@@ -28,5 +28,9 @@ namespace DomainA
         {
             return usuarioDao.crearNuevoUsuario(idPerfil,mail,contraseña,legajo);
         }
+        public string modificarUsuario(int idPerfil, string mail, string contraseña, int legajo)
+        {
+            return usuarioDao.modificarUsuario(idPerfil, mail, contraseña, legajo);
+        }
         }
 }

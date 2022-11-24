@@ -28,12 +28,12 @@ namespace PresentationA.Colaboradores
         public void CargarTabla(int legajo)
         {
             dgvUsuarios.Rows.Clear();
-            DataTable salarios = new DataTable();
-            salarios = usuarioModelo.getAllUsuarios(legajo);
-            for (int i = 0; i < salarios.Rows.Count; i++)
+            DataTable usuarios = new DataTable();
+            usuarios = usuarioModelo.getAllUsuarios(legajo);
+            for (int i = 0; i < usuarios.Rows.Count; i++)
             {
                 //crear metodo completar labels
-                dgvUsuarios.Rows.Add(salarios.Rows[i]["legajoColaborador"], salarios.Rows[i]["nombre"]);
+                dgvUsuarios.Rows.Add(usuarios.Rows[i]["legajoColaborador"], usuarios.Rows[i]["nombre"]);
             }
         }
         private void ViewState()
@@ -94,6 +94,15 @@ namespace PresentationA.Colaboradores
                     MessageBox.Show("Debe seleccionar un colaborador.");
                     return;
                 }
+                int legajo = (int)cmblegajo.SelectedValue;
+                bool existeUsuario = false;
+                DataTable usuarioExiste = usuarioModelo.getAllUsuarios(legajo);
+                if(usuarioExiste.Rows.Count > 0)
+                {
+                    MessageBox.Show("Este legajo ya tiene asignado un usaurio con el perfil de " + usuarioExiste.Rows[0]["nombre"]);
+                    limpiarCampos();
+                    return;
+                }
                 if (cmbperfil.SelectedIndex == -1)
                 {
                     MessageBox.Show("Debe seleccionar un perfil.");
@@ -146,6 +155,7 @@ namespace PresentationA.Colaboradores
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            chkMail.Checked = true;
             if (btnModificar.Text == "Guardar")
             {
                 // guardar nuevo valor
@@ -154,13 +164,37 @@ namespace PresentationA.Colaboradores
                     MessageBox.Show("Debe seleccionar un colaborador.");
                     return;
                 }
+                int legajo = (int)cmblegajo.SelectedValue;
+                
+                DataTable usuarioExiste = usuarioModelo.getAllUsuarios(legajo);
+                if (usuarioExiste.Rows.Count == 0)
+                {
+                    MessageBox.Show("Este legajo no tiene ningun perfil asociado, debe crear un nuevo usuario");
+                    limpiarCampos();
+                    return;
+                }
                 if (cmbperfil.SelectedIndex == -1)
                 {
                     MessageBox.Show("Debe seleccionar un perfil.");
                     return;
                 }
+                if (txtContraseña.Text == "")
+                {
+                    MessageBox.Show("Debe asignar una contraseña");
+                    return;
+                }
+                if (txtMail.Text == "")
+                {
+                    MessageBox.Show("Debe asignar un nuevo mail");
+                    return;
+                }
+                string mail = txtMail.Text;
+                string contraseña = txtContraseña.Text;
                 //Modificar usuario asociado a un colaborador
-                
+                string respuesta = usuarioModelo.modificarUsuario((int)cmbperfil.SelectedValue, mail, contraseña, (int)cmblegajo.SelectedValue);
+                MessageBox.Show(respuesta);
+                limpiarCampos();
+                CargarTabla(1);
                 ViewState();
                 return;
             }

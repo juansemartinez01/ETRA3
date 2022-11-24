@@ -174,5 +174,41 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
+        public string modificarUsuario(int idPerfil, string mail, string contraseña, int legajo)
+        {
+            try
+            {
+                int usuarioCreado = 0;
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil,mail = @mail,contraseña = @contraseña WHERE legajoColaborador = @legajo";
+                        command.Parameters.AddWithValue("@idPerfil", idPerfil);
+                        command.Parameters.AddWithValue("@mail", mail);
+                        command.Parameters.AddWithValue("@contraseña", contraseña);
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.CommandType = CommandType.Text;
+                        usuarioCreado = command.ExecuteNonQuery();
+                        if (usuarioCreado != 1)
+                        {
+                            return "Error al modificar el usuario.";
+                        }
+                        else
+                        {
+                            return "Usuario modificado con exito.";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
     }
 }
