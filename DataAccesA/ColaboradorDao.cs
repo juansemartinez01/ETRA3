@@ -78,8 +78,14 @@ namespace DataAccesA
 
                         command.CommandText = "select c.mail from Colaborador c join Usuario u on u.legajoColaborador = c.legajo where u.id_perfil = 1";
                         command.CommandType = CommandType.Text;
-                        SqlDataReader reader = command.ExecuteReader();
-                        while (reader.Read()) { resultado.Add(reader.ToString()); }
+                        DataTable reader = new DataTable();
+                        reader.Load(command.ExecuteReader());
+                        
+                        foreach(DataRow row in reader.Rows) 
+                        {
+                            resultado.Add(row[0].ToString());
+                        }
+
                         return resultado;
                     }
                 }

@@ -7,6 +7,7 @@ namespace DataAccesA
 
             public ConnectionToSql()
             {
+                //connectionString = "Server = (local)\\SQLEXPRESS;DataBase= ETRA;integrated security= true";
                 connectionString = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = ETRA; Integrated Security = True"; 
             }
             protected SqlConnection GetConnection()

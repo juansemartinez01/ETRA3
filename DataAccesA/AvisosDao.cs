@@ -306,7 +306,7 @@ namespace DataAccesA
                                             " from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             " join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                             " join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                            " where c.legajo = @legajo and ((a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaOcurrencia < CAST(GETDATE() AS Date) and a.fechaNotificacion is null))";
+                                            " where c.legajo = @legajo and ((a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaOcurrencia < CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion is null))";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@legajo", legajo);
                         resultado.Load(command.ExecuteReader());
@@ -336,7 +336,7 @@ namespace DataAccesA
                                             "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                             "join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                            "where (a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaNotificacion < CAST( GETDATE() AS Date ) and a.fechaUltimaNotificacion is null) or (a.fechaNotificacion = CAST(GETDATE() AS DATE) AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE) ";
+                                            "where (a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaNotificacion < CAST( GETDATE() AS Date ) and a.fechaUltimaNotificacion is null) or (a.fechaNotificacion = CAST(GETDATE() AS DATE) AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE))";
                         command.CommandType = CommandType.Text;
                         resultado.Load(command.ExecuteReader());
                         return resultado;
@@ -532,7 +532,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select 1 from Aviso where id_aviso = 2 and ( MONTH(fechaUltimaNotificacion) = MONTH(GETDATE()) or fechaUltimaNotificacion is null)";
+                        command.CommandText = "select 1 from Aviso where id_aviso = 2 and ( MONTH(fechaUltimaNotificacion) = MONTH(GETDATE()) or fechaUltimaNotificacion is not null)";
                         command.CommandType = CommandType.Text;
                         return command.ExecuteReader().HasRows;
                     }
@@ -558,10 +558,8 @@ namespace DataAccesA
                         command.CommandText = "SELECT a.id_aviso, ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
                                             "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
-                                            "join Colaborador c on c.legajo = ac.legajoColaborador AND a.borradoLogico = 0 AND CAST(@desde AS DATE) <= a.fechaOcurrencia and a.fechaOcurrencia <= CAST(@hasta AS DATE)";
+                                            "join Colaborador c on c.legajo = ac.legajoColaborador where a.borradoLogico = 0 AND CAST('"+desde.ToString("yyyy-MM-dd")+ "' AS datetime) <= CAST(a.fechaOcurrencia AS datetime) and CAST(a.fechaOcurrencia AS datetime) <= CAST('" + hasta.ToString("yyyy-MM-dd") + "'  AS datetime) and a.id_aviso > 2";
                         command.CommandType = CommandType.Text;
-                        command.Parameters.AddWithValue("@desde", desde);
-                        command.Parameters.AddWithValue("@hasta", hasta);
                         resultado.Load(command.ExecuteReader());
                         return resultado;
                     }
