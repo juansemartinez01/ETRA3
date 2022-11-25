@@ -55,7 +55,6 @@
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
-            this.chkSoloPagosSueldo = new System.Windows.Forms.CheckBox();
             this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
             this.cmbTipoMultimedia = new System.Windows.Forms.ComboBox();
             this.btnAgregarArchivo = new PresentationA.Controls.BotonPadre();
@@ -241,6 +240,7 @@
             this.dgvEventos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             this.dgvEventos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             this.dgvEventos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
+            this.dgvEventos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             // 
             // tipo
             // 
@@ -351,17 +351,6 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // chkSoloPagosSueldo
-            // 
-            this.chkSoloPagosSueldo.AutoSize = true;
-            this.chkSoloPagosSueldo.Location = new System.Drawing.Point(659, 34);
-            this.chkSoloPagosSueldo.Name = "chkSoloPagosSueldo";
-            this.chkSoloPagosSueldo.Size = new System.Drawing.Size(243, 24);
-            this.chkSoloPagosSueldo.TabIndex = 50;
-            this.chkSoloPagosSueldo.Text = "Mostrar solo pagos de sueldo";
-            this.chkSoloPagosSueldo.UseVisualStyleBackColor = true;
-            this.chkSoloPagosSueldo.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // btnVerArchivo
             // 
             this.btnVerArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
@@ -445,7 +434,6 @@
             this.Controls.Add(this.btnAgregarArchivo);
             this.Controls.Add(this.cmbTipoMultimedia);
             this.Controls.Add(this.btnVerArchivo);
-            this.Controls.Add(this.chkSoloPagosSueldo);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -500,7 +488,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
-        private System.Windows.Forms.CheckBox chkSoloPagosSueldo;
         private Controls.BotonPadre btnVerArchivo;
         private System.Windows.Forms.ComboBox cmbTipoMultimedia;
         private Controls.BotonPadre btnAgregarArchivo;

@@ -32,10 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpfechaFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpfechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtmonto = new System.Windows.Forms.TextBox();
             this.dgvSalarios = new PresentationA.Controls.DataGridPadre();
@@ -57,44 +53,10 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Historial de Salarios";
             // 
-            // dtpfechaFin
-            // 
-            this.dtpfechaFin.Location = new System.Drawing.Point(205, 138);
-            this.dtpfechaFin.Name = "dtpfechaFin";
-            this.dtpfechaFin.Size = new System.Drawing.Size(200, 27);
-            this.dtpfechaFin.TabIndex = 31;
-            // 
-            // dtpfechaInicio
-            // 
-            this.dtpfechaInicio.Location = new System.Drawing.Point(205, 94);
-            this.dtpfechaInicio.Name = "dtpfechaInicio";
-            this.dtpfechaInicio.Size = new System.Drawing.Size(200, 27);
-            this.dtpfechaInicio.TabIndex = 30;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 94);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 21);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Fecha de Inicio:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(77, 138);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 21);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Fecha Fin:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(425, 91);
+            this.label3.Location = new System.Drawing.Point(225, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 21);
             this.label3.TabIndex = 33;
@@ -102,7 +64,7 @@
             // 
             // txtmonto
             // 
-            this.txtmonto.Location = new System.Drawing.Point(516, 91);
+            this.txtmonto.Location = new System.Drawing.Point(316, 96);
             this.txtmonto.Name = "txtmonto";
             this.txtmonto.Size = new System.Drawing.Size(200, 27);
             this.txtmonto.TabIndex = 34;
@@ -198,7 +160,7 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(583, 130);
+            this.btnAgregar.Location = new System.Drawing.Point(36, 91);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(122, 37);
             this.btnAgregar.TabIndex = 48;
@@ -216,10 +178,6 @@
             this.Controls.Add(this.dgvSalarios);
             this.Controls.Add(this.txtmonto);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpfechaFin);
-            this.Controls.Add(this.dtpfechaInicio);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Name = "frmHistorialSalario";
             this.Text = "frmHistorialSalario";
@@ -232,10 +190,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpfechaFin;
-        private System.Windows.Forms.DateTimePicker dtpfechaInicio;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtmonto;
         private Controls.DataGridPadre dgvSalarios;

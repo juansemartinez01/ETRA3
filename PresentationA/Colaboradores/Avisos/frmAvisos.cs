@@ -122,8 +122,6 @@ namespace PresentationA.Colaboradores
                 filtroFecha = true;
             }
             cargarAvisos(colaboradorFiltro, tipoAvisofiltro, fechaOcurrencia, fechaCarga, fechaNotificacion, filtroFecha);
-            limpiarCampos();
-
         }
         public void limpiarCampos()
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using Common.Cache;
 using DataAccesA;
 
 
@@ -27,8 +28,7 @@ namespace DomainA
 
         public string AgregarDocumento(string nombre, byte[] documento, string extension, int tipoMultimedia, int legajoColaborador, int idEvento)
         {
-            
-
+            if (UserCache.perfil != Perfiles.admin) { return "No tiene permisos"; }
             string var = colaboradorDocumento.AgregarDocumento(nombre, documento, extension, tipoMultimedia, legajoColaborador, idEvento);
             return var;
         }

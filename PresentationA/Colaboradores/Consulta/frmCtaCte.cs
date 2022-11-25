@@ -82,7 +82,7 @@ namespace PresentationA.Colaboradores.Consulta
             }
             else
             {
-                saldo = -saldo;
+                //saldo = -saldo;
                 lblSaldo.Text = saldo.ToString();
                 lblSaldo.ForeColor = Color.Red;
             }

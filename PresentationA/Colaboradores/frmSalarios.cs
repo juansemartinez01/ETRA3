@@ -107,7 +107,6 @@ namespace PresentationA.Colaboradores
                 cargo = int.Parse(cmbFiltroCargo.SelectedValue.ToString());
             }
             CargarTabla(legajo,nombre, apellido, monto, cargo);
-            LimpiarCampos();
         }
 
 

@@ -128,7 +128,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT legajoColaborador,P.nombre FROM Usuario U JOIN Perfil P ON U.id_perfil = P.id_perfil WHERE U.borradoLogico = 0 AND P.borradoLogico = 0 AND legajoColaborador LIKE @legajo";
+                    command.CommandText = "SELECT legajoColaborador,P.nombre, mail FROM Usuario U JOIN Perfil P ON U.id_perfil = P.id_perfil WHERE U.borradoLogico = 0 AND P.borradoLogico = 0 AND legajoColaborador LIKE @legajo";
                     command.Parameters.AddWithValue("@legajo", legajo + "%");
                     
                     command.CommandType = CommandType.Text;
@@ -174,7 +174,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public string modificarUsuario(int idPerfil, string mail, string contraseña, int legajo)
+        public string modificarUsuario(int idPerfil, string mail, int legajo)
         {
             try
             {
@@ -186,10 +186,9 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil,mail = @mail,contraseña = @contraseña WHERE legajoColaborador = @legajo";
+                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil,mail = @mail WHERE legajoColaborador = @legajo";
                         command.Parameters.AddWithValue("@idPerfil", idPerfil);
                         command.Parameters.AddWithValue("@mail", mail);
-                        command.Parameters.AddWithValue("@contraseña", contraseña);
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         usuarioCreado = command.ExecuteNonQuery();

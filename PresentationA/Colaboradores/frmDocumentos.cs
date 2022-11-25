@@ -17,7 +17,7 @@ namespace PresentationA.Colaboradores
     public partial class frmDocumentos : frmHijo
     {
         DocumentosColaborador documentosColaborador = new DocumentosColaborador();
-        Eventos eventosModelo = new Eventos();
+        EventosModelo eventosModelo = new EventosModelo();
         public frmDocumentos()
         {
             InitializeComponent();
@@ -100,8 +100,6 @@ namespace PresentationA.Colaboradores
                 tipoEvento = int.Parse(cmbTipoEvento.SelectedValue.ToString());
             }
             cargarTabla(legajo,tipoDocumento,tipoEvento,fecha,aplicarFecha);
-            limpiarCampos();
-
 
         }
         private void limpiarCampos()

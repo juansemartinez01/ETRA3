@@ -1,4 +1,5 @@
-﻿using DataAccesA;
+﻿using Common.Cache;
+using DataAccesA;
 using DataAccessA;
 using System.Collections.Generic;
 using System.Data;
@@ -26,11 +27,13 @@ namespace DomainA
         }
         public string crearNuevoUsuario(int idPerfil, string mail, string contraseña, int legajo)
         {
+            if(UserCache.perfil != Perfiles.admin) { return "No tiene permisos"; }
             return usuarioDao.crearNuevoUsuario(idPerfil,mail,contraseña,legajo);
         }
-        public string modificarUsuario(int idPerfil, string mail, string contraseña, int legajo)
+        public string modificarUsuario(int idPerfil, string mail, int legajo)
         {
-            return usuarioDao.modificarUsuario(idPerfil, mail, contraseña, legajo);
+            if (UserCache.perfil != Perfiles.admin) { return "No tiene permisos"; }
+            return usuarioDao.modificarUsuario(idPerfil, mail,legajo);
         }
-        }
+    }
 }

@@ -13,7 +13,7 @@ namespace PresentationA.Colaboradores.Consulta
 {
     public partial class frmHistorialEvento : frmHijo
     {
-        Eventos eventosModelo = new Eventos();
+        EventosModelo eventosModelo = new EventosModelo();
         System.Data.DataTable historial;
         DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
         
@@ -64,7 +64,7 @@ namespace PresentationA.Colaboradores.Consulta
             eventosModelo.FilaSeleccionadaHistorialEvento = indice;
             if (indice == -1)
             {
-                btnVerArchivo.Enabled = false;
+                btnVerArchivo.Visible = false;
                 btnEliminar.Enabled = false;
                 btnModificar.Enabled = false;
                 return;
@@ -72,13 +72,13 @@ namespace PresentationA.Colaboradores.Consulta
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             //completarLabels(this, historial, "txt");
+            ViewState();
             cmbTipoEvento.SelectedValue = eventosModelo.buscarIdConNombre(filaSeleccionada.Cells["Tipo"].Value.ToString(), "TipoEvento");
             dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
             dtpfechaRegistro.Text = filaSeleccionada.Cells["fechaRegistro"].Value.ToString();
             txtDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
-
-            ViewState();
+            
         }
 
         private void btnAgregarArchivo_Click(object sender, EventArgs e)
@@ -267,19 +267,6 @@ namespace PresentationA.Colaboradores.Consulta
             }
             ModifyState();
         }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkSoloPagosSueldo.Checked)
-            {
-                
-                CargarDG(nuevoDocumento.LegajoColaborador.ToString(), true);
-            }
-            else
-            {
-                
-                CargarDG(nuevoDocumento.LegajoColaborador.ToString(), false);
-            }
-        }
 
         private void frmHistorialEvento_Load(object sender, EventArgs e)
         {
@@ -313,6 +300,7 @@ namespace PresentationA.Colaboradores.Consulta
             txtDescripcion.Text = null;
             cmbTipoEvento.Text = null;
 
+            btnVerArchivo.Visible = false;  
             btnAgregar.Text = "Guardar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
 
@@ -339,6 +327,9 @@ namespace PresentationA.Colaboradores.Consulta
             txtDescripcion.Text = null;
             cmbTipoEvento.Text = null;
             cmbTipoMultimedia.Text = null;
+
+            btnVerArchivo.Visible = true;
+
             btnAgregar.Text = "Agregar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
 
@@ -380,7 +371,7 @@ namespace PresentationA.Colaboradores.Consulta
             btnCancelar.Visible = true;
             btnCancelar.Location = new System.Drawing.Point(btnAgregar.Location.X + 357, btnAgregar.Location.Y - 63);
 
-            btnVerArchivo.Visible = true;
+            btnVerArchivo.Visible = false;
             btnEliminar.Visible = false;
             btnAgregar.Visible = false;
             btnAgregar.Text = "Agregar";

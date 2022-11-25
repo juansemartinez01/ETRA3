@@ -14,7 +14,7 @@ namespace PresentationA.Colaboradores
     public partial class frmModifcarColab : frmHijo
     {
         ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-        Eventos evento = new Eventos();
+        EventosModelo evento = new EventosModelo();
         bool hayCambios = false;
         public frmModifcarColab(DataTable colaborador)
         {
@@ -132,7 +132,7 @@ namespace PresentationA.Colaboradores
 
 
                 MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable));
-
+                hayCambios = false;
                 this.Close();
             }
 

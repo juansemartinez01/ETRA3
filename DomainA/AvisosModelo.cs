@@ -48,6 +48,6 @@ namespace DomainA
 
         public bool insertarAvisosCumple() { return AvisosDao.insertarAvisosCumple(); }
 
-        public int eliminarAvisoLogico(int idAviso) { return AvisosDao.eliminarAvisoLogico(idAviso);}
+        public int eliminarAvisoLogico(int idAviso) { if (UserCache.perfil != Perfiles.admin) { return 0; } return AvisosDao.eliminarAvisoLogico(idAviso);}
     }
 }

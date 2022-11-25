@@ -21,10 +21,7 @@ namespace PresentationA.Colaboradores.Consulta
             InitializeComponent();
             CargarDG(legajo);
             salarioModelo.legajoColaborador = int.Parse(legajo);
-            dtpfechaInicio.Format = DateTimePickerFormat.Custom;
-            dtpfechaInicio.CustomFormat = "dd/MM/yyyy";
-            dtpfechaFin.Format = DateTimePickerFormat.Custom;
-            dtpfechaFin.CustomFormat = "dd/MM/yyyy";
+            
             ViewState();
         }
         private void CargarDG(string legajo)
@@ -80,23 +77,14 @@ namespace PresentationA.Colaboradores.Consulta
             DataGridViewRow filaSeleccionada = dgvSalarios.Rows[indice];
             //completarLabels(this, historial, "txt");
             txtmonto.Text = filaSeleccionada.Cells["monto"].Value.ToString();
-            dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
-            dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
             ViewState();
         }
 
         private void ViewState()
         {
             
-            dtpfechaFin.Enabled = false;
-            dtpfechaInicio.Enabled = false;
-            txtmonto.Enabled = false;
-
-
-            dtpfechaInicio.Value = DateTime.Now;
-            dtpfechaFin.Value = DateTime.Now;
-            txtmonto.Text = null;
-
+            txtmonto.Visible = false;
+            label3.Visible = false;
             btnAgregar.Text = "Agregar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
             
@@ -107,8 +95,8 @@ namespace PresentationA.Colaboradores.Consulta
         {
             btnAgregar.Text = "Guardar";
             btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            txtmonto.Enabled = true;
-            
+            txtmonto.Visible = true;
+            label3.Visible = true;
             dgvSalarios.Enabled = false;
             return;
         }

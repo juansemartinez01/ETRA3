@@ -359,3 +359,5 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.exe.manife
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.application
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.exe
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Eventos.frmNuevoEvento.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Usuarios.frmNuevoUsuario.resources

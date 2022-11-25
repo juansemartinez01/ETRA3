@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
@@ -145,6 +145,12 @@
     <Compile Include="Colaboradores\Consulta\frmVacaciones.Designer.cs">
       <DependentUpon>frmVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\Eventos\frmNuevoEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Eventos\frmNuevoEvento.Designer.cs">
+      <DependentUpon>frmNuevoEvento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\frmCargaColab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,10 +163,10 @@
     <Compile Include="Colaboradores\frmDocumentos.Designer.cs">
       <DependentUpon>frmDocumentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Colaboradores\frmEventos.cs">
+    <Compile Include="Colaboradores\Eventos\frmEventos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colaboradores\frmEventos.Designer.cs">
+    <Compile Include="Colaboradores\Eventos\frmEventos.Designer.cs">
       <DependentUpon>frmEventos.cs</DependentUpon>
     </Compile>
     <Compile Include="Colaboradores\Avisos\frmMail.cs">
@@ -193,10 +199,16 @@
     <Compile Include="Colaboradores\frmSalarios.Designer.cs">
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Colaboradores\frmUsuarios.cs">
+    <Compile Include="Colaboradores\Usuarios\frmNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colaboradores\frmUsuarios.Designer.cs">
+    <Compile Include="Colaboradores\Usuarios\frmNuevoUsuario.Designer.cs">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colaboradores\Usuarios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\BotonPadre.cs">
@@ -280,13 +292,16 @@
     <EmbeddedResource Include="Colaboradores\Consulta\frmVacaciones.resx">
       <DependentUpon>frmVacaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Eventos\frmNuevoEvento.resx">
+      <DependentUpon>frmNuevoEvento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmCargaColab.resx">
       <DependentUpon>frmCargaColab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmDocumentos.resx">
       <DependentUpon>frmDocumentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colaboradores\frmEventos.resx">
+    <EmbeddedResource Include="Colaboradores\Eventos\frmEventos.resx">
       <DependentUpon>frmEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Avisos\frmMail.resx">
@@ -301,7 +316,10 @@
     <EmbeddedResource Include="Colaboradores\frmSalarios.resx">
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colaboradores\frmUsuarios.resx">
+    <EmbeddedResource Include="Colaboradores\Usuarios\frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHijo.resx">
@@ -378,10 +396,12 @@
     <Content Include="Resources\ETRA_Isologotipo-01.png" />
     <Content Include="Resources\imagenAgregarfotoPerfil.png" />
     <Content Include="Resources\kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546+%281%29+%281%29.png" />
+    <None Include="Resources\logo.bmp" />
     <Content Include="Resources\logoLWS2.png" />
     <Content Include="Resources\logoLWS21.png" />
     <Content Include="Resources\logoSoloForma.png" />
     <Content Include="Resources\solo_logo.ico" />
+    <None Include="Resources\solo_logo.png" />
     <Content Include="solo_logo.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

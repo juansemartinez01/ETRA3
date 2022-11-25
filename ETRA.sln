@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationA", "Presentati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4F8C4989-66F7-4BB3-A618-919E62E844DC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ETRA", "ETRA\ETRA.vdproj", "{84C056C4-7307-4919-A602-5CC9BD938CBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,8 @@ Global
 		{4F8C4989-66F7-4BB3-A618-919E62E844DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F8C4989-66F7-4BB3-A618-919E62E844DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F8C4989-66F7-4BB3-A618-919E62E844DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C056C4-7307-4919-A602-5CC9BD938CBE}.Debug|Any CPU.ActiveCfg = Debug
+		{84C056C4-7307-4919-A602-5CC9BD938CBE}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
