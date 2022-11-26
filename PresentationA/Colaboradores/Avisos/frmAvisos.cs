@@ -196,5 +196,11 @@ namespace PresentationA.Colaboradores
                 }
             }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            cargarAvisos(0, 0, "", "", "", false);
+        }
     }
 }

@@ -3,6 +3,7 @@ using FontAwesome.Sharp;
 using PresentationA.Colaboradores.Usuarios;
 using System;
 using System.Data;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace PresentationA.Colaboradores
@@ -14,9 +15,11 @@ namespace PresentationA.Colaboradores
         public frmUsuarios()
         {
             InitializeComponent();
-            LlenarCombo(cmblegajo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
+            LlenarCombo(cmblegajo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Usuario WHERE borradoLogico = 0"), "legajoColaborador", "legajoColaborador");
             LlenarCombo(cmbperfil, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Perfil WHERE borradoLogico = 0"), "nombre", "id_perfil");
             lblError.Visible = false;
+            cmblegajo.Enabled = false;
+            cmbperfil.Enabled = false;
             CargarTabla(1);
             limpiarCampos();
         }
@@ -52,10 +55,17 @@ namespace PresentationA.Colaboradores
             btnModificar.IconChar = IconChar.Pen;
 
             dgvUsuarios.Enabled = true;
+            if (dgvUsuarios.CurrentCell == null) {  }
             return;
         }
         private void AddState(IconButton sender)
         {
+            if(cmblegajo.SelectedIndex == -1)
+            {
+                msgError("Debe seleccionar un usuario");
+                return;
+            }
+            lblError.Visible = false;
             sender.Text = "Guardar";
             sender.IconChar = IconChar.FloppyDisk;
             btnAgregar.Visible = false;
@@ -76,10 +86,10 @@ namespace PresentationA.Colaboradores
             //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
             DataGridViewRow filaSeleccionada = dgvUsuarios.Rows[indice];
             //completarLabels(this, historial, "txt");
-            
+            ViewState();
             cmblegajo.Text = filaSeleccionada.Cells["legajo"].Value.ToString();
             cmbperfil.Text = filaSeleccionada.Cells["perfil"].Value.ToString();
-            ViewState();
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -98,6 +108,7 @@ namespace PresentationA.Colaboradores
                 if (cmblegajo.SelectedIndex == -1)
                 {
                     msgError("Debe seleccionar un colaborador.");
+                    limpiarCampos();
                     return;
                 }
                 int legajo = (int)cmblegajo.SelectedValue;
@@ -112,6 +123,7 @@ namespace PresentationA.Colaboradores
                 if (cmbperfil.SelectedIndex == -1)
                 {
                     msgError("Debe seleccionar un perfil.");
+                    limpiarCampos();
                     return;
                 }
 

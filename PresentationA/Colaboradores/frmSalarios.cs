@@ -228,5 +228,11 @@ namespace PresentationA.Colaboradores
         {
             e.Handled = true;
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+            CargarTabla(1, "", "", 0, 0);
+        }
     }
 }

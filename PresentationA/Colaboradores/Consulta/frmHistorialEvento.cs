@@ -359,6 +359,12 @@ namespace PresentationA.Colaboradores.Consulta
         private void ModifyState()
         {
             //Vaciar lo que sea que haya en en archivos, sino se guarda de movimiento anterior, JUANSE
+
+            if (cmbTipoEvento.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un usuario");
+                return;
+            }
             dtpfechaFin.Enabled = true;
             dtpfechaInicio.Enabled = true;
             txtDescripcion.Enabled = true;
