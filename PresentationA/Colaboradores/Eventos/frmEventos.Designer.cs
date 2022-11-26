@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFechaFin = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(389, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 28);
+            this.label1.Size = new System.Drawing.Size(146, 37);
             this.label1.TabIndex = 1;
             this.label1.Text = "EVENTOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -73,7 +74,7 @@
             this.label2.Location = new System.Drawing.Point(35, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(88, 22);
             this.label2.TabIndex = 2;
             this.label2.Text = "Eventos:";
             // 
@@ -83,7 +84,7 @@
             this.lblFechaFin.Location = new System.Drawing.Point(392, 67);
             this.lblFechaFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(82, 20);
+            this.lblFechaFin.Size = new System.Drawing.Size(102, 22);
             this.lblFechaFin.TabIndex = 3;
             this.lblFechaFin.Text = "Fecha Fin:";
             // 
@@ -93,7 +94,7 @@
             this.lblFechaInicio.Location = new System.Drawing.Point(392, 21);
             this.lblFechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(127, 20);
+            this.lblFechaInicio.Size = new System.Drawing.Size(155, 22);
             this.lblFechaInicio.TabIndex = 4;
             this.lblFechaInicio.Text = "Fecha de Inicio:";
             // 
@@ -103,7 +104,7 @@
             this.label6.Location = new System.Drawing.Point(35, 67);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(120, 20);
+            this.label6.Size = new System.Drawing.Size(147, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Colaboradores";
             // 
@@ -113,7 +114,7 @@
             this.cmbTipoEvento.Location = new System.Drawing.Point(195, 18);
             this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
-            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 28);
+            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 30);
             this.cmbTipoEvento.TabIndex = 7;
             this.cmbTipoEvento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipoEvento_KeyPress);
             // 
@@ -123,7 +124,7 @@
             this.cmbColaboradores.Location = new System.Drawing.Point(195, 64);
             this.cmbColaboradores.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores.Name = "cmbColaboradores";
-            this.cmbColaboradores.Size = new System.Drawing.Size(154, 28);
+            this.cmbColaboradores.Size = new System.Drawing.Size(154, 30);
             this.cmbColaboradores.TabIndex = 8;
             this.cmbColaboradores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbColaboradores_KeyPress);
             // 
@@ -132,7 +133,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(531, 18);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(286, 30);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePicker1_KeyPress);
             // 
@@ -141,12 +142,13 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(531, 62);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(286, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(286, 30);
             this.dateTimePicker2.TabIndex = 10;
             this.dateTimePicker2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePicker2_KeyPress);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLimpiar);
             this.groupBox1.Controls.Add(this.chkFiltroFecha);
             this.groupBox1.Controls.Add(this.btnAplicar);
             this.groupBox1.Controls.Add(this.label2);
@@ -161,7 +163,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(911, 159);
+            this.groupBox1.Size = new System.Drawing.Size(1067, 185);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -171,7 +173,7 @@
             this.chkFiltroFecha.AutoSize = true;
             this.chkFiltroFecha.Location = new System.Drawing.Point(396, 112);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
-            this.chkFiltroFecha.Size = new System.Drawing.Size(165, 24);
+            this.chkFiltroFecha.Size = new System.Drawing.Size(203, 26);
             this.chkFiltroFecha.TabIndex = 12;
             this.chkFiltroFecha.Text = "Activar filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
@@ -230,14 +232,14 @@
             this.dgvEventos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEventos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvEventos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEventos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEventos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.legajoColaborador,
@@ -246,14 +248,14 @@
             this.fechaInicio,
             this.fechaFin,
             this.fechaRegistro});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEventos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEventos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvEventos.EnableHeadersVisualStyles = false;
             this.dgvEventos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvEventos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -261,17 +263,17 @@
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.ReadOnly = true;
             this.dgvEventos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEventos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEventos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvEventos.RowHeadersWidth = 51;
             this.dgvEventos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEventos.Size = new System.Drawing.Size(911, 224);
+            this.dgvEventos.Size = new System.Drawing.Size(1067, 224);
             this.dgvEventos.TabIndex = 45;
             // 
             // legajoColaborador
@@ -316,11 +318,30 @@
             this.fechaRegistro.Name = "fechaRegistro";
             this.fechaRegistro.ReadOnly = true;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(836, 103);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 40);
+            this.btnLimpiar.TabIndex = 13;
+            this.btnLimpiar.Text = "Limpiar Filtro";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // frmEventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 585);
+            this.ClientSize = new System.Drawing.Size(1115, 585);
             this.Controls.Add(this.dgvEventos);
             this.Controls.Add(this.btnNuevoEvento);
             this.Controls.Add(this.groupBox1);
@@ -360,5 +381,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
+        private Controls.BotonPadre btnLimpiar;
     }
 }

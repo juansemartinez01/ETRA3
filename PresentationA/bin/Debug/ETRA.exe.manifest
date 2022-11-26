@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2BiR5tFOQ1SfUMBPI8wRr4KZ8/FcFI1whVo61SqTCPw=</dsig:DigestValue>
+        <dsig:DigestValue>4/yNhzyL9wOXxjpWXgUAmMfIwHLQpWbbOubUlJFh8ZY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,19 +74,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>N2f5bH2bR0zviG+Qr3ccDwQpi7cEOAL/fURVTPcq33o=</dsig:DigestValue>
+        <dsig:DigestValue>PKkZWk62eCbvVlnPGeL2Ql56y4iqnJuGyVQ/FjEWg6U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EnvDTE.dll" size="255888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EnvDTE.dll" size="255912">
       <assemblyIdentity name="EnvDTE" version="8.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KzkictevMW2f3nPh7x4zucJbG44tusMtmKvMnh1fmYo=</dsig:DigestValue>
+        <dsig:DigestValue>fNAaLmMILxBNvMryrYs32OsgHRO8EZULjdC8a3D5xl0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GX6H1w06zMwqfAXPafc9EuZFlqU16pNAK36WMu7CxwU=</dsig:DigestValue>
+        <dsig:DigestValue>SIn1YF7FwNRdqtUaaNtgEREB2owtGEaMYNJhuVsWtD8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

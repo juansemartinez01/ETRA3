@@ -149,9 +149,6 @@ C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\SqlServerTypes\x64\m
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\PresentationA.exe.config
-C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\PresentationA.exe
-C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\PresentationA.pdb
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\DataAccesA.dll
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\DomainA.dll
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\FontAwesome.Sharp.dll
@@ -223,8 +220,6 @@ C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Report
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.csproj.GenerateResource.cache
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.csproj.CopyComplete
-C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.exe
-C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.csproj.ResolveComReference.cache
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmCtaCte.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmVacaciones.resources
@@ -361,3 +356,14 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.exe
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Eventos.frmNuevoEvento.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Usuarios.frmNuevoUsuario.resources
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\ETRA.exe.config
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\ETRA.exe.manifest
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\ETRA.application
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\ETRA.exe
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\bin\Debug\ETRA.pdb
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.Eventos.frmNuevoEvento.resources
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\PresentationA.Colaboradores.Usuarios.frmNuevoUsuario.resources
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\ETRA.exe.manifest
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\ETRA.application
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\ETRA.exe
+C:\Users\Usuario\Source\Repos\ETRA2\PresentationA\obj\Debug\ETRA.pdb
