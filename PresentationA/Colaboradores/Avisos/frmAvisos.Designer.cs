@@ -35,6 +35,7 @@
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpfechaNotifiaciónFiltro = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,11 +44,9 @@
             this.cmbTipoAvisoFiltro = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dtpfechaOcurrenciaFiltro = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.cmbCargoFiltro = new System.Windows.Forms.ComboBox();
             this.cmbColaborador = new System.Windows.Forms.ComboBox();
             this.btnNotificar = new PresentationA.Controls.BotonPadre();
             this.dgvAvisos = new PresentationA.Controls.DataGridPadre();
@@ -59,7 +58,6 @@
             this.fechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaUltimaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).BeginInit();
             this.SuspendLayout();
@@ -132,20 +130,37 @@
             this.groupBox1.Controls.Add(this.cmbTipoAvisoFiltro);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnAplicar);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.dtpfechaOcurrenciaFiltro);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.cmbCargoFiltro);
             this.groupBox1.Controls.Add(this.cmbColaborador);
             this.groupBox1.Location = new System.Drawing.Point(5, 62);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
             this.groupBox1.Size = new System.Drawing.Size(1201, 235);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(971, 174);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(180, 44);
+            this.btnLimpiar.TabIndex = 20;
+            this.btnLimpiar.Text = "Limpiar Filtro";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // label13
             // 
@@ -160,7 +175,7 @@
             // dtpfechaNotifiaciónFiltro
             // 
             this.dtpfechaNotifiaciónFiltro.Location = new System.Drawing.Point(747, 120);
-            this.dtpfechaNotifiaciónFiltro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpfechaNotifiaciónFiltro.Margin = new System.Windows.Forms.Padding(5);
             this.dtpfechaNotifiaciónFiltro.Name = "dtpfechaNotifiaciónFiltro";
             this.dtpfechaNotifiaciónFiltro.Size = new System.Drawing.Size(441, 32);
             this.dtpfechaNotifiaciónFiltro.TabIndex = 19;
@@ -178,7 +193,7 @@
             // dtpfechaCargaFiltro
             // 
             this.dtpfechaCargaFiltro.Location = new System.Drawing.Point(747, 67);
-            this.dtpfechaCargaFiltro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpfechaCargaFiltro.Margin = new System.Windows.Forms.Padding(5);
             this.dtpfechaCargaFiltro.Name = "dtpfechaCargaFiltro";
             this.dtpfechaCargaFiltro.Size = new System.Drawing.Size(441, 32);
             this.dtpfechaCargaFiltro.TabIndex = 17;
@@ -198,7 +213,7 @@
             // 
             this.cmbTipoAvisoFiltro.FormattingEnabled = true;
             this.cmbTipoAvisoFiltro.Location = new System.Drawing.Point(192, 70);
-            this.cmbTipoAvisoFiltro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbTipoAvisoFiltro.Margin = new System.Windows.Forms.Padding(5);
             this.cmbTipoAvisoFiltro.Name = "cmbTipoAvisoFiltro";
             this.cmbTipoAvisoFiltro.Size = new System.Drawing.Size(226, 31);
             this.cmbTipoAvisoFiltro.TabIndex = 13;
@@ -232,16 +247,6 @@
             this.btnAplicar.UseVisualStyleBackColor = false;
             this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(39, 127);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 23);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Cargo:";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -255,7 +260,7 @@
             // dtpfechaOcurrenciaFiltro
             // 
             this.dtpfechaOcurrenciaFiltro.Location = new System.Drawing.Point(747, 23);
-            this.dtpfechaOcurrenciaFiltro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpfechaOcurrenciaFiltro.Margin = new System.Windows.Forms.Padding(5);
             this.dtpfechaOcurrenciaFiltro.Name = "dtpfechaOcurrenciaFiltro";
             this.dtpfechaOcurrenciaFiltro.Size = new System.Drawing.Size(441, 32);
             this.dtpfechaOcurrenciaFiltro.TabIndex = 9;
@@ -270,20 +275,11 @@
             this.label12.TabIndex = 6;
             this.label12.Text = "Colaboradores";
             // 
-            // cmbCargoFiltro
-            // 
-            this.cmbCargoFiltro.FormattingEnabled = true;
-            this.cmbCargoFiltro.Location = new System.Drawing.Point(192, 123);
-            this.cmbCargoFiltro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.cmbCargoFiltro.Name = "cmbCargoFiltro";
-            this.cmbCargoFiltro.Size = new System.Drawing.Size(226, 31);
-            this.cmbCargoFiltro.TabIndex = 8;
-            // 
             // cmbColaborador
             // 
             this.cmbColaborador.FormattingEnabled = true;
             this.cmbColaborador.Location = new System.Drawing.Point(192, 20);
-            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(5);
             this.cmbColaborador.Name = "cmbColaborador";
             this.cmbColaborador.Size = new System.Drawing.Size(226, 31);
             this.cmbColaborador.TabIndex = 7;
@@ -429,25 +425,6 @@
             this.fechaUltimaNotificacion.Name = "fechaUltimaNotificacion";
             this.fechaUltimaNotificacion.ReadOnly = true;
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(971, 174);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(180, 44);
-            this.btnLimpiar.TabIndex = 20;
-            this.btnLimpiar.Text = "Limpiar Filtro";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // frmAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -480,11 +457,9 @@
         private System.Windows.Forms.ComboBox cmbTipoAvisoFiltro;
         private System.Windows.Forms.Label label7;
         private Controls.BotonPadre btnAplicar;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpfechaOcurrenciaFiltro;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmbCargoFiltro;
         private System.Windows.Forms.ComboBox cmbColaborador;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpfechaNotifiaciónFiltro;

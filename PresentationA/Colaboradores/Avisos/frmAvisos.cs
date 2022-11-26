@@ -23,7 +23,8 @@ namespace PresentationA.Colaboradores
             cargarAvisos(0, 0, "", "", "", false);
 
             LlenarCombo(cmbColaborador, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
-            LlenarCombo(cmbTipoAvisoFiltro, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0"), "nombre", "id_tipoAviso");
+            LlenarCombo(cmbTipoAvisoFiltro, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0 and id_tipoAViso > 2"), "nombre", "id_tipoAviso");
+        
             chkFiltroFecha.Enabled = true;
             dtpfechaCargaFiltro.Enabled = false;
             dtpfechaNotifiaciónFiltro.Enabled = false;
@@ -36,29 +37,6 @@ namespace PresentationA.Colaboradores
             cbo.DisplayMember = display;
             cbo.DataSource = source;
             cbo.SelectedIndex = -1;
-        }
-        public void cargarGrillasCumpleaños()
-        {
-            DataTable cumpleañosColaboradores = new DataTable();
-            DataTable cumpleañosFamiliares = new DataTable();
-            try
-            {
-                dgvAvisos.Rows.Clear();
-                cumpleañosColaboradores = notificacion.notificacionesDeCumpleaños();
-                for (int i = 0; i < cumpleañosColaboradores.Rows.Count; i++)
-                {
-                    //crear metodo completar labels
-                    dgvAvisos.Rows.Add(cumpleañosColaboradores.Rows[i]["Nombre"], cumpleañosColaboradores.Rows[i]["Apellido"], cumpleañosColaboradores.Rows[i]["Cumpleaños"]);
-                }
-                
-                cumpleañosFamiliares = notificacion.cumpleañosFamiliaresColaboradores();
-                
-
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
 
         public void cargarAvisos(int legajo,int idTipoAviso, string fechaOcurrencia,string fechaCarga,string fechaNotificacion,bool filtroFecha)

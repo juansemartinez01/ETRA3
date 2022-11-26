@@ -22,7 +22,7 @@ namespace PresentationA.Colaboradores
             cmbCargo.Enabled = false;
             lblCargo.Enabled = false;
             chkCargo.Checked = false;
-            LlenarCombo(cmbTipoAviso, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0"), "nombre", "id_tipoAviso");
+            LlenarCombo(cmbTipoAviso, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoAviso WHERE borradoLogico = 0 and id_tipoAViso > 2"), "nombre", "id_tipoAviso");
             LlenarCombo(cmbCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_Cargo");
 
         }
