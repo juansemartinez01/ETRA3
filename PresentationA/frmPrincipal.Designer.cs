@@ -46,6 +46,7 @@
             this.btnColaboradores = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pnlPrincipal.SuspendLayout();
             this.pnlReportes.SuspendLayout();
             this.pnlColaboradores.SuspendLayout();
@@ -74,7 +75,7 @@
             this.pnlReportes.Controls.Add(this.btnSalXCargo);
             this.pnlReportes.Controls.Add(this.btnTardanzas);
             this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReportes.Location = new System.Drawing.Point(0, 462);
+            this.pnlReportes.Location = new System.Drawing.Point(0, 496);
             this.pnlReportes.Name = "pnlReportes";
             this.pnlReportes.Size = new System.Drawing.Size(200, 119);
             this.pnlReportes.TabIndex = 0;
@@ -136,7 +137,7 @@
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReportes.Location = new System.Drawing.Point(0, 420);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(200, 42);
+            this.btnReportes.Size = new System.Drawing.Size(200, 76);
             this.btnReportes.TabIndex = 5;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,6 +148,7 @@
             // pnlColaboradores
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
+            this.pnlColaboradores.Controls.Add(this.iconButton1);
             this.pnlColaboradores.Controls.Add(this.btnUsuarios);
             this.pnlColaboradores.Controls.Add(this.btnAvisos);
             this.pnlColaboradores.Controls.Add(this.btnDocumentos);
@@ -159,6 +161,7 @@
             this.pnlColaboradores.Name = "pnlColaboradores";
             this.pnlColaboradores.Size = new System.Drawing.Size(200, 300);
             this.pnlColaboradores.TabIndex = 2;
+            this.pnlColaboradores.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlColaboradores_Paint);
             // 
             // btnUsuarios
             // 
@@ -355,6 +358,27 @@
             this.pnlChildForm.Size = new System.Drawing.Size(751, 650);
             this.pnlChildForm.TabIndex = 2;
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.White;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 30;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(0, 294);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.iconButton1.Size = new System.Drawing.Size(200, 10);
+            this.iconButton1.TabIndex = 8;
+            this.iconButton1.Text = "Agregar";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -395,6 +419,7 @@
         private FontAwesome.Sharp.IconButton btnDocumentos;
         private FontAwesome.Sharp.IconButton btnAvisos;
         private FontAwesome.Sharp.IconButton btnUsuarios;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
 

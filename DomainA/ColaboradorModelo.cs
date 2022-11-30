@@ -10,6 +10,10 @@ namespace DomainA
     {
         ColaboradorDao colaboradorDao = new ColaboradorDao();
         public int legajo;
+        public string nombre;
+        public string apellido;
+        public float sueldo;
+        public float saldoCuenta;
 
         public string BuscarLegajoUltimoColaborador()
         {

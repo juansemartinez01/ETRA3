@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 
 namespace PresentationA.Colaboradores
@@ -233,6 +234,31 @@ namespace PresentationA.Colaboradores
         {
             LimpiarCampos();
             CargarTabla(1, "", "", 0, 0);
+        }
+
+        private void btnGenerarOrdenes_Click(object sender, EventArgs e)
+        {
+            if (txtDescripcionComprobante.Text == "")
+            {
+                MessageBox.Show("Debe ingresar una descripcion");
+                return;
+            }
+            string descripcionComprobantes = txtDescripcionComprobante.Text;
+            
+            DataTable salarios = new DataTable();
+            salarios = sal.getAllSalarios(1, "", "", 0, 0);
+            //Este loop va a buscar todos los datos necesarios para cada comprobante, para cada colaborador
+            for (int i = 0; i < salarios.Rows.Count; i++)
+            {
+                int legajoColaborador = (int)salarios.Rows[i]["legajo"];
+                string nombreColaborador = salarios.Rows[i]["nombre"].ToString();
+                string apellidoColaborador = salarios.Rows[i]["apellido"].ToString();
+                float salarioColaborador = (float)salarios.Rows[i]["monto"];
+
+
+
+                //Aca iria el codigo que genere cada Orden de pago de cada colaborador, los datos que varian son los que estan arriba.
+            }
         }
     }
 }

@@ -157,6 +157,12 @@
     <Compile Include="Colaboradores\frmCargaColab.Designer.cs">
       <DependentUpon>frmCargaColab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\frmComprobantesSalarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\frmComprobantesSalarios.Designer.cs">
+      <DependentUpon>frmComprobantesSalarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\frmDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmCargaColab.resx">
       <DependentUpon>frmCargaColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\frmComprobantesSalarios.resx">
+      <DependentUpon>frmComprobantesSalarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\frmDocumentos.resx">
       <DependentUpon>frmDocumentos.cs</DependentUpon>

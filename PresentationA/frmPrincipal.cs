@@ -211,5 +211,16 @@ namespace PresentationA
             ActivateButton(sender);
             openChildFormInPanel(new frmUsuarios());
         }
+
+        private void pnlColaboradores_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmComprobantesSalarios());
+        }
     }
 }
