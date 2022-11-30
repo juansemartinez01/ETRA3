@@ -57,12 +57,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cmbMesGeneracion = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 15);
+            this.label1.Location = new System.Drawing.Point(194, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 0;
@@ -165,7 +171,7 @@
             // cmbLegajo
             // 
             this.cmbLegajo.FormattingEnabled = true;
-            this.cmbLegajo.Location = new System.Drawing.Point(106, 12);
+            this.cmbLegajo.Location = new System.Drawing.Point(239, 43);
             this.cmbLegajo.Name = "cmbLegajo";
             this.cmbLegajo.Size = new System.Drawing.Size(121, 21);
             this.cmbLegajo.TabIndex = 12;
@@ -174,7 +180,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(257, 15);
+            this.label6.Location = new System.Drawing.Point(461, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 13;
@@ -183,7 +189,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(257, 41);
+            this.label7.Location = new System.Drawing.Point(461, 46);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 13);
             this.label7.TabIndex = 14;
@@ -192,7 +198,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(310, 15);
+            this.label8.Location = new System.Drawing.Point(514, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 15;
@@ -201,7 +207,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(310, 41);
+            this.label9.Location = new System.Drawing.Point(514, 46);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 16;
@@ -285,7 +291,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(496, 20);
+            this.label14.Location = new System.Drawing.Point(631, 20);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(74, 13);
             this.label14.TabIndex = 26;
@@ -294,7 +300,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(576, 20);
+            this.label15.Location = new System.Drawing.Point(711, 20);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 13);
             this.label15.TabIndex = 27;
@@ -318,11 +324,84 @@
             this.label17.TabIndex = 29;
             this.label17.Text = "label17";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(54, 15);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(179, 13);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Mes para generar los comprobantes:";
+            // 
+            // cmbMesGeneracion
+            // 
+            this.cmbMesGeneracion.FormattingEnabled = true;
+            this.cmbMesGeneracion.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.cmbMesGeneracion.Location = new System.Drawing.Point(239, 15);
+            this.cmbMesGeneracion.Name = "cmbMesGeneracion";
+            this.cmbMesGeneracion.Size = new System.Drawing.Size(121, 21);
+            this.cmbMesGeneracion.TabIndex = 31;
+            this.cmbMesGeneracion.SelectedIndexChanged += new System.EventHandler(this.cmbMesGeneracion_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(441, 192);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 13);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "Sueldo neto:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(386, 218);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(122, 13);
+            this.label20.TabIndex = 33;
+            this.label20.Text = "Sueldo con descuentos:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(514, 192);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 13);
+            this.label21.TabIndex = 34;
+            this.label21.Text = "label21";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(514, 218);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 13);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "label22";
+            // 
             // frmComprobantesSalarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.cmbMesGeneracion);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -390,5 +469,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cmbMesGeneracion;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }

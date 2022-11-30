@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccesA.dll" size="92160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataAccesA.dll" size="94208">
       <assemblyIdentity name="DataAccesA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PguMrbCeFqkzUhXMvT8HsKNJLwk1IGnVCHqeXgEU/aA=</dsig:DigestValue>
+        <dsig:DigestValue>+ppHbltU7S0h0DOeXZYHVzo62u5gIRjeVzDm9kecZCI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e2fWKolKoaQNS6WuHRGuEMfgRxQ5Ni52V84iC+DwK7g=</dsig:DigestValue>
+        <dsig:DigestValue>+JHrp8DXEVXjb4g0WjZIMu2VwdNTOTaQTFwwvFrKJ7I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA.exe" size="1889792">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA.exe" size="1891840">
       <assemblyIdentity name="ETRA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uqDQyGlSgcQjFCyKg9eMMdiGcxaB0rZtS+c/c4uT3AU=</dsig:DigestValue>
+        <dsig:DigestValue>ugLGzCKl+GA9JkYACIReo/glUxj8tzDE5JbmeVRIchA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace PresentationA.Colaboradores
 {
+    
     public partial class frmComprobantesSalarios : Form
     {
         EventosModelo eventoModelo = new EventosModelo();
@@ -25,7 +26,11 @@ namespace PresentationA.Colaboradores
             label9.Visible = false;
             label15.Visible = false;
             label17.Visible = false;
+            label21.Visible = false;
+            label22.Visible = false;
             cmbLegajo.SelectedIndex = -1;
+            cmbMesGeneracion.SelectedIndex = -1;
+            
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -38,11 +43,13 @@ namespace PresentationA.Colaboradores
 
         private void btnGenerarOrdenFeriado_Click(object sender, EventArgs e)
         {
+            DateTime fechaFeriado;
             int diaCompleto;
             float montoferiado;
             string descripcion = "No especifica";
             if (chkFeriado.Checked)
             {
+                fechaFeriado = dtpFechaFeriado.Value.Date;
                 if(cmbDiaCompleto.SelectedIndex == -1)
                 {
                     MessageBox.Show("Debe seleccionar si fue dia completo o medio dia.");
@@ -52,7 +59,7 @@ namespace PresentationA.Colaboradores
                 {
                     diaCompleto = cmbDiaCompleto.SelectedIndex;
                 }
-                DateTime fechaFeriado = dtpFechaFeriado.Value.Date;
+                
                 if(diaCompleto == 0)
                 {
                     montoferiado = colaboradorModelo.sueldo / 30;
@@ -62,6 +69,26 @@ namespace PresentationA.Colaboradores
                     montoferiado = (colaboradorModelo.sueldo / 30)/(2);
                 }
             }
+            else
+            {
+                montoferiado = float.Parse(txtMontoBono.Text);
+                fechaFeriado = DateTime.Now;
+            }
+            if(txtDescripcion1.Text != "")
+            {
+                descripcion= txtDescripcion1.Text;
+            }
+            if(cmbMesGeneracion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un mes de generacion de comprobante");
+                return;
+            }
+
+            string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo,fechaFeriado,montoferiado,descripcion,0);
+            MessageBox.Show(resultado);
+            actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+
+            //Aca va el codigo para generar el archivo del comprobante!!
         }
 
         private void limpiarCampos()
@@ -94,8 +121,15 @@ namespace PresentationA.Colaboradores
             }
             if (cmbLegajo.SelectedIndex != -1)
             {
+                if(cmbMesGeneracion.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Primero debe seleccionar un mes de generacion de comprobante");
+                    return;
+                }
+                
                 DataTable datosColaborador = new DataTable();
                 datosColaborador = colaboradorModelo.BuscarColaborador(cmbLegajo.SelectedValue.ToString(), "", "");
+                colaboradorModelo.legajo = int.Parse(datosColaborador.Rows[0]["legajo"].ToString());
                 colaboradorModelo.nombre = datosColaborador.Rows[0]["nombre"].ToString();
                 colaboradorModelo.apellido = datosColaborador.Rows[0]["apellido"].ToString();
                 colaboradorModelo.sueldo = float.Parse(datosColaborador.Rows[0]["monto"].ToString());
@@ -103,9 +137,15 @@ namespace PresentationA.Colaboradores
                 label8.Visible = true;
                 label9.Visible = true;
                 label15.Visible = true;
+                label21.Visible = true;
+                label22.Visible = true;
                 label8.Text = colaboradorModelo.nombre;
                 label9.Text = colaboradorModelo.apellido;
+                actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
                 label15.Text = colaboradorModelo.saldoCuenta.ToString();
+                label21.Text = colaboradorModelo.sueldo.ToString();
+                
+                label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
                 activarCampos();
             }
             
@@ -119,6 +159,11 @@ namespace PresentationA.Colaboradores
             txtAnticipo.Enabled = true;
             txtCuotaCtaCorriente.Enabled = true;
             btnMinutoContable.Enabled = true;
+        }
+        private void actualizarSueldoAnticiposYDescuentos(int legajo,int mes)
+        {
+            eventoModelo.restaSueldo = eventoModelo.sumaFeriadosYAnticiposADescontar(legajo, mes, 8);
+            eventoModelo.agregadoSueldo = eventoModelo.sumaFeriadosYAnticiposADescontar(legajo, mes, 7);
         }
 
         private void chkFeriado_CheckedChanged(object sender, EventArgs e)
@@ -144,6 +189,7 @@ namespace PresentationA.Colaboradores
             if(chkBono.Checked)
             {
                 chkBono.Checked = true;
+                chkFeriado.Checked= false;
                 dtpFechaFeriado.Enabled = false;
                 txtMontoBono.Enabled = true;
                 cmbDiaCompleto.Enabled = false;
@@ -151,6 +197,7 @@ namespace PresentationA.Colaboradores
             else
             {
                 chkBono.Checked = false;
+                chkFeriado.Checked= true;
                 dtpFechaFeriado.Enabled = true;
                 txtMontoBono.Enabled = false;
                 cmbDiaCompleto.Enabled = true;
@@ -171,6 +218,12 @@ namespace PresentationA.Colaboradores
             }
             label17.Visible = true;
             label17.Text = montoferiado.ToString();
+        }
+
+        private void cmbMesGeneracion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            eventoModelo.mesGeneracionComprobante = cmbMesGeneracion.SelectedIndex + 1;
+            
         }
     }
 }

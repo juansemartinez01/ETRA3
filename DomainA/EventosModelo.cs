@@ -11,6 +11,9 @@ namespace DomainA
     {
         EventosDao eventosDao = new EventosDao();
         public int FilaSeleccionadaHistorialEvento = -1;
+        public int mesGeneracionComprobante = -1;
+        public float agregadoSueldo = 0;
+        public float restaSueldo = 0;
         public DataTable obtenerEventos(string legajo,bool soloPagosSueldo)
         {
             return eventosDao.obtenerEventos(legajo, soloPagosSueldo);
@@ -42,5 +45,14 @@ namespace DomainA
         {
             return eventosDao.buscarIdConNombre(nombreBusqueda, nombreTabla);
         }
-    }
+        public string comprobantesFeriadoYBonos(int legajo, DateTime fecha, float monto, string descripcion,int tipoEvento)
+        { 
+            return eventosDao.comprobantesFeriadoYBonos(legajo,fecha,monto, descripcion,tipoEvento);
+        }
+        public float sumaFeriadosYAnticiposADescontar(int legajo, int mes, int tipoEvento)
+        {
+            return eventosDao.sumaFeriadosYAnticiposADescontar(legajo,mes,tipoEvento);
+        }
+
+        }
 }

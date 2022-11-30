@@ -348,6 +348,108 @@ namespace DataAccesA
                 return idBusqueda;
             }
         }
+        public string comprobantesFeriadoYBonos(int legajo,DateTime fecha,float monto,string descripcion,int esFeriado)
+        {
+            int tipoEvento;
+            if(esFeriado==0)
+            {
+                tipoEvento = 7;
+            }
+            else
+            {
+                tipoEvento = 8;
+            }
+            try
+            {
+
+
+                using (var connection = GetConnection())
+                {
+
+                    connection.Open();
+                    using (var command2 = new SqlCommand())
+                    {
+                        command2.Connection = connection;
+                        command2.CommandText = "BEGIN TRANSACTION\r\nINSERT INTO Evento VALUES (@descripcion,@tipoEvento,0,@monto)\r\nINSERT INTO HistorialEvento VALUES ((SELECT MAX(id_evento) FROM Evento WHERE borradoLogico = 0),@fecha,@fecha,GETDATE(),@legajo,0)\r\nCOMMIT";
+                        command2.CommandType = CommandType.Text;
+                        command2.Parameters.AddWithValue("@descripcion", descripcion);
+                        command2.Parameters.AddWithValue("@tipoEvento", tipoEvento);
+                        command2.Parameters.AddWithValue("@monto", monto);
+                        command2.Parameters.AddWithValue("@fecha", fecha);
+                        command2.Parameters.AddWithValue("@legajo", legajo);
+                        int resultado = command2.ExecuteNonQuery();
+                        if(resultado > 0)
+                        {
+                            return "Insercion exitosa.";
+                        }
+                        else
+                        {
+                            return "Ocurrio un problema.";
+                        }
+
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public float sumaFeriadosYAnticiposADescontar(int legajo,int mes,int tipoEvento)
+        {
+            float valor = -1;
+            
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandText = "SELECT SUM(E.monto) FROM Evento E JOIN HistorialEvento HE ON E.id_evento = HE.id_evento WHERE HE.legajoColaborador = @legajo AND MONTH(HE.fechaInicio) = @mes AND E.id_tipoEvento = @tipoEvento AND E.borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.Parameters.AddWithValue("@tipoEvento", tipoEvento);
+                        command.Parameters.AddWithValue("@mes", mes);
+                        SqlDataReader reader = command.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                 
+                                IDataRecord idReader = (IDataRecord)reader;
+                                string esNull = "" + idReader[0] + "";
+                                if(esNull == "")
+                                {
+                                    valor = 0;
+                                    return valor;
+                                }
+                                valor = float.Parse("" + idReader[0] + "");
+                            }
+                            reader.Close();
+                            return valor;
+
+                        }
+                        else
+                        {
+                            return valor;
+                        }
+                    }
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                return valor;
+            }
+        }
     }
     
 
