@@ -348,17 +348,10 @@ namespace DataAccesA
                 return idBusqueda;
             }
         }
-        public string comprobantesFeriadoYBonos(int legajo,DateTime fecha,float monto,string descripcion,int esFeriado)
+        public string comprobantesFeriadoYBonos(int legajo,DateTime fecha,float monto,string descripcion, int tipoEvento)
         {
-            int tipoEvento;
-            if(esFeriado==0)
-            {
-                tipoEvento = 7;
-            }
-            else
-            {
-                tipoEvento = 8;
-            }
+            
+            
             try
             {
 
@@ -448,6 +441,32 @@ namespace DataAccesA
             catch (Exception ex)
             {
                 return valor;
+            }
+        }
+        public DataTable getAllFeriadosYBonos(int legajo, int mes) 
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT TE.nombre,HE.fechaInicio,E.monto FROM Evento E JOIN HistorialEvento HE ON He.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE HE.legajoColaborador = @legajo AND HE.borradoLogico = 0 AND E.id_tipoEvento = 7 AND MONTH(HE.fechaInicio) = @mes";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.Parameters.AddWithValue("@mes", mes);
+                        command.CommandType = CommandType.Text;
+                        SqlDataReader reader = command.ExecuteReader();
+                        ret.Load(reader);
+                        return ret;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                return ret;
             }
         }
     }

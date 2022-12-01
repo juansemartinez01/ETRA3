@@ -53,6 +53,10 @@ namespace DomainA
         {
             return eventosDao.sumaFeriadosYAnticiposADescontar(legajo,mes,tipoEvento);
         }
+        public DataTable getAllFeriadosYBonos(int legajo,int mes)
+        {
+            return eventosDao.getAllFeriadosYBonos(legajo,mes);
+        }
 
         }
 }

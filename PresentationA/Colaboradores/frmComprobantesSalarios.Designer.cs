@@ -63,6 +63,9 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.dgvFeriados = new System.Windows.Forms.DataGridView();
+            this.btnEliminarFeriado = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFeriados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,15 +137,15 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 211);
+            this.label4.Location = new System.Drawing.Point(92, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(117, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Fecha feriado";
+            this.label4.Text = "Fecha feriado o o bono";
             // 
             // dtpFechaFeriado
             // 
-            this.dtpFechaFeriado.Location = new System.Drawing.Point(104, 211);
+            this.dtpFechaFeriado.Location = new System.Drawing.Point(95, 218);
             this.dtpFechaFeriado.Name = "dtpFechaFeriado";
             this.dtpFechaFeriado.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaFeriado.TabIndex = 9;
@@ -237,6 +240,7 @@
             this.txtCuotaCtaCorriente.Name = "txtCuotaCtaCorriente";
             this.txtCuotaCtaCorriente.Size = new System.Drawing.Size(100, 20);
             this.txtCuotaCtaCorriente.TabIndex = 19;
+            this.txtCuotaCtaCorriente.TextChanged += new System.EventHandler(this.txtCuotaCtaCorriente_TextChanged);
             // 
             // txtAnticipo
             // 
@@ -244,15 +248,17 @@
             this.txtAnticipo.Name = "txtAnticipo";
             this.txtAnticipo.Size = new System.Drawing.Size(100, 20);
             this.txtAnticipo.TabIndex = 20;
+            this.txtAnticipo.TextChanged += new System.EventHandler(this.txtAnticipo_TextChanged);
             // 
             // btnMinutoContable
             // 
-            this.btnMinutoContable.Location = new System.Drawing.Point(488, 300);
+            this.btnMinutoContable.Location = new System.Drawing.Point(558, 325);
             this.btnMinutoContable.Name = "btnMinutoContable";
             this.btnMinutoContable.Size = new System.Drawing.Size(170, 26);
             this.btnMinutoContable.TabIndex = 21;
             this.btnMinutoContable.Text = "Generar Minuto Contable";
             this.btnMinutoContable.UseVisualStyleBackColor = true;
+            this.btnMinutoContable.Click += new System.EventHandler(this.btnMinutoContable_Click);
             // 
             // label12
             // 
@@ -313,7 +319,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(78, 13);
             this.label16.TabIndex = 28;
-            this.label16.Text = "Monto Feriado;";
+            this.label16.Text = "Monto Feriado:";
             // 
             // label17
             // 
@@ -367,11 +373,11 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(386, 218);
+            this.label20.Location = new System.Drawing.Point(338, 218);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(122, 13);
+            this.label20.Size = new System.Drawing.Size(170, 13);
             this.label20.TabIndex = 33;
-            this.label20.Text = "Sueldo con descuentos:";
+            this.label20.Text = "Sueldo con descuentos y feriados:";
             // 
             // label21
             // 
@@ -391,11 +397,30 @@
             this.label22.TabIndex = 35;
             this.label22.Text = "label22";
             // 
+            // dgvFeriados
+            // 
+            this.dgvFeriados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFeriados.Location = new System.Drawing.Point(64, 354);
+            this.dgvFeriados.Name = "dgvFeriados";
+            this.dgvFeriados.Size = new System.Drawing.Size(343, 88);
+            this.dgvFeriados.TabIndex = 36;
+            // 
+            // btnEliminarFeriado
+            // 
+            this.btnEliminarFeriado.Location = new System.Drawing.Point(57, 462);
+            this.btnEliminarFeriado.Name = "btnEliminarFeriado";
+            this.btnEliminarFeriado.Size = new System.Drawing.Size(73, 23);
+            this.btnEliminarFeriado.TabIndex = 37;
+            this.btnEliminarFeriado.Text = "Eliminar";
+            this.btnEliminarFeriado.UseVisualStyleBackColor = true;
+            // 
             // frmComprobantesSalarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 497);
+            this.Controls.Add(this.btnEliminarFeriado);
+            this.Controls.Add(this.dgvFeriados);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -433,6 +458,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmComprobantesSalarios";
             this.Text = "frmComprobantesSalarios";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFeriados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,5 +501,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DataGridView dgvFeriados;
+        private System.Windows.Forms.Button btnEliminarFeriado;
     }
 }

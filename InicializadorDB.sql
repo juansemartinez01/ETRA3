@@ -62,6 +62,7 @@ INSERT INTO TipoEvento VALUES ('Pago Sueldo',0)
 INSERT into TipoEvento (nombre,borradoLogico) VALUES ('Otro',0)
 INSERT INTO TipoEvento VALUES ('Feriado',0)
 INSERT INTO TipoEvento VALUES ('Anticipo a descontar',0)
+INSERT INTO TipoEvento VALUES ('Bono',0)
 
 SELECT * FROM EstadoColaborador
 
