@@ -21,7 +21,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT H.idHistorialCuenta,T.nombre,H.fechaInicio ,H.montoMoviento FROM TipoMovimiento T JOIN MovimientosCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
+                        command.CommandText = "SELECT H.idHistorialCuenta,T.nombre,H.fechaInicio ,H.montoMoviento,H.descripcion FROM TipoMovimiento T JOIN MovimientosCuentaColaborador H ON T.id_tipoMovimiento = H.tipoMovimiento JOIN CuentaColaborador C ON C.numeroCuenta = H.nroCuenta WHERE H.legajoColaborador = @legajo AND H.borradoLogico = 0";
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
@@ -203,7 +203,7 @@ namespace DataAccesA
 
             return saldo;
         }
-        public string modificarSaldo(int legajo,float montoMovimiento,int tipoMovimiento)
+        public string modificarSaldo(int legajo,float montoMovimiento,int tipoMovimiento,string descripcion)
         {
             if(tipoMovimiento == 2)
             {
@@ -220,7 +220,7 @@ namespace DataAccesA
                     using (var command1 = new SqlCommand())
                     {
                         command1.Connection = connection;
-                        command1.CommandText = "SELECT C.saldoAdeudado,C.SaldoMaximo FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON C.numeroCuenta = M.nroCuenta WHERE M.legajoColaborador = @legajo";
+                        command1.CommandText = "SELECT C.saldoAdeudado,C.SaldoMaximo FROM CuentaColaborador C JOIN MovimientosCuentaColaborador M ON C.numeroCuenta = M.nroCuenta WHERE M.legajoColaborador = @legajo AND M.tipoMovimiento = 3";
                         command1.Parameters.AddWithValue("@legajo", legajo);
                         command1.CommandType = CommandType.Text;
                         SqlDataReader reader = command1.ExecuteReader();
@@ -256,11 +256,12 @@ namespace DataAccesA
                                         using (var command3 = new SqlCommand())
                                         {
                                             command3.Connection = connection;
-                                            command3.CommandText = "BEGIN TRANSACTION INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),NULL,@legajo,@numeroCuenta,0,@tipoMovimiento,@montoMovimiento) COMMIT";
+                                            command3.CommandText = "BEGIN TRANSACTION INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),NULL,@legajo,@numeroCuenta,0,@tipoMovimiento,@montoMovimiento,@descripcion) COMMIT";
                                             command3.Parameters.AddWithValue("@legajo", legajo);
                                             command3.Parameters.AddWithValue("@numeroCuenta", numeroCuenta);
                                             command3.Parameters.AddWithValue("@tipoMovimiento", tipoMovimiento);
                                             command3.Parameters.AddWithValue("@montoMovimiento", montoMovimiento);
+                                            command3.Parameters.AddWithValue("@descripcion", descripcion);
                                             command3.CommandType = CommandType.Text;
                                             var movimientoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
                                             if (movimientoCreado == 1)

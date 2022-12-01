@@ -27,9 +27,9 @@ namespace DomainA
             
             return cuentaColaborador.BuscarCuentaColaborador(legajo);
         }
-        public string modificarSaldo(int legajo, float saldo,int tipoMovimiento)
+        public string modificarSaldo(int legajo, float saldo,int tipoMovimiento,string descripcion)
         {
-            if (UserCache.perfil == Perfiles.admin) { return cuentaColaborador.modificarSaldo(legajo, saldo, tipoMovimiento); }
+            if (UserCache.perfil == Perfiles.admin) { return cuentaColaborador.modificarSaldo(legajo, saldo, tipoMovimiento,descripcion); }
             return "No tiene permisos";
         }
         public float buscarSaldo(int legajo)

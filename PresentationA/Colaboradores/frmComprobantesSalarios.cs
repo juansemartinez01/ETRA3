@@ -309,7 +309,7 @@ namespace PresentationA.Colaboradores
             
             DateTime fechaFeriado = DateTime.Now;
 
-            cuentaColaborador.modificarSaldo(colaboradorModelo.legajo, restoTotal, 1);
+            cuentaColaborador.modificarSaldo(colaboradorModelo.legajo, restoTotal, 1,"Pago cuota y anticipo");
             
             DataTable datosColaborador = new DataTable();
             datosColaborador = colaboradorModelo.BuscarColaborador(cmbLegajo.SelectedValue.ToString(), "", "");

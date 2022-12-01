@@ -46,7 +46,7 @@ namespace PresentationA.Colaboradores.Consulta
                 for (int i = 0; i < cuentaColaborador.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvCtaCte.Rows.Add(cuentaColaborador.Rows[i]["idHistorialCuenta"],cuentaColaborador.Rows[i]["nombre"], cuentaColaborador.Rows[i]["montoMoviento"], cuentaColaborador.Rows[i]["fechaInicio"]);
+                    dgvCtaCte.Rows.Add(cuentaColaborador.Rows[i]["idHistorialCuenta"],cuentaColaborador.Rows[i]["nombre"], cuentaColaborador.Rows[i]["montoMoviento"], cuentaColaborador.Rows[i]["fechaInicio"], cuentaColaborador.Rows[i]["descripcion"]);
                 }
             }
             catch (Exception ex)
@@ -57,14 +57,19 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnDepositar_Click(object sender, EventArgs e)
         {
-            if(txtDepositar.Text == "")
+            string descripcion = "No especifica";
+            if (txtDepositar.Text == "")
             {
                 msgError("Debe completar el monto del movimiento con un valor mayor a cero");
                 return;
             }
+            if (txtDescripcion.Text != "")
+            {
+                descripcion = txtDescripcion.Text;
+            }
             float monto = float.Parse(txtDepositar.Text);
             //int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
-            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, 1);
+            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto, 1, descripcion);
             MessageBox.Show(mensaje);
             CargarDG(colaboradorModelo.legajo.ToString());
             buscarSaldo();
@@ -110,6 +115,7 @@ namespace PresentationA.Colaboradores.Consulta
             txtDepositar.Text = "";
             txtRetirar.Text = "";
             cuenta.Movimientoid = -1;
+            txtDescripcion.Text = "";
             
         }
 
@@ -128,10 +134,15 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnRetirar_Click(object sender, EventArgs e)
         {
+            string descripcion = "No especifica";
             if (txtRetirar.Text == "" || txtRetirar.Text == "0")
             {
                 msgError("Debe completar el monto del movimiento con un valor mayor a cero");
                 return;
+            }
+            if (txtDescripcion.Text != "")
+            {
+                descripcion = txtDescripcion.Text;
             }
             float monto = float.Parse(txtRetirar.Text);
             float saldoMax = float.Parse(lblFondoMaximoPermitido.Text);
@@ -143,7 +154,7 @@ namespace PresentationA.Colaboradores.Consulta
             }
             
             //int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
-            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto , 2);
+            string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto , 2, descripcion);
             CargarDG(colaboradorModelo.legajo.ToString());
             buscarSaldo();
             LimpiarCampos();

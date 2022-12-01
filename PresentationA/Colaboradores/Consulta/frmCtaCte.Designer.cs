@@ -43,11 +43,14 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoMoviento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaIncio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRetirar = new PresentationA.Controls.BotonPadre();
             this.txtRetirar = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtaCte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,7 +155,8 @@
             this.id,
             this.nombre,
             this.montoMoviento,
-            this.fechaIncio});
+            this.fechaIncio,
+            this.descripcion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -164,7 +168,7 @@
             this.dgvCtaCte.EnableHeadersVisualStyles = false;
             this.dgvCtaCte.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvCtaCte.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvCtaCte.Location = new System.Drawing.Point(12, 246);
+            this.dgvCtaCte.Location = new System.Drawing.Point(12, 253);
             this.dgvCtaCte.Name = "dgvCtaCte";
             this.dgvCtaCte.ReadOnly = true;
             this.dgvCtaCte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -204,6 +208,12 @@
             this.fechaIncio.HeaderText = "Fecha de Registro";
             this.fechaIncio.Name = "fechaIncio";
             this.fechaIncio.ReadOnly = true;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Desc.";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             // 
             // label3
             // 
@@ -261,12 +271,30 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(14, 199);
+            this.lblError.Location = new System.Drawing.Point(559, 199);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(42, 20);
             this.lblError.TabIndex = 58;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(181, 199);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(338, 48);
+            this.txtDescripcion.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 199);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 21);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "Descripcion:";
             // 
             // frmCtaCte
             // 
@@ -274,6 +302,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(941, 528);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnRetirar);
@@ -314,5 +344,8 @@
         private Controls.BotonPadre btnRetirar;
         private System.Windows.Forms.TextBox txtRetirar;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
     }
 }
