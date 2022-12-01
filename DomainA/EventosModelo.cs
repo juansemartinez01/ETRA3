@@ -10,6 +10,7 @@ namespace DomainA
     public class EventosModelo
     {
         EventosDao eventosDao = new EventosDao();
+        public int feriadoSeleccionado = -1;
         public int FilaSeleccionadaHistorialEvento = -1;
         public int mesGeneracionComprobante = -1;
         public float agregadoSueldo = 0;

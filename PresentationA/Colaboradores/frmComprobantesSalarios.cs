@@ -99,6 +99,7 @@ namespace PresentationA.Colaboradores
             string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo,fechaFeriado,montoferiado,descripcion,tipoEvento);
             MessageBox.Show(resultado);
             actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
 
             //Aca va el codigo para generar el archivo del comprobante!!
         }
@@ -254,7 +255,8 @@ namespace PresentationA.Colaboradores
             {
                 cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
             }
-            
+            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+
         }
 
         private void txtCuotaCtaCorriente_TextChanged(object sender, EventArgs e)
@@ -320,6 +322,28 @@ namespace PresentationA.Colaboradores
             string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, restoTotal, descripcion, 8);
             MessageBox.Show(resultado);
 
+        }
+
+        private void btnEliminarFeriado_Click(object sender, EventArgs e)
+        {
+            if (eventoModelo.feriadoSeleccionado == -1)
+            {
+                MessageBox.Show("Debe seleccionar un Feriado o Bono.");
+                return;
+            }
+            DataGridViewRow filaSeleccionada = dgvFeriados.Rows[eventoModelo.feriadoSeleccionado];
+            int idFeriado = int.Parse(filaSeleccionada.Cells["id_evento"].Value.ToString());
+            string respuesta = eventoModelo.eliminarEvento(idFeriado);
+            MessageBox.Show(respuesta);
+            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+            actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+            label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
+        }
+
+        private void dgvFeriados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            eventoModelo.feriadoSeleccionado = indice;
         }
     }
 }

@@ -404,6 +404,7 @@
             this.dgvFeriados.Name = "dgvFeriados";
             this.dgvFeriados.Size = new System.Drawing.Size(343, 88);
             this.dgvFeriados.TabIndex = 36;
+            this.dgvFeriados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeriados_CellContentClick);
             // 
             // btnEliminarFeriado
             // 
@@ -413,6 +414,7 @@
             this.btnEliminarFeriado.TabIndex = 37;
             this.btnEliminarFeriado.Text = "Eliminar";
             this.btnEliminarFeriado.UseVisualStyleBackColor = true;
+            this.btnEliminarFeriado.Click += new System.EventHandler(this.btnEliminarFeriado_Click);
             // 
             // frmComprobantesSalarios
             // 
