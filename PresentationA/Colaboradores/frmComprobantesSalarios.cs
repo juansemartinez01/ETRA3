@@ -183,7 +183,7 @@ namespace PresentationA.Colaboradores
         private void actualizarSueldoAnticiposYDescuentos(int legajo,int mes)
         {
             
-            eventoModelo.agregadoSueldo = eventoModelo.sumaFeriadosYAnticiposADescontar(legajo, mes, 7);
+            eventoModelo.agregadoSueldo = eventoModelo.sumaFeriadosYAnticiposADescontar(legajo, mes, 7,9);
         }
 
         private void chkFeriado_CheckedChanged(object sender, EventArgs e)

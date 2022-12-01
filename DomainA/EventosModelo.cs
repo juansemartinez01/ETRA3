@@ -49,9 +49,9 @@ namespace DomainA
         { 
             return eventosDao.comprobantesFeriadoYBonos(legajo,fecha,monto, descripcion,tipoEvento);
         }
-        public float sumaFeriadosYAnticiposADescontar(int legajo, int mes, int tipoEvento)
+        public float sumaFeriadosYAnticiposADescontar(int legajo, int mes, int tipoEvento1,int tipoEvento2)
         {
-            return eventosDao.sumaFeriadosYAnticiposADescontar(legajo,mes,tipoEvento);
+            return eventosDao.sumaFeriadosYAnticiposADescontar(legajo,mes,tipoEvento1, tipoEvento2);
         }
         public DataTable getAllFeriadosYBonos(int legajo,int mes)
         {
