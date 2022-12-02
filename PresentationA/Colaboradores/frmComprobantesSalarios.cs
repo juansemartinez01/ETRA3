@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace PresentationA.Colaboradores
 {
     
-    public partial class frmComprobantesSalarios : Form
+    public partial class frmComprobantesSalarios : frmHijo
     {
         EventosModelo eventoModelo = new EventosModelo();
         ColaboradorModelo colaboradorModelo= new ColaboradorModelo();
@@ -35,10 +35,14 @@ namespace PresentationA.Colaboradores
         }
         private void cargarDG(int legajo,int mes)
         {
-            DataTable feriados = new DataTable();
-            feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes);
+            DataTable  feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes);
             
-            dgvFeriados.DataSource = feriados;
+            for (int i = 0; i < feriados.Rows.Count; i++)
+            {
+                //crear metodo completar labels
+                dgvFeriados.Rows.Add(feriados.Rows[i]["id_evento"], feriados.Rows[i]["nombre"], feriados.Rows[i]["fechaInicio"], feriados.Rows[i]["monto"]);
+            }
+            
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -100,13 +104,15 @@ namespace PresentationA.Colaboradores
             cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
 
             //Aca va el codigo para generar el archivo del comprobante!!
-            OrdenPagoModelo orden = new OrdenPagoModelo();
-            pntOrden = new PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            pntOrden.PrinterSettings = ps;
-            pntOrden.PrintPage += printOrden;
-            pntOrden.Print();
-
+            try
+            {
+                pntOrden = new PrintDocument();
+                PrinterSettings ps = new PrinterSettings();
+                pntOrden.PrinterSettings = ps;
+                pntOrden.PrintPage += printOrden;
+                pntOrden.Print();
+            }
+            catch (Exception ex) { throw ex; }
         }
 
         private void limpiarCampos()
@@ -364,6 +370,10 @@ namespace PresentationA.Colaboradores
             Bitmap original = (Bitmap)Image.FromFile("Resources/ETRA_Isologotipo-01.png");
             Bitmap resized = new Bitmap(original, new Size(original.Width / 20, original.Height / 20));
             e.Graphics.DrawImage(resized, 10, 0);
+            e.Graphics.DrawString("ETRA DISTRIBUCIONES S.R.L. EN FORMACIÓN", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 0, ancho, 30));
+            e.Graphics.DrawString("Las Heras 555 - Río Tercero - CÓRDOBA", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 30, ancho, 30));
+            e.Graphics.DrawString("C.U.I.T.: 30-71605992-4", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 60, ancho, 30));
+            e.Graphics.DrawString("Ing. Brutos: 282470888", font, Brushes.Black, new RectangleF(460, 60, ancho, 30));
 
             e.Graphics.DrawRectangle(new Pen(Color.Black),10, y + 10, ancho ,90);
             e.Graphics.DrawString("ORDEN DE PAGO Nº: ", font, Brushes.Black, new RectangleF(460,y +20, ancho, 30));
@@ -378,12 +388,12 @@ namespace PresentationA.Colaboradores
             e.Graphics.DrawString("Cuenta", font, Brushes.Black, new RectangleF(10, y + 130, ancho, 30));
             e.Graphics.DrawString("001 - CAJA ADMIN", font, Brushes.Black, new RectangleF(10, y + 160, ancho, 30));
             e.Graphics.DrawString("Debe", font, Brushes.Black, new RectangleF(460, y + 130, ancho, 30));
-            e.Graphics.DrawString(label21.Text, font, Brushes.Black, new RectangleF(460, y + 160, ancho, 30));
+            e.Graphics.DrawString(label17.Text, font, Brushes.Black, new RectangleF(460, y + 160, ancho, 30));
             e.Graphics.DrawString("Haber", font, Brushes.Black, new RectangleF(610, y + 130, ancho, 30));
             e.Graphics.DrawString("0,00", font, Brushes.Black, new RectangleF(610, y + 160, ancho, 30));
             
             e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 250, ancho, 20);
-            e.Graphics.DrawString("TOTAL: $" + label21.Text, font, Brushes.Black, new RectangleF(610, y + 250, ancho, 30));
+            e.Graphics.DrawString("TOTAL: $" + label17.Text, font, Brushes.Black, new RectangleF(610, y + 250, ancho, 30));
 
             e.Graphics.DrawString("Notas: " + txtDescripcion1.Text, font, Brushes.Black, new RectangleF(10, y + 300, ancho, 30));
             e.Graphics.DrawString("Recibí conforme de ETRA DISTRIBUCIONES S.R.L. EN FORMACIÓN EL IMPORTE EN PESOS:__________ " , font, Brushes.Black, new RectangleF(10, y + 330, ancho + 100, 50));

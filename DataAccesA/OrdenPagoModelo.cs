@@ -7,7 +7,7 @@ namespace DataAccesA
 {
     public class OrdenPagoModelo
     {
-        public void generarOrden(PrintPageEventArgs e, string nombre, string apellido, string direccion, float saldoCtaCte, float sueldoNeto, string descipcion, ) 
+        public void generarOrden(PrintPageEventArgs e, string nombre, string apellido, string direccion, float saldoCtaCte, float sueldoNeto, string descipcion) 
         {
             Font font = new Font("Arial", 11);
             int ancho = 800;

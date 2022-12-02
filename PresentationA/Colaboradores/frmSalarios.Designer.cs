@@ -73,6 +73,7 @@
             this.btnGenerarOrdenes = new PresentationA.Controls.BotonPadre();
             this.txtDescripcionComprobante = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.pntOrden = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalarios)).BeginInit();
@@ -689,5 +690,6 @@
         private Controls.BotonPadre btnGenerarOrdenes;
         private System.Windows.Forms.TextBox txtDescripcionComprobante;
         private System.Windows.Forms.Label label15;
+        private System.Drawing.Printing.PrintDocument pntOrden;
     }
 }

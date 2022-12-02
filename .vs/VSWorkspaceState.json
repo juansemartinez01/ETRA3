@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\PresentationA",
-    "\\PresentationA\\Colaboradores"
+    "\\PresentationA\\Colaboradores",
+    "\\PresentationA\\Colaboradores\\Consulta"
   ],
-  "SelectedNode": "\\PresentationA\\Colaboradores\\frmComprobantesSalarios.cs",
+  "SelectedNode": "\\ETRA.sln",
   "PreviewInSolutionExplorer": false
 }
