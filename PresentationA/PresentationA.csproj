@@ -402,12 +402,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\1500603-add-vector-icon-grátis-vetor.png" />
-    <Content Include="Resources\ETRA_Isologotipo-01.png" />
+    <Content Include="Resources\ETRA_Isologotipo-01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\imagenAgregarfotoPerfil.png" />
     <Content Include="Resources\kisspng-exclamation-mark-clip-art-vector-graphics-computer-5ced29986ef952.9605616015590465524546+%281%29+%281%29.png" />
     <None Include="Resources\logo.bmp" />
+    <None Include="Resources\logoLW.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Resources\logoLWS2.png" />
     <Content Include="Resources\logoLWS21.png" />
+    <None Include="Resources\logoNombre.bmp" />
+    <None Include="Resources\logoNombre.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Resources\logoSoloForma.png" />
     <Content Include="Resources\solo_logo.ico" />
     <None Include="Resources\solo_logo.png" />

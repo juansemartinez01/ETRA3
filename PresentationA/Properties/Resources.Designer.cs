@@ -104,6 +104,16 @@ namespace PresentationA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
         /// </summary>
+        internal static System.Drawing.Icon logoNombre {
+            get {
+                object obj = ResourceManager.GetObject("logoNombre", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
         internal static System.Drawing.Icon solo_logo {
             get {
                 object obj = ResourceManager.GetObject("solo_logo", resourceCulture);

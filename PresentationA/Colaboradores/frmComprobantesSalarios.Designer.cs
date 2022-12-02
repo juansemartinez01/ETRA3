@@ -65,6 +65,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dgvFeriados = new System.Windows.Forms.DataGridView();
             this.btnEliminarFeriado = new System.Windows.Forms.Button();
+            this.pntOrden = new System.Drawing.Printing.PrintDocument();
+            this.pntMinuta = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeriados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -416,6 +418,14 @@
             this.btnEliminarFeriado.UseVisualStyleBackColor = true;
             this.btnEliminarFeriado.Click += new System.EventHandler(this.btnEliminarFeriado_Click);
             // 
+            // pntOrden
+            // 
+            this.pntOrden.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printOrden);
+            // 
+            // pntMinuta
+            // 
+            this.pntMinuta.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printMinuta);
+            // 
             // frmComprobantesSalarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,5 +515,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.DataGridView dgvFeriados;
         private System.Windows.Forms.Button btnEliminarFeriado;
+        private System.Drawing.Printing.PrintDocument pntOrden;
+        private System.Drawing.Printing.PrintDocument pntMinuta;
     }
 }
