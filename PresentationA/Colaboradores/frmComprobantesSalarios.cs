@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace PresentationA.Colaboradores
 {
     
-    public partial class frmComprobantesSalarios : Form
+    public partial class frmComprobantesSalarios : frmHijo
     {
         EventosModelo eventoModelo = new EventosModelo();
         ColaboradorModelo colaboradorModelo= new ColaboradorModelo();
@@ -35,10 +35,14 @@ namespace PresentationA.Colaboradores
         }
         private void cargarDG(int legajo,int mes)
         {
-            DataTable feriados = new DataTable();
-            feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes);
+            DataTable  feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes);
             
-            dgvFeriados.DataSource = feriados;
+            for (int i = 0; i < feriados.Rows.Count; i++)
+            {
+                //crear metodo completar labels
+                dgvFeriados.Rows.Add(feriados.Rows[i]["id_evento"], feriados.Rows[i]["nombre"], feriados.Rows[i]["fechaInicio"], feriados.Rows[i]["monto"]);
+            }
+            
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -100,7 +104,6 @@ namespace PresentationA.Colaboradores
             cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
 
             //Aca va el codigo para generar el archivo del comprobante!!
-            OrdenPagoModelo orden = new OrdenPagoModelo();
             pntOrden = new PrintDocument();
             PrinterSettings ps = new PrinterSettings();
             pntOrden.PrinterSettings = ps;

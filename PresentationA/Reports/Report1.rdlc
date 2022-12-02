@@ -58,10 +58,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>6.13404cm</Width>
+                  <Width>10.35135cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>6.13404cm</Width>
+                  <Width>10.35135cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -101,7 +101,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -138,7 +137,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                   </TablixCells>
@@ -313,10 +311,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet2</DataSetName>
-            <Top>10.05099cm</Top>
-            <Left>1.5cm</Left>
+            <Top>10.52724cm</Top>
+            <Left>0.52104cm</Left>
             <Height>2.32917cm</Height>
-            <Width>12.26808cm</Width>
+            <Width>20.70271cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -363,6 +361,8 @@
                         <Color>#faa61a</Color>
                       </Style>
                       <ChartMarker>
+                        <Type>Diamond</Type>
+                        <Size>5pt</Size>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
@@ -408,7 +408,6 @@
                         <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
-                    <Margin>True</Margin>
                     <ChartMajorGridLines>
                       <Enabled>False</Enabled>
                       <Style>
@@ -446,7 +445,6 @@
                     <Maximum>NaN</Maximum>
                     <PreventLabelOffset>true</PreventLabelOffset>
                     <AllowLabelRotation>None</AllowLabelRotation>
-                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <MinFontSize>11pt</MinFontSize>
                     <MaxFontSize>19pt</MaxFontSize>
                     <ChartAxisScaleBreak>
@@ -517,6 +515,7 @@
                         <Color>Gainsboro</Color>
                         <Style>None</Style>
                       </Border>
+                      <FontFamily>Century Gothic</FontFamily>
                       <FontSize>8pt</FontSize>
                       <Format>'$' #,0.00;('$' #,0.00)</Format>
                       <Color>#5c5c5c</Color>
@@ -531,6 +530,7 @@
                     </ChartAxisTitle>
                     <IntervalType>Number</IntervalType>
                     <ChartMajorGridLines>
+                      <Enabled>True</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -546,6 +546,7 @@
                       </Style>
                     </ChartMinorGridLines>
                     <ChartMajorTickMarks>
+                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -564,6 +565,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
                     <ChartAxisScaleBreak>
                       <Enabled>true</Enabled>
                       <Style />
@@ -687,9 +689,9 @@
             </ChartNoDataMessage>
             <DataSetName>DataSet2</DataSetName>
             <Top>0.73766cm</Top>
-            <Left>1.5cm</Left>
-            <Height>8.14854cm</Height>
-            <Width>18.16271cm</Width>
+            <Left>0.52104cm</Left>
+            <Height>9.15396cm</Height>
+            <Width>20.70271cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
