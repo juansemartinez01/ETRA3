@@ -14,7 +14,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>HUNmHkvuqnulIKU3GPH0kd4698Cc+bVoWgNBAsBOfgk=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>yPUdJF7eUy1wS50dZizXyueSprtwY+YFfHrmk5h0pco=</dsig:DigestValue>
+>>>>>>> refs/remotes/origin/Sandbox
       </hash>
     </dependentAssembly>
   </dependency>
