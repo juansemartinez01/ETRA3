@@ -265,50 +265,50 @@ namespace PresentationA.Colaboradores
         }
         private void printOrden(object sender, PrintPageEventArgs e)
         {
-            DataTable colaborador = colaboradorModelo.BuscarColaborador(cmbLegajo.SelectedValue.ToString(), "", "");
-            string direccion = colaborador.Rows[0]["nombreCalle"].ToString() + " " + colaborador.Rows[0]["numeroCalle"].ToString();
-            Font font = new Font("Arial", 11);
-            int ancho = 800;
-            int y = 70;
-            Bitmap original = (Bitmap)Image.FromFile("Resources/ETRA_Isologotipo-01.png");
-            Bitmap resized = new Bitmap(original, new Size(original.Width / 20, original.Height / 20));
-            e.Graphics.DrawImage(resized, 10, 0);
-            e.Graphics.DrawString("ETRA DISTRIBUCIONES S.R.L. EN FORMACIÓN", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 0, ancho, 30));
-            e.Graphics.DrawString("Las Heras 555 - Río Tercero - CÓRDOBA", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 30, ancho, 30));
-            e.Graphics.DrawString("C.U.I.T.: 30-71605992-4", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 60, ancho, 30));
-            e.Graphics.DrawString("Ing. Brutos: 282470888", font, Brushes.Black, new RectangleF(460, 60, ancho, 30));
+            //DataTable colaborador = colaboradorModelo.BuscarColaborador(cmbLegajo.SelectedValue.ToString(), "", "");
+            //string direccion = colaborador.Rows[0]["nombreCalle"].ToString() + " " + colaborador.Rows[0]["numeroCalle"].ToString();
+            //Font font = new Font("Arial", 11);
+            //int ancho = 800;
+            //int y = 70;
+            //Bitmap original = (Bitmap)Image.FromFile("Resources/ETRA_Isologotipo-01.png");
+            //Bitmap resized = new Bitmap(original, new Size(original.Width / 20, original.Height / 20));
+            //e.Graphics.DrawImage(resized, 10, 0);
+            //e.Graphics.DrawString("ETRA DISTRIBUCIONES S.R.L. EN FORMACIÓN", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 0, ancho, 30));
+            //e.Graphics.DrawString("Las Heras 555 - Río Tercero - CÓRDOBA", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 30, ancho, 30));
+            //e.Graphics.DrawString("C.U.I.T.: 30-71605992-4", font, Brushes.Black, new RectangleF(resized.Size.Width + 10, 60, ancho, 30));
+            //e.Graphics.DrawString("Ing. Brutos: 282470888", font, Brushes.Black, new RectangleF(460, 60, ancho, 30));
 
-            e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 10, ancho, 90);
-            e.Graphics.DrawString("ORDEN DE PAGO Nº: ", font, Brushes.Black, new RectangleF(460, y + 20, ancho, 30));
-            e.Graphics.DrawString("Original", font, Brushes.Black, new RectangleF(10, y + 20, ancho, 30));
-            e.Graphics.DrawString("Colaborador: " + colaborador.Rows[0]["nombre"].ToString() + " " + colaborador.Rows[0]["apellido"].ToString(), font, Brushes.Black, new RectangleF(10, y + 50, ancho, 30));
-            e.Graphics.DrawString("Dir: " + direccion, font, Brushes.Black, new RectangleF(10, y + 80, ancho, 30));
-            e.Graphics.DrawString("Fecha: " + DateTime.Now.ToString(), font, Brushes.Black, new RectangleF(460, y + 50, ancho, 30)); ;
+            //e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 10, ancho, 90);
+            //e.Graphics.DrawString("ORDEN DE PAGO Nº: ", font, Brushes.Black, new RectangleF(460, y + 20, ancho, 30));
+            //e.Graphics.DrawString("Original", font, Brushes.Black, new RectangleF(10, y + 20, ancho, 30));
+            //e.Graphics.DrawString("Colaborador: " + colaborador.Rows[0]["nombre"].ToString() + " " + colaborador.Rows[0]["apellido"].ToString(), font, Brushes.Black, new RectangleF(10, y + 50, ancho, 30));
+            //e.Graphics.DrawString("Dir: " + direccion, font, Brushes.Black, new RectangleF(10, y + 80, ancho, 30));
+            //e.Graphics.DrawString("Fecha: " + DateTime.Now.ToString(), font, Brushes.Black, new RectangleF(460, y + 50, ancho, 30)); ;
 
-            e.Graphics.DrawString("Saldo Cta Cte: " + label15.Text, font, Brushes.Black, new RectangleF(10, y + 110, ancho, 30));
+            //e.Graphics.DrawString("Saldo Cta Cte: " + label15.Text, font, Brushes.Black, new RectangleF(10, y + 110, ancho, 30));
 
-            e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 130, ancho, 20);
-            e.Graphics.DrawString("Cuenta", font, Brushes.Black, new RectangleF(10, y + 130, ancho, 30));
-            e.Graphics.DrawString("001 - CAJA ADMIN", font, Brushes.Black, new RectangleF(10, y + 160, ancho, 30));
-            e.Graphics.DrawString("Debe", font, Brushes.Black, new RectangleF(460, y + 130, ancho, 30));
-            e.Graphics.DrawString(label21.Text, font, Brushes.Black, new RectangleF(460, y + 160, ancho, 30));
-            e.Graphics.DrawString("Haber", font, Brushes.Black, new RectangleF(610, y + 130, ancho, 30));
-            e.Graphics.DrawString("0,00", font, Brushes.Black, new RectangleF(610, y + 160, ancho, 30));
+            //e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 130, ancho, 20);
+            //e.Graphics.DrawString("Cuenta", font, Brushes.Black, new RectangleF(10, y + 130, ancho, 30));
+            //e.Graphics.DrawString("001 - CAJA ADMIN", font, Brushes.Black, new RectangleF(10, y + 160, ancho, 30));
+            //e.Graphics.DrawString("Debe", font, Brushes.Black, new RectangleF(460, y + 130, ancho, 30));
+            //e.Graphics.DrawString(label21.Text, font, Brushes.Black, new RectangleF(460, y + 160, ancho, 30));
+            //e.Graphics.DrawString("Haber", font, Brushes.Black, new RectangleF(610, y + 130, ancho, 30));
+            //e.Graphics.DrawString("0,00", font, Brushes.Black, new RectangleF(610, y + 160, ancho, 30));
 
-            e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 250, ancho, 20);
-            e.Graphics.DrawString("TOTAL: $" + label21.Text, font, Brushes.Black, new RectangleF(610, y + 250, ancho, 30));
+            //e.Graphics.DrawRectangle(new Pen(Color.Black), 10, y + 250, ancho, 20);
+            //e.Graphics.DrawString("TOTAL: $" + label21.Text, font, Brushes.Black, new RectangleF(610, y + 250, ancho, 30));
 
-            e.Graphics.DrawString("Notas: " + txtDescripcion1.Text, font, Brushes.Black, new RectangleF(10, y + 300, ancho, 30));
-            e.Graphics.DrawString("Recibí conforme de ETRA DISTRIBUCIONES S.R.L. EN FORMACIÓN EL IMPORTE EN PESOS:__________ ", font, Brushes.Black, new RectangleF(10, y + 330, ancho + 100, 50));
+            //e.Graphics.DrawString("Notas: " + txtDescripcion1.Text, font, Brushes.Black, new RectangleF(10, y + 300, ancho, 30));
+            //e.Graphics.DrawString("Recibí conforme de ETRA DISTRIBUCIONES S.R.L. EN FORMACIÓN EL IMPORTE EN PESOS:__________ ", font, Brushes.Black, new RectangleF(10, y + 330, ancho + 100, 50));
 
-            e.Graphics.DrawString("___________________", font, Brushes.Black, new RectangleF(10, y + 390, ancho, 30));
-            e.Graphics.DrawString("FIRMA", font, Brushes.Black, new RectangleF(10, y + 420, ancho, 30));
+            //e.Graphics.DrawString("___________________", font, Brushes.Black, new RectangleF(10, y + 390, ancho, 30));
+            //e.Graphics.DrawString("FIRMA", font, Brushes.Black, new RectangleF(10, y + 420, ancho, 30));
 
-            e.Graphics.DrawString("___________________", font, Brushes.Black, new RectangleF(260, y + 390, ancho, 30));
-            e.Graphics.DrawString("ACLARACIÓN", font, Brushes.Black, new RectangleF(260, y + 420, ancho, 30));
+            //e.Graphics.DrawString("___________________", font, Brushes.Black, new RectangleF(260, y + 390, ancho, 30));
+            //e.Graphics.DrawString("ACLARACIÓN", font, Brushes.Black, new RectangleF(260, y + 420, ancho, 30));
 
-            e.Graphics.DrawString("___________________", font, Brushes.Black, new RectangleF(510, y + 390, ancho, 30));
-            e.Graphics.DrawString("TIPO Y NRO DE DOC.", font, Brushes.Black, new RectangleF(510, y + 420, ancho, 30));
+            //e.Graphics.DrawString("___________________", font, Brushes.Black, new RectangleF(510, y + 390, ancho, 30));
+            //e.Graphics.DrawString("TIPO Y NRO DE DOC.", font, Brushes.Black, new RectangleF(510, y + 420, ancho, 30));
 
 
         }

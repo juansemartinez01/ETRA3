@@ -104,24 +104,22 @@ namespace PresentationA.Colaboradores
             cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
 
             //Aca va el codigo para generar el archivo del comprobante!!
-<<<<<<< HEAD
+
             try
             {
                 pntOrden = new PrintDocument();
-                PrinterSettings ps = new PrinterSettings();
-                pntOrden.PrinterSettings = ps;
+                pntOrden.PrinterSettings = new PrinterSettings();
                 pntOrden.PrintPage += printOrden;
                 pntOrden.Print();
             }
             catch (Exception ex) { throw ex; }
-=======
+
             pntOrden = new PrintDocument();
             PrinterSettings ps = new PrinterSettings();
             pntOrden.PrinterSettings = ps;
             pntOrden.PrintPage += printOrden;
             pntOrden.Print();
 
->>>>>>> refs/remotes/origin/Sandbox
         }
 
         private void limpiarCampos()

@@ -111,11 +111,8 @@
             // 
             this.chkFeriado.AutoSize = true;
             this.chkFeriado.Location = new System.Drawing.Point(95, 194);
-<<<<<<< HEAD
             this.chkFeriado.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.chkFeriado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.chkFeriado.Name = "chkFeriado";
             this.chkFeriado.Size = new System.Drawing.Size(103, 25);
             this.chkFeriado.TabIndex = 5;
@@ -127,11 +124,8 @@
             // 
             this.chkBono.AutoSize = true;
             this.chkBono.Location = new System.Drawing.Point(95, 231);
-<<<<<<< HEAD
             this.chkBono.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.chkBono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.chkBono.Name = "chkBono";
             this.chkBono.Size = new System.Drawing.Size(110, 25);
             this.chkBono.TabIndex = 6;
@@ -142,11 +136,8 @@
             // txtMontoBono
             // 
             this.txtMontoBono.Location = new System.Drawing.Point(173, 279);
-<<<<<<< HEAD
             this.txtMontoBono.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.txtMontoBono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.txtMontoBono.Name = "txtMontoBono";
             this.txtMontoBono.Size = new System.Drawing.Size(164, 27);
             this.txtMontoBono.TabIndex = 7;
@@ -164,11 +155,8 @@
             // dtpFechaFeriado
             // 
             this.dtpFechaFeriado.Location = new System.Drawing.Point(158, 352);
-<<<<<<< HEAD
             this.dtpFechaFeriado.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.dtpFechaFeriado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.dtpFechaFeriado.Name = "dtpFechaFeriado";
             this.dtpFechaFeriado.Size = new System.Drawing.Size(331, 27);
             this.dtpFechaFeriado.TabIndex = 9;
@@ -180,11 +168,8 @@
             "Dia completo",
             "Medio dia"});
             this.cmbDiaCompleto.Location = new System.Drawing.Point(243, 194);
-<<<<<<< HEAD
             this.cmbDiaCompleto.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.cmbDiaCompleto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.cmbDiaCompleto.Name = "cmbDiaCompleto";
             this.cmbDiaCompleto.Size = new System.Drawing.Size(199, 29);
             this.cmbDiaCompleto.TabIndex = 10;
@@ -204,11 +189,8 @@
             // 
             this.cmbLegajo.FormattingEnabled = true;
             this.cmbLegajo.Location = new System.Drawing.Point(398, 69);
-<<<<<<< HEAD
             this.cmbLegajo.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.cmbLegajo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.cmbLegajo.Name = "cmbLegajo";
             this.cmbLegajo.Size = new System.Drawing.Size(199, 29);
             this.cmbLegajo.TabIndex = 12;
@@ -277,11 +259,8 @@
             // txtCuotaCtaCorriente
             // 
             this.txtCuotaCtaCorriente.Location = new System.Drawing.Point(930, 191);
-<<<<<<< HEAD
             this.txtCuotaCtaCorriente.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.txtCuotaCtaCorriente.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.txtCuotaCtaCorriente.Name = "txtCuotaCtaCorriente";
             this.txtCuotaCtaCorriente.Size = new System.Drawing.Size(164, 27);
             this.txtCuotaCtaCorriente.TabIndex = 19;
@@ -290,11 +269,8 @@
             // txtAnticipo
             // 
             this.txtAnticipo.Location = new System.Drawing.Point(930, 249);
-<<<<<<< HEAD
             this.txtAnticipo.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.txtAnticipo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.txtAnticipo.Name = "txtAnticipo";
             this.txtAnticipo.Size = new System.Drawing.Size(164, 27);
             this.txtAnticipo.TabIndex = 20;
@@ -313,11 +289,8 @@
             // txtDescripcion1
             // 
             this.txtDescripcion1.Location = new System.Drawing.Point(177, 454);
-<<<<<<< HEAD
             this.txtDescripcion1.Margin = new System.Windows.Forms.Padding(5);
-=======
             this.txtDescripcion1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
             this.txtDescripcion1.Multiline = true;
             this.txtDescripcion1.Name = "txtDescripcion1";
             this.txtDescripcion1.Size = new System.Drawing.Size(327, 59);
@@ -326,11 +299,11 @@
             // txtDescripcion2
             // 
             this.txtDescripcion2.Location = new System.Drawing.Point(880, 414);
-<<<<<<< HEAD
+
             this.txtDescripcion2.Margin = new System.Windows.Forms.Padding(5);
-=======
+
             this.txtDescripcion2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
+
             this.txtDescripcion2.Multiline = true;
             this.txtDescripcion2.Name = "txtDescripcion2";
             this.txtDescripcion2.Size = new System.Drawing.Size(327, 59);
@@ -413,11 +386,11 @@
             "Noviembre",
             "Diciembre"});
             this.cmbMesGeneracion.Location = new System.Drawing.Point(398, 24);
-<<<<<<< HEAD
+
             this.cmbMesGeneracion.Margin = new System.Windows.Forms.Padding(5);
-=======
+
             this.cmbMesGeneracion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
->>>>>>> refs/remotes/origin/Sandbox
+
             this.cmbMesGeneracion.Name = "cmbMesGeneracion";
             this.cmbMesGeneracion.Size = new System.Drawing.Size(199, 29);
             this.cmbMesGeneracion.TabIndex = 31;
@@ -484,15 +457,15 @@
             this.btnGenerarOrdenFeriado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerarOrdenFeriado.Location = new System.Drawing.Point(107, 525);
             this.btnGenerarOrdenFeriado.Name = "btnGenerarOrdenFeriado";
-<<<<<<< HEAD
+
             this.btnGenerarOrdenFeriado.Size = new System.Drawing.Size(278, 39);
             this.btnGenerarOrdenFeriado.TabIndex = 38;
             this.btnGenerarOrdenFeriado.Text = "Generar Orden de Feriado";
-=======
+
             this.btnGenerarOrdenFeriado.Size = new System.Drawing.Size(212, 39);
             this.btnGenerarOrdenFeriado.TabIndex = 38;
             this.btnGenerarOrdenFeriado.Text = "Generar Comprobante";
->>>>>>> refs/remotes/origin/Sandbox
+
             this.btnGenerarOrdenFeriado.UseVisualStyleBackColor = false;
             this.btnGenerarOrdenFeriado.Click += new System.EventHandler(this.btnGenerarOrdenFeriado_Click);
             // 
