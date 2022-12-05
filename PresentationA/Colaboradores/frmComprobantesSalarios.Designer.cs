@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -112,7 +112,6 @@
             this.chkFeriado.AutoSize = true;
             this.chkFeriado.Location = new System.Drawing.Point(95, 194);
             this.chkFeriado.Margin = new System.Windows.Forms.Padding(5);
-            this.chkFeriado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.chkFeriado.Name = "chkFeriado";
             this.chkFeriado.Size = new System.Drawing.Size(103, 25);
             this.chkFeriado.TabIndex = 5;
@@ -125,7 +124,6 @@
             this.chkBono.AutoSize = true;
             this.chkBono.Location = new System.Drawing.Point(95, 231);
             this.chkBono.Margin = new System.Windows.Forms.Padding(5);
-            this.chkBono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.chkBono.Name = "chkBono";
             this.chkBono.Size = new System.Drawing.Size(110, 25);
             this.chkBono.TabIndex = 6;
@@ -137,7 +135,6 @@
             // 
             this.txtMontoBono.Location = new System.Drawing.Point(173, 279);
             this.txtMontoBono.Margin = new System.Windows.Forms.Padding(5);
-            this.txtMontoBono.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtMontoBono.Name = "txtMontoBono";
             this.txtMontoBono.Size = new System.Drawing.Size(164, 27);
             this.txtMontoBono.TabIndex = 7;
@@ -156,7 +153,6 @@
             // 
             this.dtpFechaFeriado.Location = new System.Drawing.Point(158, 352);
             this.dtpFechaFeriado.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpFechaFeriado.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.dtpFechaFeriado.Name = "dtpFechaFeriado";
             this.dtpFechaFeriado.Size = new System.Drawing.Size(331, 27);
             this.dtpFechaFeriado.TabIndex = 9;
@@ -169,7 +165,6 @@
             "Medio dia"});
             this.cmbDiaCompleto.Location = new System.Drawing.Point(243, 194);
             this.cmbDiaCompleto.Margin = new System.Windows.Forms.Padding(5);
-            this.cmbDiaCompleto.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbDiaCompleto.Name = "cmbDiaCompleto";
             this.cmbDiaCompleto.Size = new System.Drawing.Size(199, 29);
             this.cmbDiaCompleto.TabIndex = 10;
@@ -190,7 +185,6 @@
             this.cmbLegajo.FormattingEnabled = true;
             this.cmbLegajo.Location = new System.Drawing.Point(398, 69);
             this.cmbLegajo.Margin = new System.Windows.Forms.Padding(5);
-            this.cmbLegajo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cmbLegajo.Name = "cmbLegajo";
             this.cmbLegajo.Size = new System.Drawing.Size(199, 29);
             this.cmbLegajo.TabIndex = 12;
@@ -260,7 +254,6 @@
             // 
             this.txtCuotaCtaCorriente.Location = new System.Drawing.Point(930, 191);
             this.txtCuotaCtaCorriente.Margin = new System.Windows.Forms.Padding(5);
-            this.txtCuotaCtaCorriente.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtCuotaCtaCorriente.Name = "txtCuotaCtaCorriente";
             this.txtCuotaCtaCorriente.Size = new System.Drawing.Size(164, 27);
             this.txtCuotaCtaCorriente.TabIndex = 19;
@@ -270,7 +263,6 @@
             // 
             this.txtAnticipo.Location = new System.Drawing.Point(930, 249);
             this.txtAnticipo.Margin = new System.Windows.Forms.Padding(5);
-            this.txtAnticipo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtAnticipo.Name = "txtAnticipo";
             this.txtAnticipo.Size = new System.Drawing.Size(164, 27);
             this.txtAnticipo.TabIndex = 20;
@@ -290,7 +282,6 @@
             // 
             this.txtDescripcion1.Location = new System.Drawing.Point(177, 454);
             this.txtDescripcion1.Margin = new System.Windows.Forms.Padding(5);
-            this.txtDescripcion1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtDescripcion1.Multiline = true;
             this.txtDescripcion1.Name = "txtDescripcion1";
             this.txtDescripcion1.Size = new System.Drawing.Size(327, 59);
@@ -299,11 +290,7 @@
             // txtDescripcion2
             // 
             this.txtDescripcion2.Location = new System.Drawing.Point(880, 414);
-
             this.txtDescripcion2.Margin = new System.Windows.Forms.Padding(5);
-
-            this.txtDescripcion2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-
             this.txtDescripcion2.Multiline = true;
             this.txtDescripcion2.Name = "txtDescripcion2";
             this.txtDescripcion2.Size = new System.Drawing.Size(327, 59);
@@ -386,11 +373,7 @@
             "Noviembre",
             "Diciembre"});
             this.cmbMesGeneracion.Location = new System.Drawing.Point(398, 24);
-
             this.cmbMesGeneracion.Margin = new System.Windows.Forms.Padding(5);
-
-            this.cmbMesGeneracion.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-
             this.cmbMesGeneracion.Name = "cmbMesGeneracion";
             this.cmbMesGeneracion.Size = new System.Drawing.Size(199, 29);
             this.cmbMesGeneracion.TabIndex = 31;
@@ -457,15 +440,9 @@
             this.btnGenerarOrdenFeriado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGenerarOrdenFeriado.Location = new System.Drawing.Point(107, 525);
             this.btnGenerarOrdenFeriado.Name = "btnGenerarOrdenFeriado";
-
-            this.btnGenerarOrdenFeriado.Size = new System.Drawing.Size(278, 39);
-            this.btnGenerarOrdenFeriado.TabIndex = 38;
-            this.btnGenerarOrdenFeriado.Text = "Generar Orden de Feriado";
-
             this.btnGenerarOrdenFeriado.Size = new System.Drawing.Size(212, 39);
             this.btnGenerarOrdenFeriado.TabIndex = 38;
             this.btnGenerarOrdenFeriado.Text = "Generar Comprobante";
-
             this.btnGenerarOrdenFeriado.UseVisualStyleBackColor = false;
             this.btnGenerarOrdenFeriado.Click += new System.EventHandler(this.btnGenerarOrdenFeriado_Click);
             // 
@@ -516,28 +493,28 @@
             this.dgvFeriados.BackgroundColor = System.Drawing.Color.White;
             this.dgvFeriados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvFeriados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFeriados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFeriados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFeriados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFeriados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_evento,
             this.nombre,
             this.fechaInicio,
             this.monto});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFeriados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFeriados.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFeriados.EnableHeadersVisualStyles = false;
             this.dgvFeriados.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvFeriados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -545,17 +522,19 @@
             this.dgvFeriados.Name = "dgvFeriados";
             this.dgvFeriados.ReadOnly = true;
             this.dgvFeriados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFeriados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFeriados.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFeriados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFeriados.Size = new System.Drawing.Size(448, 150);
             this.dgvFeriados.TabIndex = 41;
+            this.dgvFeriados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeriados_CellClick);
+            this.dgvFeriados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeriados_CellContentClick_1);
             // 
             // id_evento
             // 
@@ -586,7 +565,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 803);
+            this.ClientSize = new System.Drawing.Size(1333, 788);
             this.Controls.Add(this.dgvFeriados);
             this.Controls.Add(this.btnEliminarFeriado);
             this.Controls.Add(this.btnMinutoContable);

@@ -62,3 +62,14 @@ C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DomainA\obj\Debug\DomainA.c
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DomainA\obj\Debug\DomainA.csproj.CopyComplete
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DomainA\obj\Debug\DomainA.dll
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DomainA\obj\Debug\DomainA.pdb
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\DomainA.dll
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\DomainA.pdb
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\Common.dll
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\DataAccesA.dll
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\Common.pdb
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\DataAccesA.pdb
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.CopyComplete
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.dll
+C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.pdb

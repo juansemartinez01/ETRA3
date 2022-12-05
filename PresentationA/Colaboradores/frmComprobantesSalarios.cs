@@ -36,7 +36,7 @@ namespace PresentationA.Colaboradores
         private void cargarDG(int legajo,int mes)
         {
             DataTable  feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes);
-            
+            dgvFeriados.Rows.Clear();
             for (int i = 0; i < feriados.Rows.Count; i++)
             {
                 //crear metodo completar labels
@@ -85,6 +85,11 @@ namespace PresentationA.Colaboradores
             else
             {
                 tipoEvento = 9;
+                if(txtMontoBono.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un monto.");
+                    return;
+                }
                 montoferiado = float.Parse(txtMontoBono.Text);
                 
             }
@@ -101,6 +106,7 @@ namespace PresentationA.Colaboradores
             string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo,fechaFeriado,montoferiado,descripcion,tipoEvento);
             MessageBox.Show(resultado);
             actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+            cargarDatos(colaboradorModelo.legajo,eventoModelo.mesGeneracionComprobante);
             cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
 
             //Aca va el codigo para generar el archivo del comprobante!!
@@ -279,33 +285,64 @@ namespace PresentationA.Colaboradores
 
         private void txtCuotaCtaCorriente_TextChanged(object sender, EventArgs e)
         {
-            int resta = 0;
-            if(txtCuotaCtaCorriente.Text != "")
+            try
             {
-                if(txtAnticipo.Text != "")
+                int cuota = 0;
+                int anticipo = 0;
+                int resta = 0;
+                if (txtAnticipo.Text != "")
                 {
-                    resta = int.Parse(txtAnticipo.Text);
+                    anticipo = int.Parse(txtAnticipo.Text);
+
                 }
-                resta = resta + int.Parse(txtCuotaCtaCorriente.Text);
+                if (txtCuotaCtaCorriente.Text != "")
+                {
+                    cuota = int.Parse(txtCuotaCtaCorriente.Text);
+                }
+                resta = cuota + anticipo;
+
+
+
+
+                eventoModelo.restaSueldo = resta;
+                label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
             }
-            eventoModelo.restaSueldo = resta;
-            label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
         }
 
         private void txtAnticipo_TextChanged(object sender, EventArgs e)
         {
-            int resta = 0;
-            if (txtAnticipo.Text != "")
+            try
             {
+                int cuota = 0;
+                int anticipo = 0;
+                int resta = 0;
+                if (txtAnticipo.Text != "")
+                {
+                    anticipo = int.Parse(txtAnticipo.Text);
+
+                }
                 if (txtCuotaCtaCorriente.Text != "")
                 {
-                    resta = int.Parse(txtAnticipo.Text);
+                    cuota = int.Parse(txtCuotaCtaCorriente.Text);
                 }
-                resta = resta + int.Parse(txtAnticipo.Text);
+                resta = cuota + anticipo;
+
+
+
+                
+                eventoModelo.restaSueldo = resta;
+                label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
             }
-            eventoModelo.restaSueldo = resta;
-            label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
         }
 
         private void btnMinutoContable_Click(object sender, EventArgs e)
@@ -335,6 +372,8 @@ namespace PresentationA.Colaboradores
             colaboradorModelo.saldoCuenta = float.Parse(datosColaborador.Rows[0]["saldoAdeudado"].ToString());
 
             label15.Text = colaboradorModelo.saldoCuenta.ToString();
+            txtAnticipo.Text = "";
+            txtCuotaCtaCorriente.Text = "";
 
             string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, restoTotal, descripcion, 8);
             MessageBox.Show(resultado);
@@ -347,18 +386,27 @@ namespace PresentationA.Colaboradores
 
         private void btnEliminarFeriado_Click(object sender, EventArgs e)
         {
-            if (eventoModelo.feriadoSeleccionado == -1)
+            try
             {
-                MessageBox.Show("Debe seleccionar un Feriado o Bono.");
-                return;
+
+
+                if (eventoModelo.feriadoSeleccionado == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un Feriado o Bono.");
+                    return;
+                }
+                DataGridViewRow filaSeleccionada = dgvFeriados.Rows[eventoModelo.feriadoSeleccionado];
+                int idFeriado = int.Parse(filaSeleccionada.Cells["id_evento"].Value.ToString());
+                string respuesta = eventoModelo.eliminarEvento(idFeriado);
+                MessageBox.Show(respuesta);
+                cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+                actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+                label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
             }
-            DataGridViewRow filaSeleccionada = dgvFeriados.Rows[eventoModelo.feriadoSeleccionado];
-            int idFeriado = int.Parse(filaSeleccionada.Cells["id_evento"].Value.ToString());
-            string respuesta = eventoModelo.eliminarEvento(idFeriado);
-            MessageBox.Show(respuesta);
-            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
-            actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
-            label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione un elemento para eliminar.");
+            }
         }
 
         private void dgvFeriados_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -465,6 +513,17 @@ namespace PresentationA.Colaboradores
             e.Graphics.DrawString("TIPO Y NRO DE DOC.", font, Brushes.Black, new RectangleF(510, y + 420, ancho, 30));
 
 
+        }
+
+        private void dgvFeriados_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvFeriados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            eventoModelo.feriadoSeleccionado = indice;
         }
     }
 }

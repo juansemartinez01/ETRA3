@@ -22,3 +22,9 @@ C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\Common\obj\Debug\Common.csp
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\Common\obj\Debug\Common.dll
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\Common\obj\Debug\Common.pdb
+C:\Users\Admin\Source\Repos\ETRA3\Common\bin\Debug\Common.dll
+C:\Users\Admin\Source\Repos\ETRA3\Common\bin\Debug\Common.pdb
+C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.dll
+C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.pdb

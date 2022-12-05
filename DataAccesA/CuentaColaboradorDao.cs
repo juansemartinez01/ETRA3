@@ -267,7 +267,7 @@ namespace DataAccesA
                                             if (movimientoCreado == 1)
                                             {
                                                 float porc = (montoNuevo * 100) / float.Parse(montoMaximo);
-                                                if (float.Parse(montoMaximo) > montoNuevo)
+                                                if ((float.Parse(montoMaximo)*(-1)) > montoNuevo)
                                                 {
                                                     //El monto supera el saldo maximo
                                                     ColaboradorDao colaboradorDao = new ColaboradorDao();
@@ -282,7 +282,7 @@ namespace DataAccesA
                                                     return "Movimiento agregado con exito";
                                                 }
                                                 
-                                                else if( porc >= 65 & porc <= 100)
+                                                else if( porc <= -75 & porc < 0)
                                                 {
                                                     //El monto no lo supera pero esta en el 25 por ciento
                                                     ColaboradorDao colaboradorDao = new ColaboradorDao();

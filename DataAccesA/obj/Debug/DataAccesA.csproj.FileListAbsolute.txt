@@ -49,3 +49,12 @@ C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DataAccesA\bin\Debug\DataAc
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DataAccesA\bin\Debug\Common.dll
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DataAccesA\bin\Debug\Common.pdb
 C:\Users\usuario\Source\Repos\juansemartinez01\ETRA2\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\bin\Debug\DataAccesA.dll
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\bin\Debug\DataAccesA.pdb
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\bin\Debug\Common.dll
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\bin\Debug\Common.pdb
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.csproj.AssemblyReference.cache
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.dll
+C:\Users\Admin\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.pdb

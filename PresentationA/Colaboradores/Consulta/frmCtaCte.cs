@@ -145,10 +145,11 @@ namespace PresentationA.Colaboradores.Consulta
                 descripcion = txtDescripcion.Text;
             }
             float monto = float.Parse(txtRetirar.Text);
+            float monto1 = monto * (-1);
             float saldoMax = float.Parse(lblFondoMaximoPermitido.Text);
             float saldoActual = float.Parse(lblSaldo.Text);
-            float saldoNuevo = monto + saldoActual;
-            if (saldoNuevo > saldoMax) 
+            float saldoNuevo = monto1 + saldoActual;
+            if (saldoNuevo <= saldoMax) 
             {
                 if (MessageBox.Show("El movimiento que quiere realizar excede al saldo maximo permitido. Desea realizarlo de todas formas? Los adminsitradores serán notificados ", "Movimiento Inválido", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
             }
