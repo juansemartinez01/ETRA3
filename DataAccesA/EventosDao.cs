@@ -390,7 +390,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public float sumaFeriadosYAnticiposADescontar(int legajo,int mes,int tipoEvento1, int tipoEvento2)
+        public float sumaFeriadosYAnticiposADescontar(int legajo,int mes,int tipoEvento1, int tipoEvento2, int año)
         {
             float valor = -1;
             
@@ -403,12 +403,13 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "SELECT SUM(E.monto) FROM Evento E JOIN HistorialEvento HE ON E.id_evento = HE.id_evento WHERE HE.legajoColaborador = @legajo AND MONTH(HE.fechaInicio) = @mes AND (E.id_tipoEvento = @tipoEvento1 OR E.id_tipoEvento = @tipoEvento2) AND E.borradoLogico = 0";
+                        command.CommandText = "SELECT SUM(E.monto) FROM Evento E JOIN HistorialEvento HE ON E.id_evento = HE.id_evento WHERE HE.legajoColaborador = @legajo AND MONTH(HE.fechaInicio) = @mes AND YEAR(HE.fechaInicio) = @año AND (E.id_tipoEvento = @tipoEvento1 OR E.id_tipoEvento = @tipoEvento2) AND E.borradoLogico = 0";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.Parameters.AddWithValue("@tipoEvento1", tipoEvento1);
                         command.Parameters.AddWithValue("@tipoEvento2", tipoEvento2);
                         command.Parameters.AddWithValue("@mes", mes);
+                        command.Parameters.AddWithValue("@año", año);
                         SqlDataReader reader = command.ExecuteReader();
                         if (reader.HasRows)
                         {
@@ -444,7 +445,7 @@ namespace DataAccesA
                 return valor;
             }
         }
-        public DataTable getAllFeriadosYBonos(int legajo, int mes) 
+        public DataTable getAllFeriadosYBonos(int legajo, int mes,int año) 
         {
             DataTable ret = new DataTable();
             try
@@ -455,9 +456,10 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT E.id_evento,TE.nombre,HE.fechaInicio,E.monto FROM Evento E JOIN HistorialEvento HE ON He.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE HE.legajoColaborador = @legajo AND HE.borradoLogico = 0 AND (E.id_tipoEvento = 7 OR E.id_tipoEvento = 9) AND MONTH(HE.fechaInicio) = @mes";
+                        command.CommandText = "SELECT E.id_evento,TE.nombre,HE.fechaInicio,E.monto FROM Evento E JOIN HistorialEvento HE ON He.id_evento = E.id_evento JOIN TipoEvento TE ON TE.id_tipoEvento = E.id_tipoEvento WHERE HE.legajoColaborador = @legajo AND HE.borradoLogico = 0 AND (E.id_tipoEvento = 7 OR E.id_tipoEvento = 9) AND MONTH(HE.fechaInicio) = @mes AND YEAR(HE.fechaInicio) = @año";
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.Parameters.AddWithValue("@mes", mes);
+                        command.Parameters.AddWithValue("@año", año);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
                         ret.Load(reader);

@@ -218,6 +218,7 @@
             this.txtLegajo.Name = "txtLegajo";
             this.txtLegajo.Size = new System.Drawing.Size(172, 26);
             this.txtLegajo.TabIndex = 12;
+            this.txtLegajo.TextChanged += new System.EventHandler(this.btnBuscar_Click);
             this.txtLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajo_KeyPress);
             // 
             // txtNombre

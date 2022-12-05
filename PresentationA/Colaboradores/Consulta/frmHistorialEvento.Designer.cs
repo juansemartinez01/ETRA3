@@ -143,6 +143,7 @@
             this.cmbTipoEvento.Name = "cmbTipoEvento";
             this.cmbTipoEvento.Size = new System.Drawing.Size(302, 28);
             this.cmbTipoEvento.TabIndex = 19;
+            this.cmbTipoEvento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipoEvento_KeyPress);
             // 
             // dtpfechaInicio
             // 

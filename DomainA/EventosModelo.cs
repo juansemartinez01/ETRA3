@@ -13,8 +13,10 @@ namespace DomainA
         public int feriadoSeleccionado = -1;
         public int FilaSeleccionadaHistorialEvento = -1;
         public int mesGeneracionComprobante = -1;
+        public int añoGeneracionComprobante = -1;
         public float agregadoSueldo = 0;
         public float restaSueldo = 0;
+        public bool primerInicioComprobantes = false;
         public DataTable obtenerEventos(string legajo,bool soloPagosSueldo)
         {
             return eventosDao.obtenerEventos(legajo, soloPagosSueldo);
@@ -50,13 +52,13 @@ namespace DomainA
         { 
             return eventosDao.comprobantesFeriadoYBonos(legajo,fecha,monto, descripcion,tipoEvento);
         }
-        public float sumaFeriadosYAnticiposADescontar(int legajo, int mes, int tipoEvento1,int tipoEvento2)
+        public float sumaFeriadosYAnticiposADescontar(int legajo, int mes, int tipoEvento1,int tipoEvento2, int año)
         {
-            return eventosDao.sumaFeriadosYAnticiposADescontar(legajo,mes,tipoEvento1, tipoEvento2);
+            return eventosDao.sumaFeriadosYAnticiposADescontar(legajo,mes,tipoEvento1, tipoEvento2,año);
         }
-        public DataTable getAllFeriadosYBonos(int legajo,int mes)
+        public DataTable getAllFeriadosYBonos(int legajo,int mes, int año)
         {
-            return eventosDao.getAllFeriadosYBonos(legajo,mes);
+            return eventosDao.getAllFeriadosYBonos(legajo,mes,año);
         }
 
         }

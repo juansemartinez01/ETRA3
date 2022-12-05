@@ -396,5 +396,10 @@ namespace PresentationA.Colaboradores.Consulta
             if(dgvEventos.Rows.Count > 0) {   dgvEventos.Rows[dgvEventos.CurrentRow.Index].Selected = true;  }
             ViewState();
         }
+
+        private void cmbTipoEvento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

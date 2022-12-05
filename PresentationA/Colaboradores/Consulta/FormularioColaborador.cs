@@ -199,5 +199,10 @@ namespace PresentationA
         {
             if(UserCache.perfil != Perfiles.admin){btnModificar.Enabled = false; }
         }
+
+        private void txtLegajo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

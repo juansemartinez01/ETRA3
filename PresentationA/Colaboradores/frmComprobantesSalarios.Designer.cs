@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -74,13 +74,15 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbAñoComprobantes = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeriados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(323, 74);
+            this.label1.Location = new System.Drawing.Point(41, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 21);
@@ -138,6 +140,7 @@
             this.txtMontoBono.Name = "txtMontoBono";
             this.txtMontoBono.Size = new System.Drawing.Size(164, 27);
             this.txtMontoBono.TabIndex = 7;
+            this.txtMontoBono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoBono_KeyPress);
             // 
             // label4
             // 
@@ -169,6 +172,7 @@
             this.cmbDiaCompleto.Size = new System.Drawing.Size(199, 29);
             this.cmbDiaCompleto.TabIndex = 10;
             this.cmbDiaCompleto.SelectedIndexChanged += new System.EventHandler(this.cmbDiaCompleto_SelectedIndexChanged);
+            this.cmbDiaCompleto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbDiaCompleto_KeyPress);
             // 
             // label5
             // 
@@ -183,12 +187,13 @@
             // cmbLegajo
             // 
             this.cmbLegajo.FormattingEnabled = true;
-            this.cmbLegajo.Location = new System.Drawing.Point(398, 69);
+            this.cmbLegajo.Location = new System.Drawing.Point(107, 74);
             this.cmbLegajo.Margin = new System.Windows.Forms.Padding(5);
             this.cmbLegajo.Name = "cmbLegajo";
             this.cmbLegajo.Size = new System.Drawing.Size(199, 29);
             this.cmbLegajo.TabIndex = 12;
             this.cmbLegajo.SelectedIndexChanged += new System.EventHandler(this.cmbLegajo_SelectedIndexChanged);
+            this.cmbLegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbLegajo_KeyPress);
             // 
             // label6
             // 
@@ -258,6 +263,7 @@
             this.txtCuotaCtaCorriente.Size = new System.Drawing.Size(164, 27);
             this.txtCuotaCtaCorriente.TabIndex = 19;
             this.txtCuotaCtaCorriente.TextChanged += new System.EventHandler(this.txtCuotaCtaCorriente_TextChanged);
+            this.txtCuotaCtaCorriente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuotaCtaCorriente_KeyPress);
             // 
             // txtAnticipo
             // 
@@ -267,6 +273,7 @@
             this.txtAnticipo.Size = new System.Drawing.Size(164, 27);
             this.txtAnticipo.TabIndex = 20;
             this.txtAnticipo.TextChanged += new System.EventHandler(this.txtAnticipo_TextChanged);
+            this.txtAnticipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAnticipo_KeyPress);
             // 
             // label12
             // 
@@ -349,12 +356,12 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(90, 24);
+            this.label18.Location = new System.Drawing.Point(341, 35);
             this.label18.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(296, 21);
+            this.label18.Size = new System.Drawing.Size(45, 21);
             this.label18.TabIndex = 30;
-            this.label18.Text = "Mes para generar los comprobantes:";
+            this.label18.Text = "Mes:";
             // 
             // cmbMesGeneracion
             // 
@@ -372,12 +379,13 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.cmbMesGeneracion.Location = new System.Drawing.Point(398, 24);
+            this.cmbMesGeneracion.Location = new System.Drawing.Point(386, 29);
             this.cmbMesGeneracion.Margin = new System.Windows.Forms.Padding(5);
             this.cmbMesGeneracion.Name = "cmbMesGeneracion";
             this.cmbMesGeneracion.Size = new System.Drawing.Size(199, 29);
             this.cmbMesGeneracion.TabIndex = 31;
             this.cmbMesGeneracion.SelectedIndexChanged += new System.EventHandler(this.cmbMesGeneracion_SelectedIndexChanged);
+            this.cmbMesGeneracion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMesGeneracion_KeyPress);
             // 
             // label19
             // 
@@ -493,28 +501,28 @@
             this.dgvFeriados.BackgroundColor = System.Drawing.Color.White;
             this.dgvFeriados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvFeriados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFeriados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFeriados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvFeriados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFeriados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_evento,
             this.nombre,
             this.fechaInicio,
             this.monto});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFeriados.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFeriados.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvFeriados.EnableHeadersVisualStyles = false;
             this.dgvFeriados.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvFeriados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -522,14 +530,14 @@
             this.dgvFeriados.Name = "dgvFeriados";
             this.dgvFeriados.ReadOnly = true;
             this.dgvFeriados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFeriados.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFeriados.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvFeriados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFeriados.Size = new System.Drawing.Size(448, 150);
             this.dgvFeriados.TabIndex = 41;
@@ -561,11 +569,44 @@
             this.monto.Name = "monto";
             this.monto.ReadOnly = true;
             // 
+            // cmbAñoComprobantes
+            // 
+            this.cmbAñoComprobantes.FormattingEnabled = true;
+            this.cmbAñoComprobantes.Items.AddRange(new object[] {
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030"});
+            this.cmbAñoComprobantes.Location = new System.Drawing.Point(107, 29);
+            this.cmbAñoComprobantes.Margin = new System.Windows.Forms.Padding(5);
+            this.cmbAñoComprobantes.Name = "cmbAñoComprobantes";
+            this.cmbAñoComprobantes.Size = new System.Drawing.Size(199, 29);
+            this.cmbAñoComprobantes.TabIndex = 42;
+            this.cmbAñoComprobantes.SelectedIndexChanged += new System.EventHandler(this.cmbAñoComprobantes_SelectedIndexChanged);
+            this.cmbAñoComprobantes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbAñoComprobantes_KeyPress);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(56, 35);
+            this.label23.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(47, 21);
+            this.label23.TabIndex = 43;
+            this.label23.Text = "Año:";
+            // 
             // frmComprobantesSalarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 788);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.cmbAñoComprobantes);
             this.Controls.Add(this.dgvFeriados);
             this.Controls.Add(this.btnEliminarFeriado);
             this.Controls.Add(this.btnMinutoContable);
@@ -657,5 +698,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn monto;
+        private System.Windows.Forms.ComboBox cmbAñoComprobantes;
+        private System.Windows.Forms.Label label23;
     }
 }

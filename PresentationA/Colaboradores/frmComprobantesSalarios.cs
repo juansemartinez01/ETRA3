@@ -20,6 +20,7 @@ namespace PresentationA.Colaboradores
         public frmComprobantesSalarios()
         {
             InitializeComponent();
+            cmbLegajo.SelectedIndex = -1;
             limpiarCampos();
             LlenarCombo(cmbLegajo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
             label8.Visible = false;
@@ -28,14 +29,15 @@ namespace PresentationA.Colaboradores
             label17.Visible = false;
             label21.Visible = false;
             label22.Visible = false;
-            cmbLegajo.SelectedIndex = -1;
+            
             cmbMesGeneracion.SelectedIndex = -1;
+            cmbAñoComprobantes.SelectedIndex = -1;
             
             
         }
-        private void cargarDG(int legajo,int mes)
+        private void cargarDG(int legajo,int mes,int año)
         {
-            DataTable  feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes);
+            DataTable  feriados = eventoModelo.getAllFeriadosYBonos(legajo,mes,año);
             dgvFeriados.Rows.Clear();
             for (int i = 0; i < feriados.Rows.Count; i++)
             {
@@ -55,60 +57,73 @@ namespace PresentationA.Colaboradores
 
         private void btnGenerarOrdenFeriado_Click(object sender, EventArgs e)
         {
-            int tipoEvento;
-            DateTime fechaFeriado = dtpFechaFeriado.Value.Date;
-            int diaCompleto;
-            float montoferiado;
-            string descripcion = "No especifica";
-            if (chkFeriado.Checked)
+            try
             {
-                tipoEvento = 7;
-                if(cmbDiaCompleto.SelectedIndex == -1)
+
+
+                int tipoEvento;
+                DateTime fechaFeriado = dtpFechaFeriado.Value.Date;
+                int diaCompleto;
+                float montoferiado;
+                string descripcion = "No especifica";
+                if (chkFeriado.Checked)
                 {
-                    MessageBox.Show("Debe seleccionar si fue dia completo o medio dia.");
-                    return;
+                    tipoEvento = 7;
+                    if (cmbDiaCompleto.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Debe seleccionar si fue dia completo o medio dia.");
+                        return;
+                    }
+                    else
+                    {
+                        diaCompleto = cmbDiaCompleto.SelectedIndex;
+                    }
+
+                    if (diaCompleto == 0)
+                    {
+                        montoferiado = colaboradorModelo.sueldo / 30;
+                    }
+                    else
+                    {
+                        montoferiado = (colaboradorModelo.sueldo / 30) / (2);
+                    }
                 }
                 else
                 {
-                    diaCompleto = cmbDiaCompleto.SelectedIndex;
+                    tipoEvento = 9;
+                    if (txtMontoBono.Text == "")
+                    {
+                        MessageBox.Show("Debe ingresar un monto.");
+                        return;
+                    }
+                    montoferiado = float.Parse(txtMontoBono.Text);
+
                 }
-                
-                if(diaCompleto == 0)
+                if (txtDescripcion1.Text != "")
                 {
-                    montoferiado = colaboradorModelo.sueldo / 30;
+                    descripcion = txtDescripcion1.Text;
                 }
-                else
+                if (cmbMesGeneracion.SelectedIndex == -1)
                 {
-                    montoferiado = (colaboradorModelo.sueldo / 30)/(2);
-                }
-            }
-            else
-            {
-                tipoEvento = 9;
-                if(txtMontoBono.Text == "")
-                {
-                    MessageBox.Show("Debe ingresar un monto.");
+                    MessageBox.Show("Seleccione un mes de generacion de comprobante");
                     return;
                 }
-                montoferiado = float.Parse(txtMontoBono.Text);
-                
-            }
-            if(txtDescripcion1.Text != "")
-            {
-                descripcion= txtDescripcion1.Text;
-            }
-            if(cmbMesGeneracion.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un mes de generacion de comprobante");
+                if (cmbAñoComprobantes.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Seleccione un Año de generacion de comprobante");
+                    return;
+                }
+
+                string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, montoferiado, descripcion, tipoEvento);
+                MessageBox.Show(resultado);
+                actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
+                cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
+                cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
+            }catch(Exception ex){
+                MessageBox.Show(ex.ToString());
+                txtMontoBono.Text = "";
                 return;
             }
-
-            string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo,fechaFeriado,montoferiado,descripcion,tipoEvento);
-            MessageBox.Show(resultado);
-            actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
-            cargarDatos(colaboradorModelo.legajo,eventoModelo.mesGeneracionComprobante);
-            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
-
             //Aca va el codigo para generar el archivo del comprobante!!
 
             try
@@ -152,9 +167,9 @@ namespace PresentationA.Colaboradores
         private void cmbLegajo_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            if(cmbLegajo.SelectedIndex == 0 && int.Parse(cmbLegajo.SelectedValue.ToString()) != 10000)
+            if(cmbLegajo.SelectedIndex == 0 && eventoModelo.primerInicioComprobantes == false)
             {
-                cmbLegajo.SelectedIndex= -1;
+                return;
             }
             if (cmbLegajo.SelectedIndex != -1)
             {
@@ -163,6 +178,7 @@ namespace PresentationA.Colaboradores
                 if (cmbMesGeneracion.SelectedIndex == -1)
                 {
                     MessageBox.Show("Primero debe seleccionar un mes de generacion de comprobante");
+                    
                     cmbLegajo.SelectedIndex= -1;
                     return;
                 }
@@ -174,11 +190,11 @@ namespace PresentationA.Colaboradores
                 colaboradorModelo.apellido = datosColaborador.Rows[0]["apellido"].ToString();
                 colaboradorModelo.sueldo = float.Parse(datosColaborador.Rows[0]["monto"].ToString());
                 colaboradorModelo.saldoCuenta = float.Parse(datosColaborador.Rows[0]["saldoAdeudado"].ToString());
-                cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+                cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
             }
             
         }
-        private void cargarDatos(int legajo,int mes)
+        private void cargarDatos(int legajo,int mes,int año)
         {
             label8.Visible = true;
             label9.Visible = true;
@@ -187,10 +203,10 @@ namespace PresentationA.Colaboradores
             label22.Visible = true;
             label8.Text = colaboradorModelo.nombre;
             label9.Text = colaboradorModelo.apellido;
-            actualizarSueldoAnticiposYDescuentos(legajo, mes);
+            actualizarSueldoAnticiposYDescuentos(legajo, mes,año);
             label15.Text = colaboradorModelo.saldoCuenta.ToString();
             label21.Text = colaboradorModelo.sueldo.ToString();
-            cargarDG(legajo, mes);
+            cargarDG(legajo, mes,año);
 
             label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
             activarCampos();
@@ -205,10 +221,10 @@ namespace PresentationA.Colaboradores
             txtCuotaCtaCorriente.Enabled = true;
             btnMinutoContable.Enabled = true;
         }
-        private void actualizarSueldoAnticiposYDescuentos(int legajo,int mes)
+        private void actualizarSueldoAnticiposYDescuentos(int legajo,int mes,int año)
         {
             
-            eventoModelo.agregadoSueldo = eventoModelo.sumaFeriadosYAnticiposADescontar(legajo, mes, 7,9);
+            eventoModelo.agregadoSueldo = eventoModelo.sumaFeriadosYAnticiposADescontar(legajo, mes, 7,9,año);
         }
 
         private void chkFeriado_CheckedChanged(object sender, EventArgs e)
@@ -273,13 +289,23 @@ namespace PresentationA.Colaboradores
 
         private void cmbMesGeneracion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            eventoModelo.mesGeneracionComprobante = cmbMesGeneracion.SelectedIndex + 1;
-
-            if(colaboradorModelo.legajo != 0)
+            if(cmbAñoComprobantes.SelectedIndex == -1)
             {
-                cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+                MessageBox.Show("Primero seleccione un año.");
+                cmbMesGeneracion.SelectedIndex = -1;
+                cmbLegajo.SelectedIndex = -1;
+                return;
+
+                
             }
-            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+            eventoModelo.mesGeneracionComprobante = cmbMesGeneracion.SelectedIndex + 1;
+            
+
+            if (colaboradorModelo.legajo != 0)
+            {
+                cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
+            }
+            cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
 
         }
 
@@ -310,6 +336,8 @@ namespace PresentationA.Colaboradores
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                txtAnticipo.Text = "";
+                txtCuotaCtaCorriente.Text = "";
                 return;
             }
 
@@ -341,6 +369,8 @@ namespace PresentationA.Colaboradores
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                txtAnticipo.Text = "";
+                txtCuotaCtaCorriente.Text = "";
                 return;
             }
         }
@@ -399,8 +429,8 @@ namespace PresentationA.Colaboradores
                 int idFeriado = int.Parse(filaSeleccionada.Cells["id_evento"].Value.ToString());
                 string respuesta = eventoModelo.eliminarEvento(idFeriado);
                 MessageBox.Show(respuesta);
-                cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
-                actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante);
+                cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
+                actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
                 label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
             }
             catch(Exception ex)
@@ -524,6 +554,63 @@ namespace PresentationA.Colaboradores
         {
             int indice = e.RowIndex;
             eventoModelo.feriadoSeleccionado = indice;
+        }
+
+        private void cmbAñoComprobantes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            eventoModelo.primerInicioComprobantes = true;
+            int año = 2022;
+            int seleccion = cmbAñoComprobantes.SelectedIndex;
+            año = año + seleccion;
+            eventoModelo.añoGeneracionComprobante = año;
+            if(eventoModelo.mesGeneracionComprobante != -1 && cmbLegajo.SelectedIndex != -1)
+            {
+                cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
+            }
+        }
+
+        private void txtCuotaCtaCorriente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtAnticipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMontoBono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbLegajo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbMesGeneracion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbAñoComprobantes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void cmbDiaCompleto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
