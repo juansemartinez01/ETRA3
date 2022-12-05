@@ -544,7 +544,7 @@
             this.dgvSalarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSalarios.RowHeadersWidth = 51;
             this.dgvSalarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSalarios.Size = new System.Drawing.Size(1178, 254);
+            this.dgvSalarios.Size = new System.Drawing.Size(1119, 254);
             this.dgvSalarios.TabIndex = 42;
             // 
             // legajo
@@ -621,11 +621,15 @@
             this.label15.TabIndex = 24;
             this.label15.Text = "Descripcion para los comprobantes";
             // 
+            // pntOrden
+            // 
+            this.pntOrden.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printOrden);
+            // 
             // frmSalarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 760);
+            this.ClientSize = new System.Drawing.Size(1155, 777);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtDescripcionComprobante);
             this.Controls.Add(this.btnGenerarOrdenes);

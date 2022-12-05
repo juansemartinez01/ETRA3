@@ -679,3 +679,7 @@ C:\Users\usuario\Documents\ETRA\viejo\Etra 3.0\PresentationA\bin\Debug\zh-CHT\Mi
 C:\Users\usuario\Documents\ETRA\viejo\Etra 3.0\PresentationA\obj\Debug\ETRA.exe.manifest
 C:\Users\usuario\Documents\ETRA\viejo\Etra 3.0\PresentationA\obj\Debug\ETRA.application
 C:\Users\usuario\Documents\ETRA\viejo\Etra 3.0\PresentationA\obj\Debug\PresentationA.csproj.CopyComplete
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Resources\ETRA_Isologotipo-01.png
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Resources\logoLW.ico
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\Resources\logoNombre.ico
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmComprobantesSalarios.resources
