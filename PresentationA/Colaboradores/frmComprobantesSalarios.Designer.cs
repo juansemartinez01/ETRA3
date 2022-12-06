@@ -64,8 +64,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.pntOrden = new System.Drawing.Printing.PrintDocument();
-            this.pntMinuta = new System.Drawing.Printing.PrintDocument();
             this.btnGenerarOrdenFeriado = new PresentationA.Controls.BotonPadre();
             this.btnMinutoContable = new PresentationA.Controls.BotonPadre();
             this.btnEliminarFeriado = new PresentationA.Controls.BotonPadre();
@@ -427,14 +425,6 @@
             this.label22.TabIndex = 35;
             this.label22.Text = "label22";
             // 
-            // pntOrden
-            // 
-            this.pntOrden.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printOrden);
-            // 
-            // pntMinuta
-            // 
-            this.pntMinuta.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printMinuta);
-            // 
             // btnGenerarOrdenFeriado
             // 
             this.btnGenerarOrdenFeriado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
@@ -465,7 +455,7 @@
             this.btnMinutoContable.IconColor = System.Drawing.Color.Black;
             this.btnMinutoContable.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinutoContable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMinutoContable.Location = new System.Drawing.Point(919, 597);
+            this.btnMinutoContable.Location = new System.Drawing.Point(880, 516);
             this.btnMinutoContable.Name = "btnMinutoContable";
             this.btnMinutoContable.Size = new System.Drawing.Size(294, 48);
             this.btnMinutoContable.TabIndex = 39;
@@ -688,8 +678,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
-        private System.Drawing.Printing.PrintDocument pntOrden;
-        private System.Drawing.Printing.PrintDocument pntMinuta;
         private Controls.BotonPadre btnGenerarOrdenFeriado;
         private Controls.BotonPadre btnMinutoContable;
         private Controls.BotonPadre btnEliminarFeriado;

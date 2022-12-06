@@ -73,3 +73,6 @@ C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.CoreCompileIn
 C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.dll
 C:\Users\Admin\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\itextsharp.dll
+C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\itextsharp.xml

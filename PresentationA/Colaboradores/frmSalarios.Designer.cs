@@ -620,10 +620,7 @@
             this.label15.Size = new System.Drawing.Size(285, 21);
             this.label15.TabIndex = 24;
             this.label15.Text = "Descripcion para los comprobantes";
-            // 
-            // pntOrden
-            // 
-            this.pntOrden.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printOrden);
+            
             // 
             // frmSalarios
             // 
