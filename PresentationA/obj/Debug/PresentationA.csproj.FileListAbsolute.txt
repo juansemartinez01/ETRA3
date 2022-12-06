@@ -791,3 +791,6 @@ C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\itextsharp.dll
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\itextsharp.xml
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\itextsharp.dll
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\itextsharp.xml
