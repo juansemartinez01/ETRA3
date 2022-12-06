@@ -186,14 +186,14 @@ INSERT INTO CuentaColaborador VALUES (0,0,0)
 
 SELECT * FROM MovimientosCuentaColaborador
 
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10000,10000000,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10001,10000001,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10002,10000002,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10003,10000003,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10004,10000004,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10005,10000005,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10006,10000006,0,3,0)
-INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10007,10000007,0,3,0)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10000,10000000,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10001,10000001,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10002,10000002,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10003,10000003,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10004,10000004,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10005,10000005,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10006,10000006,0,3,0,null)
+INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),10007,10000007,0,3,0,null)
 
 /*Inicializador tipos de avisos*/
 INSERT INTO TipoAviso VALUES ('Aviso a Admins',0)
