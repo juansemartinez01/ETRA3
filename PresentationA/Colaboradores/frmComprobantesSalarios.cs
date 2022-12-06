@@ -126,6 +126,7 @@ namespace PresentationA.Colaboradores
                 actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
                 cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
                 cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
+                generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(),colaboradorModelo.calle + " " +colaboradorModelo.nroCalle.ToString(), montoferiado);
             }catch(Exception ex){
                 MessageBox.Show(ex.ToString());
                 txtMontoBono.Text = "";
@@ -133,20 +134,6 @@ namespace PresentationA.Colaboradores
             }
             //Aca va el codigo para generar el archivo del comprobante!!
 
-            //try
-            //{
-            //    pntOrden = new PrintDocument();
-            //    pntOrden.PrinterSettings = new PrinterSettings();
-            //    pntOrden.PrintPage += printOrden;
-            //    pntOrden.Print();
-            //}
-            //catch (Exception ex) { throw ex; }
-
-            //pntOrden = new PrintDocument();
-            //PrinterSettings ps = new PrinterSettings();
-            //pntOrden.PrinterSettings = ps;
-            //pntOrden.PrintPage += printOrden;
-            //pntOrden.Print();
 
         }
 
@@ -197,6 +184,8 @@ namespace PresentationA.Colaboradores
                 colaboradorModelo.apellido = datosColaborador.Rows[0]["apellido"].ToString();
                 colaboradorModelo.sueldo = float.Parse(datosColaborador.Rows[0]["monto"].ToString());
                 colaboradorModelo.saldoCuenta = float.Parse(datosColaborador.Rows[0]["saldoAdeudado"].ToString());
+                colaboradorModelo.calle = datosColaborador.Rows[0]["nombreCalle"].ToString();
+                colaboradorModelo.nroCalle = int.Parse(datosColaborador.Rows[0]["numeroCalle"].ToString());
                 cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
             }
             
@@ -628,7 +617,7 @@ namespace PresentationA.Colaboradores
             PdfDoc.Add(lineSeparato);
         }
 
-        private void generarOrden(object sender, EventArgs e)
+        private void generarOrden(string nombre, string direccion, float debe)
         {
             Document pdf = new Document();
             PdfWriter pdfWritter = PdfWriter.GetInstance(pdf, new FileStream("C:\\Users\\usuario\\Desktop\\prueba.pdf",FileMode.Create) );
@@ -705,7 +694,7 @@ namespace PresentationA.Colaboradores
             col1.Border = 0;
             tablaColab.AddCell(col1);
 
-            col2 = new PdfPCell(new Phrase("NO",font8));
+            col2 = new PdfPCell(new Phrase(nombre,font8));
             col2.Border = 0;
             tablaColab.AddCell(col2);
 
@@ -720,19 +709,16 @@ namespace PresentationA.Colaboradores
             tablaColab.AddCell(cvacio);
             tablaColab.AddCell(cvacio);
 
-            col3 = new PdfPCell(new Phrase("Nro. Orden de Pago: ", fBold));
-            col3.Border = 0;
-            tablaColab.AddCell(col3);
-
-            col4 = new PdfPCell(new Phrase("11111", font8));
-            col4.Border = 0;
-            tablaColab.AddCell(col4);
+            //Numeor orden de pago:
+            tablaColab.AddCell(cvacio);
+            //Nro
+            tablaColab.AddCell(cvacio);
 
             col1 = new PdfPCell(new Phrase("Dirección: ", fBold));
             col1.Border = 0;
             tablaColab.AddCell(col1);
 
-            col2 = new PdfPCell(new Phrase("Direccion colab", font8));
+            col2 = new PdfPCell(new Phrase(direccion, font8));
             col2.Border = 0;
             tablaColab.AddCell(col2);
 
@@ -752,7 +738,7 @@ namespace PresentationA.Colaboradores
             col1.Border = 0;
             tablaCabe.AddCell(col1);
 
-            col2 = new PdfPCell(new Phrase("DESCRIPCIÓN", font8));
+            col2 = new PdfPCell(new Phrase("DESCRIPCIÓN", fBold));
             col2.Border = 0;
             tablaCabe.AddCell(col2);
 
@@ -762,8 +748,6 @@ namespace PresentationA.Colaboradores
             col3.Border = 0;
             tablaCabe.AddCell(col3);
             
-            
-            
 
             col4 = new PdfPCell(new Phrase("HABER", font8));
             col4.Border = 0;
@@ -771,7 +755,7 @@ namespace PresentationA.Colaboradores
 
             
 
-            col6 = new PdfPCell(new Phrase("TOTAL",fBold));
+            col6 = new PdfPCell(new Phrase("SUB TOTAL",fBold));
             col6.Border = 0;
             col6.HorizontalAlignment = 2;
             tablaCabe.AddCell(col6);
@@ -796,7 +780,7 @@ namespace PresentationA.Colaboradores
             tablaDetalle.AddCell(cvacio);
 
             //Aca iria el valor de cada feriado?
-            col3 = new PdfPCell(new Phrase(label17.Text, font8));
+            col3 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
             col3.Border = 0;
             tablaDetalle.AddCell(col3);
 
@@ -806,7 +790,7 @@ namespace PresentationA.Colaboradores
 
             
 
-            col6 = new PdfPCell(new Phrase(label17.Text, font8));
+            col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
             col6.Border = 0;
             col6.HorizontalAlignment = 2;
             tablaDetalle.AddCell(col6);
@@ -814,41 +798,68 @@ namespace PresentationA.Colaboradores
             tablaDetalle.AddCell(cvacio);
             pdf.Add(tablaDetalle);
 
-            //for(IRow = 1; IRow <= 40; IRow++)
-            //{
-            //    pdf.Add(new Paragraph("."));
-            //    Iline = (int)pdfWritter.GetVerticalPosition(true);
-            //    if (Iline < 200) { break; }
+            for (IRow = 1; IRow <= 5; IRow++)
+            {
+                pdf.Add(new Paragraph("."));
+                Iline = (int)pdfWritter.GetVerticalPosition(true);
+                if (Iline < 200) { break; }
 
-            //}
+            }
 
             pintaLinea(pdf);
             //Pie
             PdfPTable tablaPie = new PdfPTable(7);
-            float[] widths5 = new float[] { 7.0F, 8.0F, 3.0F, 3.0F, 3.0F, 3.0F, 1.0F };
+            float[] widths5 = new float[] { 5.0F, 5.0F, 5.0F, 0.0F, 3.0F, 2.0F, 1.0F };
             tablaPie.SetWidths(widths5);
             tablaPie.WidthPercentage = 95;
 
-            col1 = new PdfPCell(new Phrase("OBSERVACIONES", fBold));
-            col1.Border = 0;
-            tablaPie.AddCell(col1);
+
             tablaPie.AddCell(cvacio);
             tablaPie.AddCell(cvacio);
             tablaPie.AddCell(cvacio);
             tablaPie.AddCell(cvacio);
-            col3 = new PdfPCell(new Phrase("SUB TOTAL", font8));
+            col3 = new PdfPCell(new Phrase("TOTAL: $", font8));
             col3.Border = 0;
-            col3.HorizontalAlignment = 2;
             tablaPie.AddCell(col3);
 
-            col4 = new PdfPCell(new Phrase(label17.Text, font8));
+            col4 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
             col4.Border = 0;
             col4.HorizontalAlignment = 2;
             tablaPie.AddCell(col4);
 
-            col1 = new PdfPCell(new Phrase(txtDescripcion1.Text, font8));
+            tablaPie.AddCell(cvacio);
+            col1 = new PdfPCell(new Phrase("______________", font8));
             col1.Border = 0;
             tablaPie.AddCell(col1);
+
+            col2 = new PdfPCell(new Phrase("______________", font8));
+            col2.Border = 0;
+            tablaPie.AddCell(col2);
+
+            col3 = new PdfPCell(new Phrase("______________", font8));
+            col3.Border = 0;
+            tablaPie.AddCell(col3);
+            tablaPie.AddCell(cvacio);
+            tablaPie.AddCell(cvacio);
+            tablaPie.AddCell(cvacio);
+            tablaPie.AddCell(cvacio);
+
+            col1 = new PdfPCell(new Phrase("FIRMA", font8));
+            col1.Border = 0;
+            tablaPie.AddCell(col1);
+
+            col2 = new PdfPCell(new Phrase("ACLARACIÓN", font8));
+            col2.Border = 0;
+            tablaPie.AddCell(col2);
+
+            col3 = new PdfPCell(new Phrase("TIPO Y Nº DOC.", font8));
+            col3.Border = 0;
+            tablaPie.AddCell(col3);
+
+            tablaPie.AddCell(cvacio);
+            tablaPie.AddCell(cvacio);
+            tablaPie.AddCell(cvacio);
+            tablaPie.AddCell(cvacio);
 
             pdf.Add(tablaPie);
             pdf.Close();

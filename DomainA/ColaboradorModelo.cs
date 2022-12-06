@@ -14,7 +14,8 @@ namespace DomainA
         public string apellido;
         public float sueldo;
         public float saldoCuenta;
-
+        public string calle;
+        public int nroCalle;
         public string BuscarLegajoUltimoColaborador()
         {
             return colaboradorDao.BuscarLegajoUltimoColaborador();

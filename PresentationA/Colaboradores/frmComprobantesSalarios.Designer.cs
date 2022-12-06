@@ -452,7 +452,7 @@
             this.btnGenerarOrdenFeriado.TabIndex = 38;
             this.btnGenerarOrdenFeriado.Text = "Generar Comprobante";
             this.btnGenerarOrdenFeriado.UseVisualStyleBackColor = false;
-            this.btnGenerarOrdenFeriado.Click += new System.EventHandler(this.generarOrden);
+            this.btnGenerarOrdenFeriado.Click += new System.EventHandler(this.btnGenerarOrdenFeriado_Click);
             // 
             // btnMinutoContable
             // 
