@@ -263,7 +263,7 @@ namespace PresentationA.Colaboradores
             //}
             for (int i = 0; i < dgvSalarios.RowCount; i++) 
             {
-                if (auxiliar >= dgvSalarios.RowCount) { break; }
+                if (auxiliar >= dgvSalarios.RowCount) { auxiliar = 0; break; }
                 pntOrden = new PrintDocument();
                 PrinterSettings ps = new PrinterSettings();
                 pntOrden.PrinterSettings = ps;
