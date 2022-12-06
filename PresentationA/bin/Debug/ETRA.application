@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ETRA.exe.manifest" size="47143">
+    <dependentAssembly dependencyType="install" codebase="ETRA.exe.manifest" size="48481">
       <assemblyIdentity name="ETRA.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uRAzjoC9Ag6v0iyzCV3soE3ROxVm44yqcm2zVK9UE4M=</dsig:DigestValue>
+        <dsig:DigestValue>XYpA4SwtH+zBzch5CCQRSSiyUDo3AMOrDGyXCZ8GhRE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

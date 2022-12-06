@@ -788,3 +788,6 @@ C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.application
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.exe
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\itextsharp.dll
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\itextsharp.xml
