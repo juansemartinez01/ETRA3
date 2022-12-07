@@ -398,8 +398,7 @@ namespace PresentationA.Colaboradores
             colaboradorModelo.saldoCuenta = float.Parse(datosColaborador.Rows[0]["saldoAdeudado"].ToString());
 
             label15.Text = colaboradorModelo.saldoCuenta.ToString();
-            txtAnticipo.Text = "";
-            txtCuotaCtaCorriente.Text = "";
+            
 
             string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, restoTotal, descripcion, 8);
             MessageBox.Show(resultado);
@@ -413,7 +412,9 @@ namespace PresentationA.Colaboradores
 
             ComprobanteModelo minuta = new ComprobanteModelo();
             minuta.generarOrden(colaboradorModelo.nombre + " " + colaboradorModelo.apellido, colaboradorModelo.calle + " " + colaboradorModelo.nroCalle, float.Parse(label22.Text.ToString()), fileName, "MINUTA CONTABLE", txtDescripcion2.Text);
-            
+            txtAnticipo.Text = "";
+            txtCuotaCtaCorriente.Text = "";
+
         }
 
         private void btnEliminarFeriado_Click(object sender, EventArgs e)
@@ -513,6 +514,72 @@ namespace PresentationA.Colaboradores
         private void cmbDiaCompleto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void txtAnticipo_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int cuota = 0;
+                int anticipo = 0;
+                int resta = 0;
+                if (txtAnticipo.Text != "")
+                {
+                    anticipo = int.Parse(txtAnticipo.Text);
+
+                }
+                if (txtCuotaCtaCorriente.Text != "")
+                {
+                    cuota = int.Parse(txtCuotaCtaCorriente.Text);
+                }
+                resta = cuota + anticipo;
+
+
+
+
+                eventoModelo.restaSueldo = resta;
+                label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                txtAnticipo.Text = "";
+                txtCuotaCtaCorriente.Text = "";
+                return;
+            }
+        }
+
+        private void txtCuotaCtaCorriente_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int cuota = 0;
+                int anticipo = 0;
+                int resta = 0;
+                if (txtAnticipo.Text != "")
+                {
+                    anticipo = int.Parse(txtAnticipo.Text);
+
+                }
+                if (txtCuotaCtaCorriente.Text != "")
+                {
+                    cuota = int.Parse(txtCuotaCtaCorriente.Text);
+                }
+                resta = cuota + anticipo;
+
+
+
+
+                eventoModelo.restaSueldo = resta;
+                label22.Text = (colaboradorModelo.sueldo + eventoModelo.agregadoSueldo - eventoModelo.restaSueldo).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                txtAnticipo.Text = "";
+                txtCuotaCtaCorriente.Text = "";
+                return;
+            }
         }
     }
 }

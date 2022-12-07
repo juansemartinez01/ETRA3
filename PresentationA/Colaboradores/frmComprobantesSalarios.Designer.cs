@@ -538,6 +538,7 @@
             this.txtAnticipo.Name = "txtAnticipo";
             this.txtAnticipo.Size = new System.Drawing.Size(164, 27);
             this.txtAnticipo.TabIndex = 48;
+            this.txtAnticipo.TextChanged += new System.EventHandler(this.txtAnticipo_TextChanged_1);
             // 
             // txtCuotaCtaCorriente
             // 
@@ -546,6 +547,7 @@
             this.txtCuotaCtaCorriente.Name = "txtCuotaCtaCorriente";
             this.txtCuotaCtaCorriente.Size = new System.Drawing.Size(164, 27);
             this.txtCuotaCtaCorriente.TabIndex = 47;
+            this.txtCuotaCtaCorriente.TextChanged += new System.EventHandler(this.txtCuotaCtaCorriente_TextChanged_1);
             // 
             // label11
             // 
@@ -651,7 +653,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1336, 1100);
+            this.ClientSize = new System.Drawing.Size(1336, 788);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
