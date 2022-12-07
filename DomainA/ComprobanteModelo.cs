@@ -24,10 +24,10 @@ namespace DomainA
             PdfDoc.Add(lineSeparato);
         }
 
-        private void generarOrden(string nombre, string direccion, float debe, string folderName, string tipoComprobante, string descrip)
+        public void generarOrden(string nombre, string direccion, float debe, string fileName, string tipoComprobante, string descrip)
         {
 
-            string fileName = folderName + "\\" + tipoComprobante + "_" +  nombre + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
+            //string fileName = folderName + "\\" + tipoComprobante + "_" + nombre + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
             Document pdf = new Document();
             PdfWriter pdfWritter = PdfWriter.GetInstance(pdf, new FileStream(fileName, FileMode.Create));
             Font font8 = new Font(FontFactory.GetFont(FontFactory.HELVETICA, 8, iTextSharp.text.Font.NORMAL));
@@ -68,7 +68,7 @@ namespace DomainA
             tablaEnca.AddCell(col2);
             tablaEnca.AddCell(cvacio);
 
-            col3 = new PdfPCell(new Phrase("ORDEN DE PAGO", fBold));
+            col3 = new PdfPCell(new Phrase(tipoComprobante, fBold));
             col3.Border = 0;
             tablaEnca.AddCell(col3);
             tablaEnca.AddCell(cvacio);
@@ -138,14 +138,23 @@ namespace DomainA
             pintaLinea(pdf);
             //Cabecera
             PdfPTable tablaCabe = new PdfPTable(7);
-            float[] widths3 = new float[] { 3.0F, 8.0F, 3.0F, 3.0F, 3.0F, 3.0F, 1.0F };
+            float[] widths3 = new float[] { 4.0F, 8.0F, 2.0F, 2.0F, 5.0F, 3.0F, 1.0F };
             tablaCabe.WidthPercentage = 95;
             tablaCabe.SetWidths(widths3);
 
-
-            col1 = new PdfPCell(new Phrase("CUENTA", fBold));
-            col1.Border = 0;
-            tablaCabe.AddCell(col1);
+            if (tipoComprobante == "MINUTA CONTABLE")
+            {
+                col1 = new PdfPCell(new Phrase("NOMBRE", fBold));
+                col1.Border = 0;
+                tablaCabe.AddCell(col1);
+            }
+            else if (tipoComprobante == "ORDEN DE PAGO") 
+            {
+                col1 = new PdfPCell(new Phrase("CUENTA", fBold));
+                col1.Border = 0;
+                tablaCabe.AddCell(col1);
+            }
+            
 
             col2 = new PdfPCell(new Phrase("DESCRIPCIÓN", fBold));
             col2.Border = 0;
@@ -174,39 +183,101 @@ namespace DomainA
             pintaLinea(pdf);
             //Detalle
             PdfPTable tablaDetalle = new PdfPTable(7);
-            float[] widths4 = new float[] { 3.0F, 8.0F, 3.0F, 3.0F, 3.0F, 3.0F, 1.0F };
-            tablaDetalle.SetWidths(widths4);
+            tablaDetalle.SetWidths(widths3);
             tablaDetalle.WidthPercentage = 95;
 
-            col1 = new PdfPCell(new Phrase("001 - CAJA ADMIN", font8));
-            col1.Border = 0;
-            tablaDetalle.AddCell(col1);
+            if (tipoComprobante == "MINUTA CONTABLE")
+            {
+                col1 = new PdfPCell(new Phrase("COLABORADORES", font8));
+                col1.Border = 0;
+                tablaDetalle.AddCell(col1);
 
-            col2 = new PdfPCell(new Phrase(descrip, font8));
-            col2.Border = 0;
-            tablaDetalle.AddCell(col2);
+                col2 = new PdfPCell(new Phrase(descrip, font8));
+                col2.Border = 0;
+                tablaDetalle.AddCell(col2);
 
-            tablaDetalle.AddCell(cvacio);
+                tablaDetalle.AddCell(cvacio);
 
-            //Aca iria el valor de cada feriado?
-            col3 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
-            col3.Border = 0;
-            tablaDetalle.AddCell(col3);
+                //Aca iria el valor de cada feriado?
+                col3 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col3.Border = 0;
+                tablaDetalle.AddCell(col3);
 
-            col4 = new PdfPCell(new Phrase("0,00", font8));
-            col4.Border = 0;
-            tablaDetalle.AddCell(col4);
+                col4 = new PdfPCell(new Phrase("0,00", font8));
+                col4.Border = 0;
+                tablaDetalle.AddCell(col4);
 
 
 
-            col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
-            col6.Border = 0;
-            col6.HorizontalAlignment = 2;
-            tablaDetalle.AddCell(col6);
+                col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col6.Border = 0;
+                col6.HorizontalAlignment = 2;
+                tablaDetalle.AddCell(col6);
 
-            tablaDetalle.AddCell(cvacio);
+                tablaDetalle.AddCell(cvacio);
+
+                col1 = new PdfPCell(new Phrase("SUELDOS A PAGAR", font8));
+                col1.Border = 0;
+                tablaDetalle.AddCell(col1);
+
+                col2 = new PdfPCell(new Phrase(descrip, font8));
+                col2.Border = 0;
+                tablaDetalle.AddCell(col2);
+
+                tablaDetalle.AddCell(cvacio);
+
+                //Aca iria el valor de cada feriado?
+                col3 = new PdfPCell(new Phrase("0,00", font8));
+                col3.Border = 0;
+                tablaDetalle.AddCell(col3);
+
+                col4 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col4.Border = 0;
+                tablaDetalle.AddCell(col4);
+
+
+
+                col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col6.Border = 0;
+                col6.HorizontalAlignment = 2;
+                tablaDetalle.AddCell(col6);
+
+                tablaDetalle.AddCell(cvacio);
+
+            }
+
+            else if (tipoComprobante == "ORDEN DE PAGO")
+            {
+                col1 = new PdfPCell(new Phrase("001 - CAJA ADMIN", font8));
+                col1.Border = 0;
+                tablaDetalle.AddCell(col1);
+
+                col2 = new PdfPCell(new Phrase(descrip, font8));
+                col2.Border = 0;
+                tablaDetalle.AddCell(col2);
+
+                tablaDetalle.AddCell(cvacio);
+
+                //Aca iria el valor de cada feriado?
+                col3 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col3.Border = 0;
+                tablaDetalle.AddCell(col3);
+
+                col4 = new PdfPCell(new Phrase("0,00", font8));
+                col4.Border = 0;
+                tablaDetalle.AddCell(col4);
+
+
+
+                col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col6.Border = 0;
+                col6.HorizontalAlignment = 2;
+                tablaDetalle.AddCell(col6);
+
+                tablaDetalle.AddCell(cvacio);
+                
+            }
             pdf.Add(tablaDetalle);
-
             for (IRow = 1; IRow <= 5; IRow++)
             {
                 pdf.Add(new Paragraph("."));

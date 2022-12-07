@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DomainA.dll" size="23040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DomainA.dll" size="23552">
       <assemblyIdentity name="DomainA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xFb1cX7OXmBJ66xvry9eiTyKItYukyXeCnihNC/Pvww=</dsig:DigestValue>
+        <dsig:DigestValue>SQ9HQqCk58IQyHKyfHcwuKMEnqAgKV8VAxxgMRDS4jI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA.exe" size="2016768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA.exe" size="2007552">
       <assemblyIdentity name="ETRA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nmFOEKb42N2LvdCWey9GiFilprD4s8Lg1soX7hmEjPg=</dsig:DigestValue>
+        <dsig:DigestValue>yp+Y/A6s+5RPxHt+WGp3yBAiiyH0Jf8GrMxANhHCyz4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
