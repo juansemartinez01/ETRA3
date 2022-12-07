@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA.exe" size="2007552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA.exe" size="2008064">
       <assemblyIdentity name="ETRA" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yp+Y/A6s+5RPxHt+WGp3yBAiiyH0Jf8GrMxANhHCyz4=</dsig:DigestValue>
+        <dsig:DigestValue>5gGcte2gGSwGjLfGRIinC7LCTrEMy3CNYyojYqVu2XY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

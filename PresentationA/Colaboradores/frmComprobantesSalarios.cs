@@ -408,7 +408,7 @@ namespace PresentationA.Colaboradores
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result != DialogResult.OK) { return; }
             string folderName = folderBrowserDialog1.SelectedPath;
-            string fileName = folderName + "\\Minuta_" + colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString() + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
+            string fileName = folderName + "\\MinutaContable_" + colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString() + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
 
 
             ComprobanteModelo minuta = new ComprobanteModelo();
