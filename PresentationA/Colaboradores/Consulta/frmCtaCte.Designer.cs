@@ -135,6 +135,7 @@
             this.dgvCtaCte.AllowUserToAddRows = false;
             this.dgvCtaCte.AllowUserToDeleteRows = false;
             this.dgvCtaCte.AllowUserToOrderColumns = true;
+            this.dgvCtaCte.AllowUserToResizeRows = false;
             this.dgvCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));

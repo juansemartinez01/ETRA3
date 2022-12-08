@@ -76,7 +76,6 @@
             this.lblmontoSalario1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.lblPuesto = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnConfirmar = new PresentationA.Controls.BotonPadre();
@@ -95,7 +94,7 @@
             // 
             // txtBarrio
             // 
-            this.txtBarrio.Location = new System.Drawing.Point(107, 304);
+            this.txtBarrio.Location = new System.Drawing.Point(121, 304);
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.Size = new System.Drawing.Size(146, 26);
             this.txtBarrio.TabIndex = 10;
@@ -117,7 +116,7 @@
             // 
             // txtNroCalle
             // 
-            this.txtNroCalle.Location = new System.Drawing.Point(107, 258);
+            this.txtNroCalle.Location = new System.Drawing.Point(121, 258);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.Size = new System.Drawing.Size(146, 26);
             this.txtNroCalle.TabIndex = 9;
@@ -125,7 +124,7 @@
             // 
             // txtCalle
             // 
-            this.txtCalle.Location = new System.Drawing.Point(107, 217);
+            this.txtCalle.Location = new System.Drawing.Point(121, 217);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(146, 26);
             this.txtCalle.TabIndex = 8;
@@ -272,7 +271,7 @@
             // cmbEstados
             // 
             this.cmbEstados.FormattingEnabled = true;
-            this.cmbEstados.Location = new System.Drawing.Point(375, 38);
+            this.cmbEstados.Location = new System.Drawing.Point(373, 33);
             this.cmbEstados.Name = "cmbEstados";
             this.cmbEstados.Size = new System.Drawing.Size(146, 28);
             this.cmbEstados.TabIndex = 15;
@@ -417,7 +416,6 @@
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.lblPuesto);
             this.groupBox2.Controls.Add(this.cmbEstados);
-            this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.lblEstado);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.label13);
@@ -431,7 +429,7 @@
             // 
             // txtObraSocial
             // 
-            this.txtObraSocial.Location = new System.Drawing.Point(128, 89);
+            this.txtObraSocial.Location = new System.Drawing.Point(121, 89);
             this.txtObraSocial.Name = "txtObraSocial";
             this.txtObraSocial.Size = new System.Drawing.Size(146, 26);
             this.txtObraSocial.TabIndex = 16;
@@ -488,7 +486,7 @@
             // 
             // txtSalario
             // 
-            this.txtSalario.Location = new System.Drawing.Point(128, 35);
+            this.txtSalario.Location = new System.Drawing.Point(121, 35);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(146, 26);
             this.txtSalario.TabIndex = 14;
@@ -497,7 +495,7 @@
             // cmbPuesto
             // 
             this.cmbPuesto.FormattingEnabled = true;
-            this.cmbPuesto.Location = new System.Drawing.Point(670, 43);
+            this.cmbPuesto.Location = new System.Drawing.Point(652, 33);
             this.cmbPuesto.Name = "cmbPuesto";
             this.cmbPuesto.Size = new System.Drawing.Size(181, 28);
             this.cmbPuesto.TabIndex = 17;
@@ -529,16 +527,6 @@
             this.lblPuesto.Size = new System.Drawing.Size(0, 20);
             this.lblPuesto.TabIndex = 118;
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label17.Location = new System.Drawing.Point(535, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 16);
-            this.label17.TabIndex = 115;
-            this.label17.Text = "Actividad Laboral";
-            // 
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
@@ -550,7 +538,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(557, 46);
+            this.label18.Location = new System.Drawing.Point(539, 36);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(72, 20);
             this.label18.TabIndex = 114;
@@ -654,7 +642,6 @@
         private System.Windows.Forms.Label lblmontoSalario1;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblPuesto;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cmbPuesto;

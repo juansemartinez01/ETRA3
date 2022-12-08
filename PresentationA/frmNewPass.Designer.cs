@@ -39,7 +39,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 35);
+            this.label1.Location = new System.Drawing.Point(27, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(370, 30);
             this.label1.TabIndex = 4;
@@ -56,7 +56,7 @@
             this.btnConfirmar.IconColor = System.Drawing.Color.Black;
             this.btnConfirmar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(130, 295);
+            this.btnConfirmar.Location = new System.Drawing.Point(123, 322);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(150, 40);
             this.btnConfirmar.TabIndex = 8;
@@ -66,14 +66,13 @@
             // 
             // lblError
             // 
-            this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblError.Location = new System.Drawing.Point(29, 237);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(34, 17);
+            this.lblError.Size = new System.Drawing.Size(358, 76);
             this.lblError.TabIndex = 9;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
@@ -83,7 +82,7 @@
             this.txtNew.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNew.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtNew.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNew.Location = new System.Drawing.Point(107, 109);
+            this.txtNew.Location = new System.Drawing.Point(32, 111);
             this.txtNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNew.Name = "txtNew";
             this.txtNew.Size = new System.Drawing.Size(208, 20);
@@ -98,7 +97,7 @@
             this.txtConfirm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtConfirm.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.txtConfirm.ForeColor = System.Drawing.Color.DimGray;
-            this.txtConfirm.Location = new System.Drawing.Point(107, 175);
+            this.txtConfirm.Location = new System.Drawing.Point(32, 177);
             this.txtConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.Size = new System.Drawing.Size(257, 20);
@@ -112,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 423);
+            this.ClientSize = new System.Drawing.Size(414, 374);
             this.Controls.Add(this.txtConfirm);
             this.Controls.Add(this.txtNew);
             this.Controls.Add(this.lblError);

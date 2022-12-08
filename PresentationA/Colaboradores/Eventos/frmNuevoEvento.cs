@@ -52,5 +52,10 @@ namespace PresentationA.Colaboradores.Eventos
             lblError.Text = "      " + msg;
             lblError.Visible = true;
         }
+
+        private void cmb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtLegajos = new System.Windows.Forms.TextBox();
@@ -46,17 +45,8 @@
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
             this.btnGuardar = new PresentationA.Controls.BotonPadre();
             this.lblError = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 30);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nuevo Aviso";
             // 
             // label14
             // 
@@ -256,12 +246,24 @@
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(171, 23);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 28);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Nuevo Aviso";
+            // 
             // frmNuevoAviso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(557, 598);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -279,7 +281,6 @@
             this.Controls.Add(this.txtLegajos);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(573, 571);
@@ -292,8 +293,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtLegajos;
@@ -311,5 +310,6 @@
         private Controls.BotonPadre btnCancelar;
         private Controls.BotonPadre btnGuardar;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label6;
     }
 }

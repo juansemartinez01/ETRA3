@@ -37,7 +37,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dgvAvisos = new PresentationA.Controls.DataGridPadre();
-            this.label2 = new System.Windows.Forms.Label();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaOcurrencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +44,7 @@
             this.fechaCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaUltimaNotificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             this.dgvAvisos.AllowUserToAddRows = false;
             this.dgvAvisos.AllowUserToDeleteRows = false;
             this.dgvAvisos.AllowUserToOrderColumns = true;
+            this.dgvAvisos.AllowUserToResizeRows = false;
             this.dgvAvisos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -145,15 +146,6 @@
             this.dgvAvisos.Size = new System.Drawing.Size(972, 187);
             this.dgvAvisos.TabIndex = 6;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 324);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Avisos de este mes";
-            // 
             // nombre
             // 
             this.nombre.HeaderText = "Tipo de Aviso";
@@ -195,6 +187,15 @@
             this.fechaUltimaNotificacion.HeaderText = "Ultima Notificación";
             this.fechaUltimaNotificacion.Name = "fechaUltimaNotificacion";
             this.fechaUltimaNotificacion.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 324);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Avisos de este mes";
             // 
             // frmInicio
             // 

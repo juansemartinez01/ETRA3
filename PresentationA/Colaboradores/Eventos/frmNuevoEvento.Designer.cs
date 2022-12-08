@@ -81,6 +81,7 @@
             this.cmbColaboradores2.Name = "cmbColaboradores2";
             this.cmbColaboradores2.Size = new System.Drawing.Size(286, 29);
             this.cmbColaboradores2.TabIndex = 25;
+            this.cmbColaboradores2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
             // 
             // label7
             // 
@@ -126,6 +127,7 @@
             this.cmbTipoEvento2.Name = "cmbTipoEvento2";
             this.cmbTipoEvento2.Size = new System.Drawing.Size(286, 29);
             this.cmbTipoEvento2.TabIndex = 20;
+            this.cmbTipoEvento2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
             // 
             // txtDescripcion
             // 

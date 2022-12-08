@@ -32,10 +32,10 @@
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBody = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnEnviar = new PresentationA.Controls.BotonPadre();
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
             this.lblError = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -70,16 +70,6 @@
             this.txtBody.Size = new System.Drawing.Size(373, 214);
             this.txtBody.TabIndex = 3;
             this.txtBody.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(183, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 30);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Notificar Aviso";
             // 
             // btnEnviar
             // 
@@ -137,6 +127,17 @@
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(184, 21);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(180, 28);
+            this.label6.TabIndex = 102;
+            this.label6.Text = "Notificar Aviso";
+            // 
             // frmMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -144,10 +145,10 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(549, 450);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBody);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSubject);
@@ -156,7 +157,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Enviar Mail";
+            this.Text = "Notificar Aviso";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,9 +169,9 @@
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox txtBody;
-        private System.Windows.Forms.Label label3;
         private Controls.BotonPadre btnEnviar;
         private Controls.BotonPadre btnCancelar;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label6;
     }
 }

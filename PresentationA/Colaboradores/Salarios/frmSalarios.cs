@@ -1,15 +1,8 @@
 ﻿using DomainA;
 using System;
 using System.Data;
-using System.Drawing.Printing;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
-using System.IO;
-using Font = iTextSharp.text.Font;
+using PresentationA.Colaboradores.Salarios;
 
 namespace PresentationA.Colaboradores
 {
@@ -21,9 +14,9 @@ namespace PresentationA.Colaboradores
         public frmSalarios()
         {
             InitializeComponent();
+            lblLegajo.Text = "";
+            btnModificar.Enabled = false;
             CargarTabla(1,"","",0,0);
-            LlenarCombo(cmbModificarSalarioCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
-            LlenarCombo(cmbCargoPorcentaje, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             LlenarCombo(cmbFiltroCargo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
 
         }
@@ -48,7 +41,7 @@ namespace PresentationA.Colaboradores
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if(txtLegajoColaboradorModificacion.Text == "")
+            if(lblLegajo.Text == "")
             {
                 MessageBox.Show("Debe ingresar un legajo para modificar un salario");
                 return;
@@ -58,10 +51,10 @@ namespace PresentationA.Colaboradores
                 MessageBox.Show("Debe ingresar un monto para modificar un salario");
                 return;
             }
-            DataTable colaboradorAModificar = colaboradorModelo.BuscarColaborador(txtLegajoColaboradorModificacion.Text, "", "");
+            DataTable colaboradorAModificar = colaboradorModelo.BuscarColaborador(lblLegajo.Text, "", "");
             if(colaboradorAModificar.Rows.Count > 0)
             {
-                string respuesta = sal.modificarSalarioColaborador(int.Parse(txtLegajoColaboradorModificacion.Text), float.Parse(txtMontoModificacion.Text));
+                string respuesta = sal.modificarSalarioColaborador(int.Parse(lblLegajo.Text), float.Parse(txtMontoModificacion.Text));
                 MessageBox.Show(respuesta);
                 CargarTabla(1, "", "", 0, 0);
                 LimpiarCampos();
@@ -73,14 +66,11 @@ namespace PresentationA.Colaboradores
         }
         private void LimpiarCampos()
         {
-            txtLegajoColaboradorModificacion.Text = "";
+            
             txtMontoModificacion.Text = "";
-            cmbModificarSalarioCargo.SelectedIndex = -1;
-            txtMontoModificarSalarioCargo.Text = "";
             txtApellidoBusqueda.Text = "";
             txtLegajoBusqueda.Text = "";
-            txtPorcentaje.Text = "";
-            cmbCargoPorcentaje.SelectedIndex = -1;
+
             cmbFiltroCargo.SelectedIndex = -1;
             txtMontoBusqueda.Text = "";
             txtNombreBusqueda.Text = "";
@@ -138,40 +128,6 @@ namespace PresentationA.Colaboradores
             excel.Visible = true;
         }
 
-        private void btnModificarSalariosCargo_Click(object sender, EventArgs e)
-        {
-            if(txtMontoModificarSalarioCargo.Text == "" || cmbModificarSalarioCargo.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe completar ambos campos para poder modificar");
-                LimpiarCampos();
-                return;
-            }
-            else
-            {
-                string mensaje = sal.modificarSalariosDeCargo(int.Parse(cmbModificarSalarioCargo.SelectedValue.ToString()), float.Parse(txtMontoModificarSalarioCargo.Text.ToString()));
-                MessageBox.Show(mensaje);
-                LimpiarCampos();
-                CargarTabla(1,"","",0,0);
-            }
-            
-        }
-
-        private void btnPorcentaje_Click(object sender, EventArgs e)
-        {
-            if(txtPorcentaje.Text == "" || cmbCargoPorcentaje.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe completar ambos campos para poder modificar");
-                LimpiarCampos();
-                return;
-            }
-            else
-            {
-                string mensaje = sal.modificarSalariosCargoPorcentaje(int.Parse(cmbCargoPorcentaje.SelectedValue.ToString()), float.Parse(txtPorcentaje.Text.ToString()));
-                MessageBox.Show(mensaje);
-                LimpiarCampos();
-                CargarTabla(1, "", "", 0, 0);
-            }
-        }
 
         private void txtLegajoBusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -257,14 +213,14 @@ namespace PresentationA.Colaboradores
             DialogResult result = folderBrowserDialog1.ShowDialog();
             if (result != DialogResult.OK) { return; }
             string folderName = folderBrowserDialog1.SelectedPath;
-            //Este loop va a buscar todos los datos necesarios para cada comprobante, para cada colaborador
+            //Este loop va a buscar todos los datos necesarios para cada comprobante, para cada colaborador que este en el data grid view!
             ComprobanteModelo orden = new ComprobanteModelo();
-            for (int i = 0; i < salarios.Rows.Count; i++)
+            foreach (DataGridViewRow row in dgvSalarios.Rows)
             {
-                int legajoColaborador = (int)salarios.Rows[i]["legajo"];
-                DataTable colab = colaboradorModelo.BuscarColaborador(legajoColaborador.ToString(), salarios.Rows[i]["nombre"].ToString(), salarios.Rows[i]["apellido"].ToString());
-                string nombreColaborador = salarios.Rows[i]["nombre"].ToString() + " " + salarios.Rows[i]["apellido"].ToString();
-                float salarioColaborador = float.Parse(salarios.Rows[i]["monto"].ToString());
+                int legajoColaborador = Int32.Parse(row.Cells["legajo"].ToString());
+                DataTable colab = colaboradorModelo.BuscarColaborador(legajoColaborador.ToString(), row.Cells["nombre"].ToString(), row.Cells["apellido"].ToString());
+                string nombreColaborador = row.Cells["nombre"].ToString() + " " + row.Cells["apellido"].ToString();
+                float salarioColaborador = float.Parse(row.Cells["monto"].ToString());
                 //Aca iria el codigo que genere cada Orden de pago de cada colaborador, los datos que varian son los que estan arriba.
 
                 string fileName = folderName + "\\OrdenDePago_" + nombreColaborador + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
@@ -275,7 +231,25 @@ namespace PresentationA.Colaboradores
 
         }
 
-        
+        private void botonPadre3_Click(object sender, EventArgs e)
+        {
+            frmModPorCargo modificar = new frmModPorCargo();
+            modificar.ShowDialog();
+        }
 
+        private void dgvSalarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            if (indice == -1)
+            {
+                lblLegajo.Text = "";
+                btnModificar.Enabled = false;
+                return;
+            }
+            //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+            DataGridViewRow filaSeleccionada = dgvSalarios.Rows[indice];
+            lblLegajo.Text = filaSeleccionada.Cells["legajo"].Value.ToString();
+            btnModificar.Enabled = true;
+        }
     }
 }

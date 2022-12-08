@@ -109,6 +109,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Colaboradores\Consulta\Familiares\frmAgregarFam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Consulta\Familiares\frmAgregarFam.Designer.cs">
+      <DependentUpon>frmAgregarFam.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\Consulta\FormularioColaborador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     </Compile>
     <Compile Include="Colaboradores\Consulta\frmDatosPersonales.Designer.cs">
       <DependentUpon>frmDatosPersonales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colaboradores\Consulta\Familiares\frmFamiliares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Consulta\Familiares\frmFamiliares.Designer.cs">
+      <DependentUpon>frmFamiliares.cs</DependentUpon>
     </Compile>
     <Compile Include="Colaboradores\Consulta\frmHistorialEvento.cs">
       <SubType>Form</SubType>
@@ -205,10 +217,16 @@
     <Compile Include="Colaboradores\Avisos\frmNuevoAviso.Designer.cs">
       <DependentUpon>frmNuevoAviso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Colaboradores\frmSalarios.cs">
+    <Compile Include="Colaboradores\Salarios\frmModPorCargo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Colaboradores\frmSalarios.Designer.cs">
+    <Compile Include="Colaboradores\Salarios\frmModPorCargo.Designer.cs">
+      <DependentUpon>frmModPorCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colaboradores\Salarios\frmSalarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Salarios\frmSalarios.Designer.cs">
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Colaboradores\Usuarios\frmNuevoUsuario.cs">
@@ -283,6 +301,9 @@
     <EmbeddedResource Include="Colaboradores\Avisos\frmNuevoAviso.resx">
       <DependentUpon>frmNuevoAviso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Consulta\Familiares\frmAgregarFam.resx">
+      <DependentUpon>frmAgregarFam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Consulta\FormularioColaborador.resx">
       <DependentUpon>FormularioColaborador.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Consulta\frmDatosPersonales.resx">
       <DependentUpon>frmDatosPersonales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Consulta\Familiares\frmFamiliares.resx">
+      <DependentUpon>frmFamiliares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Consulta\frmHistorialEvento.resx">
       <DependentUpon>frmHistorialEvento.cs</DependentUpon>
@@ -328,7 +352,10 @@
     <EmbeddedResource Include="Colaboradores\Avisos\frmAvisos.resx">
       <DependentUpon>frmAvisos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Colaboradores\frmSalarios.resx">
+    <EmbeddedResource Include="Colaboradores\Salarios\frmModPorCargo.resx">
+      <DependentUpon>frmModPorCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Salarios\frmSalarios.resx">
       <DependentUpon>frmSalarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Usuarios\frmNuevoUsuario.resx">

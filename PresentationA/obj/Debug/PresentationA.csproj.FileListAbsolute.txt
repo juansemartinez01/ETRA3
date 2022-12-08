@@ -794,3 +794,6 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\itextsharp.xml
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\itextsharp.dll
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\itextsharp.xml
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.Familiares.frmAgregarFam.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmFamiliares.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Salarios.frmModPorCargo.resources

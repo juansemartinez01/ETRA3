@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
@@ -66,10 +66,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(33, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(28, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 37);
+            this.label2.Size = new System.Drawing.Size(86, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "Avisos";
             // 
@@ -86,9 +86,10 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 30;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(363, 567);
+            this.btnEliminar.Location = new System.Drawing.Point(302, 518);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(141, 44);
+            this.btnEliminar.Size = new System.Drawing.Size(118, 40);
             this.btnEliminar.TabIndex = 50;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -108,9 +109,10 @@
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 30;
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(13, 567);
+            this.btnAgregar.Location = new System.Drawing.Point(11, 518);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(141, 44);
+            this.btnAgregar.Size = new System.Drawing.Size(118, 40);
             this.btnAgregar.TabIndex = 48;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -134,11 +136,11 @@
             this.groupBox1.Controls.Add(this.dtpfechaOcurrenciaFiltro);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.cmbColaborador);
-            this.groupBox1.Location = new System.Drawing.Point(5, 62);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.groupBox1.Location = new System.Drawing.Point(4, 57);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupBox1.Size = new System.Drawing.Size(1201, 235);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1001, 215);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -154,9 +156,10 @@
             this.btnLimpiar.IconColor = System.Drawing.Color.Black;
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(971, 174);
+            this.btnLimpiar.Location = new System.Drawing.Point(809, 159);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(180, 44);
+            this.btnLimpiar.Size = new System.Drawing.Size(150, 40);
             this.btnLimpiar.TabIndex = 20;
             this.btnLimpiar.Text = "Limpiar Filtro";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -165,45 +168,46 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(498, 123);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label13.Location = new System.Drawing.Point(415, 112);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(231, 23);
+            this.label13.Size = new System.Drawing.Size(186, 21);
             this.label13.TabIndex = 18;
             this.label13.Text = "Fecha de Notificación:";
             // 
             // dtpfechaNotifiaciónFiltro
             // 
-            this.dtpfechaNotifiaciónFiltro.Location = new System.Drawing.Point(747, 120);
-            this.dtpfechaNotifiaciónFiltro.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpfechaNotifiaciónFiltro.Location = new System.Drawing.Point(622, 110);
+            this.dtpfechaNotifiaciónFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpfechaNotifiaciónFiltro.Name = "dtpfechaNotifiaciónFiltro";
-            this.dtpfechaNotifiaciónFiltro.Size = new System.Drawing.Size(441, 32);
+            this.dtpfechaNotifiaciónFiltro.Size = new System.Drawing.Size(368, 27);
             this.dtpfechaNotifiaciónFiltro.TabIndex = 19;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(498, 26);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(415, 24);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 23);
+            this.label5.Size = new System.Drawing.Size(63, 21);
             this.label5.TabIndex = 16;
             this.label5.Text = "Fecha:";
             // 
             // dtpfechaCargaFiltro
             // 
-            this.dtpfechaCargaFiltro.Location = new System.Drawing.Point(747, 67);
-            this.dtpfechaCargaFiltro.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpfechaCargaFiltro.Location = new System.Drawing.Point(622, 61);
+            this.dtpfechaCargaFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpfechaCargaFiltro.Name = "dtpfechaCargaFiltro";
-            this.dtpfechaCargaFiltro.Size = new System.Drawing.Size(441, 32);
+            this.dtpfechaCargaFiltro.Size = new System.Drawing.Size(368, 27);
             this.dtpfechaCargaFiltro.TabIndex = 17;
             // 
             // chkFiltroFecha
             // 
             this.chkFiltroFecha.AutoSize = true;
-            this.chkFiltroFecha.Location = new System.Drawing.Point(503, 174);
+            this.chkFiltroFecha.Location = new System.Drawing.Point(419, 159);
+            this.chkFiltroFecha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
-            this.chkFiltroFecha.Size = new System.Drawing.Size(140, 27);
+            this.chkFiltroFecha.Size = new System.Drawing.Size(115, 25);
             this.chkFiltroFecha.TabIndex = 15;
             this.chkFiltroFecha.Text = "Filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
@@ -212,19 +216,19 @@
             // cmbTipoAvisoFiltro
             // 
             this.cmbTipoAvisoFiltro.FormattingEnabled = true;
-            this.cmbTipoAvisoFiltro.Location = new System.Drawing.Point(192, 70);
-            this.cmbTipoAvisoFiltro.Margin = new System.Windows.Forms.Padding(5);
+            this.cmbTipoAvisoFiltro.Location = new System.Drawing.Point(160, 64);
+            this.cmbTipoAvisoFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbTipoAvisoFiltro.Name = "cmbTipoAvisoFiltro";
-            this.cmbTipoAvisoFiltro.Size = new System.Drawing.Size(226, 31);
+            this.cmbTipoAvisoFiltro.Size = new System.Drawing.Size(189, 29);
             this.cmbTipoAvisoFiltro.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 79);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(9, 68);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 23);
+            this.label7.Size = new System.Drawing.Size(92, 21);
             this.label7.TabIndex = 12;
             this.label7.Text = "Tipo Aviso:";
             // 
@@ -239,9 +243,10 @@
             this.btnAplicar.IconColor = System.Drawing.Color.Black;
             this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAplicar.Location = new System.Drawing.Point(747, 174);
+            this.btnAplicar.Location = new System.Drawing.Point(622, 159);
+            this.btnAplicar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(180, 44);
+            this.btnAplicar.Size = new System.Drawing.Size(150, 40);
             this.btnAplicar.TabIndex = 11;
             this.btnAplicar.Text = "Aplicar";
             this.btnAplicar.UseVisualStyleBackColor = false;
@@ -250,38 +255,38 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(498, 74);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label11.Location = new System.Drawing.Point(415, 68);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(179, 23);
+            this.label11.Size = new System.Drawing.Size(143, 21);
             this.label11.TabIndex = 4;
             this.label11.Text = "Fecha de Carga:";
             // 
             // dtpfechaOcurrenciaFiltro
             // 
-            this.dtpfechaOcurrenciaFiltro.Location = new System.Drawing.Point(747, 23);
-            this.dtpfechaOcurrenciaFiltro.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpfechaOcurrenciaFiltro.Location = new System.Drawing.Point(622, 21);
+            this.dtpfechaOcurrenciaFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpfechaOcurrenciaFiltro.Name = "dtpfechaOcurrenciaFiltro";
-            this.dtpfechaOcurrenciaFiltro.Size = new System.Drawing.Size(441, 32);
+            this.dtpfechaOcurrenciaFiltro.Size = new System.Drawing.Size(368, 27);
             this.dtpfechaOcurrenciaFiltro.TabIndex = 9;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(39, 23);
-            this.label12.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label12.Location = new System.Drawing.Point(8, 24);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(159, 23);
+            this.label12.Size = new System.Drawing.Size(130, 21);
             this.label12.TabIndex = 6;
-            this.label12.Text = "Colaboradores";
+            this.label12.Text = "Colaboradores:";
             // 
             // cmbColaborador
             // 
             this.cmbColaborador.FormattingEnabled = true;
-            this.cmbColaborador.Location = new System.Drawing.Point(192, 20);
-            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(5);
+            this.cmbColaborador.Location = new System.Drawing.Point(160, 18);
+            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbColaborador.Name = "cmbColaborador";
-            this.cmbColaborador.Size = new System.Drawing.Size(226, 31);
+            this.cmbColaborador.Size = new System.Drawing.Size(189, 29);
             this.cmbColaborador.TabIndex = 7;
             // 
             // btnNotificar
@@ -297,9 +302,10 @@
             this.btnNotificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNotificar.IconSize = 30;
             this.btnNotificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNotificar.Location = new System.Drawing.Point(191, 567);
+            this.btnNotificar.Location = new System.Drawing.Point(159, 518);
+            this.btnNotificar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnNotificar.Name = "btnNotificar";
-            this.btnNotificar.Size = new System.Drawing.Size(141, 44);
+            this.btnNotificar.Size = new System.Drawing.Size(118, 40);
             this.btnNotificar.TabIndex = 74;
             this.btnNotificar.Text = "Notificar";
             this.btnNotificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -311,6 +317,7 @@
             this.dgvAvisos.AllowUserToAddRows = false;
             this.dgvAvisos.AllowUserToDeleteRows = false;
             this.dgvAvisos.AllowUserToOrderColumns = true;
+            this.dgvAvisos.AllowUserToResizeRows = false;
             this.dgvAvisos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -318,14 +325,14 @@
             this.dgvAvisos.BackgroundColor = System.Drawing.Color.White;
             this.dgvAvisos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAvisos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAvisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_aviso,
@@ -336,32 +343,33 @@
             this.fechaCarga,
             this.fechaNotificacion,
             this.fechaUltimaNotificacion});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAvisos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAvisos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAvisos.EnableHeadersVisualStyles = false;
             this.dgvAvisos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvAvisos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvAvisos.Location = new System.Drawing.Point(3, 306);
+            this.dgvAvisos.Location = new System.Drawing.Point(2, 279);
+            this.dgvAvisos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvAvisos.Name = "dgvAvisos";
             this.dgvAvisos.ReadOnly = true;
             this.dgvAvisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAvisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAvisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAvisos.RowHeadersWidth = 51;
             this.dgvAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAvisos.Size = new System.Drawing.Size(1203, 255);
+            this.dgvAvisos.Size = new System.Drawing.Size(1002, 233);
             this.dgvAvisos.TabIndex = 73;
             this.dgvAvisos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
             this.dgvAvisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvisos_CellContentClick);
@@ -427,16 +435,16 @@
             // 
             // frmAvisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 649);
+            this.ClientSize = new System.Drawing.Size(1025, 593);
             this.Controls.Add(this.btnNotificar);
             this.Controls.Add(this.dgvAvisos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
             this.Name = "frmAvisos";
             this.Text = "frmNotificaciones";
             this.Load += new System.EventHandler(this.frmAvisos_Load);

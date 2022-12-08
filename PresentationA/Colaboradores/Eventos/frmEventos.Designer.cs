@@ -63,7 +63,7 @@
             this.label1.Location = new System.Drawing.Point(389, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 37);
+            this.label1.Size = new System.Drawing.Size(113, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "EVENTOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -74,7 +74,7 @@
             this.label2.Location = new System.Drawing.Point(35, 21);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 22);
+            this.label2.Size = new System.Drawing.Size(71, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Eventos:";
             // 
@@ -84,7 +84,7 @@
             this.lblFechaFin.Location = new System.Drawing.Point(392, 67);
             this.lblFechaFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(102, 22);
+            this.lblFechaFin.Size = new System.Drawing.Size(82, 20);
             this.lblFechaFin.TabIndex = 3;
             this.lblFechaFin.Text = "Fecha Fin:";
             // 
@@ -94,7 +94,7 @@
             this.lblFechaInicio.Location = new System.Drawing.Point(392, 21);
             this.lblFechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(155, 22);
+            this.lblFechaInicio.Size = new System.Drawing.Size(127, 20);
             this.lblFechaInicio.TabIndex = 4;
             this.lblFechaInicio.Text = "Fecha de Inicio:";
             // 
@@ -104,7 +104,7 @@
             this.label6.Location = new System.Drawing.Point(35, 67);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 22);
+            this.label6.Size = new System.Drawing.Size(120, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Colaboradores";
             // 
@@ -114,7 +114,7 @@
             this.cmbTipoEvento.Location = new System.Drawing.Point(195, 18);
             this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
-            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 30);
+            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 28);
             this.cmbTipoEvento.TabIndex = 7;
             this.cmbTipoEvento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipoEvento_KeyPress);
             // 
@@ -124,7 +124,7 @@
             this.cmbColaboradores.Location = new System.Drawing.Point(195, 64);
             this.cmbColaboradores.Margin = new System.Windows.Forms.Padding(4);
             this.cmbColaboradores.Name = "cmbColaboradores";
-            this.cmbColaboradores.Size = new System.Drawing.Size(154, 30);
+            this.cmbColaboradores.Size = new System.Drawing.Size(154, 28);
             this.cmbColaboradores.TabIndex = 8;
             this.cmbColaboradores.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbColaboradores_KeyPress);
             // 
@@ -133,7 +133,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(531, 18);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(286, 30);
+            this.dateTimePicker1.Size = new System.Drawing.Size(286, 26);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePicker1_KeyPress);
             // 
@@ -142,7 +142,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(531, 62);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(286, 30);
+            this.dateTimePicker2.Size = new System.Drawing.Size(286, 26);
             this.dateTimePicker2.TabIndex = 10;
             this.dateTimePicker2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTimePicker2_KeyPress);
             // 
@@ -192,7 +192,7 @@
             this.chkFiltroFecha.AutoSize = true;
             this.chkFiltroFecha.Location = new System.Drawing.Point(396, 112);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
-            this.chkFiltroFecha.Size = new System.Drawing.Size(203, 26);
+            this.chkFiltroFecha.Size = new System.Drawing.Size(165, 24);
             this.chkFiltroFecha.TabIndex = 12;
             this.chkFiltroFecha.Text = "Activar filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
@@ -244,6 +244,7 @@
             this.dgvEventos.AllowUserToAddRows = false;
             this.dgvEventos.AllowUserToDeleteRows = false;
             this.dgvEventos.AllowUserToOrderColumns = true;
+            this.dgvEventos.AllowUserToResizeRows = false;
             this.dgvEventos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -339,7 +340,7 @@
             // 
             // frmEventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 585);
             this.Controls.Add(this.dgvEventos);

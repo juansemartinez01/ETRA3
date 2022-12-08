@@ -46,23 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnPorcentaje = new PresentationA.Controls.BotonPadre();
-            this.cmbCargoPorcentaje = new System.Windows.Forms.ComboBox();
-            this.txtPorcentaje = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnModificarSalariosCargo = new PresentationA.Controls.BotonPadre();
-            this.txtMontoModificarSalarioCargo = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbModificarSalarioCargo = new System.Windows.Forms.ComboBox();
-            this.botonPadre1 = new PresentationA.Controls.BotonPadre();
+            this.lblLegajo = new System.Windows.Forms.Label();
+            this.botonPadre3 = new PresentationA.Controls.BotonPadre();
+            this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.txtMontoModificacion = new System.Windows.Forms.TextBox();
-            this.txtLegajoColaboradorModificacion = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvSalarios = new PresentationA.Controls.DataGridPadre();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +87,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox1.Size = new System.Drawing.Size(1179, 163);
+            this.groupBox1.Size = new System.Drawing.Size(1119, 163);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -260,227 +249,103 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnPorcentaje);
-            this.groupBox2.Controls.Add(this.cmbCargoPorcentaje);
-            this.groupBox2.Controls.Add(this.txtPorcentaje);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.btnModificarSalariosCargo);
-            this.groupBox2.Controls.Add(this.txtMontoModificarSalarioCargo);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.cmbModificarSalarioCargo);
-            this.groupBox2.Controls.Add(this.botonPadre1);
+            this.groupBox2.Controls.Add(this.lblLegajo);
+            this.groupBox2.Controls.Add(this.botonPadre3);
+            this.groupBox2.Controls.Add(this.btnModificar);
             this.groupBox2.Controls.Add(this.txtMontoModificacion);
-            this.groupBox2.Controls.Add(this.txtLegajoColaboradorModificacion);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(12, 478);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.groupBox2.Size = new System.Drawing.Size(1178, 156);
+            this.groupBox2.Size = new System.Drawing.Size(522, 203);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Modificar";
             // 
-            // btnPorcentaje
+            // lblLegajo
             // 
-            this.btnPorcentaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnPorcentaje.FlatAppearance.BorderSize = 0;
-            this.btnPorcentaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPorcentaje.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnPorcentaje.ForeColor = System.Drawing.Color.White;
-            this.btnPorcentaje.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnPorcentaje.IconColor = System.Drawing.Color.Black;
-            this.btnPorcentaje.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnPorcentaje.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPorcentaje.Location = new System.Drawing.Point(994, 95);
-            this.btnPorcentaje.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnPorcentaje.Name = "btnPorcentaje";
-            this.btnPorcentaje.Size = new System.Drawing.Size(150, 40);
-            this.btnPorcentaje.TabIndex = 23;
-            this.btnPorcentaje.Text = "Modificar";
-            this.btnPorcentaje.UseVisualStyleBackColor = false;
-            this.btnPorcentaje.Click += new System.EventHandler(this.btnPorcentaje_Click);
+            this.lblLegajo.AutoSize = true;
+            this.lblLegajo.Location = new System.Drawing.Point(96, 48);
+            this.lblLegajo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLegajo.Name = "lblLegajo";
+            this.lblLegajo.Size = new System.Drawing.Size(58, 21);
+            this.lblLegajo.TabIndex = 52;
+            this.lblLegajo.Text = "legajo";
             // 
-            // cmbCargoPorcentaje
+            // botonPadre3
             // 
-            this.cmbCargoPorcentaje.FormattingEnabled = true;
-            this.cmbCargoPorcentaje.Location = new System.Drawing.Point(868, 45);
-            this.cmbCargoPorcentaje.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cmbCargoPorcentaje.Name = "cmbCargoPorcentaje";
-            this.cmbCargoPorcentaje.Size = new System.Drawing.Size(182, 29);
-            this.cmbCargoPorcentaje.TabIndex = 22;
-            this.cmbCargoPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCargoPorcentaje_KeyPress);
+            this.botonPadre3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.botonPadre3.FlatAppearance.BorderSize = 0;
+            this.botonPadre3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.botonPadre3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.botonPadre3.ForeColor = System.Drawing.Color.White;
+            this.botonPadre3.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.botonPadre3.IconColor = System.Drawing.Color.White;
+            this.botonPadre3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.botonPadre3.IconSize = 30;
+            this.botonPadre3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.botonPadre3.Location = new System.Drawing.Point(26, 148);
+            this.botonPadre3.Margin = new System.Windows.Forms.Padding(0);
+            this.botonPadre3.Name = "botonPadre3";
+            this.botonPadre3.Size = new System.Drawing.Size(215, 37);
+            this.botonPadre3.TabIndex = 51;
+            this.botonPadre3.Text = "Modificar por Cargo";
+            this.botonPadre3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.botonPadre3.UseVisualStyleBackColor = false;
+            this.botonPadre3.Click += new System.EventHandler(this.botonPadre3_Click);
             // 
-            // txtPorcentaje
+            // btnModificar
             // 
-            this.txtPorcentaje.Location = new System.Drawing.Point(882, 99);
-            this.txtPorcentaje.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtPorcentaje.Name = "txtPorcentaje";
-            this.txtPorcentaje.Size = new System.Drawing.Size(89, 27);
-            this.txtPorcentaje.TabIndex = 21;
-            this.txtPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcentaje_KeyPress);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(788, 102);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 21);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Porcentaje";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(799, 47);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 21);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Cargo";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(799, 16);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(279, 21);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Modificar por porcentaje un cargo";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(402, 16);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(212, 21);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Modificar salario de cargo";
-            // 
-            // btnModificarSalariosCargo
-            // 
-            this.btnModificarSalariosCargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnModificarSalariosCargo.FlatAppearance.BorderSize = 0;
-            this.btnModificarSalariosCargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarSalariosCargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnModificarSalariosCargo.ForeColor = System.Drawing.Color.White;
-            this.btnModificarSalariosCargo.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnModificarSalariosCargo.IconColor = System.Drawing.Color.Black;
-            this.btnModificarSalariosCargo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificarSalariosCargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarSalariosCargo.Location = new System.Drawing.Point(630, 91);
-            this.btnModificarSalariosCargo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnModificarSalariosCargo.Name = "btnModificarSalariosCargo";
-            this.btnModificarSalariosCargo.Size = new System.Drawing.Size(150, 40);
-            this.btnModificarSalariosCargo.TabIndex = 16;
-            this.btnModificarSalariosCargo.Text = "Modificar";
-            this.btnModificarSalariosCargo.UseVisualStyleBackColor = false;
-            this.btnModificarSalariosCargo.Click += new System.EventHandler(this.btnModificarSalariosCargo_Click);
-            // 
-            // txtMontoModificarSalarioCargo
-            // 
-            this.txtMontoModificarSalarioCargo.Location = new System.Drawing.Point(442, 100);
-            this.txtMontoModificarSalarioCargo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtMontoModificarSalarioCargo.Name = "txtMontoModificarSalarioCargo";
-            this.txtMontoModificarSalarioCargo.Size = new System.Drawing.Size(182, 27);
-            this.txtMontoModificarSalarioCargo.TabIndex = 15;
-            this.txtMontoModificarSalarioCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoModificarSalarioCargo_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(380, 102);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 21);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Monto";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(378, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 21);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Cargo";
-            // 
-            // cmbModificarSalarioCargo
-            // 
-            this.cmbModificarSalarioCargo.FormattingEnabled = true;
-            this.cmbModificarSalarioCargo.Location = new System.Drawing.Point(442, 47);
-            this.cmbModificarSalarioCargo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.cmbModificarSalarioCargo.Name = "cmbModificarSalarioCargo";
-            this.cmbModificarSalarioCargo.Size = new System.Drawing.Size(182, 29);
-            this.cmbModificarSalarioCargo.TabIndex = 12;
-            this.cmbModificarSalarioCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbModificarSalarioCargo_KeyPress);
-            // 
-            // botonPadre1
-            // 
-            this.botonPadre1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.botonPadre1.FlatAppearance.BorderSize = 0;
-            this.botonPadre1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.botonPadre1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.botonPadre1.ForeColor = System.Drawing.Color.White;
-            this.botonPadre1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.botonPadre1.IconColor = System.Drawing.Color.Black;
-            this.botonPadre1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.botonPadre1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPadre1.Location = new System.Drawing.Point(222, 95);
-            this.botonPadre1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.botonPadre1.Name = "botonPadre1";
-            this.botonPadre1.Size = new System.Drawing.Size(150, 40);
-            this.botonPadre1.TabIndex = 11;
-            this.botonPadre1.Text = "Modificar";
-            this.botonPadre1.UseVisualStyleBackColor = false;
-            this.botonPadre1.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnModificar.IconColor = System.Drawing.Color.White;
+            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificar.IconSize = 30;
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(26, 95);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(128, 37);
+            this.btnModificar.TabIndex = 50;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtMontoModificacion
             // 
-            this.txtMontoModificacion.Location = new System.Drawing.Point(100, 99);
+            this.txtMontoModificacion.Location = new System.Drawing.Point(318, 45);
             this.txtMontoModificacion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtMontoModificacion.Name = "txtMontoModificacion";
             this.txtMontoModificacion.Size = new System.Drawing.Size(116, 27);
             this.txtMontoModificacion.TabIndex = 7;
             this.txtMontoModificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoModificacion_KeyPress);
             // 
-            // txtLegajoColaboradorModificacion
-            // 
-            this.txtLegajoColaboradorModificacion.Location = new System.Drawing.Point(100, 45);
-            this.txtLegajoColaboradorModificacion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.txtLegajoColaboradorModificacion.Name = "txtLegajoColaboradorModificacion";
-            this.txtLegajoColaboradorModificacion.Size = new System.Drawing.Size(116, 27);
-            this.txtLegajoColaboradorModificacion.TabIndex = 6;
-            this.txtLegajoColaboradorModificacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajoColaboradorModificacion_KeyPress);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 99);
+            this.label7.Location = new System.Drawing.Point(240, 45);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 21);
             this.label7.TabIndex = 5;
             this.label7.Text = "Monto";
             // 
-            // label6
+            // label10
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 45);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 21);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Legajo";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 45);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 21);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Legajo: ";
             // 
             // label8
             // 
@@ -499,6 +364,7 @@
             this.dgvSalarios.AllowUserToAddRows = false;
             this.dgvSalarios.AllowUserToDeleteRows = false;
             this.dgvSalarios.AllowUserToOrderColumns = true;
+            this.dgvSalarios.AllowUserToResizeRows = false;
             this.dgvSalarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalarios.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -546,6 +412,10 @@
             this.dgvSalarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSalarios.Size = new System.Drawing.Size(1119, 254);
             this.dgvSalarios.TabIndex = 42;
+            this.dgvSalarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellContentClick);
+            this.dgvSalarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellContentClick);
+            this.dgvSalarios.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellContentClick);
+            this.dgvSalarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalarios_CellContentClick);
             // 
             // legajo
             // 
@@ -593,10 +463,10 @@
             this.btnGenerarOrdenes.IconColor = System.Drawing.Color.Black;
             this.btnGenerarOrdenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerarOrdenes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarOrdenes.Location = new System.Drawing.Point(11, 654);
+            this.btnGenerarOrdenes.Location = new System.Drawing.Point(897, 634);
             this.btnGenerarOrdenes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnGenerarOrdenes.Name = "btnGenerarOrdenes";
-            this.btnGenerarOrdenes.Size = new System.Drawing.Size(178, 61);
+            this.btnGenerarOrdenes.Size = new System.Drawing.Size(234, 47);
             this.btnGenerarOrdenes.TabIndex = 26;
             this.btnGenerarOrdenes.Text = "Generar ordenes de pago";
             this.btnGenerarOrdenes.UseVisualStyleBackColor = false;
@@ -604,29 +474,28 @@
             // 
             // txtDescripcionComprobante
             // 
-            this.txtDescripcionComprobante.Location = new System.Drawing.Point(538, 657);
+            this.txtDescripcionComprobante.Location = new System.Drawing.Point(558, 523);
             this.txtDescripcionComprobante.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDescripcionComprobante.Multiline = true;
             this.txtDescripcionComprobante.Name = "txtDescripcionComprobante";
-            this.txtDescripcionComprobante.Size = new System.Drawing.Size(342, 77);
+            this.txtDescripcionComprobante.Size = new System.Drawing.Size(281, 158);
             this.txtDescripcionComprobante.TabIndex = 24;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(249, 660);
+            this.label15.Location = new System.Drawing.Point(554, 490);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(285, 21);
+            this.label15.Size = new System.Drawing.Size(289, 21);
             this.label15.TabIndex = 24;
-            this.label15.Text = "Descripcion para los comprobantes";
-            
+            this.label15.Text = "Descripcion para los comprobantes:";
             // 
             // frmSalarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 777);
+            this.ClientSize = new System.Drawing.Size(1155, 692);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtDescripcionComprobante);
             this.Controls.Add(this.btnGenerarOrdenes);
@@ -636,7 +505,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmSalarios";
-            this.Text = "frmSalarios";
+            this.Text = " ";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -660,28 +529,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtMontoModificacion;
-        private System.Windows.Forms.TextBox txtLegajoColaboradorModificacion;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private Controls.BotonPadre btnAplicar;
         private Controls.BotonPadre btnExportar;
-        private Controls.BotonPadre botonPadre1;
         private Controls.DataGridPadre dgvSalarios;
-        private Controls.BotonPadre btnModificarSalariosCargo;
-        private System.Windows.Forms.TextBox txtMontoModificarSalarioCargo;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbModificarSalarioCargo;
         private System.Windows.Forms.ComboBox cmbFiltroCargo;
         private System.Windows.Forms.Label label14;
-        private Controls.BotonPadre btnPorcentaje;
-        private System.Windows.Forms.ComboBox cmbCargoPorcentaje;
-        private System.Windows.Forms.TextBox txtPorcentaje;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private Controls.BotonPadre btnLimpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -692,5 +547,8 @@
         private System.Windows.Forms.TextBox txtDescripcionComprobante;
         private System.Windows.Forms.Label label15;
         private System.Drawing.Printing.PrintDocument pntOrden;
+        private Controls.BotonPadre botonPadre3;
+        private Controls.BotonPadre btnModificar;
+        private System.Windows.Forms.Label lblLegajo;
     }
 }

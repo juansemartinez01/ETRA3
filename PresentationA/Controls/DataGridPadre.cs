@@ -28,6 +28,8 @@ namespace PresentationA.Controls
             this.AllowUserToAddRows = false;
             this.AllowUserToDeleteRows = false;
             this.AllowUserToOrderColumns = true;
+            this.AllowUserToResizeColumns= true;
+            this.AllowUserToResizeRows = false;
             this.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             this.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(242, 103, 34);
             this.Font = new Font("Century Gothic", 12, FontStyle.Regular);

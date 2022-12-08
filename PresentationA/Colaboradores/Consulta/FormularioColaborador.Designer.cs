@@ -47,6 +47,7 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.btnFamiliares = new FontAwesome.Sharp.IconButton();
             this.btnCtaCte = new FontAwesome.Sharp.IconButton();
             this.btnHistorialSalarios = new FontAwesome.Sharp.IconButton();
             this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
@@ -278,6 +279,7 @@
             // pnlBotones
             // 
             this.pnlBotones.AutoScroll = true;
+            this.pnlBotones.Controls.Add(this.btnFamiliares);
             this.pnlBotones.Controls.Add(this.btnCtaCte);
             this.pnlBotones.Controls.Add(this.btnHistorialSalarios);
             this.pnlBotones.Controls.Add(this.btnHistorialEventos);
@@ -289,6 +291,27 @@
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(190, 347);
             this.pnlBotones.TabIndex = 0;
+            // 
+            // btnFamiliares
+            // 
+            this.btnFamiliares.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFamiliares.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnFamiliares.FlatAppearance.BorderSize = 0;
+            this.btnFamiliares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFamiliares.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnFamiliares.ForeColor = System.Drawing.Color.Black;
+            this.btnFamiliares.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnFamiliares.IconColor = System.Drawing.Color.Black;
+            this.btnFamiliares.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFamiliares.Location = new System.Drawing.Point(0, 195);
+            this.btnFamiliares.Name = "btnFamiliares";
+            this.btnFamiliares.Padding = new System.Windows.Forms.Padding(5);
+            this.btnFamiliares.Size = new System.Drawing.Size(190, 39);
+            this.btnFamiliares.TabIndex = 4;
+            this.btnFamiliares.Text = "Familiares";
+            this.btnFamiliares.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFamiliares.UseVisualStyleBackColor = true;
+            this.btnFamiliares.Click += new System.EventHandler(this.btnFamiliares_Click);
             // 
             // btnCtaCte
             // 
@@ -436,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private FontAwesome.Sharp.IconButton btnCtaCte;
         private Controls.BotonPadre btnModificar;
+        private FontAwesome.Sharp.IconButton btnFamiliares;
     }
 }

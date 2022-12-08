@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
             this.chkFiltroFecha = new System.Windows.Forms.CheckBox();
             this.btnExportar = new PresentationA.Controls.BotonPadre();
@@ -52,7 +53,6 @@
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).BeginInit();
             this.SuspendLayout();
@@ -61,10 +61,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(435, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(469, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 37);
+            this.label1.Size = new System.Drawing.Size(177, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "DOCUMENTOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -84,14 +84,34 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbTipoDocumento);
             this.groupBox1.Controls.Add(this.cmbColaborador);
-            this.groupBox1.Location = new System.Drawing.Point(7, 67);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.groupBox1.Location = new System.Drawing.Point(6, 61);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.groupBox1.Size = new System.Drawing.Size(1353, 174);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1128, 159);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(952, 112);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(129, 40);
+            this.btnLimpiar.TabIndex = 50;
+            this.btnLimpiar.Text = "Limpiar Filtro";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnVerArchivo
             // 
@@ -105,9 +125,10 @@
             this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVerArchivo.IconSize = 25;
             this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVerArchivo.Location = new System.Drawing.Point(89, 120);
+            this.btnVerArchivo.Location = new System.Drawing.Point(74, 110);
+            this.btnVerArchivo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnVerArchivo.Name = "btnVerArchivo";
-            this.btnVerArchivo.Size = new System.Drawing.Size(303, 47);
+            this.btnVerArchivo.Size = new System.Drawing.Size(252, 43);
             this.btnVerArchivo.TabIndex = 49;
             this.btnVerArchivo.Text = "Ver Archivo";
             this.btnVerArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -116,10 +137,10 @@
             // 
             // chkFiltroFecha
             // 
-            this.chkFiltroFecha.AutoSize = true;
-            this.chkFiltroFecha.Location = new System.Drawing.Point(1143, 25);
+            this.chkFiltroFecha.Location = new System.Drawing.Point(952, 23);
+            this.chkFiltroFecha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.chkFiltroFecha.Name = "chkFiltroFecha";
-            this.chkFiltroFecha.Size = new System.Drawing.Size(140, 27);
+            this.chkFiltroFecha.Size = new System.Drawing.Size(129, 30);
             this.chkFiltroFecha.TabIndex = 15;
             this.chkFiltroFecha.Text = "Filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
@@ -137,9 +158,10 @@
             this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportar.IconSize = 30;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExportar.Location = new System.Drawing.Point(618, 123);
+            this.btnExportar.Location = new System.Drawing.Point(515, 112);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(285, 43);
+            this.btnExportar.Size = new System.Drawing.Size(238, 39);
             this.btnExportar.TabIndex = 14;
             this.btnExportar.Text = "Exportar a Excel";
             this.btnExportar.UseVisualStyleBackColor = false;
@@ -148,20 +170,20 @@
             // cmbTipoEvento
             // 
             this.cmbTipoEvento.FormattingEnabled = true;
-            this.cmbTipoEvento.Location = new System.Drawing.Point(234, 70);
-            this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbTipoEvento.Location = new System.Drawing.Point(195, 64);
+            this.cmbTipoEvento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbTipoEvento.Name = "cmbTipoEvento";
-            this.cmbTipoEvento.Size = new System.Drawing.Size(184, 31);
+            this.cmbTipoEvento.Size = new System.Drawing.Size(154, 29);
             this.cmbTipoEvento.TabIndex = 13;
             this.cmbTipoEvento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipoEvento_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(102, 77);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(32, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 23);
+            this.label3.Size = new System.Drawing.Size(107, 21);
             this.label3.TabIndex = 12;
             this.label3.Text = "Tipo evento:";
             // 
@@ -176,9 +198,10 @@
             this.btnAplicar.IconColor = System.Drawing.Color.Black;
             this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAplicar.Location = new System.Drawing.Point(954, 123);
+            this.btnAplicar.Location = new System.Drawing.Point(795, 112);
+            this.btnAplicar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAplicar.Name = "btnAplicar";
-            this.btnAplicar.Size = new System.Drawing.Size(140, 44);
+            this.btnAplicar.Size = new System.Drawing.Size(117, 40);
             this.btnAplicar.TabIndex = 11;
             this.btnAplicar.Text = "Aplicar";
             this.btnAplicar.UseVisualStyleBackColor = false;
@@ -187,57 +210,57 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(498, 74);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(415, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 23);
+            this.label2.Size = new System.Drawing.Size(143, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo documento:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(498, 23);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(415, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 23);
+            this.label4.Size = new System.Drawing.Size(154, 21);
             this.label4.TabIndex = 4;
             this.label4.Text = "Fecha de Registro:";
             // 
             // dtpFechaRegistro
             // 
-            this.dtpFechaRegistro.Location = new System.Drawing.Point(693, 18);
-            this.dtpFechaRegistro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpFechaRegistro.Location = new System.Drawing.Point(577, 22);
+            this.dtpFechaRegistro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpFechaRegistro.Name = "dtpFechaRegistro";
-            this.dtpFechaRegistro.Size = new System.Drawing.Size(441, 32);
+            this.dtpFechaRegistro.Size = new System.Drawing.Size(302, 27);
             this.dtpFechaRegistro.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 23);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(32, 27);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 23);
+            this.label6.Size = new System.Drawing.Size(130, 21);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Colaboradores";
+            this.label6.Text = "Colaboradores:";
             // 
             // cmbTipoDocumento
             // 
             this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(693, 70);
-            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(578, 64);
+            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
-            this.cmbTipoDocumento.Size = new System.Drawing.Size(184, 31);
+            this.cmbTipoDocumento.Size = new System.Drawing.Size(301, 29);
             this.cmbTipoDocumento.TabIndex = 8;
             // 
             // cmbColaborador
             // 
             this.cmbColaborador.FormattingEnabled = true;
-            this.cmbColaborador.Location = new System.Drawing.Point(234, 20);
-            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cmbColaborador.Location = new System.Drawing.Point(195, 24);
+            this.cmbColaborador.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmbColaborador.Name = "cmbColaborador";
-            this.cmbColaborador.Size = new System.Drawing.Size(184, 31);
+            this.cmbColaborador.Size = new System.Drawing.Size(154, 29);
             this.cmbColaborador.TabIndex = 7;
             this.cmbColaborador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbColaborador_KeyPress);
             // 
@@ -246,6 +269,7 @@
             this.dgvDocumentos.AllowUserToAddRows = false;
             this.dgvDocumentos.AllowUserToDeleteRows = false;
             this.dgvDocumentos.AllowUserToOrderColumns = true;
+            this.dgvDocumentos.AllowUserToResizeRows = false;
             this.dgvDocumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDocumentos.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocumentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -275,7 +299,8 @@
             this.dgvDocumentos.EnableHeadersVisualStyles = false;
             this.dgvDocumentos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvDocumentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvDocumentos.Location = new System.Drawing.Point(7, 248);
+            this.dgvDocumentos.Location = new System.Drawing.Point(6, 226);
+            this.dgvDocumentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvDocumentos.Name = "dgvDocumentos";
             this.dgvDocumentos.ReadOnly = true;
             this.dgvDocumentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -289,7 +314,7 @@
             this.dgvDocumentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDocumentos.RowHeadersWidth = 51;
             this.dgvDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDocumentos.Size = new System.Drawing.Size(1351, 413);
+            this.dgvDocumentos.Size = new System.Drawing.Size(1126, 377);
             this.dgvDocumentos.TabIndex = 46;
             this.dgvDocumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
             // 
@@ -325,34 +350,15 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(1143, 123);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(155, 44);
-            this.btnLimpiar.TabIndex = 50;
-            this.btnLimpiar.Text = "Limpiar Filtro";
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
             // frmDocumentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1373, 675);
+            this.ClientSize = new System.Drawing.Size(1144, 616);
             this.Controls.Add(this.dgvDocumentos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDocumentos";
             this.Text = "frmDocumentos";
             this.groupBox1.ResumeLayout(false);
