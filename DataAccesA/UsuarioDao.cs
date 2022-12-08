@@ -174,7 +174,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public string modificarUsuario(int idPerfil, string mail, int legajo)
+        public string modificarUsuario(int idPerfil, int legajo)
         {
             try
             {
@@ -186,9 +186,8 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil,mail = @mail WHERE legajoColaborador = @legajo";
+                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil WHERE legajoColaborador = @legajo";
                         command.Parameters.AddWithValue("@idPerfil", idPerfil);
-                        command.Parameters.AddWithValue("@mail", mail);
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         usuarioCreado = command.ExecuteNonQuery();

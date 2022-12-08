@@ -30,10 +30,10 @@ namespace DomainA
             if(UserCache.perfil != Perfiles.admin) { return "No tiene permisos"; }
             return usuarioDao.crearNuevoUsuario(idPerfil,mail,contraseña,legajo);
         }
-        public string modificarUsuario(int idPerfil, string mail, int legajo)
+        public string modificarUsuario(int idPerfil,int legajo)
         {
             if (UserCache.perfil != Perfiles.admin) { return "No tiene permisos"; }
-            return usuarioDao.modificarUsuario(idPerfil, mail,legajo);
+            return usuarioDao.modificarUsuario(idPerfil, legajo);
         }
     }
 }

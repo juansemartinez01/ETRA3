@@ -129,7 +129,7 @@ namespace PresentationA.Colaboradores
 
                 //Modificar usuario asociado a un colaborador
                 
-                string respuesta = usuarioModelo.modificarUsuario((int)cmbperfil.SelectedValue, colaboradorModelo.BuscarColaborador(legajo.ToString(), "", "").Rows[0]["mail"].ToString(), (int)cmblegajo.SelectedValue) ;
+                string respuesta = usuarioModelo.modificarUsuario((int)cmbperfil.SelectedValue, (int)cmblegajo.SelectedValue) ;
                 MessageBox.Show(respuesta);
                 limpiarCampos();
                 CargarTabla(1);
