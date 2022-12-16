@@ -38,7 +38,7 @@ namespace PresentationA.Colaboradores
             for (int i = 0; i < usuarios.Rows.Count; i++)
             {
                 //crear metodo completar labels
-                dgvUsuarios.Rows.Add(usuarios.Rows[i]["legajoColaborador"], usuarios.Rows[i]["nombre"]);
+                dgvUsuarios.Rows.Add(usuarios.Rows[i]["legajoColaborador"], usuarios.Rows[i]["nombre"], usuarios.Rows[i]["mail"]);
             }
         }
         private void ViewState()
@@ -66,6 +66,7 @@ namespace PresentationA.Colaboradores
                 return;
             }
             lblError.Visible = false;
+            lblMail.Text = "";
             sender.Text = "Guardar";
             sender.IconChar = IconChar.FloppyDisk;
             btnAgregar.Visible = false;
@@ -89,7 +90,7 @@ namespace PresentationA.Colaboradores
             ViewState();
             cmblegajo.Text = filaSeleccionada.Cells["legajo"].Value.ToString();
             cmbperfil.Text = filaSeleccionada.Cells["perfil"].Value.ToString();
-            
+            lblMail.Text = filaSeleccionada.Cells["mail"].Value.ToString();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -157,5 +158,9 @@ namespace PresentationA.Colaboradores
             lblError.Visible = true;
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //codigo elimniar usuario?
+        }
     }
 }

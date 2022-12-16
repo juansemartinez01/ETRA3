@@ -28,6 +28,7 @@ namespace PresentationA
             pnlBotones.Controls.Add(bordeInferior);
             pnlBotones.Enabled = false;
             btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void ActivateButton(object button)
@@ -167,7 +168,8 @@ namespace PresentationA
             colaborador.Clear();
             colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
             pnlBotones.Enabled = true;
-            btnModificar.Enabled = true; 
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
             btnDatosPersonales_Click(btnDatosPersonales, e);
         }
 
@@ -194,7 +196,12 @@ namespace PresentationA
                 mod.ShowDialog();
             }
         }
-
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea eliminar el Colaborador?", "Elminar Colaborador", MessageBoxButtons.YesNo) == DialogResult.No) {return; }
+            ColaboradorModelo colab = new ColaboradorModelo();
+            MessageBox.Show(colab.EliminarColaborador(Int32.Parse(colaborador.Rows[0]["legajo"].ToString())));
+        }
         private void FormularioColaborador_Load(object sender, EventArgs e)
         {
             if(UserCache.perfil != Perfiles.admin){btnModificar.Enabled = false; }
@@ -210,5 +217,7 @@ namespace PresentationA
             ActivateButton(sender);
             openChildFormInPanel(new frmFamiliares());
         }
+
+
     }
 }

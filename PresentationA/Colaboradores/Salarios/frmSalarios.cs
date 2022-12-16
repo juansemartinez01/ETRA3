@@ -217,14 +217,14 @@ namespace PresentationA.Colaboradores
             ComprobanteModelo orden = new ComprobanteModelo();
             foreach (DataGridViewRow row in dgvSalarios.Rows)
             {
-                int legajoColaborador = Int32.Parse(row.Cells["legajo"].ToString());
-                DataTable colab = colaboradorModelo.BuscarColaborador(legajoColaborador.ToString(), row.Cells["nombre"].ToString(), row.Cells["apellido"].ToString());
-                string nombreColaborador = row.Cells["nombre"].ToString() + " " + row.Cells["apellido"].ToString();
-                float salarioColaborador = float.Parse(row.Cells["monto"].ToString());
+                int legajoColaborador = Int32.Parse(row.Cells["legajo"].Value.ToString());
+                DataTable colab = colaboradorModelo.BuscarColaborador(legajoColaborador.ToString(), row.Cells["nombre"].Value.ToString(), row.Cells["apellido"].Value.ToString());
+                string nombreColaborador = row.Cells["nombre"].Value.ToString() + " " + row.Cells["apellido"].Value.ToString();
+                float salarioColaborador = float.Parse(row.Cells["monto"].Value.ToString());
                 //Aca iria el codigo que genere cada Orden de pago de cada colaborador, los datos que varian son los que estan arriba.
 
                 string fileName = folderName + "\\OrdenDePago_" + nombreColaborador + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
-                orden.generarOrden(nombreColaborador, colab.Rows[0]["nombreCalle"] + " " + colab.Rows[0]["numeroCalle"], salarioColaborador, fileName, "ORDEN DE PAGO", txtDescripcionComprobante.Text);
+                MessageBox.Show(orden.generarOrden(nombreColaborador, colab.Rows[0]["nombreCalle"] + " " + colab.Rows[0]["numeroCalle"], salarioColaborador, fileName, "ORDEN DE PAGO", txtDescripcionComprobante.Text));
 
             }
 

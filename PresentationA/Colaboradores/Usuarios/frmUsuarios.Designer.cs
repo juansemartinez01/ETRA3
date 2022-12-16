@@ -34,6 +34,7 @@
             this.dgvUsuarios = new PresentationA.Controls.DataGridPadre();
             this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@
             this.cmbperfil = new System.Windows.Forms.ComboBox();
             this.cmblegajo = new System.Windows.Forms.ComboBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
+            this.btnEliminar = new PresentationA.Controls.BotonPadre();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +73,8 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.legajo,
-            this.perfil});
+            this.perfil,
+            this.mail});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -81,7 +86,7 @@
             this.dgvUsuarios.EnableHeadersVisualStyles = false;
             this.dgvUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvUsuarios.Location = new System.Drawing.Point(362, 72);
+            this.dgvUsuarios.Location = new System.Drawing.Point(442, 72);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -95,7 +100,7 @@
             this.dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvUsuarios.RowHeadersWidth = 62;
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(334, 322);
+            this.dgvUsuarios.Size = new System.Drawing.Size(503, 322);
             this.dgvUsuarios.TabIndex = 1;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             this.dgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
@@ -115,6 +120,12 @@
             this.perfil.MinimumWidth = 8;
             this.perfil.Name = "perfil";
             this.perfil.ReadOnly = true;
+            // 
+            // mail
+            // 
+            this.mail.HeaderText = "Mail";
+            this.mail.Name = "mail";
+            this.mail.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -149,7 +160,7 @@
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 30;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(178, 357);
+            this.btnModificar.Location = new System.Drawing.Point(164, 357);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(122, 37);
             this.btnModificar.TabIndex = 47;
@@ -192,7 +203,7 @@
             this.cmbperfil.FormattingEnabled = true;
             this.cmbperfil.Location = new System.Drawing.Point(148, 126);
             this.cmbperfil.Name = "cmbperfil";
-            this.cmbperfil.Size = new System.Drawing.Size(153, 29);
+            this.cmbperfil.Size = new System.Drawing.Size(278, 29);
             this.cmbperfil.TabIndex = 52;
             this.cmbperfil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmblegajo_KeyPress);
             // 
@@ -201,7 +212,7 @@
             this.cmblegajo.FormattingEnabled = true;
             this.cmblegajo.Location = new System.Drawing.Point(148, 72);
             this.cmblegajo.Name = "cmblegajo";
-            this.cmblegajo.Size = new System.Drawing.Size(153, 29);
+            this.cmblegajo.Size = new System.Drawing.Size(278, 29);
             this.cmblegajo.TabIndex = 53;
             this.cmblegajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmblegajo_KeyPress);
             // 
@@ -211,18 +222,60 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(23, 202);
+            this.lblError.Location = new System.Drawing.Point(23, 221);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(277, 106);
+            this.lblError.Size = new System.Drawing.Size(403, 116);
             this.lblError.TabIndex = 102;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 21);
+            this.label2.TabIndex = 103;
+            this.label2.Text = "Mail:";
+            // 
+            // lblMail
+            // 
+            this.lblMail.AutoSize = true;
+            this.lblMail.Location = new System.Drawing.Point(144, 173);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(80, 21);
+            this.lblMail.TabIndex = 104;
+            this.lblMail.Text = "labelMail";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 30;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(304, 357);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(122, 37);
+            this.btnEliminar.TabIndex = 105;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 428);
+            this.ClientSize = new System.Drawing.Size(993, 428);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.lblMail);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.cmblegajo);
             this.Controls.Add(this.cmbperfil);
@@ -253,5 +306,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn perfil;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mail;
+        private Controls.BotonPadre btnEliminar;
     }
 }

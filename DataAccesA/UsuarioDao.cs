@@ -186,7 +186,7 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil WHERE legajoColaborador = @legajo";
+                        command.CommandText = "UPDATE Usuario SET id_perfil = @idPerfil, mail = (select mail from Colaborador where legajo = @legajo) WHERE legajoColaborador = @legajo";
                         command.Parameters.AddWithValue("@idPerfil", idPerfil);
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;

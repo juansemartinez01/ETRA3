@@ -126,7 +126,7 @@ namespace PresentationA.Colaboradores
                 string fileName = folderName + "\\Feriado_" + colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString() + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
 
                 ComprobanteModelo feriado = new ComprobanteModelo();
-                feriado.generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(),colaboradorModelo.calle + " " +colaboradorModelo.nroCalle.ToString(), montoferiado,fileName, "ORDEN DE PAGO", txtDescripcion1.Text);
+                MessageBox.Show(feriado.generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(),colaboradorModelo.calle + " " +colaboradorModelo.nroCalle.ToString(), montoferiado,fileName, "ORDEN DE PAGO", txtDescripcion1.Text));
             }catch(Exception ex){
                 MessageBox.Show(ex.ToString());
                 txtMontoBono.Text = "";
@@ -411,7 +411,7 @@ namespace PresentationA.Colaboradores
 
 
             ComprobanteModelo minuta = new ComprobanteModelo();
-            minuta.generarOrden(colaboradorModelo.nombre + " " + colaboradorModelo.apellido, colaboradorModelo.calle + " " + colaboradorModelo.nroCalle, float.Parse(label22.Text.ToString()), fileName, "MINUTA CONTABLE", txtDescripcion2.Text);
+            MessageBox.Show(minuta.generarOrden(colaboradorModelo.nombre + " " + colaboradorModelo.apellido, colaboradorModelo.calle + " " + colaboradorModelo.nroCalle, float.Parse(label22.Text.ToString()), fileName, "MINUTA CONTABLE", txtDescripcion2.Text));
             txtAnticipo.Text = "";
             txtCuotaCtaCorriente.Text = "";
 

@@ -267,14 +267,13 @@
             // 
             // lblError
             // 
-            this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblError.Location = new System.Drawing.Point(559, 199);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(42, 20);
+            this.lblError.Size = new System.Drawing.Size(364, 48);
             this.lblError.TabIndex = 58;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
@@ -290,7 +289,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 199);
+            this.label2.Location = new System.Drawing.Point(14, 199);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 21);

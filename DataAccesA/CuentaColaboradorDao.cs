@@ -275,7 +275,7 @@ namespace DataAccesA
                                                     mailService.sendMail(
                                                         subject: "ETRA: MOVIMIENTO EXCEDE SALDO MAXIMO MENSUAL",
                                                         body: "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " acaba de realizar un movimiento en su cuenta corriente que excede el monto permitido. Detalle del movimiento:  " +
-                                                                 " Monto: $" + montoMovimiento.ToString() + " , Saldo Anterior: $" + montoActual.ToString() + " , Saldo Nuevo: $" + montoNuevo.ToString(),
+                                                                 " Monto: $" + montoMovimiento.ToString("0.00") + " , Saldo Anterior: $" + montoActual.ToString() + " , Saldo Nuevo: $" + montoNuevo.ToString(),
                                                         recipientMail: colaboradorDao.getAdmins(),
                                                         isHtml: false
                                                         );
@@ -295,7 +295,7 @@ namespace DataAccesA
                                                         );
                                                     //crear aviso notificado de deuda cuenta corriente o cerca de monto
                                                     AvisosDao aviso = new AvisosDao();
-                                                    aviso.insertarAviso(4,"Cuenta alcanza un " + porc.ToString() +"% del saldo maximo",DateTime.Now,DateTime.Now, DateTime.Now);
+                                                    aviso.insertarAviso(4,"Cuenta alcanza un " + porc.ToString("0.00") +"% del saldo maximo",DateTime.Now,DateTime.Now, DateTime.Now);
                                                     int idAviso = int.Parse(aviso.buscarIdUltimoAviso());
                                                     return aviso.declararNotificados(idAviso, new int[1] { legajo });
                                                 }

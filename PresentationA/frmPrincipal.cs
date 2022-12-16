@@ -34,6 +34,7 @@ namespace PresentationA
                 btnDocumentos.Enabled = false;
                 btnAvisos.Enabled = false;
                 btnUsuarios.Enabled = false;
+                btnComprobantes.Enabled = false;
             }
             hideSubMenu();
             openChildFormInPanel(new frmInicio());

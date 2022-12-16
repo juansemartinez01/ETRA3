@@ -121,7 +121,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void frmCtaCte_Load(object sender, EventArgs e)
         {
-            if(UserCache.perfil != Perfiles.admin) { btnDepositar.Enabled = false;}
+            if(UserCache.perfil != Perfiles.admin) { btnDepositar.Enabled = false; btnRetirar.Enabled = false; }
         }
 
         private void txtMontoMovimiento_KeyPress(object sender, KeyPressEventArgs e)
@@ -156,6 +156,7 @@ namespace PresentationA.Colaboradores.Consulta
             
             //int tipoMovimiento = int.Parse(cmbTipoMovimiento.SelectedValue.ToString());
             string mensaje = cuenta.modificarSaldo(colaboradorModelo.legajo, monto , 2, descripcion);
+            MessageBox.Show(mensaje);
             CargarDG(colaboradorModelo.legajo.ToString());
             buscarSaldo();
             LimpiarCampos();
