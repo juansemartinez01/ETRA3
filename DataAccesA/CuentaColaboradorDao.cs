@@ -207,6 +207,7 @@ namespace DataAccesA
         {
             if(tipoMovimiento == 2)
             {
+                //RETIRA PLATA
                 montoMovimiento = -montoMovimiento;
             }
             string montoActual = "";
@@ -264,10 +265,14 @@ namespace DataAccesA
                                             command3.Parameters.AddWithValue("@descripcion", descripcion);
                                             command3.CommandType = CommandType.Text;
                                             var movimientoCreado = command3.EndExecuteNonQuery(command3.BeginExecuteNonQuery());
+                                            
                                             if (movimientoCreado == 1)
                                             {
+                                                //Solo reviso que se exceda del monto permitido si es un movimiento para retirar dinero, SINO, no es necesario revisar que exceda el saldo
+                                                if (tipoMovimiento != 2) { return "Movimiento agregado con exito."; }
                                                 float porc = (montoNuevo * 100) / float.Parse(montoMaximo);
-                                                if ((float.Parse(montoMaximo)*(-1)) > montoNuevo)
+                                                //if ((float.Parse(montoMaximo)*(-1)) < montoNuevo)
+                                                if(float.Parse(montoMaximo) >= montoNuevo)
                                                 {
                                                     //El monto supera el saldo maximo
                                                     ColaboradorDao colaboradorDao = new ColaboradorDao();
@@ -282,14 +287,14 @@ namespace DataAccesA
                                                     return "Movimiento agregado con exito";
                                                 }
                                                 
-                                                else if( porc <= -75 & porc < 0)
+                                                else if( 75 <= porc & porc < 100)
                                                 {
                                                     //El monto no lo supera pero esta en el 25 por ciento
                                                     ColaboradorDao colaboradorDao = new ColaboradorDao();
                                                     var mailService = new MailServices.SystemSupportMail();
                                                     mailService.sendMail(
                                                         subject: "ETRA: AVISO CUENTA CORRIENTE CON SALDO CERCANO A MAXIMO",
-                                                        body: "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " tiene un saldo en su cuenta corriente de $ " + montoNuevo.ToString() + " , teniendo un valor permitido de saldo maximo $" + montoActual.ToString(),
+                                                        body: "Administradores, el colaborador/a de legajo: " + legajo.ToString() + " tiene un saldo en su cuenta corriente de $ " + montoNuevo.ToString() + " , teniendo un valor permitido de saldo maximo $" + montoMaximo.ToString(),
                                                         recipientMail: colaboradorDao.getAdmins(),
                                                         isHtml: false
                                                         );
@@ -297,7 +302,8 @@ namespace DataAccesA
                                                     AvisosDao aviso = new AvisosDao();
                                                     aviso.insertarAviso(4,"Cuenta alcanza un " + porc.ToString("0.00") +"% del saldo maximo",DateTime.Now,DateTime.Now, DateTime.Now);
                                                     int idAviso = int.Parse(aviso.buscarIdUltimoAviso());
-                                                    return aviso.declararNotificados(idAviso, new int[1] { legajo });
+                                                    aviso.declararNotificados(idAviso, new int[1] { legajo });
+                                                    return "Movimiento agregado con exito.";
                                                 }
                                                 return "Movimiento agregado con exito.";
 

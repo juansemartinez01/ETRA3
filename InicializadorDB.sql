@@ -201,7 +201,7 @@ INSERT INTO TipoAviso VALUES ('Carga de Cumpleaños',0)
 INSERT INTO TipoAviso VALUES ('Cumpleaños',0)
 INSERT INTO TipoAviso VALUES ('Deuda Cuenta corriente',0)
 INSERT INTO TipoAviso VALUES ('Otro',0)
-
+INSERT INTO TipoAviso VALUES ('Cumpleaños familiar',0)
 /*Inicializador tipos de avisos*/
 
 INSERT INTO Aviso VALUES (1,'Aviso a administradores', GETDATE(),GETDATE(),GETDATE(),null,0)

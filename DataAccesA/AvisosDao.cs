@@ -224,7 +224,7 @@ namespace DataAccesA
                                                 "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                                 "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                                 "join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                                "where MONTH(a.fechaOcurrencia) = MONTH(GETDATE())";
+                                                "where MONTH(a.fechaOcurrencia) = MONTH(GETDATE()) AND a.borradoLogico = 0";
                         command.CommandType = CommandType.Text;
 
                         resultado.Load(command.ExecuteReader());

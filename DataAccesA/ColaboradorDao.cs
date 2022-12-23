@@ -447,7 +447,7 @@ namespace DataAccesA
                                                                         command7.Parameters.AddWithValue("@cargo", puesto);
                                                                         command7.Parameters.AddWithValue("@legajo", legajo);
 
-                                                                        command6.CommandType = CommandType.Text;
+                                                                        command7.CommandType = CommandType.Text;
                                                                         var HistorialCargoCreado = command7.EndExecuteNonQuery(command7.BeginExecuteNonQuery());
                                                                         if (HistorialCargoCreado != 0)
                                                                         {
@@ -462,14 +462,41 @@ namespace DataAccesA
                                                                                 var HistorialEstadoCreado = command8.EndExecuteNonQuery(command8.BeginExecuteNonQuery());
                                                                                 if (HistorialEstadoCreado != 0)
                                                                                 {
-                                                                                    return 1;
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    return 0;
-                                                                                }
+                                                                                    using (var command9 = new SqlCommand())
+                                                                                    {
+                                                                                        Double montoMax = salario * -0.3;
+                                                                                        command9.Connection = connection;
+                                                                                        command9.CommandText = "INSERT INTO CuentaColaborador VALUES (0,0,@montoMax)";
+                                                                                        command9.Parameters.AddWithValue("@montoMax", montoMax);
+
+                                                                                        command9.CommandType = CommandType.Text;
+                                                                                        var cuentaCreada = command9.EndExecuteNonQuery(command9.BeginExecuteNonQuery());
+                                                                                        if (cuentaCreada != 0)
+                                                                                        {
+                                                                                            using (var command10 = new SqlCommand())
+                                                                                            {
+
+                                                                                                command10.Connection = connection;
+                                                                                                command10.CommandText = "INSERT INTO MovimientosCuentaColaborador VALUES (GETDATE(),GETDATE(),(SELECT MAX(legajo) FROM Colaborador), (SELECT MAX(numeroCuenta) FROM CuentaColaborador),0,3,0, NULL)";
+
+                                                                                                command10.CommandType = CommandType.Text;
+                                                                                                var movCuenta = command10.EndExecuteNonQuery(command10.BeginExecuteNonQuery());
+                                                                                                if (movCuenta != 0)
+                                                                                                {
+                                                                                                    return 1;
+                                                                                                }
+                                                                                                else { return 0; }
+                                                                                            }
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            return 0;
+                                                                                        }
 
 
+                                                                                    }
+                                                                                }
+                                                                                else { return 0; }
                                                                             }
                                                                         }
                                                                         else

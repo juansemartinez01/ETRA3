@@ -23,6 +23,7 @@ namespace PresentationA.Colaboradores
             cmbperfil.Enabled = false;
             lblMail.Text = string.Empty;
             CargarTabla(1);
+            btnEliminar.Visible = false;
             limpiarCampos();
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)

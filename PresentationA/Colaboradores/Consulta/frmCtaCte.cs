@@ -21,10 +21,9 @@ namespace PresentationA.Colaboradores.Consulta
             lblError.Visible = false;
             colaboradorModelo.legajo = int.Parse(legajo);
             float fondoMaximo = float.Parse(cuenta.buscarFondoMaximoPermitido(colaboradorModelo.legajo));
-            fondoMaximo = -fondoMaximo;
+            //fondoMaximo = -fondoMaximo;
             lblFondoMaximoPermitido.Text = fondoMaximo.ToString();
             lblFondoMaximoPermitido.ForeColor = Color.Red;
-            //LlenarCombo(cmbTipoMovimiento, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoMovimiento WHERE borradoLogico = 0 AND id_tipoMovimiento < 3"), "nombre", "id_tipoMovimiento");
             CargarDG(legajo);
             buscarSaldo();
             LimpiarCampos();
