@@ -29,26 +29,22 @@ namespace DataAccesA.MailServices
         public void sendMail(string subject, string body, List<string> recipientMail, bool isHtml = false)
         {
             var mailMesssage = new MailMessage();
-            try
-            {
-                mailMesssage.From = new MailAddress(senderMail);
-                foreach (string mail in recipientMail)
-                {
-                    mailMesssage.To.Add(mail);
-                }
-                mailMesssage.Subject = subject;
-                mailMesssage.IsBodyHtml = isHtml;
-                mailMesssage.Body = body;
-                mailMesssage.Priority = MailPriority.Normal;
 
-                smtpClient.Send(mailMesssage);
-            }
-            catch (Exception ex) { }
-            finally
+            mailMesssage.From = new MailAddress(senderMail);
+            foreach (string mail in recipientMail)
             {
-                mailMesssage.Dispose();
-                smtpClient.Dispose();
+                mailMesssage.To.Add(mail);
             }
+            mailMesssage.Subject = subject;
+            mailMesssage.IsBodyHtml = isHtml;
+            mailMesssage.Body = body;
+            mailMesssage.Priority = MailPriority.Normal;
+
+            smtpClient.Send(mailMesssage);
+
+            mailMesssage.Dispose();
+            smtpClient.Dispose();
+
 
         }
 

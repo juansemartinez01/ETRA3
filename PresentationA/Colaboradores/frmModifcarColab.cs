@@ -58,13 +58,19 @@ namespace PresentationA.Colaboradores
                 string Cuit = txtCuit.Text;
                 if (txtCuit.Text == "")
                 {
-                    MessageBox.Show("No puede dejar el Cuit vacio");
+                    MessageBox.Show("No puede dejar el CUIT vacio");
                     return;
                 }
                 int dni = int.Parse(txtDni.Text);
                 if (txtDni.Text == "")
                 {
-                    MessageBox.Show("No puede dejar el Dni vacio");
+                    MessageBox.Show("No puede dejar el DNI vacio");
+                    return;
+                }
+                string mail = txtmail.Text;
+                if (txtmail.Text == "")
+                {
+                    MessageBox.Show("No puede dejar el mail vacio");
                     return;
                 }
                 DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
@@ -105,11 +111,6 @@ namespace PresentationA.Colaboradores
                 if (txtlocalidad.Text == "")
                 {
                     localidad = "No especifica";
-                }
-                string mail = txtmail.Text;
-                if (txtmail.Text == "")
-                {
-                    mail = "No especifica";
                 }
                 string numeroContacto = txtnroContacto.Text;
                 if (txtnroContacto.Text == "")

@@ -52,7 +52,7 @@ namespace PresentationA.Colaboradores
                     //crear metodo completar labels
                     dgvAvisos.Rows.Add(avisos.Rows[i]["id_aviso"],avisos.Rows[i]["nombre"], avisos.Rows[i]["legajo"], avisos.Rows[i]["fechaOcurrencia"], avisos.Rows[i]["descripcion"], avisos.Rows[i]["fechaCarga"], avisos.Rows[i]["fechaNotificacion"], avisos.Rows[i]["fechaUltimaNotificacion"]);
                 }
-                  
+                dgvAvisos.Sort(dgvAvisos.Columns[2], ListSortDirection.Ascending);
             }
 
             catch (Exception ex)

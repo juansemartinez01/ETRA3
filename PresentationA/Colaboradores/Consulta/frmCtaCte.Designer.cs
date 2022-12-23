@@ -51,6 +51,7 @@
             this.lblError = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnExportar = new PresentationA.Controls.BotonPadre();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCtaCte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,7 +170,7 @@
             this.dgvCtaCte.EnableHeadersVisualStyles = false;
             this.dgvCtaCte.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvCtaCte.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvCtaCte.Location = new System.Drawing.Point(12, 253);
+            this.dgvCtaCte.Location = new System.Drawing.Point(18, 268);
             this.dgvCtaCte.Name = "dgvCtaCte";
             this.dgvCtaCte.ReadOnly = true;
             this.dgvCtaCte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -182,7 +183,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCtaCte.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCtaCte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCtaCte.Size = new System.Drawing.Size(911, 250);
+            this.dgvCtaCte.Size = new System.Drawing.Size(911, 152);
             this.dgvCtaCte.TabIndex = 53;
             // 
             // id
@@ -296,12 +297,35 @@
             this.label2.TabIndex = 60;
             this.label2.Text = "Descripcion:";
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.btnExportar.IconColor = System.Drawing.Color.White;
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 30;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExportar.Location = new System.Drawing.Point(18, 441);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(238, 39);
+            this.btnExportar.TabIndex = 61;
+            this.btnExportar.Text = "Exportar a Excel";
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // frmCtaCte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(941, 528);
+            this.ClientSize = new System.Drawing.Size(941, 503);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblError);
@@ -347,5 +371,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private Controls.BotonPadre btnExportar;
     }
 }

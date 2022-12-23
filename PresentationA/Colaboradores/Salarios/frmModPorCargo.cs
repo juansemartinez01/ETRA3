@@ -55,7 +55,7 @@ namespace PresentationA.Colaboradores.Salarios
             label2.Enabled = !ckbPorcentaje.Checked;
         }
 
-        private void btnModificarSalariosCargo_Click(object sender, EventArgs e)
+        private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (txtMonto.Text == "" || cmbCargo.SelectedIndex == -1)
             {
@@ -83,5 +83,7 @@ namespace PresentationA.Colaboradores.Salarios
         {
             e.Handled = true;
         }
+
+
     }
 }

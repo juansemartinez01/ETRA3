@@ -7,6 +7,7 @@ using DomainA;
 using FontAwesome.Sharp;
 using PresentationA.Colaboradores;
 using PresentationA.Colaboradores.Consulta;
+using System.ComponentModel;
 
 namespace PresentationA
 {
@@ -85,7 +86,7 @@ namespace PresentationA
                     dgvBusqueda.Rows.Add(colaboradores.Rows[i]["legajo"], colaboradores.Rows[i]["nombre"], colaboradores.Rows[i]["apellido"]);
                 }
                 //dgvBusqueda.DataSource = colaboradores;  
-                
+                dgvBusqueda.Sort(dgvBusqueda.Columns[0], ListSortDirection.Ascending);
             }
 
         }

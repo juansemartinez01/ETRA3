@@ -2,6 +2,7 @@
 using FontAwesome.Sharp;
 using PresentationA.Colaboradores.Usuarios;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Windows.Documents;
 using System.Windows.Forms;
@@ -20,6 +21,7 @@ namespace PresentationA.Colaboradores
             lblError.Visible = false;
             cmblegajo.Enabled = false;
             cmbperfil.Enabled = false;
+            lblMail.Text = string.Empty;
             CargarTabla(1);
             limpiarCampos();
         }
@@ -40,6 +42,7 @@ namespace PresentationA.Colaboradores
                 //crear metodo completar labels
                 dgvUsuarios.Rows.Add(usuarios.Rows[i]["legajoColaborador"], usuarios.Rows[i]["nombre"], usuarios.Rows[i]["mail"]);
             }
+            dgvUsuarios.Sort(dgvUsuarios.Columns[0], ListSortDirection.Ascending);
         }
         private void ViewState()
         {

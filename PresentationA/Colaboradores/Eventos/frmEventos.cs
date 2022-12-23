@@ -1,6 +1,7 @@
 ﻿using DomainA;
 using PresentationA.Colaboradores.Eventos;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
 
@@ -40,6 +41,7 @@ namespace PresentationA.Colaboradores
                     //crear metodo completar labels
                     dgvEventos.Rows.Add(eventosTabla.Rows[i]["legajo"], eventosTabla.Rows[i]["nombre"], eventosTabla.Rows[i]["descripcion"], eventosTabla.Rows[i]["fechaInicio"], eventosTabla.Rows[i]["fechaFin"], eventosTabla.Rows[i]["fechaRegistro"]);
                 }
+            dgvEventos.Sort(dgvEventos.Columns[0], ListSortDirection.Ascending);
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {

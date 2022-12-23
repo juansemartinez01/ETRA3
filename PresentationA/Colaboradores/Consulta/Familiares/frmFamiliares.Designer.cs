@@ -46,11 +46,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbParentezco = new System.Windows.Forms.ComboBox();
+            this.cmbescolarizacion = new System.Windows.Forms.ComboBox();
+            this.dtpfechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtnombre = new System.Windows.Forms.TextBox();
+            this.txtdni = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +110,7 @@
             this.dgvFamiliares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFamiliares.Size = new System.Drawing.Size(666, 398);
             this.dgvFamiliares.TabIndex = 0;
+            this.dgvFamiliares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick);
             // 
             // id_familiar
             // 
@@ -255,45 +256,45 @@
             this.label5.TabIndex = 55;
             this.label5.Text = "DNI:";
             // 
-            // comboBox1
+            // cmbParentezco
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 165);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 29);
-            this.comboBox1.TabIndex = 56;
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
+            this.cmbParentezco.FormattingEnabled = true;
+            this.cmbParentezco.Location = new System.Drawing.Point(199, 165);
+            this.cmbParentezco.Name = "cmbParentezco";
+            this.cmbParentezco.Size = new System.Drawing.Size(234, 29);
+            this.cmbParentezco.TabIndex = 56;
+            this.cmbParentezco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
             // 
-            // comboBox2
+            // cmbescolarizacion
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(199, 290);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(234, 29);
-            this.comboBox2.TabIndex = 57;
-            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
+            this.cmbescolarizacion.FormattingEnabled = true;
+            this.cmbescolarizacion.Location = new System.Drawing.Point(199, 290);
+            this.cmbescolarizacion.Name = "cmbescolarizacion";
+            this.cmbescolarizacion.Size = new System.Drawing.Size(234, 29);
+            this.cmbescolarizacion.TabIndex = 57;
+            this.cmbescolarizacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
             // 
-            // dateTimePicker1
+            // dtpfechaNacimiento
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(199, 229);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(234, 27);
-            this.dateTimePicker1.TabIndex = 58;
+            this.dtpfechaNacimiento.Location = new System.Drawing.Point(199, 229);
+            this.dtpfechaNacimiento.Name = "dtpfechaNacimiento";
+            this.dtpfechaNacimiento.Size = new System.Drawing.Size(234, 27);
+            this.dtpfechaNacimiento.TabIndex = 58;
             // 
-            // textBox1
+            // txtnombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 27);
-            this.textBox1.TabIndex = 59;
+            this.txtnombre.Location = new System.Drawing.Point(199, 105);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(234, 27);
+            this.txtnombre.TabIndex = 59;
             // 
-            // textBox2
+            // txtdni
             // 
-            this.textBox2.Location = new System.Drawing.Point(199, 357);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 27);
-            this.textBox2.TabIndex = 60;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtdni.Location = new System.Drawing.Point(199, 357);
+            this.txtdni.Name = "txtdni";
+            this.txtdni.Size = new System.Drawing.Size(234, 27);
+            this.txtdni.TabIndex = 60;
+            this.txtdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label6
             // 
@@ -312,11 +313,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 475);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtdni);
+            this.Controls.Add(this.txtnombre);
+            this.Controls.Add(this.dtpfechaNacimiento);
+            this.Controls.Add(this.cmbescolarizacion);
+            this.Controls.Add(this.cmbParentezco);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -352,11 +353,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cmbParentezco;
+        private System.Windows.Forms.ComboBox cmbescolarizacion;
+        private System.Windows.Forms.DateTimePicker dtpfechaNacimiento;
+        private System.Windows.Forms.TextBox txtnombre;
+        private System.Windows.Forms.TextBox txtdni;
         private System.Windows.Forms.Label label6;
     }
 }

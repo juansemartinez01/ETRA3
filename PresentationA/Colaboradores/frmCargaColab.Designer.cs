@@ -480,9 +480,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(18, 140);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 20);
+            this.label20.Size = new System.Drawing.Size(54, 20);
             this.label20.TabIndex = 126;
-            this.label20.Text = "Mail:";
+            this.label20.Text = "* Mail:";
             // 
             // txtSalario
             // 

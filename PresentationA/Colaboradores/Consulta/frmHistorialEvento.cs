@@ -73,6 +73,8 @@ namespace PresentationA.Colaboradores.Consulta
             DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
             //completarLabels(this, historial, "txt");
             ViewState();
+            
+            //Juanse resolver el tipo de paretenzco
             cmbTipoEvento.SelectedValue = eventosModelo.buscarIdConNombre(filaSeleccionada.Cells["Tipo"].Value.ToString(), "TipoEvento");
             dtpfechaInicio.Text = filaSeleccionada.Cells["fechaDeInicio"].Value.ToString();
             dtpfechaFin.Text = filaSeleccionada.Cells["fechaFin"].Value.ToString();
@@ -362,7 +364,7 @@ namespace PresentationA.Colaboradores.Consulta
 
             if (cmbTipoEvento.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un usuario");
+                MessageBox.Show("Debe seleccionar un tipo de evento");
                 return;
             }
             dtpfechaFin.Enabled = true;

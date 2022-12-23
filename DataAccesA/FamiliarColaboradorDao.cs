@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace DataAccesA
 {
@@ -114,5 +109,29 @@ namespace DataAccesA
             }
         }
 
+
+        public DataTable getCumpleañosMesActual()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select legajoColaborador, fechaNacimiento, nombreFamiliar from FamiliarColaborador where MONTH(GETDATE()) = MONTH(fechaNacimiento)  AND borradoLogico = 0";
+                        command.CommandType = CommandType.Text;
+                        dt.Load(command.ExecuteReader());
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return dt;
+            }
+        }
     }
 }

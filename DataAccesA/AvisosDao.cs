@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 
+
 namespace DataAccesA
 {   
     public class AvisosDao : ConnectionToSql
@@ -293,6 +294,7 @@ namespace DataAccesA
         }
         public DataTable getAvisosHoyColab(string legajo)
         {
+            //busca los avios con fechaOcurrencia = hoy y los aviso con fechaNotificaicon = hoy 
             DataTable resultado = new DataTable();
             try
             {
@@ -306,7 +308,7 @@ namespace DataAccesA
                                             " from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             " join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                             " join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                            " where c.legajo = @legajo and ((a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaOcurrencia < CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion is null))";
+                                            " where c.legajo = @legajo and ((a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaOcurrencia < CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion is null) or (a.fechaNotificacion = CAST(GETDATE() AS Date)) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date))";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@legajo", legajo);
                         resultado.Load(command.ExecuteReader());
@@ -414,7 +416,7 @@ namespace DataAccesA
                 {
                     DataTable avisos = this.getAvisosHoyColab(leg[0].ToString());
 
-                    String titulo = leg[1].ToString() + ", nos comunicamos desde ETRA para notificarle de sus avisos del dia de hoy: ";
+                    String titulo = leg[1].ToString() + ", nos comunicamos desde ETRA para notificarle de sus avisos : ";
                     string body = GetHtmlTable(titulo, avisos);
                     var mailService = new MailServices.SystemSupportMail();
                     mailService.sendMail(
@@ -428,6 +430,8 @@ namespace DataAccesA
                     {
                         this.actualizarAviso((int)id[0], DateTime.Now);
                     }
+                    //Evitamos spam pausando 1 segundo antes de enviar el prox mail
+                    System.Threading.Thread.Sleep(1000);
                 }
                 
                 return true;
@@ -437,6 +441,8 @@ namespace DataAccesA
                 return false;
             }
         }
+
+
 
         public DataTable getAviso(int id)
         {
@@ -472,7 +478,7 @@ namespace DataAccesA
             try
             {
                 DataTable aviso = getAviso(id);
-                List<string> mails = new List<string>();
+                List<string> mails = new List<string>(  );
                 var mailService = new MailServices.SystemSupportMail();
                 foreach (DataRow row in aviso.Rows)
                 {
@@ -607,11 +613,10 @@ namespace DataAccesA
                 //Busca los cumpleaños de este mes
                 ColaboradorDao colab = new ColaboradorDao();
                 DataTable cumpleaños = colab.getCumpleañosMesActual();
-
+                FamiliarColaboradorDao fam = new FamiliarColaboradorDao();
+                DataTable cumpleFami = fam.getCumpleañosMesActual();
                 //hay cumpleaños este mes?
-                if (cumpleaños.Rows.Count == 0) {  return true; }
-                
-
+                if (cumpleaños.Rows.Count == 0 & cumpleFami.Rows.Count == 0) {  return true; }
                     using (var connection = GetConnection())
                     {
                         connection.Open();
@@ -625,9 +630,18 @@ namespace DataAccesA
                             {
                                     //MODIFICAR VALOR DE TIPO AVISO
                                 cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3,3) + row["fechaNacimiento"].ToString().Substring(0, 2);
-                                query += " INSERT INTO Aviso VALUES (3, ' ', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
+                                query += " INSERT INTO Aviso VALUES (3, 'Cumpleaños de colaborador', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
                                          " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
                             }
+
+                            foreach (DataRow row in cumpleFami.Rows)
+                            {
+                                //MODIFICAR VALOR DE TIPO AVISO
+                                cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3, 3) + row["fechaNacimiento"].ToString().Substring(0, 2);
+                                query += " INSERT INTO Aviso VALUES (5, 'Cumpleños del familiar:  " + row["nombreFamiliar"] + "', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
+                                         " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajoColaborador"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
+                            }
+
                             command.CommandText = query;
                             command.CommandType = CommandType.Text;
                             command.ExecuteNonQuery();

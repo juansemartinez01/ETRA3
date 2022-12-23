@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using PresentationA.Colaboradores.Salarios;
+using System.ComponentModel;
 
 namespace PresentationA.Colaboradores
 {
@@ -37,6 +38,7 @@ namespace PresentationA.Colaboradores
                 //crear metodo completar labels
                 dgvSalarios.Rows.Add(salarios.Rows[i]["legajo"], salarios.Rows[i]["nombre"], salarios.Rows[i]["apellido"], salarios.Rows[i]["monto"], salarios.Rows[i]["fechaInicio"]);
             }
+            dgvSalarios.Sort(dgvSalarios.Columns[0], ListSortDirection.Ascending);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

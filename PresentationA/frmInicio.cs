@@ -1,5 +1,6 @@
 ﻿using DomainA;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.Windows;
 
@@ -29,6 +30,7 @@ namespace PresentationA
                     //crear metodo completar labels
                     dgvAvisos.Rows.Add(avisos.Rows[i]["nombre"], avisos.Rows[i]["legajo"], avisos.Rows[i]["fechaOcurrencia"], avisos.Rows[i]["descripcion"], avisos.Rows[i]["fechaCarga"], avisos.Rows[i]["fechaNotificacion"], avisos.Rows[i]["fechaultimaNotificacion"]);
                 }
+                dgvAvisos.Sort(dgvAvisos.Columns[1], ListSortDirection.Ascending);
             }
 
             catch (Exception ex)

@@ -420,7 +420,7 @@ namespace DataAccesA
                                                     {
 
                                                         command5.Connection = connection;
-                                                        command5.CommandText = "INSERT INTO Evento VALUES (@descripcion,1,0)";
+                                                        command5.CommandText = "INSERT INTO Evento VALUES (@descripcion,1,0, NULL)";
                                                         command5.Parameters.AddWithValue("@descripcion", "Bienvenido " + nombre + " " + apellido + ".");
 
                                                         command5.CommandType = CommandType.Text;
@@ -971,7 +971,8 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre,apellido = @apellido,mail = @mail,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,CUIT=@cuit,nroContacto = @nroContacto,nroEmergencia = @nroEmergencia,obraSocial = @obraSocial,legajoResponsable = @legajoResponsable  WHERE legajo = @legajo";
+                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre,apellido = @apellido,mail = @mail,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,CUIT=@cuit,nroContacto = @nroContacto,nroEmergencia = @nroEmergencia,obraSocial = @obraSocial,legajoResponsable = @legajoResponsable  WHERE legajo = @legajo" +
+                                              " UPDATE Usuario SET mail = @mail where legajoColaborador = @legajo";
                         command.Parameters.AddWithValue("@nombre", nombre);
                         command.Parameters.AddWithValue("@apellido", apellido);
                         command.Parameters.AddWithValue("@mail", mail);

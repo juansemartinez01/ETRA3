@@ -168,5 +168,26 @@ namespace PresentationA.Colaboradores.Consulta
             lblError.Visible = true;
         }
 
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(true);
+            int icol = 0;
+            int irow = 0;
+            foreach (DataGridViewColumn col in dgvCtaCte.Columns)
+            {
+                icol++;
+                excel.Cells[1, icol] = col.Name;
+                foreach (DataGridViewRow row in dgvCtaCte.Rows)
+                {
+                    irow++;
+                    excel.Cells[irow + 1, icol] = row.Cells[col.Name].Value;
+                }
+                irow = 0;
+            }
+
+            excel.Visible = true;
+
+        }
     }
 }

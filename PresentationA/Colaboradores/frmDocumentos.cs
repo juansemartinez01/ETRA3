@@ -69,7 +69,9 @@ namespace PresentationA.Colaboradores
                     //crear metodo completar labels
                     dgvDocumentos.Rows.Add(documentos.Rows[i]["Numero"], documentos.Rows[i]["Legajo"], documentos.Rows[i]["Tipo doc"], documentos.Rows[i]["Evento"]);
                 }
-            }catch(Exception ex)
+                dgvDocumentos.Sort(dgvDocumentos.Columns[1], ListSortDirection.Ascending);
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

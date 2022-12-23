@@ -58,24 +58,25 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select * from Usuario where nombre=@nombre";
-                        command.Parameters.AddWithValue("@nombre", userRequesting);
+                        command.CommandText = "select c.nombre,u.mail,u.contraseña from Usuario u join Colaborador c on c.mail = u.mail where u.mail=@mail";
+                        command.Parameters.AddWithValue("@mail", userRequesting);
                         command.CommandType = CommandType.Text;
                         SqlDataReader reader = command.ExecuteReader();
                         Random rnd = new Random();
                         string code = rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString() + rnd.Next(10).ToString();
                         if (reader.Read() == true)
                         {
-                            string userMail = reader.GetString(2);
-                            string passMail = reader.GetString(3);
+                            string userName = reader.GetString(0);
+                            string userMail = reader.GetString(1);
+                            string passMail = reader.GetString(2);
 
                             var mailService = new MailServices.SystemSupportMail();
                             mailService.sendMail(
                                 subject: "ETRA: Solicitud de recuperar contraseña",
-                                body: "Hola, userName este es su codigo para cambiar la contraseña: " + code,
+                                body: "Hola, " +  userName + " este es su codigo para cambiar la contraseña: " + code,
                                 recipientMail: new List<string> { userMail }
                                 );
-                            result.Add("Hola, userName \r\nYa hemos enviado su solicitud para recuperar la contraseña.\r\n" + "Por favor, revise su casilla de correo: " + userMail);
+                            result.Add("Hola, " +  userName + " \r\nYa hemos enviado su solicitud para recuperar la contraseña.\r\n" + "Por favor, revise su casilla de correo: " + userMail);
                             result.Add(code);
                             return result;
 
@@ -92,7 +93,7 @@ namespace DataAccesA
                 return result;
             }
         }
-        public string updatePassword(string user, string pass)
+        public bool updatePassword(string user, string pass)
         {
             try
             {
@@ -103,18 +104,18 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Usuario set contraseña = @pass WHERE nombre = @user";
+                        command.CommandText = "UPDATE Usuario set contraseña = @pass WHERE mail = @user";
                         command.Parameters.AddWithValue("@user", user);
                         command.Parameters.AddWithValue("@pass", pass);
                         command.CommandType = CommandType.Text;
                         command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                        return "";
+                        return true;
                     }
                 }
             }
             catch (Exception ex)
             {
-                return ex.ToString();
+                return false;
             }
         }
         public DataTable getAllUsuarios(int legajo)

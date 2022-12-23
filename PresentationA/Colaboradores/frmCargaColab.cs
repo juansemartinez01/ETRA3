@@ -79,7 +79,8 @@ namespace PresentationA.Colaboradores
             string mail = txtMail.Text;
             if(txtMail.Text == "")
             {
-                mail = "No especifica";
+                MessageBox.Show("Debe asignarle un mail al colaborador.");
+                return;
             }
             if(txtNroEmergencia.Text == "")
             {

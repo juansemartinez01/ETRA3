@@ -68,14 +68,14 @@ namespace PresentationA
             {
                 // las contraseñas son iguales
                 UsuarioModelo user = new UsuarioModelo();
-                string result = user.updatePassword(userName, txtConfirm.Text);
-                if (result == "")
+                bool result = user.updatePassword(userName, txtConfirm.Text);
+                if (result)
                 {
                     MessageBox.Show("Contraseña actualizada con exito");
                     this.Close();
                     return;
                 }
-                
+                else { MessageBox.Show("Ocurrio un error"); }
             }
         }
     }
