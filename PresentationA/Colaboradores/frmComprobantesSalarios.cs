@@ -186,6 +186,7 @@ namespace PresentationA.Colaboradores
                 colaboradorModelo.saldoCuenta = float.Parse(datosColaborador.Rows[0]["saldoAdeudado"].ToString());
                 colaboradorModelo.calle = datosColaborador.Rows[0]["nombreCalle"].ToString();
                 colaboradorModelo.nroCalle = int.Parse(datosColaborador.Rows[0]["numeroCalle"].ToString());
+                cmbDiaCompleto_SelectedIndexChanged(sender, e);
                 cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante,eventoModelo.añoGeneracionComprobante);
             }
             
@@ -232,7 +233,7 @@ namespace PresentationA.Colaboradores
                 dtpFechaFeriado.Enabled = true;
                 txtMontoBono.Enabled = false;
                 cmbDiaCompleto.Enabled = true;
-                
+                cmbDiaCompleto.SelectedIndex = 0;
             }
             else
             {

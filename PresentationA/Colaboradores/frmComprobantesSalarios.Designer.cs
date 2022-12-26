@@ -107,9 +107,9 @@
             this.label3.Location = new System.Drawing.Point(408, 256);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 21);
+            this.label3.Size = new System.Drawing.Size(111, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Monto bono";
+            this.label3.Text = "Monto bono:";
             // 
             // chkFeriado
             // 

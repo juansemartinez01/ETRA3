@@ -70,7 +70,7 @@ namespace DataAccesA
                     using (var command2 = new SqlCommand())
                     {
                         command2.Connection = connection;
-                        command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idBusqueda,0)";
+                        command2.CommandText = "INSERT INTO Evento VALUES (@descripcion,@idBusqueda,0, null)";
                         command2.CommandType = CommandType.Text;
                         command2.Parameters.AddWithValue("@idBusqueda", idTipoEvento);
                         command2.Parameters.AddWithValue("@descripcion", descripcion);

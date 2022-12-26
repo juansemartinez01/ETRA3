@@ -217,6 +217,7 @@ namespace PresentationA.Colaboradores
             string folderName = folderBrowserDialog1.SelectedPath;
             //Este loop va a buscar todos los datos necesarios para cada comprobante, para cada colaborador que este en el data grid view!
             ComprobanteModelo orden = new ComprobanteModelo();
+            string respuesta = string.Empty;
             foreach (DataGridViewRow row in dgvSalarios.Rows)
             {
                 int legajoColaborador = Int32.Parse(row.Cells["legajo"].Value.ToString());
@@ -226,10 +227,10 @@ namespace PresentationA.Colaboradores
                 //Aca iria el codigo que genere cada Orden de pago de cada colaborador, los datos que varian son los que estan arriba.
 
                 string fileName = folderName + "\\OrdenDePago_" + nombreColaborador + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
-                MessageBox.Show(orden.generarOrden(nombreColaborador, colab.Rows[0]["nombreCalle"] + " " + colab.Rows[0]["numeroCalle"], salarioColaborador, fileName, "ORDEN DE PAGO", txtDescripcionComprobante.Text));
+                respuesta = orden.generarOrden(nombreColaborador, colab.Rows[0]["nombreCalle"] + " " + colab.Rows[0]["numeroCalle"], salarioColaborador, fileName, "ORDEN DE PAGO", txtDescripcionComprobante.Text);
 
             }
-
+            MessageBox.Show(respuesta);
 
         }
 

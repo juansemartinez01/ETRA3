@@ -53,8 +53,10 @@
             this.Evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -71,10 +73,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnLimpiar);
-            this.groupBox1.Controls.Add(this.btnVerArchivo);
             this.groupBox1.Controls.Add(this.chkFiltroFecha);
-            this.groupBox1.Controls.Add(this.btnExportar);
             this.groupBox1.Controls.Add(this.cmbTipoEvento);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnAplicar);
@@ -125,7 +127,7 @@
             this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVerArchivo.IconSize = 25;
             this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVerArchivo.Location = new System.Drawing.Point(74, 110);
+            this.btnVerArchivo.Location = new System.Drawing.Point(11, 3);
             this.btnVerArchivo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnVerArchivo.Name = "btnVerArchivo";
             this.btnVerArchivo.Size = new System.Drawing.Size(252, 43);
@@ -158,7 +160,7 @@
             this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportar.IconSize = 30;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExportar.Location = new System.Drawing.Point(515, 112);
+            this.btnExportar.Location = new System.Drawing.Point(302, 3);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(238, 39);
@@ -270,6 +272,9 @@
             this.dgvDocumentos.AllowUserToDeleteRows = false;
             this.dgvDocumentos.AllowUserToOrderColumns = true;
             this.dgvDocumentos.AllowUserToResizeRows = false;
+            this.dgvDocumentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDocumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDocumentos.BackgroundColor = System.Drawing.Color.White;
             this.dgvDocumentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -314,7 +319,7 @@
             this.dgvDocumentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDocumentos.RowHeadersWidth = 51;
             this.dgvDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDocumentos.Size = new System.Drawing.Size(1126, 377);
+            this.dgvDocumentos.Size = new System.Drawing.Size(1126, 323);
             this.dgvDocumentos.TabIndex = 46;
             this.dgvDocumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
             // 
@@ -350,11 +355,22 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnVerArchivo);
+            this.panel1.Controls.Add(this.btnExportar);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 555);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1144, 61);
+            this.panel1.TabIndex = 47;
+            // 
             // frmDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 616);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvDocumentos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -364,6 +380,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +410,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private Controls.BotonPadre btnLimpiar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
