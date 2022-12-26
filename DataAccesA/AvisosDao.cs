@@ -614,10 +614,13 @@ namespace DataAccesA
                 ColaboradorDao colab = new ColaboradorDao();
                 DataTable cumpleaños = colab.getCumpleañosMesActual();
                 FamiliarColaboradorDao fam = new FamiliarColaboradorDao();
-                DataTable cumpleFami = fam.getCumpleañosMesActual();
+
+                ///Comentado para proxima entrega
+                ///DataTable cumpleFami = fam.getCumpleañosMesActual();
                 //hay cumpleaños este mes?
-                if (cumpleaños.Rows.Count == 0 & cumpleFami.Rows.Count == 0) {  return true; }
-                    using (var connection = GetConnection())
+                ///if (cumpleaños.Rows.Count == 0 & cumpleFami.Rows.Count == 0) {  return true; }
+                if (cumpleaños.Rows.Count == 0) { return true; }
+                using (var connection = GetConnection())
                     {
                         connection.Open();
                         using (var command = new SqlCommand())
@@ -634,13 +637,13 @@ namespace DataAccesA
                                          " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
                             }
 
-                            foreach (DataRow row in cumpleFami.Rows)
-                            {
-                                //MODIFICAR VALOR DE TIPO AVISO
-                                cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3, 3) + row["fechaNacimiento"].ToString().Substring(0, 2);
-                                query += " INSERT INTO Aviso VALUES (5, 'Cumpleños del familiar:  " + row["nombreFamiliar"] + "', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
-                                         " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajoColaborador"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
-                            }
+                            ///foreach (DataRow row in cumpleFami.Rows)
+                            ///{
+                            ///    //MODIFICAR VALOR DE TIPO AVISO
+                            ///    cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3, 3) + row["fechaNacimiento"].ToString().Substring(0, 2);
+                            //    query += " INSERT INTO Aviso VALUES (5, 'Cumpleños del familiar:  " + row["nombreFamiliar"] + "', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
+                            //             " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajoColaborador"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
+                            //}
 
                             command.CommandText = query;
                             command.CommandType = CommandType.Text;

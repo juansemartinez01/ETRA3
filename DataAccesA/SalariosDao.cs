@@ -419,7 +419,7 @@ namespace DataAccessA
                                 float salarioBase = float.Parse(row["Monto"].ToString());
                                 float porcentajeSalario = porcentaje * salarioBase / 100;
                                 float salarioFinal = salarioBase + porcentajeSalario;
-                            float nuevoFondo = (30 * salarioFinal) / 100;
+                                float nuevoFondo = (30 * salarioFinal) / 100;
                                 using (var command1 = new SqlCommand())
                                 {
 

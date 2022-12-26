@@ -57,7 +57,7 @@ namespace PresentationA.Colaboradores.Salarios
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtMonto.Text == "" || cmbCargo.SelectedIndex == -1)
+            if ( (txtMonto.Text == "" & txtPorcentaje.Text == "") || cmbCargo.SelectedIndex == -1)
             {
                 msgError("Debe seleccionar un cargo e ingresar un monto");
                 return;
