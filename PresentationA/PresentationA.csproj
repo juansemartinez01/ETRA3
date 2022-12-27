@@ -7,13 +7,13 @@
     <ProjectGuid>{42C6B5FF-C8AB-4616-92BD-B0CD3E68E96B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PresentationA</RootNamespace>
-    <AssemblyName>ETRA</AssemblyName>
+    <AssemblyName>ETRA SOFTWARE</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\usuario\Desktop\</PublishUrl>
+    <PublishUrl>C:\Users\usuario\Desktop\setup\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

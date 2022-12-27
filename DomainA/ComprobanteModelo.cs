@@ -139,7 +139,7 @@ namespace DomainA
                 pintaLinea(pdf);
                 //Cabecera
                 PdfPTable tablaCabe = new PdfPTable(7);
-                float[] widths3 = new float[] { 4.0F, 8.0F, 2.0F, 2.0F, 5.0F, 3.0F, 1.0F };
+                float[] widths3 = new float[] { 4.0F, 8.0F, 3.0F, 3.0F, 4.0F, 3.0F, 1.0F };
                 tablaCabe.WidthPercentage = 95;
                 tablaCabe.SetWidths(widths3);
 

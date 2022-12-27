@@ -70,8 +70,8 @@ namespace PresentationA
                 if (txtPass.Text != "CONTRASEÑA")
                 {
                     UsuarioModelo user = new UsuarioModelo();
-                    var validLogin = user.LoginUser(txtUser.Text, txtPass.Text);
-                    if (validLogin == true)
+                    string validLogin = user.LoginUser(txtUser.Text, txtPass.Text);
+                    if (validLogin == "Exito")
                     {
                         AvisosModelo avisos = new AvisosModelo();
                         avisos.notificarAvisosHoy();
@@ -83,7 +83,7 @@ namespace PresentationA
                     }
                     else
                     {
-                        msgError("Error: Usuario o contraseña incorrectos");
+                        msgError(validLogin);
                         txtPass_Leave(sender,e);
                         txtUser_Leave(sender,e);
                     }

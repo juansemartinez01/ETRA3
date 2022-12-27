@@ -9,7 +9,7 @@ namespace DataAccesA
 {
     public class UsuarioDao : ConnectionToSql
     {
-        public bool Login(string user, string pass)
+        public String Login(string user, string pass)
         {
             try
             {
@@ -32,18 +32,18 @@ namespace DataAccesA
                                 UserCache.perfil = reader.GetInt32(1);
                                 UserCache.mail = reader.GetString(2);   
                             }
-                            return true;
+                            return "Exito";
                         }
                         else
                         {
-                            return false;
+                            return "Datos incorrectos";
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                return false;
+                return ex.Message;
             }
         }
         public List<string> recoverPassword(string userRequesting)
