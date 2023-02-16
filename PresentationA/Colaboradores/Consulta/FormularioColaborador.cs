@@ -30,6 +30,7 @@ namespace PresentationA
             pnlBotones.Enabled = false;
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
+            if (UserCache.perfil != Perfiles.admin) { btnExportar.Enabled = false; }
         }
 
         private void ActivateButton(object button)
@@ -208,10 +209,6 @@ namespace PresentationA
             if(UserCache.perfil != Perfiles.admin){btnModificar.Enabled = false; }
         }
 
-        private void txtLegajo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnFamiliares_Click(object sender, EventArgs e)
         {
@@ -219,6 +216,24 @@ namespace PresentationA
             openChildFormInPanel(new frmFamiliares());
         }
 
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+            excel.Application.Workbooks.Add(true);
+            int icol = 0;
+            foreach (DataColumn col in colaboradores.Columns)
+            {
+                icol++;
+                excel.Cells[1, icol] = col.ColumnName;
 
+                for (int irow = 0; irow < colaboradores.Rows.Count; irow++)
+                {
+                    excel.Cells[irow + 2, icol] = colaboradores.Rows[irow][col.ColumnName];
+                }
+
+            }
+
+            excel.Visible = true;
+        }
     }
 }

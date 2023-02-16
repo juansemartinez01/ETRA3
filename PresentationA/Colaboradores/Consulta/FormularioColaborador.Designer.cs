@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBuscar = new System.Windows.Forms.Panel();
+            this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.dgvBusqueda = new PresentationA.Controls.DataGridPadre();
@@ -63,6 +64,7 @@
             // pnlBuscar
             // 
             this.pnlBuscar.AutoScroll = true;
+            this.pnlBuscar.Controls.Add(this.btnExportar);
             this.pnlBuscar.Controls.Add(this.btnEliminar);
             this.pnlBuscar.Controls.Add(this.btnModificar);
             this.pnlBuscar.Controls.Add(this.dgvBusqueda);
@@ -82,6 +84,27 @@
             this.pnlBuscar.Size = new System.Drawing.Size(906, 342);
             this.pnlBuscar.TabIndex = 2;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.btnExportar.IconColor = System.Drawing.Color.White;
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 30;
+            this.btnExportar.Location = new System.Drawing.Point(285, 280);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(187, 40);
+            this.btnExportar.TabIndex = 22;
+            this.btnExportar.Text = "Exportar a Excel";
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
@@ -95,7 +118,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 25;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.Location = new System.Drawing.Point(295, 277);
+            this.btnEliminar.Location = new System.Drawing.Point(626, 277);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(254, 40);
             this.btnEliminar.TabIndex = 21;
@@ -487,5 +510,6 @@
         private Controls.BotonPadre btnModificar;
         private FontAwesome.Sharp.IconButton btnFamiliares;
         private Controls.BotonPadre btnEliminar;
+        private Controls.BotonPadre btnExportar;
     }
 }

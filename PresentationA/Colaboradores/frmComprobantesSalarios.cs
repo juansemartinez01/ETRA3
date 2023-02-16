@@ -114,8 +114,7 @@ namespace PresentationA.Colaboradores
                     return;
                 }
 
-                string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, montoferiado, descripcion, tipoEvento);
-                MessageBox.Show(resultado);
+                eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, montoferiado, descripcion, tipoEvento);
                 actualizarSueldoAnticiposYDescuentos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
                 cargarDatos(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
                 cargarDG(colaboradorModelo.legajo, eventoModelo.mesGeneracionComprobante, eventoModelo.añoGeneracionComprobante);
@@ -126,7 +125,7 @@ namespace PresentationA.Colaboradores
                 string fileName = folderName + "\\Feriado_" + colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString() + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
 
                 ComprobanteModelo feriado = new ComprobanteModelo();
-                MessageBox.Show(feriado.generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(),colaboradorModelo.calle + " " +colaboradorModelo.nroCalle.ToString(), montoferiado,fileName, "ORDEN DE PAGO", txtDescripcion1.Text));
+                MessageBox.Show(feriado.generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(),colaboradorModelo.calle + " " +colaboradorModelo.nroCalle.ToString(), montoferiado,fileName, "ORDEN DE PAGO", txtDescripcion1.Text, colaboradorModelo.legajo.ToString()));
             }catch(Exception ex){
                 MessageBox.Show(ex.ToString());
                 txtMontoBono.Text = "";
@@ -401,8 +400,7 @@ namespace PresentationA.Colaboradores
             label15.Text = colaboradorModelo.saldoCuenta.ToString();
             
 
-            string resultado = eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, restoTotal, descripcion, 8);
-            MessageBox.Show(resultado);
+            eventoModelo.comprobantesFeriadoYBonos(colaboradorModelo.legajo, fechaFeriado, restoTotal, descripcion, 8);
 
             var folderBrowserDialog1 = new FolderBrowserDialog();
             DialogResult result = folderBrowserDialog1.ShowDialog();
@@ -412,7 +410,7 @@ namespace PresentationA.Colaboradores
 
 
             ComprobanteModelo minuta = new ComprobanteModelo();
-            MessageBox.Show(minuta.generarOrden(colaboradorModelo.nombre + " " + colaboradorModelo.apellido, colaboradorModelo.calle + " " + colaboradorModelo.nroCalle, float.Parse(label22.Text.ToString()), fileName, "MINUTA CONTABLE", txtDescripcion2.Text));
+            MessageBox.Show(minuta.generarOrden(colaboradorModelo.nombre + " " + colaboradorModelo.apellido, colaboradorModelo.calle + " " + colaboradorModelo.nroCalle, float.Parse(label22.Text.ToString()), fileName, "MINUTA CONTABLE", txtDescripcion2.Text, colaboradorModelo.legajo.ToString()));
             txtAnticipo.Text = "";
             txtCuotaCtaCorriente.Text = "";
 

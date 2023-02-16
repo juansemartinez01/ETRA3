@@ -121,14 +121,13 @@ namespace PresentationA
             // 
             // lblError
             // 
-            this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(307, 262);
+            this.lblError.Location = new System.Drawing.Point(307, 255);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(34, 17);
+            this.lblError.Size = new System.Drawing.Size(524, 47);
             this.lblError.TabIndex = 4;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
@@ -144,7 +143,7 @@ namespace PresentationA
             this.botonPadre1.IconColor = System.Drawing.Color.Black;
             this.botonPadre1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.botonPadre1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.botonPadre1.Location = new System.Drawing.Point(307, 305);
+            this.botonPadre1.Location = new System.Drawing.Point(307, 315);
             this.botonPadre1.Name = "botonPadre1";
             this.botonPadre1.Size = new System.Drawing.Size(524, 40);
             this.botonPadre1.TabIndex = 5;

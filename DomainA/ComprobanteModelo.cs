@@ -24,7 +24,7 @@ namespace DomainA
             PdfDoc.Add(lineSeparato);
         }
 
-        public string generarOrden(string nombre, string direccion, float debe, string fileName, string tipoComprobante, string descrip)
+        public string generarOrden(string nombre, string direccion, float debe, string fileName, string tipoComprobante, string descrip, string legajo)
         {
             try
             {
@@ -40,6 +40,8 @@ namespace DomainA
                 pdf.Open();
 
                 PdfPTable tablaEnca = new PdfPTable(4);
+                PdfPCell col0;
+                PdfPCell col00;
                 PdfPCell col1;
                 PdfPCell col2;
                 PdfPCell col3;
@@ -92,7 +94,7 @@ namespace DomainA
 
                 //Colaborador
                 PdfPTable tablaColab = new PdfPTable(4);
-                float[] widths2 = new float[] { 3.0F, 8.0F, 3.0F, 2.0F };
+                float[] widths2 = new float[] { 3.0F, 8.0F, 3.0F, 3.0F };
                 tablaColab.SetWidths(widths2);
 
                 tablaColab.WidthPercentage = 95;
@@ -100,28 +102,33 @@ namespace DomainA
                 tablaColab.AddCell(cvacio);
                 tablaColab.AddCell(cvacio);
                 tablaColab.AddCell(cvacio);
-                col1 = new PdfPCell(new Phrase("Colaborador: ", fBold));
+
+                col0 = new PdfPCell(new Phrase("Legajo: ", fBold));
+                col0.Border = 0;
+                tablaColab.AddCell(col0);
+
+                col00 = new PdfPCell(new Phrase(legajo, font8));
+                col00.Border = 0;
+                tablaColab.AddCell(col00);
+
+                col1 = new PdfPCell(new Phrase("Fecha Emisión: ", fBold));
                 col1.Border = 0;
                 tablaColab.AddCell(col1);
 
-                col2 = new PdfPCell(new Phrase(nombre, font8));
+                col2 = new PdfPCell(new Phrase(DateTime.Now.ToString("dd/M/yyyy"), font8));
                 col2.Border = 0;
                 tablaColab.AddCell(col2);
 
-                col3 = new PdfPCell(new Phrase("Fecha Emisión: ", fBold));
+               
+                col3 = new PdfPCell(new Phrase("Colaborador: ", fBold));
                 col3.Border = 0;
                 tablaColab.AddCell(col3);
 
-                col4 = new PdfPCell(new Phrase(DateTime.Now.ToString("dd/M/yyyy"), font8));
+                col4 = new PdfPCell(new Phrase(nombre, font8));
                 col4.Border = 0;
                 tablaColab.AddCell(col4);
-
+                
                 tablaColab.AddCell(cvacio);
-                tablaColab.AddCell(cvacio);
-
-                //Numeor orden de pago:
-                tablaColab.AddCell(cvacio);
-                //Nro
                 tablaColab.AddCell(cvacio);
 
                 col1 = new PdfPCell(new Phrase("Dirección: ", fBold));
@@ -131,6 +138,16 @@ namespace DomainA
                 col2 = new PdfPCell(new Phrase(direccion, font8));
                 col2.Border = 0;
                 tablaColab.AddCell(col2);
+
+                
+                
+
+                //Numeor orden de pago:
+                tablaColab.AddCell(cvacio);
+                //Nro
+                tablaColab.AddCell(cvacio);
+
+                
 
                 tablaColab.AddCell(cvacio);
                 tablaColab.AddCell(cvacio);

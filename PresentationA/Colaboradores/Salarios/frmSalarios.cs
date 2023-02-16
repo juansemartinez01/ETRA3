@@ -227,7 +227,7 @@ namespace PresentationA.Colaboradores
                 //Aca iria el codigo que genere cada Orden de pago de cada colaborador, los datos que varian son los que estan arriba.
 
                 string fileName = folderName + "\\OrdenDePago_" + nombreColaborador + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
-                respuesta = orden.generarOrden(nombreColaborador, colab.Rows[0]["nombreCalle"] + " " + colab.Rows[0]["numeroCalle"], salarioColaborador, fileName, "ORDEN DE PAGO", txtDescripcionComprobante.Text);
+                respuesta = orden.generarOrden(nombreColaborador, colab.Rows[0]["nombreCalle"] + " " + colab.Rows[0]["numeroCalle"], salarioColaborador, fileName, "ORDEN DE PAGO", txtDescripcionComprobante.Text, colab.Rows[0]["legajo"].ToString());
 
             }
             MessageBox.Show(respuesta);
