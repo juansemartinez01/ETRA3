@@ -185,6 +185,9 @@
             this.dgvCtaCte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCtaCte.Size = new System.Drawing.Size(911, 152);
             this.dgvCtaCte.TabIndex = 53;
+            this.dgvCtaCte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCtaCte_CellContentClick);
+            this.dgvCtaCte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCtaCte_CellContentClick);
+            this.dgvCtaCte.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentClick);
             // 
             // id
             // 

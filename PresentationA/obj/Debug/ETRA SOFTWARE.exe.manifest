@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>53s+BWl7iWTDav37Z5byP6drfRPcQl9bS+zYQHtgAmU=</dsig:DigestValue>
+        <dsig:DigestValue>nhw/76dmxGWYS/bs3FbV2iB38707aOah8y9UPF9/JqA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA SOFTWARE.exe" size="2024448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ETRA SOFTWARE.exe" size="2025472">
       <assemblyIdentity name="ETRA SOFTWARE" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iEuJzTVBIEx2NjBCiMp5HhCa1U0IeWj2KyEzroGsd5o=</dsig:DigestValue>
+        <dsig:DigestValue>JEPYet0L47N/akSqcfkh6GuHez7T5/Y2R1+83AE1PR0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

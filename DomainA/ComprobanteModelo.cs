@@ -24,7 +24,7 @@ namespace DomainA
             PdfDoc.Add(lineSeparato);
         }
 
-        public string generarOrden(string nombre, string direccion, float debe, string fileName, string tipoComprobante, string descrip, string legajo)
+        public string generarOrden(string nombre, string direccion, float debe, string fileName, string tipoComprobante, string descrip, string legajo, string fechaMovimiento = null, float haber = 0)
         {
             try
             {
@@ -128,8 +128,25 @@ namespace DomainA
                 col4.Border = 0;
                 tablaColab.AddCell(col4);
                 
-                tablaColab.AddCell(cvacio);
-                tablaColab.AddCell(cvacio);
+
+                if (fechaMovimiento != null)
+                {
+                    col5 = new PdfPCell(new Phrase("Fecha Movimiento: ", fBold));
+                    col5.Border = 0;
+                    tablaColab.AddCell(col5);
+
+                    col6 = new PdfPCell(new Phrase(fechaMovimiento, font8));
+                    col6.Border = 0;
+                    tablaColab.AddCell(col6);
+                }
+                else
+                {
+                    //Numeor orden de pago:
+                    tablaColab.AddCell(cvacio);
+                    //Nro
+                    tablaColab.AddCell(cvacio);
+                }
+
 
                 col1 = new PdfPCell(new Phrase("Dirección: ", fBold));
                 col1.Border = 0;
@@ -142,10 +159,6 @@ namespace DomainA
                 
                 
 
-                //Numeor orden de pago:
-                tablaColab.AddCell(cvacio);
-                //Nro
-                tablaColab.AddCell(cvacio);
 
                 
 
@@ -166,7 +179,7 @@ namespace DomainA
                     col1.Border = 0;
                     tablaCabe.AddCell(col1);
                 }
-                else if (tipoComprobante == "ORDEN DE PAGO")
+                else
                 {
                     col1 = new PdfPCell(new Phrase("CUENTA", fBold));
                     col1.Border = 0;
@@ -180,12 +193,12 @@ namespace DomainA
 
                 tablaCabe.AddCell(cvacio);
 
-                col3 = new PdfPCell(new Phrase("DEBE", font8));
+                col3 = new PdfPCell(new Phrase("DEBE", fBold));
                 col3.Border = 0;
                 tablaCabe.AddCell(col3);
 
 
-                col4 = new PdfPCell(new Phrase("HABER", font8));
+                col4 = new PdfPCell(new Phrase("HABER", fBold));
                 col4.Border = 0;
                 tablaCabe.AddCell(col4);
 
@@ -203,6 +216,8 @@ namespace DomainA
                 PdfPTable tablaDetalle = new PdfPTable(7);
                 tablaDetalle.SetWidths(widths3);
                 tablaDetalle.WidthPercentage = 95;
+
+                float subtotal = debe + haber;
 
                 if (tipoComprobante == "MINUTA CONTABLE")
                 {
@@ -255,7 +270,7 @@ namespace DomainA
 
 
 
-                    col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                    col6 = new PdfPCell(new Phrase(subtotal.ToString("0.00"), font8));
                     col6.Border = 0;
                     col6.HorizontalAlignment = 2;
                     tablaDetalle.AddCell(col6);
@@ -264,7 +279,7 @@ namespace DomainA
 
                 }
 
-                else if (tipoComprobante == "ORDEN DE PAGO")
+                else
                 {
                     col1 = new PdfPCell(new Phrase("001 - CAJA ADMIN", font8));
                     col1.Border = 0;
@@ -281,13 +296,13 @@ namespace DomainA
                     col3.Border = 0;
                     tablaDetalle.AddCell(col3);
 
-                    col4 = new PdfPCell(new Phrase("0,00", font8));
+                    col4 = new PdfPCell(new Phrase(haber.ToString("0.00"), font8));
                     col4.Border = 0;
                     tablaDetalle.AddCell(col4);
 
 
-
-                    col6 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                    
+                    col6 = new PdfPCell(new Phrase(subtotal.ToString("0.00"), font8));
                     col6.Border = 0;
                     col6.HorizontalAlignment = 2;
                     tablaDetalle.AddCell(col6);
@@ -320,7 +335,7 @@ namespace DomainA
                 col3.Border = 0;
                 tablaPie.AddCell(col3);
 
-                col4 = new PdfPCell(new Phrase(debe.ToString("0.00"), font8));
+                col4 = new PdfPCell(new Phrase(subtotal.ToString("0.00"), font8));
                 col4.Border = 0;
                 col4.HorizontalAlignment = 2;
                 tablaPie.AddCell(col4);

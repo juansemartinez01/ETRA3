@@ -20,6 +20,11 @@ namespace PresentationA.Colaboradores.Consulta
             InitializeComponent();
             lblError.Visible = false;
             colaboradorModelo.legajo = int.Parse(legajo);
+            DataTable colab = colaboradorModelo.BuscarColaborador(legajo, "", "");
+            colaboradorModelo.nombre = colab.Rows[0]["nombre"].ToString();
+            colaboradorModelo.apellido = colab.Rows[0]["apellido"].ToString();
+            colaboradorModelo.calle = colab.Rows[0]["nombreCalle"].ToString();
+            colaboradorModelo.nroCalle = int.Parse(colab.Rows[0]["numeroCalle"].ToString());
             float fondoMaximo = float.Parse(cuenta.buscarFondoMaximoPermitido(colaboradorModelo.legajo));
             //fondoMaximo = -fondoMaximo;
             lblFondoMaximoPermitido.Text = fondoMaximo.ToString();
@@ -186,6 +191,36 @@ namespace PresentationA.Colaboradores.Consulta
             }
 
             excel.Visible = true;
+
+        }
+        private void generarComprobante(string tipo, float monto, string fechaMovimiento, string descrip, string nroMov)
+        {
+            var folderBrowserDialog1 = new FolderBrowserDialog();
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result != DialogResult.OK) { return; }
+            string folderName = folderBrowserDialog1.SelectedPath;
+            string fileName = folderName + "\\" + tipo + "_" + "NRO" + nroMov+  "_"+ colaboradorModelo.nombre.ToString()  + colaboradorModelo.apellido.ToString() + "_" + DateTime.Now.ToString("yyyy-MM-dd") + ".pdf";
+
+            ComprobanteModelo comprobante = new ComprobanteModelo();
+            if (tipo == "PRESTAMO")
+            {
+                monto = monto * -1;
+                MessageBox.Show(comprobante.generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(), colaboradorModelo.calle + " " + colaboradorModelo.nroCalle.ToString(), monto, fileName, tipo, descrip, colaboradorModelo.legajo.ToString(), fechaMovimiento));
+            }
+            else
+            {
+                MessageBox.Show(comprobante.generarOrden(colaboradorModelo.nombre.ToString() + " " + colaboradorModelo.apellido.ToString(), colaboradorModelo.calle + " " + colaboradorModelo.nroCalle.ToString(), 0, fileName, tipo ,descrip, colaboradorModelo.legajo.ToString(), fechaMovimiento, monto));
+            }
+        }
+
+        private void dgvCtaCte_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string nroMov = dgvCtaCte.CurrentRow.Cells[0].Value.ToString();
+            string tipo = dgvCtaCte.CurrentRow.Cells[1].Value.ToString().ToUpper();
+            float monto = float.Parse(dgvCtaCte.CurrentRow.Cells[2].Value.ToString());
+            string fechaMovimiento = dgvCtaCte.CurrentRow.Cells[3].Value.ToString();
+            string descrip = dgvCtaCte.CurrentRow.Cells[4].Value.ToString();
+            generarComprobante(tipo, monto, fechaMovimiento, descrip, nroMov);
 
         }
     }
