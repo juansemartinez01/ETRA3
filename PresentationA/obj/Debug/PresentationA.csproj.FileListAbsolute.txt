@@ -797,3 +797,4 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.e
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.application
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.exe
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmVersion.resources

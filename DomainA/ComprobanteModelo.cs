@@ -181,7 +181,7 @@ namespace DomainA
                 }
                 else
                 {
-                    col1 = new PdfPCell(new Phrase("CUENTA", fBold));
+                    col1 = new PdfPCell(new Phrase("CUENTA/LEGAJO", fBold));
                     col1.Border = 0;
                     tablaCabe.AddCell(col1);
                 }
@@ -281,7 +281,7 @@ namespace DomainA
 
                 else
                 {
-                    col1 = new PdfPCell(new Phrase("001 - CAJA ADMIN", font8));
+                    col1 = new PdfPCell(new Phrase(legajo, font8));
                     col1.Border = 0;
                     tablaDetalle.AddCell(col1);
 

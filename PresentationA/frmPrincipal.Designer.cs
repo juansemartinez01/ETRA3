@@ -31,6 +31,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.lblVersion = new System.Windows.Forms.LinkLabel();
             this.pnlReportes = new System.Windows.Forms.Panel();
             this.btnSalXCargo = new FontAwesome.Sharp.IconButton();
             this.btnTardanzas = new FontAwesome.Sharp.IconButton();
@@ -57,6 +58,7 @@
             // 
             this.pnlPrincipal.AutoScroll = true;
             this.pnlPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.pnlPrincipal.Controls.Add(this.lblVersion);
             this.pnlPrincipal.Controls.Add(this.pnlReportes);
             this.pnlPrincipal.Controls.Add(this.btnReportes);
             this.pnlPrincipal.Controls.Add(this.pnlColaboradores);
@@ -68,6 +70,19 @@
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(200, 650);
             this.pnlPrincipal.TabIndex = 1;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblVersion.Location = new System.Drawing.Point(0, 630);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(170, 20);
+            this.lblVersion.TabIndex = 6;
+            this.lblVersion.TabStop = true;
+            this.lblVersion.Text = "Buscar Nueva Version";
+            this.lblVersion.Visible = false;
+            this.lblVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblVersion_LinkClicked);
             // 
             // pnlReportes
             // 
@@ -395,6 +410,7 @@
             this.Text = " ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.pnlPrincipal.ResumeLayout(false);
+            this.pnlPrincipal.PerformLayout();
             this.pnlReportes.ResumeLayout(false);
             this.pnlColaboradores.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -420,6 +436,7 @@
         private FontAwesome.Sharp.IconButton btnAvisos;
         private FontAwesome.Sharp.IconButton btnUsuarios;
         private FontAwesome.Sharp.IconButton btnComprobantes;
+        private System.Windows.Forms.LinkLabel lblVersion;
     }
 }
 

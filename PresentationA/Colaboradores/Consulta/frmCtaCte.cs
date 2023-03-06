@@ -99,20 +99,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void dgvBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            int indice = e.RowIndex;
-            
-            if (indice == -1 || (indice + 1) >= (dgvCtaCte.Rows.Count))
-            {
-                return;
-            }
-            DataGridViewRow filaSeleccionada = dgvCtaCte.Rows[indice];
-            cuenta.Movimientoid = int.Parse(filaSeleccionada.Cells["Numero mov."].Value.ToString());
-            if(filaSeleccionada.Cells["Tipo movimiento"].Value.ToString() == "Creacion cuenta                                   ")
-            {
-                
-                return ;
-            }       
+
         }
         private void LimpiarCampos()
         {

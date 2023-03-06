@@ -223,5 +223,11 @@ namespace PresentationA
             ActivateButton(sender);
             openChildFormInPanel(new frmComprobantesSalarios());
         }
+
+        private void lblVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            openChildFormInPanel(new frmVersion());
+        }
     }
 }

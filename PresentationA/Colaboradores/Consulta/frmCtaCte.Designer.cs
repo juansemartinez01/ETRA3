@@ -137,8 +137,7 @@
             this.dgvCtaCte.AllowUserToDeleteRows = false;
             this.dgvCtaCte.AllowUserToOrderColumns = true;
             this.dgvCtaCte.AllowUserToResizeRows = false;
-            this.dgvCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCtaCte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCtaCte.BackgroundColor = System.Drawing.Color.White;
@@ -183,11 +182,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCtaCte.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCtaCte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCtaCte.Size = new System.Drawing.Size(911, 152);
+            this.dgvCtaCte.Size = new System.Drawing.Size(911, 142);
             this.dgvCtaCte.TabIndex = 53;
-            this.dgvCtaCte.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCtaCte_CellContentClick);
-            this.dgvCtaCte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCtaCte_CellContentClick);
-            this.dgvCtaCte.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBusqueda_CellContentClick);
+            this.dgvCtaCte.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCtaCte_CellContentClick);
+            this.dgvCtaCte.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCtaCte_CellContentClick);
             // 
             // id
             // 
@@ -302,7 +300,6 @@
             // 
             // btnExportar
             // 
-            this.btnExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.btnExportar.FlatAppearance.BorderSize = 0;
             this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -313,7 +310,7 @@
             this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportar.IconSize = 30;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExportar.Location = new System.Drawing.Point(18, 441);
+            this.btnExportar.Location = new System.Drawing.Point(18, 430);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportar.Name = "btnExportar";
             this.btnExportar.Size = new System.Drawing.Size(238, 39);
@@ -327,7 +324,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(941, 503);
+            this.ClientSize = new System.Drawing.Size(941, 480);
             this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDescripcion);
