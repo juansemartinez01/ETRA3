@@ -81,7 +81,6 @@
             this.lblVersion.TabIndex = 6;
             this.lblVersion.TabStop = true;
             this.lblVersion.Text = "Buscar Nueva Version";
-            this.lblVersion.Visible = false;
             this.lblVersion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblVersion_LinkClicked);
             // 
             // pnlReportes

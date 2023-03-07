@@ -7,7 +7,7 @@
     <ProjectGuid>{42C6B5FF-C8AB-4616-92BD-B0CD3E68E96B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PresentationA</RootNamespace>
-    <AssemblyName>ETRA SOFTWARE</AssemblyName>
+    <AssemblyName>ETRA</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -58,10 +58,16 @@
     <ManifestKeyFile>PresentationA_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -410,6 +416,7 @@
       <DependentUpon>frmTardanza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Tardanzas\rptTardanzas.rdlc" />
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="PresentationA_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\DomainA.ReporteSalXCargo.datasource" />

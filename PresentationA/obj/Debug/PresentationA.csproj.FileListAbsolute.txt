@@ -788,13 +788,9 @@ C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\itextsharp.xml
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.Familiares.frmAgregarFam.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmFamiliares.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Salarios.frmModPorCargo.resources
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA SOFTWARE.exe.config
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA SOFTWARE.exe.manifest
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA SOFTWARE.application
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA SOFTWARE.exe
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA SOFTWARE.pdb
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.exe.manifest
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.application
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.exe
-C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA SOFTWARE.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.frmVersion.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA.exe.config
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA.exe
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.exe
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.pdb
