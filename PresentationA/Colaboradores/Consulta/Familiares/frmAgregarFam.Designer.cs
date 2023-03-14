@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.cmbEscolariazacion = new System.Windows.Forms.ComboBox();
+            this.cmbParentezco = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,45 +44,50 @@
             this.btnGuardar = new PresentationA.Controls.BotonPadre();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtDni
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 311);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 27);
-            this.textBox2.TabIndex = 70;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtDni.Location = new System.Drawing.Point(190, 311);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(234, 27);
+            this.txtDni.TabIndex = 70;
+            this.txtDni.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(190, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 27);
-            this.textBox1.TabIndex = 69;
+            this.txtNombre.Location = new System.Drawing.Point(190, 59);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(234, 27);
+            this.txtNombre.TabIndex = 69;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // dateTimePicker1
+            // dtpFechaNac
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 171);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(234, 27);
-            this.dateTimePicker1.TabIndex = 68;
+            this.dtpFechaNac.Location = new System.Drawing.Point(190, 171);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(234, 27);
+            this.dtpFechaNac.TabIndex = 68;
+            this.dtpFechaNac.ValueChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // comboBox2
+            // cmbEscolariazacion
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(190, 244);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(234, 29);
-            this.comboBox2.TabIndex = 67;
-            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
+            this.cmbEscolariazacion.FormattingEnabled = true;
+            this.cmbEscolariazacion.Location = new System.Drawing.Point(190, 244);
+            this.cmbEscolariazacion.Name = "cmbEscolariazacion";
+            this.cmbEscolariazacion.Size = new System.Drawing.Size(234, 29);
+            this.cmbEscolariazacion.TabIndex = 67;
+            this.cmbEscolariazacion.SelectedIndexChanged += new System.EventHandler(this.txt_TextChanged);
+            this.cmbEscolariazacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
             // 
-            // comboBox1
+            // cmbParentezco
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(190, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 29);
-            this.comboBox1.TabIndex = 66;
-            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
+            this.cmbParentezco.FormattingEnabled = true;
+            this.cmbParentezco.Location = new System.Drawing.Point(190, 119);
+            this.cmbParentezco.Name = "cmbParentezco";
+            this.cmbParentezco.Size = new System.Drawing.Size(234, 29);
+            this.cmbParentezco.TabIndex = 66;
+            this.cmbParentezco.SelectedIndexChanged += new System.EventHandler(this.txt_TextChanged);
+            this.cmbParentezco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmb_KeyPress);
             // 
             // label5
             // 
@@ -171,6 +176,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -191,6 +197,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmAgregarFam
             // 
@@ -201,11 +208,11 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.dtpFechaNac);
+            this.Controls.Add(this.cmbEscolariazacion);
+            this.Controls.Add(this.cmbParentezco);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -218,6 +225,7 @@
             this.Name = "frmAgregarFam";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Familiar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAgregarFam_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,11 +233,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
+        private System.Windows.Forms.ComboBox cmbEscolariazacion;
+        private System.Windows.Forms.ComboBox cmbParentezco;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

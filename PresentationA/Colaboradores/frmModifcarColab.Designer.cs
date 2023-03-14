@@ -201,7 +201,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(860, 151);
+            this.groupBox1.Size = new System.Drawing.Size(809, 151);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
@@ -298,7 +298,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox2.Size = new System.Drawing.Size(450, 162);
+            this.groupBox2.Size = new System.Drawing.Size(399, 162);
             this.groupBox2.TabIndex = 78;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CONTACTO";
@@ -438,7 +438,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(860, 342);
+            this.groupBox3.Size = new System.Drawing.Size(809, 342);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -523,7 +523,7 @@
             this.groupBox4.Controls.Add(this.txtObraSocial);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Location = new System.Drawing.Point(505, 597);
+            this.groupBox4.Location = new System.Drawing.Point(454, 597);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
@@ -585,7 +585,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(276, 20);
+            this.label26.Location = new System.Drawing.Point(252, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(340, 28);
             this.label26.TabIndex = 95;

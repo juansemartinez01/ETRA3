@@ -38,6 +38,7 @@
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
             this.btnComprobantes = new FontAwesome.Sharp.IconButton();
+            this.btnFamiliares = new FontAwesome.Sharp.IconButton();
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.btnAvisos = new FontAwesome.Sharp.IconButton();
             this.btnDocumentos = new FontAwesome.Sharp.IconButton();
@@ -75,7 +76,7 @@
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblVersion.Location = new System.Drawing.Point(0, 630);
+            this.lblVersion.Location = new System.Drawing.Point(0, 667);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(170, 20);
             this.lblVersion.TabIndex = 6;
@@ -89,9 +90,9 @@
             this.pnlReportes.Controls.Add(this.btnSalXCargo);
             this.pnlReportes.Controls.Add(this.btnTardanzas);
             this.pnlReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlReportes.Location = new System.Drawing.Point(0, 506);
+            this.pnlReportes.Location = new System.Drawing.Point(0, 548);
             this.pnlReportes.Name = "pnlReportes";
-            this.pnlReportes.Size = new System.Drawing.Size(200, 119);
+            this.pnlReportes.Size = new System.Drawing.Size(183, 119);
             this.pnlReportes.TabIndex = 0;
             // 
             // btnSalXCargo
@@ -108,7 +109,7 @@
             this.btnSalXCargo.Location = new System.Drawing.Point(0, 56);
             this.btnSalXCargo.Name = "btnSalXCargo";
             this.btnSalXCargo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSalXCargo.Size = new System.Drawing.Size(200, 56);
+            this.btnSalXCargo.Size = new System.Drawing.Size(183, 56);
             this.btnSalXCargo.TabIndex = 3;
             this.btnSalXCargo.Text = "Salarios por Cargo";
             this.btnSalXCargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,7 +131,7 @@
             this.btnTardanzas.Location = new System.Drawing.Point(0, 0);
             this.btnTardanzas.Name = "btnTardanzas";
             this.btnTardanzas.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnTardanzas.Size = new System.Drawing.Size(200, 56);
+            this.btnTardanzas.Size = new System.Drawing.Size(183, 56);
             this.btnTardanzas.TabIndex = 4;
             this.btnTardanzas.Text = "Tardanzas por Período";
             this.btnTardanzas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,9 +150,9 @@
             this.btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReportes.IconSize = 30;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 464);
+            this.btnReportes.Location = new System.Drawing.Point(0, 506);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(200, 42);
+            this.btnReportes.Size = new System.Drawing.Size(183, 42);
             this.btnReportes.TabIndex = 5;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,6 +164,7 @@
             // 
             this.pnlColaboradores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(160)))), ((int)(((byte)(85)))));
             this.pnlColaboradores.Controls.Add(this.btnComprobantes);
+            this.pnlColaboradores.Controls.Add(this.btnFamiliares);
             this.pnlColaboradores.Controls.Add(this.btnUsuarios);
             this.pnlColaboradores.Controls.Add(this.btnAvisos);
             this.pnlColaboradores.Controls.Add(this.btnDocumentos);
@@ -173,7 +175,7 @@
             this.pnlColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColaboradores.Location = new System.Drawing.Point(0, 120);
             this.pnlColaboradores.Name = "pnlColaboradores";
-            this.pnlColaboradores.Size = new System.Drawing.Size(200, 344);
+            this.pnlColaboradores.Size = new System.Drawing.Size(183, 386);
             this.pnlColaboradores.TabIndex = 2;
             this.pnlColaboradores.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlColaboradores_Paint);
             // 
@@ -188,15 +190,36 @@
             this.btnComprobantes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnComprobantes.IconSize = 30;
             this.btnComprobantes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnComprobantes.Location = new System.Drawing.Point(0, 294);
+            this.btnComprobantes.Location = new System.Drawing.Point(0, 336);
             this.btnComprobantes.Name = "btnComprobantes";
             this.btnComprobantes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnComprobantes.Size = new System.Drawing.Size(200, 42);
-            this.btnComprobantes.TabIndex = 8;
+            this.btnComprobantes.Size = new System.Drawing.Size(183, 42);
+            this.btnComprobantes.TabIndex = 9;
             this.btnComprobantes.Text = "Comprobantes";
             this.btnComprobantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnComprobantes.UseVisualStyleBackColor = true;
-            this.btnComprobantes.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btnComprobantes.Click += new System.EventHandler(this.btnComprobantes_Click);
+            // 
+            // btnFamiliares
+            // 
+            this.btnFamiliares.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFamiliares.FlatAppearance.BorderSize = 0;
+            this.btnFamiliares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFamiliares.ForeColor = System.Drawing.Color.White;
+            this.btnFamiliares.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.btnFamiliares.IconColor = System.Drawing.Color.White;
+            this.btnFamiliares.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFamiliares.IconSize = 30;
+            this.btnFamiliares.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFamiliares.Location = new System.Drawing.Point(0, 294);
+            this.btnFamiliares.Name = "btnFamiliares";
+            this.btnFamiliares.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnFamiliares.Size = new System.Drawing.Size(183, 42);
+            this.btnFamiliares.TabIndex = 8;
+            this.btnFamiliares.Text = "Familiares";
+            this.btnFamiliares.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFamiliares.UseVisualStyleBackColor = true;
+            this.btnFamiliares.Click += new System.EventHandler(this.btnFamiliares_Click);
             // 
             // btnUsuarios
             // 
@@ -212,7 +235,7 @@
             this.btnUsuarios.Location = new System.Drawing.Point(0, 252);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnUsuarios.Size = new System.Drawing.Size(200, 42);
+            this.btnUsuarios.Size = new System.Drawing.Size(183, 42);
             this.btnUsuarios.TabIndex = 7;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,7 +257,7 @@
             this.btnAvisos.Location = new System.Drawing.Point(0, 210);
             this.btnAvisos.Name = "btnAvisos";
             this.btnAvisos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAvisos.Size = new System.Drawing.Size(200, 42);
+            this.btnAvisos.Size = new System.Drawing.Size(183, 42);
             this.btnAvisos.TabIndex = 6;
             this.btnAvisos.Text = "Avisos";
             this.btnAvisos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,7 +279,7 @@
             this.btnDocumentos.Location = new System.Drawing.Point(0, 168);
             this.btnDocumentos.Name = "btnDocumentos";
             this.btnDocumentos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnDocumentos.Size = new System.Drawing.Size(200, 42);
+            this.btnDocumentos.Size = new System.Drawing.Size(183, 42);
             this.btnDocumentos.TabIndex = 5;
             this.btnDocumentos.Text = "Documentos";
             this.btnDocumentos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,7 +301,7 @@
             this.btnSalarios.Location = new System.Drawing.Point(0, 126);
             this.btnSalarios.Name = "btnSalarios";
             this.btnSalarios.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnSalarios.Size = new System.Drawing.Size(200, 42);
+            this.btnSalarios.Size = new System.Drawing.Size(183, 42);
             this.btnSalarios.TabIndex = 4;
             this.btnSalarios.Text = "Salarios";
             this.btnSalarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -300,7 +323,7 @@
             this.btnEventos.Location = new System.Drawing.Point(0, 84);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnEventos.Size = new System.Drawing.Size(200, 42);
+            this.btnEventos.Size = new System.Drawing.Size(183, 42);
             this.btnEventos.TabIndex = 3;
             this.btnEventos.Text = "Eventos";
             this.btnEventos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -322,7 +345,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(0, 42);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAgregar.Size = new System.Drawing.Size(200, 42);
+            this.btnAgregar.Size = new System.Drawing.Size(183, 42);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -343,7 +366,7 @@
             this.btnConsultar.Location = new System.Drawing.Point(0, 0);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnConsultar.Size = new System.Drawing.Size(200, 42);
+            this.btnConsultar.Size = new System.Drawing.Size(183, 42);
             this.btnConsultar.TabIndex = 0;
             this.btnConsultar.Text = "Buscar";
             this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -363,7 +386,7 @@
             this.btnColaboradores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnColaboradores.Location = new System.Drawing.Point(0, 78);
             this.btnColaboradores.Name = "btnColaboradores";
-            this.btnColaboradores.Size = new System.Drawing.Size(200, 42);
+            this.btnColaboradores.Size = new System.Drawing.Size(183, 42);
             this.btnColaboradores.TabIndex = 3;
             this.btnColaboradores.Text = "Colaboradores";
             this.btnColaboradores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,7 +400,7 @@
             this.pictureBox1.Image = global::PresentationA.Properties.Resources.logoLWS2;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(183, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -434,8 +457,9 @@
         private FontAwesome.Sharp.IconButton btnDocumentos;
         private FontAwesome.Sharp.IconButton btnAvisos;
         private FontAwesome.Sharp.IconButton btnUsuarios;
-        private FontAwesome.Sharp.IconButton btnComprobantes;
+        private FontAwesome.Sharp.IconButton btnFamiliares;
         private System.Windows.Forms.LinkLabel lblVersion;
+        private FontAwesome.Sharp.IconButton btnComprobantes;
     }
 }
 

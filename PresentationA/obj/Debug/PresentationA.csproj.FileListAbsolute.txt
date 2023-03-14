@@ -794,3 +794,6 @@ C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA.exe
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\bin\Debug\ETRA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.exe
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\ETRA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.TodosFamiliares.frmTodosAgregarFamiliar.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.frmTodosFamiliares.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.TodosFamiliares.frmTodosModificarFamiliar.resources

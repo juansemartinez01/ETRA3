@@ -95,6 +95,7 @@
             this.btnExportar.IconColor = System.Drawing.Color.White;
             this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportar.IconSize = 30;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExportar.Location = new System.Drawing.Point(285, 280);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportar.Name = "btnExportar";
@@ -359,7 +360,6 @@
             this.btnFamiliares.Text = "Familiares";
             this.btnFamiliares.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFamiliares.UseVisualStyleBackColor = true;
-            this.btnFamiliares.Visible = false;
             this.btnFamiliares.Click += new System.EventHandler(this.btnFamiliares_Click);
             // 
             // btnCtaCte

@@ -34,7 +34,7 @@ namespace PresentationA
                 btnDocumentos.Enabled = false;
                 btnAvisos.Enabled = false;
                 btnUsuarios.Enabled = false;
-                btnComprobantes.Enabled = false;
+                btnFamiliares.Enabled = false;
             }
             hideSubMenu();
             openChildFormInPanel(new frmInicio());
@@ -218,10 +218,16 @@ namespace PresentationA
 
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnComprobantes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             openChildFormInPanel(new frmComprobantesSalarios());
+        }
+
+        private void btnFamiliares_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmTodosFamiliares());
         }
 
         private void lblVersion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

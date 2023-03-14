@@ -17,7 +17,10 @@ namespace PresentationA.Colaboradores.Consulta
         public frmFamiliares()
         {
             InitializeComponent();
+            //JUANSE: Metodo para cargar datagridview
             ViewState();
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -55,6 +58,22 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void ModifyState()
         {
+            if(btnModificar.Text == "Guardar")
+            {
+                //JUANSE AGREGAR ACA METODO DE Guardar cambios
+
+                txtnombre.Enabled = false;
+                txtdni.Enabled = false;
+                cmbParentezco.Enabled = false;
+                dtpfechaNacimiento.Enabled = false;
+                cmbescolarizacion.Enabled = false;
+
+
+                btnModificar.Text = "Modificar";
+                btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+                return;
+
+            }
             txtnombre.Enabled = true;
             txtdni.Enabled = true;
             cmbParentezco.Enabled = true;
@@ -71,6 +90,7 @@ namespace PresentationA.Colaboradores.Consulta
         private void dgvFamiliares_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indice = e.RowIndex;
+
             //eventosModelo.FilaSeleccionadaHistorialEvento = indice;
             if (indice == -1)
             {
@@ -78,15 +98,41 @@ namespace PresentationA.Colaboradores.Consulta
                 btnModificar.Enabled = false;
                 return;
             }
-            //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+            btnEliminar.Enabled = true;
             DataGridViewRow filaSeleccionada = dgvFamiliares.Rows[indice];
-            //completarLabels(this, historial, "txt");
             ViewState();
-            //cmbParentezco.SelectedValue = buscarIdConNombre(filaSeleccionada.Cells["parentezco"].Value.ToString(), "TipoEvento");
-            //cmbescolarizacion.SelectedValue = buscarIdConNombre(filaSeleccionada.Cells["parentezco"].Value.ToString(), "TipoEvento");
-            dtpfechaNacimiento.Text = filaSeleccionada.Cells["fechaNacimiento"].Value.ToString();
-            txtdni.Text = filaSeleccionada.Cells["dni"].Value.ToString();
-            txtnombre.Text = filaSeleccionada.Cells["nombre"].Value.ToString();
+            DataTable familiar = new DataTable();
+            foreach (DataGridViewColumn column in dgvFamiliares.Columns)
+                familiar.Columns.Add(column.Name, column.CellType); //better to have cell type
+            for (int i = 0; i < dgvFamiliares.SelectedRows.Count; i++)
+            {
+                familiar.Rows.Add();
+                for (int j = 0; j < dgvFamiliares.Columns.Count; j++)
+                {
+                    familiar.Rows[i][j] = dgvFamiliares.SelectedRows[i].Cells[j].Value;
+                }
+                break;
+            }
+            completarLabels(this, familiar, "lbl");
+            completarLabels(this, familiar, "txt");
+            completarLabels(this, familiar, "dtp");
+            //Completar combobox!!!!!
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ModifyState();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.No == MessageBox.Show("Esta seguro que desea eliminar el colaborador?", "AVISO", MessageBoxButtons.YesNo))
+            {
+                return;
+            }
+
+            //JUANSE: eliminar familiar
+
         }
     }
 }
