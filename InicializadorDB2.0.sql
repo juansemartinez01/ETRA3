@@ -109,9 +109,17 @@ SELECT * FROM HistorialEvento
 
 /*Inicializador TipoFamiliar*/
 
-INSERT INTO TipoFamiliar VALUES ('Hijo del colaborador')
-INSERT INTO TipoFamiliar VALUES ('Padre del colaborador')
-INSERT INTO TipoFamiliar VALUES ('Pareja del colaborador')
+INSERT INTO TipoFamiliar VALUES ('Padre/Madre')
+INSERT INTO TipoFamiliar VALUES ('Hijo/a')
+INSERT INTO TipoFamiliar VALUES ('Pareja')
+INSERT INTO TipoFamiliar VALUES ('Otro')
+
+/*Inicializador Escolaridad*/
+INSERT INTO Escolaridad VALUES ('Jardin')
+INSERT INTO Escolaridad VALUES ('Primario')
+INSERT INTO Escolaridad VALUES ('Secundario')
+INSERT INTO Escolaridad VALUES ('Universitario')
+INSERT INTO Escolaridad VALUES ('Otro')
 
 /*Inicializador tipo Movimiento*/
 INSERT INTO TipoMovimiento VALUES ('Pago',0)

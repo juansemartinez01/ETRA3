@@ -1,137 +1,136 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using System.Net;
 
 namespace DataAccesA
 {
     public class FamiliarColaboradorDao:ConnectionToSql
     {
-        public string crearFamiliarColaborador(int tipoFamiliar,int legajoColaborador,string nombreFamiliar,string apellidoFamiliar, DateTime fechaNacimiento)
+        public int InsertarDireccionFamiliar(string calle,int numeroCalle,int esEdificio,int piso,string departamento,string localidad,string provincia)
         {
-            try
+            using (var connection = GetConnection())
             {
-                using (var connection = GetConnection())
+                connection.Open();
+                using (var command = new SqlCommand())
                 {
-                    connection.Open();
-                    using (var command = new SqlCommand())
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO DIRECCION (nombreCalle,numeroCalle,esEdificio,piso,departamento,localidad,provincia,borradoLogico) VALUES (@nombreCalle,@numeroCalle,@esEdificio,@piso,@departamento,@localidad,@provincia,0)";
+                    command.Parameters.AddWithValue("@nombreCalle", calle);
+                    command.Parameters.AddWithValue("@numeroCalle", numeroCalle);
+                    command.Parameters.AddWithValue("@esEdificio", esEdificio);
+                    command.Parameters.AddWithValue("@piso", piso);
+                    command.Parameters.AddWithValue("@departamento", departamento);
+                    command.Parameters.AddWithValue("@localidad", localidad);
+                    command.Parameters.AddWithValue("@provincia", provincia);
+                    command.CommandType = CommandType.Text;
+                    var direccionCreada = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    if (direccionCreada == 1)
                     {
-                        command.Connection = connection;
-                        command.CommandText = "INSERT INTO FamiliarColaborador VALUES (@tipoFamiliar,@legajo,@nombreFamiliar,@apellidoFamiliar,@fechaNacimiento,0)";
-                        command.Parameters.AddWithValue("@tipoFamiliar", tipoFamiliar);
-                        command.Parameters.AddWithValue("@legajo", legajoColaborador);
-                        command.Parameters.AddWithValue("@nombreFamiliar", nombreFamiliar);
-                        command.Parameters.AddWithValue("@apellidoFamiliar", apellidoFamiliar);
-                        command.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
-                        command.CommandType = CommandType.Text;
-                        var familiarRegistrado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                        if (familiarRegistrado == 1)
-                        {
-                            return "Familiar registrado con exito.";
-
-                        }
-                        else
-                        {
-                            return "Error al registrar el familiar.";
-                        }
+                        return 1;
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
+                    else
+                    {
+                        return 0;
+                    }
+                    }
             }
         }
-
-        public string eliminarFamiliarColaborador(int legajoColaborador,int idFamiliar)
+        public string InsertarFamiliarColaborador(string calle, int numeroCalle, int esEdificio, int piso, string departamento, string localidad, string provincia,int tipoFamiliar,int colaborador,string nombre,string apellido,DateTime fechaNacimiento,int dni,int escolaridad)
         {
-            try
+            int direccionCreada = InsertarDireccionFamiliar(calle,numeroCalle,esEdificio,piso,departamento,localidad,provincia);
+            if (direccionCreada == 0) { return "Error al crear al familiar"; }
+            using (var connection = GetConnection())
             {
-                using (var connection = GetConnection())
+                connection.Open();
+                using (var command = new SqlCommand())
                 {
-                    connection.Open();
-                    using (var command = new SqlCommand())
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO FamiliarColaborador VALUES (@tipoFamiliar,@colaborador,@nombre,@apellido,Format(@fechaNacimiento, 'yyyy - MM - dd'),0,@dni,(SELECT MAX(id_direccion) FROM Direccion),@escolaridad)";
+                    command.Parameters.AddWithValue("@tipoFamiliar", tipoFamiliar);
+                    command.Parameters.AddWithValue("@colaborador", colaborador);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@apellido", apellido);
+                    command.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                    command.Parameters.AddWithValue("@dni", dni);
+                    command.Parameters.AddWithValue("@escolaridad", escolaridad);
+                    command.CommandType = CommandType.Text;
+                    var familiarAgregado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    if (familiarAgregado == 1)
                     {
-                        command.Connection = connection;
-                        command.CommandText = "UPDATE FamiliarColaborador SET borradoLogico = 1 WHERE legajo = @legajoColaborador AND idFamiliar = @idFamiliar";
-                        command.Parameters.AddWithValue("@idFamiliar", idFamiliar);
-                        command.Parameters.AddWithValue("@legajo", legajoColaborador);
-                        
-                        command.CommandType = CommandType.Text;
-                        var familiarRegistrado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                        if (familiarRegistrado == 1)
-                        {
-                            return "Familiar eliminado con exito.";
-
-                        }
-                        else
-                        {
-                            return "Error al eliminar el familiar.";
-                        }
+                        return "Familiar creado";
+                    }
+                    else
+                    {
+                        return "Error al agregar al familiar";
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
-        }
-        public string modificarFamiliarColaborador(int tipoFamiliar,string nombreFamiliar,string apellidoFamiliar,DateTime fechaNacimiento,int legajoColaborador,int idFamiliar)
-        {
-            try
-            {
-                using (var connection = GetConnection())
-                {
-                    connection.Open();
-                    using (var command = new SqlCommand())
-                    {
-                        command.Connection = connection;
-                        command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombreFamiliar,apellidoFamiliar = @apellidoFamiliar,fechaNacimiento = @fechaNacimiento WHERE legajo = @legajoColaborador AND idFamiliar = @idFamiliar";
-                        command.Parameters.AddWithValue("@idFamiliar", idFamiliar);
-                        command.Parameters.AddWithValue("@legajo", legajoColaborador);
 
-                        command.CommandType = CommandType.Text;
-                        var familiarRegistrado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                        if (familiarRegistrado == 1)
-                        {
-                            return "Familiar eliminado con exito.";
-
-                        }
-                        else
-                        {
-                            return "Error al eliminar el familiar.";
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                return ex.Message;
-            }
         }
 
 
-        public DataTable getCumpleañosMesActual()
+        public int ModificarDireccionFamiliar(string calle, int numeroCalle, int esEdificio, int piso, string departamento, string localidad, string provincia,int direccionFamiliar)
         {
-            DataTable dt = new DataTable();
-            try
+            using (var connection = GetConnection())
             {
-                using (var connection = GetConnection())
+                connection.Open();
+                using (var command = new SqlCommand())
                 {
-                    connection.Open();
-                    using (var command = new SqlCommand())
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Direccion SET UPDATE Direccion SET nombreCalle = @nombreCalle,numeroCalle = @numeroCalle,esEdificio = @esEdificio,piso = @piso,departamento = @departamento,localidad = @localidad,provincia = @provincia WHERE id_direccion = @direccionFamiliar";
+                    command.Parameters.AddWithValue("@nombreCalle", calle);
+                    command.Parameters.AddWithValue("@numeroCalle", numeroCalle);
+                    command.Parameters.AddWithValue("@esEdificio", esEdificio);
+                    command.Parameters.AddWithValue("@piso", piso);
+                    command.Parameters.AddWithValue("@departamento", departamento);
+                    command.Parameters.AddWithValue("@localidad", localidad);
+                    command.Parameters.AddWithValue("@provincia", provincia);
+                    command.Parameters.AddWithValue("@direccionFamiliar", direccionFamiliar);
+                    command.CommandType = CommandType.Text;
+                    var direccionCreada = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    if (direccionCreada == 1)
                     {
-                        command.Connection = connection;
-                        command.CommandText = "select legajoColaborador, fechaNacimiento, nombreFamiliar from FamiliarColaborador where MONTH(GETDATE()) = MONTH(fechaNacimiento)  AND borradoLogico = 0";
-                        command.CommandType = CommandType.Text;
-                        dt.Load(command.ExecuteReader());
-                        return dt;
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
                     }
                 }
             }
-            catch (Exception ex)
+        }
+
+        public string ModificarFamiliarColaborador(string calle, int numeroCalle, int esEdificio, int piso, string departamento, string localidad, string provincia,int direccionFamiliar, int tipoFamiliar, int colaborador, string nombre, string apellido, DateTime fechaNacimiento, int dni, int escolaridad,int idFamiliar)
+        {
+            int direccionCreada = ModificarDireccionFamiliar(calle, numeroCalle, esEdificio, piso, departamento, localidad, provincia, direccionFamiliar);
+            if (direccionCreada == 0) { return "Error al modificar al familiar"; }
+            using (var connection = GetConnection())
             {
-                return dt;
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad";
+                    command.Parameters.AddWithValue("@tipoFamiliar", tipoFamiliar);
+                    command.Parameters.AddWithValue("@nombre", nombre);
+                    command.Parameters.AddWithValue("@apellido", apellido);
+                    command.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
+                    command.Parameters.AddWithValue("@dni", dni);
+                    command.Parameters.AddWithValue("@escolaridad", escolaridad);
+                    command.CommandType = CommandType.Text;
+                    var familiarAgregado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                    if (familiarAgregado == 1)
+                    {
+                        return "Familiar Modificado";
+                    }
+                    else
+                    {
+                        return "Error al modificar al familiar";
+                    }
+                }
             }
+
         }
     }
 }

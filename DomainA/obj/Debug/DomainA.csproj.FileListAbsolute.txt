@@ -79,3 +79,17 @@ C:\Users\usuario\Documents\ETRA\Programa\DomainA\bin\Debug\itextsharp.xml
 C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\itextsharp.dll
 C:\Users\Admin\Source\Repos\ETRA3\DomainA\bin\Debug\itextsharp.xml
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\DomainA.dll
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\DomainA.pdb
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\Common.dll
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\DataAccesA.dll
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\itextsharp.dll
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\Common.pdb
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\DataAccesA.pdb
+C:\Users\juans\Source\Repos\ETRA3\DomainA\bin\Debug\itextsharp.xml
+C:\Users\juans\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.AssemblyReference.cache
+C:\Users\juans\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.CoreCompileInputs.cache
+C:\Users\juans\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.csproj.CopyComplete
+C:\Users\juans\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.dll
+C:\Users\juans\Source\Repos\ETRA3\DomainA\obj\Debug\DomainA.pdb

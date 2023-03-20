@@ -28,3 +28,9 @@ C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.csproj.AssemblyReferen
 C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.dll
 C:\Users\Admin\Source\Repos\ETRA3\Common\obj\Debug\Common.pdb
+C:\Users\juans\Source\Repos\ETRA3\Common\bin\Debug\Common.dll
+C:\Users\juans\Source\Repos\ETRA3\Common\bin\Debug\Common.pdb
+C:\Users\juans\Source\Repos\ETRA3\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\juans\Source\Repos\ETRA3\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\juans\Source\Repos\ETRA3\Common\obj\Debug\Common.dll
+C:\Users\juans\Source\Repos\ETRA3\Common\obj\Debug\Common.pdb
