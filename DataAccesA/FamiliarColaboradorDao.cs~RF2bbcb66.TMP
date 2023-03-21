@@ -111,14 +111,13 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad WHERE idFamiliar = @idFamiliar";
+                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad";
                     command.Parameters.AddWithValue("@tipoFamiliar", tipoFamiliar);
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@apellido", apellido);
                     command.Parameters.AddWithValue("@fechaNacimiento", fechaNacimiento);
                     command.Parameters.AddWithValue("@dni", dni);
                     command.Parameters.AddWithValue("@escolaridad", escolaridad);
-                    command.Parameters.AddWithValue("@idFamiliar", idFamiliar);
                     command.CommandType = CommandType.Text;
                     var familiarAgregado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
                     if (familiarAgregado == 1)
@@ -132,58 +131,6 @@ namespace DataAccesA
                 }
             }
 
-        }
-
-        
-
-        public string EliminarFamiliarColaborador(int idFamiliar)
-        {
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = "UPDATE FamiliarColaborador SET borradoLogico = 1 WHERE idFamiliar = @idFamiliar";
-                    
-                    command.Parameters.AddWithValue("@idFamiliar", idFamiliar);
-                    command.CommandType = CommandType.Text;
-                    var familiarAgregado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
-                    if (familiarAgregado == 1)
-                    {
-                        return "Familiar Eliminado";
-                    }
-                    else
-                    {
-                        return "Error al eliminar al familiar";
-                    }
-                }
-            }
-
-        }
-
-        public DataTable obtenerFamiliares(int legajoColaborador)
-        {
-            string parametros = "";
-            if (legajoColaborador != 0)
-            {
-                parametros += " AND C.legajo = " + legajoColaborador;
-            }
-            DataTable resultado = new DataTable();
-            using (var connection = GetConnection())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = "SELECT FC.nombreFamiliar AS 'Nombre',FC.apellidoFamiliar AS 'Apellido',E.nombre AS 'Formacion',FC.dni AS 'DNI',FC.fechaNacimiento AS 'Fecha Nacimiento',C.legajo AS 'Legajo colaborador' FROM FamiliarColaborador FC JOIN Colaborador C ON FC.legajoColaborador = C.legajo JOIN TipoFamiliar TF ON TF.idTipoFamiliar = FC.tipoFamiliar JOIN Direccion D ON D.id_direccion = FC.idDireccion JOIN Escolaridad E ON E.id = FC.escolaridad WHERE FC.borradoLogico = 0 " + parametros;
-                    
-                    command.CommandType = CommandType.Text;
-                    SqlDataReader reader = command.ExecuteReader();
-                    resultado.Load(reader);
-                    return resultado;
-                }
-            }
         }
     }
 }
