@@ -14,15 +14,50 @@ namespace PresentationA.Colaboradores.Consulta
 {
     public partial class frmFamiliares : frmHijo
     {
-        public frmFamiliares()
+        DataTable colaboradorModelo;
+        int legajo;
+        FamiliarColaboradorModelo familiarModelo = new FamiliarColaboradorModelo();
+        public frmFamiliares(DataTable colaborador)
         {
             InitializeComponent();
+            colaboradorModelo = colaborador;
+            legajo = Int32.Parse(colaboradorModelo.Rows[0]["legajo"].ToString());
             //JUANSE: Metodo para cargar datagridview
             ViewState();
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
+            LlenarCombo(cmbescolarizacion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
+            LlenarCombo(cmbParentezco, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoFamiliar"), "nombre", "idTipoFamiliar");
+        }
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = 0;
+            CargarDG(legajo);
         }
 
+        private void CargarDG(int legajo)
+        {
+            try
+            {
+                dgvFamiliares.Rows.Clear();
+                DataTable familiares = familiarModelo.obtenerFamiliares(legajo);
+                for (int i = 0; i < familiares.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"],familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -33,7 +68,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmAgregarFam agregar = new frmAgregarFam();
+            frmAgregarFam agregar = new frmAgregarFam(colaboradorModelo);
             agregar.ShowDialog();
         }
 
@@ -109,7 +144,7 @@ namespace PresentationA.Colaboradores.Consulta
                 familiar.Rows.Add();
                 for (int j = 0; j < dgvFamiliares.Columns.Count; j++)
                 {
-                    familiar.Rows[i][j] = dgvFamiliares.SelectedRows[i].Cells[j].Value;
+                    familiar.Rows[i][j] = dgvFamiliares.SelectedRows[i].Cells[j].Value.ToString();
                 }
                 break;
             }
@@ -134,5 +169,6 @@ namespace PresentationA.Colaboradores.Consulta
             //JUANSE: eliminar familiar
 
         }
+
     }
 }

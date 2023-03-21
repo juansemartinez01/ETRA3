@@ -1,25 +1,65 @@
 ﻿using DomainA;
-using PresentationA.Colaboradores.Consulta.Familiares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationA.Colaboradores.TodosFamiliares
+namespace PresentationA.Colaboradores.Consulta.Familiares
 {
-    public partial class frmTodosAgregarFamiliar : frmHijo
+    public partial class frmAgregarFam : frmHijo
     {
         bool hayCambios = false;
-        public frmTodosAgregarFamiliar()
+        string legajoColab;
+        string calleColab;
+        string nroCalleColab;
+        string pisoColab;
+        string deptoColab;
+        string localidadColab;
+        string provinciaColab;
+
+        public frmAgregarFam(DataTable colaborador)
         {
             InitializeComponent();
+            cargarColab(colaborador);
+            hayCambios = false;
+            txtCalle.Text = calleColab;
+            txtNroCalle.Text = nroCalleColab;
+            txtDepto.Text = deptoColab;
+            txtPiso.Text = pisoColab;
+            txtLocalidad.Text = localidadColab;
+            txtProv.Text = provinciaColab;
+            LlenarCombo(cmbEscolariazacion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
+            LlenarCombo(cmbParentezco, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoFamiliar"), "nombre", "idTipoFamiliar");
+        }
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = 0;
         }
 
+        private void cargarColab(DataTable colaborador)
+        {
+            foreach (DataColumn columna in colaborador.Columns)
+            {
+
+                legajoColab = colaborador.Rows[0]["legajo"].ToString();
+                calleColab = colaborador.Rows[0]["nombreCalle"].ToString();
+                nroCalleColab = colaborador.Rows[0]["numeroCalle"].ToString();
+                pisoColab = colaborador.Rows[0]["piso"].ToString();
+                deptoColab = colaborador.Rows[0]["departamento"].ToString();
+                localidadColab = colaborador.Rows[0]["localidad"].ToString();
+                provinciaColab = colaborador.Rows[0]["provincia"].ToString();
+            }
+        }
         private void msgError(string msg)
         {
             lblError.Text = "      " + msg;
@@ -41,14 +81,14 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int legajoColab = int.Parse(cmbLegajo.SelectedValue.ToString());
+            
             FamiliarColaboradorModelo familiar = new FamiliarColaboradorModelo();
             int esEdificio = 0;
             int escolaridad = int.Parse(cmbEscolariazacion.SelectedValue.ToString());
             int parentezco = int.Parse(cmbParentezco.SelectedValue.ToString());
 
 
-            if (txtPiso.Text == "" & txtDepto.Text == "") { esEdificio = 1; }
+            if (txtPiso.Text == "" & txtDepto.Text == "") { esEdificio =1; }
 
             if (txtNombre.Text == "")
             {
@@ -72,7 +112,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
                 return;
             }
 
-
+            
 
             if (txtNroCalle.Text == "")
             {
@@ -108,7 +148,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
                 return;
             }
 
-            string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text), esEdificio, piso, depto, txtLocalidad.Text, txtProv.Text, parentezco, legajoColab, txtNombre.Text, txtApellido.Text, dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad);
+            string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text),esEdificio, piso, depto,txtLocalidad.Text,txtProv.Text,parentezco,Int32.Parse(legajoColab),txtNombre.Text,txtApellido.Text,dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad) ;
             MessageBox.Show(resultado);
             hayCambios = false;
             this.Close();
@@ -133,7 +173,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 
         private void txt_TextChanged(object sender, EventArgs e)
         {
-            hayCambios = true;
+            hayCambios= true;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -154,4 +194,3 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 
     }
 }
-

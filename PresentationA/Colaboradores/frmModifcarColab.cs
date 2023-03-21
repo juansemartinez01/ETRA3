@@ -100,7 +100,7 @@ namespace PresentationA.Colaboradores
                 }
                 else
                 {
-                    piso = 1;
+                    piso = Int32.Parse(txtpiso.Text);
                     departamento = "No especifica";
                     if (txtdepartamento.Text != "")
                     {

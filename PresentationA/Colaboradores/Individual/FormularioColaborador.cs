@@ -213,7 +213,7 @@ namespace PresentationA
         private void btnFamiliares_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            openChildFormInPanel(new frmFamiliares());
+            openChildFormInPanel(new frmFamiliares(colaborador));
         }
 
         private void btnExportar_Click(object sender, EventArgs e)

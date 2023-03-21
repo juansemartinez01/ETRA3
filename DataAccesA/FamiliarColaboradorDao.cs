@@ -176,7 +176,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT FC.nombreFamiliar AS 'Nombre',FC.apellidoFamiliar AS 'Apellido',E.nombre AS 'Formacion',FC.dni AS 'DNI',FC.fechaNacimiento AS 'Fecha Nacimiento',C.legajo AS 'Legajo colaborador' FROM FamiliarColaborador FC JOIN Colaborador C ON FC.legajoColaborador = C.legajo JOIN TipoFamiliar TF ON TF.idTipoFamiliar = FC.tipoFamiliar JOIN Direccion D ON D.id_direccion = FC.idDireccion JOIN Escolaridad E ON E.id = FC.escolaridad WHERE FC.borradoLogico = 0 " + parametros;
+                    command.CommandText = "SELECT FC.idFamiliar,FC.nombreFamiliar AS 'Nombre',FC.apellidoFamiliar AS 'Apellido',E.nombre AS 'Escolarización',FC.dni AS 'DNI',FC.fechaNacimiento AS 'Fecha Nacimiento',C.legajo AS 'Legajo colaborador', TF.nombre as 'Tipo Familiar', D.nombreCalle, d.numeroCalle,d.piso,d.departamento,d.localidad,d.provincia FROM FamiliarColaborador FC JOIN Colaborador C ON FC.legajoColaborador = C.legajo JOIN TipoFamiliar TF ON TF.idTipoFamiliar = FC.tipoFamiliar JOIN Direccion D ON D.id_direccion = FC.idDireccion JOIN Escolaridad E ON E.id = FC.escolaridad WHERE FC.borradoLogico = 0 " + parametros;
                     
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
