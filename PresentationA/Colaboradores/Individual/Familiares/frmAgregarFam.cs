@@ -34,6 +34,7 @@ namespace PresentationA.Colaboradores.Consulta.Familiares
             txtPiso.Text = pisoColab;
             txtLocalidad.Text = localidadColab;
             txtProv.Text = provinciaColab;
+            
             LlenarCombo(cmbEscolariazacion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
             LlenarCombo(cmbParentezco, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoFamiliar"), "nombre", "idTipoFamiliar");
         }
@@ -86,6 +87,11 @@ namespace PresentationA.Colaboradores.Consulta.Familiares
             int esEdificio = 0;
             int escolaridad = int.Parse(cmbEscolariazacion.SelectedValue.ToString());
             int parentezco = int.Parse(cmbParentezco.SelectedValue.ToString());
+            string obraSocial = "No especifica";
+
+            int esTrabajador = 0;
+            int esDependencia = 0;
+            float aportes = 0;
 
 
             if (txtPiso.Text == "" & txtDepto.Text == "") { esEdificio =1; }
@@ -148,7 +154,7 @@ namespace PresentationA.Colaboradores.Consulta.Familiares
                 return;
             }
 
-            string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text),esEdificio, piso, depto,txtLocalidad.Text,txtProv.Text,parentezco,Int32.Parse(legajoColab),txtNombre.Text,txtApellido.Text,dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad) ;
+            string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text),esEdificio, piso, depto,txtLocalidad.Text,txtProv.Text,parentezco,Int32.Parse(legajoColab),txtNombre.Text,txtApellido.Text,dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad,obraSocial,esTrabajador,esDependencia,aportes) ;
             MessageBox.Show(resultado);
             hayCambios = false;
             this.Close();

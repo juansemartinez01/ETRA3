@@ -18,6 +18,18 @@ namespace PresentationA.Colaboradores.TodosFamiliares
         public frmTodosAgregarFamiliar()
         {
             InitializeComponent();
+            ckbDirecc.Checked = false;
+            ckbDirecc.Visible = false;
+            LlenarCombo(cmbLegajo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
+            LlenarCombo(cmbEscolariazacion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
+            LlenarCombo(cmbParentezco, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoFamiliar"), "nombre", "idTipoFamiliar");
+        }
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.ValueMember = value;
+            cbo.DisplayMember = display;
+            cbo.DataSource = source;
+            cbo.SelectedIndex = -1;
         }
 
         private void msgError(string msg)
@@ -39,13 +51,32 @@ namespace PresentationA.Colaboradores.TodosFamiliares
             e.Handled = true;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        
+
+        
+
+        
+
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            hayCambios = true;
+        }
+
+        
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             int legajoColab = int.Parse(cmbLegajo.SelectedValue.ToString());
             FamiliarColaboradorModelo familiar = new FamiliarColaboradorModelo();
             int esEdificio = 0;
             int escolaridad = int.Parse(cmbEscolariazacion.SelectedValue.ToString());
             int parentezco = int.Parse(cmbParentezco.SelectedValue.ToString());
+
+
+            string obraSocial = "No especifica";
+            int esTrabajador = 0;
+            int esDependencia = 0;
+            float aportes = 0;
 
 
             if (txtPiso.Text == "" & txtDepto.Text == "") { esEdificio = 1; }
@@ -108,37 +139,14 @@ namespace PresentationA.Colaboradores.TodosFamiliares
                 return;
             }
 
-            string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text), esEdificio, piso, depto, txtLocalidad.Text, txtProv.Text, parentezco, legajoColab, txtNombre.Text, txtApellido.Text, dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad);
+            string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text), esEdificio, piso, depto, txtLocalidad.Text, txtProv.Text, parentezco, legajoColab, txtNombre.Text, txtApellido.Text, dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad, obraSocial, esTrabajador, esDependencia, aportes);
             MessageBox.Show(resultado);
             hayCambios = false;
             this.Close();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void ckbDirecc_CheckedChanged(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void frmAgregarFam_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (hayCambios == true)
-            {
-                if (DialogResult.No == MessageBox.Show("Esta seguro que desea descartar los cambios?", "AVISO", MessageBoxButtons.YesNo))
-                {
-                    e.Cancel = true;
-                    return;
-                }
-            }
-        }
-
-        private void txt_TextChanged(object sender, EventArgs e)
-        {
-            hayCambios = true;
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
             txtCalle.Enabled = !ckbDirecc.Checked;
             txtNroCalle.Enabled = !ckbDirecc.Checked;
             txtDepto.Enabled = !ckbDirecc.Checked;
@@ -152,6 +160,15 @@ namespace PresentationA.Colaboradores.TodosFamiliares
             lblPiso.Enabled = !ckbDirecc.Checked;
         }
 
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmTodosAgregarFamiliar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

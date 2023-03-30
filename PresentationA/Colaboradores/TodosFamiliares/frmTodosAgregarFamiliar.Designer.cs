@@ -78,6 +78,7 @@
             this.ckbDirecc.TabIndex = 8;
             this.ckbDirecc.Text = "Usar dirección Colaborador:";
             this.ckbDirecc.UseVisualStyleBackColor = true;
+            this.ckbDirecc.CheckedChanged += new System.EventHandler(this.ckbDirecc_CheckedChanged);
             // 
             // txtProv
             // 
@@ -205,6 +206,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnGuardar
             // 
@@ -225,6 +227,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // label6
             // 
@@ -344,7 +347,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 760);
+            this.ClientSize = new System.Drawing.Size(514, 749);
             this.Controls.Add(this.cmbLegajo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtApellido);
@@ -377,6 +380,7 @@
             this.Name = "frmTodosAgregarFamiliar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Familiar";
+            this.Load += new System.EventHandler(this.frmTodosAgregarFamiliar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,28 +32,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
-            this.cmbescolarizacion = new System.Windows.Forms.ComboBox();
-            this.cmbParentezco = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
             this.dgvFamiliares = new PresentationA.Controls.DataGridPadre();
-            this.id_familiar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parentezco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.escolarizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.txtLegajoBusqueda = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parentezco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.escolarizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,55 +62,6 @@
             this.label6.Size = new System.Drawing.Size(131, 28);
             this.label6.TabIndex = 72;
             this.label6.Text = "Familiares";
-            // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(198, 77);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(239, 27);
-            this.txtnombre.TabIndex = 70;
-            // 
-            // cmbescolarizacion
-            // 
-            this.cmbescolarizacion.FormattingEnabled = true;
-            this.cmbescolarizacion.Location = new System.Drawing.Point(711, 18);
-            this.cmbescolarizacion.Name = "cmbescolarizacion";
-            this.cmbescolarizacion.Size = new System.Drawing.Size(234, 29);
-            this.cmbescolarizacion.TabIndex = 68;
-            // 
-            // cmbParentezco
-            // 
-            this.cmbParentezco.FormattingEnabled = true;
-            this.cmbParentezco.Location = new System.Drawing.Point(711, 77);
-            this.cmbParentezco.Name = "cmbParentezco";
-            this.cmbParentezco.Size = new System.Drawing.Size(234, 29);
-            this.cmbParentezco.TabIndex = 67;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(505, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 21);
-            this.label4.TabIndex = 65;
-            this.label4.Text = "Parentezco:";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(505, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 50);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "Nivel de Escolarización:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 21);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Nombre Familiar:";
             // 
             // btnEliminar
             // 
@@ -162,6 +107,7 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click_1);
             // 
             // btnAgregar
             // 
@@ -208,7 +154,7 @@
             this.dgvFamiliares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFamiliares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFamiliares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_familiar,
+            this.Numero,
             this.nombre,
             this.parentezco,
             this.fechaNacimiento,
@@ -242,43 +188,6 @@
             this.dgvFamiliares.TabIndex = 76;
             this.dgvFamiliares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick);
             // 
-            // id_familiar
-            // 
-            this.id_familiar.HeaderText = "id_familiar";
-            this.id_familiar.Name = "id_familiar";
-            this.id_familiar.ReadOnly = true;
-            this.id_familiar.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // parentezco
-            // 
-            this.parentezco.HeaderText = "Parentezco";
-            this.parentezco.Name = "parentezco";
-            this.parentezco.ReadOnly = true;
-            // 
-            // fechaNacimiento
-            // 
-            this.fechaNacimiento.HeaderText = "Fecha de Nacimiento";
-            this.fechaNacimiento.Name = "fechaNacimiento";
-            this.fechaNacimiento.ReadOnly = true;
-            // 
-            // escolarizacion
-            // 
-            this.escolarizacion.HeaderText = "Escolarización";
-            this.escolarizacion.Name = "escolarizacion";
-            this.escolarizacion.ReadOnly = true;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnLimpiar);
@@ -286,12 +195,6 @@
             this.groupBox1.Controls.Add(this.btnAplicar);
             this.groupBox1.Controls.Add(this.txtLegajoBusqueda);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtnombre);
-            this.groupBox1.Controls.Add(this.cmbescolarizacion);
-            this.groupBox1.Controls.Add(this.cmbParentezco);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(33, 45);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Name = "groupBox1";
@@ -380,6 +283,43 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Legajo Colaborador";
             // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // parentezco
+            // 
+            this.parentezco.HeaderText = "Parentezco";
+            this.parentezco.Name = "parentezco";
+            this.parentezco.ReadOnly = true;
+            // 
+            // fechaNacimiento
+            // 
+            this.fechaNacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            this.fechaNacimiento.ReadOnly = true;
+            // 
+            // escolarizacion
+            // 
+            this.escolarizacion.HeaderText = "Escolarización";
+            this.escolarizacion.Name = "escolarizacion";
+            this.escolarizacion.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
             // frmTodosFamiliares
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -404,27 +344,21 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.ComboBox cmbescolarizacion;
-        private System.Windows.Forms.ComboBox cmbParentezco;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private Controls.BotonPadre btnEliminar;
         private Controls.BotonPadre btnModificar;
         private Controls.BotonPadre btnAgregar;
         private Controls.DataGridPadre dgvFamiliares;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_familiar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn parentezco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn escolarizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.GroupBox groupBox1;
         private Controls.BotonPadre btnLimpiar;
         private Controls.BotonPadre btnExportar;
         private Controls.BotonPadre btnAplicar;
         private System.Windows.Forms.TextBox txtLegajoBusqueda;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parentezco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn escolarizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dni;
     }
 }

@@ -1,4 +1,5 @@
-﻿using PresentationA.Colaboradores.Consulta.Familiares;
+﻿using DomainA;
+using PresentationA.Colaboradores.Consulta.Familiares;
 using PresentationA.Colaboradores.TodosFamiliares;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,11 @@ namespace PresentationA.Colaboradores
 {
     public partial class frmTodosFamiliares : frmHijo
     {
+        FamiliarColaboradorModelo familiar = new FamiliarColaboradorModelo();
         public frmTodosFamiliares()
         {
             InitializeComponent();
-            //JUANSE: Metodo para cargar datagridview
+            CargarTabla(0);
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
         }
@@ -41,37 +43,23 @@ namespace PresentationA.Colaboradores
             e.Handled = true;
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            if(dgvFamiliares.SelectedRows.Count == 0) 
-            {
-                MessageBox.Show("Debe seleccionar un familiar");
-                return;
-            }
-            DataTable familiar = new DataTable();
-            foreach (DataGridViewColumn column in dgvFamiliares.Columns)
-                familiar.Columns.Add(column.Name, column.CellType); //better to have cell type
-            for (int i = 0; i < dgvFamiliares.SelectedRows.Count; i++)
-            {
-                familiar.Rows.Add();
-                for (int j = 0; j < dgvFamiliares.Columns.Count; j++)
-                {
-                    familiar.Rows[i][j] = dgvFamiliares.SelectedRows[i].Cells[j].Value;
-                }
-                break;
-            }
-            frmTodosModificarFamiliar modificar = new frmTodosModificarFamiliar(familiar);
-            modificar.ShowDialog();
-        }
+        
 
         private void btnAplicar_Click(object sender, EventArgs e)
         {
-            //JUANSE: Filtro
+            if (txtLegajoBusqueda.Text == "")
+            {
+                CargarTabla(0);
+            }
+            else
+            {
+                CargarTabla(int.Parse(txtLegajoBusqueda.Text));
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-           //JUANSE: Limpiar filtros
+            txtLegajoBusqueda.Text = "";
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -99,7 +87,7 @@ namespace PresentationA.Colaboradores
         {
 
             int indice = e.RowIndex;
-
+            familiar.indiceFamiliar = indice;
             //eventosModelo.FilaSeleccionadaHistorialEvento = indice;
             if (indice == -1)
             {
@@ -119,7 +107,34 @@ namespace PresentationA.Colaboradores
             {
                 return;
             }
-            //JUANSE: Metodo eliminar familiar
+            if (familiar.indiceFamiliar == -1)
+            {
+                MessageBox.Show("Debe seleccionar un archivo.");
+                return;
+            }
+            DataGridViewRow filaSeleccionada = dgvFamiliares.Rows[familiar.indiceFamiliar];
+            int idFamiliar = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+            familiar.EliminarFamiliarColaborador(idFamiliar);
+            CargarTabla(0);
+        }
+        public void CargarTabla(int legajo)
+        {
+            dgvFamiliares.Rows.Clear();
+            DataTable familiares = new DataTable();
+            familiares = familiar.obtenerFamiliares(legajo);
+            for (int i = 0; i < familiares.Rows.Count; i++)
+            {
+                //crear metodo completar labels
+                dgvFamiliares.Rows.Add(familiares.Rows[i]["Numero"],familiares.Rows[i]["Nombre"], familiares.Rows[i]["Tipo Familiar"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["Escolarización"], familiares.Rows[i]["DNI"]);
+            }
+            dgvFamiliares.Sort(dgvFamiliares.Columns[0], ListSortDirection.Ascending);
+        }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+            
+            frmTodosModificarFamiliar modificar = new frmTodosModificarFamiliar();
+            modificar.ShowDialog();
         }
     }
 }

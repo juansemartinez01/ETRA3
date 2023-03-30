@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,18 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 {
     public partial class frmTodosModificarFamiliar : frmHijo
     {
+        FamiliarColaboradorModelo familiarModificado = new FamiliarColaboradorModelo();
         bool hayCambios = false;
-        public frmTodosModificarFamiliar(DataTable familiar)
+        public frmTodosModificarFamiliar(int idFamiliar)
         {
+            
             InitializeComponent();
-            completarLabels(this, familiar, "lbl");
-            completarLabels(this, familiar, "txt");
-            completarLabels(this, familiar, "dtp");
+            familiarModificado.idFamiliar = idFamiliar;
             hayCambios = false;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Juanse: metodo guardar cambios
+            familiarModificado.ModificarFamiliarColaborador()
             MessageBox.Show("Familiar modificado con exito!");
             this.Close();
         }
