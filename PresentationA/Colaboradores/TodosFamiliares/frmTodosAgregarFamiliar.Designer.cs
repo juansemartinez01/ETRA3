@@ -56,6 +56,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbLegajo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.chkAportes = new System.Windows.Forms.CheckBox();
+            this.cbkTrabaja = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtApellido
@@ -72,10 +74,10 @@
             this.ckbDirecc.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckbDirecc.Checked = true;
             this.ckbDirecc.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbDirecc.Location = new System.Drawing.Point(43, 387);
+            this.ckbDirecc.Location = new System.Drawing.Point(43, 450);
             this.ckbDirecc.Name = "ckbDirecc";
             this.ckbDirecc.Size = new System.Drawing.Size(246, 25);
-            this.ckbDirecc.TabIndex = 8;
+            this.ckbDirecc.TabIndex = 10;
             this.ckbDirecc.Text = "Usar dirección Colaborador:";
             this.ckbDirecc.UseVisualStyleBackColor = true;
             this.ckbDirecc.CheckedChanged += new System.EventHandler(this.ckbDirecc_CheckedChanged);
@@ -83,7 +85,7 @@
             // txtProv
             // 
             this.txtProv.Enabled = false;
-            this.txtProv.Location = new System.Drawing.Point(208, 575);
+            this.txtProv.Location = new System.Drawing.Point(208, 638);
             this.txtProv.Name = "txtProv";
             this.txtProv.Size = new System.Drawing.Size(264, 27);
             this.txtProv.TabIndex = 127;
@@ -93,7 +95,7 @@
             // 
             this.lblProv.AutoSize = true;
             this.lblProv.Enabled = false;
-            this.lblProv.Location = new System.Drawing.Point(44, 578);
+            this.lblProv.Location = new System.Drawing.Point(44, 641);
             this.lblProv.Name = "lblProv";
             this.lblProv.Size = new System.Drawing.Size(85, 21);
             this.lblProv.TabIndex = 138;
@@ -102,7 +104,7 @@
             // txtLocalidad
             // 
             this.txtLocalidad.Enabled = false;
-            this.txtLocalidad.Location = new System.Drawing.Point(208, 532);
+            this.txtLocalidad.Location = new System.Drawing.Point(208, 595);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(264, 27);
             this.txtLocalidad.TabIndex = 126;
@@ -111,7 +113,7 @@
             // txtDepto
             // 
             this.txtDepto.Enabled = false;
-            this.txtDepto.Location = new System.Drawing.Point(345, 480);
+            this.txtDepto.Location = new System.Drawing.Point(345, 543);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(127, 27);
             this.txtDepto.TabIndex = 13;
@@ -121,7 +123,7 @@
             // 
             this.lblLocali.AutoSize = true;
             this.lblLocali.Enabled = false;
-            this.lblLocali.Location = new System.Drawing.Point(44, 535);
+            this.lblLocali.Location = new System.Drawing.Point(44, 598);
             this.lblLocali.Name = "lblLocali";
             this.lblLocali.Size = new System.Drawing.Size(91, 21);
             this.lblLocali.TabIndex = 137;
@@ -130,7 +132,7 @@
             // txtPiso
             // 
             this.txtPiso.Enabled = false;
-            this.txtPiso.Location = new System.Drawing.Point(208, 480);
+            this.txtPiso.Location = new System.Drawing.Point(208, 543);
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(127, 27);
             this.txtPiso.TabIndex = 13;
@@ -139,7 +141,7 @@
             // txtNroCalle
             // 
             this.txtNroCalle.Enabled = false;
-            this.txtNroCalle.Location = new System.Drawing.Point(345, 428);
+            this.txtNroCalle.Location = new System.Drawing.Point(345, 491);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.Size = new System.Drawing.Size(127, 27);
             this.txtNroCalle.TabIndex = 12;
@@ -148,7 +150,7 @@
             // lblPiso
             // 
             this.lblPiso.Enabled = false;
-            this.lblPiso.Location = new System.Drawing.Point(44, 473);
+            this.lblPiso.Location = new System.Drawing.Point(44, 536);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(158, 44);
             this.lblPiso.TabIndex = 136;
@@ -157,7 +159,7 @@
             // txtCalle
             // 
             this.txtCalle.Enabled = false;
-            this.txtCalle.Location = new System.Drawing.Point(208, 428);
+            this.txtCalle.Location = new System.Drawing.Point(208, 491);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(127, 27);
             this.txtCalle.TabIndex = 11;
@@ -167,7 +169,7 @@
             // 
             this.lblCalle.AutoSize = true;
             this.lblCalle.Enabled = false;
-            this.lblCalle.Location = new System.Drawing.Point(44, 431);
+            this.lblCalle.Location = new System.Drawing.Point(44, 494);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(130, 21);
             this.lblCalle.TabIndex = 135;
@@ -179,7 +181,7 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(45, 627);
+            this.lblError.Location = new System.Drawing.Point(45, 690);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(427, 45);
             this.lblError.TabIndex = 134;
@@ -199,10 +201,10 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 30;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(273, 688);
+            this.btnCancelar.Location = new System.Drawing.Point(273, 751);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 37);
-            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -220,10 +222,10 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 30;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(121, 688);
+            this.btnGuardar.Location = new System.Drawing.Point(121, 751);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(123, 37);
-            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -245,7 +247,7 @@
             this.txtDni.Location = new System.Drawing.Point(208, 337);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(264, 27);
-            this.txtDni.TabIndex = 8;
+            this.txtDni.TabIndex = 7;
             this.txtDni.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
             // txtNombre
@@ -343,11 +345,39 @@
             this.label7.TabIndex = 140;
             this.label7.Text = "Legajo Colaborador:";
             // 
+            // chkAportes
+            // 
+            this.chkAportes.AutoSize = true;
+            this.chkAportes.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAportes.Checked = true;
+            this.chkAportes.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAportes.Location = new System.Drawing.Point(211, 392);
+            this.chkAportes.Name = "chkAportes";
+            this.chkAportes.Size = new System.Drawing.Size(157, 25);
+            this.chkAportes.TabIndex = 9;
+            this.chkAportes.Text = "Realiza aportes?";
+            this.chkAportes.UseVisualStyleBackColor = true;
+            // 
+            // cbkTrabaja
+            // 
+            this.cbkTrabaja.AutoSize = true;
+            this.cbkTrabaja.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbkTrabaja.Checked = true;
+            this.cbkTrabaja.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbkTrabaja.Location = new System.Drawing.Point(48, 392);
+            this.cbkTrabaja.Name = "cbkTrabaja";
+            this.cbkTrabaja.Size = new System.Drawing.Size(98, 25);
+            this.cbkTrabaja.TabIndex = 8;
+            this.cbkTrabaja.Text = "Trabaja?";
+            this.cbkTrabaja.UseVisualStyleBackColor = true;
+            // 
             // frmTodosAgregarFamiliar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 749);
+            this.ClientSize = new System.Drawing.Size(514, 820);
+            this.Controls.Add(this.chkAportes);
+            this.Controls.Add(this.cbkTrabaja);
             this.Controls.Add(this.cmbLegajo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtApellido);
@@ -416,5 +446,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbLegajo;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkAportes;
+        private System.Windows.Forms.CheckBox cbkTrabaja;
     }
 }

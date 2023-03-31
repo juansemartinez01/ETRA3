@@ -54,6 +54,10 @@
             this.lblProv = new System.Windows.Forms.Label();
             this.ckbDirecc = new System.Windows.Forms.CheckBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtObraSocial = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbkTrabaja = new System.Windows.Forms.CheckBox();
+            this.chkAportes = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtDni
@@ -148,7 +152,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(185, 9);
+            this.label6.Location = new System.Drawing.Point(140, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(187, 28);
@@ -161,7 +165,7 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(27, 567);
+            this.lblError.Location = new System.Drawing.Point(27, 706);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(427, 45);
             this.lblError.TabIndex = 103;
@@ -181,10 +185,10 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 30;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(255, 628);
+            this.btnCancelar.Location = new System.Drawing.Point(255, 767);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 37);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -202,10 +206,10 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 30;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(103, 628);
+            this.btnGuardar.Location = new System.Drawing.Point(103, 767);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(123, 37);
-            this.btnGuardar.TabIndex = 8;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -214,7 +218,7 @@
             // txtCalle
             // 
             this.txtCalle.Enabled = false;
-            this.txtCalle.Location = new System.Drawing.Point(190, 368);
+            this.txtCalle.Location = new System.Drawing.Point(190, 478);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(127, 27);
             this.txtCalle.TabIndex = 10;
@@ -223,7 +227,7 @@
             // 
             this.lblCalle.AutoSize = true;
             this.lblCalle.Enabled = false;
-            this.lblCalle.Location = new System.Drawing.Point(26, 371);
+            this.lblCalle.Location = new System.Drawing.Point(26, 481);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(130, 21);
             this.lblCalle.TabIndex = 104;
@@ -232,7 +236,7 @@
             // txtNroCalle
             // 
             this.txtNroCalle.Enabled = false;
-            this.txtNroCalle.Location = new System.Drawing.Point(327, 368);
+            this.txtNroCalle.Location = new System.Drawing.Point(327, 478);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.Size = new System.Drawing.Size(127, 27);
             this.txtNroCalle.TabIndex = 11;
@@ -240,7 +244,7 @@
             // lblPiso
             // 
             this.lblPiso.Enabled = false;
-            this.lblPiso.Location = new System.Drawing.Point(26, 413);
+            this.lblPiso.Location = new System.Drawing.Point(26, 523);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(158, 44);
             this.lblPiso.TabIndex = 106;
@@ -249,7 +253,7 @@
             // txtPiso
             // 
             this.txtPiso.Enabled = false;
-            this.txtPiso.Location = new System.Drawing.Point(190, 420);
+            this.txtPiso.Location = new System.Drawing.Point(190, 530);
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(127, 27);
             this.txtPiso.TabIndex = 12;
@@ -257,7 +261,7 @@
             // txtDepto
             // 
             this.txtDepto.Enabled = false;
-            this.txtDepto.Location = new System.Drawing.Point(327, 420);
+            this.txtDepto.Location = new System.Drawing.Point(327, 530);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(127, 27);
             this.txtDepto.TabIndex = 13;
@@ -266,7 +270,7 @@
             // 
             this.lblLocali.AutoSize = true;
             this.lblLocali.Enabled = false;
-            this.lblLocali.Location = new System.Drawing.Point(26, 475);
+            this.lblLocali.Location = new System.Drawing.Point(26, 585);
             this.lblLocali.Name = "lblLocali";
             this.lblLocali.Size = new System.Drawing.Size(91, 21);
             this.lblLocali.TabIndex = 109;
@@ -275,7 +279,7 @@
             // txtLocalidad
             // 
             this.txtLocalidad.Enabled = false;
-            this.txtLocalidad.Location = new System.Drawing.Point(190, 472);
+            this.txtLocalidad.Location = new System.Drawing.Point(190, 582);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(264, 27);
             this.txtLocalidad.TabIndex = 14;
@@ -283,7 +287,7 @@
             // txtProv
             // 
             this.txtProv.Enabled = false;
-            this.txtProv.Location = new System.Drawing.Point(190, 515);
+            this.txtProv.Location = new System.Drawing.Point(190, 625);
             this.txtProv.Name = "txtProv";
             this.txtProv.Size = new System.Drawing.Size(264, 27);
             this.txtProv.TabIndex = 15;
@@ -292,7 +296,7 @@
             // 
             this.lblProv.AutoSize = true;
             this.lblProv.Enabled = false;
-            this.lblProv.Location = new System.Drawing.Point(26, 518);
+            this.lblProv.Location = new System.Drawing.Point(26, 628);
             this.lblProv.Name = "lblProv";
             this.lblProv.Size = new System.Drawing.Size(85, 21);
             this.lblProv.TabIndex = 112;
@@ -304,10 +308,10 @@
             this.ckbDirecc.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckbDirecc.Checked = true;
             this.ckbDirecc.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbDirecc.Location = new System.Drawing.Point(25, 327);
+            this.ckbDirecc.Location = new System.Drawing.Point(27, 427);
             this.ckbDirecc.Name = "ckbDirecc";
             this.ckbDirecc.Size = new System.Drawing.Size(246, 25);
-            this.ckbDirecc.TabIndex = 7;
+            this.ckbDirecc.TabIndex = 10;
             this.ckbDirecc.Text = "Usar dirección Colaborador:";
             this.ckbDirecc.UseVisualStyleBackColor = true;
             this.ckbDirecc.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -319,11 +323,57 @@
             this.txtApellido.Size = new System.Drawing.Size(127, 27);
             this.txtApellido.TabIndex = 2;
             // 
+            // txtObraSocial
+            // 
+            this.txtObraSocial.Location = new System.Drawing.Point(190, 330);
+            this.txtObraSocial.Name = "txtObraSocial";
+            this.txtObraSocial.Size = new System.Drawing.Size(264, 27);
+            this.txtObraSocial.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(26, 333);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 21);
+            this.label7.TabIndex = 114;
+            this.label7.Text = "Obra Social:";
+            // 
+            // cbkTrabaja
+            // 
+            this.cbkTrabaja.AutoSize = true;
+            this.cbkTrabaja.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbkTrabaja.Checked = true;
+            this.cbkTrabaja.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbkTrabaja.Location = new System.Drawing.Point(27, 376);
+            this.cbkTrabaja.Name = "cbkTrabaja";
+            this.cbkTrabaja.Size = new System.Drawing.Size(98, 25);
+            this.cbkTrabaja.TabIndex = 8;
+            this.cbkTrabaja.Text = "Trabaja?";
+            this.cbkTrabaja.UseVisualStyleBackColor = true;
+            // 
+            // chkAportes
+            // 
+            this.chkAportes.AutoSize = true;
+            this.chkAportes.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAportes.Checked = true;
+            this.chkAportes.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAportes.Location = new System.Drawing.Point(190, 376);
+            this.chkAportes.Name = "chkAportes";
+            this.chkAportes.Size = new System.Drawing.Size(157, 25);
+            this.chkAportes.TabIndex = 9;
+            this.chkAportes.Text = "Realiza aportes?";
+            this.chkAportes.UseVisualStyleBackColor = true;
+            // 
             // frmAgregarFam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 695);
+            this.ClientSize = new System.Drawing.Size(487, 823);
+            this.Controls.Add(this.chkAportes);
+            this.Controls.Add(this.cbkTrabaja);
+            this.Controls.Add(this.txtObraSocial);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.ckbDirecc);
             this.Controls.Add(this.txtProv);
@@ -357,6 +407,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Familiar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAgregarFam_FormClosing);
+            this.Load += new System.EventHandler(this.frmAgregarFam_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +441,9 @@
         private System.Windows.Forms.Label lblProv;
         private System.Windows.Forms.CheckBox ckbDirecc;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtObraSocial;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox cbkTrabaja;
+        private System.Windows.Forms.CheckBox chkAportes;
     }
 }

@@ -198,5 +198,9 @@ namespace PresentationA.Colaboradores.Consulta.Familiares
             lblPiso.Enabled = !ckbDirecc.Checked;
         }
 
+        private void frmAgregarFam_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

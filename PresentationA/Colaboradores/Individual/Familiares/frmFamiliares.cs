@@ -124,34 +124,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void dgvFamiliares_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indice = e.RowIndex;
 
-            //eventosModelo.FilaSeleccionadaHistorialEvento = indice;
-            if (indice == -1)
-            {
-                btnEliminar.Enabled = false;
-                btnModificar.Enabled = false;
-                return;
-            }
-            btnEliminar.Enabled = true;
-            DataGridViewRow filaSeleccionada = dgvFamiliares.Rows[indice];
-            ViewState();
-            DataTable familiar = new DataTable();
-            foreach (DataGridViewColumn column in dgvFamiliares.Columns)
-                familiar.Columns.Add(column.Name, column.CellType); //better to have cell type
-            for (int i = 0; i < dgvFamiliares.SelectedRows.Count; i++)
-            {
-                familiar.Rows.Add();
-                for (int j = 0; j < dgvFamiliares.Columns.Count; j++)
-                {
-                    familiar.Rows[i][j] = dgvFamiliares.SelectedRows[i].Cells[j].Value.ToString();
-                }
-                break;
-            }
-            completarLabels(this, familiar, "lbl");
-            completarLabels(this, familiar, "txt");
-            completarLabels(this, familiar, "dtp");
-            //Completar combobox!!!!!
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

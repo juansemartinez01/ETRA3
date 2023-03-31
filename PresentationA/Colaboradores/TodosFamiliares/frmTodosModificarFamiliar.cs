@@ -24,7 +24,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            familiarModificado.ModificarFamiliarColaborador()
+            familiarModificado.ModificarFamiliarColaborador();
             MessageBox.Show("Familiar modificado con exito!");
             this.Close();
         }
@@ -56,5 +56,6 @@ namespace PresentationA.Colaboradores.TodosFamiliares
                 }
             }
         }
+
     }
 }
