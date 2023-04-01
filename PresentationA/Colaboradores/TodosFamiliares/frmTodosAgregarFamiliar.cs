@@ -18,8 +18,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
         public frmTodosAgregarFamiliar()
         {
             InitializeComponent();
-            ckbDirecc.Checked = false;
-            ckbDirecc.Visible = false;
+            chkDirecc.Checked = false;
             LlenarCombo(cmbLegajo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
             LlenarCombo(cmbEscolariazacion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
             LlenarCombo(cmbParentezco, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoFamiliar"), "nombre", "idTipoFamiliar");
@@ -29,7 +28,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
             cbo.ValueMember = value;
             cbo.DisplayMember = display;
             cbo.DataSource = source;
-            cbo.SelectedIndex = -1;
+            cbo.SelectedIndex = 0;
         }
 
         private void msgError(string msg)
@@ -38,24 +37,11 @@ namespace PresentationA.Colaboradores.TodosFamiliares
             lblError.Visible = true;
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void cmb_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
-
-        
-
-        
-
-        
 
         private void txt_TextChanged(object sender, EventArgs e)
         {
@@ -71,35 +57,46 @@ namespace PresentationA.Colaboradores.TodosFamiliares
             int esEdificio = 0;
             int escolaridad = int.Parse(cmbEscolariazacion.SelectedValue.ToString());
             int parentezco = int.Parse(cmbParentezco.SelectedValue.ToString());
-
-
-            string obraSocial = "No especifica";
+            string obraSocial = txtObraSocial.Text;
+            if (obraSocial == "") { obraSocial = "No especifica"; }
             int esTrabajador = 0;
+            if (chkTrabaja.Checked) { esTrabajador = 1; }
             int esDependencia = 0;
-            float aportes = 0;
+            int aportes = 0;
+            if (chkAportes.Checked) { aportes = 1; }
 
 
+
+            if (cmbLegajo.SelectedValue.ToString() == null)
+            {
+                MessageBox.Show("Debe seleccionar un colaborador");
+                return;
+            }
             if (txtPiso.Text == "" & txtDepto.Text == "") { esEdificio = 1; }
 
             if (txtNombre.Text == "")
             {
-                MessageBox.Show("No puede dejar el nombre vacio");
+                MessageBox.Show("No puede dejar el nombre vacío");
                 return;
             }
             if (txtApellido.Text == "")
             {
-                MessageBox.Show("No puede dejar el apellido vacio");
+                MessageBox.Show("No puede dejar el apellido vacío");
                 return;
             }
-
+            if (cmbParentezco.SelectedValue.ToString() == null)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de parentezco");
+                return;
+            }
             if (txtDni.Text == "")
             {
-                MessageBox.Show("No puede dejar el DNI vacio");
+                MessageBox.Show("No puede dejar el DNI vacío");
                 return;
             }
             if (txtCalle.Text == "")
             {
-                MessageBox.Show("No puede dejar la calle vacia");
+                MessageBox.Show("No puede dejar la calle vacía");
                 return;
             }
 
@@ -107,7 +104,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 
             if (txtNroCalle.Text == "")
             {
-                MessageBox.Show("No puede dejar el numero de calle vacio");
+                MessageBox.Show("No puede dejar el numero de calle vacío");
                 return;
             }
 
@@ -130,14 +127,15 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 
             if (txtLocalidad.Text == "")
             {
-                MessageBox.Show("No puede dejar la localidad vacia");
+                MessageBox.Show("No puede dejar la localidad vacía");
                 return;
             }
             if (txtProv.Text == "")
             {
-                MessageBox.Show("No puede dejar la provincia vacia");
+                MessageBox.Show("No puede dejar la provincia vacía");
                 return;
             }
+
 
             string resultado = familiar.InsertarFamiliarColaborador(txtCalle.Text, Int32.Parse(txtNroCalle.Text), esEdificio, piso, depto, txtLocalidad.Text, txtProv.Text, parentezco, legajoColab, txtNombre.Text, txtApellido.Text, dtpFechaNac.Value.Date, Int32.Parse(txtDni.Text), escolaridad, obraSocial, esTrabajador, esDependencia, aportes);
             MessageBox.Show(resultado);
@@ -147,17 +145,17 @@ namespace PresentationA.Colaboradores.TodosFamiliares
 
         private void ckbDirecc_CheckedChanged(object sender, EventArgs e)
         {
-            txtCalle.Enabled = !ckbDirecc.Checked;
-            txtNroCalle.Enabled = !ckbDirecc.Checked;
-            txtDepto.Enabled = !ckbDirecc.Checked;
-            txtPiso.Enabled = !ckbDirecc.Checked;
-            txtLocalidad.Enabled = !ckbDirecc.Checked;
-            txtProv.Enabled = !ckbDirecc.Checked;
+            txtCalle.Enabled = !chkDirecc.Checked;
+            txtNroCalle.Enabled = !chkDirecc.Checked;
+            txtDepto.Enabled = !chkDirecc.Checked;
+            txtPiso.Enabled = !chkDirecc.Checked;
+            txtLocalidad.Enabled = !chkDirecc.Checked;
+            txtProv.Enabled = !chkDirecc.Checked;
 
-            lblCalle.Enabled = !ckbDirecc.Checked;
-            lblLocali.Enabled = !ckbDirecc.Checked;
-            lblProv.Enabled = !ckbDirecc.Checked;
-            lblPiso.Enabled = !ckbDirecc.Checked;
+            lblCalle.Enabled = !chkDirecc.Checked;
+            lblLocali.Enabled = !chkDirecc.Checked;
+            lblProv.Enabled = !chkDirecc.Checked;
+            lblPiso.Enabled = !chkDirecc.Checked;
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
@@ -168,6 +166,12 @@ namespace PresentationA.Colaboradores.TodosFamiliares
         private void frmTodosAgregarFamiliar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbLegajo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //cargar direccion colab
+            hayCambios = true;
         }
     }
 }

@@ -52,11 +52,11 @@
             this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.txtProv = new System.Windows.Forms.TextBox();
             this.lblProv = new System.Windows.Forms.Label();
-            this.ckbDirecc = new System.Windows.Forms.CheckBox();
+            this.chkDirecc = new System.Windows.Forms.CheckBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtObraSocial = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbkTrabaja = new System.Windows.Forms.CheckBox();
+            this.chkTrabaja = new System.Windows.Forms.CheckBox();
             this.chkAportes = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -302,19 +302,19 @@
             this.lblProv.TabIndex = 112;
             this.lblProv.Text = "Provincia:";
             // 
-            // ckbDirecc
+            // chkDirecc
             // 
-            this.ckbDirecc.AutoSize = true;
-            this.ckbDirecc.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbDirecc.Checked = true;
-            this.ckbDirecc.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbDirecc.Location = new System.Drawing.Point(27, 427);
-            this.ckbDirecc.Name = "ckbDirecc";
-            this.ckbDirecc.Size = new System.Drawing.Size(246, 25);
-            this.ckbDirecc.TabIndex = 10;
-            this.ckbDirecc.Text = "Usar dirección Colaborador:";
-            this.ckbDirecc.UseVisualStyleBackColor = true;
-            this.ckbDirecc.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.chkDirecc.AutoSize = true;
+            this.chkDirecc.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkDirecc.Checked = true;
+            this.chkDirecc.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkDirecc.Location = new System.Drawing.Point(27, 427);
+            this.chkDirecc.Name = "chkDirecc";
+            this.chkDirecc.Size = new System.Drawing.Size(246, 25);
+            this.chkDirecc.TabIndex = 10;
+            this.chkDirecc.Text = "Usar dirección Colaborador:";
+            this.chkDirecc.UseVisualStyleBackColor = true;
+            this.chkDirecc.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtApellido
             // 
@@ -339,18 +339,18 @@
             this.label7.TabIndex = 114;
             this.label7.Text = "Obra Social:";
             // 
-            // cbkTrabaja
+            // chkTrabaja
             // 
-            this.cbkTrabaja.AutoSize = true;
-            this.cbkTrabaja.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbkTrabaja.Checked = true;
-            this.cbkTrabaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbkTrabaja.Location = new System.Drawing.Point(27, 376);
-            this.cbkTrabaja.Name = "cbkTrabaja";
-            this.cbkTrabaja.Size = new System.Drawing.Size(98, 25);
-            this.cbkTrabaja.TabIndex = 8;
-            this.cbkTrabaja.Text = "Trabaja?";
-            this.cbkTrabaja.UseVisualStyleBackColor = true;
+            this.chkTrabaja.AutoSize = true;
+            this.chkTrabaja.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkTrabaja.Checked = true;
+            this.chkTrabaja.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkTrabaja.Location = new System.Drawing.Point(27, 376);
+            this.chkTrabaja.Name = "chkTrabaja";
+            this.chkTrabaja.Size = new System.Drawing.Size(98, 25);
+            this.chkTrabaja.TabIndex = 8;
+            this.chkTrabaja.Text = "Trabaja?";
+            this.chkTrabaja.UseVisualStyleBackColor = true;
             // 
             // chkAportes
             // 
@@ -371,11 +371,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 823);
             this.Controls.Add(this.chkAportes);
-            this.Controls.Add(this.cbkTrabaja);
+            this.Controls.Add(this.chkTrabaja);
             this.Controls.Add(this.txtObraSocial);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.ckbDirecc);
+            this.Controls.Add(this.chkDirecc);
             this.Controls.Add(this.txtProv);
             this.Controls.Add(this.lblProv);
             this.Controls.Add(this.txtLocalidad);
@@ -439,11 +439,11 @@
         private System.Windows.Forms.TextBox txtLocalidad;
         private System.Windows.Forms.TextBox txtProv;
         private System.Windows.Forms.Label lblProv;
-        private System.Windows.Forms.CheckBox ckbDirecc;
+        private System.Windows.Forms.CheckBox chkDirecc;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtObraSocial;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox cbkTrabaja;
+        private System.Windows.Forms.CheckBox chkTrabaja;
         private System.Windows.Forms.CheckBox chkAportes;
     }
 }

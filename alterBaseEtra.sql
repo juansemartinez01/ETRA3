@@ -19,10 +19,15 @@ ADD [dni] [int] NOT NULL;
 ALTER TABLE [dbo].[FamiliarColaborador] 
 ADD [idDireccion] [int] NOT NULL;
 ALTER TABLE [dbo].[FamiliarColaborador] 
-ADD [escolaridad] [int] NOT NULL
-
+ADD [escolaridad] [int] NULL
+ALTER TABLE [dbo].[FamiliarColaborador] 
+ADD [obraSocial] [varchar](50) NULL
+ALTER TABLE [dbo].[FamiliarColaborador] 
+ADD [trabaja] [int] NULL
+ALTER TABLE [dbo].[FamiliarColaborador] 
+ADD [aportes] [int] NULL
 /*Inicializador TipoFamiliar*/
-
+DELETE FROM TipoFamiliar where 1=1
 INSERT INTO TipoFamiliar VALUES ('Padre/Madre')
 INSERT INTO TipoFamiliar VALUES ('Hijo/a')
 INSERT INTO TipoFamiliar VALUES ('Pareja')

@@ -48,7 +48,7 @@ namespace PresentationA.Colaboradores.Consulta
                 for (int i = 0; i < familiares.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"],familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
+                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"],familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["obraSocial"], familiares.Rows[i]["trabaja"], familiares.Rows[i]["aportes"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
                 }
 
 
@@ -80,12 +80,40 @@ namespace PresentationA.Colaboradores.Consulta
         private void ViewState()
         {
             txtnombre.Enabled= false;
+            txtapellido.Enabled= false;
             txtdni.Enabled = false;
             cmbParentezco.Enabled = false;
             dtpfechaNacimiento.Enabled = false;
             cmbescolarizacion.Enabled = false;
+            txtobraSocial.Enabled = false;
+            chktrabaja.Enabled = false;
+            chkaportes.Enabled = false;
+            txtnumerocalle.Enabled = false;
+            txtnombrecalle.Enabled = false;
+            txtlocalidad.Enabled = false;
+            txtprovincia.Enabled = false;
+            txtpiso.Enabled = false;
+            txtdepartamento.Enabled = false;
 
-            btnModificar.Visible = true;
+
+            txtnombre.Text = "";
+            txtapellido.Text = "";
+            txtdni.Text = "";
+            cmbParentezco.Text = null;
+            cmbescolarizacion.Text = null;
+            txtobraSocial.Text = "";
+            chktrabaja.Checked = false;
+            chkaportes.Checked = false;
+            txtnumerocalle.Text = "";
+            txtnombrecalle.Text = "";
+            txtlocalidad.Text = "";
+            txtprovincia.Text = "";
+            txtpiso.Text = "";
+            txtdepartamento.Text = "";
+
+            btnAgregar.Visible = true;
+            btnEliminar.Visible = true;
+            btnModificar.Enabled = true;
             btnModificar.Text = "Modificar";
             btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
 
@@ -96,25 +124,28 @@ namespace PresentationA.Colaboradores.Consulta
             if(btnModificar.Text == "Guardar")
             {
                 //JUANSE AGREGAR ACA METODO DE Guardar cambios
-
-                txtnombre.Enabled = false;
-                txtdni.Enabled = false;
-                cmbParentezco.Enabled = false;
-                dtpfechaNacimiento.Enabled = false;
-                cmbescolarizacion.Enabled = false;
-
-
-                btnModificar.Text = "Modificar";
-                btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+                ViewState();
                 return;
 
             }
+            btnAgregar.Visible = false;
+            btnEliminar.Visible = false;
+
             txtnombre.Enabled = true;
+            txtapellido.Enabled = true;
             txtdni.Enabled = true;
             cmbParentezco.Enabled = true;
             dtpfechaNacimiento.Enabled = true;
             cmbescolarizacion.Enabled = true;
-            btnEliminar.Enabled = false;
+            txtobraSocial.Enabled = true;
+            chktrabaja.Enabled = true;
+            chkaportes.Enabled = true;
+            txtnumerocalle.Enabled = true;
+            txtnombrecalle.Enabled = true;
+            txtlocalidad.Enabled = true;
+            txtprovincia.Enabled = true;
+            txtpiso.Enabled = true;
+            txtdepartamento.Enabled = true;
 
 
             btnModificar.Visible = true;
@@ -122,10 +153,6 @@ namespace PresentationA.Colaboradores.Consulta
             btnModificar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
         }
 
-        private void dgvFamiliares_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -143,5 +170,29 @@ namespace PresentationA.Colaboradores.Consulta
 
         }
 
+        private void dgvFamiliares_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            DataTable familiar = new DataTable();
+            foreach (DataGridViewColumn column in dgvFamiliares.Columns)
+                familiar.Columns.Add(column.Name); //better to have cell type
+            for (int i = 0; i < 1; i++)
+            {
+                familiar.Rows.Add();
+                for (int j = 0; j < dgvFamiliares.Columns.Count; j++)
+                {
+                    familiar.Rows[i][j] = dgvFamiliares.SelectedRows[i].Cells[j].Value;
+                }
+            }
+
+            ViewState();
+            completarLabels(this, familiar, "dtp");
+            completarLabels(this, familiar, "txt");
+            completarLabels(this, familiar, "cmb");
+            if (familiar.Rows[0][8].ToString() == "No") { chktrabaja.Checked = false; }
+            else { chktrabaja.Checked = true; }
+            if (familiar.Rows[0][9].ToString() == "No") { chkaportes.Checked = false; }
+            else { chkaportes.Checked = true; }
+        }
     }
 }

@@ -60,6 +60,7 @@ namespace PresentationA.Colaboradores
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtLegajoBusqueda.Text = "";
+            this.btnAplicar_Click(sender,e);
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -86,18 +87,6 @@ namespace PresentationA.Colaboradores
         private void dgvFamiliares_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            int indice = e.RowIndex;
-            familiar.indiceFamiliar = indice;
-            //eventosModelo.FilaSeleccionadaHistorialEvento = indice;
-            if (indice == -1)
-            {
-                btnEliminar.Enabled = false;
-                btnModificar.Enabled = false;
-                return;
-            }
-            btnEliminar.Enabled = true;
-            btnModificar.Enabled = true;
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -119,21 +108,31 @@ namespace PresentationA.Colaboradores
         }
         public void CargarTabla(int legajo)
         {
-            dgvFamiliares.Rows.Clear();
-            DataTable familiares = new DataTable();
-            familiares = familiar.obtenerFamiliares(legajo);
-            for (int i = 0; i < familiares.Rows.Count; i++)
+
+            try
             {
-                //crear metodo completar labels
-                dgvFamiliares.Rows.Add(familiares.Rows[i]["Numero"],familiares.Rows[i]["Nombre"], familiares.Rows[i]["Tipo Familiar"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["Escolarización"], familiares.Rows[i]["DNI"]);
+                dgvFamiliares.Rows.Clear();
+                DataTable familiares = new DataTable();
+                familiares = familiar.obtenerFamiliares(legajo);
+                for (int i = 0; i < familiares.Rows.Count; i++)
+                {
+                    //crear metodo completar labels
+                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["legajo"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"], familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["obraSocial"], familiares.Rows[i]["trabaja"], familiares.Rows[i]["aportes"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             dgvFamiliares.Sort(dgvFamiliares.Columns[0], ListSortDirection.Ascending);
         }
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
-            
-            frmTodosModificarFamiliar modificar = new frmTodosModificarFamiliar();
+            MessageBox.Show(familiar.indiceFamiliar.ToString());
+            frmTodosModificarFamiliar modificar = new frmTodosModificarFamiliar(familiar.indiceFamiliar);
             modificar.ShowDialog();
         }
     }

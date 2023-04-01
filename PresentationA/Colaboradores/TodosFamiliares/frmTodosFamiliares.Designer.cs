@@ -35,28 +35,31 @@
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
-            this.dgvFamiliares = new PresentationA.Controls.DataGridPadre();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parentezco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.escolarizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trabaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aportes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calleNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new PresentationA.Controls.BotonPadre();
             this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.txtLegajoBusqueda = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).BeginInit();
+            this.dgvFamiliares = new PresentationA.Controls.DataGridPadre();
+            this.idFamiliar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parentezco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.escolarizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aportes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.piso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -138,150 +141,6 @@
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // dgvFamiliares
-            // 
-            this.dgvFamiliares.AllowUserToAddRows = false;
-            this.dgvFamiliares.AllowUserToDeleteRows = false;
-            this.dgvFamiliares.AllowUserToOrderColumns = true;
-            this.dgvFamiliares.AllowUserToResizeRows = false;
-            this.dgvFamiliares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvFamiliares.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvFamiliares.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFamiliares.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvFamiliares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFamiliares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFamiliares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFamiliares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nombre,
-            this.parentezco,
-            this.fechaNacimiento,
-            this.dni,
-            this.escolarizacion,
-            this.obraSocial,
-            this.trabaja,
-            this.aportes,
-            this.calle,
-            this.calleNro,
-            this.barrio,
-            this.provincia,
-            this.Numero});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFamiliares.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFamiliares.EnableHeadersVisualStyles = false;
-            this.dgvFamiliares.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dgvFamiliares.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvFamiliares.Location = new System.Drawing.Point(33, 125);
-            this.dgvFamiliares.MinimumSize = new System.Drawing.Size(997, 350);
-            this.dgvFamiliares.Name = "dgvFamiliares";
-            this.dgvFamiliares.ReadOnly = true;
-            this.dgvFamiliares.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFamiliares.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvFamiliares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFamiliares.Size = new System.Drawing.Size(997, 350);
-            this.dgvFamiliares.TabIndex = 76;
-            this.dgvFamiliares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick);
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // parentezco
-            // 
-            this.parentezco.HeaderText = "Parentezco";
-            this.parentezco.Name = "parentezco";
-            this.parentezco.ReadOnly = true;
-            // 
-            // fechaNacimiento
-            // 
-            this.fechaNacimiento.HeaderText = "Fecha de Nacimiento";
-            this.fechaNacimiento.Name = "fechaNacimiento";
-            this.fechaNacimiento.ReadOnly = true;
-            // 
-            // dni
-            // 
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // escolarizacion
-            // 
-            this.escolarizacion.HeaderText = "Escolarización";
-            this.escolarizacion.Name = "escolarizacion";
-            this.escolarizacion.ReadOnly = true;
-            // 
-            // obraSocial
-            // 
-            this.obraSocial.HeaderText = "Obra Social";
-            this.obraSocial.Name = "obraSocial";
-            this.obraSocial.ReadOnly = true;
-            // 
-            // trabaja
-            // 
-            this.trabaja.HeaderText = "Trabaja";
-            this.trabaja.Name = "trabaja";
-            this.trabaja.ReadOnly = true;
-            // 
-            // aportes
-            // 
-            this.aportes.HeaderText = "Aportes";
-            this.aportes.Name = "aportes";
-            this.aportes.ReadOnly = true;
-            // 
-            // calle
-            // 
-            this.calle.HeaderText = "Calle";
-            this.calle.Name = "calle";
-            this.calle.ReadOnly = true;
-            // 
-            // calleNro
-            // 
-            this.calleNro.HeaderText = "Altura";
-            this.calleNro.Name = "calleNro";
-            this.calleNro.ReadOnly = true;
-            // 
-            // barrio
-            // 
-            this.barrio.HeaderText = "Barrio";
-            this.barrio.Name = "barrio";
-            this.barrio.ReadOnly = true;
-            // 
-            // provincia
-            // 
-            this.provincia.HeaderText = "Provincia";
-            this.provincia.Name = "provincia";
-            this.provincia.ReadOnly = true;
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Visible = false;
             // 
             // groupBox1
             // 
@@ -378,13 +237,179 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Legajo Colaborador";
             // 
+            // dgvFamiliares
+            // 
+            this.dgvFamiliares.AllowUserToAddRows = false;
+            this.dgvFamiliares.AllowUserToDeleteRows = false;
+            this.dgvFamiliares.AllowUserToOrderColumns = true;
+            this.dgvFamiliares.AllowUserToResizeRows = false;
+            this.dgvFamiliares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvFamiliares.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFamiliares.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFamiliares.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvFamiliares.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFamiliares.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvFamiliares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFamiliares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idFamiliar,
+            this.nombre,
+            this.apellido,
+            this.parentezco,
+            this.escolarizacion,
+            this.fechaNacimiento,
+            this.dni,
+            this.obraSocial,
+            this.trabaja,
+            this.aportes,
+            this.nombreCalle,
+            this.numeroCalle,
+            this.piso,
+            this.departamento,
+            this.localidad,
+            this.provincia});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFamiliares.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvFamiliares.EnableHeadersVisualStyles = false;
+            this.dgvFamiliares.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dgvFamiliares.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            this.dgvFamiliares.Location = new System.Drawing.Point(33, 136);
+            this.dgvFamiliares.MinimumSize = new System.Drawing.Size(858, 187);
+            this.dgvFamiliares.Name = "dgvFamiliares";
+            this.dgvFamiliares.ReadOnly = true;
+            this.dgvFamiliares.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFamiliares.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvFamiliares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFamiliares.Size = new System.Drawing.Size(997, 341);
+            this.dgvFamiliares.TabIndex = 129;
+            // 
+            // idFamiliar
+            // 
+            this.idFamiliar.HeaderText = "idFamiliar";
+            this.idFamiliar.Name = "idFamiliar";
+            this.idFamiliar.ReadOnly = true;
+            this.idFamiliar.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // parentezco
+            // 
+            this.parentezco.HeaderText = "Parentezco";
+            this.parentezco.Name = "parentezco";
+            this.parentezco.ReadOnly = true;
+            // 
+            // escolarizacion
+            // 
+            this.escolarizacion.HeaderText = "Escolarización";
+            this.escolarizacion.Name = "escolarizacion";
+            this.escolarizacion.ReadOnly = true;
+            // 
+            // fechaNacimiento
+            // 
+            this.fechaNacimiento.HeaderText = "Fecha de Nacimiento";
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            this.fechaNacimiento.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // obraSocial
+            // 
+            this.obraSocial.HeaderText = "Obra Social";
+            this.obraSocial.Name = "obraSocial";
+            this.obraSocial.ReadOnly = true;
+            // 
+            // trabaja
+            // 
+            this.trabaja.HeaderText = "Trabaja";
+            this.trabaja.Name = "trabaja";
+            this.trabaja.ReadOnly = true;
+            // 
+            // aportes
+            // 
+            this.aportes.HeaderText = "Aportes";
+            this.aportes.Name = "aportes";
+            this.aportes.ReadOnly = true;
+            // 
+            // nombreCalle
+            // 
+            this.nombreCalle.HeaderText = "Calle";
+            this.nombreCalle.Name = "nombreCalle";
+            this.nombreCalle.ReadOnly = true;
+            // 
+            // numeroCalle
+            // 
+            this.numeroCalle.HeaderText = "Altura";
+            this.numeroCalle.Name = "numeroCalle";
+            this.numeroCalle.ReadOnly = true;
+            // 
+            // piso
+            // 
+            this.piso.HeaderText = "piso";
+            this.piso.Name = "piso";
+            this.piso.ReadOnly = true;
+            this.piso.Visible = false;
+            // 
+            // departamento
+            // 
+            this.departamento.HeaderText = "departamento";
+            this.departamento.Name = "departamento";
+            this.departamento.ReadOnly = true;
+            this.departamento.Visible = false;
+            // 
+            // localidad
+            // 
+            this.localidad.HeaderText = "Localidad";
+            this.localidad.Name = "localidad";
+            this.localidad.ReadOnly = true;
+            // 
+            // provincia
+            // 
+            this.provincia.HeaderText = "Provincia";
+            this.provincia.Name = "provincia";
+            this.provincia.ReadOnly = true;
+            // 
             // frmTodosFamiliares
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 567);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvFamiliares);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -392,9 +417,9 @@
             this.MinimumSize = new System.Drawing.Size(0, 567);
             this.Name = "frmTodosFamiliares";
             this.Text = "frmFamiliares";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,25 +431,28 @@
         private Controls.BotonPadre btnEliminar;
         private Controls.BotonPadre btnModificar;
         private Controls.BotonPadre btnAgregar;
-        private Controls.DataGridPadre dgvFamiliares;
         private System.Windows.Forms.GroupBox groupBox1;
         private Controls.BotonPadre btnLimpiar;
         private Controls.BotonPadre btnExportar;
         private Controls.BotonPadre btnAplicar;
         private System.Windows.Forms.TextBox txtLegajoBusqueda;
         private System.Windows.Forms.Label label10;
+        private Controls.DataGridPadre dgvFamiliares;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFamiliar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn parentezco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn escolarizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn escolarizacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn obraSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn trabaja;
         private System.Windows.Forms.DataGridViewTextBoxColumn aportes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calleNro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn piso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
     }
 }
