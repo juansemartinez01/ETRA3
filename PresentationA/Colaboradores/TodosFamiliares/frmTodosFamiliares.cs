@@ -20,8 +20,7 @@ namespace PresentationA.Colaboradores
         {
             InitializeComponent();
             CargarTabla(0);
-            btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
+            
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -84,10 +83,7 @@ namespace PresentationA.Colaboradores
             excel.Visible = true;
         }
 
-        private void dgvFamiliares_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -98,11 +94,11 @@ namespace PresentationA.Colaboradores
             }
             if (familiar.indiceFamiliar == -1)
             {
-                MessageBox.Show("Debe seleccionar un archivo.");
+                MessageBox.Show("Debe seleccionar un familiar.");
                 return;
             }
             DataGridViewRow filaSeleccionada = dgvFamiliares.Rows[familiar.indiceFamiliar];
-            int idFamiliar = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+            int idFamiliar = int.Parse(filaSeleccionada.Cells["idFamiliar"].Value.ToString());
             familiar.EliminarFamiliarColaborador(idFamiliar);
             CargarTabla(0);
         }
@@ -117,7 +113,7 @@ namespace PresentationA.Colaboradores
                 for (int i = 0; i < familiares.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["legajo"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"], familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["obraSocial"], familiares.Rows[i]["trabaja"], familiares.Rows[i]["aportes"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
+                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["idDireccion"], familiares.Rows[i]["legajo"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"], familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["obraSocial"], familiares.Rows[i]["trabaja"], familiares.Rows[i]["aportes"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
                 }
 
 
@@ -132,8 +128,29 @@ namespace PresentationA.Colaboradores
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show(familiar.indiceFamiliar.ToString());
-            frmTodosModificarFamiliar modificar = new frmTodosModificarFamiliar(familiar.indiceFamiliar);
+            frmTodosModificarFamiliar modificar = new frmTodosModificarFamiliar(familiar);
             modificar.ShowDialog();
+        }
+
+        private void dgvFamiliares_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = e.RowIndex;
+            familiar.indiceFamiliar = indice;
+            DataGridViewRow filaSeleccionada = dgvFamiliares.Rows[familiar.indiceFamiliar];
+            int idFamiliar = int.Parse(filaSeleccionada.Cells["idFamiliar"].Value.ToString());
+            int idDireccionFamiliar = int.Parse(filaSeleccionada.Cells["idDireccion"].Value.ToString());
+            familiar.idFamiliar = idFamiliar;
+            familiar.idDireccion = idDireccionFamiliar;
+            if (familiar.indiceFamiliar != -1)
+            {
+                btnEliminar.Enabled = true;
+                btnModificar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
+                btnModificar.Enabled = false;
+            }
         }
     }
 }

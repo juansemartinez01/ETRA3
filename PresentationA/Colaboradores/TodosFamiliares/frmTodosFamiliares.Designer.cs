@@ -43,6 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgvFamiliares = new PresentationA.Controls.DataGridPadre();
             this.idFamiliar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parentezco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -261,6 +262,7 @@
             this.dgvFamiliares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFamiliares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFamiliar,
+            this.idDireccion,
             this.nombre,
             this.apellido,
             this.parentezco,
@@ -303,6 +305,7 @@
             this.dgvFamiliares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFamiliares.Size = new System.Drawing.Size(997, 341);
             this.dgvFamiliares.TabIndex = 129;
+            this.dgvFamiliares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick_1);
             // 
             // idFamiliar
             // 
@@ -310,6 +313,13 @@
             this.idFamiliar.Name = "idFamiliar";
             this.idFamiliar.ReadOnly = true;
             this.idFamiliar.Visible = false;
+            // 
+            // idDireccion
+            // 
+            this.idDireccion.HeaderText = "idDireccion";
+            this.idDireccion.Name = "idDireccion";
+            this.idDireccion.ReadOnly = true;
+            this.idDireccion.Visible = false;
             // 
             // nombre
             // 
@@ -439,6 +449,7 @@
         private System.Windows.Forms.Label label10;
         private Controls.DataGridPadre dgvFamiliares;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFamiliar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn parentezco;

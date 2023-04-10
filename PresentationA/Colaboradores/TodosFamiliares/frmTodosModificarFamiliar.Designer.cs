@@ -31,20 +31,22 @@
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
             this.btnGuardar = new PresentationA.Controls.BotonPadre();
             this.lblError = new System.Windows.Forms.Label();
-            this.txtDni = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbEscolariazacion = new System.Windows.Forms.ComboBox();
             this.cmbParentezco = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbLegajo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtObraSocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.chkAportes = new System.Windows.Forms.CheckBox();
-            this.cbkTrabaja = new System.Windows.Forms.CheckBox();
-            this.ckbDirecc = new System.Windows.Forms.CheckBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtProv = new System.Windows.Forms.TextBox();
             this.lblProv = new System.Windows.Forms.Label();
             this.txtLocalidad = new System.Windows.Forms.TextBox();
@@ -107,98 +109,12 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(31, 672);
+            this.lblError.Location = new System.Drawing.Point(32, 692);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(397, 60);
             this.lblError.TabIndex = 114;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
-            // 
-            // txtDni
-            // 
-            this.txtDni.Location = new System.Drawing.Point(194, 313);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(260, 27);
-            this.txtDni.TabIndex = 113;
-            this.txtDni.TextChanged += new System.EventHandler(this.txt_TextChanged);
-            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textDni_KeyPress);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(194, 61);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(260, 27);
-            this.txtNombre.TabIndex = 112;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txt_TextChanged);
-            // 
-            // dtpFechaNac
-            // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(194, 173);
-            this.dtpFechaNac.Name = "dtpFechaNac";
-            this.dtpFechaNac.Size = new System.Drawing.Size(260, 27);
-            this.dtpFechaNac.TabIndex = 111;
-            this.dtpFechaNac.ValueChanged += new System.EventHandler(this.txt_TextChanged);
-            // 
-            // cmbEscolariazacion
-            // 
-            this.cmbEscolariazacion.FormattingEnabled = true;
-            this.cmbEscolariazacion.Location = new System.Drawing.Point(194, 246);
-            this.cmbEscolariazacion.Name = "cmbEscolariazacion";
-            this.cmbEscolariazacion.Size = new System.Drawing.Size(260, 29);
-            this.cmbEscolariazacion.TabIndex = 110;
-            this.cmbEscolariazacion.SelectedIndexChanged += new System.EventHandler(this.txt_TextChanged);
-            // 
-            // cmbParentezco
-            // 
-            this.cmbParentezco.FormattingEnabled = true;
-            this.cmbParentezco.Location = new System.Drawing.Point(194, 121);
-            this.cmbParentezco.Name = "cmbParentezco";
-            this.cmbParentezco.Size = new System.Drawing.Size(260, 29);
-            this.cmbParentezco.TabIndex = 109;
-            this.cmbParentezco.SelectedIndexChanged += new System.EventHandler(this.txt_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 316);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 21);
-            this.label5.TabIndex = 108;
-            this.label5.Text = "DNI:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 124);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 21);
-            this.label4.TabIndex = 107;
-            this.label4.Text = "Parentezco:";
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(30, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 58);
-            this.label3.TabIndex = 106;
-            this.label3.Text = "Fecha de Nacimiento:";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(30, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 50);
-            this.label2.TabIndex = 105;
-            this.label2.Text = "Nivel de Escolarización:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 21);
-            this.label1.TabIndex = 104;
-            this.label1.Text = "Nombre:";
             // 
             // label6
             // 
@@ -211,140 +127,221 @@
             this.label6.TabIndex = 115;
             this.label6.Text = "Modificar Familiar";
             // 
-            // chkAportes
+            // cmbEscolariazacion
             // 
-            this.chkAportes.AutoSize = true;
-            this.chkAportes.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkAportes.Checked = true;
-            this.chkAportes.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAportes.Location = new System.Drawing.Point(194, 363);
-            this.chkAportes.Name = "chkAportes";
-            this.chkAportes.Size = new System.Drawing.Size(157, 25);
-            this.chkAportes.TabIndex = 140;
-            this.chkAportes.Text = "Realiza aportes?";
-            this.chkAportes.UseVisualStyleBackColor = true;
+            this.cmbEscolariazacion.FormattingEnabled = true;
+            this.cmbEscolariazacion.Location = new System.Drawing.Point(179, 284);
+            this.cmbEscolariazacion.Name = "cmbEscolariazacion";
+            this.cmbEscolariazacion.Size = new System.Drawing.Size(264, 29);
+            this.cmbEscolariazacion.TabIndex = 164;
             // 
-            // cbkTrabaja
+            // cmbParentezco
             // 
-            this.cbkTrabaja.AutoSize = true;
-            this.cbkTrabaja.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbkTrabaja.Checked = true;
-            this.cbkTrabaja.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbkTrabaja.Location = new System.Drawing.Point(26, 363);
-            this.cbkTrabaja.Name = "cbkTrabaja";
-            this.cbkTrabaja.Size = new System.Drawing.Size(98, 25);
-            this.cbkTrabaja.TabIndex = 139;
-            this.cbkTrabaja.Text = "Trabaja?";
-            this.cbkTrabaja.UseVisualStyleBackColor = true;
+            this.cmbParentezco.FormattingEnabled = true;
+            this.cmbParentezco.Location = new System.Drawing.Point(179, 162);
+            this.cmbParentezco.Name = "cmbParentezco";
+            this.cmbParentezco.Size = new System.Drawing.Size(264, 29);
+            this.cmbParentezco.TabIndex = 163;
             // 
-            // ckbDirecc
+            // label8
             // 
-            this.ckbDirecc.AutoSize = true;
-            this.ckbDirecc.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbDirecc.Checked = true;
-            this.ckbDirecc.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbDirecc.Location = new System.Drawing.Point(26, 421);
-            this.ckbDirecc.Name = "ckbDirecc";
-            this.ckbDirecc.Size = new System.Drawing.Size(246, 25);
-            this.ckbDirecc.TabIndex = 141;
-            this.ckbDirecc.Text = "Usar dirección Colaborador:";
-            this.ckbDirecc.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(103, 21);
+            this.label8.TabIndex = 162;
+            this.label8.Text = "Parentezco:";
+            // 
+            // dtpFechaNac
+            // 
+            this.dtpFechaNac.Location = new System.Drawing.Point(179, 219);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(264, 27);
+            this.dtpFechaNac.TabIndex = 159;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(15, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 58);
+            this.label3.TabIndex = 161;
+            this.label3.Text = "Fecha de Nacimiento:";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(15, 287);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 50);
+            this.label4.TabIndex = 160;
+            this.label4.Text = "Nivel de Escolarización:";
+            // 
+            // cmbLegajo
+            // 
+            this.cmbLegajo.FormattingEnabled = true;
+            this.cmbLegajo.Location = new System.Drawing.Point(179, 59);
+            this.cmbLegajo.Name = "cmbLegajo";
+            this.cmbLegajo.Size = new System.Drawing.Size(264, 29);
+            this.cmbLegajo.TabIndex = 153;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(15, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 50);
+            this.label7.TabIndex = 158;
+            this.label7.Text = "Legajo Colaborador:";
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(316, 119);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(127, 27);
+            this.txtApellido.TabIndex = 155;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(179, 119);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(127, 27);
+            this.txtNombre.TabIndex = 154;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 21);
+            this.label2.TabIndex = 156;
+            this.label2.Text = "Nombre y Apellido:";
+            // 
+            // txtObraSocial
+            // 
+            this.txtObraSocial.Location = new System.Drawing.Point(177, 390);
+            this.txtObraSocial.Name = "txtObraSocial";
+            this.txtObraSocial.Size = new System.Drawing.Size(264, 27);
+            this.txtObraSocial.TabIndex = 179;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 393);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 21);
+            this.label1.TabIndex = 181;
+            this.label1.Text = "Obra Social:";
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(177, 337);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(264, 27);
+            this.txtDni.TabIndex = 178;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 340);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 21);
+            this.label5.TabIndex = 180;
+            this.label5.Text = "DNI:";
             // 
             // txtProv
             // 
             this.txtProv.Enabled = false;
-            this.txtProv.Location = new System.Drawing.Point(194, 609);
+            this.txtProv.Location = new System.Drawing.Point(177, 672);
             this.txtProv.Name = "txtProv";
-            this.txtProv.Size = new System.Drawing.Size(260, 27);
-            this.txtProv.TabIndex = 147;
+            this.txtProv.Size = new System.Drawing.Size(264, 27);
+            this.txtProv.TabIndex = 173;
             // 
             // lblProv
             // 
             this.lblProv.AutoSize = true;
             this.lblProv.Enabled = false;
-            this.lblProv.Location = new System.Drawing.Point(27, 612);
+            this.lblProv.Location = new System.Drawing.Point(33, 671);
             this.lblProv.Name = "lblProv";
             this.lblProv.Size = new System.Drawing.Size(85, 21);
-            this.lblProv.TabIndex = 151;
+            this.lblProv.TabIndex = 177;
             this.lblProv.Text = "Provincia:";
             // 
             // txtLocalidad
             // 
             this.txtLocalidad.Enabled = false;
-            this.txtLocalidad.Location = new System.Drawing.Point(194, 563);
+            this.txtLocalidad.Location = new System.Drawing.Point(177, 629);
             this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(260, 27);
-            this.txtLocalidad.TabIndex = 146;
+            this.txtLocalidad.Size = new System.Drawing.Size(264, 27);
+            this.txtLocalidad.TabIndex = 172;
             // 
             // txtDepto
             // 
             this.txtDepto.Enabled = false;
-            this.txtDepto.Location = new System.Drawing.Point(327, 514);
+            this.txtDepto.Location = new System.Drawing.Point(314, 577);
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.Size = new System.Drawing.Size(127, 27);
-            this.txtDepto.TabIndex = 144;
+            this.txtDepto.TabIndex = 171;
             // 
             // lblLocali
             // 
             this.lblLocali.AutoSize = true;
             this.lblLocali.Enabled = false;
-            this.lblLocali.Location = new System.Drawing.Point(27, 569);
+            this.lblLocali.Location = new System.Drawing.Point(13, 632);
             this.lblLocali.Name = "lblLocali";
             this.lblLocali.Size = new System.Drawing.Size(91, 21);
-            this.lblLocali.TabIndex = 150;
+            this.lblLocali.TabIndex = 176;
             this.lblLocali.Text = "Localidad:";
             // 
             // txtPiso
             // 
             this.txtPiso.Enabled = false;
-            this.txtPiso.Location = new System.Drawing.Point(194, 514);
+            this.txtPiso.Location = new System.Drawing.Point(177, 577);
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.Size = new System.Drawing.Size(127, 27);
-            this.txtPiso.TabIndex = 145;
+            this.txtPiso.TabIndex = 170;
             // 
             // txtNroCalle
             // 
             this.txtNroCalle.Enabled = false;
-            this.txtNroCalle.Location = new System.Drawing.Point(327, 462);
+            this.txtNroCalle.Location = new System.Drawing.Point(314, 525);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.Size = new System.Drawing.Size(127, 27);
-            this.txtNroCalle.TabIndex = 143;
+            this.txtNroCalle.TabIndex = 169;
             // 
             // lblPiso
             // 
             this.lblPiso.Enabled = false;
-            this.lblPiso.Location = new System.Drawing.Point(27, 507);
+            this.lblPiso.Location = new System.Drawing.Point(13, 570);
             this.lblPiso.Name = "lblPiso";
             this.lblPiso.Size = new System.Drawing.Size(158, 44);
-            this.lblPiso.TabIndex = 149;
+            this.lblPiso.TabIndex = 175;
             this.lblPiso.Text = "Piso y Departamento:";
             // 
             // txtCalle
             // 
             this.txtCalle.Enabled = false;
-            this.txtCalle.Location = new System.Drawing.Point(194, 462);
+            this.txtCalle.Location = new System.Drawing.Point(177, 525);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.Size = new System.Drawing.Size(127, 27);
-            this.txtCalle.TabIndex = 142;
+            this.txtCalle.TabIndex = 168;
             // 
             // lblCalle
             // 
             this.lblCalle.AutoSize = true;
             this.lblCalle.Enabled = false;
-            this.lblCalle.Location = new System.Drawing.Point(27, 465);
+            this.lblCalle.Location = new System.Drawing.Point(13, 528);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(130, 21);
-            this.lblCalle.TabIndex = 148;
+            this.lblCalle.TabIndex = 174;
             this.lblCalle.Text = "Calle y número:";
             // 
             // frmTodosModificarFamiliar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 810);
-            this.Controls.Add(this.chkAportes);
-            this.Controls.Add(this.cbkTrabaja);
-            this.Controls.Add(this.ckbDirecc);
+            this.ClientSize = new System.Drawing.Size(483, 749);
+            this.Controls.Add(this.txtObraSocial);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDni);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProv);
             this.Controls.Add(this.lblProv);
             this.Controls.Add(this.txtLocalidad);
@@ -355,18 +352,19 @@
             this.Controls.Add(this.lblPiso);
             this.Controls.Add(this.txtCalle);
             this.Controls.Add(this.lblCalle);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.lblError);
-            this.Controls.Add(this.txtDni);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.cmbEscolariazacion);
             this.Controls.Add(this.cmbParentezco);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbLegajo);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -383,20 +381,22 @@
         private Controls.BotonPadre btnCancelar;
         private Controls.BotonPadre btnGuardar;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.TextBox txtDni;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.DateTimePicker dtpFechaNac;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbEscolariazacion;
         private System.Windows.Forms.ComboBox cmbParentezco;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbLegajo;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtObraSocial;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox chkAportes;
-        private System.Windows.Forms.CheckBox cbkTrabaja;
-        private System.Windows.Forms.CheckBox ckbDirecc;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProv;
         private System.Windows.Forms.Label lblProv;
         private System.Windows.Forms.TextBox txtLocalidad;

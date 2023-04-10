@@ -13,6 +13,7 @@ namespace DomainA
         FamiliarColaboradorDao familiar = new FamiliarColaboradorDao();
         public int indiceFamiliar = -1;
         public int idFamiliar = -1;
+        public int idDireccion = -1;
 
         public string InsertarFamiliarColaborador(string calle, int numeroCalle, int esEdificio, int piso, string departamento, string localidad, string provincia, int tipoFamiliar, int colaborador, string nombre, string apellido, DateTime fechaNacimiento, int dni, int escolaridad, string obraSocial, int esTrabajador, int esDependencia, float aportes)
         {

@@ -82,7 +82,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE Direccion SET UPDATE Direccion SET nombreCalle = @nombreCalle,numeroCalle = @numeroCalle,esEdificio = @esEdificio,piso = @piso,departamento = @departamento,localidad = @localidad,provincia = @provincia WHERE id_direccion = @direccionFamiliar";
+                    command.CommandText = "UPDATE Direccion SET nombreCalle = @nombreCalle,numeroCalle = @numeroCalle,esEdificio = @esEdificio,piso = @piso,departamento = @departamento,localidad = @localidad,provincia = @provincia WHERE id_direccion = @direccionFamiliar";
                     command.Parameters.AddWithValue("@nombreCalle", calle);
                     command.Parameters.AddWithValue("@numeroCalle", numeroCalle);
                     command.Parameters.AddWithValue("@esEdificio", esEdificio);
@@ -107,6 +107,7 @@ namespace DataAccesA
 
         public string ModificarFamiliarColaborador(string calle, int numeroCalle, int esEdificio, int piso, string departamento, string localidad, string provincia,int direccionFamiliar, int tipoFamiliar, int colaborador, string nombre, string apellido, DateTime fechaNacimiento, int dni, int escolaridad,int idFamiliar, string obraSocial, int esTrabajador, int esDependencia, float aportes)
         {
+            
             int direccionCreada = ModificarDireccionFamiliar(calle, numeroCalle, esEdificio, piso, departamento, localidad, provincia, direccionFamiliar);
             if (direccionCreada == 0) { return "Error al modificar al familiar"; }
             using (var connection = GetConnection())
@@ -115,7 +116,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad,obraSocial = @obraSocial,esTrabajador = @esTrabajador,esDependencia = @esDependencia,aportes = @aportes WHERE idFamiliar = @idFamiliar";
+                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad,obraSocial = @obraSocial,trabaja = @esTrabajador,dependencia = @esDependencia,aportes = @aportes WHERE idFamiliar = @idFamiliar";
                     command.Parameters.AddWithValue("@tipoFamiliar", tipoFamiliar);
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@apellido", apellido);
@@ -141,6 +142,7 @@ namespace DataAccesA
             }
 
         }
+        
 
         
 
@@ -184,7 +186,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT FC.idFamiliar ,FC.nombreFamiliar AS 'Nombre',FC.apellidoFamiliar AS 'Apellido',E.nombre AS 'Escolarización',FC.dni AS 'DNI',FC.fechaNacimiento AS 'Fecha Nacimiento',C.legajo, TF.nombre as 'Tipo Familiar', D.nombreCalle, d.numeroCalle,d.piso,d.departamento,d.localidad,d.provincia,CASE WHEN FC.trabaja = 0 THEN 'No' WHEN FC.trabaja = 1 then 'Si'end as trabaja,CASE WHEN FC.aportes = 0 THEN 'No' WHEN FC.aportes = 1 then 'Si'end as aportes,FC.obraSocial FROM FamiliarColaborador FC JOIN Colaborador C ON FC.legajoColaborador = C.legajo JOIN TipoFamiliar TF ON TF.idTipoFamiliar = FC.tipoFamiliar JOIN Direccion D ON D.id_direccion = FC.idDireccion JOIN Escolaridad E ON E.id = FC.escolaridad WHERE FC.borradoLogico = 0 " + parametros;
+                    command.CommandText = "SELECT FC.idFamiliar AS 'idFamiliar' ,FC.idDireccion AS 'idDireccion',FC.nombreFamiliar AS 'Nombre',FC.apellidoFamiliar AS 'Apellido',E.nombre AS 'Escolarización',FC.dni AS 'DNI',FC.fechaNacimiento AS 'Fecha Nacimiento',C.legajo, TF.nombre as 'Tipo Familiar', D.nombreCalle, d.numeroCalle,d.piso,d.departamento,d.localidad,d.provincia,CASE WHEN FC.trabaja = 0 THEN 'No' WHEN FC.trabaja = 1 then 'Si'end as trabaja,CASE WHEN FC.aportes = 0 THEN 'No' WHEN FC.aportes = 1 then 'Si'end as aportes,FC.obraSocial FROM FamiliarColaborador FC JOIN Colaborador C ON FC.legajoColaborador = C.legajo JOIN TipoFamiliar TF ON TF.idTipoFamiliar = FC.tipoFamiliar JOIN Direccion D ON D.id_direccion = FC.idDireccion JOIN Escolaridad E ON E.id = FC.escolaridad WHERE FC.borradoLogico = 0 " + parametros;
                     
                     command.CommandType = CommandType.Text;
                     SqlDataReader reader = command.ExecuteReader();
