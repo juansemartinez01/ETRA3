@@ -36,10 +36,10 @@ namespace PresentationA.Colaboradores.Consulta
             cbo.DisplayMember = display;
             cbo.DataSource = source;
             cbo.SelectedIndex = 0;
-            CargarDG(legajo);
+            CargarDG();
         }
 
-        private void CargarDG(int legajo)
+        private void CargarDG()
         {
             try
             {
@@ -48,10 +48,8 @@ namespace PresentationA.Colaboradores.Consulta
                 for (int i = 0; i < familiares.Rows.Count; i++)
                 {
                     //crear metodo completar labels
-                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"],familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["obraSocial"], familiares.Rows[i]["trabaja"], familiares.Rows[i]["aportes"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"]);
+                    dgvFamiliares.Rows.Add(familiares.Rows[i]["idFamiliar"], familiares.Rows[i]["Nombre"], familiares.Rows[i]["Apellido"], familiares.Rows[i]["Tipo Familiar"],familiares.Rows[i]["Escolarización"], familiares.Rows[i]["Fecha Nacimiento"], familiares.Rows[i]["DNI"], familiares.Rows[i]["obraSocial"], familiares.Rows[i]["trabaja"], familiares.Rows[i]["aportes"], familiares.Rows[i]["nombrecalle"], familiares.Rows[i]["numerocalle"], familiares.Rows[i]["piso"], familiares.Rows[i]["departamento"], familiares.Rows[i]["localidad"], familiares.Rows[i]["provincia"], familiares.Rows[i]["idDireccion"]);
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -79,6 +77,7 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void ViewState()
         {
+            dgvFamiliares.Enabled = true;
             txtnombre.Enabled= false;
             txtapellido.Enabled= false;
             txtdni.Enabled = false;
@@ -113,18 +112,91 @@ namespace PresentationA.Colaboradores.Consulta
 
             btnAgregar.Visible = true;
             btnEliminar.Visible = true;
-            btnModificar.Enabled = true;
+            btnEliminar.Enabled = false;
+
+            btnModificar.Enabled = false;
             btnModificar.Text = "Modificar";
             btnModificar.IconChar = FontAwesome.Sharp.IconChar.Pen;
 
+            
         }
 
         private void ModifyState()
         {
             if(btnModificar.Text == "Guardar")
             {
-                //JUANSE AGREGAR ACA METODO DE Guardar cambios
+                
+                int esEdificio = 0;
+
+                if (txtpiso.Text != "" & txtdepartamento.Text != "") { esEdificio = 1; }
+
+                if (txtnombre.Text == "")
+                {
+                    MessageBox.Show("No puede dejar el nombre vacío");
+                    return;
+                }
+                if (txtapellido.Text == "")
+                {
+                    MessageBox.Show("No puede dejar el apellido vacío");
+                    return;
+                }
+                if (cmbParentezco.SelectedValue.ToString() == null)
+                {
+                    MessageBox.Show("Debe seleccionar un tipo de parentezco");
+                    return;
+                }
+                if (txtdni.Text == "")
+                {
+                    MessageBox.Show("No puede dejar el DNI vacío");
+                    return;
+                }
+                if (txtnombrecalle.Text == "")
+                {
+                    MessageBox.Show("No puede dejar la calle vacía");
+                    return;
+                }
+
+
+
+                if (txtnumerocalle.Text == "")
+                {
+                    MessageBox.Show("No puede dejar el numero de calle vacío");
+                    return;
+                }
+
+                int piso = -1;
+                string depto;
+                if (txtpiso.Text == "")
+                {
+                    piso = 0;
+                    depto = "No especifica";
+                }
+                else
+                {
+                    piso = Int32.Parse(txtpiso.Text);
+                    depto = "No especifica";
+                    if (txtdepartamento.Text != "")
+                    {
+                        depto = txtdepartamento.Text;
+                    }
+                }
+
+                if (txtlocalidad.Text == "")
+                {
+                    MessageBox.Show("No puede dejar la localidad vacía");
+                    return;
+                }
+                if (txtprovincia.Text == "")
+                {
+                    MessageBox.Show("No puede dejar la provincia vacía");
+                    return;
+                }
+                int idFamiliar = Int32.Parse(dgvFamiliares.SelectedRows[0].Cells["idFamiliar"].Value.ToString());
+                int idDireccion = Int32.Parse(dgvFamiliares.SelectedRows[0].Cells["idDireccion"].Value.ToString());
+                DateTime fechaNacimiento = dtpfechaNacimiento.Value;
+                MessageBox.Show(familiarModelo.ModificarFamiliarColaborador(txtnombrecalle.Text, int.Parse(txtnumerocalle.Text), esEdificio, piso, depto, txtlocalidad.Text, txtprovincia.Text, idDireccion, int.Parse(cmbParentezco.SelectedValue.ToString()), legajo, txtnombre.Text, txtapellido.Text, fechaNacimiento, int.Parse(txtdni.Text), int.Parse(cmbescolarizacion.SelectedValue.ToString()), idFamiliar, txtobraSocial.Text, chktrabaja.Checked ? 1 : 0, 0, chkaportes.Checked ? 1 : 0));
                 ViewState();
+                CargarDG();
                 return;
 
             }
@@ -146,7 +218,7 @@ namespace PresentationA.Colaboradores.Consulta
             txtprovincia.Enabled = true;
             txtpiso.Enabled = true;
             txtdepartamento.Enabled = true;
-
+            dgvFamiliares.Enabled = false;
 
             btnModificar.Visible = true;
             btnModificar.Text = "Guardar";
@@ -161,12 +233,20 @@ namespace PresentationA.Colaboradores.Consulta
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (DialogResult.No == MessageBox.Show("Esta seguro que desea eliminar el colaborador?", "AVISO", MessageBoxButtons.YesNo))
+            if (DialogResult.No == MessageBox.Show("Esta seguro que desea eliminar el familiar?", "AVISO", MessageBoxButtons.YesNo))
             {
                 return;
             }
-
-            //JUANSE: eliminar familiar
+            if (dgvFamiliares.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Debe seleccionar un familiar");
+                return;
+            }
+            DataGridViewRow filaSeleccionada = dgvFamiliares.SelectedRows[0];
+            int idFamiliar = int.Parse(filaSeleccionada.Cells["idFamiliar"].Value.ToString());
+            FamiliarColaboradorModelo familiar = new FamiliarColaboradorModelo();
+            familiar.EliminarFamiliarColaborador(idFamiliar);
+            CargarDG();
 
         }
 
@@ -186,6 +266,8 @@ namespace PresentationA.Colaboradores.Consulta
             }
 
             ViewState();
+            btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
             completarLabels(this, familiar, "dtp");
             completarLabels(this, familiar, "txt");
             completarLabels(this, familiar, "cmb");

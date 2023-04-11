@@ -43,7 +43,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgvFamiliares = new PresentationA.Controls.DataGridPadre();
             this.idFamiliar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parentezco = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +53,13 @@
             this.obraSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trabaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aportes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.piso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).BeginInit();
             this.SuspendLayout();
@@ -227,6 +228,7 @@
             this.txtLegajoBusqueda.Name = "txtLegajoBusqueda";
             this.txtLegajoBusqueda.Size = new System.Drawing.Size(189, 27);
             this.txtLegajoBusqueda.TabIndex = 4;
+            this.txtLegajoBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLegajoBusqueda_KeyPress);
             // 
             // label10
             // 
@@ -262,7 +264,7 @@
             this.dgvFamiliares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFamiliares.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFamiliar,
-            this.idDireccion,
+            this.legajo,
             this.nombre,
             this.apellido,
             this.parentezco,
@@ -272,12 +274,13 @@
             this.obraSocial,
             this.trabaja,
             this.aportes,
-            this.nombreCalle,
-            this.numeroCalle,
+            this.Calle,
+            this.NroCalle,
             this.piso,
             this.departamento,
             this.localidad,
-            this.provincia});
+            this.provincia,
+            this.idDireccion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -289,7 +292,7 @@
             this.dgvFamiliares.EnableHeadersVisualStyles = false;
             this.dgvFamiliares.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvFamiliares.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvFamiliares.Location = new System.Drawing.Point(33, 136);
+            this.dgvFamiliares.Location = new System.Drawing.Point(33, 125);
             this.dgvFamiliares.MinimumSize = new System.Drawing.Size(858, 187);
             this.dgvFamiliares.Name = "dgvFamiliares";
             this.dgvFamiliares.ReadOnly = true;
@@ -303,9 +306,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvFamiliares.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvFamiliares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFamiliares.Size = new System.Drawing.Size(997, 341);
+            this.dgvFamiliares.Size = new System.Drawing.Size(993, 348);
             this.dgvFamiliares.TabIndex = 129;
+            this.dgvFamiliares.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick_1);
             this.dgvFamiliares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick_1);
+            this.dgvFamiliares.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick_1);
+            this.dgvFamiliares.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFamiliares_CellContentClick_1);
             // 
             // idFamiliar
             // 
@@ -314,12 +320,11 @@
             this.idFamiliar.ReadOnly = true;
             this.idFamiliar.Visible = false;
             // 
-            // idDireccion
+            // legajo
             // 
-            this.idDireccion.HeaderText = "idDireccion";
-            this.idDireccion.Name = "idDireccion";
-            this.idDireccion.ReadOnly = true;
-            this.idDireccion.Visible = false;
+            this.legajo.HeaderText = "Legajo";
+            this.legajo.Name = "legajo";
+            this.legajo.ReadOnly = true;
             // 
             // nombre
             // 
@@ -375,17 +380,17 @@
             this.aportes.Name = "aportes";
             this.aportes.ReadOnly = true;
             // 
-            // nombreCalle
+            // Calle
             // 
-            this.nombreCalle.HeaderText = "Calle";
-            this.nombreCalle.Name = "nombreCalle";
-            this.nombreCalle.ReadOnly = true;
+            this.Calle.HeaderText = "Calle";
+            this.Calle.Name = "Calle";
+            this.Calle.ReadOnly = true;
             // 
-            // numeroCalle
+            // NroCalle
             // 
-            this.numeroCalle.HeaderText = "Altura";
-            this.numeroCalle.Name = "numeroCalle";
-            this.numeroCalle.ReadOnly = true;
+            this.NroCalle.HeaderText = "Altura";
+            this.NroCalle.Name = "NroCalle";
+            this.NroCalle.ReadOnly = true;
             // 
             // piso
             // 
@@ -412,6 +417,13 @@
             this.provincia.HeaderText = "Provincia";
             this.provincia.Name = "provincia";
             this.provincia.ReadOnly = true;
+            // 
+            // idDireccion
+            // 
+            this.idDireccion.HeaderText = "idDireccion";
+            this.idDireccion.Name = "idDireccion";
+            this.idDireccion.ReadOnly = true;
+            this.idDireccion.Visible = false;
             // 
             // frmTodosFamiliares
             // 
@@ -449,7 +461,7 @@
         private System.Windows.Forms.Label label10;
         private Controls.DataGridPadre dgvFamiliares;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFamiliar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn parentezco;
@@ -459,11 +471,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn obraSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn trabaja;
         private System.Windows.Forms.DataGridViewTextBoxColumn aportes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn piso;
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
     }
 }

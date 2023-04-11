@@ -78,6 +78,7 @@
             this.departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFamiliares)).BeginInit();
             this.SuspendLayout();
             // 
@@ -377,7 +378,8 @@
             this.piso,
             this.departamento,
             this.localidad,
-            this.provincia});
+            this.provincia,
+            this.idDireccion});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -550,6 +552,13 @@
             this.provincia.Name = "provincia";
             this.provincia.ReadOnly = true;
             // 
+            // idDireccion
+            // 
+            this.idDireccion.HeaderText = "idDireccion";
+            this.idDireccion.Name = "idDireccion";
+            this.idDireccion.ReadOnly = true;
+            this.idDireccion.Visible = false;
+            // 
             // frmFamiliares
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -644,5 +653,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn departamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn provincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDireccion;
     }
 }

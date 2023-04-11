@@ -1,12 +1,6 @@
 ﻿using DomainA;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PresentationA.Colaboradores.TodosFamiliares
@@ -15,22 +9,20 @@ namespace PresentationA.Colaboradores.TodosFamiliares
     {
         FamiliarColaboradorModelo familiarModificado = new FamiliarColaboradorModelo();
         bool hayCambios = false;
-        public frmTodosModificarFamiliar(FamiliarColaboradorModelo familiarModificado1)
+        int legajo;
+        public frmTodosModificarFamiliar(DataTable familiar)
         {
             
             InitializeComponent();
-            familiarModificado.idFamiliar = familiarModificado1.idFamiliar;
-            familiarModificado.idDireccion = familiarModificado1.idDireccion;
+            familiarModificado.idFamiliar = int.Parse(familiar.Rows[0]["idFamiliar"].ToString());
+            familiarModificado.idDireccion = int.Parse(familiar.Rows[0]["idDireccion"].ToString());
+            legajo = int.Parse(familiar.Rows[0]["legajo"].ToString());
+            completarLabels(this, familiar, "dtp");
+            completarLabels(this, familiar, "txt");
+            completarLabels(this, familiar, "cmb");
             hayCambios = false;
-            LlenarCombo(cmbLegajo, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
             LlenarCombo(cmbEscolariazacion, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
             LlenarCombo(cmbParentezco, DataManager.GetInstance().ConsultaSQL("SELECT * FROM TipoFamiliar"), "nombre", "idTipoFamiliar");
-            txtCalle.Enabled = true;
-            txtNroCalle.Enabled = true;
-            txtDepto.Enabled = true;
-            txtLocalidad.Enabled = true;
-            txtProv.Enabled = true;
-            txtPiso.Enabled = true;
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -41,12 +33,11 @@ namespace PresentationA.Colaboradores.TodosFamiliares
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int legajo = int.Parse(cmbLegajo.SelectedValue.ToString());
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             int parentezco = int.Parse(cmbParentezco.SelectedValue.ToString());
             DateTime fecha = dtpFechaNac.Value.Date;
-            MessageBox.Show("Familiar modificado con exito!");
+            
             int escolarizacion = int.Parse(cmbEscolariazacion.SelectedValue.ToString());
             int dni = int.Parse(txtDni.Text);
             string obraSocial = txtObraSocial.Text;
@@ -56,7 +47,7 @@ namespace PresentationA.Colaboradores.TodosFamiliares
             string depto = txtDepto.Text;
             string localidad = txtLocalidad.Text;
             string provincia = txtProv.Text;
-            familiarModificado.ModificarFamiliarColaborador(calle, numero, 0, piso, depto, localidad, provincia, familiarModificado.idDireccion, parentezco, legajo, nombre, apellido, fecha, dni, escolarizacion, familiarModificado.idFamiliar, obraSocial, 1, 1, 1);
+            MessageBox.Show(familiarModificado.ModificarFamiliarColaborador(calle, numero, 0, piso, depto, localidad, provincia, familiarModificado.idDireccion, parentezco, legajo, nombre, apellido, fecha, dni, escolarizacion, familiarModificado.idFamiliar, obraSocial, 1, 1, 1));
             this.Close();
         }
         private void btnCancelar_Click(object sender, EventArgs e)
