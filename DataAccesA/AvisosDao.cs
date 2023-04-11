@@ -628,12 +628,18 @@ namespace DataAccesA
                         
                             command.Connection = connection;
                             string query = "";
-                            string cumple = "";
-                            foreach(DataRow row in cumpleaños.Rows) 
+                            string cumple;
+                            string dia;
+                            string mes;
+                            string[] list;
+                        foreach (DataRow row in cumpleaños.Rows) 
                             {
-                                    //MODIFICAR VALOR DE TIPO AVISO
-                                cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3,3) + row["fechaNacimiento"].ToString().Substring(0, 2);
-                                query += " INSERT INTO Aviso VALUES (3, 'Cumpleaños de colaborador', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
+                            //MODIFICAR VALOR DE TIPO AVISO
+                                list = row["fechaNacimiento"].ToString().Split('/');
+                                dia = list[0];
+                                mes = list[1];
+                                cumple = dia + "/" + mes + "/"+ DateTime.Now.Year.ToString();
+                                query += " INSERT INTO Aviso VALUES (3, 'Cumpleaños de colaborador', GETDATE(),CAST('" + cumple + "' AS DATE), CAST('" + cumple + "' AS DATE),null, 0) " +
                                          " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
                             }
 
