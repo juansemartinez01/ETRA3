@@ -139,6 +139,7 @@
             this.txtPiso.Size = new System.Drawing.Size(127, 27);
             this.txtPiso.TabIndex = 13;
             this.txtPiso.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.txtPiso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPiso_KeyPress);
             // 
             // txtNroCalle
             // 
@@ -148,6 +149,7 @@
             this.txtNroCalle.Size = new System.Drawing.Size(127, 27);
             this.txtNroCalle.TabIndex = 12;
             this.txtNroCalle.TextChanged += new System.EventHandler(this.txt_TextChanged);
+            this.txtNroCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroCalle_KeyPress);
             // 
             // lblPiso
             // 
@@ -327,6 +329,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(264, 27);
             this.txtDni.TabIndex = 143;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // dtpFechaNac
             // 
@@ -391,7 +394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 861);
+            this.ClientSize = new System.Drawing.Size(531, 749);
             this.Controls.Add(this.cmbEscolariazacion);
             this.Controls.Add(this.cmbParentezco);
             this.Controls.Add(this.label8);

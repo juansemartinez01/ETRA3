@@ -33,8 +33,10 @@ namespace PresentationA.Colaboradores
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            CargarTabla(0);
             frmTodosAgregarFamiliar agregar = new frmTodosAgregarFamiliar();
             agregar.ShowDialog();
+            CargarTabla(0);
         }
 
         private void cmb_KeyPress(object sender, KeyPressEventArgs e)
