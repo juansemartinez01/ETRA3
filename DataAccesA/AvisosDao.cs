@@ -538,7 +538,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select 1 from Aviso where id_aviso = 2 and ( MONTH(fechaUltimaNotificacion) = MONTH(GETDATE()) or fechaUltimaNotificacion is not null)";
+                        command.CommandText = "select 1 from Aviso where id_aviso = 2 and MONTH(fechaUltimaNotificacion) = MONTH(GETDATE())";
                         command.CommandType = CommandType.Text;
                         return command.ExecuteReader().HasRows;
                     }
@@ -638,7 +638,7 @@ namespace DataAccesA
                                 list = row["fechaNacimiento"].ToString().Split('/');
                                 dia = list[0];
                                 mes = list[1];
-                                cumple = dia + "/" + mes + "/"+ DateTime.Now.Year.ToString();
+                                cumple = mes + "/" + dia + "/"+ DateTime.Now.Year.ToString();
                                 query += " INSERT INTO Aviso VALUES (3, 'Cumpleaños de colaborador', GETDATE(),CAST('" + cumple + "' AS DATE), CAST('" + cumple + "' AS DATE),null, 0) " +
                                          " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
                             }
