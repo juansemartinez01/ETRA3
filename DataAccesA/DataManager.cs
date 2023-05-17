@@ -10,8 +10,8 @@ public class DataManager
     private string string_conexion;
     public DataManager()
     {
-        //string_conexion = @"Server = tcp:DBServer\ServidorEtra,49500;DataBase= ETRA;Integrated Security = True";
-        string_conexion = @"Server = tcp:SERVERETRA\Etra3,49500;DataBase= ETRA;User Id = AppAccess; Password = 7dGUwNjnZL5qyiV";
+        string_conexion = @"Server = tcp:DBServer\ServidorEtra,49500;DataBase= ETRA;Integrated Security = True";
+        //string_conexion = @"Server = tcp:SERVERETRA\Etra3,49500;DataBase= ETRA;User Id = AppAccess; Password = 7dGUwNjnZL5qyiV";
         //string_conexion = "Data Source = localhost\\SQLEXPRESS; Initial Catalog = ETRA; Integrated Security = True";
     }
     public static DataManager GetInstance()

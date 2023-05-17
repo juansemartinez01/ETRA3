@@ -59,6 +59,7 @@
     <Compile Include="ReporteTardanzaDao.cs" />
     <Compile Include="SalariosDao.cs" />
     <Compile Include="UsuarioDao.cs" />
+    <Compile Include="VestimentaDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

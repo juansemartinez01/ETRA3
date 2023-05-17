@@ -335,19 +335,14 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable)
+        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable, int? codigoSucursal)
         {
             try
             {
-
-
                 int esEdificio;
                 if (piso == 0)
                 {
-
                     esEdificio = 0;
-
-
                 }
                 else
                 {
@@ -370,12 +365,13 @@ namespace DataAccesA
                         command.Parameters.AddWithValue("@provincia", provincia);
                         command.CommandType = CommandType.Text;
                         var direccionCreada = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+
                         if (direccionCreada == 1)
                         {
                             using (var command2 = new SqlCommand())
                             {
                                 command2.Connection = connection;
-                                command2.CommandText = "INSERT INTO Colaborador VALUES (@nombre,@apellido,@mail,(SELECT MAX(id_direccion) FROM Direccion),Format(@fechaNacimiento, 'yyyy - MM - dd'),Format(@fechaIngreso, 'yyyy - MM - dd'),0,@dni,@cuit,NULL,@nroContacto,@nroEmergencia,@obraSocial,@legajoResponsable,NULL)";
+                                command2.CommandText = "INSERT INTO Colaborador VALUES (@nombre,@apellido,@mail,(SELECT MAX(id_direccion) FROM Direccion),Format(@fechaNacimiento, 'yyyy - MM - dd'),Format(@fechaIngreso, 'yyyy - MM - dd'),0,@dni,@cuit,NULL,@nroContacto,@nroEmergencia,@obraSocial,@legajoResponsable,NULL,@codigoSucursal)";
                                 command2.Parameters.AddWithValue("@nombre", nombre);
                                 command2.Parameters.AddWithValue("@apellido", apellido);
                                 command2.Parameters.AddWithValue("@mail", mail);
@@ -387,11 +383,12 @@ namespace DataAccesA
                                 command2.Parameters.AddWithValue("@nroEmergencia", telefonoEmergencia);
                                 command2.Parameters.AddWithValue("@obraSocial", obraSocial);
                                 command2.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
+                                command2.Parameters.AddWithValue("@codigoSucursal", (object)codigoSucursal ?? DBNull.Value); // Handle nullable int
 
                                 command2.CommandType = CommandType.Text;
-
                                 var colaboradorCreado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
                                 int legajo = int.Parse(BuscarLegajoUltimoColaborador());
+
                                 if (colaboradorCreado == 1)
                                 {
                                     using (var command3 = new SqlCommand())
@@ -980,7 +977,7 @@ namespace DataAccesA
                 return documentos;
             }
         }
-        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable)
+        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable, int? codigoSucursal)
         {
             int esEdificio = 0;
             if (piso > 0)
@@ -998,8 +995,8 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre,apellido = @apellido,mail = @mail,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,CUIT=@cuit,nroContacto = @nroContacto,nroEmergencia = @nroEmergencia,obraSocial = @obraSocial,legajoResponsable = @legajoResponsable  WHERE legajo = @legajo" +
-                                              " UPDATE Usuario SET mail = @mail where legajoColaborador = @legajo";
+                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre, apellido = @apellido, mail = @mail, fechaNacimiento = FORMAT(@fechaNacimiento, 'yyyy-MM-dd'), dni = @dni, CUIT = @cuit, nroContacto = @nroContacto, nroEmergencia = @nroEmergencia, obraSocial = @obraSocial, legajoResponsable = @legajoResponsable, codigoSucursal = @codigoSucursal WHERE legajo = @legajo;" +
+                                              "UPDATE Usuario SET mail = @mail WHERE legajoColaborador = @legajo";
                         command.Parameters.AddWithValue("@nombre", nombre);
                         command.Parameters.AddWithValue("@apellido", apellido);
                         command.Parameters.AddWithValue("@mail", mail);
@@ -1010,9 +1007,10 @@ namespace DataAccesA
                         command.Parameters.AddWithValue("@nroEmergencia", telefonoEmergencia);
                         command.Parameters.AddWithValue("@obraSocial", obraSocial);
                         command.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
+                        command.Parameters.AddWithValue("@codigoSucursal", codigoSucursal ?? (object)DBNull.Value);
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
-                        var colaboradorModificado = command.EndExecuteNonQuery(command.BeginExecuteNonQuery());
+                        var colaboradorModificado = command.ExecuteNonQuery();
                         if (colaboradorModificado > 0)
                         {
                             algunaModificacion = true;

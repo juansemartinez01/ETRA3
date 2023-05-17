@@ -43,6 +43,7 @@ namespace PresentationA.Colaboradores
             if (MessageBox.Show("Desea guardar los cambios?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int legajo = int.Parse(lbllegajo.Text.ToString());
+                int codigoSucursal = 1;
                 string nombre = txtNombre.Text;
                 if (txtNombre.Text == "")
                 {
@@ -132,7 +133,7 @@ namespace PresentationA.Colaboradores
                 int legajoResponsable = 10000;
 
 
-                MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable));
+                MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal));
                 hayCambios = false;
                 this.Close();
             }

@@ -64,6 +64,7 @@
     <Compile Include="SalXCargoListing.cs" />
     <Compile Include="TardanzaListing.cs" />
     <Compile Include="UsuarioModelo.cs" />
+    <Compile Include="VestimentaModelo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
