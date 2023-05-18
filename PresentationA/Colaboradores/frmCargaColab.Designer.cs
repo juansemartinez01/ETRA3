@@ -80,6 +80,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnConfirmar = new PresentationA.Controls.BotonPadre();
             this.btnLimpiar = new PresentationA.Controls.BotonPadre();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -154,7 +156,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(293, 38);
+            this.label13.Location = new System.Drawing.Point(590, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(62, 20);
             this.label13.TabIndex = 70;
@@ -271,7 +273,7 @@
             // cmbEstados
             // 
             this.cmbEstados.FormattingEnabled = true;
-            this.cmbEstados.Location = new System.Drawing.Point(373, 33);
+            this.cmbEstados.Location = new System.Drawing.Point(692, 35);
             this.cmbEstados.Name = "cmbEstados";
             this.cmbEstados.Size = new System.Drawing.Size(146, 28);
             this.cmbEstados.TabIndex = 15;
@@ -403,6 +405,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbSucursal);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtObraSocial);
             this.groupBox2.Controls.Add(this.txtNroContacto);
             this.groupBox2.Controls.Add(this.txtNroEmergencia);
@@ -495,9 +499,9 @@
             // cmbPuesto
             // 
             this.cmbPuesto.FormattingEnabled = true;
-            this.cmbPuesto.Location = new System.Drawing.Point(652, 33);
+            this.cmbPuesto.Location = new System.Drawing.Point(397, 35);
             this.cmbPuesto.Name = "cmbPuesto";
-            this.cmbPuesto.Size = new System.Drawing.Size(181, 28);
+            this.cmbPuesto.Size = new System.Drawing.Size(146, 28);
             this.cmbPuesto.TabIndex = 17;
             this.cmbPuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPuesto_KeyPress);
             // 
@@ -522,7 +526,7 @@
             // lblPuesto
             // 
             this.lblPuesto.AutoSize = true;
-            this.lblPuesto.Location = new System.Drawing.Point(791, 95);
+            this.lblPuesto.Location = new System.Drawing.Point(794, 30);
             this.lblPuesto.Name = "lblPuesto";
             this.lblPuesto.Size = new System.Drawing.Size(0, 20);
             this.lblPuesto.TabIndex = 118;
@@ -538,7 +542,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(539, 36);
+            this.label18.Location = new System.Drawing.Point(294, 38);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(72, 20);
             this.label18.TabIndex = 114;
@@ -583,6 +587,23 @@
             this.btnLimpiar.Text = "Cancelar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(397, 87);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(146, 28);
+            this.cmbSucursal.TabIndex = 129;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(294, 92);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 20);
+            this.label12.TabIndex = 130;
+            this.label12.Text = "* Sucursal:";
             // 
             // frmCargaColab
             // 
@@ -661,5 +682,7 @@
         private System.Windows.Forms.CheckBox chkIngresaHoy;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DateTimePicker dtpFechaingreso;
+        private System.Windows.Forms.ComboBox cmbSucursal;
+        private System.Windows.Forms.Label label12;
     }
 }

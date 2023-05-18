@@ -23,6 +23,7 @@ namespace PresentationA.Colaboradores
             openFileDialog1.InitialDirectory = "no seleccionado";
             LlenarCombo(cmbEstados, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
+            LlenarCombo(cmbSucursal, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Sucursal"), "nombre", "codigoSucursal");
             chkIngresaHoy.Checked = true;
             dtpFechaingreso.Enabled = false;
 
@@ -51,7 +52,7 @@ namespace PresentationA.Colaboradores
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            int codigoSucursal = 1;
+            int codigoSucursal = (int)cmbSucursal.SelectedValue;
             DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
             DateTime fechaIngreso;
             string obraSocial = txtObraSocial.Text;
@@ -96,7 +97,11 @@ namespace PresentationA.Colaboradores
                 MessageBox.Show("Debe asignarle un salario al colaborador.");
                 return;
             }
-
+            if (codigoSucursal == -1)
+            {
+                MessageBox.Show("Debe asignarle una sucursal al colaborador.");
+                return;
+            }
 
             double prestamoMaximo = ((30 * float.Parse(txtSalario.Text)) / 100);
             prestamoMaximo = Math.Round(prestamoMaximo);

@@ -240,7 +240,7 @@
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 30;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(764, 55);
+            this.btnBuscar.Location = new System.Drawing.Point(760, 55);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(120, 38);
             this.btnBuscar.TabIndex = 19;
@@ -255,9 +255,9 @@
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(27, 65);
+            this.lblError.Location = new System.Drawing.Point(27, 55);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(42, 20);
+            this.lblError.Size = new System.Drawing.Size(684, 38);
             this.lblError.TabIndex = 15;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;

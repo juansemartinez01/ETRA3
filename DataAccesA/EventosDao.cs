@@ -304,6 +304,11 @@ namespace DataAccesA
                 columnaBusqueda = "id_cargo";
                 columnaWhere = "nombre";
             }
+            if (tablaBusqueda == "Sucursal")
+            {
+                columnaBusqueda = "codigoSucursal";
+                columnaWhere = "nombre";
+            }
             if (columnaBusqueda == "" || columnaWhere == "")
             {
                 return 0;
@@ -318,7 +323,7 @@ namespace DataAccesA
                     {
 
                         command.Connection = connection;
-                        command.CommandText = "SELECT "+ columnaBusqueda +" FROM "+ tablaBusqueda + " WHERE "+ columnaWhere + " LIKE @nombreBusqueda AND borradoLogico = 0";
+                        command.CommandText = "SELECT "+ columnaBusqueda +" FROM "+ tablaBusqueda + " WHERE "+ columnaWhere + " LIKE @nombreBusqueda";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@nombreBusqueda", nombreBusqueda);
                         SqlDataReader reader = command.ExecuteReader();

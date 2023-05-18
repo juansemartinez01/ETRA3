@@ -51,6 +51,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblnombreSucursal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -183,7 +186,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 38);
+            this.label10.Location = new System.Drawing.Point(22, 38);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 20);
@@ -212,7 +215,7 @@
             // lblnombreCargo
             // 
             this.lblnombreCargo.AutoSize = true;
-            this.lblnombreCargo.Location = new System.Drawing.Point(117, 38);
+            this.lblnombreCargo.Location = new System.Drawing.Point(95, 38);
             this.lblnombreCargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnombreCargo.Name = "lblnombreCargo";
             this.lblnombreCargo.Size = new System.Drawing.Size(53, 20);
@@ -258,6 +261,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblnombreSucursal);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.lblnombreCargo);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.lblPuesto);
@@ -269,6 +275,35 @@
             this.groupBox3.TabIndex = 90;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ACTIVIDAD LABORAL";
+            // 
+            // lblnombreSucursal
+            // 
+            this.lblnombreSucursal.AutoSize = true;
+            this.lblnombreSucursal.Location = new System.Drawing.Point(95, 89);
+            this.lblnombreSucursal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnombreSucursal.Name = "lblnombreSucursal";
+            this.lblnombreSucursal.Size = new System.Drawing.Size(141, 20);
+            this.lblnombreSucursal.TabIndex = 90;
+            this.lblnombreSucursal.Text = "lblnombreSucursal";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 89);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.TabIndex = 88;
+            this.label3.Text = "Sucursal:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(149, 89);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 20);
+            this.label8.TabIndex = 89;
             // 
             // frmDatosGenerales
             // 
@@ -317,5 +352,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblnombreSucursal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label8;
     }
 }

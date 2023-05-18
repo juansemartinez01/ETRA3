@@ -24,8 +24,10 @@ namespace PresentationA.Colaboradores
             completarLabels(this, colaborador, "dtp");
             LlenarCombo(cmbEstado, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
+            LlenarCombo(cmbSucursal, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Sucursal"), "nombre", "codigoSucursal");
             cmbEstado.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreEstado"].ToString(), "EstadoColaborador");
             cmbPuesto.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreCargo"].ToString(), "Cargo");
+            cmbSucursal.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreSucursal"].ToString(), "Sucursal");
             hayCambios = false;
         }
         
@@ -43,7 +45,7 @@ namespace PresentationA.Colaboradores
             if (MessageBox.Show("Desea guardar los cambios?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int legajo = int.Parse(lbllegajo.Text.ToString());
-                int codigoSucursal = 1;
+                int codigoSucursal = (int)cmbSucursal.SelectedValue;
                 string nombre = txtNombre.Text;
                 if (txtNombre.Text == "")
                 {
@@ -131,7 +133,11 @@ namespace PresentationA.Colaboradores
                 }
                 int puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
                 int legajoResponsable = 10000;
-
+                if (codigoSucursal < 1)
+                {
+                    MessageBox.Show("Debe seleccionar una sucursal");
+                    return;
+                }
 
                 MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal));
                 hayCambios = false;

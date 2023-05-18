@@ -23,7 +23,7 @@ namespace DataAccesA
                     {
                         command.Connection = connection;
 
-                        command.CommandText = "SELECT legajo, c.nombre, apellido,CUIT,nroContacto,nroEmergencia, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto,d.piso, d.departamento, d.localidad, d.provincia,C.dni,C.obraSocial,CCC.saldoAdeudado FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario JOIN MovimientosCuentaColaborador MCC ON MCC.legajoColaborador = c.legajo JOIN CuentaColaborador CCC ON CCC.numeroCuenta = MCC.nroCuenta WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL AND MCC.tipoMovimiento = 3";
+                        command.CommandText = "SELECT legajo, c.nombre, apellido,CUIT,nroContacto,nroEmergencia, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto,d.piso, d.departamento, d.localidad, d.provincia,C.dni,C.obraSocial,CCC.saldoAdeudado, s.nombre as 'nombreSucursal' FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario JOIN MovimientosCuentaColaborador MCC ON MCC.legajoColaborador = c.legajo JOIN CuentaColaborador CCC ON CCC.numeroCuenta = MCC.nroCuenta left join Sucursal s on s.codigoSucursal = c.codigoSucursal WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL AND MCC.tipoMovimiento = 3";
                         command.Parameters.AddWithValue("@legajo", legajo + "%");
                         command.Parameters.AddWithValue("@nombre", nombre + "%");
                         command.Parameters.AddWithValue("@apellido", apellido + "%");
@@ -383,7 +383,8 @@ namespace DataAccesA
                                 command2.Parameters.AddWithValue("@nroEmergencia", telefonoEmergencia);
                                 command2.Parameters.AddWithValue("@obraSocial", obraSocial);
                                 command2.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
-                                command2.Parameters.AddWithValue("@codigoSucursal", (object)codigoSucursal ?? DBNull.Value); // Handle nullable int
+                                command2.Parameters.AddWithValue("@codigoSucursal", codigoSucursal);
+                                //command2.Parameters.AddWithValue("@codigoSucursal", (object)codigoSucursal ?? DBNull.Value); // Handle nullable int
 
                                 command2.CommandType = CommandType.Text;
                                 var colaboradorCreado = command2.EndExecuteNonQuery(command2.BeginExecuteNonQuery());
