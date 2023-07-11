@@ -1,24 +1,29 @@
 ﻿using DomainA;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace PresentationA.Colaboradores
 {
     public partial class frmModifcarColab : frmHijo
     {
         ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
+        DocumentosColaborador nuevoDocumento = new DocumentosColaborador();
         EventosModelo evento = new EventosModelo();
         bool hayCambios = false;
         public frmModifcarColab(DataTable colaborador)
         {
             InitializeComponent();
+            openFileDialog2.InitialDirectory = "no seleccionado";
             completarLabels(this, colaborador, "lbl");
             completarLabels(this, colaborador, "txt");
             completarLabels(this, colaborador, "dtp");
@@ -138,11 +143,72 @@ namespace PresentationA.Colaboradores
                     MessageBox.Show("Debe seleccionar una sucursal");
                     return;
                 }
+                if (openFileDialog2.InitialDirectory != "no seleccionado" && openFileDialog2.InitialDirectory != "C:\\Documentos")
+                {
+
+                    agregarArchivoColaborador(colaboradorModelo);
+                }
 
                 MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal));
                 hayCambios = false;
                 this.Close();
             }
+
+        }
+        public void agregarArchivoColaborador(ColaboradorModelo colaboradorModelo)
+        {
+            //Error, hacer click una vez en el perfil y no cargas nada y se rompe
+            byte[] archivo = null;
+            using (Stream MyStream = openFileDialog2.OpenFile())
+            {
+                using (MemoryStream obj = new MemoryStream())
+                {
+                    MyStream.CopyTo(obj);
+                    archivo = obj.ToArray();
+
+
+                }
+            }
+
+
+
+
+
+
+            //Agregamos los atributos del objeto DocumentosColaborador
+            nuevoDocumento.Nombre = "FotoColaborador";
+            nuevoDocumento.Documento = archivo;
+            nuevoDocumento.Extension = openFileDialog2.SafeFileName;
+            nuevoDocumento.Id_tipoMultimedia = 5;
+            nuevoDocumento.LegajoColaborador = int.Parse(lbllegajo.Text.ToString());
+            //Despues arreglar bien esto!!!!!
+            int idEvento = colaboradorModelo.BuscarIdUltimoEvento();
+            string variableMuerta = nuevoDocumento.AgregarDocumento(nuevoDocumento.Nombre, nuevoDocumento.Documento, nuevoDocumento.Extension, nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador, idEvento);
+
+            //Parte para ver la imagen
+            var Lista = new List<DocumentosColaborador>();
+            Lista = nuevoDocumento.filtroDocumentosColaborador(nuevoDocumento.Id_tipoMultimedia, nuevoDocumento.LegajoColaborador);
+
+            string direccion = AppDomain.CurrentDomain.BaseDirectory;
+            string carpeta = direccion + "/temp/";
+            string ubicacionCompleta = carpeta + Lista[0].Extension;
+
+            if (!Directory.Exists(carpeta))
+            {
+                Directory.CreateDirectory(carpeta);
+            }
+            if (File.Exists(ubicacionCompleta))
+            {
+
+                File.Delete(ubicacionCompleta);
+            }
+            File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
+
+            Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
+            Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
+
+            pictureBox2.Image = fotoPerfil;
+            fotoPerfilArchivo.Close();
 
         }
 
@@ -224,6 +290,32 @@ namespace PresentationA.Colaboradores
         private void cmbPuesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                openFileDialog2.InitialDirectory = "C:\\Documentos";
+                openFileDialog2.Filter = "Todos los archivos (*.*)|*.*";
+                openFileDialog2.FilterIndex = 1;
+
+                if (openFileDialog2.ShowDialog() == DialogResult.OK && openFileDialog2.FileName != "")
+                {
+                    string filePath = openFileDialog2.FileName;
+                    openFileDialog2.InitialDirectory = Path.GetDirectoryName(filePath);
+
+                    Stream fotoPerfilArchivo = openFileDialog2.OpenFile();
+                    Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
+
+                    pictureBox2.Image = fotoPerfil;
+                    fotoPerfilArchivo.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -135,6 +135,27 @@ namespace DataAccesA
         }
         public string AgregarDocumento(string Nombre, byte[] Documento, string Extension, int TipoMultimedia, int Legajo, int idEvento)
         {
+            if(TipoMultimedia == 5)
+            {
+                using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "DELETE FROM ColaboradorMultimedia WHERE legajoColaborador = @legajoColaborador AND id_tipoMultimedia = 5";
+                        command.CommandType = CommandType.Text;
+                        
+                        command.Parameters.AddWithValue("@legajoColaborador", Legajo);
+                        
+                        command.ExecuteNonQuery();
+                        
+
+
+
+                    }
+                }
+            }
             try
             {
                 using (var connection = GetConnection())
