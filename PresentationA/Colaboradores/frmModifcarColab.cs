@@ -34,8 +34,37 @@ namespace PresentationA.Colaboradores
             cmbPuesto.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreCargo"].ToString(), "Cargo");
             cmbSucursal.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreSucursal"].ToString(), "Sucursal");
             hayCambios = false;
+            var Lista = new List<DocumentosColaborador>();
+            Lista = nuevoDocumento.filtroDocumentosColaborador(5, (int)colaborador.Rows[0]["legajo"]);
+
+            if (Lista.Count != 0)
+            {
+                string direccion = AppDomain.CurrentDomain.BaseDirectory;
+                string carpeta = direccion + "/temp/";
+                string ubicacionCompleta = carpeta + Lista[0].Extension;
+
+
+                if (!Directory.Exists(carpeta))
+                {
+                    Directory.CreateDirectory(carpeta);
+                }
+                if (File.Exists(ubicacionCompleta))
+                {
+                    File.Delete(ubicacionCompleta);
+                }
+                File.WriteAllBytes(ubicacionCompleta, Lista[0].Documento);
+                Stream fotoPerfilArchivo = File.OpenRead(ubicacionCompleta);
+                Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
+
+                pictureBox2.Image = fotoPerfil;
+                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                fotoPerfilArchivo.Close();
+
+
+
+            }
         }
-        
+
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             
@@ -50,7 +79,7 @@ namespace PresentationA.Colaboradores
             if (MessageBox.Show("Desea guardar los cambios?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int legajo = int.Parse(lbllegajo.Text.ToString());
-                int codigoSucursal = (int)cmbSucursal.SelectedValue;
+                
                 string nombre = txtNombre.Text;
                 if (txtNombre.Text == "")
                 {
@@ -138,7 +167,7 @@ namespace PresentationA.Colaboradores
                 }
                 int puesto = int.Parse(cmbPuesto.SelectedValue.ToString());
                 int legajoResponsable = 10000;
-                if (codigoSucursal < 1)
+                if (cmbSucursal.SelectedValue is null)
                 {
                     MessageBox.Show("Debe seleccionar una sucursal");
                     return;
@@ -148,7 +177,7 @@ namespace PresentationA.Colaboradores
 
                     agregarArchivoColaborador(colaboradorModelo);
                 }
-
+                int codigoSucursal = (int)cmbSucursal.SelectedValue;
                 MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal));
                 hayCambios = false;
                 this.Close();

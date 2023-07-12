@@ -165,5 +165,20 @@ namespace PresentationA.Colaboradores
             limpiarCampos();
             CargarDG();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int indice = objetoEvento.FilaSeleccionadaHistorialEvento;
+            if (indice == -1)
+            {
+                return;
+            }
+            if (MessageBox.Show("Esta seguro que desea eliminar el evento?", "Elminar Evento", MessageBoxButtons.YesNo) == DialogResult.No) { return; }
+            //Utilizar metodo cargar labels, modificarlo para que envie el prefijo del nombre de la columna {lbl,txt}
+            DataGridViewRow filaSeleccionada = dgvEventos.Rows[indice];
+            int idEvento = int.Parse(filaSeleccionada.Cells["Numero"].Value.ToString());
+            string mensaje = objetoEvento.eliminarEvento(idEvento);
+            MessageBox.Show(mensaje);
+        }
     }
 }

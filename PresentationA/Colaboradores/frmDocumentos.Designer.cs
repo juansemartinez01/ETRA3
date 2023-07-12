@@ -34,9 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiar = new PresentationA.Controls.BotonPadre();
-            this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
             this.chkFiltroFecha = new System.Windows.Forms.CheckBox();
-            this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.cmbTipoEvento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
@@ -46,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.cmbColaborador = new System.Windows.Forms.ComboBox();
+            this.btnVerArchivo = new PresentationA.Controls.BotonPadre();
+            this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.dgvDocumentos = new PresentationA.Controls.DataGridPadre();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,28 +115,6 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // btnVerArchivo
-            // 
-            this.btnVerArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnVerArchivo.FlatAppearance.BorderSize = 0;
-            this.btnVerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnVerArchivo.ForeColor = System.Drawing.Color.White;
-            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnVerArchivo.IconColor = System.Drawing.Color.White;
-            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVerArchivo.IconSize = 25;
-            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVerArchivo.Location = new System.Drawing.Point(11, 3);
-            this.btnVerArchivo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnVerArchivo.Name = "btnVerArchivo";
-            this.btnVerArchivo.Size = new System.Drawing.Size(252, 43);
-            this.btnVerArchivo.TabIndex = 49;
-            this.btnVerArchivo.Text = "Ver Archivo";
-            this.btnVerArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVerArchivo.UseVisualStyleBackColor = false;
-            this.btnVerArchivo.Click += new System.EventHandler(this.btnVerArchivo_Click);
-            // 
             // chkFiltroFecha
             // 
             this.chkFiltroFecha.Location = new System.Drawing.Point(952, 23);
@@ -147,27 +125,6 @@
             this.chkFiltroFecha.Text = "Filtro fecha";
             this.chkFiltroFecha.UseVisualStyleBackColor = true;
             this.chkFiltroFecha.CheckedChanged += new System.EventHandler(this.chkFiltroFecha_CheckedChanged);
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnExportar.IconColor = System.Drawing.Color.White;
-            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportar.IconSize = 30;
-            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExportar.Location = new System.Drawing.Point(302, 3);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(238, 39);
-            this.btnExportar.TabIndex = 14;
-            this.btnExportar.Text = "Exportar a Excel";
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
             // cmbTipoEvento
             // 
@@ -266,6 +223,49 @@
             this.cmbColaborador.TabIndex = 7;
             this.cmbColaborador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbColaborador_KeyPress);
             // 
+            // btnVerArchivo
+            // 
+            this.btnVerArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnVerArchivo.FlatAppearance.BorderSize = 0;
+            this.btnVerArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVerArchivo.ForeColor = System.Drawing.Color.White;
+            this.btnVerArchivo.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnVerArchivo.IconColor = System.Drawing.Color.White;
+            this.btnVerArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVerArchivo.IconSize = 25;
+            this.btnVerArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerArchivo.Location = new System.Drawing.Point(11, 3);
+            this.btnVerArchivo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnVerArchivo.Name = "btnVerArchivo";
+            this.btnVerArchivo.Size = new System.Drawing.Size(252, 43);
+            this.btnVerArchivo.TabIndex = 49;
+            this.btnVerArchivo.Text = "Ver Archivo";
+            this.btnVerArchivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVerArchivo.UseVisualStyleBackColor = false;
+            this.btnVerArchivo.Click += new System.EventHandler(this.btnVerArchivo_Click);
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.btnExportar.IconColor = System.Drawing.Color.White;
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 30;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnExportar.Location = new System.Drawing.Point(302, 3);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(238, 39);
+            this.btnExportar.TabIndex = 14;
+            this.btnExportar.Text = "Exportar a Excel";
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // dgvDocumentos
             // 
             this.dgvDocumentos.AllowUserToAddRows = false;
@@ -321,7 +321,10 @@
             this.dgvDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocumentos.Size = new System.Drawing.Size(1126, 323);
             this.dgvDocumentos.TabIndex = 46;
+            this.dgvDocumentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
             this.dgvDocumentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
+            this.dgvDocumentos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
+            this.dgvDocumentos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocumentos_CellContentClick);
             // 
             // Numero
             // 

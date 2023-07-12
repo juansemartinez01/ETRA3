@@ -59,6 +59,7 @@
             this.cmbTipoMultimedia = new System.Windows.Forms.ComboBox();
             this.btnAgregarArchivo = new PresentationA.Controls.BotonPadre();
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -426,6 +427,10 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
             // frmHistorialEvento
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -494,5 +499,6 @@
         private System.Windows.Forms.ComboBox cmbTipoMultimedia;
         private Controls.BotonPadre btnAgregarArchivo;
         private Controls.BotonPadre btnCancelar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }

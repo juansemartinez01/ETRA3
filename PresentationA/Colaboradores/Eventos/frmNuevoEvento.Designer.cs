@@ -42,6 +42,10 @@
             this.btnGuardar = new PresentationA.Controls.BotonPadre();
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
             this.lblError = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnAgregarArchivo = new PresentationA.Controls.BotonPadre();
+            this.cmbTipoMultimedia = new System.Windows.Forms.ComboBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -134,7 +138,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(172, 276);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(286, 138);
+            this.txtDescripcion.Size = new System.Drawing.Size(286, 95);
             this.txtDescripcion.TabIndex = 28;
             this.txtDescripcion.Text = "";
             // 
@@ -159,7 +163,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 30;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(89, 492);
+            this.btnGuardar.Location = new System.Drawing.Point(92, 560);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(123, 37);
             this.btnGuardar.TabIndex = 99;
@@ -181,7 +185,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 30;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(255, 492);
+            this.btnCancelar.Location = new System.Drawing.Point(258, 560);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(131, 37);
             this.btnCancelar.TabIndex = 100;
@@ -192,23 +196,68 @@
             // 
             // lblError
             // 
-            this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.lblError.ForeColor = System.Drawing.Color.DimGray;
             this.lblError.Image = global::PresentationA.Properties.Resources.kisspng_exclamation_mark_clip_art_vector_graphics_computer_5ced29986ef952_9605616015590465524546__1___1_;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.lblError.Location = new System.Drawing.Point(13, 437);
+            this.lblError.Location = new System.Drawing.Point(16, 497);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(34, 17);
+            this.lblError.Size = new System.Drawing.Size(442, 52);
             this.lblError.TabIndex = 101;
             this.lblError.Text = "Error";
             this.lblError.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 390);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 21);
+            this.label2.TabIndex = 102;
+            this.label2.Text = "Tipo de Archivo:";
+            // 
+            // btnAgregarArchivo
+            // 
+            this.btnAgregarArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnAgregarArchivo.FlatAppearance.BorderSize = 0;
+            this.btnAgregarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarArchivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarArchivo.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarArchivo.IconChar = FontAwesome.Sharp.IconChar.FileUpload;
+            this.btnAgregarArchivo.IconColor = System.Drawing.Color.White;
+            this.btnAgregarArchivo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarArchivo.IconSize = 30;
+            this.btnAgregarArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarArchivo.Location = new System.Drawing.Point(172, 433);
+            this.btnAgregarArchivo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAgregarArchivo.Name = "btnAgregarArchivo";
+            this.btnAgregarArchivo.Size = new System.Drawing.Size(286, 40);
+            this.btnAgregarArchivo.TabIndex = 103;
+            this.btnAgregarArchivo.Text = "Agregar archivo";
+            this.btnAgregarArchivo.UseVisualStyleBackColor = false;
+            this.btnAgregarArchivo.Click += new System.EventHandler(this.btnAgregarArchivo_Click);
+            // 
+            // cmbTipoMultimedia
+            // 
+            this.cmbTipoMultimedia.FormattingEnabled = true;
+            this.cmbTipoMultimedia.Location = new System.Drawing.Point(172, 387);
+            this.cmbTipoMultimedia.Margin = new System.Windows.Forms.Padding(0);
+            this.cmbTipoMultimedia.Name = "cmbTipoMultimedia";
+            this.cmbTipoMultimedia.Size = new System.Drawing.Size(286, 29);
+            this.cmbTipoMultimedia.TabIndex = 104;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // frmNuevoEvento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 557);
+            this.ClientSize = new System.Drawing.Size(493, 609);
+            this.Controls.Add(this.cmbTipoMultimedia);
+            this.Controls.Add(this.btnAgregarArchivo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -248,5 +297,9 @@
         private Controls.BotonPadre btnGuardar;
         private Controls.BotonPadre btnCancelar;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label2;
+        private Controls.BotonPadre btnAgregarArchivo;
+        private System.Windows.Forms.ComboBox cmbTipoMultimedia;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

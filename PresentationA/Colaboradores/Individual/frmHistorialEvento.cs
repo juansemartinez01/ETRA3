@@ -151,6 +151,7 @@ namespace PresentationA.Colaboradores.Consulta
 
                         agregarArchivoEvento(0);
                     }
+
                     MessageBox.Show(respuesta);
                     CargarDG(nuevoDocumento.LegajoColaborador.ToString(),false);
                     

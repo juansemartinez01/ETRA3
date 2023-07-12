@@ -203,7 +203,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(774, 151);
+            this.groupBox1.Size = new System.Drawing.Size(824, 151);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
@@ -278,10 +278,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::PresentationA.Properties.Resources._1500603_add_vector_icon_grátis_vetor;
             this.pictureBox2.Location = new System.Drawing.Point(393, 36);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(379, 378);
+            this.pictureBox2.Size = new System.Drawing.Size(340, 378);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -366,7 +367,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(774, 449);
+            this.groupBox3.Size = new System.Drawing.Size(824, 449);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -515,7 +516,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox4.Size = new System.Drawing.Size(778, 143);
+            this.groupBox4.Size = new System.Drawing.Size(828, 143);
             this.groupBox4.TabIndex = 89;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS GENERALES";
@@ -583,7 +584,7 @@
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBotones.Location = new System.Drawing.Point(0, 882);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(910, 100);
+            this.pnlBotones.Size = new System.Drawing.Size(944, 100);
             this.pnlBotones.TabIndex = 94;
             // 
             // label26
@@ -591,7 +592,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(236, 20);
+            this.label26.Location = new System.Drawing.Point(228, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(340, 28);
             this.label26.TabIndex = 95;
@@ -609,7 +610,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(50, 50);
             this.AutoScrollMinSize = new System.Drawing.Size(50, 50);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(927, 686);
+            this.ClientSize = new System.Drawing.Size(961, 686);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.groupBox4);
