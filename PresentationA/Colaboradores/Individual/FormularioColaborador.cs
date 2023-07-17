@@ -8,6 +8,7 @@ using FontAwesome.Sharp;
 using PresentationA.Colaboradores;
 using PresentationA.Colaboradores.Consulta;
 using System.ComponentModel;
+using System.Linq;
 
 namespace PresentationA
 {
@@ -168,7 +169,10 @@ namespace PresentationA
         {
             
             colaborador.Clear();
-            colaborador.ImportRow(colaboradores.Rows[dgvBusqueda.CurrentRow.Index]);
+            //Yo necesito de la fila seleccionada el legajo, ese legajo lo busco en colaboradores, y esa fila q tenga ese legajo la importo en colaborador
+            DataGridViewRow selectedRow = dgvBusqueda.SelectedRows[0];
+            int legajo = Convert.ToInt32(selectedRow.Cells["legajo"].Value);
+            colaborador.ImportRow(colaboradores.Select("legajo = " + legajo).FirstOrDefault());
             pnlBotones.Enabled = true;
             btnModificar.Enabled = true;
             btnEliminar.Enabled = true;
