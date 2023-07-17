@@ -203,7 +203,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(807, 151);
+            this.groupBox1.Size = new System.Drawing.Size(773, 151);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
@@ -367,7 +367,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(807, 449);
+            this.groupBox3.Size = new System.Drawing.Size(773, 449);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -516,7 +516,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox4.Size = new System.Drawing.Size(811, 143);
+            this.groupBox4.Size = new System.Drawing.Size(777, 143);
             this.groupBox4.TabIndex = 89;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS GENERALES";
@@ -584,7 +584,7 @@
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlBotones.Location = new System.Drawing.Point(0, 882);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(944, 100);
+            this.pnlBotones.Size = new System.Drawing.Size(961, 100);
             this.pnlBotones.TabIndex = 94;
             // 
             // label26
@@ -592,7 +592,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(220, 20);
+            this.label26.Location = new System.Drawing.Point(203, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(340, 28);
             this.label26.TabIndex = 95;
@@ -610,7 +610,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(50, 50);
             this.AutoScrollMinSize = new System.Drawing.Size(50, 50);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(961, 686);
+            this.ClientSize = new System.Drawing.Size(978, 686);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.groupBox4);

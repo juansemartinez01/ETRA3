@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Windows.Media;
 using DomainA;
-using Microsoft.Win32;
-
 namespace PresentationA.Colaboradores
 {
     public partial class frmCargaColab : frmHijo
@@ -278,6 +275,12 @@ namespace PresentationA.Colaboradores
 
         }
 
+        private string getDirectory(string path) 
+        {
+            string[] elementos = path.Split('\\');
+            string carpeta = string.Join("\\", elementos, 0, elementos.Length - 1);
+            return carpeta;
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             try
@@ -289,7 +292,7 @@ namespace PresentationA.Colaboradores
                 if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.InitialDirectory != "")
                 {
                     string filePath = openFileDialog1.FileName;
-                    openFileDialog1.InitialDirectory = Path.GetDirectoryName(filePath);
+                    openFileDialog1.InitialDirectory = getDirectory(filePath);
                 }
                 Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
                 Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);

@@ -320,7 +320,12 @@ namespace PresentationA.Colaboradores
         {
             e.Handled = true;
         }
-
+        private string getDirectory(string path)
+        {
+            string[] elementos = path.Split('\\');
+            string carpeta = string.Join("\\", elementos, 0, elementos.Length - 1);
+            return carpeta;
+        }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             try
@@ -332,7 +337,7 @@ namespace PresentationA.Colaboradores
                 if (openFileDialog2.ShowDialog() == DialogResult.OK && openFileDialog2.FileName != "")
                 {
                     string filePath = openFileDialog2.FileName;
-                    openFileDialog2.InitialDirectory = Path.GetDirectoryName(filePath);
+                    openFileDialog2.InitialDirectory = getDirectory(filePath);
 
                     Stream fotoPerfilArchivo = openFileDialog2.OpenFile();
                     Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
