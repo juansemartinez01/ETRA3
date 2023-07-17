@@ -8,6 +8,7 @@ using FontAwesome.Sharp;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Point = Microsoft.Reporting.Map.WebForms.BingMaps.Point;
 using Common.Cache;
+using PresentationA.Colaboradores.Vestimenta;
 
 namespace PresentationA
 
@@ -234,6 +235,11 @@ namespace PresentationA
         {
             
             openChildFormInPanel(new frmVersion());
+        }
+
+        private void btnVestimenta_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmVestimenta());
         }
     }
 }

@@ -908,3 +908,6 @@ C:\Users\juans\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.csproj.C
 C:\Users\juans\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.csproj.CopyComplete
 C:\Users\juans\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.exe
 C:\Users\juans\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmModificarVestimenta.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmNuevaVestimenta.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmVestimenta.resources

@@ -266,6 +266,24 @@
     <Compile Include="Colaboradores\Usuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\Vestimenta\frmModificarVestimenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Vestimenta\frmModificarVestimenta.Designer.cs">
+      <DependentUpon>frmModificarVestimenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colaboradores\Vestimenta\frmNuevaVestimenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Vestimenta\frmNuevaVestimenta.Designer.cs">
+      <DependentUpon>frmNuevaVestimenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Colaboradores\Vestimenta\frmVestimenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Vestimenta\frmVestimenta.Designer.cs">
+      <DependentUpon>frmVestimenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BotonPadre.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -403,6 +421,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Usuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Vestimenta\frmModificarVestimenta.resx">
+      <DependentUpon>frmModificarVestimenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Vestimenta\frmNuevaVestimenta.resx">
+      <DependentUpon>frmNuevaVestimenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Vestimenta\frmVestimenta.resx">
+      <DependentUpon>frmVestimenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHijo.resx">
       <DependentUpon>frmHijo.cs</DependentUpon>
