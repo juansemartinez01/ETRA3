@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Windows.Media;
 using DomainA;
+using Microsoft.Win32;
 
 namespace PresentationA.Colaboradores
 {
@@ -285,9 +286,10 @@ namespace PresentationA.Colaboradores
                 openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
                 openFileDialog1.FilterIndex = 1;
 
-                if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.InitialDirectory != "C:\\Documentos")
+                if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.InitialDirectory != "")
                 {
-
+                    string filePath = openFileDialog1.FileName;
+                    openFileDialog1.InitialDirectory = Path.GetDirectoryName(filePath);
                 }
                 Stream fotoPerfilArchivo = openFileDialog1.OpenFile();
                 Image fotoPerfil = Image.FromStream(fotoPerfilArchivo);
