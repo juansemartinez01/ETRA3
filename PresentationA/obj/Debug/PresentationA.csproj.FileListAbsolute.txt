@@ -682,8 +682,6 @@ C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\Resources\ETRA_Isologo
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\Resources\logoLW.ico
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\Resources\logoNombre.ico
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\ETRA.exe.config
-C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\ETRA.exe.manifest
-C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\ETRA.application
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\ETRA.exe
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\ETRA.pdb
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\bin\Debug\Common.dll
@@ -774,8 +772,6 @@ C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Reports.
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Reports.Tardanzas.frmTardanza.resources
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.csproj.GenerateResource.cache
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.exe.manifest
-C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.application
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.csproj.CopyComplete
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.exe
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.pdb
@@ -911,3 +907,13 @@ C:\Users\juans\Source\Repos\ETRA3\PresentationA\obj\Debug\ETRA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmModificarVestimenta.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmNuevaVestimenta.resources
 C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmVestimenta.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.Familiares.frmAgregarFam.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Consulta.frmFamiliares.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.TodosFamiliares.frmTodosAgregarFamiliar.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.frmTodosFamiliares.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Salarios.frmModPorCargo.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.TodosFamiliares.frmTodosModificarFamiliar.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmModificarVestimenta.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmNuevaVestimenta.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmVestimenta.resources
+C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.frmVersion.resources

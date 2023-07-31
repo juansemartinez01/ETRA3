@@ -38,7 +38,7 @@ CREATE TABLE Vestimenta (
   legajoColaborador INT PRIMARY KEY,
   sucursal INT,
   area INT,
-  pantalon INT,
+  pantalon VARCHAR(255),
   buzo VARCHAR(255),
   remera VARCHAR(255),
   calzado VARCHAR(255),
@@ -53,3 +53,6 @@ INSERT INTO AREA VALUES (1,'Deposito')
 INSERT INTO AREA VALUES (2,'Venta')
 INSERT INTO AREA VALUES (3,'Sucursal')
 
+SELECT * FROM Area
+
+SELECT * FROM Sucursal

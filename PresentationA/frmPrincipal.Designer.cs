@@ -37,6 +37,7 @@
             this.btnTardanzas = new FontAwesome.Sharp.IconButton();
             this.btnReportes = new FontAwesome.Sharp.IconButton();
             this.pnlColaboradores = new System.Windows.Forms.Panel();
+            this.btnVestimenta = new FontAwesome.Sharp.IconButton();
             this.btnComprobantes = new FontAwesome.Sharp.IconButton();
             this.btnFamiliares = new FontAwesome.Sharp.IconButton();
             this.btnUsuarios = new FontAwesome.Sharp.IconButton();
@@ -49,7 +50,6 @@
             this.btnColaboradores = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlChildForm = new System.Windows.Forms.Panel();
-            this.btnVestimenta = new FontAwesome.Sharp.IconButton();
             this.pnlPrincipal.SuspendLayout();
             this.pnlReportes.SuspendLayout();
             this.pnlColaboradores.SuspendLayout();
@@ -180,6 +180,27 @@
             this.pnlColaboradores.Size = new System.Drawing.Size(183, 422);
             this.pnlColaboradores.TabIndex = 2;
             this.pnlColaboradores.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlColaboradores_Paint);
+            // 
+            // btnVestimenta
+            // 
+            this.btnVestimenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVestimenta.FlatAppearance.BorderSize = 0;
+            this.btnVestimenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVestimenta.ForeColor = System.Drawing.Color.White;
+            this.btnVestimenta.IconChar = FontAwesome.Sharp.IconChar.Tshirt;
+            this.btnVestimenta.IconColor = System.Drawing.Color.White;
+            this.btnVestimenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVestimenta.IconSize = 30;
+            this.btnVestimenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVestimenta.Location = new System.Drawing.Point(0, 378);
+            this.btnVestimenta.Name = "btnVestimenta";
+            this.btnVestimenta.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnVestimenta.Size = new System.Drawing.Size(183, 42);
+            this.btnVestimenta.TabIndex = 10;
+            this.btnVestimenta.Text = "Vestimenta";
+            this.btnVestimenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVestimenta.UseVisualStyleBackColor = true;
+            this.btnVestimenta.Click += new System.EventHandler(this.btnVestimenta_Click);
             // 
             // btnComprobantes
             // 
@@ -417,27 +438,6 @@
             this.pnlChildForm.Name = "pnlChildForm";
             this.pnlChildForm.Size = new System.Drawing.Size(751, 650);
             this.pnlChildForm.TabIndex = 2;
-            // 
-            // btnVestimenta
-            // 
-            this.btnVestimenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVestimenta.FlatAppearance.BorderSize = 0;
-            this.btnVestimenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVestimenta.ForeColor = System.Drawing.Color.White;
-            this.btnVestimenta.IconChar = FontAwesome.Sharp.IconChar.Tshirt;
-            this.btnVestimenta.IconColor = System.Drawing.Color.White;
-            this.btnVestimenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVestimenta.IconSize = 30;
-            this.btnVestimenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVestimenta.Location = new System.Drawing.Point(0, 378);
-            this.btnVestimenta.Name = "btnVestimenta";
-            this.btnVestimenta.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnVestimenta.Size = new System.Drawing.Size(183, 42);
-            this.btnVestimenta.TabIndex = 10;
-            this.btnVestimenta.Text = "Vestimenta";
-            this.btnVestimenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVestimenta.UseVisualStyleBackColor = true;
-            this.btnVestimenta.Click += new System.EventHandler(this.btnVestimenta_Click);
             // 
             // frmPrincipal
             // 

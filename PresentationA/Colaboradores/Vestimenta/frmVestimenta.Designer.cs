@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbColaborador = new System.Windows.Forms.ComboBox();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
-            this.dgvDocumentos = new PresentationA.Controls.DataGridPadre();
+            this.dgvVestimenta = new PresentationA.Controls.DataGridPadre();
             this.legajoColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVestimenta)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,30 +99,31 @@
             this.btnAplicar.TabIndex = 12;
             this.btnAplicar.Text = "Aplicar";
             this.btnAplicar.UseVisualStyleBackColor = false;
+            this.btnAplicar.Click += new System.EventHandler(this.btnAplicar_Click);
             // 
-            // dgvDocumentos
+            // dgvVestimenta
             // 
-            this.dgvDocumentos.AllowUserToAddRows = false;
-            this.dgvDocumentos.AllowUserToDeleteRows = false;
-            this.dgvDocumentos.AllowUserToOrderColumns = true;
-            this.dgvDocumentos.AllowUserToResizeRows = false;
-            this.dgvDocumentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvVestimenta.AllowUserToAddRows = false;
+            this.dgvVestimenta.AllowUserToDeleteRows = false;
+            this.dgvVestimenta.AllowUserToOrderColumns = true;
+            this.dgvVestimenta.AllowUserToResizeRows = false;
+            this.dgvVestimenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDocumentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDocumentos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDocumentos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvDocumentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocumentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDocumentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDocumentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVestimenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVestimenta.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVestimenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvVestimenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVestimenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvVestimenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVestimenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.legajoColaborador,
             this.sucursal,
             this.area,
@@ -130,34 +131,35 @@
             this.calzado,
             this.buzo,
             this.remera});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocumentos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDocumentos.EnableHeadersVisualStyles = false;
-            this.dgvDocumentos.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.dgvDocumentos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            this.dgvDocumentos.Location = new System.Drawing.Point(17, 141);
-            this.dgvDocumentos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.dgvDocumentos.Name = "dgvDocumentos";
-            this.dgvDocumentos.ReadOnly = true;
-            this.dgvDocumentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocumentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDocumentos.RowHeadersWidth = 51;
-            this.dgvDocumentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDocumentos.Size = new System.Drawing.Size(929, 317);
-            this.dgvDocumentos.TabIndex = 47;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVestimenta.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvVestimenta.EnableHeadersVisualStyles = false;
+            this.dgvVestimenta.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.dgvVestimenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            this.dgvVestimenta.Location = new System.Drawing.Point(17, 141);
+            this.dgvVestimenta.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvVestimenta.Name = "dgvVestimenta";
+            this.dgvVestimenta.ReadOnly = true;
+            this.dgvVestimenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVestimenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvVestimenta.RowHeadersWidth = 51;
+            this.dgvVestimenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVestimenta.Size = new System.Drawing.Size(929, 317);
+            this.dgvVestimenta.TabIndex = 47;
+            this.dgvVestimenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVestimenta_CellClick);
             // 
             // legajoColaborador
             // 
@@ -247,6 +249,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -261,10 +264,10 @@
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 30;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(150, 508);
+            this.btnModificar.Location = new System.Drawing.Point(155, 508);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(0);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(122, 37);
+            this.btnModificar.Size = new System.Drawing.Size(128, 37);
             this.btnModificar.TabIndex = 77;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -287,7 +290,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(17, 508);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(122, 37);
+            this.btnAgregar.Size = new System.Drawing.Size(129, 37);
             this.btnAgregar.TabIndex = 76;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -303,14 +306,14 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnExportar);
-            this.Controls.Add(this.dgvDocumentos);
+            this.Controls.Add(this.dgvVestimenta);
             this.Controls.Add(this.btnAplicar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbColaborador);
             this.Controls.Add(this.label1);
             this.Name = "frmVestimenta";
             this.Text = "frmVestimenta";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDocumentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVestimenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,7 +325,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbColaborador;
         private Controls.BotonPadre btnAplicar;
-        private Controls.DataGridPadre dgvDocumentos;
+        private Controls.DataGridPadre dgvVestimenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn legajoColaborador;
         private System.Windows.Forms.DataGridViewTextBoxColumn sucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn area;

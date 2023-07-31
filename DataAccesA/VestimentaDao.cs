@@ -1,13 +1,29 @@
 ﻿using DataAccesA;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 
 public class VestimentaDao : ConnectionToSql
 {
     
 
-    public void InsertarVestimenta(int legajoColaborador, int sucursal, int area, int pantalon, string buzo, string remera, string calzado)
+    public void InsertarVestimenta(int legajoColaborador, int sucursal, int area, string pantalon, string buzo, string remera, string calzado)
     {
+
+        using (var connection = GetConnection())
+        {
+            connection.Open();
+
+            string query = "DELETE FROM Vestimenta WHERE legajoColaborador = @legajo";
+
+            using (var command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@legajo", legajoColaborador);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
         using (var connection = GetConnection())
         {
             connection.Open();
@@ -44,7 +60,31 @@ public class VestimentaDao : ConnectionToSql
             }
         }
     }
-    public void ModificarVestimenta(int legajoColaborador, int sucursal, int area, int pantalon, string buzo, string remera, string calzado)
+
+    public DataTable obtenerVestimenta(string legajo)
+    {
+        string parametros = "";
+        if(int.Parse(legajo) != 0)
+        {
+            parametros = "AND legajoColaborador = " + legajo;
+        }
+        DataTable resultado = new DataTable();
+        using (var connection = GetConnection())
+        {
+            connection.Open();
+            using (var command = new SqlCommand())
+            {
+                command.Connection = connection;
+                command.CommandText = "SELECT V.legajoColaborador as 'Legajo',V.sucursal as 'Sucursal',V.area as 'Area',V.pantalon as 'Pantalon',V.buzo as 'Buzo',V.remera as 'Remera',V.calzado as 'Calzado' FROM Vestimenta V JOIN Colaborador C ON C.legajo = V.legajoColaborador WHERE C.borradoLogico = 0 " + parametros;
+                command.Parameters.AddWithValue("@legajo", legajo);
+                command.CommandType = CommandType.Text;
+                SqlDataReader reader = command.ExecuteReader();
+                resultado.Load(reader);
+                return resultado;
+            }
+        }
+    }
+    public void ModificarVestimenta(int legajoColaborador, int sucursal, int area, string pantalon, string buzo, string remera, string calzado)
     {
         using (var connection = GetConnection())
         {
