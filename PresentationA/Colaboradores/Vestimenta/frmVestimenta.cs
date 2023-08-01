@@ -109,6 +109,7 @@ namespace PresentationA.Colaboradores.Vestimenta
             MessageBox.Show("Se elimino la vestimenta del legajo " + vestimenta.legajoColaborador + ".");
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
+            CargarTabla("0");
             
         }
 
