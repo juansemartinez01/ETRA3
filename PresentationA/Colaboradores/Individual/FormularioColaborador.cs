@@ -9,6 +9,7 @@ using PresentationA.Colaboradores;
 using PresentationA.Colaboradores.Consulta;
 using System.ComponentModel;
 using System.Linq;
+using PresentationA.Colaboradores.Individual;
 
 namespace PresentationA
 {
@@ -238,6 +239,12 @@ namespace PresentationA
             }
 
             excel.Visible = true;
+        }
+
+        private void btnVestimenta_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildFormInPanel(new frmVestimenta(colaborador.Rows[0]["legajo"].ToString()));
         }
     }
 }

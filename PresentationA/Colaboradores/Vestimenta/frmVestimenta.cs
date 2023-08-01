@@ -22,6 +22,10 @@ namespace PresentationA.Colaboradores.Vestimenta
             btnModificar.Enabled= false;
             CargarTabla("0");
             LlenarCombo(cmbColaborador, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Colaborador WHERE borradoLogico = 0"), "legajo", "legajo");
+            if (dgvVestimenta.Rows.Count> 0 )
+            {
+                setVestimenta(0);
+            }
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -56,18 +60,16 @@ namespace PresentationA.Colaboradores.Vestimenta
         {
             frmNuevaVestimenta agregar = new frmNuevaVestimenta();
             agregar.ShowDialog();
-            
-
-
+            CargarTabla("0");
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            frmModificarVestimenta modificar = new frmModificarVestimenta(vestimenta.legajoColaborador);
+            frmModificarVestimenta modificar = new frmModificarVestimenta(vestimenta);
             modificar.ShowDialog();
             btnEliminar.Enabled = false;
             btnModificar.Enabled = false;
-            
+            CargarTabla("0");
         }
 
         public void CargarTabla(string legajo)
@@ -81,6 +83,7 @@ namespace PresentationA.Colaboradores.Vestimenta
                 {
                     //crear metodo completar labels
                     dgvVestimenta.Rows.Add(vestimentas.Rows[i]["Legajo"], vestimentas.Rows[i]["Sucursal"], vestimentas.Rows[i]["Area"], vestimentas.Rows[i]["Pantalon"], vestimentas.Rows[i]["Buzo"], vestimentas.Rows[i]["Remera"], vestimentas.Rows[i]["Calzado"]);
+                    
                 }
             }
             catch (Exception ex)
@@ -114,9 +117,29 @@ namespace PresentationA.Colaboradores.Vestimenta
             int indice = e.RowIndex;
             vestimenta.filaSeleccionada = indice;
             DataGridViewRow filaSeleccionada = dgvVestimenta.Rows[vestimenta.filaSeleccionada];
-            vestimenta.legajoColaborador = int.Parse(filaSeleccionada.Cells["legajoColaborador"].Value.ToString());
+            vestimenta = setVestimenta(indice);
+
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;
+        }
+
+        private VestimentaModelo setVestimenta(int indice)
+        {
+            DataGridViewRow filaSeleccionada = dgvVestimenta.Rows[indice];
+            vestimenta.legajoColaborador = int.Parse(filaSeleccionada.Cells["legajoColaborador"].Value.ToString());
+            vestimenta.calzado = int.Parse(filaSeleccionada.Cells["calzado"].Value.ToString());
+            vestimenta.nombreArea = filaSeleccionada.Cells["area"].Value.ToString();
+            vestimenta.pantalon = int.Parse(filaSeleccionada.Cells["pantalon"].Value.ToString());
+            vestimenta.buzo = filaSeleccionada.Cells["buzo"].Value.ToString();
+            vestimenta.remera = filaSeleccionada.Cells["remera"].Value.ToString();
+            vestimenta.nombreSucursal = filaSeleccionada.Cells["sucursal"].Value.ToString();
+            return vestimenta;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cmbColaborador.Text = "";
+            CargarTabla("0");
         }
     }
 }

@@ -206,6 +206,12 @@
     <Compile Include="Colaboradores\Avisos\frmMail.Designer.cs">
       <DependentUpon>frmMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colaboradores\Individual\frmVestimenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colaboradores\Individual\frmVestimenta.Designer.cs">
+      <DependentUpon>frmVestimenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colaboradores\TodosFamiliares\frmTodosAgregarFamiliar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -400,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\Avisos\frmAvisos.resx">
       <DependentUpon>frmAvisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colaboradores\Individual\frmVestimenta.resx">
+      <DependentUpon>frmVestimenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colaboradores\TodosFamiliares\frmTodosAgregarFamiliar.resx">
       <DependentUpon>frmTodosAgregarFamiliar.cs</DependentUpon>

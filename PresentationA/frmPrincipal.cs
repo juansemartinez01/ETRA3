@@ -239,6 +239,7 @@ namespace PresentationA
 
         private void btnVestimenta_Click(object sender, EventArgs e)
         {
+            ActivateButton(sender);
             openChildFormInPanel(new frmVestimenta());
         }
     }

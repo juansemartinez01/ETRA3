@@ -33,13 +33,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtBuzo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPantalon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbLegajo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRemera = new System.Windows.Forms.TextBox();
-            this.txtCalzado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,6 +45,10 @@
             this.btnCancelar = new PresentationA.Controls.BotonPadre();
             this.btnGuardar = new PresentationA.Controls.BotonPadre();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtCalzado = new System.Windows.Forms.NumericUpDown();
+            this.txtPantalon = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalzado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPantalon)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbSucursal
@@ -55,7 +57,7 @@
             this.cmbSucursal.Location = new System.Drawing.Point(201, 121);
             this.cmbSucursal.Name = "cmbSucursal";
             this.cmbSucursal.Size = new System.Drawing.Size(137, 29);
-            this.cmbSucursal.TabIndex = 167;
+            this.cmbSucursal.TabIndex = 2;
             // 
             // cmbArea
             // 
@@ -63,7 +65,7 @@
             this.cmbArea.Location = new System.Drawing.Point(201, 172);
             this.cmbArea.Name = "cmbArea";
             this.cmbArea.Size = new System.Drawing.Size(137, 29);
-            this.cmbArea.TabIndex = 166;
+            this.cmbArea.TabIndex = 3;
             // 
             // label8
             // 
@@ -79,7 +81,9 @@
             this.txtBuzo.Location = new System.Drawing.Point(201, 261);
             this.txtBuzo.Name = "txtBuzo";
             this.txtBuzo.Size = new System.Drawing.Size(137, 27);
-            this.txtBuzo.TabIndex = 160;
+            this.txtBuzo.TabIndex = 5;
+            this.txtBuzo.TextChanged += new System.EventHandler(this.txtBuzo_TextChanged);
+            this.txtBuzo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label2
             // 
@@ -89,13 +93,6 @@
             this.label2.Size = new System.Drawing.Size(85, 21);
             this.label2.TabIndex = 164;
             this.label2.Text = "Pantalon:";
-            // 
-            // txtPantalon
-            // 
-            this.txtPantalon.Location = new System.Drawing.Point(201, 217);
-            this.txtPantalon.Name = "txtPantalon";
-            this.txtPantalon.Size = new System.Drawing.Size(137, 27);
-            this.txtPantalon.TabIndex = 159;
             // 
             // label5
             // 
@@ -120,7 +117,7 @@
             this.cmbLegajo.Location = new System.Drawing.Point(201, 67);
             this.cmbLegajo.Name = "cmbLegajo";
             this.cmbLegajo.Size = new System.Drawing.Size(137, 29);
-            this.cmbLegajo.TabIndex = 153;
+            this.cmbLegajo.TabIndex = 1;
             // 
             // label7
             // 
@@ -135,14 +132,9 @@
             this.txtRemera.Location = new System.Drawing.Point(201, 302);
             this.txtRemera.Name = "txtRemera";
             this.txtRemera.Size = new System.Drawing.Size(137, 27);
-            this.txtRemera.TabIndex = 168;
-            // 
-            // txtCalzado
-            // 
-            this.txtCalzado.Location = new System.Drawing.Point(201, 343);
-            this.txtCalzado.Name = "txtCalzado";
-            this.txtCalzado.Size = new System.Drawing.Size(137, 27);
-            this.txtCalzado.TabIndex = 169;
+            this.txtRemera.TabIndex = 6;
+            this.txtRemera.TextChanged += new System.EventHandler(this.txtRemera_TextChanged);
+            this.txtRemera.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label1
             // 
@@ -221,7 +213,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(41, 469);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(123, 37);
-            this.btnGuardar.TabIndex = 174;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -238,11 +230,27 @@
             this.label9.TabIndex = 176;
             this.label9.Text = "Nueva Vestimenta";
             // 
+            // txtCalzado
+            // 
+            this.txtCalzado.Location = new System.Drawing.Point(201, 344);
+            this.txtCalzado.Name = "txtCalzado";
+            this.txtCalzado.Size = new System.Drawing.Size(137, 27);
+            this.txtCalzado.TabIndex = 7;
+            // 
+            // txtPantalon
+            // 
+            this.txtPantalon.Location = new System.Drawing.Point(201, 218);
+            this.txtPantalon.Name = "txtPantalon";
+            this.txtPantalon.Size = new System.Drawing.Size(137, 27);
+            this.txtPantalon.TabIndex = 4;
+            // 
             // frmNuevaVestimenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 518);
+            this.Controls.Add(this.txtPantalon);
+            this.Controls.Add(this.txtCalzado);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -250,14 +258,12 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCalzado);
             this.Controls.Add(this.txtRemera);
             this.Controls.Add(this.cmbSucursal);
             this.Controls.Add(this.cmbArea);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtBuzo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPantalon);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbLegajo);
@@ -267,6 +273,8 @@
             this.Name = "frmNuevaVestimenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Vestimenta";
+            ((System.ComponentModel.ISupportInitialize)(this.txtCalzado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPantalon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,13 +287,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtBuzo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtPantalon;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbLegajo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtRemera;
-        private System.Windows.Forms.TextBox txtCalzado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -293,5 +299,7 @@
         private Controls.BotonPadre btnCancelar;
         private Controls.BotonPadre btnGuardar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown txtCalzado;
+        private System.Windows.Forms.NumericUpDown txtPantalon;
     }
 }

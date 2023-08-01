@@ -11,13 +11,17 @@ namespace DomainA
     {
         VestimentaDao vestimentaDao = new VestimentaDao();
         public int legajoColaborador;
-        public int sucursal;
-        public int area;
-        public int pantalon;
+        public Nullable<int> sucursal;
+        public string nombreSucursal;
+        public Nullable<int> area;
+        public string nombreArea;
+        public Nullable<int> pantalon;
         public string buzo;
         public string remera;
-        public string calzado;
+        public Nullable<int> calzado;
         public int filaSeleccionada = 0;
+
+        
 
         public void EliminarVestimenta(int legajoColaborador)
         {

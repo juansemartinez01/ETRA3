@@ -50,7 +50,7 @@ namespace PresentationA.Colaboradores.Vestimenta
             if (txtPantalon.Text.Length == 0) { errorValidacion = true; }
             if (txtRemera.Text.Length == 0) { errorValidacion = true; }
             if(errorValidacion) { 
-                MessageBox.Show("Debe completar todos los campos obligatoriamente.");
+                msgError("Debe completar todos los campos obligatoriamente.");
             }
             else{
                 int legajo = int.Parse(cmbLegajo.SelectedValue.ToString());
@@ -62,9 +62,30 @@ namespace PresentationA.Colaboradores.Vestimenta
                 string remera = txtRemera.Text.Trim();
                 vestimentaNueva.InsertarVestimenta(legajo, sucursal, area, pantalon, buzo, remera, calzado);
                 MessageBox.Show("Se agrego la vestimenta correctamente.");
-                
+                this.Close();
             }
 
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+        private void textBox_TextChanged(TextBox sender, EventArgs e)
+        {
+            sender.SelectionStart = sender.Text.Length;
+            sender.Text = sender.Text.ToUpper();
+
+        }
+
+
+        private void txtBuzo_TextChanged(object sender, EventArgs e)
+        {
+            textBox_TextChanged(txtBuzo, e);
+        }
+        private void txtRemera_TextChanged(object sender, EventArgs e)
+        {
+            textBox_TextChanged(txtRemera, e);
         }
     }
 }

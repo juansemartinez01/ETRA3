@@ -917,3 +917,4 @@ C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colabora
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmNuevaVestimenta.resources
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmVestimenta.resources
 C:\Users\Admin\Source\Repos\ETRA3\PresentationA\obj\Debug\PresentationA.frmVersion.resources
+C:\Users\usuario\Documents\ETRA\Programa\PresentationA\obj\Debug\PresentationA.Colaboradores.Individual.frmVestimenta.resources

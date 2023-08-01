@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbColaborador = new System.Windows.Forms.ComboBox();
             this.btnAplicar = new PresentationA.Controls.BotonPadre();
             this.dgvVestimenta = new PresentationA.Controls.DataGridPadre();
-            this.legajoColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pantalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calzado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buzo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
             this.btnModificar = new PresentationA.Controls.BotonPadre();
             this.btnAgregar = new PresentationA.Controls.BotonPadre();
+            this.btnLimpiar = new PresentationA.Controls.BotonPadre();
+            this.legajoColaborador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pantalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buzo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calzado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVestimenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(369, 9);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 28);
@@ -92,7 +93,7 @@
             this.btnAplicar.IconColor = System.Drawing.Color.Black;
             this.btnAplicar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAplicar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAplicar.Location = new System.Drawing.Point(563, 76);
+            this.btnAplicar.Location = new System.Drawing.Point(321, 76);
             this.btnAplicar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAplicar.Name = "btnAplicar";
             this.btnAplicar.Size = new System.Drawing.Size(117, 40);
@@ -114,31 +115,31 @@
             this.dgvVestimenta.BackgroundColor = System.Drawing.Color.White;
             this.dgvVestimenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvVestimenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVestimenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVestimenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVestimenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVestimenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.legajoColaborador,
             this.sucursal,
             this.area,
             this.pantalon,
-            this.calzado,
             this.buzo,
-            this.remera});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVestimenta.DefaultCellStyle = dataGridViewCellStyle8;
+            this.remera,
+            this.calzado});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVestimenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVestimenta.EnableHeadersVisualStyles = false;
             this.dgvVestimenta.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvVestimenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -147,65 +148,19 @@
             this.dgvVestimenta.Name = "dgvVestimenta";
             this.dgvVestimenta.ReadOnly = true;
             this.dgvVestimenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVestimenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVestimenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVestimenta.RowHeadersWidth = 51;
             this.dgvVestimenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVestimenta.Size = new System.Drawing.Size(929, 317);
             this.dgvVestimenta.TabIndex = 47;
             this.dgvVestimenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVestimenta_CellClick);
-            // 
-            // legajoColaborador
-            // 
-            this.legajoColaborador.HeaderText = "Legajo";
-            this.legajoColaborador.MinimumWidth = 6;
-            this.legajoColaborador.Name = "legajoColaborador";
-            this.legajoColaborador.ReadOnly = true;
-            // 
-            // sucursal
-            // 
-            this.sucursal.HeaderText = "Sucursal";
-            this.sucursal.MinimumWidth = 6;
-            this.sucursal.Name = "sucursal";
-            this.sucursal.ReadOnly = true;
-            // 
-            // area
-            // 
-            this.area.HeaderText = "Area";
-            this.area.MinimumWidth = 6;
-            this.area.Name = "area";
-            this.area.ReadOnly = true;
-            // 
-            // pantalon
-            // 
-            this.pantalon.HeaderText = "Pantalon";
-            this.pantalon.MinimumWidth = 6;
-            this.pantalon.Name = "pantalon";
-            this.pantalon.ReadOnly = true;
-            // 
-            // calzado
-            // 
-            this.calzado.HeaderText = "Calzado";
-            this.calzado.Name = "calzado";
-            this.calzado.ReadOnly = true;
-            // 
-            // buzo
-            // 
-            this.buzo.HeaderText = "Buzo/Campera";
-            this.buzo.Name = "buzo";
-            this.buzo.ReadOnly = true;
-            // 
-            // remera
-            // 
-            this.remera.HeaderText = "Remera";
-            this.remera.Name = "remera";
-            this.remera.ReadOnly = true;
             // 
             // btnExportar
             // 
@@ -219,12 +174,13 @@
             this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExportar.IconSize = 30;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnExportar.Location = new System.Drawing.Point(708, 77);
+            this.btnExportar.Location = new System.Drawing.Point(620, 77);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(238, 39);
+            this.btnExportar.Size = new System.Drawing.Size(170, 39);
             this.btnExportar.TabIndex = 48;
             this.btnExportar.Text = "Exportar a Excel";
+            this.btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExportar.UseVisualStyleBackColor = false;
             this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
             // 
@@ -297,11 +253,78 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiar.Location = new System.Drawing.Point(470, 76);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(117, 40);
+            this.btnLimpiar.TabIndex = 79;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // legajoColaborador
+            // 
+            this.legajoColaborador.HeaderText = "Legajo";
+            this.legajoColaborador.MinimumWidth = 6;
+            this.legajoColaborador.Name = "legajoColaborador";
+            this.legajoColaborador.ReadOnly = true;
+            // 
+            // sucursal
+            // 
+            this.sucursal.HeaderText = "Sucursal";
+            this.sucursal.MinimumWidth = 6;
+            this.sucursal.Name = "sucursal";
+            this.sucursal.ReadOnly = true;
+            // 
+            // area
+            // 
+            this.area.HeaderText = "Area";
+            this.area.MinimumWidth = 6;
+            this.area.Name = "area";
+            this.area.ReadOnly = true;
+            // 
+            // pantalon
+            // 
+            this.pantalon.HeaderText = "Pantalon";
+            this.pantalon.MinimumWidth = 6;
+            this.pantalon.Name = "pantalon";
+            this.pantalon.ReadOnly = true;
+            // 
+            // buzo
+            // 
+            this.buzo.HeaderText = "Buzo/Campera";
+            this.buzo.Name = "buzo";
+            this.buzo.ReadOnly = true;
+            // 
+            // remera
+            // 
+            this.remera.HeaderText = "Remera";
+            this.remera.Name = "remera";
+            this.remera.ReadOnly = true;
+            // 
+            // calzado
+            // 
+            this.calzado.HeaderText = "Calzado";
+            this.calzado.Name = "calzado";
+            this.calzado.ReadOnly = true;
+            // 
             // frmVestimenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 572);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -326,16 +349,17 @@
         private System.Windows.Forms.ComboBox cmbColaborador;
         private Controls.BotonPadre btnAplicar;
         private Controls.DataGridPadre dgvVestimenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn legajoColaborador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sucursal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn area;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pantalon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calzado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn buzo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn remera;
         private Controls.BotonPadre btnExportar;
         private Controls.BotonPadre btnEliminar;
         private Controls.BotonPadre btnModificar;
         private Controls.BotonPadre btnAgregar;
+        private Controls.BotonPadre btnLimpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn legajoColaborador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn area;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pantalon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn buzo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calzado;
     }
 }

@@ -75,7 +75,7 @@ public class VestimentaDao : ConnectionToSql
             using (var command = new SqlCommand())
             {
                 command.Connection = connection;
-                command.CommandText = "SELECT V.legajoColaborador as 'Legajo',V.sucursal as 'Sucursal',V.area as 'Area',V.pantalon as 'Pantalon',V.buzo as 'Buzo',V.remera as 'Remera',V.calzado as 'Calzado' FROM Vestimenta V JOIN Colaborador C ON C.legajo = V.legajoColaborador WHERE C.borradoLogico = 0 " + parametros;
+                command.CommandText = "SELECT V.legajoColaborador as 'Legajo',s.nombre as 'Sucursal',a.nombre as 'Area',V.pantalon as 'Pantalon',V.buzo as 'Buzo',V.remera as 'Remera',V.calzado as 'Calzado' FROM Vestimenta V JOIN Colaborador C ON C.legajo = V.legajoColaborador JOIN Sucursal s on s.codigoSucursal = V.sucursal JOIN Area a on a.idArea = V.area WHERE C.borradoLogico = 0 " + parametros;
                 command.Parameters.AddWithValue("@legajo", legajo);
                 command.CommandType = CommandType.Text;
                 SqlDataReader reader = command.ExecuteReader();
