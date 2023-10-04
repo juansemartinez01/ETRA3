@@ -26,10 +26,10 @@ namespace DomainA
         }
 
 
-        public string CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable,int codigoSucursal)
+        public string CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable,int codigoSucursal,int estadoCivil,int escolaridad)
         {
             if (UserCache.perfil != Perfiles.admin) { return "No tiene permisos"; }
-            var creadoExito = colaboradorDao.CrearColaborador(nombre, apellido, dni, cuit, calle, numeroCalle, puesto, piso, departamento, localidad, provincia, estado, salario, mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable,codigoSucursal);
+            var creadoExito = colaboradorDao.CrearColaborador(nombre, apellido, dni, cuit, calle, numeroCalle, puesto, piso, departamento, localidad, provincia, estado, salario, mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable,codigoSucursal,estadoCivil,escolaridad);
             if (creadoExito == 1)
             {
                 return "El colaborador fue creado con exito";
@@ -68,9 +68,9 @@ namespace DomainA
         {
             return int.Parse(colaboradorDao.BuscarIdUltimoEvento());
         }
-        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable,int codigoSucursal)
+        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable,int codigoSucursal, int estadoCivil, int escolaridad)
         {
-            if (UserCache.perfil == Perfiles.admin) { return colaboradorDao.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, depto, localidad, mail, telefonoContacto, telefonoEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal); }
+            if (UserCache.perfil == Perfiles.admin) { return colaboradorDao.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, depto, localidad, mail, telefonoContacto, telefonoEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal,estadoCivil,escolaridad); }
             return "No tiene permisos";
         }
         public DataTable buscarLegajosDeUnCargo(int idCargo)

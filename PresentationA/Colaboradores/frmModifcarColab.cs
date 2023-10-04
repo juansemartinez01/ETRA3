@@ -178,7 +178,12 @@ namespace PresentationA.Colaboradores
                     agregarArchivoColaborador(colaboradorModelo);
                 }
                 int codigoSucursal = (int)cmbSucursal.SelectedValue;
-                MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal));
+
+                //Aca tambien tenes que modificar Paez!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                int estadoCivil = 1;
+                int escolaridad = 1;
+                
+                MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal,estadoCivil,escolaridad));
                 hayCambios = false;
                 this.Close();
             }

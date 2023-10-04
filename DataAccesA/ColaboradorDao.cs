@@ -23,7 +23,7 @@ namespace DataAccesA
                     {
                         command.Connection = connection;
 
-                        command.CommandText = "SELECT legajo, c.nombre, apellido,CUIT,nroContacto,nroEmergencia, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto,d.piso, d.departamento, d.localidad, d.provincia,C.dni,C.obraSocial,CCC.saldoAdeudado, s.nombre as 'nombreSucursal' FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario JOIN MovimientosCuentaColaborador MCC ON MCC.legajoColaborador = c.legajo JOIN CuentaColaborador CCC ON CCC.numeroCuenta = MCC.nroCuenta left join Sucursal s on s.codigoSucursal = c.codigoSucursal WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL AND MCC.tipoMovimiento = 3";
+                        command.CommandText = "SELECT legajo, c.nombre, apellido,CUIT,nroContacto,nroEmergencia, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto,d.piso, d.departamento, d.localidad, d.provincia,C.dni,C.obraSocial,CCC.saldoAdeudado, s.nombre as 'nombreSucursal', ECIV.nombre as 'estadoCivil', ESC.nombre as 'escolaridad' FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario JOIN MovimientosCuentaColaborador MCC ON MCC.legajoColaborador = c.legajo JOIN CuentaColaborador CCC ON CCC.numeroCuenta = MCC.nroCuenta left join Sucursal s on s.codigoSucursal = c.codigoSucursal JOIN Escolaridad ESC ON c.escolaridad_id = ESC.id JOIN EstadoCivil ECIV ON ECIV.id = c.estadoCivil_id WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL AND MCC.tipoMovimiento = 3";
                         command.Parameters.AddWithValue("@legajo", legajo + "%");
                         command.Parameters.AddWithValue("@nombre", nombre + "%");
                         command.Parameters.AddWithValue("@apellido", apellido + "%");
@@ -356,7 +356,7 @@ namespace DataAccesA
                 return ex.Message;
             }
         }
-        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable, int? codigoSucursal)
+        public int CrearColaborador(string nombre, string apellido, int dni, string cuit, string calle, int numeroCalle, int puesto, int piso, string departamento, string localidad, string provincia, int estado, float salario, string mail, string telefonoContacto, string telefonoEmergencia, DateTime fechaNacimiento, DateTime fechaIngreso, string obraSocial, int legajoResponsable, int? codigoSucursal,int estadoCivil,int escolaridad)
         {
             try
             {
@@ -392,7 +392,7 @@ namespace DataAccesA
                             using (var command2 = new SqlCommand())
                             {
                                 command2.Connection = connection;
-                                command2.CommandText = "INSERT INTO Colaborador VALUES (@nombre,@apellido,@mail,(SELECT MAX(id_direccion) FROM Direccion),Format(@fechaNacimiento, 'yyyy - MM - dd'),Format(@fechaIngreso, 'yyyy - MM - dd'),0,@dni,@cuit,NULL,@nroContacto,@nroEmergencia,@obraSocial,@legajoResponsable,NULL,@codigoSucursal)";
+                                command2.CommandText = "INSERT INTO Colaborador VALUES (@nombre,@apellido,@mail,(SELECT MAX(id_direccion) FROM Direccion),Format(@fechaNacimiento, 'yyyy - MM - dd'),Format(@fechaIngreso, 'yyyy - MM - dd'),0,@dni,@cuit,NULL,@nroContacto,@nroEmergencia,@obraSocial,@legajoResponsable,NULL,@codigoSucursal,@estadoCivil,@escolaridad)";
                                 command2.Parameters.AddWithValue("@nombre", nombre);
                                 command2.Parameters.AddWithValue("@apellido", apellido);
                                 command2.Parameters.AddWithValue("@mail", mail);
@@ -405,6 +405,8 @@ namespace DataAccesA
                                 command2.Parameters.AddWithValue("@obraSocial", obraSocial);
                                 command2.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
                                 command2.Parameters.AddWithValue("@codigoSucursal", codigoSucursal);
+                                command2.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                                command2.Parameters.AddWithValue("@escolaridad", escolaridad);
                                 //command2.Parameters.AddWithValue("@codigoSucursal", (object)codigoSucursal ?? DBNull.Value); // Handle nullable int
 
                                 command2.CommandType = CommandType.Text;
@@ -999,7 +1001,7 @@ namespace DataAccesA
                 return documentos;
             }
         }
-        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable, int? codigoSucursal)
+        public string modificarColaborador(int legajo, string nombre, string apellido, DateTime fechaNacimiento, string Cuit, int dni, string calle, int numeroCalle, int piso, string depto, string localidad, string mail, string telefonoContacto, string telefonoEmergencia, int estado, string obraSocial, int puesto, int legajoResponsable, int? codigoSucursal, int estadoCivil,int escolaridad)
         {
             int esEdificio = 0;
             if (piso > 0)
@@ -1017,7 +1019,7 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre, apellido = @apellido, mail = @mail, fechaNacimiento = FORMAT(@fechaNacimiento, 'yyyy-MM-dd'), dni = @dni, CUIT = @cuit, nroContacto = @nroContacto, nroEmergencia = @nroEmergencia, obraSocial = @obraSocial, legajoResponsable = @legajoResponsable, codigoSucursal = @codigoSucursal WHERE legajo = @legajo;" +
+                        command.CommandText = "UPDATE Colaborador SET nombre = @nombre, apellido = @apellido, mail = @mail, fechaNacimiento = FORMAT(@fechaNacimiento, 'yyyy-MM-dd'), dni = @dni, CUIT = @cuit, nroContacto = @nroContacto, nroEmergencia = @nroEmergencia, obraSocial = @obraSocial, legajoResponsable = @legajoResponsable, codigoSucursal = @codigoSucursal,estadoCivil_id = @estadoCivil,escolaridad_id = @escolaridad WHERE legajo = @legajo;" +
                                               "UPDATE Usuario SET mail = @mail WHERE legajoColaborador = @legajo";
                         command.Parameters.AddWithValue("@nombre", nombre);
                         command.Parameters.AddWithValue("@apellido", apellido);
@@ -1030,6 +1032,8 @@ namespace DataAccesA
                         command.Parameters.AddWithValue("@obraSocial", obraSocial);
                         command.Parameters.AddWithValue("@legajoResponsable", legajoResponsable);
                         command.Parameters.AddWithValue("@codigoSucursal", codigoSucursal ?? (object)DBNull.Value);
+                        command.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                        command.Parameters.AddWithValue("@escolaridad", escolaridad);
                         command.Parameters.AddWithValue("@legajo", legajo);
                         command.CommandType = CommandType.Text;
                         var colaboradorModificado = command.ExecuteNonQuery();

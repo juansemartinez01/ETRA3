@@ -50,6 +50,10 @@ namespace PresentationA.Colaboradores
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            //Esto es lo que tenes que agregar Paezzz, agregar el comboBox y aca poner el seleccionado--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            int estadoCivil = 1;
+            int escolaridad = 1;
+
             int codigoSucursal = (int)cmbSucursal.SelectedValue;
             DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
             DateTime fechaIngreso;
@@ -147,7 +151,7 @@ namespace PresentationA.Colaboradores
                                             {
                                                 departamento = txtDepto.Text.ToString();
                                                 ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue,float.Parse(txtSalario.Text.ToString()),mail,telefonoContacto,telefonoEmergencia,fechaNacimiento,fechaIngreso,obraSocial,legajoResponsable,codigoSucursal);
+                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue,float.Parse(txtSalario.Text.ToString()),mail,telefonoContacto,telefonoEmergencia,fechaNacimiento,fechaIngreso,obraSocial,legajoResponsable,codigoSucursal,estadoCivil,escolaridad);
                                                 if (openFileDialog1.InitialDirectory != "no seleccionado" && openFileDialog1.InitialDirectory != "C:\\Documentos")
                                                 {
 
@@ -168,7 +172,7 @@ namespace PresentationA.Colaboradores
                                             piso = 0;
                                             departamento = "No especifica";
                                             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                            var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable, codigoSucursal);
+                                            var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable, codigoSucursal, estadoCivil, escolaridad);
                                             if (openFileDialog1.InitialDirectory != "no seleccionado" && openFileDialog1.InitialDirectory != "C:\\Documentos")
                                             {
 
