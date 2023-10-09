@@ -309,9 +309,10 @@ namespace DataAccesA
                 columnaBusqueda = "codigoSucursal";
                 columnaWhere = "nombre";
             }
-            if (columnaBusqueda == "" || columnaWhere == "")
+            if (tablaBusqueda == "Escolaridad" || tablaBusqueda == "EstadoCivil")
             {
-                return 0;
+                columnaBusqueda = "id";
+                columnaWhere = "nombre";
             }
             int idBusqueda = 0;
             try

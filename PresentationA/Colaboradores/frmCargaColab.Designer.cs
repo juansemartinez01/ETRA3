@@ -64,6 +64,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbSucursal = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtObraSocial = new System.Windows.Forms.TextBox();
             this.txtNroContacto = new System.Windows.Forms.TextBox();
             this.txtNroEmergencia = new System.Windows.Forms.TextBox();
@@ -80,8 +82,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.btnConfirmar = new PresentationA.Controls.BotonPadre();
             this.btnLimpiar = new PresentationA.Controls.BotonPadre();
-            this.cmbSucursal = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cmbEscolaridad = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -311,6 +316,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbEscolaridad);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.cmbEstadoCivil);
+            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.chkIngresaHoy);
             this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.dtpFechaingreso);
@@ -350,7 +360,7 @@
             // chkIngresaHoy
             // 
             this.chkIngresaHoy.AutoSize = true;
-            this.chkIngresaHoy.Location = new System.Drawing.Point(561, 90);
+            this.chkIngresaHoy.Location = new System.Drawing.Point(578, 65);
             this.chkIngresaHoy.Name = "chkIngresaHoy";
             this.chkIngresaHoy.Size = new System.Drawing.Size(114, 24);
             this.chkIngresaHoy.TabIndex = 7;
@@ -361,7 +371,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(286, 89);
+            this.label23.Location = new System.Drawing.Point(291, 68);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(126, 20);
             this.label23.TabIndex = 93;
@@ -369,7 +379,7 @@
             // 
             // dtpFechaingreso
             // 
-            this.dtpFechaingreso.Location = new System.Drawing.Point(423, 83);
+            this.dtpFechaingreso.Location = new System.Drawing.Point(423, 63);
             this.dtpFechaingreso.Name = "dtpFechaingreso";
             this.dtpFechaingreso.Size = new System.Drawing.Size(120, 26);
             this.dtpFechaingreso.TabIndex = 6;
@@ -430,6 +440,23 @@
             this.groupBox2.TabIndex = 95;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Generales";
+            // 
+            // cmbSucursal
+            // 
+            this.cmbSucursal.FormattingEnabled = true;
+            this.cmbSucursal.Location = new System.Drawing.Point(397, 87);
+            this.cmbSucursal.Name = "cmbSucursal";
+            this.cmbSucursal.Size = new System.Drawing.Size(146, 28);
+            this.cmbSucursal.TabIndex = 129;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(294, 92);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 20);
+            this.label12.TabIndex = 130;
+            this.label12.Text = "* Sucursal:";
             // 
             // txtObraSocial
             // 
@@ -588,22 +615,47 @@
             this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // cmbSucursal
+            // label16
             // 
-            this.cmbSucursal.FormattingEnabled = true;
-            this.cmbSucursal.Location = new System.Drawing.Point(397, 87);
-            this.cmbSucursal.Name = "cmbSucursal";
-            this.cmbSucursal.Size = new System.Drawing.Size(146, 28);
-            this.cmbSucursal.TabIndex = 129;
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(499, 137);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 20);
+            this.label16.TabIndex = 121;
             // 
-            // label12
+            // cmbEstadoCivil
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(294, 92);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 20);
-            this.label12.TabIndex = 130;
-            this.label12.Text = "* Sucursal:";
+            this.cmbEstadoCivil.FormattingEnabled = true;
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(397, 98);
+            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(146, 28);
+            this.cmbEstadoCivil.TabIndex = 119;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(294, 103);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(97, 20);
+            this.label17.TabIndex = 120;
+            this.label17.Text = "Estado Civil:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(294, 144);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(94, 20);
+            this.label19.TabIndex = 122;
+            this.label19.Text = "Escolaridad";
+            // 
+            // cmbEscolaridad
+            // 
+            this.cmbEscolaridad.FormattingEnabled = true;
+            this.cmbEscolaridad.Location = new System.Drawing.Point(397, 137);
+            this.cmbEscolaridad.Name = "cmbEscolaridad";
+            this.cmbEscolaridad.Size = new System.Drawing.Size(146, 28);
+            this.cmbEscolaridad.TabIndex = 123;
             // 
             // frmCargaColab
             // 
@@ -684,5 +736,10 @@
         private System.Windows.Forms.DateTimePicker dtpFechaingreso;
         private System.Windows.Forms.ComboBox cmbSucursal;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbEscolaridad;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmbEstadoCivil;
+        private System.Windows.Forms.Label label17;
     }
 }

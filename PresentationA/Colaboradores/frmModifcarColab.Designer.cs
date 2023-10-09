@@ -49,6 +49,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbEscolaridad = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.txtnroEmergencia = new System.Windows.Forms.TextBox();
             this.txtnroContacto = new System.Windows.Forms.TextBox();
             this.txtmail = new System.Windows.Forms.TextBox();
@@ -199,11 +203,11 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(35, 515);
+            this.groupBox1.Location = new System.Drawing.Point(35, 571);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(756, 151);
+            this.groupBox1.Size = new System.Drawing.Size(894, 151);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
@@ -279,7 +283,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PresentationA.Properties.Resources._1500603_add_vector_icon_grátis_vetor;
-            this.pictureBox2.Location = new System.Drawing.Point(393, 36);
+            this.pictureBox2.Location = new System.Drawing.Point(428, 32);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(340, 378);
@@ -320,7 +324,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 79);
+            this.label1.Location = new System.Drawing.Point(25, 79);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 20);
@@ -333,7 +337,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(27, 32);
+            this.label19.Location = new System.Drawing.Point(25, 32);
             this.label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 20);
@@ -344,6 +348,10 @@
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.cmbEscolaridad);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.cmbEstadoCivil);
+            this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.txtnroEmergencia);
             this.groupBox3.Controls.Add(this.txtnroContacto);
             this.groupBox3.Controls.Add(this.txtmail);
@@ -367,10 +375,46 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(756, 449);
+            this.groupBox3.Size = new System.Drawing.Size(894, 514);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
+            // 
+            // cmbEscolaridad
+            // 
+            this.cmbEscolaridad.FormattingEnabled = true;
+            this.cmbEscolaridad.Location = new System.Drawing.Point(171, 460);
+            this.cmbEscolaridad.Name = "cmbEscolaridad";
+            this.cmbEscolaridad.Size = new System.Drawing.Size(194, 28);
+            this.cmbEscolaridad.TabIndex = 81;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 463);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(98, 20);
+            this.label13.TabIndex = 82;
+            this.label13.Text = "Escolaridad:";
+            // 
+            // cmbEstadoCivil
+            // 
+            this.cmbEstadoCivil.FormattingEnabled = true;
+            this.cmbEstadoCivil.Location = new System.Drawing.Point(171, 426);
+            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
+            this.cmbEstadoCivil.Size = new System.Drawing.Size(194, 28);
+            this.cmbEstadoCivil.TabIndex = 79;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 429);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 20);
+            this.label12.TabIndex = 80;
+            this.label12.Text = "Estado Civil:";
             // 
             // txtnroEmergencia
             // 
@@ -512,11 +556,11 @@
             this.groupBox4.Controls.Add(this.txtObraSocial);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Location = new System.Drawing.Point(31, 689);
+            this.groupBox4.Location = new System.Drawing.Point(31, 733);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox4.Size = new System.Drawing.Size(760, 143);
+            this.groupBox4.Size = new System.Drawing.Size(898, 143);
             this.groupBox4.TabIndex = 89;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS GENERALES";
@@ -582,9 +626,9 @@
             this.pnlBotones.Controls.Add(this.btnCancelar);
             this.pnlBotones.Controls.Add(this.btnGuardar);
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBotones.Location = new System.Drawing.Point(0, 882);
+            this.pnlBotones.Location = new System.Drawing.Point(0, 926);
             this.pnlBotones.Name = "pnlBotones";
-            this.pnlBotones.Size = new System.Drawing.Size(961, 100);
+            this.pnlBotones.Size = new System.Drawing.Size(978, 100);
             this.pnlBotones.TabIndex = 94;
             // 
             // label26
@@ -592,7 +636,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(194, 20);
+            this.label26.Location = new System.Drawing.Point(176, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(340, 28);
             this.label26.TabIndex = 95;
@@ -610,7 +654,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(50, 50);
             this.AutoScrollMinSize = new System.Drawing.Size(50, 50);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(978, 686);
+            this.ClientSize = new System.Drawing.Size(995, 686);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.pnlBotones);
             this.Controls.Add(this.groupBox4);
@@ -685,5 +729,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private System.Windows.Forms.ComboBox cmbEscolaridad;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbEstadoCivil;
+        private System.Windows.Forms.Label label12;
     }
 }

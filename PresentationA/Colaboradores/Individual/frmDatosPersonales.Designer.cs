@@ -62,6 +62,10 @@
             this.lblnroEmergencia = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
+            this.lblEstadoCivil = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblEscolaridad = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -466,6 +470,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblEscolaridad);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.lblEstadoCivil);
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.lblFechaNacimiento);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label1);
@@ -499,6 +507,56 @@
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(0, 20);
             this.lblFechaNacimiento.TabIndex = 73;
+            // 
+            // lblEstadoCivil
+            // 
+            this.lblEstadoCivil.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEstadoCivil.AutoSize = true;
+            this.lblEstadoCivil.Location = new System.Drawing.Point(390, 149);
+            this.lblEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEstadoCivil.Name = "lblEstadoCivil";
+            this.lblEstadoCivil.Size = new System.Drawing.Size(0, 20);
+            this.lblEstadoCivil.TabIndex = 75;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(285, 149);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 20);
+            this.label11.TabIndex = 74;
+            this.label11.Text = "Estado Civil:";
+            // 
+            // lblEscolaridad
+            // 
+            this.lblEscolaridad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEscolaridad.AutoSize = true;
+            this.lblEscolaridad.Location = new System.Drawing.Point(391, 189);
+            this.lblEscolaridad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEscolaridad.Name = "lblEscolaridad";
+            this.lblEscolaridad.Size = new System.Drawing.Size(0, 20);
+            this.lblEscolaridad.TabIndex = 77;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(285, 189);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(98, 20);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "Escolaridad:";
             // 
             // frmDatosPersonales
             // 
@@ -558,5 +616,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblFechaNacimiento;
         private System.Windows.Forms.Label lblnroEmergencia;
+        private System.Windows.Forms.Label lblEscolaridad;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblEstadoCivil;
+        private System.Windows.Forms.Label label11;
     }
 }

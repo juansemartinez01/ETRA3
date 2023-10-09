@@ -30,9 +30,14 @@ namespace PresentationA.Colaboradores
             LlenarCombo(cmbEstado, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             LlenarCombo(cmbSucursal, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Sucursal"), "nombre", "codigoSucursal");
+            LlenarCombo(cmbEscolaridad, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
+            LlenarCombo(cmbEstadoCivil, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoCivil"), "nombre", "id");
             cmbEstado.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreEstado"].ToString(), "EstadoColaborador");
             cmbPuesto.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreCargo"].ToString(), "Cargo");
             cmbSucursal.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["nombreSucursal"].ToString(), "Sucursal");
+            cmbEscolaridad.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["escolaridad"].ToString(), "Escolaridad");
+            cmbEstadoCivil.SelectedValue = evento.buscarIdConNombre(colaborador.Rows[0]["estadoCivil"].ToString(), "EstadoCivil");
+
             hayCambios = false;
             var Lista = new List<DocumentosColaborador>();
             Lista = nuevoDocumento.filtroDocumentosColaborador(5, (int)colaborador.Rows[0]["legajo"]);
@@ -180,9 +185,9 @@ namespace PresentationA.Colaboradores
                 int codigoSucursal = (int)cmbSucursal.SelectedValue;
 
                 //Aca tambien tenes que modificar Paez!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                int estadoCivil = 1;
-                int escolaridad = 1;
-                
+                int estadoCivil = (int)cmbEstadoCivil.SelectedValue;
+                int escolaridad = (int)cmbEscolaridad.SelectedValue;
+
                 MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal,estadoCivil,escolaridad));
                 hayCambios = false;
                 this.Close();

@@ -21,7 +21,7 @@ namespace PresentationA.Colaboradores.Individual
             InitializeComponent();
             vestimenta.legajoColaborador = int.Parse(legajo);
             LlenarCombo(cmbSucursal, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Sucursal"), "nombre", "codigoSucursal");
-            LlenarCombo(cmbArea, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Area"), "nombre", "idArea");
+            LlenarCombo(cmbArea, DataManager.GetInstance().ConsultaSQL("SELECT * FROM AREA"), "nombre", "idArea");
             load();
         }
 

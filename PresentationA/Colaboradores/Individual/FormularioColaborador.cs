@@ -201,6 +201,7 @@ namespace PresentationA
             {
                 frmModifcarColab mod = new frmModifcarColab(colaborador);
                 mod.ShowDialog();
+                this.Refresh();
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)

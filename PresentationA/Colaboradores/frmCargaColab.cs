@@ -22,22 +22,16 @@ namespace PresentationA.Colaboradores
             LlenarCombo(cmbEstados, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoColaborador WHERE borradoLogico = 0"), "nombre", "id_estado");
             LlenarCombo(cmbPuesto, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Cargo WHERE borradoLogico = 0"), "nombre", "id_cargo");
             LlenarCombo(cmbSucursal, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Sucursal"), "nombre", "codigoSucursal");
+            LlenarCombo(cmbEstadoCivil, DataManager.GetInstance().ConsultaSQL("SELECT * FROM EstadoCivil"), "nombre", "id");
+            LlenarCombo(cmbEscolaridad, DataManager.GetInstance().ConsultaSQL("SELECT * FROM Escolaridad"), "nombre", "id");
+            cmbSucursal.SelectedIndex = 0;
+            cmbEstadoCivil.SelectedIndex = 1;
+            cmbEscolaridad.SelectedIndex = 0;
             chkIngresaHoy.Checked = true;
             dtpFechaingreso.Enabled = false;
 
         }
-        //private void validarCamposObligatorios()
-        //{
-        //    foreach (string campo in camposObligatorios)
-        //    {
-        //        var control = this.Controls.Find(campo, true);
-        //        if (control[0].Text == string.Empty)
-        //        {
-        //            Control labelControl = this.Controls.Find("lbl" + campo, true);
-        //            labelControl.BackColor = Colors.Red;
-        //        }
-        //    }
-        //}
+
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             cbo.ValueMember = value;
@@ -51,10 +45,10 @@ namespace PresentationA.Colaboradores
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             //Esto es lo que tenes que agregar Paezzz, agregar el comboBox y aca poner el seleccionado--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            int estadoCivil = 1;
-            int escolaridad = 1;
-
+            int estadoCivil = (int)cmbEstadoCivil.SelectedValue;
+            int escolaridad = (int)cmbEscolaridad.SelectedValue;
             int codigoSucursal = (int)cmbSucursal.SelectedValue;
+
             DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
             DateTime fechaIngreso;
             string obraSocial = txtObraSocial.Text;
@@ -105,6 +99,19 @@ namespace PresentationA.Colaboradores
                 return;
             }
 
+            if (estadoCivil == -1)
+            {
+                //Agregamos por defecto Soltero
+                estadoCivil = 1;
+                return;
+            }
+
+            if (escolaridad == -1)
+            {
+                //Agregamos por defecto Soltero
+                escolaridad = 0;
+                return;
+            }
             double prestamoMaximo = ((30 * float.Parse(txtSalario.Text)) / 100);
             prestamoMaximo = Math.Round(prestamoMaximo);
 
