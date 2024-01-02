@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace DataAccesA
-{   
+{
     public class AvisosDao : ConnectionToSql
     {
-        
+
         /*Insercion del aviso*/
         public string insertarAviso(int idTipoAviso, string descripcion, DateTime fechaOcurrencia, DateTime fechaNotificacion, Nullable<DateTime> fechaUltimaNotificacion = null)
         {
@@ -20,11 +20,11 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        
+
                         command.CommandText = "INSERT INTO Aviso VALUES (@idTipoAviso,@descripcion,GETDATE(),Format(@fechaOcurrencia, 'yyyy - MM - dd'),Format(@fechaNotificacion, 'yyyy - MM - dd'),";
                         string aux = "null,0)";
-                        if (fechaUltimaNotificacion != null) 
-                        { 
+                        if (fechaUltimaNotificacion != null)
+                        {
                             aux = "Format(@fechaUltimaNotificacion, 'yyyy - MM - dd'),0)";
                             command.Parameters.AddWithValue("@fechaUltimaNotificacion", fechaUltimaNotificacion);
                         }
@@ -34,7 +34,7 @@ namespace DataAccesA
                         command.Parameters.AddWithValue("@descripcion", descripcion);
                         command.Parameters.AddWithValue("@fechaOcurrencia", fechaOcurrencia);
                         command.Parameters.AddWithValue("@fechaNotificacion", fechaNotificacion);
-                        
+
 
                         int insecionExitosa = command.ExecuteNonQuery();
                         if (insecionExitosa == 1)
@@ -59,22 +59,22 @@ namespace DataAccesA
         }
         public string declararNotificados(int idAviso, int[] legajosNotificados)
         {
-            
+
             DataTable dt = new DataTable();
             /*Aca buscamos lso legajos de todos los caolaboradores para confirmar que los legajos que ingresan existan*/
-                using (var connection = GetConnection())
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
                 {
-                    connection.Open();
-                    using (var command = new SqlCommand())
-                    {
-                        command.Connection = connection;
-                        command.CommandText = "SELECT legajo FROM Colaborador WHERE borradoLogico = 0";
-                        command.CommandType = CommandType.Text;
-                        SqlDataReader reader = command.ExecuteReader();
-                        dt.Load(reader);
-                        
-                    }
+                    command.Connection = connection;
+                    command.CommandText = "SELECT legajo FROM Colaborador WHERE borradoLogico = 0";
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    dt.Load(reader);
+
                 }
+            }
             bool legajoEncontrado = false;
             for (int i = 0; i < legajosNotificados.Length; i++)
             {
@@ -92,7 +92,7 @@ namespace DataAccesA
                 }
                 legajoEncontrado = false;
             }
-                try
+            try
             {
                 int cantidadNotificados = 0;
                 foreach (int legajo in legajosNotificados)
@@ -208,7 +208,7 @@ namespace DataAccesA
                 return false;
             }
         }
-        
+
         public DataTable getAllAvisosMesActual()
         {
             DataTable resultado = new DataTable();
@@ -238,31 +238,31 @@ namespace DataAccesA
             }
         }
 
-        
+
         public DataTable getAllAvisos(int legajo, int idTipoAviso, string fechaOcurrencia, string fechaCarga, string fechaNotificacion, bool filtroFecha)
         {
             string parametros = "";
-            if(legajo != 0)
+            if (legajo != 0)
             {
                 parametros += " AND ac.legajoColaborador = " + legajo;
             }
-            if(idTipoAviso != 0)
+            if (idTipoAviso != 0)
             {
                 parametros += " AND ta.id_tipoAviso = " + idTipoAviso;
             }
-            if(filtroFecha)
+            if (filtroFecha)
             {
-                if(fechaOcurrencia != null)
+                if (fechaOcurrencia != null)
                 {
                     parametros += " AND a.fechaOcurrencia >= '" + fechaOcurrencia + "'";
 
                 }
-                if(fechaCarga != null)
+                if (fechaCarga != null)
                 {
                     parametros += " AND a.fechaCarga >= '" + fechaCarga + "'";
                 }
 
-                if(fechaNotificacion != null)
+                if (fechaNotificacion != null)
                 {
                     parametros += " AND a.fechaNotificacion >= '" + fechaNotificacion + "'";
                 }
@@ -308,7 +308,21 @@ namespace DataAccesA
                                             " from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             " join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
                                             " join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                            " where c.legajo = @legajo and ((a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaOcurrencia < CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion is null) or (a.fechaNotificacion = CAST(GETDATE() AS Date)) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date))";
+                                            " where c.legajo = @legajo and ( " +
+                                            "        a.fechaOcurrencia = CAST(GETDATE() AS Date) " +
+                                            "        AND (a.fechaUltimaNotificacion != CAST(GETDATE() AS Date) OR a.fechaUltimaNotificacion IS NULL) " +
+                                            "    ) " +
+                                            "    OR " +
+                                            "    ( " +
+                                            "        a.fechaNotificacion < CAST(GETDATE() AS Date) " +
+                                            "        AND a.fechaUltimaNotificacion IS NULL " +
+                                            "    ) " +
+                                            "    OR " +
+                                            "    ( " +
+                                            "        a.fechaNotificacion = CAST(GETDATE() AS DATE) " +
+                                            "        AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE) " +
+                                            "    ) ";
+
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@legajo", legajo);
                         resultado.Load(command.ExecuteReader());
@@ -327,18 +341,33 @@ namespace DataAccesA
             DataTable resultado = new DataTable();
             try
             {
-                
+
                 using (var connection = GetConnection())
                 {
                     connection.Open();
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT DISTINCT c.legajo,c.nombre, c.mail " +
-                                            "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
-                                            "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
-                                            "join Colaborador c on c.legajo = ac.legajoColaborador " +
-                                            "where (a.fechaOcurrencia = CAST(GETDATE() AS Date) and a.fechaUltimaNotificacion != CAST(GETDATE() AS Date)) or (a.fechaNotificacion < CAST( GETDATE() AS Date ) and a.fechaUltimaNotificacion is null) or (a.fechaNotificacion = CAST(GETDATE() AS DATE) AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE))";
+                        command.CommandText = "SELECT DISTINCT c.legajo, c.nombre, c.mail " +
+                                            "FROM Aviso a " +
+                                            "JOIN TipoAviso ta ON ta.id_tipoAviso = a.id_tipoAviso " +
+                                            "JOIN AvisoXColaborador ac ON ac.id_aviso = a.id_aviso " +
+                                            "JOIN Colaborador c ON c.legajo = ac.legajoColaborador " +
+                                            "WHERE " +
+                                            "    ( " +
+                                            "        a.fechaOcurrencia = CAST(GETDATE() AS Date) " +
+                                            "        AND (a.fechaUltimaNotificacion != CAST(GETDATE() AS Date) OR a.fechaUltimaNotificacion IS NULL) " +
+                                            "    ) " +
+                                            "    OR " +
+                                            "    ( " +
+                                            "        a.fechaNotificacion < CAST(GETDATE() AS Date) " +
+                                            "        AND a.fechaUltimaNotificacion IS NULL " +
+                                            "    ) " +
+                                            "    OR " +
+                                            "    ( " +
+                                            "        a.fechaNotificacion = CAST(GETDATE() AS DATE) " +
+                                            "        AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE) " +
+                                            "    ) ";
                         command.CommandType = CommandType.Text;
                         resultado.Load(command.ExecuteReader());
                         return resultado;
@@ -384,7 +413,7 @@ namespace DataAccesA
 
                     foreach (object item in row.ItemArray)
                     {
-                        
+
                         messageBody += htmlTdStart;
                         messageBody += item.ToString();
                         messageBody += htmlTdEnd;
@@ -405,42 +434,67 @@ namespace DataAccesA
         {
             try
             {
-
                 DataTable legajos = this.getLegajosAvisosHoy();
-                //Hay avisos cargados en este instante de este mes?
                 if (legajos.Rows.Count == 0) { return true; }
 
-                List<int> id_avisos = new List<int>(); 
-                
                 foreach (DataRow leg in legajos.Rows)
                 {
                     DataTable avisos = this.getAvisosHoyColab(leg[0].ToString());
+                    
+                    if (avisos.Rows.Count == 0) { return true; }
 
-                    String titulo = leg[1].ToString() + ", nos comunicamos desde ETRA para notificarle de sus avisos : ";
-                    string body = GetHtmlTable(titulo, avisos);
+                    var filasCumpleaños = avisos.AsEnumerable().Where(row => row.Field<string>("nombre") == "Cumpleaños").ToList();
+
                     var mailService = new MailServices.SystemSupportMail();
-                    mailService.sendMail(
-                        subject: "ETRA: AVISOS",
-                        body: body,
-                        recipientMail: new List<string>{leg[2].ToString()},
-                        isHtml: true
-                        );
-
-                    foreach (DataRow id in avisos.Rows)
+                    if (filasCumpleaños.Any())
                     {
-                        this.actualizarAviso((int)id[0], DateTime.Now);
+                        DataTable tablaCumpleaños = filasCumpleaños.CopyToDataTable();
+                        String titulo = leg[1].ToString() + " nos comunicamos desde ETRA para desearte un feliz cumpleaños.\r\n¡Estamos felices de que formes parte de nuestro equipo! Gracias por compartir con nosotros tus talentos y confiar en nuestra empresa día tras día.";
+                        mailService.sendMail(
+                            subject: "ETRA: AVISOS",
+                            body: titulo,
+                            recipientMail: new List<string> { leg[2].ToString() },
+                            isHtml: false
+                        );
                     }
-                    //Evitamos spam pausando 1 segundo antes de enviar el prox mail
+
+                    var filasFiltradas = avisos.AsEnumerable()
+                        .Where(row => row.Field<string>("nombre") != "Cumpleaños")
+                        .ToList();
+
+                    DataTable avisosSinCumple = filasFiltradas.Any() ? filasFiltradas.CopyToDataTable() : avisos.Clone();
+
+                    if (avisosSinCumple.Rows.Count > 0)
+                    {
+                        String titulo = leg[1].ToString() + ", nos comunicamos desde ETRA para notificarle de sus avisos : ";
+                        string body = GetHtmlTable(titulo, avisosSinCumple);
+                        mailService.sendMail(
+                            subject: "ETRA: AVISOS",
+                            body: body,
+                            recipientMail: new List<string> { leg[2].ToString() },
+                            isHtml: true
+                        );
+                    }
+
+                    foreach (DataRow row in avisos.Rows)
+                    {
+                        int idAviso = (int)row["id_aviso"]; 
+                        this.actualizarAviso(idAviso, DateTime.Now);
+                    }
+
+                    // Evitar el envío de correos de forma demasiado rápida
                     System.Threading.Thread.Sleep(1000);
                 }
-                
+
                 return true;
             }
             catch (Exception ex)
             {
+                // Manejar el error, posiblemente registrarlo o realizar alguna acción adicional si es necesario.
                 return false;
             }
         }
+
 
 
 
@@ -456,8 +510,8 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select mail, nombre from Aviso a"+
-                                               " join AvisoXColaborador ac on a.id_aviso = ac.id_aviso"+
+                        command.CommandText = "select mail, nombre from Aviso a" +
+                                               " join AvisoXColaborador ac on a.id_aviso = ac.id_aviso" +
                                                " join Colaborador c on c.legajo = ac.legajoColaborador" +
                                                " where a.id_aviso = @id";
                         command.CommandType = CommandType.Text;
@@ -472,13 +526,13 @@ namespace DataAccesA
                 return resultado;
             }
         }
-        public bool notificarAviso(int id, string subject, string body )
+        public bool notificarAviso(int id, string subject, string body)
         {
-            
+
             try
             {
                 DataTable aviso = getAviso(id);
-                List<string> mails = new List<string>(  );
+                List<string> mails = new List<string>();
                 var mailService = new MailServices.SystemSupportMail();
                 foreach (DataRow row in aviso.Rows)
                 {
@@ -503,7 +557,7 @@ namespace DataAccesA
 
         public bool consultarAvisoAdmin()
         {
-            
+
             try
             {
 
@@ -564,7 +618,7 @@ namespace DataAccesA
                         command.CommandText = "SELECT a.id_aviso, ta.nombre, c.legajo,  a.fechaOcurrencia, a.descripcion, a.fechaCarga, a.fechaNotificacion " +
                                             "from Aviso a join TipoAviso ta on ta.id_tipoAviso = a.id_tipoAviso " +
                                             "join AvisoXColaborador ac on ac.id_aviso = a.id_aviso " +
-                                            "join Colaborador c on c.legajo = ac.legajoColaborador where a.borradoLogico = 0 AND CAST('"+desde.ToString("yyyy-MM-dd")+ "' AS datetime) <= CAST(a.fechaOcurrencia AS datetime) and CAST(a.fechaOcurrencia AS datetime) <= CAST('" + hasta.ToString("yyyy-MM-dd") + "'  AS datetime) and a.id_aviso > 2";
+                                            "join Colaborador c on c.legajo = ac.legajoColaborador where a.borradoLogico = 0 AND CAST('" + desde.ToString("yyyy-MM-dd") + "' AS datetime) <= CAST(a.fechaOcurrencia AS datetime) and CAST(a.fechaOcurrencia AS datetime) <= CAST('" + hasta.ToString("yyyy-MM-dd") + "'  AS datetime) and a.id_aviso > 2";
                         command.CommandType = CommandType.Text;
                         resultado.Load(command.ExecuteReader());
                         return resultado;
@@ -579,13 +633,14 @@ namespace DataAccesA
         public bool notificarAdmins()
         {
             //Notifica a los administradores los avisos de las proximas dos semanas
-            try {
+            try
+            {
                 //Ya fue enviada la notificacion?
                 if (this.consultarAvisoAdmin() == false) { return true; }
                 ColaboradorDao colab = new ColaboradorDao();
                 DataTable avisos = getAvisosEntre(DateTime.Now, DateTime.Now.AddDays(15));
                 //Hay avisos en las proximas dos semanas? 
-                if(avisos.Rows.Count > 0)
+                if (avisos.Rows.Count > 0)
                 {
                     String titulo = "Administradores, les enviamos un resumen de los avisos de las proximas dos semanas: ";
                     string body = GetHtmlTable(titulo, avisos);
@@ -596,12 +651,12 @@ namespace DataAccesA
                         recipientMail: colab.getAdmins(),
                         isHtml: true
                         );
-                    this.actualizarAviso(1,DateTime.Now);
+                    this.actualizarAviso(1, DateTime.Now);
                 }
                 return true;
             }
             catch { return false; }
-            
+
         }
 
         public bool insertarAvisosCumple()
@@ -609,7 +664,7 @@ namespace DataAccesA
             try
             {
                 //Consultar si ya fueron cargados los cumpleaños de este mes
-                if(consultarAvisoCumple() == true) { return true; }    
+                if (consultarAvisoCumple() == true) { return true; }
                 //Busca los cumpleaños de este mes
                 ColaboradorDao colab = new ColaboradorDao();
                 DataTable cumpleaños = colab.getCumpleañosMesActual();
@@ -621,43 +676,43 @@ namespace DataAccesA
                 ///if (cumpleaños.Rows.Count == 0 & cumpleFami.Rows.Count == 0) {  return true; }
                 if (cumpleaños.Rows.Count == 0) { return true; }
                 using (var connection = GetConnection())
+                {
+                    connection.Open();
+                    using (var command = new SqlCommand())
                     {
-                        connection.Open();
-                        using (var command = new SqlCommand())
+
+                        command.Connection = connection;
+                        string query = "";
+                        string cumple;
+                        string dia;
+                        string mes;
+                        string[] list;
+                        foreach (DataRow row in cumpleaños.Rows)
                         {
-                        
-                            command.Connection = connection;
-                            string query = "";
-                            string cumple;
-                            string dia;
-                            string mes;
-                            string[] list;
-                        foreach (DataRow row in cumpleaños.Rows) 
-                            {
                             //MODIFICAR VALOR DE TIPO AVISO
-                                list = row["fechaNacimiento"].ToString().Split('/');
-                                dia = list[0];
-                                mes = list[1];
-                                cumple = mes + "/" + dia + "/"+ DateTime.Now.Year.ToString();
-                                query += " INSERT INTO Aviso VALUES (3, 'Cumpleaños de colaborador', GETDATE(),CAST('" + cumple + "' AS DATE), CAST('" + cumple + "' AS DATE),null, 0) " +
-                                         " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
-                            }
-
-                            ///foreach (DataRow row in cumpleFami.Rows)
-                            ///{
-                            ///    //MODIFICAR VALOR DE TIPO AVISO
-                            ///    cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3, 3) + row["fechaNacimiento"].ToString().Substring(0, 2);
-                            //    query += " INSERT INTO Aviso VALUES (5, 'Cumpleños del familiar:  " + row["nombreFamiliar"] + "', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
-                            //             " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajoColaborador"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
-                            //}
-
-                            command.CommandText = query;
-                            command.CommandType = CommandType.Text;
-                            command.ExecuteNonQuery();
-                            actualizarAviso(2,DateTime.Now);
+                            list = row["fechaNacimiento"].ToString().Split('/');
+                            dia = list[0];
+                            mes = list[1];
+                            cumple = mes + "/" + dia + "/" + DateTime.Now.Year.ToString();
+                            query += " INSERT INTO Aviso VALUES (3, 'Cumpleaños de colaborador', GETDATE(),CAST('" + cumple + "' AS DATE), CAST('" + cumple + "' AS DATE),null, 0) " +
+                                     " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajo"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
                         }
+
+                        ///foreach (DataRow row in cumpleFami.Rows)
+                        ///{
+                        ///    //MODIFICAR VALOR DE TIPO AVISO
+                        ///    cumple = DateTime.Now.Year.ToString() + "/" + row["fechaNacimiento"].ToString().Substring(3, 3) + row["fechaNacimiento"].ToString().Substring(0, 2);
+                        //    query += " INSERT INTO Aviso VALUES (5, 'Cumpleños del familiar:  " + row["nombreFamiliar"] + "', GETDATE(), Format(CAST('" + cumple + "' AS DATE), 'yyyy - MM - dd'), Format(CAST('" + cumple + "' AS DATE),'yyyy - MM - dd'),null, 0) " +
+                        //             " INSERT INTO AvisoXColaborador VALUES (CAST('" + row["legajoColaborador"].ToString() + "' AS INT),(SELECT MAX(id_aviso) FROM Aviso WHERE borradoLogico = 0),0)";
+                        //}
+
+                        command.CommandText = query;
+                        command.CommandType = CommandType.Text;
+                        command.ExecuteNonQuery();
+                        actualizarAviso(2, DateTime.Now);
                     }
-                
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -680,7 +735,7 @@ namespace DataAccesA
                         command.Connection = connection;
                         command.CommandText = "UPDATE Aviso set borradoLogico = 1 WHERE id_aviso = @id_aviso";
                         command.CommandType = CommandType.Text;
-                        command.Parameters.AddWithValue("@id_aviso", idAviso);     
+                        command.Parameters.AddWithValue("@id_aviso", idAviso);
                         avisoEliminado = command.ExecuteNonQuery();
                     }
                     if (avisoEliminado == 1)
@@ -700,7 +755,7 @@ namespace DataAccesA
                         return avisoEliminado;
                     }
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -708,5 +763,5 @@ namespace DataAccesA
             }
         }
     }
-    
+
 }

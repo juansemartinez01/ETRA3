@@ -24,9 +24,10 @@ namespace DataAccesA
                         command.Connection = connection;
 
                         command.CommandText = "SELECT legajo, c.nombre, apellido,CUIT,nroContacto,nroEmergencia, mail,CONVERT(varchar,fechaNacimiento, 103) AS fechaNacimiento,d.nombreCalle,d.numeroCalle, EC.nombre AS nombreEstado, CA.nombre AS nombreCargo, SA.monto,d.piso, d.departamento, d.localidad, d.provincia,C.dni,C.obraSocial,CCC.saldoAdeudado, s.nombre as 'nombreSucursal', ECIV.nombre as 'estadoCivil', ESC.nombre as 'escolaridad' FROM Colaborador c JOIN Direccion d ON d.id_direccion = c.idDireccion JOIN HistorialEstado HE ON HE.legajoColaborador = c.legajo JOIN HistorialCargo HC ON HC.legajoColaborador = c.legajo JOIN HistorialSalario HS ON HS.legajoColaborador = c.legajo JOIN EstadoColaborador EC ON EC.id_estado = HE.id_estado JOIN Cargo CA ON CA.id_cargo = HC.id_cargo JOIN Salario SA ON SA.id_salario = HS.id_salario JOIN MovimientosCuentaColaborador MCC ON MCC.legajoColaborador = c.legajo JOIN CuentaColaborador CCC ON CCC.numeroCuenta = MCC.nroCuenta left join Sucursal s on s.codigoSucursal = c.codigoSucursal JOIN Escolaridad ESC ON c.escolaridad_id = ESC.id JOIN EstadoCivil ECIV ON ECIV.id = c.estadoCivil_id WHERE legajo LIKE @legajo AND c.nombre LIKE @nombre AND c.apellido LIKE @apellido AND c.borradoLogico = 0 AND HS.fechaFin IS NULL AND HC.fechaFin IS NULL AND HE.fechaFin IS NULL AND MCC.tipoMovimiento = 3";
-                        command.Parameters.AddWithValue("@legajo", legajo + "%");
-                        command.Parameters.AddWithValue("@nombre", nombre + "%");
-                        command.Parameters.AddWithValue("@apellido", apellido + "%");
+                        legajo = legajo + "%";
+                        command.Parameters.AddWithValue("@legajo", legajo);
+                        command.Parameters.AddWithValue("@nombre", legajo);
+                        command.Parameters.AddWithValue("@apellido", legajo);
 
                         command.CommandType = CommandType.Text;
                         colaborador.Load(command.ExecuteReader());
