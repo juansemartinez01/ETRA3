@@ -353,8 +353,9 @@ namespace DataAccesA
                                             "JOIN TipoAviso ta ON ta.id_tipoAviso = a.id_tipoAviso " +
                                             "JOIN AvisoXColaborador ac ON ac.id_aviso = a.id_aviso " +
                                             "JOIN Colaborador c ON c.legajo = ac.legajoColaborador " +
+                                            "JOIN HistorialEstado hc ON c.legajo = hc.legajoColaborador " +
                                             "WHERE " +
-                                            "    ( " +
+                                            "    (( " +
                                             "        a.fechaOcurrencia = CAST(GETDATE() AS Date) " +
                                             "        AND (a.fechaUltimaNotificacion != CAST(GETDATE() AS Date) OR a.fechaUltimaNotificacion IS NULL) " +
                                             "    ) " +
@@ -367,7 +368,8 @@ namespace DataAccesA
                                             "    ( " +
                                             "        a.fechaNotificacion = CAST(GETDATE() AS DATE) " +
                                             "        AND a.fechaUltimaNotificacion != CAST(GETDATE() AS DATE) " +
-                                            "    ) ";
+                                            "    ) )" +
+                                            "AND hc.id_estado != 2 AND hc.fechaFin IS NULL";
                         command.CommandType = CommandType.Text;
                         resultado.Load(command.ExecuteReader());
                         return resultado;
