@@ -1413,8 +1413,8 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ETRA"
-        "ProductCode" = "8:{D118F91D-66E7-4523-A53B-8CEAD9FA316B}"
-        "PackageCode" = "8:{E2BCD852-3EB6-4367-A939-B6A92DB5EE9D}"
+        "ProductCode" = "8:{F8BA5F45-8BBC-444A-B06C-30CE691DFDD9}"
+        "PackageCode" = "8:{E1E821DD-EC61-4F11-8200-69CE7C10F9EC}"
         "UpgradeCode" = "8:{BABEA5AB-D0E8-4A3C-8EC3-1433CC0F2347}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"

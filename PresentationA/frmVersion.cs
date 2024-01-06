@@ -3,6 +3,7 @@ using System.Net;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.IO;
 
 namespace PresentationA
 {
@@ -38,12 +39,48 @@ namespace PresentationA
                 btnActualizar.Visible = false;
                 lblNewVersion.Visible = false;
             }
-
+            
 
         }
+
+        private void DesinstalarPrograma()
+        {
+            try
+            {
+                // Desinstalar el programa
+                string uninstallArgs = "/x {F8BA5F45-8BBC-444A-B06C-30CE691DFDD9} /qn";
+                Process.Start("msiexec.exe", uninstallArgs);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al desinstalar el programa y actualizar: " + ex.Message);
+                // Manejar cualquier excepción que pueda ocurrir durante el proceso
+            }
+        }
+
+        private void EjecutarInstaladorDescargado()
+        {
+            string setupPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\Setup.msi";
+
+            try
+            {
+
+                Process.Start(setupPath);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al abrir el instalador: " + ex.Message);
+                // Manejar cualquier excepción que pueda ocurrir al abrir el instalador
+            }
+        }
+
         private async void botonPadre1_Click(object sender, EventArgs e)
         {
-            string pathUpdate = Application.StartupPath + @".\Setup.msi";
+            string pathUpdate = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\Setup.msi";
+            if (File.Exists(pathUpdate))
+            {
+                File.Delete(pathUpdate); // Eliminar el archivo existente
+            }
             var web = new WebClient();
             web.DownloadFileCompleted += Web_DownloadFileCompleted;
             web.DownloadFileAsync(new System.Uri("https://github.com/PaezFrancisco/etraVersion/blob/main/Setup.msi?raw=true"), pathUpdate);
@@ -52,7 +89,8 @@ namespace PresentationA
 
         private void Web_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
         {
-            initiScript();
+            DesinstalarPrograma();
+            EjecutarInstaladorDescargado();
         }
 
 
@@ -67,7 +105,8 @@ namespace PresentationA
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.RedirectStandardOutput = true;
             p.StartInfo.RedirectStandardError = true;
-            p.StartInfo.CreateNoWindow = true; 
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Verb = "runas";
             p.Start();
             Environment.Exit(1);
 

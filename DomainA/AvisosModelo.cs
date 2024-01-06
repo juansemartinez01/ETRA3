@@ -44,7 +44,7 @@ namespace DomainA
             return "No tiene permisos";
         }
 
-        public bool notificarAviso(int id, string subject, string body) { if (UserCache.perfil == Perfiles.admin) { return AvisosDao.notificarAviso(id, subject, body); } return false; }
+        public string notificarAviso(int id, string subject, string body) { if (UserCache.perfil == Perfiles.admin) { return AvisosDao.notificarAviso(id, subject, body); } return "Error: No tiene permisos"; }
 
         public bool insertarAvisosCumple() { return AvisosDao.insertarAvisosCumple(); }
 

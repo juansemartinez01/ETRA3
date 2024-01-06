@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using DomainA;
 
 namespace PresentationA.Colaboradores
@@ -17,7 +18,7 @@ namespace PresentationA.Colaboradores
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            bool sent = false;
+            string resultado;
             if(txtSubject.Text == "")
             {
                 msgError("Debe ingresar un Asunto");
@@ -28,9 +29,9 @@ namespace PresentationA.Colaboradores
                 msgError("Debe ingresar un Cuerpo");
                 return ;
             }
-            sent = aviso.notificarAviso(id, txtSubject.Text, txtBody.Text);
-            if (sent) { this.Close(); }
-            else { msgError("Ocurrio un error al enviar el mensaje"); }
+            resultado = aviso.notificarAviso(id, txtSubject.Text, txtBody.Text);
+            MessageBox.Show(resultado);
+            this.Close();
         }
 
         private void msgError(string msg)

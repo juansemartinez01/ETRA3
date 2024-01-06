@@ -32,11 +32,11 @@
             this.btnActualizar = new PresentationA.Controls.BotonPadre();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNewVersion = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblVersion
             // 
-            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVersion.AutoSize = true;
             this.lblVersion.Location = new System.Drawing.Point(153, 117);
             this.lblVersion.Name = "lblVersion";
@@ -47,7 +47,6 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(166)))), ((int)(((byte)(26)))));
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -67,7 +66,6 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(234, 45);
@@ -79,7 +77,6 @@
             // 
             // lblNewVersion
             // 
-            this.lblNewVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNewVersion.AutoSize = true;
             this.lblNewVersion.Location = new System.Drawing.Point(153, 166);
             this.lblNewVersion.Name = "lblNewVersion";
@@ -88,11 +85,23 @@
             this.lblNewVersion.Text = "Nueva Versión Disponible:";
             this.lblNewVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(234, 371);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "El sistema está actualizado";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmVersion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(771, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNewVersion);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnActualizar);
@@ -111,5 +120,6 @@
         private Controls.BotonPadre btnActualizar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblNewVersion;
+        private System.Windows.Forms.Label label1;
     }
 }

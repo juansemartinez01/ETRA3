@@ -512,9 +512,10 @@ namespace DataAccesA
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "select mail, nombre from Aviso a" +
+                        command.CommandText = "select mail, nombre, hc.id_estado,hc.fechaFin from Aviso a" +
                                                " join AvisoXColaborador ac on a.id_aviso = ac.id_aviso" +
                                                " join Colaborador c on c.legajo = ac.legajoColaborador" +
+                                               " join HistorialEstado hc ON c.legajo = hc.legajoColaborador" +
                                                " where a.id_aviso = @id";
                         command.CommandType = CommandType.Text;
                         command.Parameters.AddWithValue("@id", id);
@@ -528,12 +529,22 @@ namespace DataAccesA
                 return resultado;
             }
         }
-        public bool notificarAviso(int id, string subject, string body)
+
+        public bool estaActivo(DataTable dt)
+        {
+            var resultadosValidados = from row in dt.AsEnumerable()
+                                      where row.Field<int>("id_estado") != 2 &&
+                                            !row.IsNull("fechaFin")
+                                      select row;
+            return resultadosValidados.Any();
+        }
+        public string notificarAviso(int id, string subject, string body)
         {
 
             try
             {
                 DataTable aviso = getAviso(id);
+                if (!estaActivo(aviso)) { return "Error: El colaborador está inactivo"; }
                 List<string> mails = new List<string>();
                 var mailService = new MailServices.SystemSupportMail();
                 foreach (DataRow row in aviso.Rows)
@@ -548,11 +559,11 @@ namespace DataAccesA
                     );
 
                 this.actualizarAviso(id, DateTime.Now);
-                return true;
+                return "Enviado con exito";
             }
             catch (Exception ex)
             {
-                return false;
+                return "Error al enviar: " + ex.ToString();
             }
 
         }
