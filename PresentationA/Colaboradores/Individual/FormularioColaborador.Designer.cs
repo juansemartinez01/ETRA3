@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlBuscar = new System.Windows.Forms.Panel();
             this.btnExportar = new PresentationA.Controls.BotonPadre();
             this.btnEliminar = new PresentationA.Controls.BotonPadre();
@@ -49,13 +49,13 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.pnlFormulario = new System.Windows.Forms.Panel();
             this.pnlBotones = new System.Windows.Forms.Panel();
+            this.btnVestimenta = new FontAwesome.Sharp.IconButton();
             this.btnFamiliares = new FontAwesome.Sharp.IconButton();
             this.btnCtaCte = new FontAwesome.Sharp.IconButton();
             this.btnHistorialSalarios = new FontAwesome.Sharp.IconButton();
             this.btnHistorialEventos = new FontAwesome.Sharp.IconButton();
             this.btnDatosGenerales = new FontAwesome.Sharp.IconButton();
             this.btnDatosPersonales = new FontAwesome.Sharp.IconButton();
-            this.btnVestimenta = new FontAwesome.Sharp.IconButton();
             this.pnlBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBusqueda)).BeginInit();
             this.pnlFormulario.SuspendLayout();
@@ -165,27 +165,27 @@
             this.dgvBusqueda.BackgroundColor = System.Drawing.Color.White;
             this.dgvBusqueda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvBusqueda.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusqueda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusqueda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBusqueda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.legajo,
             this.nombre,
             this.apellido});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBusqueda.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(43)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBusqueda.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBusqueda.EnableHeadersVisualStyles = false;
             this.dgvBusqueda.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dgvBusqueda.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
@@ -193,14 +193,14 @@
             this.dgvBusqueda.Name = "dgvBusqueda";
             this.dgvBusqueda.ReadOnly = true;
             this.dgvBusqueda.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBusqueda.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(103)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(44)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBusqueda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBusqueda.Size = new System.Drawing.Size(849, 154);
             this.dgvBusqueda.TabIndex = 20;
@@ -278,6 +278,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(172, 26);
             this.txtNombre.TabIndex = 8;
+            this.txtNombre.TextChanged += new System.EventHandler(this.btnBuscar_Click);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblNombre
@@ -304,6 +305,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(172, 26);
             this.txtApellido.TabIndex = 9;
+            this.txtApellido.TextChanged += new System.EventHandler(this.btnBuscar_Click);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enter_keyPress);
             // 
             // lblApellido
@@ -342,6 +344,27 @@
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(190, 347);
             this.pnlBotones.TabIndex = 0;
+            // 
+            // btnVestimenta
+            // 
+            this.btnVestimenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVestimenta.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnVestimenta.FlatAppearance.BorderSize = 0;
+            this.btnVestimenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVestimenta.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btnVestimenta.ForeColor = System.Drawing.Color.Black;
+            this.btnVestimenta.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnVestimenta.IconColor = System.Drawing.Color.Black;
+            this.btnVestimenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVestimenta.Location = new System.Drawing.Point(0, 234);
+            this.btnVestimenta.Name = "btnVestimenta";
+            this.btnVestimenta.Padding = new System.Windows.Forms.Padding(5);
+            this.btnVestimenta.Size = new System.Drawing.Size(190, 39);
+            this.btnVestimenta.TabIndex = 5;
+            this.btnVestimenta.Text = "Vestimenta";
+            this.btnVestimenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVestimenta.UseVisualStyleBackColor = true;
+            this.btnVestimenta.Click += new System.EventHandler(this.btnVestimenta_Click);
             // 
             // btnFamiliares
             // 
@@ -468,27 +491,6 @@
             this.btnDatosPersonales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatosPersonales.UseVisualStyleBackColor = true;
             this.btnDatosPersonales.Click += new System.EventHandler(this.btnDatosPersonales_Click);
-            // 
-            // btnVestimenta
-            // 
-            this.btnVestimenta.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVestimenta.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnVestimenta.FlatAppearance.BorderSize = 0;
-            this.btnVestimenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVestimenta.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btnVestimenta.ForeColor = System.Drawing.Color.Black;
-            this.btnVestimenta.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnVestimenta.IconColor = System.Drawing.Color.Black;
-            this.btnVestimenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVestimenta.Location = new System.Drawing.Point(0, 234);
-            this.btnVestimenta.Name = "btnVestimenta";
-            this.btnVestimenta.Padding = new System.Windows.Forms.Padding(5);
-            this.btnVestimenta.Size = new System.Drawing.Size(190, 39);
-            this.btnVestimenta.TabIndex = 5;
-            this.btnVestimenta.Text = "Vestimenta";
-            this.btnVestimenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVestimenta.UseVisualStyleBackColor = true;
-            this.btnVestimenta.Click += new System.EventHandler(this.btnVestimenta_Click);
             // 
             // FormularioColaborador
             // 
