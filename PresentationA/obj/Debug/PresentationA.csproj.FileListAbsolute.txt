@@ -923,3 +923,4 @@ C:\Users\juans\source\repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colabora
 C:\Users\juans\source\repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmModificarVestimenta.resources
 C:\Users\juans\source\repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmNuevaVestimenta.resources
 C:\Users\juans\source\repos\ETRA3\PresentationA\obj\Debug\PresentationA.Colaboradores.Vestimenta.frmVestimenta.resources
+C:\Users\admin\Source\Repos\ETRA3\PresentationA\bin\Debug\EnvDTE.xml
