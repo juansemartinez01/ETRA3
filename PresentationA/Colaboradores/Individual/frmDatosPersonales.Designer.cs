@@ -58,14 +58,18 @@
             this.lbllegajo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblcodigoPostal = new System.Windows.Forms.Label();
+            this.lblbarrio = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblnroEmergencia = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblFechaNacimiento = new System.Windows.Forms.Label();
-            this.lblEstadoCivil = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblEscolaridad = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.lblEstadoCivil = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -418,6 +422,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.lblcodigoPostal);
+            this.groupBox1.Controls.Add(this.lblbarrio);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -438,6 +446,52 @@
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(535, 92);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 20);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Codigo Postal:";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(535, 46);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 20);
+            this.label13.TabIndex = 60;
+            this.label13.Text = "Barrio:";
+            // 
+            // lblcodigoPostal
+            // 
+            this.lblcodigoPostal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblcodigoPostal.AutoSize = true;
+            this.lblcodigoPostal.Location = new System.Drawing.Point(672, 92);
+            this.lblcodigoPostal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcodigoPostal.Name = "lblcodigoPostal";
+            this.lblcodigoPostal.Size = new System.Drawing.Size(0, 20);
+            this.lblcodigoPostal.TabIndex = 61;
+            // 
+            // lblbarrio
+            // 
+            this.lblbarrio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblbarrio.AutoSize = true;
+            this.lblbarrio.Location = new System.Drawing.Point(672, 46);
+            this.lblbarrio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblbarrio.Name = "lblbarrio";
+            this.lblbarrio.Size = new System.Drawing.Size(0, 20);
+            this.lblbarrio.TabIndex = 62;
             // 
             // groupBox2
             // 
@@ -496,17 +550,30 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
             // 
-            // lblFechaNacimiento
+            // lblEscolaridad
             // 
-            this.lblFechaNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblEscolaridad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(197, 189);
-            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(0, 20);
-            this.lblFechaNacimiento.TabIndex = 73;
+            this.lblEscolaridad.AutoSize = true;
+            this.lblEscolaridad.Location = new System.Drawing.Point(391, 189);
+            this.lblEscolaridad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEscolaridad.Name = "lblEscolaridad";
+            this.lblEscolaridad.Size = new System.Drawing.Size(0, 20);
+            this.lblEscolaridad.TabIndex = 77;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(285, 189);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(98, 20);
+            this.label15.TabIndex = 76;
+            this.label15.Text = "Escolaridad:";
             // 
             // lblEstadoCivil
             // 
@@ -533,30 +600,17 @@
             this.label11.TabIndex = 74;
             this.label11.Text = "Estado Civil:";
             // 
-            // lblEscolaridad
+            // lblFechaNacimiento
             // 
-            this.lblEscolaridad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblFechaNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEscolaridad.AutoSize = true;
-            this.lblEscolaridad.Location = new System.Drawing.Point(391, 189);
-            this.lblEscolaridad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEscolaridad.Name = "lblEscolaridad";
-            this.lblEscolaridad.Size = new System.Drawing.Size(0, 20);
-            this.lblEscolaridad.TabIndex = 77;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(285, 189);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 20);
-            this.label15.TabIndex = 76;
-            this.label15.Text = "Escolaridad:";
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(197, 189);
+            this.lblFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(0, 20);
+            this.lblFechaNacimiento.TabIndex = 73;
             // 
             // frmDatosPersonales
             // 
@@ -620,5 +674,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblEstadoCivil;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblcodigoPostal;
+        private System.Windows.Forms.Label lblbarrio;
     }
 }

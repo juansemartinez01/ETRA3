@@ -48,6 +48,7 @@ namespace PresentationA.Colaboradores
             int estadoCivil = (int)cmbEstadoCivil.SelectedValue;
             int escolaridad = (int)cmbEscolaridad.SelectedValue;
             int codigoSucursal = (int)cmbSucursal.SelectedValue;
+            int codigoPostal = int.Parse(txtCodPostal.Text.ToString());
 
             DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
             DateTime fechaIngreso;
@@ -158,7 +159,7 @@ namespace PresentationA.Colaboradores
                                             {
                                                 departamento = txtDepto.Text.ToString();
                                                 ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue,float.Parse(txtSalario.Text.ToString()),mail,telefonoContacto,telefonoEmergencia,fechaNacimiento,fechaIngreso,obraSocial,legajoResponsable,codigoSucursal,estadoCivil,escolaridad);
+                                                var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue,float.Parse(txtSalario.Text.ToString()),mail,telefonoContacto,telefonoEmergencia,fechaNacimiento,fechaIngreso,obraSocial,legajoResponsable,codigoSucursal,estadoCivil,escolaridad,txtBarrio.Text,codigoPostal);
                                                 if (openFileDialog1.InitialDirectory != "no seleccionado" && openFileDialog1.InitialDirectory != "C:\\Documentos")
                                                 {
 
@@ -179,7 +180,7 @@ namespace PresentationA.Colaboradores
                                             piso = 0;
                                             departamento = "No especifica";
                                             ColaboradorModelo colaboradorModelo = new ColaboradorModelo();
-                                            var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable, codigoSucursal, estadoCivil, escolaridad);
+                                            var cadenaRespuesta = colaboradorModelo.CrearColaborador(txtNombre.Text, txtApellido.Text, int.Parse(txtDni.Text), txtCuit.Text, txtCalle.Text, int.Parse(txtNroCalle.Text), (int)cmbPuesto.SelectedValue, piso, departamento, localidad, provincia, (int)cmbEstados.SelectedValue, float.Parse(txtSalario.Text.ToString()), mail, telefonoContacto, telefonoEmergencia, fechaNacimiento, fechaIngreso, obraSocial, legajoResponsable, codigoSucursal, estadoCivil, escolaridad,txtBarrio.Text, codigoPostal);
                                             if (openFileDialog1.InitialDirectory != "no seleccionado" && openFileDialog1.InitialDirectory != "C:\\Documentos")
                                             {
 

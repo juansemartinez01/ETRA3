@@ -84,7 +84,7 @@ namespace PresentationA.Colaboradores
             if (MessageBox.Show("Desea guardar los cambios?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 int legajo = int.Parse(lbllegajo.Text.ToString());
-                
+                int codigoPostal = int.Parse(txtcodigoPostal.Text.ToString());
                 string nombre = txtNombre.Text;
                 if (txtNombre.Text == "")
                 {
@@ -188,7 +188,7 @@ namespace PresentationA.Colaboradores
                 int estadoCivil = (int)cmbEstadoCivil.SelectedValue;
                 int escolaridad = (int)cmbEscolaridad.SelectedValue;
 
-                MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal,estadoCivil,escolaridad));
+                MessageBox.Show(colaboradorModelo.modificarColaborador(legajo, nombre, apellido, fechaNacimiento, Cuit, dni, calle, numeroCalle, piso, departamento, localidad, mail, numeroContacto, numeroEmergencia, estado, obraSocial, puesto, legajoResponsable, codigoSucursal,estadoCivil,escolaridad,txtbarrio.Text,codigoPostal));
                 hayCambios = false;
                 this.Close();
             }

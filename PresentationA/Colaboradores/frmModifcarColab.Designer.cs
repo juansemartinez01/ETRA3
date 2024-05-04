@@ -36,6 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtcodigoPostal = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtbarrio = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.txtpiso = new System.Windows.Forms.TextBox();
             this.txtdepartamento = new System.Windows.Forms.TextBox();
             this.txtlocalidad = new System.Windows.Forms.TextBox();
@@ -182,7 +186,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(364, 205);
+            this.label10.Location = new System.Drawing.Point(12, 177);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 20);
@@ -193,6 +197,10 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtcodigoPostal);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.txtbarrio);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtpiso);
             this.groupBox1.Controls.Add(this.txtdepartamento);
             this.groupBox1.Controls.Add(this.txtlocalidad);
@@ -207,10 +215,49 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(894, 151);
+            this.groupBox1.Size = new System.Drawing.Size(860, 209);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DIRECCIÓN";
+            // 
+            // txtcodigoPostal
+            // 
+            this.txtcodigoPostal.Location = new System.Drawing.Point(470, 128);
+            this.txtcodigoPostal.Name = "txtcodigoPostal";
+            this.txtcodigoPostal.Size = new System.Drawing.Size(210, 26);
+            this.txtcodigoPostal.TabIndex = 44;
+            // 
+            // label20
+            // 
+            this.label20.AllowDrop = true;
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Location = new System.Drawing.Point(360, 128);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 41);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "Codigo Postal";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtbarrio
+            // 
+            this.txtbarrio.Location = new System.Drawing.Point(106, 128);
+            this.txtbarrio.Name = "txtbarrio";
+            this.txtbarrio.Size = new System.Drawing.Size(210, 26);
+            this.txtbarrio.TabIndex = 42;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(27, 131);
+            this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(55, 20);
+            this.label18.TabIndex = 43;
+            this.label18.Text = "Barrio:";
             // 
             // txtpiso
             // 
@@ -231,7 +278,7 @@
             // 
             // txtlocalidad
             // 
-            this.txtlocalidad.Location = new System.Drawing.Point(470, 202);
+            this.txtlocalidad.Location = new System.Drawing.Point(106, 174);
             this.txtlocalidad.Name = "txtlocalidad";
             this.txtlocalidad.Size = new System.Drawing.Size(210, 26);
             this.txtlocalidad.TabIndex = 11;
@@ -375,7 +422,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox3.Size = new System.Drawing.Size(894, 514);
+            this.groupBox3.Size = new System.Drawing.Size(860, 514);
             this.groupBox3.TabIndex = 79;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PERSONALES";
@@ -556,11 +603,11 @@
             this.groupBox4.Controls.Add(this.txtObraSocial);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Location = new System.Drawing.Point(31, 733);
+            this.groupBox4.Location = new System.Drawing.Point(31, 792);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox4.Size = new System.Drawing.Size(898, 143);
+            this.groupBox4.Size = new System.Drawing.Size(864, 143);
             this.groupBox4.TabIndex = 89;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATOS GENERALES";
@@ -626,7 +673,7 @@
             this.pnlBotones.Controls.Add(this.btnCancelar);
             this.pnlBotones.Controls.Add(this.btnGuardar);
             this.pnlBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBotones.Location = new System.Drawing.Point(0, 926);
+            this.pnlBotones.Location = new System.Drawing.Point(0, 985);
             this.pnlBotones.Name = "pnlBotones";
             this.pnlBotones.Size = new System.Drawing.Size(978, 100);
             this.pnlBotones.TabIndex = 94;
@@ -636,7 +683,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(176, 20);
+            this.label26.Location = new System.Drawing.Point(160, 20);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(340, 28);
             this.label26.TabIndex = 95;
@@ -733,5 +780,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbEstadoCivil;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtcodigoPostal;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtbarrio;
+        private System.Windows.Forms.Label label18;
     }
 }
