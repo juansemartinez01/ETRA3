@@ -9,6 +9,7 @@ using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Point = Microsoft.Reporting.Map.WebForms.BingMaps.Point;
 using Common.Cache;
 using PresentationA.Colaboradores.Vestimenta;
+using System.Windows.Input;
 
 namespace PresentationA
 
@@ -24,7 +25,7 @@ namespace PresentationA
         private Panel bordeInferior;
         public frmPrincipal()
         {
-
+            
             InitializeComponent();
             if(UserCache.perfil != Perfiles.admin)
             {
@@ -44,6 +45,17 @@ namespace PresentationA
             pnlPrincipal.Controls.Add(bordeInferior);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Oem3)) // Ctrl + N
+            {
+                MessageBox.Show("You pressed N!");
+                return true; // Indica que la tecla ha sido manejada
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         private void ActivateButton(object button)
         {
             if (button != null)

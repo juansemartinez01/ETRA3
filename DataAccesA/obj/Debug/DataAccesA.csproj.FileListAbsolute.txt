@@ -18,7 +18,6 @@ C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\obj\Debug\DataAccesA.dll
 C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\obj\Debug\DataAccesA.pdb
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\bin\Debug\Common.dll
 C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\bin\Debug\Common.pdb
-C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
 C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\bin\Debug\Common.dll
 C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\bin\Debug\Common.pdb
 C:\Users\Usuario\Source\Repos\ETRA2\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
@@ -67,3 +66,4 @@ C:\Users\juans\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.csproj.CoreCom
 C:\Users\juans\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.csproj.CopyComplete
 C:\Users\juans\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.dll
 C:\Users\juans\Source\Repos\ETRA3\DataAccesA\obj\Debug\DataAccesA.pdb
+C:\Users\usuario\Documents\ETRA\Programa\DataAccesA\obj\Debug\DataAccesA.csproj.Up2Date

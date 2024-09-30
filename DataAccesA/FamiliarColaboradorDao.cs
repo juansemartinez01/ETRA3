@@ -116,7 +116,7 @@ namespace DataAccesA
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad,obraSocial = @obraSocial,trabaja = @esTrabajador,dependencia = @esDependencia,aportes = @aportes WHERE idFamiliar = @idFamiliar";
+                    command.CommandText = "UPDATE FamiliarColaborador SET tipoFamiliar = @tipoFamiliar,nombreFamiliar = @nombre,apellidoFamiliar = @apellido,fechaNacimiento = Format(@fechaNacimiento, 'yyyy - MM - dd'),dni = @dni,escolaridad = @escolaridad,obraSocial = @obraSocial,esTrabajador = @esTrabajador,dependencia = @esDependencia,aportes = @aportes WHERE idFamiliar = @idFamiliar";
                     command.Parameters.AddWithValue("@tipoFamiliar", tipoFamiliar);
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@apellido", apellido);
