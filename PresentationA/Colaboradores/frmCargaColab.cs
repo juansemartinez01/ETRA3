@@ -48,7 +48,11 @@ namespace PresentationA.Colaboradores
             int estadoCivil = (int)cmbEstadoCivil.SelectedValue;
             int escolaridad = (int)cmbEscolaridad.SelectedValue;
             int codigoSucursal = (int)cmbSucursal.SelectedValue;
-            int codigoPostal = int.Parse(txtCodPostal.Text.ToString());
+            int codigoPostal = 0;
+            if (txtCodPostal.Text != "")
+            {
+                codigoPostal = int.Parse(txtCodPostal.Text.ToString());
+            }
 
             DateTime fechaNacimiento = dtpfechaNacimiento.Value.Date;
             DateTime fechaIngreso;
